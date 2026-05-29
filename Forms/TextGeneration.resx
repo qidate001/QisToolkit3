@@ -1,0 +1,1447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainerMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainerMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainerMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="richTextBox_Head.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="richTextBox_Head.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 8</value>
+  </data>
+  <data name="richTextBox_Head.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox_Head.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 61</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="richTextBox_Head.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="richTextBox_Head.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox_Head.Name" xml:space="preserve">
+    <value>richTextBox_Head</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_Head.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_Head.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_Head.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_Head.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Head.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_Head.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 25</value>
+  </data>
+  <data name="label_Head.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_Head.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 27</value>
+  </data>
+  <data name="label_Head.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="label_Head.Text" xml:space="preserve">
+    <value>文本 首：</value>
+  </data>
+  <data name="&gt;&gt;label_Head.Name" xml:space="preserve">
+    <value>label_Head</value>
+  </data>
+  <data name="&gt;&gt;label_Head.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Head.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_Head.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBox_End.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="richTextBox_End.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 73</value>
+  </data>
+  <data name="richTextBox_End.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox_End.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 61</value>
+  </data>
+  <data name="richTextBox_End.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="richTextBox_End.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox_End.Name" xml:space="preserve">
+    <value>richTextBox_End</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_End.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_End.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_End.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_End.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_End.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_End.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 90</value>
+  </data>
+  <data name="label_End.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_End.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 27</value>
+  </data>
+  <data name="label_End.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="label_End.Text" xml:space="preserve">
+    <value>文本 尾：</value>
+  </data>
+  <data name="&gt;&gt;label_End.Name" xml:space="preserve">
+    <value>label_End</value>
+  </data>
+  <data name="&gt;&gt;label_End.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_End.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_End.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="richTextBox3000.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBox3000.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 15pt</value>
+  </data>
+  <data name="richTextBox3000.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="richTextBox3000.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox3000.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 392</value>
+  </data>
+  <data name="richTextBox3000.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="richTextBox3000.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox3000.Name" xml:space="preserve">
+    <value>richTextBox3000</value>
+  </data>
+  <data name="&gt;&gt;richTextBox3000.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox3000.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox3000.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_PlusMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 3</value>
+  </data>
+  <data name="button_PlusMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button_PlusMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 28</value>
+  </data>
+  <data name="button_PlusMode.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="button_PlusMode.Text" xml:space="preserve">
+    <value>高级模式</value>
+  </data>
+  <data name="&gt;&gt;button_PlusMode.Name" xml:space="preserve">
+    <value>button_PlusMode</value>
+  </data>
+  <data name="&gt;&gt;button_PlusMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_PlusMode.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;button_PlusMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox_ForCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 3</value>
+  </data>
+  <data name="textBox_ForCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_ForCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 27</value>
+  </data>
+  <data name="textBox_ForCount.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="textBox_ForCount.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;textBox_ForCount.Name" xml:space="preserve">
+    <value>textBox_ForCount</value>
+  </data>
+  <data name="&gt;&gt;textBox_ForCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_ForCount.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;textBox_ForCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>循环次数：</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonPresets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 3</value>
+  </data>
+  <data name="buttonPresets.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonPresets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 28</value>
+  </data>
+  <data name="buttonPresets.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="buttonPresets.Text" xml:space="preserve">
+    <value>微预设</value>
+  </data>
+  <data name="&gt;&gt;buttonPresets.Name" xml:space="preserve">
+    <value>buttonPresets</value>
+  </data>
+  <data name="&gt;&gt;buttonPresets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonPresets.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonPresets.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 34</value>
+  </data>
+  <data name="buttonRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 28</value>
+  </data>
+  <data name="buttonRun.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="buttonRun.Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Name" xml:space="preserve">
+    <value>buttonRun</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 463</value>
+  </data>
+  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>392</value>
+  </data>
+  <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Name" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 604</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Name" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainerX.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainerX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainerX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="splitContainerX.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="comboBox_I.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="comboBox_I.Items" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="comboBox_I.Items1" xml:space="preserve">
+    <value>自减一</value>
+  </data>
+  <data name="comboBox_I.Items2" xml:space="preserve">
+    <value>加等于</value>
+  </data>
+  <data name="comboBox_I.Items3" xml:space="preserve">
+    <value>减等于</value>
+  </data>
+  <data name="comboBox_I.Items4" xml:space="preserve">
+    <value>乘等于</value>
+  </data>
+  <data name="comboBox_I.Items5" xml:space="preserve">
+    <value>除等于</value>
+  </data>
+  <data name="comboBox_I.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 68</value>
+  </data>
+  <data name="comboBox_I.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="comboBox_I.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 28</value>
+  </data>
+  <data name="comboBox_I.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="comboBox_I.Text" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="&gt;&gt;comboBox_I.Name" xml:space="preserve">
+    <value>comboBox_I</value>
+  </data>
+  <data name="&gt;&gt;comboBox_I.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_I.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_I.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox_Do_I.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_Do_I.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 68</value>
+  </data>
+  <data name="textBox_Do_I.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_Do_I.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_Do_I.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="textBox_Do_I.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_I.Name" xml:space="preserve">
+    <value>textBox_Do_I</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_I.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_I.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_I.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_K.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="comboBox_K.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="comboBox_K.Items" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="comboBox_K.Items1" xml:space="preserve">
+    <value>自减一</value>
+  </data>
+  <data name="comboBox_K.Items2" xml:space="preserve">
+    <value>加等于</value>
+  </data>
+  <data name="comboBox_K.Items3" xml:space="preserve">
+    <value>减等于</value>
+  </data>
+  <data name="comboBox_K.Items4" xml:space="preserve">
+    <value>乘等于</value>
+  </data>
+  <data name="comboBox_K.Items5" xml:space="preserve">
+    <value>除等于</value>
+  </data>
+  <data name="comboBox_K.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 262</value>
+  </data>
+  <data name="comboBox_K.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="comboBox_K.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 28</value>
+  </data>
+  <data name="comboBox_K.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="comboBox_K.Text" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="&gt;&gt;comboBox_K.Name" xml:space="preserve">
+    <value>comboBox_K</value>
+  </data>
+  <data name="&gt;&gt;comboBox_K.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_K.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_K.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox_Do_K.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_Do_K.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 263</value>
+  </data>
+  <data name="textBox_Do_K.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_Do_K.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_Do_K.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="textBox_Do_K.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_K.Name" xml:space="preserve">
+    <value>textBox_Do_K</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_K.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_K.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_K.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="comboBox_J.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="comboBox_J.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="comboBox_J.Items" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="comboBox_J.Items1" xml:space="preserve">
+    <value>自减一</value>
+  </data>
+  <data name="comboBox_J.Items2" xml:space="preserve">
+    <value>加等于</value>
+  </data>
+  <data name="comboBox_J.Items3" xml:space="preserve">
+    <value>减等于</value>
+  </data>
+  <data name="comboBox_J.Items4" xml:space="preserve">
+    <value>乘等于</value>
+  </data>
+  <data name="comboBox_J.Items5" xml:space="preserve">
+    <value>除等于</value>
+  </data>
+  <data name="comboBox_J.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 167</value>
+  </data>
+  <data name="comboBox_J.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="comboBox_J.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 28</value>
+  </data>
+  <data name="comboBox_J.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="comboBox_J.Text" xml:space="preserve">
+    <value>自增一</value>
+  </data>
+  <data name="&gt;&gt;comboBox_J.Name" xml:space="preserve">
+    <value>comboBox_J</value>
+  </data>
+  <data name="&gt;&gt;comboBox_J.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_J.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_J.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_Do_J.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_Do_J.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 168</value>
+  </data>
+  <data name="textBox_Do_J.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_Do_J.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_Do_J.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="textBox_Do_J.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_J.Name" xml:space="preserve">
+    <value>textBox_Do_J</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_J.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_J.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Do_J.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="checkBox_Roman_K.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Roman_K.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBox_Roman_K.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Roman_K.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 232</value>
+  </data>
+  <data name="checkBox_Roman_K.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Roman_K.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="checkBox_Roman_K.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="checkBox_Roman_K.Text" xml:space="preserve">
+    <value>罗马数字</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_K.Name" xml:space="preserve">
+    <value>checkBox_Roman_K</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_K.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_K.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_K.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkBox_Roman_I.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Roman_I.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBox_Roman_I.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Roman_I.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 38</value>
+  </data>
+  <data name="checkBox_Roman_I.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Roman_I.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="checkBox_Roman_I.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="checkBox_Roman_I.Text" xml:space="preserve">
+    <value>罗马数字</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_I.Name" xml:space="preserve">
+    <value>checkBox_Roman_I</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_I.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_I.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_I.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="checkBox_Roman_J.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Roman_J.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBox_Roman_J.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Roman_J.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 136</value>
+  </data>
+  <data name="checkBox_Roman_J.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Roman_J.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="checkBox_Roman_J.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="checkBox_Roman_J.Text" xml:space="preserve">
+    <value>罗马数字</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_J.Name" xml:space="preserve">
+    <value>checkBox_Roman_J</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_J.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_J.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Roman_J.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="checkBox_Enabled_J.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Enabled_J.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Enabled_J.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 108</value>
+  </data>
+  <data name="checkBox_Enabled_J.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Enabled_J.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkBox_Enabled_J.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="checkBox_Enabled_J.Text" xml:space="preserve">
+    <value>启用循环变量 &lt;j&gt;</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_J.Name" xml:space="preserve">
+    <value>checkBox_Enabled_J</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_J.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_J.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_J.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_K2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_K2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_K2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 263</value>
+  </data>
+  <data name="label_K2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_K2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="label_K2.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="label_K2.Text" xml:space="preserve">
+    <value>循环操作：</value>
+  </data>
+  <data name="&gt;&gt;label_K2.Name" xml:space="preserve">
+    <value>label_K2</value>
+  </data>
+  <data name="&gt;&gt;label_K2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_K2.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_K2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBox_ReSet_K.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_ReSet_K.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 236</value>
+  </data>
+  <data name="textBox_ReSet_K.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_ReSet_K.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_ReSet_K.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="textBox_ReSet_K.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_K.Name" xml:space="preserve">
+    <value>textBox_ReSet_K</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_K.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_K.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_K.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_K1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_K1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_K1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 235</value>
+  </data>
+  <data name="label_K1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_K1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 27</value>
+  </data>
+  <data name="label_K1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="label_K1.Text" xml:space="preserve">
+    <value>起始值：</value>
+  </data>
+  <data name="&gt;&gt;label_K1.Name" xml:space="preserve">
+    <value>label_K1</value>
+  </data>
+  <data name="&gt;&gt;label_K1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_K1.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_K1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="checkBox_Enabled_K.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Enabled_K.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Enabled_K.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 203</value>
+  </data>
+  <data name="checkBox_Enabled_K.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Enabled_K.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 31</value>
+  </data>
+  <data name="checkBox_Enabled_K.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="checkBox_Enabled_K.Text" xml:space="preserve">
+    <value>启用循环变量 &lt;k&gt;</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_K.Name" xml:space="preserve">
+    <value>checkBox_Enabled_K</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_K.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_K.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_K.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label_J2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_J2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_J2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 168</value>
+  </data>
+  <data name="label_J2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_J2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="label_J2.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="label_J2.Text" xml:space="preserve">
+    <value>循环操作：</value>
+  </data>
+  <data name="&gt;&gt;label_J2.Name" xml:space="preserve">
+    <value>label_J2</value>
+  </data>
+  <data name="&gt;&gt;label_J2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_J2.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_J2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="textBox_ReSet_J.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_ReSet_J.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 140</value>
+  </data>
+  <data name="textBox_ReSet_J.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_ReSet_J.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_ReSet_J.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="textBox_ReSet_J.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_J.Name" xml:space="preserve">
+    <value>textBox_ReSet_J</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_J.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_J.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_J.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label_J1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_J1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_J1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 139</value>
+  </data>
+  <data name="label_J1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_J1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 27</value>
+  </data>
+  <data name="label_J1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="label_J1.Text" xml:space="preserve">
+    <value>起始值：</value>
+  </data>
+  <data name="&gt;&gt;label_J1.Name" xml:space="preserve">
+    <value>label_J1</value>
+  </data>
+  <data name="&gt;&gt;label_J1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_J1.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_J1.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="label_I2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_I2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_I2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 68</value>
+  </data>
+  <data name="label_I2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_I2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="label_I2.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label_I2.Text" xml:space="preserve">
+    <value>循环操作：</value>
+  </data>
+  <data name="&gt;&gt;label_I2.Name" xml:space="preserve">
+    <value>label_I2</value>
+  </data>
+  <data name="&gt;&gt;label_I2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_I2.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_I2.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="textBox_ReSet_I.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 41</value>
+  </data>
+  <data name="textBox_ReSet_I.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_ReSet_I.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 27</value>
+  </data>
+  <data name="textBox_ReSet_I.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="textBox_ReSet_I.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_I.Name" xml:space="preserve">
+    <value>textBox_ReSet_I</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_I.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_I.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_ReSet_I.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="label_I1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_I1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="label_I1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 40</value>
+  </data>
+  <data name="label_I1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_I1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 27</value>
+  </data>
+  <data name="label_I1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="label_I1.Text" xml:space="preserve">
+    <value>起始值：</value>
+  </data>
+  <data name="&gt;&gt;label_I1.Name" xml:space="preserve">
+    <value>label_I1</value>
+  </data>
+  <data name="&gt;&gt;label_I1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_I1.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label_I1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="checkBox_Enabled_I.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Enabled_I.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="checkBox_Enabled_I.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 8</value>
+  </data>
+  <data name="checkBox_Enabled_I.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox_Enabled_I.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkBox_Enabled_I.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBox_Enabled_I.Text" xml:space="preserve">
+    <value>启用循环变量 &lt;i&gt;</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_I.Name" xml:space="preserve">
+    <value>checkBox_Enabled_I</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_I.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_I.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Enabled_I.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel1.Name" xml:space="preserve">
+    <value>splitContainerX.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerX</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="richTextBoxMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxMain.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="richTextBoxMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="richTextBoxMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBoxMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 307</value>
+  </data>
+  <data name="richTextBoxMain.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="richTextBoxMain.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxMain.Name" xml:space="preserve">
+    <value>richTextBoxMain</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxMain.Parent" xml:space="preserve">
+    <value>splitContainerX.Panel2</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel2.Name" xml:space="preserve">
+    <value>splitContainerX.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerX</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainerX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 604</value>
+  </data>
+  <data name="splitContainerX.SplitterDistance" type="System.Int32, mscorlib">
+    <value>294</value>
+  </data>
+  <data name="splitContainerX.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="splitContainerX.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Name" xml:space="preserve">
+    <value>splitContainerX</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerX.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Name" xml:space="preserve">
+    <value>splitContainerMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainerMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>781, 604</value>
+  </data>
+  <data name="splitContainerMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>489</value>
+  </data>
+  <data name="splitContainerMain.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="splitContainerMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Name" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>781, 604</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>文本生成</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TextGeneration</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
