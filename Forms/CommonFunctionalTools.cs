@@ -117,26 +117,155 @@ namespace QisToolkit3.Forms
         {
             try
             {
-                // 关闭资源管理器
+                Log.Info("[CFT] [FixIconCache] 开始清理图标缓存");
+
+                // 1. 关闭资源管理器
+                Log.Info("[CFT] [FixIconCache] 正在关闭资源管理器进程...");
+                int killedCount = 0;
                 for (int i = 0; i < 5; ++i)
                     foreach (var proc in Process.GetProcessesByName("explorer"))
                     {
                         proc.Kill();
                         proc.WaitForExit(5000);
+                        killedCount++;
+                        Log.Info($"[CFT] [FixIconCache] 已终止资源管理器进程 (PID: {proc.Id})");
+                    }
+                Log.Info($"[CFT] [FixIconCache] 共终止 {killedCount} 个资源管理器进程");
+
+                // 2. 删除 Win10/Win11 通用的旧位置
+                string oldPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    @"Microsoft\Windows\Explorer");
+
+                Log.Info($"[CFT] [FixIconCache] 开始清理旧缓存路径：{oldPath}");
+
+                if (Directory.Exists(oldPath))
+                {
+                    // 删除 iconcache_*.db 文件
+                    var iconFiles = Directory.GetFiles(oldPath, "iconcache_*.db");
+                    foreach (var file in iconFiles)
+                    {
+                        try
+                        {
+                            var fileInfo = new FileInfo(file);
+                            long fileSize = fileInfo.Length;
+                            System.IO.File.Delete(file);
+                            Log.Info($"[CFT] [FixIconCache] 成功删除图标缓存文件，大小：{fileSize} 字节 ({file})");
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{file}，错误：{ex.Message}");
+                        }
                     }
 
-                string path = Path.Combine(LocalDir, @"Microsoft\Windows\Explorer");
+                    // 删除 thumbcache_*.db 文件
+                    var thumbFiles = Directory.GetFiles(oldPath, "thumbcache_*.db");
+                    foreach (var file in thumbFiles)
+                    {
+                        try
+                        {
+                            var fileInfo = new FileInfo(file);
+                            long fileSize = fileInfo.Length;
+                            System.IO.File.Delete(file);
+                            Log.Info($"[CFT] [FixIconCache] 成功删除缩略图缓存文件，大小：{fileSize} 字节 ({file})");
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{file}，错误：{ex.Message}");
+                        }
+                    }
 
-                // 删除缓存
-                Log.Info("[CFT] [FixIconCache] 开始删除缓存，路径：" + path);
-                Log.Info("[CFT] [FixIconCache] 删除日志：\n" + Qi.TryDeleteDirectoryNd(path));
+                    Log.Info($"[CFT] [FixIconCache] 旧缓存路径清理完成，共删除 {iconFiles.Length + thumbFiles.Length} 个文件");
+                }
+                else
+                {
+                    Log.Info($"[CFT] [FixIconCache] 旧缓存路径不存在，跳过：{oldPath}");
+                }
 
-                // 启动资源管理器
-                Process process = new Process();
-                process.StartInfo.FileName = "explorer.exe";
-                process.Start();
+                // 3. 删除 Win11 新增的图标缓存
+                string newPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    @"Microsoft\Windows\Explorer");
+
+                Log.Info($"[CFT] [FixIconCache] 开始清理新缓存路径：{newPath}");
+
+                if (Directory.Exists(newPath))
+                {
+                    string iconCacheDb = Path.Combine(newPath, "IconCache.db");
+                    if (System.IO.File.Exists(iconCacheDb))
+                    {
+                        try
+                        {
+                            var fileInfo = new FileInfo(iconCacheDb);
+                            long fileSize = fileInfo.Length;
+                            System.IO.File.Delete(iconCacheDb);
+                            Log.Info($"[CFT] [FixIconCache] 成功删除 Win11 图标缓存文件，大小：{fileSize} 字节 ({iconCacheDb})");
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{iconCacheDb}，错误：{ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        Log.Info($"[CFT] [FixIconCache] Win11 图标缓存文件不存在：{iconCacheDb}");
+                    }
+                }
+                else
+                {
+                    Log.Info($"[CFT] [FixIconCache] 新缓存路径不存在，跳过：{newPath}");
+                }
+
+                // 清除注册表图标缓存
+                Log.Info("[CFT] [FixIconCache] 开始清除注册表图标缓存");
+                try
+                {
+                    using (RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"Software\Microsoft\Windows\CurrentVersion\Explorer\IconCache", true))
+                    {
+                        if (key != null)
+                        {
+                            var valueNames = key.GetValueNames();
+                            int deletedCount = 0;
+                            foreach (string valueName in valueNames)
+                            {
+                                key.DeleteValue(valueName);
+                                deletedCount++;
+                                Log.Info($"[CFT] [FixIconCache] 已删除注册表项：{valueName}");
+                            }
+                            Log.Info($"[CFT] [FixIconCache] 注册表清理完成，共删除 {deletedCount} 个注册表值");
+                        }
+                        else
+                        {
+                            Log.Info("[CFT] [FixIconCache] 注册表键不存在，跳过");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[CFT] [FixIconCache] 清理注册表时出错：{ex.Message}");
+                }
+
+                // 重启资源管理器
+                Log.Info("[CFT] [FixIconCache] 正在重新启动资源管理器...");
+                Process.Start("explorer.exe");
+                Log.Info("[CFT] [FixIconCache] 资源管理器已启动");
+
+                // 刷新图标缓存
+                //Log.Info("[CFT] [FixIconCache] 发送系统刷新通知");
+                //try
+                //{
+                //    // 刷新环境变量和图标
+                //    NativeMethods.SendNotifyMessage(0xFFFF, 0x001A, IntPtr.Zero, "Environment");
+                //    Log.Info("[CFT] [FixIconCache] 系统刷新通知已发送");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Log.Err($"[CFT] [FixIconCache] 发送刷新通知失败：{ex.Message}");
+                //}
+
+                Log.Info("[CFT] [FixIconCache] 图标缓存清理完成");
             }
-
             catch (Exception ex)
             {
                 Log.Err($"[CFT] [FixIconCache] 清理图标缓存时出现错误：{ex.Message}");
