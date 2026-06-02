@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox_OnSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>373, 2</value>
+  </data>
+  <data name="checkBox_OnSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 28</value>
+  </data>
+  <data name="checkBox_OnSystem.Text" xml:space="preserve">
+    <value>Run as system</value>
+  </data>
+  <data name="checkBox_NewWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 2</value>
+  </data>
+  <data name="checkBox_NewWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 28</value>
+  </data>
+  <data name="checkBox_NewWindow.Text" xml:space="preserve">
+    <value>Run in window</value>
+  </data>
+  <data name="checkBox_ExitCmd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 28</value>
+  </data>
+  <data name="checkBox_ExitCmd.Text" xml:space="preserve">
+    <value>Auto-close after run</value>
+  </data>
+  <data name="button_PingBaidu.Text" xml:space="preserve">
+    <value>PING Baidu</value>
+  </data>
+  <data name="button_SystemInfo.Text" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="button_IpConfig.Text" xml:space="preserve">
+    <value>IP Configuration Info</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>785, 633</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="buttonAdvancedRenamer.Text" xml:space="preserve">
+    <value>Batch Renamer</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>System Optimizer</value>
+  </data>
+  <data name="button_ScanRogueSoftwareTool.Text" xml:space="preserve">
+    <value>Rogue Software Scanner</value>
+  </data>
+  <data name="buttonSystemErrorCheck.Text" xml:space="preserve">
+    <value>System Error Checker</value>
+  </data>
+  <data name="buttonWhatToEatToday.Text" xml:space="preserve">
+    <value>What to Eat Today</value>
+  </data>
+  <data name="buttonTextProcessingTools.Text" xml:space="preserve">
+    <value>Text Tools</value>
+  </data>
+  <data name="buttonDCQAA.Text" xml:space="preserve">
+    <value>Custom Q And A Designer</value>
+  </data>
+  <data name="buttonCommonFunctionalTools.Text" xml:space="preserve">
+    <value>Common Basic Tools</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Basic Tools</value>
+  </data>
+  <data name="buttonSystemServiceTools.Text" xml:space="preserve">
+    <value>System Service Tool</value>
+  </data>
+  <data name="button_SPL.Text" xml:space="preserve">
+    <value>System Permission Launcher (SPL)</value>
+  </data>
+  <data name="buttonShellFolderSetPathTool.Text" xml:space="preserve">
+    <value>Shell Folder Redirect Tool</value>
+  </data>
+  <data name="buttonMediumAutoStartTool.Text" xml:space="preserve">
+    <value>Medium Pri. Autostart Tool</value>
+  </data>
+  <data name="buttonUninstallRegistryKeysTool.Text" xml:space="preserve">
+    <value>Program Uninstall Reg Tool</value>
+  </data>
+  <data name="buttonMyComputerNameSpaceTool.Text" xml:space="preserve">
+    <value>This PC Namespace Tool</value>
+  </data>
+  <data name="button_SendMessageToWindowsTool.Text" xml:space="preserve">
+    <value>Send Windows Msg Tool</value>
+  </data>
+  <data name="buttonImageHijackingTool.Text" xml:space="preserve">
+    <value>IFEO Image Hijack Tool</value>
+  </data>
+  <data name="buttonAdvancedModificationSystemTools.Text" xml:space="preserve">
+    <value>Advanced System Mod Tools</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Advanced Tools</value>
+  </data>
+  <data name="button_JokeAPIForm.Text" xml:space="preserve">
+    <value>Random Joke (JokeAPI)</value>
+  </data>
+  <data name="button_HitokotoTool.Text" xml:space="preserve">
+    <value>Random Quote (Hitokoto)</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Entertainment Tools</value>
+  </data>
+  <data name="tabPageQisDefense.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelQisDefense.Text" xml:space="preserve">
+    <value>Qi's Defense is a real-time protection program that runs in the background on your computer.
+Please note: this product is not antivirus software, nor should it be used as a substitute for one!
+
+It mainly focuses on system repair and protection against rogue software and does not currently include virus-related protection measures.
+
+Once you enable Qi's Defense, it will automatically start when your computer boots, run silently in the background, and consume very few resources.
+
+*Some system issues will be checked each time you start your computer. A full check requires manual initiation.
+
+*We also provide a feature to detect errors caused by other third-party software. However, Qizhi Defense itself does not have built-in repair capabilities — repairs are primarily performed by QisToolkit3</value>
+  </data>
+  <data name="tabPageQisDefense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageQisDefense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPageQisDefense.Text" xml:space="preserve">
+    <value>Qi's Defense</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPage.Text" xml:space="preserve">
+    <value>Original Tools</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>777, 397</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>The password change feature here is deprecated.
+This page will remain and the feature is still functional, but its use is not recommended.
+
+The new password change feature is located at:
+Universal Tools → Original Tools → Advanced Tools → Advanced System Mod Tools
+Then: Advanced System Mod Tools → Main Functions → User Functions
+
+(Click this message to directly open Advanced System Mod Tools)</value>
+  </data>
+  <data name="textBox_UserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 3</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 27</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Current User:</value>
+  </data>
+  <data name="button_WindowsUser_Password_clear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 116</value>
+  </data>
+  <data name="button_WindowsUser_Password_clear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 32</value>
+  </data>
+  <data name="button_WindowsUser_Password_clear.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="button_WindowsUser_Password_set.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 117</value>
+  </data>
+  <data name="button_WindowsUser_Password_set.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 32</value>
+  </data>
+  <data name="button_WindowsUser_Password_set.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="textBox_WindowsUser_Password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 117</value>
+  </data>
+  <data name="textBox_WindowsUser_Password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 31</value>
+  </data>
+  <data name="labelWindowsUser_Password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 27</value>
+  </data>
+  <data name="labelWindowsUser_Password.Text" xml:space="preserve">
+    <value>Set Local User Password:</value>
+  </data>
+  <data name="tabPageSystemSet.Text" xml:space="preserve">
+    <value>System Settings</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>750, 356</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>The "System Developer Reserved Features" here are deprecated.
+This page will remain and the features are still functional, but their use is not recommended.
+The new "System Developer Reserved Features" are located at:
+Universal Tools → Original Tools → Advanced Tools → Advanced System Mod Tools
+Then: Advanced System Mod Tools → System Feature Disable → General Functions
+(Click this message to directly open Advanced System Mod Tools)</value>
+  </data>
+  <data name="checkBox_NoSetTaskbar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>417, 783</value>
+  </data>
+  <data name="checkBox_NoWindowsUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 571</value>
+  </data>
+  <data name="checkBox_NoSetActiveDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 571</value>
+  </data>
+  <data name="checkBox_NoPrinterTabs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 822</value>
+  </data>
+  <data name="checkBox_NoDeletePrinter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 746</value>
+  </data>
+  <data name="checkBox_ShowRegPoliciesExplorer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 6</value>
+  </data>
+  <data name="checkBox_NoAddPrinter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 836</value>
+  </data>
+  <data name="checkBox_NoTrayContextMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 534</value>
+  </data>
+  <data name="checkBox_NoViewContextMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 497</value>
+  </data>
+  <data name="checkBox_NoChangeStartMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 836</value>
+  </data>
+  <data name="checkBox_NoActiveDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 799</value>
+  </data>
+  <data name="checkBox_NoFileMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 799</value>
+  </data>
+  <data name="checkBox_NoSaveSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 645</value>
+  </data>
+  <data name="checkBox_NoNetHood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 725</value>
+  </data>
+  <data name="checkBox_NoInternetIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 762</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 691</value>
+  </data>
+  <data name="checkBox_NoRecentDocsHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 645</value>
+  </data>
+  <data name="checkBox_ClearRecentDocsonExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 608</value>
+  </data>
+  <data name="checkBox_NoStartBanner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 762</value>
+  </data>
+  <data name="checkBox_EditLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 725</value>
+  </data>
+  <data name="checkBox_NoRecentDocsMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 497</value>
+  </data>
+  <data name="checkBox_NoFavoritesMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 460</value>
+  </data>
+  <data name="checkBox_NoSetFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 423</value>
+  </data>
+  <data name="checkBox_Nofind.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 497</value>
+  </data>
+  <data name="checkBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 386</value>
+  </data>
+  <data name="checkBox_NoRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 460</value>
+  </data>
+  <data name="checkBox_NofolderOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 423</value>
+  </data>
+  <data name="checkBox_NoLogOff.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 534</value>
+  </data>
+  <data name="checkBox_NoDriveTypeAutoRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 386</value>
+  </data>
+  <data name="checkBox_NoDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 460</value>
+  </data>
+  <data name="checkBox_NoControlPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 423</value>
+  </data>
+  <data name="checkBox_NoClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 386</value>
+  </data>
+  <data name="groupBox_RegPoliciesExplorer.Text" xml:space="preserve">
+    <value>System Developer Reserved Features</value>
+  </data>
+  <data name="checkBox_ShowHardwarePseudoRenaming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 3</value>
+  </data>
+  <data name="comboBoxCpuName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 25</value>
+  </data>
+  <data name="comboBoxCpuName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 32</value>
+  </data>
+  <data name="labelCpuName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 27</value>
+  </data>
+  <data name="labelCpuName.Text" xml:space="preserve">
+    <value>CPU Name：</value>
+  </data>
+  <data name="buttonGetCpuName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>683, 25</value>
+  </data>
+  <data name="buttonGetCpuName.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="buttonSetCpuName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 25</value>
+  </data>
+  <data name="buttonSetCpuName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 32</value>
+  </data>
+  <data name="buttonSetCpuName.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="groupBox_HardwarePseudoRenaming.Text" xml:space="preserve">
+    <value>Hardware Pseudo-Rename</value>
+  </data>
+  <data name="tabPageSystemModification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageSystemModification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPageSystemModification.Text" xml:space="preserve">
+    <value>System Modify</value>
+  </data>
+  <data name="textBoxProcessOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 60</value>
+  </data>
+  <data name="textBoxProcessOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>505, 31</value>
+  </data>
+  <data name="labelProcessOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 27</value>
+  </data>
+  <data name="labelProcessOwner.Text" xml:space="preserve">
+    <value>Current Process Username:</value>
+  </data>
+  <data name="button_slmgr_dli.Text" xml:space="preserve">
+    <value>Windows Script Host System Activation Info</value>
+  </data>
+  <data name="tabPageSystemFunctionInformation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageSystemFunctionInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPageSystemFunctionInformation.Text" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="checkBox_CMDReLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 300</value>
+  </data>
+  <data name="checkBox_CMDReLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 31</value>
+  </data>
+  <data name="checkBox_CMDReLoad.Text" xml:space="preserve">
+    <value>CMD Reload</value>
+  </data>
+  <data name="buttonStartRegedit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 715</value>
+  </data>
+  <data name="buttonStartExplorer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 645</value>
+  </data>
+  <data name="buttonStartTaskManager.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 575</value>
+  </data>
+  <data name="buttonStartConsoleHostProcess.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 505</value>
+  </data>
+  <data name="buttonStartWindowsPowerShell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 435</value>
+  </data>
+  <data name="buttonStartCmd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 365</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>764, 363</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>The "System-Level Privilege Launch" feature here is deprecated.
+This page will remain and the feature is still functional, but its use is not recommended.
+
+The new "System-Level Privilege Launch" (SPL) is located at:
+Universal Tools → Original Tools → Advanced Tools → System Privilege Launcher (SPL)
+
+(Click this message to directly open System Privilege Launcher (SPL))</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Text" xml:space="preserve">
+    <value>Old SPL</value>
+  </data>
+  <data name="tabPageCmdCommands.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageCmdCommands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPageCmdCommands.Text" xml:space="preserve">
+    <value>Command Line Commands</value>
+  </data>
+  <data name="tabPageSystemTool.Text" xml:space="preserve">
+    <value>System Tools</value>
+  </data>
+  <data name="button_SoftwareFunctionPage.Text" xml:space="preserve">
+    <value>Third-Party Software Features</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.Text" xml:space="preserve">
+    <value>Software Tools</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.Text" xml:space="preserve">
+    <value>QisToolkit3 Derived System
+ "Persecution" Fun Tool</value>
+  </data>
+  <data name="buttonMAS.Text" xml:space="preserve">
+    <value>MAS Activation Tool</value>
+  </data>
+  <data name="button_FFmpeg.Text" xml:space="preserve">
+    <value>FFmpeg Tool</value>
+  </data>
+  <data name="buttonGeek.Text" xml:space="preserve">
+    <value>Geek Tool</value>
+  </data>
+  <data name="buttonYtDlp.Text" xml:space="preserve">
+    <value>yt-dlp Tool</value>
+  </data>
+  <data name="buttonIDM.Text" xml:space="preserve">
+    <value>IDM Activation Tool</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>3rd-Party &amp; Special Tools</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Multi-Tool</value>
+  </data>
+</root>

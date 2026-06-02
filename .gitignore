@@ -1,0 +1,51 @@
+﻿# 编译输出
+bin/
+obj/
+Debug/
+Release/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.csproj.user
+*.userprefs
+
+# 运行时生成
+Logs/
+*.log
+Config.ini
+*.tmp
+
+# yt-dlp下载内容
+yt-dlp/Downloads/
+yt-dlp/Archive/
+yt-dlp/*.mp4
+yt-dlp/*.mkv
+yt-dlp/*.webm
+yt-dlp/yt-dlp.exe
+
+# 备份和版本包
+bin/Debug/历代版本/
+*完整版.exe
+*基础版.exe
+*.zip
+
+# 用户数据
+Datas/StrangeFoods/
+Datas/StrangeQuestionAndAnswer/
+Datas/*.png
+Datas/*.jpg
+
+# 系统文件
+Thumbs.db
+desktop.ini
+
+# IDE设置
+.vs/
+_Resharper*/
+*.DotSettings

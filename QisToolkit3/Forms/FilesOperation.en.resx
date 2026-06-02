@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 31</value>
+  </data>
+  <data name="labelFileName.Text" xml:space="preserve">
+    <value>File: No file selected (Click to choose)</value>
+  </data>
+  <data name="labelFileName.ToolTip" xml:space="preserve">
+    <value>Click to Select File</value>
+  </data>
+  <data name="buttonDeleteFile.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="buttonDeleteFile.ToolTip" xml:space="preserve">
+    <value>Delete selected file(s) (Irreversible)</value>
+  </data>
+  <data name="buttonClearFile.Text" xml:space="preserve">
+    <value>Wipe</value>
+  </data>
+  <data name="buttonClearFile.ToolTip" xml:space="preserve">
+    <value>Wipe all data from selected file(s) (Irreversible)</value>
+  </data>
+  <data name="buttonReadFile.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="buttonReadFile.ToolTip" xml:space="preserve">
+    <value>Read file as Unicode (Not effective for oversized files)</value>
+  </data>
+  <data name="labelCreationTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 31</value>
+  </data>
+  <data name="labelCreationTime.Text" xml:space="preserve">
+    <value>Creation Time</value>
+  </data>
+  <data name="textBoxCreationTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 88</value>
+  </data>
+  <data name="textBoxLastWriteTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 121</value>
+  </data>
+  <data name="labelLastWriteTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 31</value>
+  </data>
+  <data name="labelLastWriteTime.Text" xml:space="preserve">
+    <value>Modified Time</value>
+  </data>
+  <data name="textBoxLastAccessTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 153</value>
+  </data>
+  <data name="labelLastAccessTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 31</value>
+  </data>
+  <data name="labelLastAccessTime.Text" xml:space="preserve">
+    <value>Access Time</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 88</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Text" xml:space="preserve">
+    <value>Set to Now</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.ToolTip" xml:space="preserve">
+    <value>Set file Creation Time to local current time</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 121</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Text" xml:space="preserve">
+    <value>Set to Now</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.ToolTip" xml:space="preserve">
+    <value>Set file Modified Time to local current time</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 153</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Text" xml:space="preserve">
+    <value>Set to Now</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.ToolTip" xml:space="preserve">
+    <value>Set file Access Time to local current time</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>405, 153</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Text" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.ToolTip" xml:space="preserve">
+    <value>Set the file's 'Access Time' property</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>405, 121</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Text" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.ToolTip" xml:space="preserve">
+    <value>Set the file's 'Modified Time' property</value>
+  </data>
+  <data name="buttonCreationTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>405, 88</value>
+  </data>
+  <data name="buttonCreationTimeSet.Text" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="buttonCreationTimeSet.ToolTip" xml:space="preserve">
+    <value>Set the file's 'Creation Time' property</value>
+  </data>
+  <data name="buttonStartFile.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="buttonStartFile.ToolTip" xml:space="preserve">
+    <value>Open file with Windows Shell</value>
+  </data>
+  <data name="textBox_ManualPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 12</value>
+  </data>
+  <data name="textBox_ManualPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 27</value>
+  </data>
+  <data name="textBox_ManualPath.ToolTip" xml:space="preserve">
+    <value>Manual file path input box</value>
+  </data>
+  <data name="button_ManualPath.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="checkBoxHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="checkBoxHidden.Text" xml:space="preserve">
+    <value>Hidden File</value>
+  </data>
+  <data name="checkBoxHidden.ToolTip" xml:space="preserve">
+    <value>Set file attribute: Hidden
+File is invisible when "Show hidden files" is disabled.
+(When visible, its icon becomes semi-transparent.)</value>
+  </data>
+  <data name="checkBoxArchive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 31</value>
+  </data>
+  <data name="checkBoxArchive.Text" xml:space="preserve">
+    <value>Archive File</value>
+  </data>
+  <data name="checkBoxArchive.ToolTip" xml:space="preserve">
+    <value>Set file attribute: Archive
+Typically, this does not affect normal file usage.</value>
+  </data>
+  <data name="checkBoxReadOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 218</value>
+  </data>
+  <data name="checkBoxReadOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 31</value>
+  </data>
+  <data name="checkBoxReadOnly.Text" xml:space="preserve">
+    <value>Read-only File</value>
+  </data>
+  <data name="checkBoxReadOnly.ToolTip" xml:space="preserve">
+    <value>Set file attribute: Read-only
+The file can be read but not written to.</value>
+  </data>
+  <data name="checkBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 183</value>
+  </data>
+  <data name="checkBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="checkBoxSystem.Text" xml:space="preserve">
+    <value>System File</value>
+  </data>
+  <data name="checkBoxSystem.ToolTip" xml:space="preserve">
+    <value>Set file attribute: System
+Once set, the "Hidden" option in the file Properties window becomes locked.
+(Unless "Hide protected operating system files" in Folder Options is disabled
+and "Show hidden files" is enabled, the file remains invisible.)</value>
+  </data>
+  <data name="checkBoxOffline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 221</value>
+  </data>
+  <data name="checkBoxOffline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 31</value>
+  </data>
+  <data name="checkBoxOffline.Text" xml:space="preserve">
+    <value>Offline File</value>
+  </data>
+  <data name="checkBoxOffline.ToolTip" xml:space="preserve">
+    <value>Set file attribute: Offline
+Makes the file unavailable.
+(Under normal circumstances, this does not affect file usage.)</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 184</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 31</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Text" xml:space="preserve">
+    <value>Not Content Indexed</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.ToolTip" xml:space="preserve">
+    <value>Set file attribute: Not Content Indexed</value>
+  </data>
+  <data name="buttonCover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 568</value>
+  </data>
+  <data name="buttonCover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 41</value>
+  </data>
+  <data name="buttonCover.Text" xml:space="preserve">
+    <value>OW</value>
+  </data>
+  <data name="buttonCover.ToolTip" xml:space="preserve">
+    <value>Overwrite all content in the source file</value>
+  </data>
+  <data name="buttonAppend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 568</value>
+  </data>
+  <data name="buttonAppend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 41</value>
+  </data>
+  <data name="buttonAppend.Text" xml:space="preserve">
+    <value>Append</value>
+  </data>
+  <data name="buttonAppend.ToolTip" xml:space="preserve">
+    <value>Append text to the end of the file</value>
+  </data>
+  <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 41</value>
+  </data>
+  <data name="buttonRead.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="buttonRead.ToolTip" xml:space="preserve">
+    <value>Read and display file content as Unicode</value>
+  </data>
+  <data name="checkBoxBinaryFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 575</value>
+  </data>
+  <data name="checkBoxBinaryFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 31</value>
+  </data>
+  <data name="checkBoxBinaryFile.Text" xml:space="preserve">
+    <value>Binary File (Read-only for now, saving is disabled)</value>
+  </data>
+  <data name="button_FilesOperationPlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>687, 494</value>
+  </data>
+  <data name="button_FilesOperationPlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 76</value>
+  </data>
+  <data name="button_FilesOperationPlus.Text" xml:space="preserve">
+    <value>Advanced Mode</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>File Operations</value>
+  </data>
+</root>

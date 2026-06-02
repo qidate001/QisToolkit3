@@ -1,0 +1,1318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;textBoxCreationTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBoxLastWriteTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 27</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBox_ManualPath.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="button_FilesOperationPlus.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="toolStripMenuItem_Automatic.Text" xml:space="preserve">
+    <value>以资源管理器打开文件</value>
+  </data>
+  <data name="buttonClearFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonRead.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="richTextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelLastAccessTime.Name" xml:space="preserve">
+    <value>labelLastAccessTime</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteFile.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="buttonClearFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 41</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSetNow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSetNow.Name" xml:space="preserve">
+    <value>buttonLastAccessTimeSetNow</value>
+  </data>
+  <data name="button_ManualPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>445, 12</value>
+  </data>
+  <data name="textBoxCreationTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 88</value>
+  </data>
+  <data name="labelFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 8</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNotContentIndexed.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonStartFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 42</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSet.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelLastWriteTime.Name" xml:space="preserve">
+    <value>labelLastWriteTime</value>
+  </data>
+  <data name="button_FilesOperationPlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 36</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBox_ManualPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="contextMenuStrip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelLastAccessTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 148</value>
+  </data>
+  <data name="&gt;&gt;checkBoxArchive.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBoxLastWriteTime.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReadOnly.Name" xml:space="preserve">
+    <value>checkBoxReadOnly</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOffline.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_ManualPath.Name" xml:space="preserve">
+    <value>textBox_ManualPath</value>
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="labelLastWriteTime.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxArchive.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastAccessTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonRead.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxReadOnly.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelLastWriteTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 31</value>
+  </data>
+  <data name="&gt;&gt;labelCreationTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCover.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkBoxSystem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonDeleteFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;labelCreationTime.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 31</value>
+  </data>
+  <data name="labelLastWriteTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 116</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="checkBoxHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="labelCreationTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonReadFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFile.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;buttonAppend.Name" xml:space="preserve">
+    <value>buttonAppend</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteFile.Name" xml:space="preserve">
+    <value>buttonDeleteFile</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSetNow.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxLastAccessTime.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFileName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 76</value>
+  </data>
+  <data name="labelFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="checkBoxReadOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="textBoxCreationTime.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_ManualPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 28</value>
+  </data>
+  <data name="buttonStartFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSetNow.Name" xml:space="preserve">
+    <value>buttonLastWriteTimeSetNow</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxArchive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelLastWriteTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastWriteTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxHidden.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonCover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSetNow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOffline.Name" xml:space="preserve">
+    <value>checkBoxOffline</value>
+  </data>
+  <data name="buttonCover.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="textBox_ManualPath.ToolTip" xml:space="preserve">
+    <value>手动输入文件路径框</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSystem.Name" xml:space="preserve">
+    <value>checkBoxSystem</value>
+  </data>
+  <data name="checkBoxArchive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 218</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;buttonRead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>文本文件 (*.txt)|*.txt|所有文件 (*.*)|*.*</value>
+  </data>
+  <data name="button_FilesOperationPlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 568</value>
+  </data>
+  <data name="textBoxCreationTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 27</value>
+  </data>
+  <data name="&gt;&gt;buttonCover.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="textBoxLastAccessTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Text" xml:space="preserve">
+    <value>设置为现在</value>
+  </data>
+  <data name="&gt;&gt;textBox_ManualPath.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>所有文件 (*.*)|*.*</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSet.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="buttonRead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="button_FilesOperationPlus.Text" xml:space="preserve">
+    <value>高级模式</value>
+  </data>
+  <data name="button_ManualPath.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNotContentIndexed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxReadOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 218</value>
+  </data>
+  <data name="checkBoxBinaryFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 575</value>
+  </data>
+  <data name="&gt;&gt;checkBoxArchive.Name" xml:space="preserve">
+    <value>checkBoxArchive</value>
+  </data>
+  <data name="buttonCreationTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 88</value>
+  </data>
+  <data name="checkBoxOffline.Text" xml:space="preserve">
+    <value>脱机文件</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Text" xml:space="preserve">
+    <value>设置为现在</value>
+  </data>
+  <data name="buttonReadFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 42</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="buttonStartFile.ToolTip" xml:space="preserve">
+    <value>使用 WindowsShell 打开文件</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOffline.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastAccessTime.Name" xml:space="preserve">
+    <value>textBoxLastAccessTime</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Name" xml:space="preserve">
+    <value>labelFileName</value>
+  </data>
+  <data name="checkBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 183</value>
+  </data>
+  <data name="checkBoxOffline.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 121</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSetNow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>804, 616</value>
+  </data>
+  <data name="buttonCover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 41</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="checkBoxBinaryFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastAccessTime.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="textBox_ManualPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBox_ManualPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ManualPath.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;textBoxCreationTime.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="textBoxLastWriteTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonLastAccessTimeSet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonDeleteFile.Text" xml:space="preserve">
+    <value>删除文件</value>
+  </data>
+  <data name="checkBoxBinaryFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 31</value>
+  </data>
+  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 312</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBinaryFile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxOffline.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonRead.Name" xml:space="preserve">
+    <value>buttonRead</value>
+  </data>
+  <data name="labelCreationTime.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkBoxHidden.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSet.Name" xml:space="preserve">
+    <value>buttonLastWriteTimeSet</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReadOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem_Manual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastWriteTime.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSetNow.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;button_FilesOperationPlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_ManualPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBoxArchive.ToolTip" xml:space="preserve">
+    <value>设置文件属性：（可以）存档文件
+正常情况下不影响文件正常使用</value>
+  </data>
+  <data name="buttonCreationTimeSet.ToolTip" xml:space="preserve">
+    <value>设置文件的 “创建时间” 属性</value>
+  </data>
+  <data name="buttonAppend.ToolTip" xml:space="preserve">
+    <value>将文本追加至文件末尾</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.ToolTip" xml:space="preserve">
+    <value>设置文件属性：无内容索引
+</value>
+  </data>
+  <data name="buttonAppend.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="checkBoxReadOnly.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxReadOnly.ToolTip" xml:space="preserve">
+    <value>设置文件属性：只读文件
+该文件仅可读取，不可写入</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastWriteTime.Name" xml:space="preserve">
+    <value>textBoxLastWriteTime</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonCreationTimeSet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBinaryFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxOffline.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="buttonReadFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBoxBinaryFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonCover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="labelLastAccessTime.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>文件操作</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 184</value>
+  </data>
+  <data name="buttonClearFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonAppend.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSystem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxHidden.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="textBoxCreationTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelLastWriteTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelLastWriteTime.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ManualPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip.Name" xml:space="preserve">
+    <value>contextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem_Automatic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_FilesOperationPlus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelLastAccessTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FilesOperation</value>
+  </data>
+  <data name="checkBoxHidden.Text" xml:space="preserve">
+    <value>隐藏文件</value>
+  </data>
+  <data name="button_ManualPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonReadFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 568</value>
+  </data>
+  <data name="buttonAppend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 28</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 252</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Text" xml:space="preserve">
+    <value>无内容索引文件</value>
+  </data>
+  <data name="&gt;&gt;checkBoxHidden.Name" xml:space="preserve">
+    <value>checkBoxHidden</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.ToolTip" xml:space="preserve">
+    <value>设置文件的 “访问时间” 属性</value>
+  </data>
+  <data name="labelLastWriteTime.Text" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Text" xml:space="preserve">
+    <value>设置为现在</value>
+  </data>
+  <data name="checkBoxHidden.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelLastWriteTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonCover.Name" xml:space="preserve">
+    <value>buttonCover</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.ToolTip" xml:space="preserve">
+    <value>设置文件的 “修改时间” 属性</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSet.Name" xml:space="preserve">
+    <value>buttonLastAccessTimeSet</value>
+  </data>
+  <data name="labelLastAccessTime.Text" xml:space="preserve">
+    <value>访问时间</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 28</value>
+  </data>
+  <data name="labelLastAccessTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 14pt</value>
+  </data>
+  <data name="buttonRead.ToolTip" xml:space="preserve">
+    <value>将文件内的内容以 Unicode 读取展示</value>
+  </data>
+  <data name="buttonLastWriteTimeSet.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonCreationTimeSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 28</value>
+  </data>
+  <data name="buttonStartFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="textBoxLastWriteTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReadOnly.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxArchive.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxOffline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 221</value>
+  </data>
+  <data name="ToolStripMenuItem_ReSet.Text" xml:space="preserve">
+    <value>重置已选文件选项</value>
+  </data>
+  <data name="checkBoxReadOnly.Text" xml:space="preserve">
+    <value>只读文件</value>
+  </data>
+  <data name="buttonReadFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonReadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 41</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSetNow.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="buttonRead.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;textBoxCreationTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxReadOnly.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBoxReadOnly.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button_ManualPath.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="buttonAppend.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAppend.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonRead.Text" xml:space="preserve">
+    <value>读取</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFile.Name" xml:space="preserve">
+    <value>buttonClearFile</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 183</value>
+  </data>
+  <data name="labelLastAccessTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 121</value>
+  </data>
+  <data name="checkBoxOffline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSet.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="buttonDeleteFile.ToolTip" xml:space="preserve">
+    <value>删除选定文件（不可撤销）</value>
+  </data>
+  <data name="button_FilesOperationPlus.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelCreationTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="checkBoxArchive.Text" xml:space="preserve">
+    <value>存档文件</value>
+  </data>
+  <data name="buttonDeleteFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxArchive.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="checkBoxArchive.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBox_ManualPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelLastAccessTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonCreationTimeSetNow.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonLastWriteTimeSetNow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 153</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAppend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ManualPath.Name" xml:space="preserve">
+    <value>button_ManualPath</value>
+  </data>
+  <data name="checkBoxBinaryFile.Text" xml:space="preserve">
+    <value>二进制文件（暂时仅支持阅读，不支持保存修改）</value>
+  </data>
+  <data name="&gt;&gt;buttonReadFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox_ManualPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 27</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonRead.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSystem.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="checkBoxOffline.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonAppend.Text" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.ToolTip" xml:space="preserve">
+    <value>该文件的 “修改时间” 属性为本地当前时间点</value>
+  </data>
+  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="textBoxLastAccessTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 153</value>
+  </data>
+  <data name="labelFileName.ToolTip" xml:space="preserve">
+    <value>点击选择文件</value>
+  </data>
+  <data name="button_ManualPath.Text" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="ToolStripMenuItem_Manual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 24</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxBinaryFile.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="checkBoxBinaryFile.ToolTip" xml:space="preserve">
+    <value>以二进制格式读取文件内容</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 28</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOffline.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelLastAccessTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 31</value>
+  </data>
+  <data name="labelCreationTime.Text" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="checkBoxArchive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonClearFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="checkBoxSystem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBoxSystem.ToolTip" xml:space="preserve">
+    <value>设置文件属性：系统文件
+使用后，右键属性窗口中的 隐藏 选项锁定
+（在不取消勾选 选项文件夹选项 下的 隐藏受保护的操作系统文件 项
+与 未勾选显示隐藏文件 的情况下，该文件不可见）</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSet.Name" xml:space="preserve">
+    <value>buttonCreationTimeSet</value>
+  </data>
+  <data name="labelCreationTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 14pt</value>
+  </data>
+  <data name="&gt;&gt;buttonReadFile.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="checkBoxReadOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastAccessTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxHidden.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;checkBoxHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFileName.Text" xml:space="preserve">
+    <value>文件：暂未选择文件 (点击选择)</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonClearFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 42</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 88</value>
+  </data>
+  <data name="checkBoxSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonClearFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;labelCreationTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_ManualPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelCreationTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 31</value>
+  </data>
+  <data name="buttonDeleteFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="buttonCover.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
+  </data>
+  <data name="buttonCover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 568</value>
+  </data>
+  <data name="labelLastWriteTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonCreationTimeSet.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="checkBoxHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBinaryFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="buttonAppend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 568</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSetNow.Name" xml:space="preserve">
+    <value>buttonCreationTimeSetNow</value>
+  </data>
+  <data name="buttonStartFile.Text" xml:space="preserve">
+    <value>打开文件</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem_ReSet.Name" xml:space="preserve">
+    <value>ToolStripMenuItem_ReSet</value>
+  </data>
+  <data name="labelLastWriteTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 14pt</value>
+  </data>
+  <data name="&gt;&gt;buttonStartFile.Name" xml:space="preserve">
+    <value>buttonStartFile</value>
+  </data>
+  <data name="&gt;&gt;button_FilesOperationPlus.Name" xml:space="preserve">
+    <value>button_FilesOperationPlus</value>
+  </data>
+  <data name="checkBoxHidden.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="labelCreationTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 83</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBinaryFile.Name" xml:space="preserve">
+    <value>checkBoxBinaryFile</value>
+  </data>
+  <data name="checkBoxArchive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 31</value>
+  </data>
+  <data name="buttonStartFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonDeleteFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonCover.ToolTip" xml:space="preserve">
+    <value>覆盖源文件内的所有内容</value>
+  </data>
+  <data name="textBoxLastAccessTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 27</value>
+  </data>
+  <data name="&gt;&gt;labelCreationTime.Name" xml:space="preserve">
+    <value>labelCreationTime</value>
+  </data>
+  <data name="labelCreationTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxCreationTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;buttonStartFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonStartFile.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonReadFile.Name" xml:space="preserve">
+    <value>buttonReadFile</value>
+  </data>
+  <data name="checkBoxBinaryFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;button_FilesOperationPlus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNotContentIndexed.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="textBox_ManualPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 12</value>
+  </data>
+  <data name="buttonAppend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 41</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem_ReSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 41</value>
+  </data>
+  <data name="buttonLastWriteTimeSetNow.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonCreationTimeSet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 153</value>
+  </data>
+  <data name="&gt;&gt;buttonAppend.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
+    <value>richTextBox</value>
+  </data>
+  <data name="buttonDeleteFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 41</value>
+  </data>
+  <data name="toolStripMenuItem_Automatic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 24</value>
+  </data>
+  <data name="&gt;&gt;buttonStartFile.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="buttonReadFile.Text" xml:space="preserve">
+    <value>阅读文件</value>
+  </data>
+  <data name="buttonDeleteFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 42</value>
+  </data>
+  <data name="buttonReadFile.ToolTip" xml:space="preserve">
+    <value>以 Unicode 编码阅读该文件（过大文件不生效）</value>
+  </data>
+  <data name="button_ManualPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 25</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNotContentIndexed.Name" xml:space="preserve">
+    <value>checkBoxNotContentIndexed</value>
+  </data>
+  <data name="checkBoxNotContentIndexed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelLastAccessTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem_Manual.Name" xml:space="preserve">
+    <value>ToolStripMenuItem_Manual</value>
+  </data>
+  <data name="buttonClearFile.ToolTip" xml:space="preserve">
+    <value>清空选定文件内所有数据（不可撤销）</value>
+  </data>
+  <data name="buttonLastAccessTimeSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 28</value>
+  </data>
+  <data name="buttonCover.Text" xml:space="preserve">
+    <value>覆盖</value>
+  </data>
+  <data name="ToolStripMenuItem_ReSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 24</value>
+  </data>
+  <data name="buttonStartFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 41</value>
+  </data>
+  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 31</value>
+  </data>
+  <data name="labelFileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 14pt</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCreationTimeSetNow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxOffline.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonCreationTimeSet.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="&gt;&gt;textBoxLastWriteTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxArchive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonLastAccessTimeSetNow.ToolTip" xml:space="preserve">
+    <value>该文件的 “访问时间” 属性为本地当前时间点</value>
+  </data>
+  <data name="&gt;&gt;textBoxCreationTime.Name" xml:space="preserve">
+    <value>textBoxCreationTime</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem_Automatic.Name" xml:space="preserve">
+    <value>toolStripMenuItem_Automatic</value>
+  </data>
+  <data name="checkBoxBinaryFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="textBoxLastWriteTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 121</value>
+  </data>
+  <data name="&gt;&gt;labelLastAccessTime.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="ToolStripMenuItem_Manual.Text" xml:space="preserve">
+    <value>手动输入文件路径</value>
+  </data>
+  <data name="labelLastWriteTime.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_FilesOperationPlus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Name" xml:space="preserve">
+    <value>saveFileDialog</value>
+  </data>
+  <data name="&gt;&gt;buttonStartFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLastAccessTimeSetNow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxLastAccessTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonCreationTimeSetNow.ToolTip" xml:space="preserve">
+    <value>该文件的 “创建时间” 属性为本地当前时间点</value>
+  </data>
+  <data name="buttonRead.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonCover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxOffline.ToolTip" xml:space="preserve">
+    <value>设置文件属性：脱机
+该文件处于不可用
+（通常情况下，不影响文件使用）</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReadOnly.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="checkBoxHidden.ToolTip" xml:space="preserve">
+    <value>设置文件属性：隐藏文件
+在不勾选显示隐藏文件时该文件不可见
+（可见情况下，图标会变半透明）</value>
+  </data>
+  <data name="labelLastAccessTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxSystem.Text" xml:space="preserve">
+    <value>系统文件</value>
+  </data>
+  <data name="&gt;&gt;buttonReadFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonClearFile.Text" xml:space="preserve">
+    <value>清空文件</value>
+  </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>623, 5</value>
+  </metadata>
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>207, 5</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>44</value>
+  </metadata>
+  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>18, 5</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>403, 5</value>
+  </metadata>
+</root>

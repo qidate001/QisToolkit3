@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_DeBug2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button_B.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_C.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_DeBug1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>黑体, 12pt</value>
+  </data>
+  <data name="labelQuestionCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button_A.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 25pt</value>
+  </data>
+  <data name="&gt;&gt;button_A.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_DeBug1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label_DeBug1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="button_C.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;labelQuestionCount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;button_A.Name" xml:space="preserve">
+    <value>button_A</value>
+  </data>
+  <data name="button_B.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="labelQuestionCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_DeBug2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label_DeBug1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 20</value>
+  </data>
+  <data name="button_C.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelQuestionCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_D.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 25pt</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Topic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label_Topic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="&gt;&gt;button_A.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;button_C.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelQuestionCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 20pt</value>
+  </data>
+  <data name="button_C.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Topic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1198, 345</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>StrangeQuestionAndAnswerMain</value>
+  </data>
+  <data name="button_C.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 25pt</value>
+  </data>
+  <data name="&gt;&gt;label_Topic.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_C.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 567</value>
+  </data>
+  <data name="label_Topic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 30pt</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_C.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button_B.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 471</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="button_A.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 375</value>
+  </data>
+  <data name="button_A.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;labelQuestionCount.Name" xml:space="preserve">
+    <value>labelQuestionCount</value>
+  </data>
+  <data name="label_Topic.Text" xml:space="preserve">
+    <value>题目</value>
+  </data>
+  <data name="&gt;&gt;button_D.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label_DeBug1.Text" xml:space="preserve">
+    <value>题目Id: </value>
+  </data>
+  <data name="button_D.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="button_A.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label_Topic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_DeBug2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1006, 707</value>
+  </data>
+  <data name="&gt;&gt;button_D.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelQuestionCount.Text" xml:space="preserve">
+    <value>1/10</value>
+  </data>
+  <data name="button_D.Text" xml:space="preserve">
+    <value>D. 等待初始化</value>
+  </data>
+  <data name="label_Topic.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_A.Text" xml:space="preserve">
+    <value>A. 等待初始化</value>
+  </data>
+  <data name="&gt;&gt;button_C.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelQuestionCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label_DeBug2.Text" xml:space="preserve">
+    <value>0 | 0 | 0 | 0 | 0</value>
+  </data>
+  <data name="label_DeBug2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 20</value>
+  </data>
+  <data name="&gt;&gt;button_B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_A.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_B.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelQuestionCount.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug1.Name" xml:space="preserve">
+    <value>label_DeBug1</value>
+  </data>
+  <data name="button_D.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_Topic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 17</value>
+  </data>
+  <data name="labelQuestionCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 45</value>
+  </data>
+  <data name="label_DeBug2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="button_D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 662</value>
+  </data>
+  <data name="&gt;&gt;button_B.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1219, 770</value>
+  </data>
+  <data name="label_DeBug2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>黑体, 12pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="label_DeBug1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1006, 738</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>奇葩问答</value>
+  </data>
+  <data name="&gt;&gt;label_Topic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelQuestionCount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_C.Name" xml:space="preserve">
+    <value>button_C</value>
+  </data>
+  <data name="&gt;&gt;button_D.Name" xml:space="preserve">
+    <value>button_D</value>
+  </data>
+  <data name="button_B.Text" xml:space="preserve">
+    <value>B. 等待初始化</value>
+  </data>
+  <data name="labelQuestionCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 716</value>
+  </data>
+  <data name="button_B.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_D.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_D.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="label_DeBug1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_B.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 25pt</value>
+  </data>
+  <data name="button_C.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 91</value>
+  </data>
+  <data name="button_A.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 91</value>
+  </data>
+  <data name="button_A.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_Topic.Name" xml:space="preserve">
+    <value>label_Topic</value>
+  </data>
+  <data name="button_C.Text" xml:space="preserve">
+    <value>C. 等待初始化</value>
+  </data>
+  <data name="label_DeBug1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_DeBug2.Name" xml:space="preserve">
+    <value>label_DeBug2</value>
+  </data>
+  <data name="button_B.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 91</value>
+  </data>
+  <data name="button_D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 91</value>
+  </data>
+  <data name="&gt;&gt;button_B.Name" xml:space="preserve">
+    <value>button_B</value>
+  </data>
+  <data name="button_A.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="label_DeBug2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button_B.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
