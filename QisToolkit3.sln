@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uninstall_QisToolkit3", "Uninstall_QisToolkit3\Uninstall_QisToolkit3.csproj", "{5C1CD8F2-3588-497C-A05A-99F20F5776D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{BEEE5EFB-1268-4DFD-B094-BB1BE31D270C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEEE5EFB-1268-4DFD-B094-BB1BE31D270C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEEE5EFB-1268-4DFD-B094-BB1BE31D270C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1CD8F2-3588-497C-A05A-99F20F5776D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1CD8F2-3588-497C-A05A-99F20F5776D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1CD8F2-3588-497C-A05A-99F20F5776D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1CD8F2-3588-497C-A05A-99F20F5776D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
