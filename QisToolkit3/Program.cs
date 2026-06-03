@@ -33,6 +33,7 @@ namespace QisToolkit3
         private const int SW_MAXIMIZE = 3;
         private const int SW_SHOWMAXIMIZED = 3;
         private const int SW_RESTORE = 9;
+        private const int SW_HIDE = 0;
 
         /// <summary>
         ///  The main entry point for the application.
@@ -40,6 +41,10 @@ namespace QisToolkit3
         [STAThread]
         static void Main(string[] args)
         {
+            // 检查 -H 或 -Hide 参数
+            bool hideWindow = args.Contains("-H", StringComparer.OrdinalIgnoreCase) ||
+                              args.Contains("-Hide", StringComparer.OrdinalIgnoreCase);
+
             if (!IsRunAsAdmin())
             {
                 Log.Warn("此软件需要管理员权限才可运行。");
@@ -59,10 +64,12 @@ namespace QisToolkit3
             Log.Info($"文件夹路径: {Qi.QisToolkit3_Datas.actualDirectory}");
             Log.Info($"进程PID: {Qi.QisToolkit3_Datas.processId} 用户名: {Qi.QisToolkit3_Datas.owner}");
             Log.Info($"系统级权限判断: {Qi.QisToolkit3_Datas.isSystem}");
-
+            Log.Info($"隐藏模式: {hideWindow}");
+            
             // 加载
             Qi.QisToolkit3_Datas.LoadDatas();
 
+            Log.Info("=== 加载数据 ===");
             Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.IsRunMinSudo}");
 
             // 注册编码提供程序
@@ -73,10 +80,14 @@ namespace QisToolkit3
             ApplicationConfiguration.Initialize();
 
             // 检查是否是 -C 系列参数（命令执行模式）
-            if (args.Length > 0 && IsCommandOnlyMode(args[0]))
+            int cmdIndex = Array.FindIndex(
+                args,
+                x => IsCommandOnlyMode(x)
+            );
+
+            if (cmdIndex >= 0)
             {
-                // 命令行执行模式（执行后自动退出）
-                RunCommandOnlyMode(args);
+                RunCommandOnlyMode(args, hideWindow);
                 return;
             }
 
@@ -87,13 +98,22 @@ namespace QisToolkit3
 
             if (startupForm != null && !DeBug_Command)
             {
+                if (hideWindow)
+                {
+                    // 隐藏窗口模式：不显示主窗体
+                    // 静默运行，不调用 Application.Run
+                    // 可以选择在这里执行其他后台任务，或者直接退出
+                    // 由于没有窗口需要显示，直接返回
+                    BufferedLogger.Shutdown();
+                    return;
+                }
                 Application.Run(startupForm);
             }
 
             // 命令行模式
             else
             {
-                RunCommandLineMode();
+                RunCommandLineMode(hideWindow);
             }
         }
 
@@ -109,20 +129,40 @@ namespace QisToolkit3
         /// <summary>
         /// 命令执行模式（执行后自动退出）
         /// </summary>
-        static void RunCommandOnlyMode(string[] args)
+        static void RunCommandOnlyMode(string[] args, bool hideWindow)
         {
             // 获取参数（跳过第一个命令模式参数）
-            string commandArg = args.Length > 1 ? args[1] : "";
+            int cmdIndex = Array.FindIndex(
+                args,
+                x => IsCommandOnlyMode(x)
+            );
+
+            string commandArg = "";
+
+            if (cmdIndex >= 0 && cmdIndex + 1 < args.Length)
+            {
+                commandArg = args[cmdIndex + 1];
+            }
 
             if (string.IsNullOrEmpty(commandArg))
             {
                 System.Console.WriteLine("错误: 请提供要执行的命令");
-                System.Console.WriteLine("用法: QisToolkit3.exe -C \"命令1 | 命令2 | 命令3\"");
+                System.Console.WriteLine("用法: QisToolkit3.exe -AC \"命令1 | 命令2 | 命令3\"");
                 return;
             }
 
             // 分配控制台（用于显示输出）
             AllocConsole();
+
+            // 如果需要隐藏窗口，隐藏控制台
+            if (hideWindow)
+            {
+                IntPtr consoleWindow = GetConsoleWindow();
+                if (consoleWindow != IntPtr.Zero)
+                {
+                    ShowWindow(consoleWindow, SW_HIDE);
+                }
+            }
 
             try
             {
@@ -131,11 +171,14 @@ namespace QisToolkit3
                 System.Console.InputEncoding = Encoding.GetEncoding("GBK");
                 System.Console.Title = "QisToolkit3 - 命令执行模式";
 
-                // 最大化窗口
-                IntPtr consoleWindow = GetConsoleWindow();
-                if (consoleWindow != IntPtr.Zero)
+                // 如果不隐藏窗口，最大化显示
+                if (!hideWindow)
                 {
-                    ShowWindow(consoleWindow, SW_MAXIMIZE);
+                    IntPtr consoleWindow = GetConsoleWindow();
+                    if (consoleWindow != IntPtr.Zero)
+                    {
+                        ShowWindow(consoleWindow, SW_MAXIMIZE);
+                    }
                 }
 
                 // 解析多命令（用 | 分割，支持引号内的 | 不被分割）
@@ -156,8 +199,10 @@ namespace QisToolkit3
                     string cmd = commands[i].Trim();
                     if (string.IsNullOrEmpty(cmd)) continue;
 
+                    string text = $"执行 {i + 1}/{commands.Length} {cmd}";
+                    Log.Info($"[命令执行模式] [执行命令] {text}");
                     System.Console.ForegroundColor = ConsoleColor.Cyan;
-                    System.Console.WriteLine($"[执行 {i + 1}/{commands.Length}] {cmd}");
+                    System.Console.WriteLine(text);
                     System.Console.ResetColor();
 
                     var result = handler.ExecuteCommand(cmd);
@@ -168,6 +213,7 @@ namespace QisToolkit3
                     }
                     else
                     {
+                        Log.Err($"命令执行失败: {result.Response}");
                         System.Console.ForegroundColor = ConsoleColor.Red;
                         System.Console.WriteLine($"命令执行失败: {result.Response}");
                         System.Console.ResetColor();
@@ -176,6 +222,7 @@ namespace QisToolkit3
                     // 输出命令的响应
                     if (!string.IsNullOrEmpty(result.Response))
                     {
+                        Log.Info($"[命令执行模式] {result.Response}");
                         System.Console.WriteLine(result.Response);
                     }
                     System.Console.WriteLine();
@@ -186,10 +233,12 @@ namespace QisToolkit3
                 System.Console.WriteLine("==========================================");
 
                 // 自动退出，不等待按键
+                BufferedLogger.Shutdown();
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine($"执行出错: {ex.Message}");
+                Log.Err($"执行出错: {ex.Message}");
             }
             finally
             {
@@ -261,9 +310,16 @@ namespace QisToolkit3
                 Log.Info($"启动参数：\n{string.Join("\n", args.Select(arg => $"[ARGS] {arg}"))}");
             }
 
-            // 解析参数
+            // 解析参数（跳过 -H 参数）
             for (int i = 0; i < args.Length; i++)
             {
+                // 跳过 -H 和 -Hide
+                if (args[i].Equals("-H", StringComparison.OrdinalIgnoreCase) ||
+                    args[i].Equals("-Hide", StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
                 switch (args[i])
                 {
                     case "-o":
@@ -393,9 +449,19 @@ namespace QisToolkit3
                    args[0].Equals("-command", StringComparison.OrdinalIgnoreCase);
         }
 
-        static void RunCommandLineMode()
+        static void RunCommandLineMode(bool hideWindow = false)
         {
             AllocConsole();
+
+            // 如果需要隐藏窗口，隐藏控制台
+            if (hideWindow)
+            {
+                IntPtr consoleWindow = GetConsoleWindow();
+                if (consoleWindow != IntPtr.Zero)
+                {
+                    ShowWindow(consoleWindow, SW_HIDE);
+                }
+            }
 
             try
             {

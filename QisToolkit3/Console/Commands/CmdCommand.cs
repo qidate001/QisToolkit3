@@ -21,6 +21,8 @@ public class CmdCommand : ICommand
 
         string command = string.Join(" ", args);
 
+        //Log.Info($"[命令行模式] [CMD] 命令：{command}");
+
         try
         {
             //System.Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -51,7 +53,7 @@ public class CmdCommand : ICommand
                     string line = process.StandardOutput.ReadLine();
                     if (line != null)
                     {
-                        System.Console.WriteLine(line);
+                        Console.WriteLine(line);
                     }
                 }
 
@@ -61,9 +63,9 @@ public class CmdCommand : ICommand
                     string line = process.StandardError.ReadLine();
                     if (line != null)
                     {
-                        System.Console.ForegroundColor = ConsoleColor.Yellow;
-                        System.Console.WriteLine(line);
-                        System.Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(line);
+                        Console.ResetColor();
                     }
                 }
 
