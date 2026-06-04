@@ -37,11 +37,6 @@
             comboBoxLanguage = new ComboBox();
             label4 = new Label();
             button_ExtendedFeatures = new Button();
-            label2 = new Label();
-            label1 = new Label();
-            button_DownloadForQQ = new Button();
-            button_DownloadForLan = new Button();
-            button_DownloadForBaidu = new Button();
             checkBox_DarkMode = new CheckBox();
             checkBox_ComputerNoviceMode = new CheckBox();
             buttonOut = new Button();
@@ -57,8 +52,19 @@
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
             tabPage3 = new TabPage();
+            label7 = new Label();
+            label6 = new Label();
+            button_Gmail = new Button();
+            button_QQEmail = new Button();
+            label5 = new Label();
+            button_DownloadForGitHub = new Button();
             label3 = new Label();
-            button1 = new Button();
+            button_GitHub = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            button_DownloadForQQ = new Button();
+            button_DownloadForLan = new Button();
+            button_DownloadForBaidu = new Button();
             tabControlOptions.SuspendLayout();
             tabPageHead.SuspendLayout();
             tabPageFilesOperation.SuspendLayout();
@@ -89,11 +95,6 @@
             tabPageHead.Controls.Add(comboBoxLanguage);
             tabPageHead.Controls.Add(label4);
             tabPageHead.Controls.Add(button_ExtendedFeatures);
-            tabPageHead.Controls.Add(label2);
-            tabPageHead.Controls.Add(label1);
-            tabPageHead.Controls.Add(button_DownloadForQQ);
-            tabPageHead.Controls.Add(button_DownloadForLan);
-            tabPageHead.Controls.Add(button_DownloadForBaidu);
             tabPageHead.Controls.Add(checkBox_DarkMode);
             tabPageHead.Controls.Add(checkBox_ComputerNoviceMode);
             tabPageHead.Controls.Add(buttonOut);
@@ -146,40 +147,6 @@
             button_ExtendedFeatures.Name = "button_ExtendedFeatures";
             button_ExtendedFeatures.UseVisualStyleBackColor = true;
             button_ExtendedFeatures.Click += button_ExtendedFeatures_Click;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            // 
-            // button_DownloadForQQ
-            // 
-            resources.ApplyResources(button_DownloadForQQ, "button_DownloadForQQ");
-            button_DownloadForQQ.FlatAppearance.BorderSize = 0;
-            button_DownloadForQQ.Name = "button_DownloadForQQ";
-            button_DownloadForQQ.UseVisualStyleBackColor = true;
-            button_DownloadForQQ.Click += button_DownloadForQQ_Click;
-            // 
-            // button_DownloadForLan
-            // 
-            resources.ApplyResources(button_DownloadForLan, "button_DownloadForLan");
-            button_DownloadForLan.FlatAppearance.BorderSize = 0;
-            button_DownloadForLan.Name = "button_DownloadForLan";
-            button_DownloadForLan.UseVisualStyleBackColor = true;
-            button_DownloadForLan.Click += button_DownloadForLan_Click;
-            // 
-            // button_DownloadForBaidu
-            // 
-            resources.ApplyResources(button_DownloadForBaidu, "button_DownloadForBaidu");
-            button_DownloadForBaidu.FlatAppearance.BorderSize = 0;
-            button_DownloadForBaidu.Name = "button_DownloadForBaidu";
-            button_DownloadForBaidu.UseVisualStyleBackColor = true;
-            button_DownloadForBaidu.Click += button_DownloadForBaidu_Click;
             // 
             // checkBox_DarkMode
             // 
@@ -287,21 +254,109 @@
             // tabPage3
             // 
             resources.ApplyResources(tabPage3, "tabPage3");
+            tabPage3.Controls.Add(label7);
+            tabPage3.Controls.Add(label6);
+            tabPage3.Controls.Add(button_Gmail);
+            tabPage3.Controls.Add(button_QQEmail);
+            tabPage3.Controls.Add(label5);
+            tabPage3.Controls.Add(button_DownloadForGitHub);
             tabPage3.Controls.Add(label3);
-            tabPage3.Controls.Add(button1);
+            tabPage3.Controls.Add(button_GitHub);
+            tabPage3.Controls.Add(label2);
+            tabPage3.Controls.Add(label1);
+            tabPage3.Controls.Add(button_DownloadForQQ);
+            tabPage3.Controls.Add(button_DownloadForLan);
+            tabPage3.Controls.Add(button_DownloadForBaidu);
             tabPage3.Name = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // button_Gmail
+            // 
+            resources.ApplyResources(button_Gmail, "button_Gmail");
+            button_Gmail.FlatAppearance.BorderSize = 0;
+            button_Gmail.Name = "button_Gmail";
+            button_Gmail.UseVisualStyleBackColor = true;
+            button_Gmail.Click += button_Gmail_Click;
+            // 
+            // button_QQEmail
+            // 
+            resources.ApplyResources(button_QQEmail, "button_QQEmail");
+            button_QQEmail.FlatAppearance.BorderSize = 0;
+            button_QQEmail.Name = "button_QQEmail";
+            button_QQEmail.UseVisualStyleBackColor = true;
+            button_QQEmail.Click += button_QQEmail_Click;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.BackColor = Color.Gainsboro;
+            label5.Name = "label5";
+            // 
+            // button_DownloadForGitHub
+            // 
+            resources.ApplyResources(button_DownloadForGitHub, "button_DownloadForGitHub");
+            button_DownloadForGitHub.FlatAppearance.BorderSize = 0;
+            button_DownloadForGitHub.Name = "button_DownloadForGitHub";
+            button_DownloadForGitHub.UseVisualStyleBackColor = true;
+            button_DownloadForGitHub.Click += button_DownloadForGitHub_Click;
             // 
             // label3
             // 
             resources.ApplyResources(label3, "label3");
+            label3.BackColor = Color.Gainsboro;
             label3.Name = "label3";
             // 
-            // button1
+            // button_GitHub
             // 
-            resources.ApplyResources(button1, "button1");
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(button_GitHub, "button_GitHub");
+            button_GitHub.FlatAppearance.BorderSize = 0;
+            button_GitHub.Name = "button_GitHub";
+            button_GitHub.UseVisualStyleBackColor = true;
+            button_GitHub.Click += button_GitHub_Click;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // button_DownloadForQQ
+            // 
+            resources.ApplyResources(button_DownloadForQQ, "button_DownloadForQQ");
+            button_DownloadForQQ.FlatAppearance.BorderSize = 0;
+            button_DownloadForQQ.Name = "button_DownloadForQQ";
+            button_DownloadForQQ.UseVisualStyleBackColor = true;
+            button_DownloadForQQ.Click += button_DownloadForQQ_Click;
+            // 
+            // button_DownloadForLan
+            // 
+            resources.ApplyResources(button_DownloadForLan, "button_DownloadForLan");
+            button_DownloadForLan.FlatAppearance.BorderSize = 0;
+            button_DownloadForLan.Name = "button_DownloadForLan";
+            button_DownloadForLan.UseVisualStyleBackColor = true;
+            button_DownloadForLan.Click += button_DownloadForLan_Click;
+            // 
+            // button_DownloadForBaidu
+            // 
+            resources.ApplyResources(button_DownloadForBaidu, "button_DownloadForBaidu");
+            button_DownloadForBaidu.FlatAppearance.BorderSize = 0;
+            button_DownloadForBaidu.Name = "button_DownloadForBaidu";
+            button_DownloadForBaidu.UseVisualStyleBackColor = true;
+            button_DownloadForBaidu.Click += button_DownloadForBaidu_Click;
             // 
             // Options
             // 
@@ -318,6 +373,7 @@
             tabPageToolsOperation.ResumeLayout(false);
             tabPageToolsOperation.PerformLayout();
             tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -338,14 +394,7 @@
         private Button buttonIn;
         private Button buttonOut;
         private CheckBox checkBox_ComputerNoviceMode;
-        private Button button_DownloadForLan;
-        private Button button_DownloadForBaidu;
-        private Button button_DownloadForQQ;
-        private Label label2;
-        private Label label1;
         private TabPage tabPage3;
-        private Button button1;
-        private Label label3;
         private Button button_ExtendedFeatures;
         private ComboBox comboBoxLanguage;
         private Label label4;
@@ -353,5 +402,18 @@
         private Button button_SystemCommandMode;
         private CheckBox checkBox_MinSudo;
         private CheckBox checkBox_DarkMode;
+        private Button button_GitHub;
+        private Label label2;
+        private Label label1;
+        private Button button_DownloadForQQ;
+        private Button button_DownloadForLan;
+        private Button button_DownloadForBaidu;
+        private Button button_DownloadForGitHub;
+        private Label label3;
+        private Button button_QQEmail;
+        private Label label5;
+        private Button button_Gmail;
+        private Label label7;
+        private Label label6;
     }
 }

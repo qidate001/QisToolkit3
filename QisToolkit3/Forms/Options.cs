@@ -201,25 +201,6 @@ namespace QisToolkit3.Forms
             ComputerNoviceMode = checkBox_ComputerNoviceMode.Checked;
         }
 
-        private void button_DownloadForBaidu_Click(object sender, EventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://pan.baidu.com/s/1XTg3X1aTYdIP1Q11YZ0fiQ?pwd=qinb") { UseShellExecute = true });
-            Clipboard.SetText("qinb");
-            //MessageBox.Show("提取码: qinb", "提取码");
-        }
-
-        private void button_DownloadForLan_Click(object sender, EventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://wwjs.lanzoub.com/b004hviqmf") { UseShellExecute = true });
-            Clipboard.SetText("851o");
-            //MessageBox.Show("密码: 851o", "密码");
-        }
-
-        private void button_DownloadForQQ_Click(object sender, EventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://qm.qq.com/q/x5V5tMYMA8") { UseShellExecute = true });
-        }
-
         private void button_ExtendedFeatures_Click(object sender, EventArgs e)
         {
             new ExtendedFeatures().Show();
@@ -268,6 +249,47 @@ namespace QisToolkit3.Forms
         private void checkBox_MinSudo_CheckedChanged(object sender, EventArgs e)
         {
             IsRunMinSudo = checkBox_MinSudo.Checked;
+        }
+
+        private void button_GitHub_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/qidate001/QisToolkit3") { UseShellExecute = true });
+        }
+
+        private void button_DownloadForGitHub_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/qidate001/QisToolkit3/releases") { UseShellExecute = true });
+        }
+
+        private void button_DownloadForBaidu_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://pan.baidu.com/s/1XTg3X1aTYdIP1Q11YZ0fiQ?pwd=qinb") { UseShellExecute = true });
+            Clipboard.SetText("qinb");
+            //MessageBox.Show("提取码: qinb", "提取码");
+        }
+
+        private void button_DownloadForLan_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://wwjs.lanzoub.com/b004hviqmf") { UseShellExecute = true });
+            Clipboard.SetText("851o");
+            //MessageBox.Show("密码: 851o", "密码");
+        }
+
+        private void button_DownloadForQQ_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://qm.qq.com/q/x5V5tMYMA8") { UseShellExecute = true });
+        }
+
+        private void button_QQEmail_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("3563532971@qq.com");
+            MessageBox.Show("3563532971@qq.com\n已复制至剪切板。", "邮箱");
+        }
+
+        private void button_Gmail_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("qidate001@gmail.com");
+            MessageBox.Show("qidate001@gmail.com\n已复制至剪切板。", "邮箱");
         }
     }
 }

@@ -117,40 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageHead.Text" xml:space="preserve">
-    <value>Preferences</value>
-  </data>
-  <data name="tabPageFilesOperation.Text" xml:space="preserve">
-    <value>File Ops</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Text Generate</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Clean Junk</value>
-  </data>
-  <data name="tabPageToolsOperation.Text" xml:space="preserve">
-    <value>Multi-Tool</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Game Tools</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Fun Q And A</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Anime Rec</value>
-  </data>
   <data name="checkBox_MinSudo.Text" xml:space="preserve">
     <value>System authority backup plan initiated</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_CommandMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 459</value>
+  </data>
+  <data name="button_CommandMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 35</value>
   </data>
   <data name="button_CommandMode.Text" xml:space="preserve">
     <value>Command-line mode</value>
   </data>
+  <data name="button_SystemCommandMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 500</value>
+  </data>
+  <data name="button_SystemCommandMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 35</value>
+  </data>
   <data name="button_SystemCommandMode.Text" xml:space="preserve">
     <value>Command-line mode as Sys</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>538, 418</value>
   </data>
@@ -166,30 +154,6 @@
   <data name="button_ExtendedFeatures.Text" xml:space="preserve">
     <value>Extensions</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Code: qinb</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 515</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 20</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Password: 851o</value>
-  </data>
-  <data name="button_DownloadForQQ.Text" xml:space="preserve">
-    <value>QQ G</value>
-  </data>
-  <data name="button_DownloadForLan.Text" xml:space="preserve">
-    <value>LZ</value>
-  </data>
-  <data name="button_DownloadForBaidu.Text" xml:space="preserve">
-    <value>BN</value>
-  </data>
   <data name="checkBox_DarkMode.Text" xml:space="preserve">
     <value>Dark Mode</value>
   </data>
@@ -202,14 +166,32 @@
   <data name="buttonIn.Text" xml:space="preserve">
     <value>Add Env Var</value>
   </data>
+  <data name="button_System.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 539</value>
+  </data>
+  <data name="button_System.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 35</value>
+  </data>
   <data name="button_System.Text" xml:space="preserve">
     <value>Restart as System</value>
+  </data>
+  <data name="tabPageHead.Text" xml:space="preserve">
+    <value>Preferences</value>
   </data>
   <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>631, 31</value>
   </data>
   <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Text" xml:space="preserve">
     <value>Open File Ops tab automatically pops up the 'Open File' dialog</value>
+  </data>
+  <data name="tabPageFilesOperation.Text" xml:space="preserve">
+    <value>File Ops</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Text Generate</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Clean Junk</value>
   </data>
   <data name="checkBoxToolsProcessingTools_TopMost.Size" type="System.Drawing.Size, System.Drawing">
     <value>467, 31</value>
@@ -223,34 +205,53 @@
   <data name="checkBoxToolsOperation_UseChineseName.Text" xml:space="preserve">
     <value>System Tools → System Programs: Use Chinese names</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>755, 981</value>
+  <data name="tabPageToolsOperation.Text" xml:space="preserve">
+    <value>Multi-Tool</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Game Tools</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Fun Q And A</value>
+  </data>
+  <data name="button_Gmail.Text" xml:space="preserve">
+    <value>Gmail</value>
+  </data>
+  <data name="button_QQEmail.Text" xml:space="preserve">
+    <value>QQ Email</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Contact Information</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Anime Recommendation Rules:
-
-Platforms: Only Douyin and Bilibili.
-
-Source: Must be posted by the original creator. Reposts are not recommended.
-
-Status: Must be actively and stably updating. Series known for frequent hiatuses or that have become "Complete Mini-Dramas" are excluded.
-
-Length: The latest series must have ≥ 15 episodes.
-
-Priority: Bilibili is preferred if the creator is active there.
-
-Navigation: Opens to the playlist &gt; the first episode (within its playlist) &gt; starts playing.
-
-Disclaimer: Recommendations are solely based on the tool author's whims. No commercial intent.
-
-What is "Complete Mini-Drama"?
-All videos and future updates are exclusively released as short dramas or paid content.</value>
+    <value>Official Website</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>755, 106</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 20</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>(In Development)</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Code: qinb</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 249</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 20</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Password: 851o</value>
+  </data>
+  <data name="button_DownloadForQQ.Text" xml:space="preserve">
+    <value>QQ Group</value>
+  </data>
+  <data name="button_DownloadForLan.Text" xml:space="preserve">
+    <value>Lanzou Cloud</value>
+  </data>
+  <data name="button_DownloadForBaidu.Text" xml:space="preserve">
+    <value>Baidu Netdisk</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>QisToolkit3</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>
