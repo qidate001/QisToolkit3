@@ -117,4 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBox_ShowAll.Text" xml:space="preserve">
+    <value>Show All Items</value>
+  </data>
+  <data name="button_ReLoad.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 20</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Enter the startup type ↑↑↑</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 20</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Enter the service name (not display name) ↑↑↑ e.g., wuauserv</value>
+  </data>
+  <data name="buttonAddItem.Text" xml:space="preserve">
+    <value>Add to List</value>
+  </data>
+  <data name="buttonDeleteItem.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>System Service Tool</value>
+  </data>
 </root>
