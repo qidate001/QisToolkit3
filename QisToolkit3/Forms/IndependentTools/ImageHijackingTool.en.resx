@@ -117,143 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageHead.Text" xml:space="preserve">
-    <value>Preferences</value>
-  </data>
-  <data name="tabPageFilesOperation.Text" xml:space="preserve">
-    <value>File Ops</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Text Generate</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Clean Junk</value>
-  </data>
-  <data name="tabPageToolsOperation.Text" xml:space="preserve">
-    <value>Multi-Tool</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Game Tools</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Fun Q And A</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>QisToolkit3</value>
-  </data>
-  <data name="checkBox_MinSudo.Text" xml:space="preserve">
-    <value>System authority backup plan initiated</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button_CommandMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 459</value>
+  <data name="checkBox_DisableUserModeCallbackFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 548</value>
   </data>
-  <data name="button_CommandMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 35</value>
+  <data name="checkBox_DisableUserModeCallbackFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 31</value>
   </data>
-  <data name="button_CommandMode.Text" xml:space="preserve">
-    <value>Command-line mode</value>
+  <data name="checkBox_DisableUserModeCallbackFilter.Text" xml:space="preserve">
+    <value>User-Mode Callback Filtering</value>
   </data>
-  <data name="button_SystemCommandMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 500</value>
+  <data name="checkBox_ShowAll.Text" xml:space="preserve">
+    <value>Show All Items</value>
   </data>
-  <data name="button_SystemCommandMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 35</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 425</value>
   </data>
-  <data name="button_SystemCommandMode.Text" xml:space="preserve">
-    <value>Command-line mode as Sys</value>
-  </data>
-  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>538, 418</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 422</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 27</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Language：</value>
-  </data>
-  <data name="button_ExtendedFeatures.Text" xml:space="preserve">
-    <value>Extensions</value>
-  </data>
-  <data name="checkBox_DarkMode.Text" xml:space="preserve">
-    <value>Dark Mode</value>
-  </data>
-  <data name="checkBox_ComputerNoviceMode.Text" xml:space="preserve">
-    <value>Beginner Mode</value>
-  </data>
-  <data name="buttonOut.Text" xml:space="preserve">
-    <value>Remove Env Var</value>
-  </data>
-  <data name="buttonIn.Text" xml:space="preserve">
-    <value>Add Env Var</value>
-  </data>
-  <data name="button_System.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 539</value>
-  </data>
-  <data name="button_System.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 35</value>
-  </data>
-  <data name="button_System.Text" xml:space="preserve">
-    <value>Restart as System</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 31</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Text" xml:space="preserve">
-    <value>Open File Ops tab automatically pops up the 'Open File' dialog</value>
-  </data>
-  <data name="checkBoxToolsProcessingTools_TopMost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 31</value>
-  </data>
-  <data name="checkBoxToolsProcessingTools_TopMost.Text" xml:space="preserve">
-    <value>Text Processing Tools: Window always on top</value>
-  </data>
-  <data name="checkBoxToolsOperation_UseChineseName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 31</value>
-  </data>
-  <data name="checkBoxToolsOperation_UseChineseName.Text" xml:space="preserve">
-    <value>System Tools → System Programs: Use Chinese names</value>
-  </data>
-  <data name="button_Gmail.Text" xml:space="preserve">
-    <value>Gmail</value>
-  </data>
-  <data name="button_QQEmail.Text" xml:space="preserve">
-    <value>QQ Email</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Contact Information</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 120</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Official Website</value>
+    <value>Enter the mitigation options mask ↑↑↑ e.g., 0x100
+If you want to enable multiple policies:
+0x100 (Disable child process) | 0x2 (Force ASLR)
+
+You can write: 0x100 | 0x2
+ — the program will automatically calculate it as 0x00000102</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
+  <data name="comboBoxDataMO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 390</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Code: qinb</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 249</value>
+  <data name="button_ReLoad.Text" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 20</value>
+    <value>515, 140</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Password: 851o</value>
+    <value>Enter the target to hijack to ↑↑↑ e.g., C:\WINDOWS\System32\calc.exe
+If hijacked to * or a nonexistent file, it will prompt "file not found".
+If hijacked to ctfmon.exe, it will prompt that the requested operation 
+requires elevation.
+If the target is an existing executable file, it will run that file.
+Cannot hijack to non-executable files like a.txt or b.doc.
+But you can write: cmd.exe /c start C:\a.txt</value>
   </data>
-  <data name="button_DownloadForQQ.Text" xml:space="preserve">
-    <value>QQ Group</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 20</value>
   </data>
-  <data name="button_DownloadForLan.Text" xml:space="preserve">
-    <value>Lanzou Cloud</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Enter the program filename to hijack ↑↑↑ e.g., cmd.exe</value>
   </data>
-  <data name="button_DownloadForBaidu.Text" xml:space="preserve">
-    <value>Baidu Netdisk</value>
+  <data name="buttonAddItem.Text" xml:space="preserve">
+    <value>Add to List</value>
+  </data>
+  <data name="buttonDeleteItem.Text" xml:space="preserve">
+    <value>Delete Selected</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>IFEO Image Hijacking Tool</value>
   </data>
 </root>
