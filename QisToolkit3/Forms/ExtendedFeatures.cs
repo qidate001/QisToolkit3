@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -44,7 +45,7 @@ namespace QisToolkit3.Forms
         {
             try
             {
-                Directory.CreateDirectory(actualDirectory + @"\ElseTool");
+                Directory.CreateDirectory(Path.Combine(actualDirectory, "ElseTool"));
             }
             catch (Exception ex)
             {
@@ -58,18 +59,51 @@ namespace QisToolkit3.Forms
             button_mas_delete.Enabled = File.Exists(actualDirectory + @"\ElseTool\Mas.cmd");
 
             if (File.Exists(@"C:\Windows\q.exe"))
-                button_qicmd_download.Text = "重新下载";
+                button_qicmd_download.Text = GetBtnText(2);
 
             else if (File.Exists(actualDirectory + @"\ElseTool\QiCmd.exe"))
-                button_qicmd_download.Text = "安装";
+                button_qicmd_download.Text = GetBtnText(0);
 
-            else button_qicmd_download.Text = "下载";
+            else button_qicmd_download.Text = GetBtnText(1);
 
 
             if (File.Exists(actualDirectory + @"\ElseTool\Mas.cmd"))
-                button_mas_download.Text = "重新下载";
+                button_mas_download.Text = GetBtnText(2);
 
-            else button_mas_download.Text = "下载";
+            else button_mas_download.Text = GetBtnText(1);
+
+            
+        }
+
+        private static string GetBtnText(int Type)
+        {
+            switch (Language)
+            {
+                case "en":
+                    switch (Type)
+                    {
+                        case 0:
+                            return "Install";
+                        case 1:
+                            return "Download";
+                        case 2:
+                            return "Re-download";
+                    }
+                    return "Download";
+
+                case "zh-CN":
+                default:
+                    switch (Type)
+                    {
+                        case 0:
+                            return "安装";
+                        case 1:
+                            return "下载";
+                        case 2:
+                            return "重新下载";
+                    }
+                    return "下载";
+            }
         }
 
         // 可选：添加取消按钮的事件处理

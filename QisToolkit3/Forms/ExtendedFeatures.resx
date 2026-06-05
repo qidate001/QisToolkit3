@@ -117,4 +117,286 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_download.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_mas_delete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>v0.3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 27</value>
+  </data>
+  <data name="comboBox_QiCmd.Items2" xml:space="preserve">
+    <value>v0.3</value>
+  </data>
+  <data name="&gt;&gt;comboBox_QiCmd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_QiCmd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 27</value>
+  </data>
+  <data name="comboBox1.Text" xml:space="preserve">
+    <value>v0.4</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_delete.Name" xml:space="preserve">
+    <value>button_qicmd_delete</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>扩展管理</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_QiCmd.Items1" xml:space="preserve">
+    <value>v0.2</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 12</value>
+  </data>
+  <data name="button_mas_download.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 88</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 12</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>MAS 激活器</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>QiCmd</value>
+  </data>
+  <data name="button_mas_delete.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="comboBox_QiCmd.Items3" xml:space="preserve">
+    <value>v0.4</value>
+  </data>
+  <data name="button_qicmd_delete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24pt</value>
+  </data>
+  <data name="comboBox_QiCmd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 234</value>
+  </data>
+  <data name="&gt;&gt;button_mas_delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_mas_delete.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button_mas_download.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24pt</value>
+  </data>
+  <data name="&gt;&gt;comboBox_QiCmd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>v0.2</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>v0.1</value>
+  </data>
+  <data name="button_mas_delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 88</value>
+  </data>
+  <data name="button_qicmd_download.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="button_qicmd_delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 139</value>
+  </data>
+  <data name="button_qicmd_download.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24pt</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 35</value>
+  </data>
+  <data name="button_mas_delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 139</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1467, 945</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_download.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_delete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button_mas_delete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="comboBox_QiCmd.Items" xml:space="preserve">
+    <value>v0.1</value>
+  </data>
+  <data name="&gt;&gt;button_mas_download.Name" xml:space="preserve">
+    <value>button_mas_download</value>
+  </data>
+  <data name="button_mas_download.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_qicmd_delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 88</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;button_mas_download.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBox1.Items3" xml:space="preserve">
+    <value>v0.4</value>
+  </data>
+  <data name="comboBox_QiCmd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 35</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExtendedFeatures</value>
+  </data>
+  <data name="&gt;&gt;button_mas_delete.Name" xml:space="preserve">
+    <value>button_mas_delete</value>
+  </data>
+  <data name="button_qicmd_download.Text" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="button_qicmd_delete.Text" xml:space="preserve">
+    <value>卸载</value>
+  </data>
+  <data name="&gt;&gt;button_mas_delete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button_qicmd_download.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 43</value>
+  </data>
+  <data name="&gt;&gt;button_mas_download.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_download.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_delete.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBox1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_mas_download.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 234</value>
+  </data>
+  <data name="button_qicmd_download.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_qicmd_download.Name" xml:space="preserve">
+    <value>button_qicmd_download</value>
+  </data>
+  <data name="comboBox_QiCmd.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_qicmd_download.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 88</value>
+  </data>
+  <data name="button_qicmd_delete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;button_mas_download.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="comboBox_QiCmd.Text" xml:space="preserve">
+    <value>v0.4</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_QiCmd.Name" xml:space="preserve">
+    <value>comboBox_QiCmd</value>
+  </data>
+  <data name="button_mas_download.Text" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="button_mas_delete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24pt</value>
+  </data>
+  <data name="button_qicmd_delete.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button_mas_download.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 43</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
