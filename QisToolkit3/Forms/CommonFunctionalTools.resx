@@ -117,6 +117,1714 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_FolderView_ShowSuperHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 8</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="&gt;&gt;button_release_and_renew_IP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_Hidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Read.Name" xml:space="preserve">
+    <value>button_FolderView_Read</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.TabIndex" type="System.Int32, mscorlib">
+    <value>137</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>基础普通功能工具</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 25</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.Text" xml:space="preserve">
+    <value>文件扩展名</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.Text" xml:space="preserve">
+    <value>应用商店应用显示任务栏进度</value>
+  </data>
+  <data name="&gt;&gt;label_Wlan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>780, 289</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 146</value>
+  </data>
+  <data name="&gt;&gt;tabPageCMD.Name" xml:space="preserve">
+    <value>tabPageCMD</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_DisablePreviewDesktop.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_ShowCortanaButton.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="button_FolderView_Save.TabIndex" type="System.Int32, mscorlib">
+    <value>143</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 230</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowEncryptCompressedColor.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Save.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Wlan 信息</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_ShowCortanaButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideFileExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_DisablePreviewDesktop.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_DisablePreviewDesktop</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.TabIndex" type="System.Int32, mscorlib">
+    <value>143</value>
+  </data>
+  <data name="&gt;&gt;button_ipconfig_flushdns.Name" xml:space="preserve">
+    <value>button_ipconfig_flushdns</value>
+  </data>
+  <data name="groupBox_FolderView.TabIndex" type="System.Int32, mscorlib">
+    <value>141</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.TabIndex" type="System.Int32, mscorlib">
+    <value>134</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;button_netsh_winsock_reset.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowInfoTip.Name" xml:space="preserve">
+    <value>comboBox_FolderView_ShowInfoTip</value>
+  </data>
+  <data name="&gt;&gt;button_FixShellFolderNameAndIcon.Name" xml:space="preserve">
+    <value>button_FixShellFolderNameAndIcon</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 65</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 150</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideDrivesWithNoMedia.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="button_release_and_renew_IP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 57</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarSmallIcons.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Explorer.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="button_FixIconCache.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="tabControl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_DisablePreviewDesktop.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_DisablePreviewDesktop</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_StoreAppsOnTaskbar.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_StoreAppsOnTaskbar</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarSmallIcons.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_Hidden.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.TabIndex" type="System.Int32, mscorlib">
+    <value>147</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_FolderView_ShowTypeOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowSuperHidden.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="button_FolderView_Save.Location" type="System.Drawing.Point, System.Drawing">
+    <value>463, 601</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.Items" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.TabIndex" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_Hidden.Name" xml:space="preserve">
+    <value>comboBox_FolderView_Hidden</value>
+  </data>
+  <data name="&gt;&gt;button_netsh_winsock_reset.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_renew_IP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Read.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 6</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.TabIndex" type="System.Int32, mscorlib">
+    <value>131</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>tabPageCMD</value>
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_Hidden.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_IconsOnly.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowTypeOverlay.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.Text" xml:space="preserve">
+    <value>加密/压缩文件显示彩色</value>
+  </data>
+  <data name="&gt;&gt;button_release_IP.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Explorer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.Items1" xml:space="preserve">
+    <value>满时合并</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.Items" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="button_netsh_winsock_reset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Wlan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 105</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button_DoShellFolderNameAndIconBug.Name" xml:space="preserve">
+    <value>button_DoShellFolderNameAndIconBug</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>604, 63</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_ShowStatusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;groupBox_FolderView.Name" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="&gt;&gt;button_DoShellFolderNameAndIconBug.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TaskbarBehavioral.Name" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarBadges.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowTypeOverlay.Name" xml:space="preserve">
+    <value>comboBox_FolderView_ShowTypeOverlay</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_IconsOnly.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="tabPageCMD.Text" xml:space="preserve">
+    <value>网络 &amp; 链接</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Save.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.Text" xml:space="preserve">
+    <value>任务栏行为</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IconCache.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideDrivesWithNoMedia.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowSuperHidden.Name" xml:space="preserve">
+    <value>label_FolderView_ShowSuperHidden</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 109</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowInfoTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_FolderView_Save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Wlan.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_IconsOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CommonFunctionalTools</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowEncryptCompressedColor.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 351</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.Items1" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="label_FolderView_Hidden.Text" xml:space="preserve">
+    <value>隐藏文件</value>
+  </data>
+  <data name="button_FolderView_Read.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 601</value>
+  </data>
+  <data name="button_netsh_winsock_reset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 57</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_ShowCortanaButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowInfoTip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideFileExt.Name" xml:space="preserve">
+    <value>comboBox_FolderView_HideFileExt</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 105</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowSuperHidden.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="groupBox_IconCache.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_ShowCortanaButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_Hidden.TabIndex" type="System.Int32, mscorlib">
+    <value>133</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideDrivesWithNoMedia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarBadges.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.Items" xml:space="preserve">
+    <value>始终合并</value>
+  </data>
+  <data name="tabPage4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_DisablePreviewDesktop.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_ShowCortanaButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_FolderView_Preset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 48</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideDrivesWithNoMedia.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.Items1" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1159, 655</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 226</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarGlomLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPageCMD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="button_release_and_renew_IP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 158</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_IconsOnly.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_release_IP.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Preset.Name" xml:space="preserve">
+    <value>button_FolderView_Preset</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 270</value>
+  </data>
+  <data name="&gt;&gt;button_renew_IP.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_Hidden.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 266</value>
+  </data>
+  <data name="&gt;&gt;button_release_and_renew_IP.Name" xml:space="preserve">
+    <value>button_release_and_renew_IP</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_Hidden.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowInfoTip.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideDrivesWithNoMedia.Name" xml:space="preserve">
+    <value>label_FolderView_HideDrivesWithNoMedia</value>
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.Items1" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Preset.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button_FixIconCache.Parent" xml:space="preserve">
+    <value>groupBox_IconCache</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_IconsOnly.Name" xml:space="preserve">
+    <value>comboBox_FolderView_IconsOnly</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.Items1" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.Text" xml:space="preserve">
+    <value>复现 Shell 文件夹名称与图标错误问题</value>
+  </data>
+  <data name="button_FolderView_Save.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="button_ipconfig_flushdns.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_FolderView_Save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 48</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 190</value>
+  </data>
+  <data name="button_FixIconCache.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarBadges.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_TaskbarBadges</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="button_renew_IP.ToolTip" xml:space="preserve">
+    <value>调用程序 ipconfig 并附带 /renew 参数</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.TabIndex" type="System.Int32, mscorlib">
+    <value>139</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Wlan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 246</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowTypeOverlay.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.TabIndex" type="System.Int32, mscorlib">
+    <value>143</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideFileExt.Name" xml:space="preserve">
+    <value>label_FolderView_HideFileExt</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.Text" xml:space="preserve">
+    <value>受保护的操作系统文件</value>
+  </data>
+  <data name="label_FolderView_Hidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="tabPage_Explorer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1175, 703</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_Hidden.Name" xml:space="preserve">
+    <value>label_FolderView_Hidden</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarGlomLevel.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_TaskbarGlomLevel</value>
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.Items" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>tabPage_Explorer</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;label_Wlan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Items1" xml:space="preserve">
+    <value>允许</value>
+  </data>
+  <data name="button_FolderView_Read.TabIndex" type="System.Int32, mscorlib">
+    <value>142</value>
+  </data>
+  <data name="button_release_and_renew_IP.Text" xml:space="preserve">
+    <value>释放并更新 IP</value>
+  </data>
+  <data name="button_FolderView_Read.Text" xml:space="preserve">
+    <value>读取</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;button_release_and_renew_IP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowInfoTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button_DoShellFolderNameAndIconBug.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowStatusBar.Name" xml:space="preserve">
+    <value>comboBox_FolderView_ShowStatusBar</value>
+  </data>
+  <data name="&gt;&gt;button_ipconfig_flushdns.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 29</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tabPageCMD.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;button_FixIconCache.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_FixIconCache.Name" xml:space="preserve">
+    <value>button_FixIconCache</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideFileExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_release_IP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 221</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 307</value>
+  </data>
+  <data name="button_FixIconCache.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 57</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="tabPageCMD.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowStatusBar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_DisablePreviewDesktop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarSmallIcons.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="button_FolderView_Read.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_Hidden.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="button_renew_IP.Text" xml:space="preserve">
+    <value>更新 IP</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowTypeOverlay.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.TabIndex" type="System.Int32, mscorlib">
+    <value>137</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowStatusBar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;button_FixShellFolderNameAndIcon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 186</value>
+  </data>
+  <data name="&gt;&gt;button_release_IP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_FolderView_Read.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 48</value>
+  </data>
+  <data name="groupBox_IconCache.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 7</value>
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.Items" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 186</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.Text" xml:space="preserve">
+    <value>鼠标悬停显示提示信息</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_ipconfig_flushdns.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowTypeOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowEncryptCompressedColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.TabIndex" type="System.Int32, mscorlib">
+    <value>139</value>
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 109</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowTypeOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageCMD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarBadges.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 266</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowSuperHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_Hidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="button_release_IP.Text" xml:space="preserve">
+    <value>释放 IP</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideFileExt.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.Items1" xml:space="preserve">
+    <value>小图标</value>
+  </data>
+  <data name="tabPage_Explorer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IconCache.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="button_netsh_winsock_reset.Text" xml:space="preserve">
+    <value>重置 Winsock</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.Items" xml:space="preserve">
+    <value>显示图标及文字</value>
+  </data>
+  <data name="tabPage_Explorer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button_renew_IP.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarAnimations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_FixIconCache.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Wlan.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_FolderView_IconsOnly.Name" xml:space="preserve">
+    <value>label_FolderView_IconsOnly</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarSmallIcons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowEncryptCompressedColor.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>134</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.Text" xml:space="preserve">
+    <value>隐藏空的驱动器盘符</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_FolderView.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarGlomLevel.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;button_FixShellFolderNameAndIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarBadges.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowEncryptCompressedColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideFileExt.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_FolderView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarAnimations.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_Wlan.Name" xml:space="preserve">
+    <value>label_Wlan</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IconCache.Name" xml:space="preserve">
+    <value>groupBox_IconCache</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.Items1" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 29</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarAnimations.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_TaskbarAnimations</value>
+  </data>
+  <data name="comboBox_FolderView_ShowInfoTip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="&gt;&gt;button_DoShellFolderNameAndIconBug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="tabPageCMD.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideFileExt.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="button_FolderView_Preset.Text" xml:space="preserve">
+    <value>预设</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarBadges.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_TaskbarBadges</value>
+  </data>
+  <data name="&gt;&gt;button_netsh_winsock_reset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 743</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_ShowCortanaButton.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_ShowCortanaButton</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>506, 392</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 289</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1167, 695</value>
+  </data>
+  <data name="tabPage_Explorer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarSmallIcons.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_TaskbarSmallIcons</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IconCache.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_StoreAppsOnTaskbar</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button_FolderView_Read.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.Items1" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideDrivesWithNoMedia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.Items" xml:space="preserve">
+    <value>大图标</value>
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.Items" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.Items1" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.Text" xml:space="preserve">
+    <value>任务栏图标大小</value>
+  </data>
+  <data name="button_release_IP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowSuperHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Wlan.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="groupBox_FolderView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowStatusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideDrivesWithNoMedia.Name" xml:space="preserve">
+    <value>comboBox_FolderView_HideDrivesWithNoMedia</value>
+  </data>
+  <data name="&gt;&gt;label_Wlan.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.Items1" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowSuperHidden.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.Text" xml:space="preserve">
+    <value>Cortana / 搜索图标</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.Items" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="tabPage_Explorer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Save.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Read.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="button_ipconfig_flushdns.Text" xml:space="preserve">
+    <value>刷新 DNS 缓存</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_HideFileExt.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="button_FolderView_Preset.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.Items" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_HideFileExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.Text" xml:space="preserve">
+    <value>任务栏按钮角标</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowTypeOverlay.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>136</value>
+  </data>
+  <data name="label_FolderView_Hidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarAnimations.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="button_FolderView_Preset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>902, 601</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.TabIndex" type="System.Int32, mscorlib">
+    <value>131</value>
+  </data>
+  <data name="button_netsh_winsock_reset.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 743</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarSmallIcons.Name" xml:space="preserve">
+    <value>comboBox_TaskbarBehavioral_TaskbarSmallIcons</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1159, 655</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_StoreAppsOnTaskbar.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;button_renew_IP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageCMD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1175, 703</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowInfoTip.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Explorer.Name" xml:space="preserve">
+    <value>tabPage_Explorer</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.Text" xml:space="preserve">
+    <value>合并任务栏级别</value>
+  </data>
+  <data name="button_FixIconCache.Text" xml:space="preserve">
+    <value>重置图标缓存文件</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TaskbarBehavioral.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarAnimations.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_TaskbarAnimations</value>
+  </data>
+  <data name="groupBox_IconCache.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.Text" xml:space="preserve">
+    <value>禁用任务栏相关动画</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarBadges.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarBadges.TabIndex" type="System.Int32, mscorlib">
+    <value>136</value>
+  </data>
+  <data name="button_FixIconCache.ToolTip" xml:space="preserve">
+    <value>关闭资源管理器，并删除所有图标缓存文件，启动资源管理器
+（%userprofile%\AppData\Local\Microsoft\Windows\Explorer\*.db）</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.Items" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.Items" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_DisablePreviewDesktop.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowStatusBar.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="button_release_and_renew_IP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>杂项功能</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Explorer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>命令提示符</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 190</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 270</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowEncryptCompressedColor.Name" xml:space="preserve">
+    <value>label_FolderView_ShowEncryptCompressedColor</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarSmallIcons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button_renew_IP.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarGlomLevel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 146</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Shell 文件夹</value>
+  </data>
+  <data name="button_release_IP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 57</value>
+  </data>
+  <data name="tabPageCMD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 65</value>
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.Items1" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>文件夹选项</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="groupBox_FolderView.Text" xml:space="preserve">
+    <value>文件与文件夹视图</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.Items" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_DisablePreviewDesktop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_FixIconCache.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarAnimations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_ShowCortanaButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarGlomLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.Text" xml:space="preserve">
+    <value>资源管理器底部状态栏</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarGlomLevel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarSmallIcons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_netsh_winsock_reset.Name" xml:space="preserve">
+    <value>button_netsh_winsock_reset</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_IconsOnly.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;button_FixShellFolderNameAndIcon.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowSuperHidden.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 230</value>
+  </data>
+  <data name="comboBox_FolderView_HideDrivesWithNoMedia.Items1" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 25</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.Items1" xml:space="preserve">
+    <value>仅显示图标</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>133</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="button_release_and_renew_IP.ToolTip" xml:space="preserve">
+    <value>调用程序 ipconfig 并附带 /release参数
+调用程序 ipconfig 并附带 /renew 参数</value>
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.TabIndex" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowInfoTip.Name" xml:space="preserve">
+    <value>label_FolderView_ShowInfoTip</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.Items" xml:space="preserve">
+    <value>不允许</value>
+  </data>
+  <data name="label_FolderView_Hidden.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="comboBox_FolderView_HideFileExt.Items1" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1159, 655</value>
+  </data>
+  <data name="label_Wlan.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.Text" xml:space="preserve">
+    <value>修复 Shell 文件夹名称与图标</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 311</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowStatusBar.Name" xml:space="preserve">
+    <value>label_FolderView_ShowStatusBar</value>
+  </data>
+  <data name="&gt;&gt;groupBox_FolderView.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="button_ipconfig_flushdns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 57</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowEncryptCompressedColor.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarSmallIcons.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_TaskbarBehavioral_DisablePreviewDesktop.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="&gt;&gt;button_release_IP.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_TaskbarGlomLevel.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="tabPageCMD.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowSuperHidden.Items1" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_ShowCortanaButton.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;button_release_and_renew_IP.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowSuperHidden.Name" xml:space="preserve">
+    <value>comboBox_FolderView_ShowSuperHidden</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_StoreAppsOnTaskbar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_ShowCortanaButton.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_ShowCortanaButton</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TaskbarBehavioral_DisablePreviewDesktop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_FolderView_IconsOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 347</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowStatusBar.Parent" xml:space="preserve">
+    <value>groupBox_FolderView</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.Text" xml:space="preserve">
+    <value>预览桌面</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.TabIndex" type="System.Int32, mscorlib">
+    <value>148</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TaskbarBehavioral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 150</value>
+  </data>
+  <data name="button_release_and_renew_IP.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tabPage_Explorer.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarBadges.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowInfoTip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarGlomLevel.Items2" xml:space="preserve">
+    <value>从不合并</value>
+  </data>
+  <data name="groupBox_FolderView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>506, 392</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_TaskbarAnimations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 226</value>
+  </data>
+  <data name="button_FolderView_Preset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FolderView_ShowStatusBar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_release_IP.ToolTip" xml:space="preserve">
+    <value>调用程序 ipconfig 并附带 /release参数</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_HideDrivesWithNoMedia.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.Text" xml:space="preserve">
+    <value>显示图标及文字行为</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>518, 6</value>
+  </data>
+  <data name="&gt;&gt;button_renew_IP.Name" xml:space="preserve">
+    <value>button_renew_IP</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarAnimations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_IconCache.Text" xml:space="preserve">
+    <value>缩略图缓存</value>
+  </data>
+  <data name="comboBox_TaskbarBehavioral_StoreAppsOnTaskbar.TabIndex" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <data name="button_ipconfig_flushdns.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 16pt</value>
+  </data>
+  <data name="groupBox_IconCache.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 103</value>
+  </data>
+  <data name="&gt;&gt;groupBox_FolderView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_renew_IP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 221</value>
+  </data>
+  <data name="&gt;&gt;button_release_IP.Name" xml:space="preserve">
+    <value>button_release_IP</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="&gt;&gt;button_ipconfig_flushdns.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowEncryptCompressedColor.Name" xml:space="preserve">
+    <value>comboBox_FolderView_ShowEncryptCompressedColor</value>
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.Text" xml:space="preserve">
+    <value>文件类型图标覆盖缩略图</value>
+  </data>
+  <data name="tabPage_Explorer.Text" xml:space="preserve">
+    <value>图标 &amp; 显示</value>
+  </data>
+  <data name="comboBox_FolderView_Hidden.Items" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="button_netsh_winsock_reset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 95</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_ShowTypeOverlay.Name" xml:space="preserve">
+    <value>label_FolderView_ShowTypeOverlay</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Save.Name" xml:space="preserve">
+    <value>button_FolderView_Save</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_StoreAppsOnTaskbar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label_FolderView_IconsOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="button_netsh_winsock_reset.ToolTip" xml:space="preserve">
+    <value>调用程序 netsh 并传入参数：winsock reset
+</value>
+  </data>
+  <data name="&gt;&gt;comboBox_FolderView_ShowStatusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_FolderView_ShowEncryptCompressedColor.Items" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="button_ipconfig_flushdns.ToolTip" xml:space="preserve">
+    <value>调用程序 ipconfig 并附带 /flushdns 参数</value>
+  </data>
+  <data name="&gt;&gt;button_ipconfig_flushdns.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_renew_IP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 57</value>
+  </data>
+  <data name="comboBox_FolderView_ShowTypeOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 35</value>
+  </data>
+  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Preset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 27</value>
+  </data>
+  <data name="&gt;&gt;button_FolderView_Preset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarAnimations.Parent" xml:space="preserve">
+    <value>groupBox_TaskbarBehavioral</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_FolderView_IconsOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>149</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_TaskbarBehavioral_TaskbarGlomLevel.Name" xml:space="preserve">
+    <value>label_TaskbarBehavioral_TaskbarGlomLevel</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 63</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>tabPageCMD</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TaskbarBehavioral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPageCMD.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>14, 12</value>
   </metadata>

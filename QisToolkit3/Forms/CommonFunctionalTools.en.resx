@@ -117,4 +117,125 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="button_FixIconCache.Text" xml:space="preserve">
+    <value>Reset Icon Cache</value>
+  </data>
+  <data name="groupBox_IconCache.Text" xml:space="preserve">
+    <value>Icon Cache</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarAnimations.Text" xml:space="preserve">
+    <value>Disable Taskbar Animations</value>
+  </data>
+  <data name="label_TaskbarBehavioral_DisablePreviewDesktop.Text" xml:space="preserve">
+    <value>Peek at Desktop</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarSmallIcons.Text" xml:space="preserve">
+    <value>Taskbar Icon Size</value>
+  </data>
+  <data name="label_TaskbarBehavioral_StoreAppsOnTaskbar.Text" xml:space="preserve">
+    <value>Show App Progress</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarGlomLevel.Text" xml:space="preserve">
+    <value>Combine Taskbar Buttons</value>
+  </data>
+  <data name="label_TaskbarBehavioral_ShowCortanaButton.Text" xml:space="preserve">
+    <value>Cortana / Search Icon</value>
+  </data>
+  <data name="label_TaskbarBehavioral_TaskbarBadges.Text" xml:space="preserve">
+    <value>Taskbar Button Badges</value>
+  </data>
+  <data name="groupBox_TaskbarBehavioral.Text" xml:space="preserve">
+    <value>Taskbar Behavior</value>
+  </data>
+  <data name="button_FolderView_Preset.Text" xml:space="preserve">
+    <value>Presets</value>
+  </data>
+  <data name="button_FolderView_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="button_FolderView_Read.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="label_FolderView_IconsOnly.Text" xml:space="preserve">
+    <value>Show Icons &amp;&amp; Text Behavior</value>
+  </data>
+  <data name="label_FolderView_ShowInfoTip.Text" xml:space="preserve">
+    <value>Show Hover Tooltips</value>
+  </data>
+  <data name="label_FolderView_ShowTypeOverlay.Text" xml:space="preserve">
+    <value>Overlay Icons</value>
+  </data>
+  <data name="label_FolderView_ShowStatusBar.Text" xml:space="preserve">
+    <value>Explorer Bottom Status Bar</value>
+  </data>
+  <data name="label_FolderView_HideFileExt.Text" xml:space="preserve">
+    <value>File Extensions</value>
+  </data>
+  <data name="label_FolderView_ShowEncryptCompressedColor.Text" xml:space="preserve">
+    <value>Color Enc. / Comp.</value>
+  </data>
+  <data name="label_FolderView_Hidden.Text" xml:space="preserve">
+    <value>Hidden Files</value>
+  </data>
+  <data name="label_FolderView_HideDrivesWithNoMedia.Text" xml:space="preserve">
+    <value>Hide Empty Drive Letters</value>
+  </data>
+  <data name="label_FolderView_ShowSuperHidden.Text" xml:space="preserve">
+    <value>Protected OS Files</value>
+  </data>
+  <data name="groupBox_FolderView.Text" xml:space="preserve">
+    <value>Files &amp;&amp; Folders View</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1159, 662</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Folder Options</value>
+  </data>
+  <data name="button_DoShellFolderNameAndIconBug.Text" xml:space="preserve">
+    <value>Reproduce Shell Folder Name &amp;&amp; Icon Errors</value>
+  </data>
+  <data name="button_FixShellFolderNameAndIcon.Text" xml:space="preserve">
+    <value>Fix Shell Folder Names &amp;&amp; Icons</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Shell Folders</value>
+  </data>
+  <data name="tabPage_Explorer.Text" xml:space="preserve">
+    <value>Icons &amp; Display</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>WLAN Info</value>
+  </data>
+  <data name="button_release_and_renew_IP.Text" xml:space="preserve">
+    <value>Release &amp;&amp; Renew IP</value>
+  </data>
+  <data name="button_renew_IP.Text" xml:space="preserve">
+    <value>Renew IP</value>
+  </data>
+  <data name="button_release_IP.Text" xml:space="preserve">
+    <value>Release IP</value>
+  </data>
+  <data name="button_netsh_winsock_reset.Text" xml:space="preserve">
+    <value>Reset Winsock</value>
+  </data>
+  <data name="button_ipconfig_flushdns.Text" xml:space="preserve">
+    <value>Flush DNS Cache</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Command Prompt</value>
+  </data>
+  <data name="tabPageCMD.Text" xml:space="preserve">
+    <value>Network &amp; Connection</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Common Basic Tools</value>
+  </data>
 </root>
