@@ -1279,6 +1279,9 @@ namespace QisToolkit3.Forms
 
             // 加载自动下载名称映射
             await LoadIdNameMapper(AutoDownloadNameFilePath);
+
+            if (string.IsNullOrWhiteSpace(comboBox_URL.Text))
+                comboBox_URL.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
         }
 
         private void button_Update_Click(object sender, EventArgs e)
