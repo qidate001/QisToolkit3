@@ -1522,6 +1522,7 @@ public class Qi
         }
         catch (Exception ex)
         {
+            Log.Err($"[语言] 读取配置文件读取时遇到错误！\n报错信息：{ex.Message}\n完整报错：\n{ex}");
             MessageBox.Show($"读取配置文件读取时遇到错误！\n报错信息：{ex.Message}\n完整报错：\n{ex}",
                 "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

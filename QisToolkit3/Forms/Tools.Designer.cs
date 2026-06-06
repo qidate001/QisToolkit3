@@ -135,7 +135,7 @@
             button_SoftwareFunctionPage = new Button();
             tabPage1 = new TabPage();
             button3 = new Button();
-            button2 = new Button();
+            button_PaywallBuster = new Button();
             buttonUnlockMusic = new Button();
             button_QisToolkit3_PersecutionSystem = new Button();
             label4 = new Label();
@@ -982,7 +982,7 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(button_PaywallBuster);
             tabPage1.Controls.Add(buttonUnlockMusic);
             tabPage1.Controls.Add(button_QisToolkit3_PersecutionSystem);
             tabPage1.Controls.Add(label4);
@@ -1004,13 +1004,14 @@
             toolTip.SetToolTip(button3, resources.GetString("button3.ToolTip"));
             button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_PaywallBuster
             // 
-            resources.ApplyResources(button2, "button2");
-            button2.ForeColor = Color.Green;
-            button2.Name = "button2";
-            toolTip.SetToolTip(button2, resources.GetString("button2.ToolTip"));
-            button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(button_PaywallBuster, "button_PaywallBuster");
+            button_PaywallBuster.ForeColor = Color.Green;
+            button_PaywallBuster.Name = "button_PaywallBuster";
+            toolTip.SetToolTip(button_PaywallBuster, resources.GetString("button_PaywallBuster.ToolTip"));
+            button_PaywallBuster.UseVisualStyleBackColor = true;
+            button_PaywallBuster.Click += button_PaywallBuster_Click;
             // 
             // buttonUnlockMusic
             // 
@@ -1230,7 +1231,7 @@
         private Button button_HitokotoTool;
         private Button buttonUnlockMusic;
         private Button button3;
-        private Button button2;
+        private Button button_PaywallBuster;
         private Button button_JokeAPIForm;
         private Button buttonCommonFunctionalTools;
         private Button buttonShellFolderSetPathTool;

@@ -498,5 +498,10 @@ namespace QisToolkit3.Forms
         {
             new ShellFolderSetPathTool().Show();
         }
+
+        private void button_PaywallBuster_Click(object sender, EventArgs e)
+        {
+            OpenBrowser("https://paywallbuster.me/");
+        }
     }
 }
