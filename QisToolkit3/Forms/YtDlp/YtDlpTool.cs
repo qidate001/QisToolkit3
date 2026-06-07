@@ -180,7 +180,7 @@ namespace QisToolkit3.Forms
                                 AppendText(msg, "InfoPage");
                             });
 
-                            await generator.GenerateForVideo(videoPath);
+                            await generator.GenerateForVideo(videoPath, checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Checked);
 
                             // 删除原 JSON 文件
                             if (checkBox_GenerateInfoPage_DeleteJsonFile.Checked)

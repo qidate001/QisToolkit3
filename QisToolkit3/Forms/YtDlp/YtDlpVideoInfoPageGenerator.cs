@@ -8,6 +8,7 @@ namespace QisToolkit3.Forms.YtDlp
     {
         private readonly string _downloadPath;
         private readonly Action<string>? _logCallback;
+        private bool _embedBilibiliPlayer = false;  // 添加字段
 
         public VideoInfoPageGenerator(string downloadPath, Action<string>? logCallback = null)
         {
@@ -20,12 +21,15 @@ namespace QisToolkit3.Forms.YtDlp
             _logCallback?.Invoke(message);
         }
 
-        public async Task GenerateForVideo(string videoPath)
+        public async Task GenerateForVideo(string videoPath, bool embedBilibiliPlayer = false)
         {
+            _embedBilibiliPlayer = embedBilibiliPlayer;  // 保存设置
+
             try
             {
                 mLog($"📄 开始生成信息页...");
                 mLog($"   视频文件: {videoPath}");
+                mLog($"   嵌入视频播放器: {(embedBilibiliPlayer ? "是" : "否")}");
 
                 string baseName = Path.GetFileNameWithoutExtension(videoPath);
                 string jsonPath = Path.Combine(_downloadPath, $"{baseName}.信息.json");
@@ -90,9 +94,12 @@ namespace QisToolkit3.Forms.YtDlp
 
         private string GenerateHtml(VideoInfo info)
         {
-            // 提取B站视频ID（支持从webpage_url或直接字段获取）
-            string bvid = ExtractBvid(info);
-            string embedUrl = info.EmbedUrl;
+            // 根据设置决定是否获取嵌入URL
+            string embedUrl = null;
+            if (_embedBilibiliPlayer)
+            {
+                embedUrl = info.EmbedUrl;  // 使用 VideoInfo 中的便捷属性
+            }
 
             return $@"<!DOCTYPE html>
 <html lang='zh-CN'>
@@ -175,12 +182,6 @@ namespace QisToolkit3.Forms.YtDlp
             border-radius: 10px;
             margin-bottom: 20px;
             border: 1px solid rgba(102, 126, 234, 0.3);
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }}
-        
-        .thumbnail:hover {{
-            opacity: 0.9;
         }}
         
         /* 如果没有嵌入视频，显示提示 */
@@ -380,9 +381,8 @@ namespace QisToolkit3.Forms.YtDlp
             <div class='video-id'>{info.Id}</div>
         </div>
         <div class='content'>
-            {(string.IsNullOrEmpty(embedUrl) ?
-                        (string.IsNullOrEmpty(info.Thumbnail) ? "" : $"<img class='thumbnail' src='{info.Thumbnail}' alt='缩略图' loading='lazy' onclick=\"window.open('{info.WebpageUrl}', '_blank')\">") :
-                        $@"
+            {(!string.IsNullOrEmpty(embedUrl) ?
+                $@"
             <div class='video-player'>
                 <iframe 
                     src='{embedUrl}' 
@@ -390,7 +390,9 @@ namespace QisToolkit3.Forms.YtDlp
                     allowfullscreen='true'
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'>
                 </iframe>
-            </div>")}
+            </div>" :
+                (string.IsNullOrEmpty(info.Thumbnail) ? "" :
+                $"<img class='thumbnail' src='{info.Thumbnail}' alt='缩略图' loading='lazy'>"))}
             
             <div class='section'>
                 <div class='section-title'>基本信息</div>
@@ -443,34 +445,11 @@ namespace QisToolkit3.Forms.YtDlp
         <div class='footer'>
             生成时间: {DateTime.Now:yyyy-MM-dd HH:mm:ss}<br>
             由 QisToolkit3 自动生成 | 数据来源: yt-dlp
+            {(_embedBilibiliPlayer ? " | 已启用视频嵌入" : " | 缩略图模式")}
         </div>
     </div>
 </body>
 </html>";
-        }
-
-        // 辅助方法：从 VideoInfo 中提取 B站视频ID
-        private string ExtractBvid(VideoInfo info)
-        {
-            // 优先使用直接存储的 bvid 字段（需要在 VideoInfo 类中添加）
-            if (!string.IsNullOrEmpty(info.Bvid))
-                return info.Bvid;
-
-            // 其次从 webpage_url 中提取
-            if (!string.IsNullOrEmpty(info.WebpageUrl))
-            {
-                // 匹配 BV 号模式（BV开头后跟10个字母数字）
-                var match = System.Text.RegularExpressions.Regex.Match(info.WebpageUrl, @"BV[a-zA-Z0-9]{10}");
-                if (match.Success)
-                    return match.Value;
-
-                // 匹配 av 号模式（可选）
-                match = System.Text.RegularExpressions.Regex.Match(info.WebpageUrl, @"av(\d+)");
-                if (match.Success)
-                    return $"av{match.Groups[1].Value}";  // B站iframe也支持av号
-            }
-
-            return null;
         }
 
         private string EscapeHtml(string input) =>

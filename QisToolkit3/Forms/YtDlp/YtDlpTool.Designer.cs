@@ -253,6 +253,7 @@
             button_DoDownload = new Button();
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -2495,13 +2496,14 @@
             // 
             // groupBox21
             // 
+            groupBox21.Controls.Add(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteDescriptionFile);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteJsonFile);
             groupBox21.Font = new Font("Microsoft YaHei UI", 12F);
             groupBox21.Location = new Point(5, 140);
             groupBox21.Name = "groupBox21";
-            groupBox21.Size = new Size(465, 180);
+            groupBox21.Size = new Size(500, 223);
             groupBox21.TabIndex = 82;
             groupBox21.TabStop = false;
             groupBox21.Text = "元数据功能：自动生成HTML";
@@ -2546,7 +2548,7 @@
             groupBox20.Font = new Font("Microsoft YaHei UI", 12F);
             groupBox20.Location = new Point(5, 6);
             groupBox20.Name = "groupBox20";
-            groupBox20.Size = new Size(465, 128);
+            groupBox20.Size = new Size(500, 128);
             groupBox20.TabIndex = 81;
             groupBox20.TabStop = false;
             groupBox20.Text = "字幕功能：XML转ASS";
@@ -3013,6 +3015,17 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
+            // checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer
+            // 
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.AutoSize = true;
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Font = new Font("微软雅黑", 16.2F);
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Location = new Point(6, 170);
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name = "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer";
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Size = new Size(503, 40);
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.TabIndex = 45;
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Text = "嵌入视频播放器而非封面（暂仅B站）";
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.UseVisualStyleBackColor = true;
+            // 
             // YtDlpTool
             // 
             AllowDrop = true;
@@ -3311,5 +3324,6 @@
         private CheckBox checkBox_GenerateInfoPage;
         private CheckBox checkBox_GenerateInfoPage_DeleteJsonFile;
         private CheckBox checkBox_GenerateInfoPage_DeleteDescriptionFile;
+        private CheckBox checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer;
     }
 }
