@@ -62,6 +62,41 @@ namespace QisToolkit3.Forms
             outputBox = richTextBox;
         }
 
+        private async void YtDlpTool_Load(object sender, EventArgs e)
+        {
+            // 下载存放路径
+            //textBox_Paths.Text = DefaultDownloadPath;
+            //comboBox_Path_Home.Text = DefaultDownloadPath;
+            //comboBox_Path_Temp.Text = DefaultDownloadPath;
+            //comboBox_Path_Video.Text = DefaultDownloadPath;
+            //comboBox_Path_Audio.Text = DefaultDownloadPath;
+            //comboBox_Path_SubTitle.Text = DefaultDownloadPath;
+            //comboBox_Path_Description.Text = DefaultDownloadPath;
+            //comboBox_Path_Thumbnail.Text = DefaultDownloadPath;
+            //comboBox_Path_InfoJson.Text = DefaultDownloadPath;
+
+            // .netrc 文件
+            textBox_netrc_Location.Text = Path.Combine(actualDirectory, @$"yt-dlp") + '\\';
+
+            button_AutoDownload.Enabled = File.Exists(comboBox_URL.Text) || File.Exists(AutoDownloadFilePath);
+            checkBox_IdNameMapper.Checked = File.Exists(AutoDownloadNameFilePath);
+
+            int IsCookies = IsCookieFile(CookiesFilePath);
+            checkBox_UseCookies.Checked = IsCookies == 1 || IsCookies == 2;
+
+            comboBox_PlayListMode.SelectedIndex = 0;
+            comboBox_OverWritesMode.SelectedIndex = 1;
+
+            if (File.Exists(DefaultConfigFilePath))
+                YtDlpConfigManager.ImportConfig(this, DefaultConfigFilePath);
+
+            // 加载自动下载名称映射
+            await LoadIdNameMapper(AutoDownloadNameFilePath);
+
+            if (string.IsNullOrWhiteSpace(textBox_Paths.Text))
+                textBox_Paths.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
+        }
+
         // 解析
         private void button_DoAnalysis_Click(object sender, EventArgs e)
         {
@@ -1248,41 +1283,6 @@ namespace QisToolkit3.Forms
 
         private void checkBox_ReadOnClipboard_CheckedChanged(object sender, EventArgs e) =>
             comboBox_URL.Enabled = !checkBox_ReadOnClipboard.Checked;
-
-        private async void YtDlpTool_Load(object sender, EventArgs e)
-        {
-            // 下载存放路径
-            //textBox_Paths.Text = DefaultDownloadPath;
-            //comboBox_Path_Home.Text = DefaultDownloadPath;
-            //comboBox_Path_Temp.Text = DefaultDownloadPath;
-            //comboBox_Path_Video.Text = DefaultDownloadPath;
-            //comboBox_Path_Audio.Text = DefaultDownloadPath;
-            //comboBox_Path_SubTitle.Text = DefaultDownloadPath;
-            //comboBox_Path_Description.Text = DefaultDownloadPath;
-            //comboBox_Path_Thumbnail.Text = DefaultDownloadPath;
-            //comboBox_Path_InfoJson.Text = DefaultDownloadPath;
-
-            // .netrc 文件
-            textBox_netrc_Location.Text = Path.Combine(actualDirectory, @$"yt-dlp") + '\\';
-
-            button_AutoDownload.Enabled = File.Exists(comboBox_URL.Text) || File.Exists(AutoDownloadFilePath);
-            checkBox_IdNameMapper.Checked = File.Exists(AutoDownloadNameFilePath);
-
-            int IsCookies = IsCookieFile(CookiesFilePath);
-            checkBox_UseCookies.Checked = IsCookies == 1 || IsCookies == 2;
-
-            comboBox_PlayListMode.SelectedIndex = 0;
-            comboBox_OverWritesMode.SelectedIndex = 1;
-
-            if (File.Exists(DefaultConfigFilePath))
-                YtDlpConfigManager.ImportConfig(this, DefaultConfigFilePath);
-
-            // 加载自动下载名称映射
-            await LoadIdNameMapper(AutoDownloadNameFilePath);
-
-            if (string.IsNullOrWhiteSpace(comboBox_URL.Text))
-                comboBox_URL.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
-        }
 
         private void button_Update_Click(object sender, EventArgs e)
         {
