@@ -30,6 +30,7 @@
         {
             splitContainer1 = new SplitContainer();
             listBox = new ListBox();
+            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             button_CommandAdd = new Button();
@@ -40,7 +41,6 @@
             comboBoxMetadataFields = new ComboBox();
             button_Add = new Button();
             buttonDeleteItem = new Button();
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +89,16 @@
             listBox.TabIndex = 0;
             listBox.SelectedIndexChanged += listBox_SelectedIndexChanged;
             // 
+            // label3
+            // 
+            label3.Font = new Font("Microsoft YaHei UI", 16F);
+            label3.Location = new Point(9, 310);
+            label3.Name = "label3";
+            label3.Size = new Size(853, 57);
+            label3.TabIndex = 46;
+            label3.Text = "提示：关闭此窗口自动保存";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             label2.BackColor = Color.Gainsboro;
@@ -131,7 +141,7 @@
             comboBox_CommandText.Name = "comboBox_CommandText";
             comboBox_CommandText.Size = new Size(753, 43);
             comboBox_CommandText.TabIndex = 6;
-            comboBox_CommandText.Text = "Tile*=第一集";
+            comboBox_CommandText.Text = "Tile~='第一集'";
             // 
             // comboBoxValue
             // 
@@ -159,7 +169,7 @@
             // 
             comboBoxOperator.Font = new Font("Microsoft YaHei UI", 16F);
             comboBoxOperator.FormattingEnabled = true;
-            comboBoxOperator.Items.AddRange(new object[] { "等于", "不等于", "大于", "小于", "大于等于", "小于等于", "正则匹配", "包含子串", "以...开头", "以...结尾" });
+            comboBoxOperator.Items.AddRange(new object[] { "等于", "不等于", "大于", "小于", "大于等于", "小于等于", "正则匹配", "以...开头", "以...结尾" });
             comboBoxOperator.Location = new Point(197, 133);
             comboBoxOperator.Name = "comboBoxOperator";
             comboBoxOperator.Size = new Size(174, 43);
@@ -200,16 +210,6 @@
             buttonDeleteItem.Text = "删除选择项";
             buttonDeleteItem.UseVisualStyleBackColor = true;
             buttonDeleteItem.Click += buttonDeleteItem_Click;
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Microsoft YaHei UI", 16F);
-            label3.Location = new Point(9, 310);
-            label3.Name = "label3";
-            label3.Size = new Size(853, 57);
-            label3.TabIndex = 46;
-            label3.Text = "提示：关闭此窗口自动保存";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // YtDlpToolMatchFilters
             // 
