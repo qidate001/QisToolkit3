@@ -2717,7 +2717,6 @@
             // 
             // button_SetMatchFilters
             // 
-            button_SetMatchFilters.Enabled = false;
             button_SetMatchFilters.Font = new Font("微软雅黑", 16.2F);
             button_SetMatchFilters.ForeColor = Color.FromArgb(128, 64, 0);
             button_SetMatchFilters.Location = new Point(783, 61);
@@ -2871,7 +2870,7 @@
             // 
             comboBox_URL.Font = new Font("微软雅黑", 16.2F);
             comboBox_URL.FormattingEnabled = true;
-            comboBox_URL.Items.AddRange(new object[] { "https://www.bilibili.com/video/BV1uT4y1P7CX" });
+            comboBox_URL.Items.AddRange(new object[] { "https://www.bilibili.com/video/BV1uT4y1P7CX", "https://www.bilibili.com/video/BV1hxd8BVEFi", "https://www.youtube.com/watch?v=dQw4w9WgXcQ" });
             comboBox_URL.Location = new Point(189, 12);
             comboBox_URL.Name = "comboBox_URL";
             comboBox_URL.Size = new Size(588, 43);

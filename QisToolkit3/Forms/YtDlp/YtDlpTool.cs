@@ -134,9 +134,17 @@ namespace QisToolkit3.Forms
             }
         }
 
-        private void button_DoDownload_Click(object sender, EventArgs e)
+        private async void button_DoDownload_Click(object sender, EventArgs e)
         {
-            DoDownload();
+            button_DoDownload.Enabled = false;
+            button_AutoDownload.Enabled = false;
+            button_DoAnalysis.Enabled = false;
+
+            await DoDownload();
+
+            button_DoDownload.Enabled = true;
+            button_AutoDownload.Enabled = true;
+            button_DoAnalysis.Enabled = true;
         }
 
         private async Task DoDownload()
@@ -1279,7 +1287,14 @@ namespace QisToolkit3.Forms
             richTextBox.Text += "\n已终止进程。";
         }
 
-        private void button_Stop_Click(object sender, EventArgs e) => Stop();
+        private void button_Stop_Click(object sender, EventArgs e)
+        {
+            Stop();
+
+            button_DoDownload.Enabled = true;
+            button_AutoDownload.Enabled = true;
+            button_DoAnalysis.Enabled = true;
+        }
 
         private void checkBox_ReadOnClipboard_CheckedChanged(object sender, EventArgs e) =>
             comboBox_URL.Enabled = !checkBox_ReadOnClipboard.Checked;
@@ -1606,7 +1621,7 @@ namespace QisToolkit3.Forms
 
         private void checkBox_MatchFilters_CheckedChanged(object sender, EventArgs e)
         {
-            button_SetMatchFilters.Enabled = checkBox_MatchFilters.Checked;
+            //button_SetMatchFilters.Enabled = checkBox_MatchFilters.Checked;
         }
 
         private void button_SetMatchFilters_Click(object sender, EventArgs e)

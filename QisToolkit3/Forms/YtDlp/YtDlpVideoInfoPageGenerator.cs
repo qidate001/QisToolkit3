@@ -90,6 +90,10 @@ namespace QisToolkit3.Forms.YtDlp
 
         private string GenerateHtml(VideoInfo info)
         {
+            // 提取B站视频ID（支持从webpage_url或直接字段获取）
+            string bvid = ExtractBvid(info);
+            string embedUrl = info.EmbedUrl;
+
             return $@"<!DOCTYPE html>
 <html lang='zh-CN'>
 <head>
@@ -141,6 +145,53 @@ namespace QisToolkit3.Forms.YtDlp
         
         .content {{
             padding: 40px;
+        }}
+        
+        /* 视频播放器容器 */
+        .video-player {{
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            background: #000;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 宽高比 */
+            height: 0;
+        }}
+        
+        .video-player iframe {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }}
+        
+        .thumbnail {{
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }}
+        
+        .thumbnail:hover {{
+            opacity: 0.9;
+        }}
+        
+        /* 如果没有嵌入视频，显示提示 */
+        .no-embed {{
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px dashed rgba(102, 126, 234, 0.4);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            color: #8892b0;
+            margin-bottom: 30px;
         }}
         
         .section {{
@@ -287,15 +338,6 @@ namespace QisToolkit3.Forms.YtDlp
             color: #5a6e8a;
         }}
         
-        .thumbnail {{
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }}
-        
         .footer {{
             background: rgba(15, 20, 31, 0.8);
             padding: 20px;
@@ -338,7 +380,17 @@ namespace QisToolkit3.Forms.YtDlp
             <div class='video-id'>{info.Id}</div>
         </div>
         <div class='content'>
-            {(string.IsNullOrEmpty(info.Thumbnail) ? "" : $"<img class='thumbnail' src='{info.Thumbnail}' alt='缩略图' loading='lazy'>")}
+            {(string.IsNullOrEmpty(embedUrl) ?
+                        (string.IsNullOrEmpty(info.Thumbnail) ? "" : $"<img class='thumbnail' src='{info.Thumbnail}' alt='缩略图' loading='lazy' onclick=\"window.open('{info.WebpageUrl}', '_blank')\">") :
+                        $@"
+            <div class='video-player'>
+                <iframe 
+                    src='{embedUrl}' 
+                    frameborder='0' 
+                    allowfullscreen='true'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'>
+                </iframe>
+            </div>")}
             
             <div class='section'>
                 <div class='section-title'>基本信息</div>
@@ -395,6 +447,30 @@ namespace QisToolkit3.Forms.YtDlp
     </div>
 </body>
 </html>";
+        }
+
+        // 辅助方法：从 VideoInfo 中提取 B站视频ID
+        private string ExtractBvid(VideoInfo info)
+        {
+            // 优先使用直接存储的 bvid 字段（需要在 VideoInfo 类中添加）
+            if (!string.IsNullOrEmpty(info.Bvid))
+                return info.Bvid;
+
+            // 其次从 webpage_url 中提取
+            if (!string.IsNullOrEmpty(info.WebpageUrl))
+            {
+                // 匹配 BV 号模式（BV开头后跟10个字母数字）
+                var match = System.Text.RegularExpressions.Regex.Match(info.WebpageUrl, @"BV[a-zA-Z0-9]{10}");
+                if (match.Success)
+                    return match.Value;
+
+                // 匹配 av 号模式（可选）
+                match = System.Text.RegularExpressions.Regex.Match(info.WebpageUrl, @"av(\d+)");
+                if (match.Success)
+                    return $"av{match.Groups[1].Value}";  // B站iframe也支持av号
+            }
+
+            return null;
         }
 
         private string EscapeHtml(string input) =>
