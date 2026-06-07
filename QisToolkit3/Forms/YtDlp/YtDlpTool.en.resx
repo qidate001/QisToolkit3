@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBox_Paths.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 61</value>
+  </data>
+  <data name="textBox_Paths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 43</value>
+  </data>
+  <data name="checkBox_Quiet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 372</value>
+  </data>
+  <data name="checkBox_Quiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 40</value>
+  </data>
+  <data name="checkBox_Quiet.Text" xml:space="preserve">
+    <value>Quiet mode</value>
+  </data>
+  <data name="checkBox_KeepFragments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 321</value>
+  </data>
+  <data name="checkBox_KeepFragments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 40</value>
+  </data>
+  <data name="checkBox_KeepFragments.Text" xml:space="preserve">
+    <value>RetainFragments</value>
+  </data>
+  <data name="checkBox_KeepFragments.ToolTip" xml:space="preserve">
+    <value>Keep downloaded fragments (usually for debugging or secondary processing)</value>
+  </data>
+  <data name="comboBox_RetrySleep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 276</value>
+  </data>
+  <data name="comboBox_RetrySleep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 43</value>
+  </data>
+  <data name="checkBox_Fragments_SU_AO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 40</value>
+  </data>
+  <data name="checkBox_Fragments_SU_AO.Text" xml:space="preserve">
+    <value>ResumeOnMissing</value>
+  </data>
+  <data name="checkBox_Fragments_SU_AO.ToolTip" xml:space="preserve">
+    <value>When ON:
+Action: skip missing fragments, continue downloading later fragments
+File state: full-length file with data holes
+Playback: may cause glitches / stutter / A/V desync
+File structure: complete timeline, but missing data at certain positions
+
+When OFF:
+Action: stop immediately when a missing fragment is encountered
+File state: incomplete file, only up to the missing fragment
+Playback: first half plays perfectly, second half missing entirely
+File structure: incomplete timeline, only the first part exists</value>
+  </data>
+  <data name="checkBox_RetrySleep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 40</value>
+  </data>
+  <data name="checkBox_RetrySleep.Text" xml:space="preserve">
+    <value>Retry wait</value>
+  </data>
+  <data name="checkBox_RetrySleep.ToolTip" xml:space="preserve">
+    <value>Wait time between retries
+
+Fixed value:
+• 5: wait 5 seconds per retry
+• http:3: wait 3 seconds for HTTP retry
+• fragment:2: wait 2 seconds for fragment retry
+
+Linear growth mode (arithmetic progression):
+Syntax: linear=START[:END[:STEP]]
+• linear=1: start at 1, add 1 sec per retry
+• linear=1:10: start at 1, add 1 sec per retry, cap at 10 sec
+• linear=2:20:3: start at 2, add 3 sec per retry, cap at 20 sec
+
+Exponential growth mode (geometric progression):
+Syntax: exp=START[:END[:BASE]]
+Nth retry wait time = START * (BASE^(N-1))
+Or more precisely: BASE^(N-1), clamped between START and END
+• exp=1: basic exponential growth (2^N)
+• exp=1:30: exponential growth (2^N) capped at 30 sec
+• exp=5:200:2: exponential growth (5 × 2^N) capped at 200 sec</value>
+  </data>
+  <data name="comboBox_PlayListMode.Items" xml:space="preserve">
+    <value>Default mode</value>
+  </data>
+  <data name="comboBox_PlayListMode.Items1" xml:space="preserve">
+    <value>Random mode</value>
+  </data>
+  <data name="comboBox_PlayListMode.Items2" xml:space="preserve">
+    <value>Lazy mode</value>
+  </data>
+  <data name="comboBox_PlayListMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 227</value>
+  </data>
+  <data name="comboBox_PlayListMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 43</value>
+  </data>
+  <data name="checkBox_PlayListMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 40</value>
+  </data>
+  <data name="checkBox_PlayListMode.Text" xml:space="preserve">
+    <value>Playlist proc. mode</value>
+  </data>
+  <data name="checkBox_PlayListMode.ToolTip" xml:space="preserve">
+    <value>Set TCP receive buffer size.
+Units: K (KB), M (MB), G (GB).
+Recommended not to change unless you have special needs.
+</value>
+  </data>
+  <data name="checkBox_ResizeBuffer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 40</value>
+  </data>
+  <data name="checkBox_ResizeBuffer.Text" xml:space="preserve">
+    <value>DynaBuffer</value>
+  </data>
+  <data name="checkBox_ResizeBuffer.ToolTip" xml:space="preserve">
+    <value>Literally, dynamically adjusts TCP receive buffer size.
+When checked, the adjacent buffer setting will be used as the initial size.
+Recommended to keep default (dynamic), unless you have special needs.</value>
+  </data>
+  <data name="comboBox_BufferSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 179</value>
+  </data>
+  <data name="comboBox_BufferSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 43</value>
+  </data>
+  <data name="checkBox_BufferSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 40</value>
+  </data>
+  <data name="checkBox_BufferSize.Text" xml:space="preserve">
+    <value>Buffers</value>
+  </data>
+  <data name="checkBox_FragmentRetries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 40</value>
+  </data>
+  <data name="checkBox_FragmentRetries.Text" xml:space="preserve">
+    <value>FragRetry</value>
+  </data>
+  <data name="checkBox_FragmentRetries.ToolTip" xml:space="preserve">
+    <value>Each fragment retries independently, does not affect other already downloaded fragments.
+
+Supported formats:
+· DASH (Dynamic Adaptive Streaming)
+· hlsnative (native HLS)
+· ISM (Smooth Streaming)</value>
+  </data>
+  <data name="checkBox_FileAccessRetries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 40</value>
+  </data>
+  <data name="checkBox_FileAccessRetries.Text" xml:space="preserve">
+    <value>FileRetry</value>
+  </data>
+  <data name="checkBox_FileAccessRetries.ToolTip" xml:space="preserve">
+    <value>Number of retries when encountering I/O errors.
+
+Trigger conditions:
+· Disk write failure (disk full)
+· File permission error
+· File is locked/in use
+· Path does not exist</value>
+  </data>
+  <data name="checkBox_Retries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 40</value>
+  </data>
+  <data name="checkBox_Retries.Text" xml:space="preserve">
+    <value>NetRetry</value>
+  </data>
+  <data name="checkBox_Retries.ToolTip" xml:space="preserve">
+    <value>Number of retries when encountering download errors.
+
+Trigger conditions:
+· Network connection failure
+· Server returns 5xx error
+· Timeout with no response</value>
+  </data>
+  <data name="checkBox_ThrottledRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 40</value>
+  </data>
+  <data name="checkBox_ThrottledRate.Text" xml:space="preserve">
+    <value>DetectL</value>
+  </data>
+  <data name="checkBox_ThrottledRate.ToolTip" xml:space="preserve">
+    <value>Detect download speed. If below this value, it is considered "throttled".
+When the download speed stays below this threshold for a period, it will retry to obtain a new connection.
+Units: K (KB), M (MB), G (GB).</value>
+  </data>
+  <data name="checkBox_LimitRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 40</value>
+  </data>
+  <data name="checkBox_LimitRate.Text" xml:space="preserve">
+    <value>DownL</value>
+  </data>
+  <data name="checkBox_LimitRate.ToolTip" xml:space="preserve">
+    <value>Literally, controls how many bytes to download per second.
+Units: K (KB), M (MB), G (GB).
+Default is 0 (unlimited)</value>
+  </data>
+  <data name="comboBox_ConcurrentFragments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 32</value>
+  </data>
+  <data name="comboBox_ConcurrentFragments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 43</value>
+  </data>
+  <data name="checkBox_ConcurrentFragments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 40</value>
+  </data>
+  <data name="checkBox_ConcurrentFragments.Text" xml:space="preserve">
+    <value>ConcurD</value>
+  </data>
+  <data name="checkBox_ConcurrentFragments.ToolTip" xml:space="preserve">
+    <value>Set the number of video fragments to download simultaneously
+
+Default is 1 (single-thread download)
+Modern videos (e.g., DASH/HLS) are split into many small fragments. This setting controls how many fragments are downloaded at the same time.
+
+Use cases:
+· Fast network but high latency → increase concurrency to boost speed
+· Downloading 4K/8K high-bitrate videos
+· Server limits speed per single connection
+
+Notes:
+· Setting too high may get your IP temporarily banned
+· Increases memory and CPU usage
+Recommended value: 5-10</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Network &amp;&amp; Retry Options</value>
+  </data>
+  <data name="checkBox_Verbose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 40</value>
+  </data>
+  <data name="checkBox_Verbose.Text" xml:space="preserve">
+    <value>Debug mode</value>
+  </data>
+  <data name="checkBox_MatchFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 373</value>
+  </data>
+  <data name="checkBox_MatchFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 40</value>
+  </data>
+  <data name="checkBox_MatchFilters.Text" xml:space="preserve">
+    <value>Enable advanced download filters</value>
+  </data>
+  <data name="comboBox_AgeLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 262</value>
+  </data>
+  <data name="comboBox_AgeLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 43</value>
+  </data>
+  <data name="checkBox_AgeLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 40</value>
+  </data>
+  <data name="checkBox_AgeLimit.Text" xml:space="preserve">
+    <value>Age limit</value>
+  </data>
+  <data name="checkBox_AgeLimit.ToolTip" xml:space="preserve">
+    <value>Only download videos suitable for a specific age.
+For example, 18 will skip 18+ restricted content.</value>
+  </data>
+  <data name="checkBox_MaxDownloads.Text" xml:space="preserve">
+    <value>Max count</value>
+  </data>
+  <data name="checkBox_MaxDownloads.ToolTip" xml:space="preserve">
+    <value>Stop after downloading the specified number of files.
+Useful for scenarios where you only want the first N videos.</value>
+  </data>
+  <data name="checkBox_DateAfter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 40</value>
+  </data>
+  <data name="checkBox_DateAfter.Text" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="checkBox_DateAfter.ToolTip" xml:space="preserve">
+    <value>Only download videos uploaded on or after the specified date.
+Example: today-1month downloads videos uploaded within the last month</value>
+  </data>
+  <data name="checkBox_Date.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 40</value>
+  </data>
+  <data name="checkBox_Date.Text" xml:space="preserve">
+    <value>This date</value>
+  </data>
+  <data name="checkBox_Date.ToolTip" xml:space="preserve">
+    <value>Only download videos uploaded on the specified date.
+Supports YYYYMMDD format or relative dates.
+Examples:
+• 20250101: uploaded on January 1, 2025
+• today-1week: uploaded one week ago from today</value>
+  </data>
+  <data name="checkBox_DateBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 40</value>
+  </data>
+  <data name="checkBox_DateBefore.Text" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="checkBox_DateBefore.ToolTip" xml:space="preserve">
+    <value>Only download videos uploaded on or before the specified date.
+Example: 20240101 downloads videos uploaded on or before January 1, 2024</value>
+  </data>
+  <data name="checkBox_MaxFileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 40</value>
+  </data>
+  <data name="checkBox_MaxFileSize.Text" xml:space="preserve">
+    <value>Max file</value>
+  </data>
+  <data name="checkBox_MaxFileSize.ToolTip" xml:space="preserve">
+    <value>Only download files smaller than the specified size.
+SIZE can use K (KB), M (MB), G (GB).</value>
+  </data>
+  <data name="checkBox_MinFileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 40</value>
+  </data>
+  <data name="checkBox_MinFileSize.Text" xml:space="preserve">
+    <value>Min file</value>
+  </data>
+  <data name="checkBox_MinFileSize.ToolTip" xml:space="preserve">
+    <value>Only download files larger than the specified size.
+SIZE can use K (KB), M (MB), G (GB).</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Basic download filters &amp;&amp; limits</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Basic para</value>
+  </data>
+  <data name="checkBox_Path_InfoJson.Text" xml:space="preserve">
+    <value>InfoJson</value>
+  </data>
+  <data name="checkBox_Path_Thumbnail.Text" xml:space="preserve">
+    <value>Thumb</value>
+  </data>
+  <data name="checkBox_Path_Description.Text" xml:space="preserve">
+    <value>Descrip</value>
+  </data>
+  <data name="checkBox_Path_SubTitle.Text" xml:space="preserve">
+    <value>SubTitle</value>
+  </data>
+  <data name="checkBox_Path_Audio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="checkBox_Path_Video.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="checkBox_Path_Temp.Text" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="checkBox_Path_Home.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="richTextBox_exec.Text" xml:space="preserve">
+    <value># Exec 在下载完成后自动调用程序
+# 井号开头或双斜杠开头为注释
+# 注意！这里默认自带的命令，仅供参考，非常之不健壮，切勿实际使用！！
+# 若想要实现以下效果，请使用【附加功能】→【字幕功能：XML转ASS】
+
+# 自动将XML字幕文件转换成ASS字幕文件
+# %(Qi:ActualDirectory)\yt-dlp\DanmakuFactory.exe -i "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].danmaku.xml" -o "%(Qi.YtDlpTool:Paths)\ASS\%(title)s [%(id)s].ass"
+# %(Qi:ActualDirectory)\yt-dlp\DanmakuFactory.exe -i "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].danmaku.xml" -o "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].ass"
+
+# 删除原XML字幕文件
+# del "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].danmaku.xml"
+</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>757, 839</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 40</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 839</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 40</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Text" xml:space="preserve">
+    <value>IDNameMap</value>
+  </data>
+  <data name="button_Option_ReSet.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="button_Option_Load.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="button_Option_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="button_OpenAutoDownloadNameFile.Text" xml:space="preserve">
+    <value>Open ID-name map</value>
+  </data>
+  <data name="button_AutoDownloadFile.Text" xml:space="preserve">
+    <value>Open auto-download list file</value>
+  </data>
+  <data name="button_OpenAutoDownloadPath.Text" xml:space="preserve">
+    <value>default save path</value>
+  </data>
+  <data name="button_OpenDownloadPath.Text" xml:space="preserve">
+    <value>current save path</value>
+  </data>
+  <data name="button_OpenCookiesFile.Text" xml:space="preserve">
+    <value>Open Cookies file</value>
+  </data>
+  <data name="button_OpenArchiveFile.Text" xml:space="preserve">
+    <value>Open Archive file</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Quick actions</value>
+  </data>
+  <data name="button_SetMatchFilters.Text" xml:space="preserve">
+    <value>Edit adv. filters</value>
+  </data>
+  <data name="textBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
+    <value>612, 118</value>
+  </data>
+  <data name="textBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 43</value>
+  </data>
+  <data name="checkBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 119</value>
+  </data>
+  <data name="checkBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 40</value>
+  </data>
+  <data name="checkBox_playlist_items.Text" xml:space="preserve">
+    <value>Download specific playlist</value>
+  </data>
+  <data name="checkBox_playlist_items.ToolTip" xml:space="preserve">
+    <value>Similar to Python slice syntax, using English commas as separators.
+
+Specify which items to download from the playlist.
+Supports flexible range syntax: [START]:[STOP][:STEP],
+Negative indices count from the end. Examples:
+• 1,3,5: download videos 1, 3, and 5
+• 1:5: download videos 1 through 5
+• -5:: download the last 5 videos
+• 1:10:2: download videos 1,3,5,7,9 (step 2)
+• 10:1:-1: download videos 10 through 1 in reverse order</value>
+  </data>
+  <data name="button_AutoDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>425, 976</value>
+  </data>
+  <data name="button_AutoDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 55</value>
+  </data>
+  <data name="button_AutoDownload.Text" xml:space="preserve">
+    <value>Auto download</value>
+  </data>
+  <data name="button_Help_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 845</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 839</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 40</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Text" xml:space="preserve">
+    <value>Archive Plus</value>
+  </data>
+  <data name="checkBox_UseArchive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 40</value>
+  </data>
+  <data name="checkBox_UseArchive.Text" xml:space="preserve">
+    <value>Auto blacklist archive</value>
+  </data>
+  <data name="checkBox_UseCookies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 885</value>
+  </data>
+  <data name="checkBox_UseCookies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 40</value>
+  </data>
+  <data name="checkBox_UseCookies.Text" xml:space="preserve">
+    <value>Use cookies from cookies.txt as cookies</value>
+  </data>
+  <data name="button_Update.Text" xml:space="preserve">
+    <value>Check yt-dlp update</value>
+  </data>
+  <data name="checkBoxNoPlaylest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 40</value>
+  </data>
+  <data name="checkBoxNoPlaylest.Text" xml:space="preserve">
+    <value>Ignore playlist</value>
+  </data>
+  <data name="checkBoxNoPlaylest.ToolTip" xml:space="preserve">
+    <value>When a URL points to both a video and a playlist, download only the single video.
+For example, a YouTube video link is often also inside a playlist. This option allows downloading only the current video.</value>
+  </data>
+  <data name="checkBox_ChineseTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 40</value>
+  </data>
+  <data name="checkBox_ChineseTip.Text" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>510, 931</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 40</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Text" xml:space="preserve">
+    <value>Paste URL</value>
+  </data>
+  <data name="checkBox_ClearURLData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 40</value>
+  </data>
+  <data name="checkBox_ClearURLData.Text" xml:space="preserve">
+    <value>Strip URL data tracking</value>
+  </data>
+  <data name="comboBox_URL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 12</value>
+  </data>
+  <data name="comboBox_URL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>611, 43</value>
+  </data>
+  <data name="checkBox_OpenF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 40</value>
+  </data>
+  <data name="checkBox_OpenF.Text" xml:space="preserve">
+    <value>Open dir</value>
+  </data>
+  <data name="button_Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 100</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 20</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(Relative paths not supported)</value>
+  </data>
+  <data name="button_Text.Text" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="checkBox_SetPaths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 40</value>
+  </data>
+  <data name="checkBox_SetPaths.Text" xml:space="preserve">
+    <value>Save path</value>
+  </data>
+  <data name="button_DoAnalysis.Text" xml:space="preserve">
+    <value>Parse</value>
+  </data>
+  <data name="button__DoCopyCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>685, 976</value>
+  </data>
+  <data name="button__DoCopyCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 55</value>
+  </data>
+  <data name="button__DoCopyCommand.Text" xml:space="preserve">
+    <value>Copy command</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 36</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Video URL</value>
+  </data>
+  <data name="button_DoDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 55</value>
+  </data>
+  <data name="button_DoDownload.Text" xml:space="preserve">
+    <value>Run download command</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Yt-Dlp Tool</value>
+  </data>
+</root>

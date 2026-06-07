@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YtDlpTool));
             splitContainer1 = new SplitContainer();
+            textBox_Paths = new TextBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             checkBox_Quiet = new CheckBox();
@@ -208,6 +209,7 @@
             richTextBox_exec = new RichTextBox();
             tabPage8 = new TabPage();
             groupBox21 = new GroupBox();
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
             checkBox_GenerateInfoPage_DeleteDescriptionFile = new CheckBox();
             checkBox_GenerateInfoPage = new CheckBox();
             checkBox_GenerateInfoPage_DeleteJsonFile = new CheckBox();
@@ -244,7 +246,6 @@
             button_Stop = new Button();
             label2 = new Label();
             button_Text = new Button();
-            textBox_Paths = new TextBox();
             checkBox_SetPaths = new CheckBox();
             button_DoAnalysis = new Button();
             panel1 = new Panel();
@@ -253,7 +254,6 @@
             button_DoDownload = new Button();
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -292,12 +292,13 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
+            resources.ApplyResources(splitContainer1, "splitContainer1");
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            resources.ApplyResources(splitContainer1.Panel1, "splitContainer1.Panel1");
+            splitContainer1.Panel1.Controls.Add(textBox_Paths);
             splitContainer1.Panel1.Controls.Add(tabControl1);
             splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(checkBox_IdNameMapper);
@@ -320,23 +321,30 @@
             splitContainer1.Panel1.Controls.Add(button_Stop);
             splitContainer1.Panel1.Controls.Add(label2);
             splitContainer1.Panel1.Controls.Add(button_Text);
-            splitContainer1.Panel1.Controls.Add(textBox_Paths);
             splitContainer1.Panel1.Controls.Add(checkBox_SetPaths);
             splitContainer1.Panel1.Controls.Add(button_DoAnalysis);
             splitContainer1.Panel1.Controls.Add(panel1);
             splitContainer1.Panel1.Controls.Add(button__DoCopyCommand);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(button_DoDownload);
+            toolTip.SetToolTip(splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.ToolTip"));
             // 
             // splitContainer1.Panel2
             // 
+            resources.ApplyResources(splitContainer1.Panel2, "splitContainer1.Panel2");
             splitContainer1.Panel2.Controls.Add(richTextBox);
-            splitContainer1.Size = new Size(1833, 1039);
-            splitContainer1.SplitterDistance = 940;
-            splitContainer1.TabIndex = 0;
+            toolTip.SetToolTip(splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.ToolTip"));
+            toolTip.SetToolTip(splitContainer1, resources.GetString("splitContainer1.ToolTip"));
+            // 
+            // textBox_Paths
+            // 
+            resources.ApplyResources(textBox_Paths, "textBox_Paths");
+            textBox_Paths.Name = "textBox_Paths";
+            toolTip.SetToolTip(textBox_Paths, resources.GetString("textBox_Paths.ToolTip"));
             // 
             // tabControl1
             // 
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
@@ -345,42 +353,33 @@
             tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage7);
             tabControl1.Controls.Add(tabPage8);
-            tabControl1.Location = new Point(3, 162);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(935, 451);
-            tabControl1.TabIndex = 49;
+            toolTip.SetToolTip(tabControl1, resources.GetString("tabControl1.ToolTip"));
             // 
             // tabPage1
             // 
+            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Controls.Add(checkBox_Quiet);
             tabPage1.Controls.Add(groupBox3);
             tabPage1.Controls.Add(checkBox_Verbose);
             tabPage1.Controls.Add(checkBox_MatchFilters);
             tabPage1.Controls.Add(groupBox1);
-            tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(927, 418);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "基础参数";
+            toolTip.SetToolTip(tabPage1, resources.GetString("tabPage1.ToolTip"));
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // checkBox_Quiet
             // 
-            checkBox_Quiet.AutoSize = true;
-            checkBox_Quiet.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_Quiet, "checkBox_Quiet");
             checkBox_Quiet.ForeColor = Color.FromArgb(128, 64, 0);
-            checkBox_Quiet.Location = new Point(164, 372);
             checkBox_Quiet.Name = "checkBox_Quiet";
-            checkBox_Quiet.Size = new Size(149, 40);
-            checkBox_Quiet.TabIndex = 53;
-            checkBox_Quiet.Text = "安静模式";
-            toolTip.SetToolTip(checkBox_Quiet, "开启此模式后只输出错误信息");
+            toolTip.SetToolTip(checkBox_Quiet, resources.GetString("checkBox_Quiet.ToolTip"));
             checkBox_Quiet.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(checkBox_KeepFragments);
             groupBox3.Controls.Add(comboBox_RetrySleep);
             groupBox3.Controls.Add(checkBox_Fragments_SU_AO);
@@ -402,289 +401,191 @@
             groupBox3.Controls.Add(checkBox_LimitRate);
             groupBox3.Controls.Add(comboBox_ConcurrentFragments);
             groupBox3.Controls.Add(checkBox_ConcurrentFragments);
-            groupBox3.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox3.Location = new Point(375, 6);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(533, 361);
-            groupBox3.TabIndex = 52;
             groupBox3.TabStop = false;
-            groupBox3.Text = "网络、重试机制等下载选项设置";
+            toolTip.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // checkBox_KeepFragments
             // 
-            checkBox_KeepFragments.AutoSize = true;
-            checkBox_KeepFragments.Font = new Font("微软雅黑", 16.2F);
-            checkBox_KeepFragments.Location = new Point(266, 321);
+            resources.ApplyResources(checkBox_KeepFragments, "checkBox_KeepFragments");
             checkBox_KeepFragments.Name = "checkBox_KeepFragments";
-            checkBox_KeepFragments.Size = new Size(233, 40);
-            checkBox_KeepFragments.TabIndex = 60;
-            checkBox_KeepFragments.Text = "保留下载的片段";
-            toolTip.SetToolTip(checkBox_KeepFragments, "保留下载得到的片段（通常用于调试或二次处理）");
+            toolTip.SetToolTip(checkBox_KeepFragments, resources.GetString("checkBox_KeepFragments.ToolTip"));
             checkBox_KeepFragments.UseVisualStyleBackColor = true;
             // 
             // comboBox_RetrySleep
             // 
-            comboBox_RetrySleep.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_RetrySleep, "comboBox_RetrySleep");
             comboBox_RetrySleep.FormattingEnabled = true;
-            comboBox_RetrySleep.Items.AddRange(new object[] { "1", "5", "http:3", "linear=1", "linear=1:10:2", "exp=1:20:2" });
-            comboBox_RetrySleep.Location = new Point(149, 276);
+            comboBox_RetrySleep.Items.AddRange(new object[] { resources.GetString("comboBox_RetrySleep.Items"), resources.GetString("comboBox_RetrySleep.Items1"), resources.GetString("comboBox_RetrySleep.Items2"), resources.GetString("comboBox_RetrySleep.Items3"), resources.GetString("comboBox_RetrySleep.Items4"), resources.GetString("comboBox_RetrySleep.Items5") });
             comboBox_RetrySleep.Name = "comboBox_RetrySleep";
-            comboBox_RetrySleep.Size = new Size(378, 43);
-            comboBox_RetrySleep.TabIndex = 67;
-            comboBox_RetrySleep.Text = "linear=1:10:2";
+            toolTip.SetToolTip(comboBox_RetrySleep, resources.GetString("comboBox_RetrySleep.ToolTip"));
             // 
             // checkBox_Fragments_SU_AO
             // 
-            checkBox_Fragments_SU_AO.AutoSize = true;
+            resources.ApplyResources(checkBox_Fragments_SU_AO, "checkBox_Fragments_SU_AO");
             checkBox_Fragments_SU_AO.Checked = true;
             checkBox_Fragments_SU_AO.CheckState = CheckState.Checked;
-            checkBox_Fragments_SU_AO.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Fragments_SU_AO.Location = new Point(5, 321);
             checkBox_Fragments_SU_AO.Name = "checkBox_Fragments_SU_AO";
-            checkBox_Fragments_SU_AO.Size = new Size(261, 40);
-            checkBox_Fragments_SU_AO.TabIndex = 59;
-            checkBox_Fragments_SU_AO.Text = "片段缺失继续下载";
-            toolTip.SetToolTip(checkBox_Fragments_SU_AO, "参数开启：\r\n执行行为\t跳过缺失片段，继续下载后面的片段\r\n文件状态\t完整长度的文件，但有数据空洞\r\n播放效果\t画面可能花屏/卡顿/音画不同步\r\n文件结构\t时间轴完整，但某些位置数据缺失\r\n\r\n参数关闭：\r\n操作行为\t遇到缺失片段，立即停止下载\r\n文件状态\t不完整的文件，只到缺失片段之前\r\n播放效果\t前半部分完美播放，后半部分完全没有\r\n文件结构\t时间轴不完整，只有前半部分");
+            toolTip.SetToolTip(checkBox_Fragments_SU_AO, resources.GetString("checkBox_Fragments_SU_AO.ToolTip"));
             checkBox_Fragments_SU_AO.UseVisualStyleBackColor = true;
             // 
             // checkBox_RetrySleep
             // 
-            checkBox_RetrySleep.AutoSize = true;
-            checkBox_RetrySleep.Font = new Font("微软雅黑", 16.2F);
-            checkBox_RetrySleep.Location = new Point(6, 277);
+            resources.ApplyResources(checkBox_RetrySleep, "checkBox_RetrySleep");
             checkBox_RetrySleep.Name = "checkBox_RetrySleep";
-            checkBox_RetrySleep.Size = new Size(149, 40);
-            checkBox_RetrySleep.TabIndex = 66;
-            checkBox_RetrySleep.Text = "重试等待";
             toolTip.SetToolTip(checkBox_RetrySleep, resources.GetString("checkBox_RetrySleep.ToolTip"));
             checkBox_RetrySleep.UseVisualStyleBackColor = true;
             // 
             // comboBox_PlayListMode
             // 
+            resources.ApplyResources(comboBox_PlayListMode, "comboBox_PlayListMode");
             comboBox_PlayListMode.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_PlayListMode.Font = new Font("微软雅黑", 16.2F);
             comboBox_PlayListMode.FormattingEnabled = true;
-            comboBox_PlayListMode.Items.AddRange(new object[] { "默认模式", "随机模式", "惰性模式" });
-            comboBox_PlayListMode.Location = new Point(266, 227);
+            comboBox_PlayListMode.Items.AddRange(new object[] { resources.GetString("comboBox_PlayListMode.Items"), resources.GetString("comboBox_PlayListMode.Items1"), resources.GetString("comboBox_PlayListMode.Items2") });
             comboBox_PlayListMode.Name = "comboBox_PlayListMode";
-            comboBox_PlayListMode.Size = new Size(262, 43);
-            comboBox_PlayListMode.TabIndex = 63;
+            toolTip.SetToolTip(comboBox_PlayListMode, resources.GetString("comboBox_PlayListMode.ToolTip"));
             // 
             // checkBox_PlayListMode
             // 
-            checkBox_PlayListMode.AutoSize = true;
-            checkBox_PlayListMode.Font = new Font("微软雅黑", 16.2F);
-            checkBox_PlayListMode.Location = new Point(7, 228);
+            resources.ApplyResources(checkBox_PlayListMode, "checkBox_PlayListMode");
             checkBox_PlayListMode.Name = "checkBox_PlayListMode";
-            checkBox_PlayListMode.Size = new Size(261, 40);
-            checkBox_PlayListMode.TabIndex = 62;
-            checkBox_PlayListMode.Text = "播放列表处理模式";
-            toolTip.SetToolTip(checkBox_PlayListMode, "设置TCP接收缓冲区大小。\r\n单位可以用 K（KB）、M（MB）、G（GB）。\r\n推荐别动除非有特殊需求");
+            toolTip.SetToolTip(checkBox_PlayListMode, resources.GetString("checkBox_PlayListMode.ToolTip"));
             checkBox_PlayListMode.UseVisualStyleBackColor = true;
             // 
             // checkBox_ResizeBuffer
             // 
-            checkBox_ResizeBuffer.AutoSize = true;
+            resources.ApplyResources(checkBox_ResizeBuffer, "checkBox_ResizeBuffer");
             checkBox_ResizeBuffer.Checked = true;
             checkBox_ResizeBuffer.CheckState = CheckState.Checked;
-            checkBox_ResizeBuffer.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ResizeBuffer.Location = new Point(259, 179);
             checkBox_ResizeBuffer.Name = "checkBox_ResizeBuffer";
-            checkBox_ResizeBuffer.Size = new Size(233, 40);
-            checkBox_ResizeBuffer.TabIndex = 61;
-            checkBox_ResizeBuffer.Text = "动态调整缓存区";
-            toolTip.SetToolTip(checkBox_ResizeBuffer, "字面意思，动态调整TCP接收缓冲区大小。\r\n勾选此选项后，隔壁缓冲区设置将作为初始大小。\r\n推荐保持默认（动态调整），除非有特殊需求");
+            toolTip.SetToolTip(checkBox_ResizeBuffer, resources.GetString("checkBox_ResizeBuffer.ToolTip"));
             checkBox_ResizeBuffer.UseVisualStyleBackColor = true;
             // 
             // comboBox_BufferSize
             // 
-            comboBox_BufferSize.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_BufferSize, "comboBox_BufferSize");
             comboBox_BufferSize.FormattingEnabled = true;
-            comboBox_BufferSize.Items.AddRange(new object[] { "128K", "256K", "512K", "2M", "4M", "8M", "12M", "16M", "24M", "32M", "64M" });
-            comboBox_BufferSize.Location = new Point(120, 179);
+            comboBox_BufferSize.Items.AddRange(new object[] { resources.GetString("comboBox_BufferSize.Items"), resources.GetString("comboBox_BufferSize.Items1"), resources.GetString("comboBox_BufferSize.Items2"), resources.GetString("comboBox_BufferSize.Items3"), resources.GetString("comboBox_BufferSize.Items4"), resources.GetString("comboBox_BufferSize.Items5"), resources.GetString("comboBox_BufferSize.Items6"), resources.GetString("comboBox_BufferSize.Items7"), resources.GetString("comboBox_BufferSize.Items8"), resources.GetString("comboBox_BufferSize.Items9"), resources.GetString("comboBox_BufferSize.Items10") });
             comboBox_BufferSize.Name = "comboBox_BufferSize";
-            comboBox_BufferSize.Size = new Size(133, 43);
-            comboBox_BufferSize.TabIndex = 60;
-            comboBox_BufferSize.Text = "32M";
+            toolTip.SetToolTip(comboBox_BufferSize, resources.GetString("comboBox_BufferSize.ToolTip"));
             // 
             // checkBox_BufferSize
             // 
-            checkBox_BufferSize.AutoSize = true;
-            checkBox_BufferSize.Font = new Font("微软雅黑", 16.2F);
-            checkBox_BufferSize.Location = new Point(7, 180);
+            resources.ApplyResources(checkBox_BufferSize, "checkBox_BufferSize");
             checkBox_BufferSize.Name = "checkBox_BufferSize";
-            checkBox_BufferSize.Size = new Size(121, 40);
-            checkBox_BufferSize.TabIndex = 59;
-            checkBox_BufferSize.Text = "缓冲区";
-            toolTip.SetToolTip(checkBox_BufferSize, "设置TCP接收缓冲区大小。\r\n单位可以用 K（KB）、M（MB）、G（GB）。\r\n推荐别动除非有特殊需求");
+            toolTip.SetToolTip(checkBox_BufferSize, resources.GetString("checkBox_BufferSize.ToolTip"));
             checkBox_BufferSize.UseVisualStyleBackColor = true;
             // 
             // comboBox_FragmentRetries
             // 
-            comboBox_FragmentRetries.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_FragmentRetries, "comboBox_FragmentRetries");
             comboBox_FragmentRetries.FormattingEnabled = true;
-            comboBox_FragmentRetries.Items.AddRange(new object[] { "1", "3", "5", "10", "20", "50", "100", "infinite" });
-            comboBox_FragmentRetries.Location = new Point(399, 130);
+            comboBox_FragmentRetries.Items.AddRange(new object[] { resources.GetString("comboBox_FragmentRetries.Items"), resources.GetString("comboBox_FragmentRetries.Items1"), resources.GetString("comboBox_FragmentRetries.Items2"), resources.GetString("comboBox_FragmentRetries.Items3"), resources.GetString("comboBox_FragmentRetries.Items4"), resources.GetString("comboBox_FragmentRetries.Items5"), resources.GetString("comboBox_FragmentRetries.Items6"), resources.GetString("comboBox_FragmentRetries.Items7") });
             comboBox_FragmentRetries.Name = "comboBox_FragmentRetries";
-            comboBox_FragmentRetries.Size = new Size(128, 43);
-            comboBox_FragmentRetries.TabIndex = 58;
-            comboBox_FragmentRetries.Text = "infinite";
+            toolTip.SetToolTip(comboBox_FragmentRetries, resources.GetString("comboBox_FragmentRetries.ToolTip"));
             // 
             // checkBox_FragmentRetries
             // 
-            checkBox_FragmentRetries.AutoSize = true;
-            checkBox_FragmentRetries.Font = new Font("微软雅黑", 16.2F);
-            checkBox_FragmentRetries.Location = new Point(259, 132);
+            resources.ApplyResources(checkBox_FragmentRetries, "checkBox_FragmentRetries");
             checkBox_FragmentRetries.Name = "checkBox_FragmentRetries";
-            checkBox_FragmentRetries.Size = new Size(149, 40);
-            checkBox_FragmentRetries.TabIndex = 57;
-            checkBox_FragmentRetries.Text = "片段重试";
-            toolTip.SetToolTip(checkBox_FragmentRetries, "每个片段独立重试，不影响已下载的其他片段次数。\r\n\r\n适用格式：\r\n· DASH（动态自适应流）\r\n· hlsnative（原生HLS）\r\n· ISM（平滑流）");
+            toolTip.SetToolTip(checkBox_FragmentRetries, resources.GetString("checkBox_FragmentRetries.ToolTip"));
             checkBox_FragmentRetries.UseVisualStyleBackColor = true;
             // 
             // comboBox_FileAccessRetries
             // 
-            comboBox_FileAccessRetries.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_FileAccessRetries, "comboBox_FileAccessRetries");
             comboBox_FileAccessRetries.FormattingEnabled = true;
-            comboBox_FileAccessRetries.Items.AddRange(new object[] { "1", "3", "5", "10", "20", "50", "100", "infinite" });
-            comboBox_FileAccessRetries.Location = new Point(399, 81);
+            comboBox_FileAccessRetries.Items.AddRange(new object[] { resources.GetString("comboBox_FileAccessRetries.Items"), resources.GetString("comboBox_FileAccessRetries.Items1"), resources.GetString("comboBox_FileAccessRetries.Items2"), resources.GetString("comboBox_FileAccessRetries.Items3"), resources.GetString("comboBox_FileAccessRetries.Items4"), resources.GetString("comboBox_FileAccessRetries.Items5"), resources.GetString("comboBox_FileAccessRetries.Items6"), resources.GetString("comboBox_FileAccessRetries.Items7") });
             comboBox_FileAccessRetries.Name = "comboBox_FileAccessRetries";
-            comboBox_FileAccessRetries.Size = new Size(128, 43);
-            comboBox_FileAccessRetries.TabIndex = 56;
-            comboBox_FileAccessRetries.Text = "infinite";
+            toolTip.SetToolTip(comboBox_FileAccessRetries, resources.GetString("comboBox_FileAccessRetries.ToolTip"));
             // 
             // checkBox_FileAccessRetries
             // 
-            checkBox_FileAccessRetries.AutoSize = true;
-            checkBox_FileAccessRetries.Font = new Font("微软雅黑", 16.2F);
-            checkBox_FileAccessRetries.Location = new Point(259, 82);
+            resources.ApplyResources(checkBox_FileAccessRetries, "checkBox_FileAccessRetries");
             checkBox_FileAccessRetries.Name = "checkBox_FileAccessRetries";
-            checkBox_FileAccessRetries.Size = new Size(149, 40);
-            checkBox_FileAccessRetries.TabIndex = 55;
-            checkBox_FileAccessRetries.Text = "文件重试";
-            toolTip.SetToolTip(checkBox_FileAccessRetries, "当遇到I/O错误的时候尝试重试下载次数。\r\n\r\n触发条件：\r\n· 磁盘写入失败（磁盘满）\r\n· 文件权限错误\r\n· 文件被占用\r\n· 路径不存在");
+            toolTip.SetToolTip(checkBox_FileAccessRetries, resources.GetString("checkBox_FileAccessRetries.ToolTip"));
             checkBox_FileAccessRetries.UseVisualStyleBackColor = true;
             // 
             // comboBox_Retries
             // 
-            comboBox_Retries.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Retries, "comboBox_Retries");
             comboBox_Retries.FormattingEnabled = true;
-            comboBox_Retries.Items.AddRange(new object[] { "1", "3", "5", "10", "20", "50", "100", "infinite" });
-            comboBox_Retries.Location = new Point(399, 33);
+            comboBox_Retries.Items.AddRange(new object[] { resources.GetString("comboBox_Retries.Items"), resources.GetString("comboBox_Retries.Items1"), resources.GetString("comboBox_Retries.Items2"), resources.GetString("comboBox_Retries.Items3"), resources.GetString("comboBox_Retries.Items4"), resources.GetString("comboBox_Retries.Items5"), resources.GetString("comboBox_Retries.Items6"), resources.GetString("comboBox_Retries.Items7") });
             comboBox_Retries.Name = "comboBox_Retries";
-            comboBox_Retries.Size = new Size(128, 43);
-            comboBox_Retries.TabIndex = 54;
-            comboBox_Retries.Text = "infinite";
+            toolTip.SetToolTip(comboBox_Retries, resources.GetString("comboBox_Retries.ToolTip"));
             // 
             // checkBox_Retries
             // 
-            checkBox_Retries.AutoSize = true;
-            checkBox_Retries.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Retries.Location = new Point(259, 33);
+            resources.ApplyResources(checkBox_Retries, "checkBox_Retries");
             checkBox_Retries.Name = "checkBox_Retries";
-            checkBox_Retries.Size = new Size(149, 40);
-            checkBox_Retries.TabIndex = 53;
-            checkBox_Retries.Text = "网络重试";
-            toolTip.SetToolTip(checkBox_Retries, "当遇到错误的时候尝试重试下载次数。\r\n\r\n触发条件：\r\n· 网络连接失败\r\n· 服务器返回5xx错误\r\n· 超时无响应");
+            toolTip.SetToolTip(checkBox_Retries, resources.GetString("checkBox_Retries.ToolTip"));
             checkBox_Retries.UseVisualStyleBackColor = true;
             // 
             // comboBox_ThrottledRate
             // 
-            comboBox_ThrottledRate.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_ThrottledRate, "comboBox_ThrottledRate");
             comboBox_ThrottledRate.FormattingEnabled = true;
-            comboBox_ThrottledRate.Items.AddRange(new object[] { "10K", "100K", "10M", "50M", "100M", "500M", "1G", "2G", "3G", "5G", "10G" });
-            comboBox_ThrottledRate.Location = new Point(149, 129);
+            comboBox_ThrottledRate.Items.AddRange(new object[] { resources.GetString("comboBox_ThrottledRate.Items"), resources.GetString("comboBox_ThrottledRate.Items1"), resources.GetString("comboBox_ThrottledRate.Items2"), resources.GetString("comboBox_ThrottledRate.Items3"), resources.GetString("comboBox_ThrottledRate.Items4"), resources.GetString("comboBox_ThrottledRate.Items5"), resources.GetString("comboBox_ThrottledRate.Items6"), resources.GetString("comboBox_ThrottledRate.Items7"), resources.GetString("comboBox_ThrottledRate.Items8"), resources.GetString("comboBox_ThrottledRate.Items9"), resources.GetString("comboBox_ThrottledRate.Items10") });
             comboBox_ThrottledRate.Name = "comboBox_ThrottledRate";
-            comboBox_ThrottledRate.Size = new Size(103, 43);
-            comboBox_ThrottledRate.TabIndex = 52;
-            comboBox_ThrottledRate.Text = "200K";
+            toolTip.SetToolTip(comboBox_ThrottledRate, resources.GetString("comboBox_ThrottledRate.ToolTip"));
             // 
             // checkBox_ThrottledRate
             // 
-            checkBox_ThrottledRate.AutoSize = true;
-            checkBox_ThrottledRate.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ThrottledRate.Location = new Point(6, 130);
+            resources.ApplyResources(checkBox_ThrottledRate, "checkBox_ThrottledRate");
             checkBox_ThrottledRate.Name = "checkBox_ThrottledRate";
-            checkBox_ThrottledRate.Size = new Size(149, 40);
-            checkBox_ThrottledRate.TabIndex = 51;
-            checkBox_ThrottledRate.Text = "检测限速";
-            toolTip.SetToolTip(checkBox_ThrottledRate, "检测下载速度，低于此值判定为\"被限速\"\r\n当下载速度持续低于此设定值，则会重新尝试获取新连接。\r\n单位可以用 K（KB）、M（MB）、G（GB）。");
+            toolTip.SetToolTip(checkBox_ThrottledRate, resources.GetString("checkBox_ThrottledRate.ToolTip"));
             checkBox_ThrottledRate.UseVisualStyleBackColor = true;
             // 
             // comboBox_LimitRate
             // 
-            comboBox_LimitRate.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_LimitRate, "comboBox_LimitRate");
             comboBox_LimitRate.FormattingEnabled = true;
-            comboBox_LimitRate.Items.AddRange(new object[] { "10K", "100K", "10M", "50M", "100M", "500M", "1G", "2G", "3G", "5G", "10G" });
-            comboBox_LimitRate.Location = new Point(149, 81);
+            comboBox_LimitRate.Items.AddRange(new object[] { resources.GetString("comboBox_LimitRate.Items"), resources.GetString("comboBox_LimitRate.Items1"), resources.GetString("comboBox_LimitRate.Items2"), resources.GetString("comboBox_LimitRate.Items3"), resources.GetString("comboBox_LimitRate.Items4"), resources.GetString("comboBox_LimitRate.Items5"), resources.GetString("comboBox_LimitRate.Items6"), resources.GetString("comboBox_LimitRate.Items7"), resources.GetString("comboBox_LimitRate.Items8"), resources.GetString("comboBox_LimitRate.Items9"), resources.GetString("comboBox_LimitRate.Items10") });
             comboBox_LimitRate.Name = "comboBox_LimitRate";
-            comboBox_LimitRate.Size = new Size(103, 43);
-            comboBox_LimitRate.TabIndex = 50;
-            comboBox_LimitRate.Text = "10M";
+            toolTip.SetToolTip(comboBox_LimitRate, resources.GetString("comboBox_LimitRate.ToolTip"));
             // 
             // checkBox_LimitRate
             // 
-            checkBox_LimitRate.AutoSize = true;
-            checkBox_LimitRate.Font = new Font("微软雅黑", 16.2F);
-            checkBox_LimitRate.Location = new Point(6, 82);
+            resources.ApplyResources(checkBox_LimitRate, "checkBox_LimitRate");
             checkBox_LimitRate.Name = "checkBox_LimitRate";
-            checkBox_LimitRate.Size = new Size(149, 40);
-            checkBox_LimitRate.TabIndex = 49;
-            checkBox_LimitRate.Text = "下载限速";
-            toolTip.SetToolTip(checkBox_LimitRate, "字面意思，控制每秒下载多少字节。\r\n单位可以用 K（KB）、M（MB）、G（GB）。\r\n默认为 0（不限速）");
+            toolTip.SetToolTip(checkBox_LimitRate, resources.GetString("checkBox_LimitRate.ToolTip"));
             checkBox_LimitRate.UseVisualStyleBackColor = true;
             // 
             // comboBox_ConcurrentFragments
             // 
-            comboBox_ConcurrentFragments.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_ConcurrentFragments, "comboBox_ConcurrentFragments");
             comboBox_ConcurrentFragments.FormattingEnabled = true;
-            comboBox_ConcurrentFragments.Items.AddRange(new object[] { "1", "2", "3", "5", "7", "9", "10", "12", "15", "20" });
-            comboBox_ConcurrentFragments.Location = new Point(178, 32);
+            comboBox_ConcurrentFragments.Items.AddRange(new object[] { resources.GetString("comboBox_ConcurrentFragments.Items"), resources.GetString("comboBox_ConcurrentFragments.Items1"), resources.GetString("comboBox_ConcurrentFragments.Items2"), resources.GetString("comboBox_ConcurrentFragments.Items3"), resources.GetString("comboBox_ConcurrentFragments.Items4"), resources.GetString("comboBox_ConcurrentFragments.Items5"), resources.GetString("comboBox_ConcurrentFragments.Items6"), resources.GetString("comboBox_ConcurrentFragments.Items7"), resources.GetString("comboBox_ConcurrentFragments.Items8"), resources.GetString("comboBox_ConcurrentFragments.Items9") });
             comboBox_ConcurrentFragments.Name = "comboBox_ConcurrentFragments";
-            comboBox_ConcurrentFragments.Size = new Size(74, 43);
-            comboBox_ConcurrentFragments.TabIndex = 48;
-            comboBox_ConcurrentFragments.Text = "1";
+            toolTip.SetToolTip(comboBox_ConcurrentFragments, resources.GetString("comboBox_ConcurrentFragments.ToolTip"));
             // 
             // checkBox_ConcurrentFragments
             // 
-            checkBox_ConcurrentFragments.AutoSize = true;
-            checkBox_ConcurrentFragments.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ConcurrentFragments.Location = new Point(6, 35);
+            resources.ApplyResources(checkBox_ConcurrentFragments, "checkBox_ConcurrentFragments");
             checkBox_ConcurrentFragments.Name = "checkBox_ConcurrentFragments";
-            checkBox_ConcurrentFragments.Size = new Size(177, 40);
-            checkBox_ConcurrentFragments.TabIndex = 47;
-            checkBox_ConcurrentFragments.Text = "并发下载数";
-            toolTip.SetToolTip(checkBox_ConcurrentFragments, "设置同时下载的视频片段数量\r\n\r\n默认值为1（单线程下载）\r\n现代视频（如DASH/HLS）被分割成多个小片段，此参数控制同时下载多少个片段\r\n\r\n适用场景：\r\n· 网速快但延迟高时，增加并发数可提升速度\r\n· 下载4K/8K高码率视频时\r\n· 服务器限速单个连接时\r\n\r\n注意事项：\r\n· 设置过高可能导致IP被临时封禁\r\n· 会增加内存和CPU占用\r\n推荐值：5-10之间");
+            toolTip.SetToolTip(checkBox_ConcurrentFragments, resources.GetString("checkBox_ConcurrentFragments.ToolTip"));
             checkBox_ConcurrentFragments.UseVisualStyleBackColor = true;
             // 
             // checkBox_Verbose
             // 
-            checkBox_Verbose.AutoSize = true;
-            checkBox_Verbose.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_Verbose, "checkBox_Verbose");
             checkBox_Verbose.ForeColor = Color.FromArgb(128, 64, 0);
-            checkBox_Verbose.Location = new Point(9, 372);
             checkBox_Verbose.Name = "checkBox_Verbose";
-            checkBox_Verbose.Size = new Size(149, 40);
-            checkBox_Verbose.TabIndex = 51;
-            checkBox_Verbose.Text = "调试模式";
+            toolTip.SetToolTip(checkBox_Verbose, resources.GetString("checkBox_Verbose.ToolTip"));
             checkBox_Verbose.UseVisualStyleBackColor = true;
             // 
             // checkBox_MatchFilters
             // 
-            checkBox_MatchFilters.AutoSize = true;
-            checkBox_MatchFilters.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_MatchFilters, "checkBox_MatchFilters");
             checkBox_MatchFilters.ForeColor = Color.FromArgb(128, 64, 0);
-            checkBox_MatchFilters.Location = new Point(319, 372);
             checkBox_MatchFilters.Name = "checkBox_MatchFilters";
-            checkBox_MatchFilters.Size = new Size(261, 40);
-            checkBox_MatchFilters.TabIndex = 50;
-            checkBox_MatchFilters.Text = "启用高级下载过滤";
-            toolTip.SetToolTip(checkBox_MatchFilters, "当启用 高级下载过滤 的某些参数后，yt-dlp 的行为会发生根本性变化，不显示任何信息为正常。\r\n\r\n若想要一些提示信息，请使用“调试模式”。\r\n");
+            toolTip.SetToolTip(checkBox_MatchFilters, resources.GetString("checkBox_MatchFilters.ToolTip"));
             checkBox_MatchFilters.UseVisualStyleBackColor = true;
             checkBox_MatchFilters.CheckedChanged += checkBox_MatchFilters_CheckedChanged;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(comboBox_AgeLimit);
             groupBox1.Controls.Add(checkBox_AgeLimit);
             groupBox1.Controls.Add(comboBox_MaxDownloads);
@@ -699,177 +600,118 @@
             groupBox1.Controls.Add(comboBox_MaxFileSize);
             groupBox1.Controls.Add(checkBox_MaxFileSize);
             groupBox1.Controls.Add(checkBox_MinFileSize);
-            groupBox1.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox1.Location = new Point(3, 6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(366, 361);
-            groupBox1.TabIndex = 49;
             groupBox1.TabStop = false;
-            groupBox1.Text = "基础下载过滤与限制";
+            toolTip.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // comboBox_AgeLimit
             // 
-            comboBox_AgeLimit.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_AgeLimit, "comboBox_AgeLimit");
             comboBox_AgeLimit.FormattingEnabled = true;
-            comboBox_AgeLimit.Items.AddRange(new object[] { "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" });
-            comboBox_AgeLimit.Location = new Point(156, 262);
+            comboBox_AgeLimit.Items.AddRange(new object[] { resources.GetString("comboBox_AgeLimit.Items"), resources.GetString("comboBox_AgeLimit.Items1"), resources.GetString("comboBox_AgeLimit.Items2"), resources.GetString("comboBox_AgeLimit.Items3"), resources.GetString("comboBox_AgeLimit.Items4"), resources.GetString("comboBox_AgeLimit.Items5"), resources.GetString("comboBox_AgeLimit.Items6"), resources.GetString("comboBox_AgeLimit.Items7"), resources.GetString("comboBox_AgeLimit.Items8"), resources.GetString("comboBox_AgeLimit.Items9") });
             comboBox_AgeLimit.Name = "comboBox_AgeLimit";
-            comboBox_AgeLimit.Size = new Size(198, 43);
-            comboBox_AgeLimit.TabIndex = 50;
-            comboBox_AgeLimit.Text = "18";
+            toolTip.SetToolTip(comboBox_AgeLimit, resources.GetString("comboBox_AgeLimit.ToolTip"));
             // 
             // checkBox_AgeLimit
             // 
-            checkBox_AgeLimit.AutoSize = true;
-            checkBox_AgeLimit.Font = new Font("微软雅黑", 16.2F);
-            checkBox_AgeLimit.Location = new Point(13, 263);
+            resources.ApplyResources(checkBox_AgeLimit, "checkBox_AgeLimit");
             checkBox_AgeLimit.Name = "checkBox_AgeLimit";
-            checkBox_AgeLimit.Size = new Size(149, 40);
-            checkBox_AgeLimit.TabIndex = 49;
-            checkBox_AgeLimit.Text = "年龄限制";
-            toolTip.SetToolTip(checkBox_AgeLimit, "只下载适合特定年龄的视频。\r\n例如 18 会跳过18禁内容。");
+            toolTip.SetToolTip(checkBox_AgeLimit, resources.GetString("checkBox_AgeLimit.ToolTip"));
             checkBox_AgeLimit.UseVisualStyleBackColor = true;
             // 
             // comboBox_MaxDownloads
             // 
-            comboBox_MaxDownloads.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_MaxDownloads, "comboBox_MaxDownloads");
             comboBox_MaxDownloads.FormattingEnabled = true;
-            comboBox_MaxDownloads.Items.AddRange(new object[] { "1", "10", "20", "50", "100", "500", "1000" });
-            comboBox_MaxDownloads.Location = new Point(185, 309);
+            comboBox_MaxDownloads.Items.AddRange(new object[] { resources.GetString("comboBox_MaxDownloads.Items"), resources.GetString("comboBox_MaxDownloads.Items1"), resources.GetString("comboBox_MaxDownloads.Items2"), resources.GetString("comboBox_MaxDownloads.Items3"), resources.GetString("comboBox_MaxDownloads.Items4"), resources.GetString("comboBox_MaxDownloads.Items5"), resources.GetString("comboBox_MaxDownloads.Items6") });
             comboBox_MaxDownloads.Name = "comboBox_MaxDownloads";
-            comboBox_MaxDownloads.Size = new Size(169, 43);
-            comboBox_MaxDownloads.TabIndex = 48;
-            comboBox_MaxDownloads.Text = "500";
+            toolTip.SetToolTip(comboBox_MaxDownloads, resources.GetString("comboBox_MaxDownloads.ToolTip"));
             // 
             // checkBox_MaxDownloads
             // 
-            checkBox_MaxDownloads.AutoSize = true;
-            checkBox_MaxDownloads.Font = new Font("微软雅黑", 16.2F);
-            checkBox_MaxDownloads.Location = new Point(13, 312);
+            resources.ApplyResources(checkBox_MaxDownloads, "checkBox_MaxDownloads");
             checkBox_MaxDownloads.Name = "checkBox_MaxDownloads";
-            checkBox_MaxDownloads.Size = new Size(177, 40);
-            checkBox_MaxDownloads.TabIndex = 47;
-            checkBox_MaxDownloads.Text = "最多下载数";
-            toolTip.SetToolTip(checkBox_MaxDownloads, "下载指定数量的文件后停止。\r\n适合只想下载前N个视频的场景");
+            toolTip.SetToolTip(checkBox_MaxDownloads, resources.GetString("checkBox_MaxDownloads.ToolTip"));
             checkBox_MaxDownloads.UseVisualStyleBackColor = true;
             // 
             // comboBox_DateAfter
             // 
-            comboBox_DateAfter.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_DateAfter, "comboBox_DateAfter");
             comboBox_DateAfter.FormattingEnabled = true;
-            comboBox_DateAfter.Items.AddRange(new object[] { "20250101", "today-1week", "today+1week" });
-            comboBox_DateAfter.Location = new Point(156, 217);
+            comboBox_DateAfter.Items.AddRange(new object[] { resources.GetString("comboBox_DateAfter.Items"), resources.GetString("comboBox_DateAfter.Items1"), resources.GetString("comboBox_DateAfter.Items2") });
             comboBox_DateAfter.Name = "comboBox_DateAfter";
-            comboBox_DateAfter.Size = new Size(198, 43);
-            comboBox_DateAfter.TabIndex = 46;
-            comboBox_DateAfter.Text = "today-1week";
+            toolTip.SetToolTip(comboBox_DateAfter, resources.GetString("comboBox_DateAfter.ToolTip"));
             // 
             // checkBox_DateAfter
             // 
-            checkBox_DateAfter.AutoSize = true;
-            checkBox_DateAfter.Font = new Font("微软雅黑", 16.2F);
-            checkBox_DateAfter.Location = new Point(13, 218);
+            resources.ApplyResources(checkBox_DateAfter, "checkBox_DateAfter");
             checkBox_DateAfter.Name = "checkBox_DateAfter";
-            checkBox_DateAfter.Size = new Size(149, 40);
-            checkBox_DateAfter.TabIndex = 45;
-            checkBox_DateAfter.Text = "在此之后";
-            toolTip.SetToolTip(checkBox_DateAfter, "只下载指定日期或之后上传的视频。\r\n示例：today-1month 下载最近一个月内上传的");
+            toolTip.SetToolTip(checkBox_DateAfter, resources.GetString("checkBox_DateAfter.ToolTip"));
             checkBox_DateAfter.UseVisualStyleBackColor = true;
             // 
             // comboBox_DateBefore
             // 
-            comboBox_DateBefore.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_DateBefore, "comboBox_DateBefore");
             comboBox_DateBefore.FormattingEnabled = true;
-            comboBox_DateBefore.Items.AddRange(new object[] { "20250101", "today-1week", "today+1week" });
-            comboBox_DateBefore.Location = new Point(156, 171);
+            comboBox_DateBefore.Items.AddRange(new object[] { resources.GetString("comboBox_DateBefore.Items"), resources.GetString("comboBox_DateBefore.Items1"), resources.GetString("comboBox_DateBefore.Items2") });
             comboBox_DateBefore.Name = "comboBox_DateBefore";
-            comboBox_DateBefore.Size = new Size(198, 43);
-            comboBox_DateBefore.TabIndex = 44;
-            comboBox_DateBefore.Text = "20240101";
+            toolTip.SetToolTip(comboBox_DateBefore, resources.GetString("comboBox_DateBefore.ToolTip"));
             // 
             // comboBox_Date
             // 
-            comboBox_Date.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Date, "comboBox_Date");
             comboBox_Date.FormattingEnabled = true;
-            comboBox_Date.Items.AddRange(new object[] { "20250101", "today-1week", "today+1week" });
-            comboBox_Date.Location = new Point(156, 125);
+            comboBox_Date.Items.AddRange(new object[] { resources.GetString("comboBox_Date.Items"), resources.GetString("comboBox_Date.Items1"), resources.GetString("comboBox_Date.Items2") });
             comboBox_Date.Name = "comboBox_Date";
-            comboBox_Date.Size = new Size(198, 43);
-            comboBox_Date.TabIndex = 43;
-            comboBox_Date.Text = "20250101";
+            toolTip.SetToolTip(comboBox_Date, resources.GetString("comboBox_Date.ToolTip"));
             // 
             // checkBox_Date
             // 
-            checkBox_Date.AutoSize = true;
-            checkBox_Date.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Date.Location = new Point(13, 126);
+            resources.ApplyResources(checkBox_Date, "checkBox_Date");
             checkBox_Date.Name = "checkBox_Date";
-            checkBox_Date.Size = new Size(149, 40);
-            checkBox_Date.TabIndex = 41;
-            checkBox_Date.Text = "仅此日期";
-            toolTip.SetToolTip(checkBox_Date, "只下载指定日期上传的视频。\r\n支持 YYYYMMDD 格式或相对日期。\r\n示例：\r\n• 20250101：2025年1月1日上传的\r\n• today-1week：一周前的今天上传的");
+            toolTip.SetToolTip(checkBox_Date, resources.GetString("checkBox_Date.ToolTip"));
             checkBox_Date.UseVisualStyleBackColor = true;
             // 
             // checkBox_DateBefore
             // 
-            checkBox_DateBefore.AutoSize = true;
-            checkBox_DateBefore.Font = new Font("微软雅黑", 16.2F);
-            checkBox_DateBefore.Location = new Point(13, 172);
+            resources.ApplyResources(checkBox_DateBefore, "checkBox_DateBefore");
             checkBox_DateBefore.Name = "checkBox_DateBefore";
-            checkBox_DateBefore.Size = new Size(149, 40);
-            checkBox_DateBefore.TabIndex = 42;
-            checkBox_DateBefore.Text = "在此之前";
-            toolTip.SetToolTip(checkBox_DateBefore, "只下载指定日期或之前上传的视频。\r\n示例：20240101 下载2024年1月1日及之前上传的");
+            toolTip.SetToolTip(checkBox_DateBefore, resources.GetString("checkBox_DateBefore.ToolTip"));
             checkBox_DateBefore.UseVisualStyleBackColor = true;
             // 
             // comboBox_MinFileSize
             // 
-            comboBox_MinFileSize.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_MinFileSize, "comboBox_MinFileSize");
             comboBox_MinFileSize.FormattingEnabled = true;
-            comboBox_MinFileSize.Items.AddRange(new object[] { "10K", "100K", "10M", "50M", "100M", "500M", "1G", "2G", "3G", "5G", "10G" });
-            comboBox_MinFileSize.Location = new Point(156, 32);
+            comboBox_MinFileSize.Items.AddRange(new object[] { resources.GetString("comboBox_MinFileSize.Items"), resources.GetString("comboBox_MinFileSize.Items1"), resources.GetString("comboBox_MinFileSize.Items2"), resources.GetString("comboBox_MinFileSize.Items3"), resources.GetString("comboBox_MinFileSize.Items4"), resources.GetString("comboBox_MinFileSize.Items5"), resources.GetString("comboBox_MinFileSize.Items6"), resources.GetString("comboBox_MinFileSize.Items7"), resources.GetString("comboBox_MinFileSize.Items8"), resources.GetString("comboBox_MinFileSize.Items9"), resources.GetString("comboBox_MinFileSize.Items10") });
             comboBox_MinFileSize.Name = "comboBox_MinFileSize";
-            comboBox_MinFileSize.Size = new Size(198, 43);
-            comboBox_MinFileSize.TabIndex = 40;
-            comboBox_MinFileSize.Text = "10M";
+            toolTip.SetToolTip(comboBox_MinFileSize, resources.GetString("comboBox_MinFileSize.ToolTip"));
             // 
             // comboBox_MaxFileSize
             // 
-            comboBox_MaxFileSize.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_MaxFileSize, "comboBox_MaxFileSize");
             comboBox_MaxFileSize.FormattingEnabled = true;
-            comboBox_MaxFileSize.Items.AddRange(new object[] { "10K", "100K", "10M", "50M", "100M", "500M", "1G", "2G", "3G", "5G", "10G" });
-            comboBox_MaxFileSize.Location = new Point(156, 78);
+            comboBox_MaxFileSize.Items.AddRange(new object[] { resources.GetString("comboBox_MaxFileSize.Items"), resources.GetString("comboBox_MaxFileSize.Items1"), resources.GetString("comboBox_MaxFileSize.Items2"), resources.GetString("comboBox_MaxFileSize.Items3"), resources.GetString("comboBox_MaxFileSize.Items4"), resources.GetString("comboBox_MaxFileSize.Items5"), resources.GetString("comboBox_MaxFileSize.Items6"), resources.GetString("comboBox_MaxFileSize.Items7"), resources.GetString("comboBox_MaxFileSize.Items8"), resources.GetString("comboBox_MaxFileSize.Items9"), resources.GetString("comboBox_MaxFileSize.Items10") });
             comboBox_MaxFileSize.Name = "comboBox_MaxFileSize";
-            comboBox_MaxFileSize.Size = new Size(198, 43);
-            comboBox_MaxFileSize.TabIndex = 39;
-            comboBox_MaxFileSize.Text = "10G";
+            toolTip.SetToolTip(comboBox_MaxFileSize, resources.GetString("comboBox_MaxFileSize.ToolTip"));
             // 
             // checkBox_MaxFileSize
             // 
-            checkBox_MaxFileSize.AutoSize = true;
-            checkBox_MaxFileSize.Font = new Font("微软雅黑", 16.2F);
-            checkBox_MaxFileSize.Location = new Point(13, 79);
+            resources.ApplyResources(checkBox_MaxFileSize, "checkBox_MaxFileSize");
             checkBox_MaxFileSize.Name = "checkBox_MaxFileSize";
-            checkBox_MaxFileSize.Size = new Size(149, 40);
-            checkBox_MaxFileSize.TabIndex = 35;
-            checkBox_MaxFileSize.Text = "文件最大";
-            toolTip.SetToolTip(checkBox_MaxFileSize, "只下载小于指定大小的文件。\r\nSIZE 可以用 k（KB）、M（MB）、G（GB）。");
+            toolTip.SetToolTip(checkBox_MaxFileSize, resources.GetString("checkBox_MaxFileSize.ToolTip"));
             checkBox_MaxFileSize.UseVisualStyleBackColor = true;
             // 
             // checkBox_MinFileSize
             // 
-            checkBox_MinFileSize.AutoSize = true;
-            checkBox_MinFileSize.Font = new Font("微软雅黑", 16.2F);
-            checkBox_MinFileSize.Location = new Point(13, 33);
+            resources.ApplyResources(checkBox_MinFileSize, "checkBox_MinFileSize");
             checkBox_MinFileSize.Name = "checkBox_MinFileSize";
-            checkBox_MinFileSize.Size = new Size(149, 40);
-            checkBox_MinFileSize.TabIndex = 37;
-            checkBox_MinFileSize.Text = "文件最小";
-            toolTip.SetToolTip(checkBox_MinFileSize, "只下载大于指定大小的文件。\r\nSIZE 可以用 K（KB）、M（MB）、G（GB）。");
+            toolTip.SetToolTip(checkBox_MinFileSize, resources.GetString("checkBox_MinFileSize.ToolTip"));
             checkBox_MinFileSize.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Controls.Add(groupBox5);
             tabPage2.Controls.Add(checkBox_SkipDownload);
             tabPage2.Controls.Add(checkBox_MTime);
@@ -878,16 +720,13 @@
             tabPage2.Controls.Add(comboBox_OverWritesMode);
             tabPage2.Controls.Add(checkBox_OverWritesMode);
             tabPage2.Controls.Add(groupBox4);
-            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(927, 418);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "文件参数";
+            toolTip.SetToolTip(tabPage2, resources.GetString("tabPage2.ToolTip"));
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
+            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Controls.Add(comboBox_Path_InfoJson);
             groupBox5.Controls.Add(checkBox_Path_InfoJson);
             groupBox5.Controls.Add(comboBox_Path_Thumbnail);
@@ -904,412 +743,281 @@
             groupBox5.Controls.Add(checkBox_Path_Temp);
             groupBox5.Controls.Add(comboBox_Path_Home);
             groupBox5.Controls.Add(checkBox_Path_Home);
-            groupBox5.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox5.Location = new Point(297, 6);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(620, 406);
-            groupBox5.TabIndex = 73;
             groupBox5.TabStop = false;
-            groupBox5.Text = "详细指定下载保存路径（只要开启任意一项就完全接管全局设置）";
+            toolTip.SetToolTip(groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // comboBox_Path_InfoJson
             // 
-            comboBox_Path_InfoJson.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_InfoJson, "comboBox_Path_InfoJson");
             comboBox_Path_InfoJson.FormattingEnabled = true;
-            comboBox_Path_InfoJson.Items.AddRange(new object[] { "Description", "InfoJson", "Info" });
-            comboBox_Path_InfoJson.Location = new Point(148, 349);
+            comboBox_Path_InfoJson.Items.AddRange(new object[] { resources.GetString("comboBox_Path_InfoJson.Items"), resources.GetString("comboBox_Path_InfoJson.Items1"), resources.GetString("comboBox_Path_InfoJson.Items2") });
             comboBox_Path_InfoJson.Name = "comboBox_Path_InfoJson";
-            comboBox_Path_InfoJson.Size = new Size(463, 43);
-            comboBox_Path_InfoJson.TabIndex = 62;
-            comboBox_Path_InfoJson.Text = "Info";
+            toolTip.SetToolTip(comboBox_Path_InfoJson, resources.GetString("comboBox_Path_InfoJson.ToolTip"));
             // 
             // checkBox_Path_InfoJson
             // 
-            checkBox_Path_InfoJson.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_InfoJson.Location = new Point(6, 352);
+            resources.ApplyResources(checkBox_Path_InfoJson, "checkBox_Path_InfoJson");
             checkBox_Path_InfoJson.Name = "checkBox_Path_InfoJson";
-            checkBox_Path_InfoJson.Size = new Size(153, 40);
-            checkBox_Path_InfoJson.TabIndex = 61;
-            checkBox_Path_InfoJson.Text = "元数据";
-            toolTip.SetToolTip(checkBox_Path_InfoJson, "指定视频的元数据文件放在哪里\r\n不指定默认继承最终存放路径\r\n\r\n\r\n");
+            toolTip.SetToolTip(checkBox_Path_InfoJson, resources.GetString("checkBox_Path_InfoJson.ToolTip"));
             checkBox_Path_InfoJson.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Thumbnail
             // 
-            comboBox_Path_Thumbnail.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Thumbnail, "comboBox_Path_Thumbnail");
             comboBox_Path_Thumbnail.FormattingEnabled = true;
-            comboBox_Path_Thumbnail.Items.AddRange(new object[] { "Thumbnail", "Temp", "Video" });
-            comboBox_Path_Thumbnail.Location = new Point(148, 304);
+            comboBox_Path_Thumbnail.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Thumbnail.Items"), resources.GetString("comboBox_Path_Thumbnail.Items1"), resources.GetString("comboBox_Path_Thumbnail.Items2") });
             comboBox_Path_Thumbnail.Name = "comboBox_Path_Thumbnail";
-            comboBox_Path_Thumbnail.Size = new Size(463, 43);
-            comboBox_Path_Thumbnail.TabIndex = 60;
-            comboBox_Path_Thumbnail.Text = "Thumbnail";
+            toolTip.SetToolTip(comboBox_Path_Thumbnail, resources.GetString("comboBox_Path_Thumbnail.ToolTip"));
             // 
             // checkBox_Path_Thumbnail
             // 
-            checkBox_Path_Thumbnail.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Thumbnail.Location = new Point(6, 307);
+            resources.ApplyResources(checkBox_Path_Thumbnail, "checkBox_Path_Thumbnail");
             checkBox_Path_Thumbnail.Name = "checkBox_Path_Thumbnail";
-            checkBox_Path_Thumbnail.Size = new Size(153, 40);
-            checkBox_Path_Thumbnail.TabIndex = 59;
-            checkBox_Path_Thumbnail.Text = "缩略图";
-            toolTip.SetToolTip(checkBox_Path_Thumbnail, "指定视频的缩略图文件放在哪里\r\n不指定默认继承最终存放路径\r\n\r\n");
+            toolTip.SetToolTip(checkBox_Path_Thumbnail, resources.GetString("checkBox_Path_Thumbnail.ToolTip"));
             checkBox_Path_Thumbnail.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Description
             // 
-            comboBox_Path_Description.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Description, "comboBox_Path_Description");
             comboBox_Path_Description.FormattingEnabled = true;
-            comboBox_Path_Description.Items.AddRange(new object[] { "Description", "Info" });
-            comboBox_Path_Description.Location = new Point(148, 258);
+            comboBox_Path_Description.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Description.Items"), resources.GetString("comboBox_Path_Description.Items1") });
             comboBox_Path_Description.Name = "comboBox_Path_Description";
-            comboBox_Path_Description.Size = new Size(463, 43);
-            comboBox_Path_Description.TabIndex = 58;
-            comboBox_Path_Description.Text = "Info";
+            toolTip.SetToolTip(comboBox_Path_Description, resources.GetString("comboBox_Path_Description.ToolTip"));
             // 
             // checkBox_Path_Description
             // 
-            checkBox_Path_Description.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Description.Location = new Point(6, 261);
+            resources.ApplyResources(checkBox_Path_Description, "checkBox_Path_Description");
             checkBox_Path_Description.Name = "checkBox_Path_Description";
-            checkBox_Path_Description.Size = new Size(153, 40);
-            checkBox_Path_Description.TabIndex = 57;
-            checkBox_Path_Description.Text = "描述文件";
-            toolTip.SetToolTip(checkBox_Path_Description, "指定视频的描述文本（简介）文件放在哪里\r\n不指定默认继承最终存放路径\r\n");
+            toolTip.SetToolTip(checkBox_Path_Description, resources.GetString("checkBox_Path_Description.ToolTip"));
             checkBox_Path_Description.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_SubTitle
             // 
-            comboBox_Path_SubTitle.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_SubTitle, "comboBox_Path_SubTitle");
             comboBox_Path_SubTitle.FormattingEnabled = true;
-            comboBox_Path_SubTitle.Items.AddRange(new object[] { "SubTitle", "ASS", "XML" });
-            comboBox_Path_SubTitle.Location = new Point(148, 213);
+            comboBox_Path_SubTitle.Items.AddRange(new object[] { resources.GetString("comboBox_Path_SubTitle.Items"), resources.GetString("comboBox_Path_SubTitle.Items1"), resources.GetString("comboBox_Path_SubTitle.Items2") });
             comboBox_Path_SubTitle.Name = "comboBox_Path_SubTitle";
-            comboBox_Path_SubTitle.Size = new Size(463, 43);
-            comboBox_Path_SubTitle.TabIndex = 56;
-            comboBox_Path_SubTitle.Text = "SubTitle";
+            toolTip.SetToolTip(comboBox_Path_SubTitle, resources.GetString("comboBox_Path_SubTitle.ToolTip"));
             // 
             // checkBox_Path_SubTitle
             // 
-            checkBox_Path_SubTitle.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_SubTitle.Location = new Point(6, 216);
+            resources.ApplyResources(checkBox_Path_SubTitle, "checkBox_Path_SubTitle");
             checkBox_Path_SubTitle.Name = "checkBox_Path_SubTitle";
-            checkBox_Path_SubTitle.Size = new Size(153, 40);
-            checkBox_Path_SubTitle.TabIndex = 55;
-            checkBox_Path_SubTitle.Text = "字幕文件";
-            toolTip.SetToolTip(checkBox_Path_SubTitle, "指定字幕文件放在哪里\r\n不指定默认继承最终存放路径");
+            toolTip.SetToolTip(checkBox_Path_SubTitle, resources.GetString("checkBox_Path_SubTitle.ToolTip"));
             checkBox_Path_SubTitle.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Audio
             // 
-            comboBox_Path_Audio.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Audio, "comboBox_Path_Audio");
             comboBox_Path_Audio.FormattingEnabled = true;
-            comboBox_Path_Audio.Items.AddRange(new object[] { "Audio" });
-            comboBox_Path_Audio.Location = new Point(148, 168);
+            comboBox_Path_Audio.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Audio.Items") });
             comboBox_Path_Audio.Name = "comboBox_Path_Audio";
-            comboBox_Path_Audio.Size = new Size(463, 43);
-            comboBox_Path_Audio.TabIndex = 54;
-            comboBox_Path_Audio.Text = "Audio";
+            toolTip.SetToolTip(comboBox_Path_Audio, resources.GetString("comboBox_Path_Audio.ToolTip"));
             // 
             // checkBox_Path_Audio
             // 
-            checkBox_Path_Audio.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Audio.Location = new Point(6, 171);
+            resources.ApplyResources(checkBox_Path_Audio, "checkBox_Path_Audio");
             checkBox_Path_Audio.Name = "checkBox_Path_Audio";
-            checkBox_Path_Audio.Size = new Size(153, 40);
-            checkBox_Path_Audio.TabIndex = 53;
-            checkBox_Path_Audio.Text = "音频文件";
-            toolTip.SetToolTip(checkBox_Path_Audio, "指定音频文件放在哪里\r\n不指定默认继承最终存放路径");
+            toolTip.SetToolTip(checkBox_Path_Audio, resources.GetString("checkBox_Path_Audio.ToolTip"));
             checkBox_Path_Audio.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Video
             // 
-            comboBox_Path_Video.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Video, "comboBox_Path_Video");
             comboBox_Path_Video.FormattingEnabled = true;
-            comboBox_Path_Video.Items.AddRange(new object[] { "Video" });
-            comboBox_Path_Video.Location = new Point(148, 122);
+            comboBox_Path_Video.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Video.Items") });
             comboBox_Path_Video.Name = "comboBox_Path_Video";
-            comboBox_Path_Video.Size = new Size(463, 43);
-            comboBox_Path_Video.TabIndex = 52;
-            comboBox_Path_Video.Text = "Video";
+            toolTip.SetToolTip(comboBox_Path_Video, resources.GetString("comboBox_Path_Video.ToolTip"));
             // 
             // checkBox_Path_Video
             // 
-            checkBox_Path_Video.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Video.Location = new Point(6, 125);
+            resources.ApplyResources(checkBox_Path_Video, "checkBox_Path_Video");
             checkBox_Path_Video.Name = "checkBox_Path_Video";
-            checkBox_Path_Video.Size = new Size(153, 40);
-            checkBox_Path_Video.TabIndex = 51;
-            checkBox_Path_Video.Text = "视频文件";
-            toolTip.SetToolTip(checkBox_Path_Video, "指定视频文件放在哪里\r\n不指定默认继承最终存放路径");
+            toolTip.SetToolTip(checkBox_Path_Video, resources.GetString("checkBox_Path_Video.ToolTip"));
             checkBox_Path_Video.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Temp
             // 
-            comboBox_Path_Temp.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Temp, "comboBox_Path_Temp");
             comboBox_Path_Temp.FormattingEnabled = true;
-            comboBox_Path_Temp.Items.AddRange(new object[] { "Temp" });
-            comboBox_Path_Temp.Location = new Point(148, 77);
+            comboBox_Path_Temp.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Temp.Items") });
             comboBox_Path_Temp.Name = "comboBox_Path_Temp";
-            comboBox_Path_Temp.Size = new Size(463, 43);
-            comboBox_Path_Temp.TabIndex = 50;
-            comboBox_Path_Temp.Text = "Temp";
+            toolTip.SetToolTip(comboBox_Path_Temp, resources.GetString("comboBox_Path_Temp.ToolTip"));
             // 
             // checkBox_Path_Temp
             // 
-            checkBox_Path_Temp.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Temp.Location = new Point(6, 80);
+            resources.ApplyResources(checkBox_Path_Temp, "checkBox_Path_Temp");
             checkBox_Path_Temp.Name = "checkBox_Path_Temp";
-            checkBox_Path_Temp.Size = new Size(153, 40);
-            checkBox_Path_Temp.TabIndex = 49;
-            checkBox_Path_Temp.Text = "临时文件";
-            toolTip.SetToolTip(checkBox_Path_Temp, "指定下载时的临时文件（缓存）放在哪里\r\n不指定默认继承最终存放路径");
+            toolTip.SetToolTip(checkBox_Path_Temp, resources.GetString("checkBox_Path_Temp.ToolTip"));
             checkBox_Path_Temp.UseVisualStyleBackColor = true;
             // 
             // comboBox_Path_Home
             // 
-            comboBox_Path_Home.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Path_Home, "comboBox_Path_Home");
             comboBox_Path_Home.FormattingEnabled = true;
-            comboBox_Path_Home.Items.AddRange(new object[] { "Downloads" });
-            comboBox_Path_Home.Location = new Point(148, 32);
+            comboBox_Path_Home.Items.AddRange(new object[] { resources.GetString("comboBox_Path_Home.Items") });
             comboBox_Path_Home.Name = "comboBox_Path_Home";
-            comboBox_Path_Home.Size = new Size(463, 43);
-            comboBox_Path_Home.TabIndex = 48;
-            comboBox_Path_Home.Text = "Downloads";
+            toolTip.SetToolTip(comboBox_Path_Home, resources.GetString("comboBox_Path_Home.ToolTip"));
             // 
             // checkBox_Path_Home
             // 
-            checkBox_Path_Home.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Path_Home.Location = new Point(6, 35);
+            resources.ApplyResources(checkBox_Path_Home, "checkBox_Path_Home");
             checkBox_Path_Home.Name = "checkBox_Path_Home";
-            checkBox_Path_Home.Size = new Size(153, 40);
-            checkBox_Path_Home.TabIndex = 47;
-            checkBox_Path_Home.Text = "最终存放";
-            toolTip.SetToolTip(checkBox_Path_Home, "指定最终视频文件放在哪里");
+            toolTip.SetToolTip(checkBox_Path_Home, resources.GetString("checkBox_Path_Home.ToolTip"));
             checkBox_Path_Home.UseVisualStyleBackColor = true;
             // 
             // checkBox_SkipDownload
             // 
-            checkBox_SkipDownload.AutoSize = true;
-            checkBox_SkipDownload.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SkipDownload.Location = new Point(151, 282);
+            resources.ApplyResources(checkBox_SkipDownload, "checkBox_SkipDownload");
             checkBox_SkipDownload.Name = "checkBox_SkipDownload";
-            checkBox_SkipDownload.Size = new Size(149, 40);
-            checkBox_SkipDownload.TabIndex = 74;
-            checkBox_SkipDownload.Text = "跳过视频";
-            toolTip.SetToolTip(checkBox_SkipDownload, "跳过下载视频，用于仅下载元数据的情况\r\n如：只下载评论，不下载视频");
+            toolTip.SetToolTip(checkBox_SkipDownload, resources.GetString("checkBox_SkipDownload.ToolTip"));
             checkBox_SkipDownload.UseVisualStyleBackColor = true;
             // 
             // checkBox_MTime
             // 
-            checkBox_MTime.AutoSize = true;
-            checkBox_MTime.Font = new Font("微软雅黑", 16.2F);
-            checkBox_MTime.Location = new Point(7, 372);
+            resources.ApplyResources(checkBox_MTime, "checkBox_MTime");
             checkBox_MTime.Name = "checkBox_MTime";
-            checkBox_MTime.Size = new Size(289, 40);
-            checkBox_MTime.TabIndex = 72;
-            checkBox_MTime.Text = "使用服务器上传时间";
-            toolTip.SetToolTip(checkBox_MTime, "文件修改时间 = 视频上传时间");
+            toolTip.SetToolTip(checkBox_MTime, resources.GetString("checkBox_MTime.ToolTip"));
             checkBox_MTime.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoPart
             // 
-            checkBox_NoPart.AutoSize = true;
-            checkBox_NoPart.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_NoPart, "checkBox_NoPart");
             checkBox_NoPart.ForeColor = Color.FromArgb(192, 0, 0);
-            checkBox_NoPart.Location = new Point(8, 328);
             checkBox_NoPart.Name = "checkBox_NoPart";
-            checkBox_NoPart.Size = new Size(261, 40);
-            checkBox_NoPart.TabIndex = 71;
-            checkBox_NoPart.Text = "直接写入最终文件";
-            toolTip.SetToolTip(checkBox_NoPart, "禁用Part文件，改为直接写入最终文件，中断可能导致文件损坏。\r\n警告：此操作风险较高");
+            toolTip.SetToolTip(checkBox_NoPart, resources.GetString("checkBox_NoPart.ToolTip"));
             checkBox_NoPart.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoContinue
             // 
-            checkBox_NoContinue.AutoSize = true;
-            checkBox_NoContinue.Font = new Font("微软雅黑", 16.2F);
-            checkBox_NoContinue.Location = new Point(8, 282);
+            resources.ApplyResources(checkBox_NoContinue, "checkBox_NoContinue");
             checkBox_NoContinue.Name = "checkBox_NoContinue";
-            checkBox_NoContinue.Size = new Size(149, 40);
-            checkBox_NoContinue.TabIndex = 70;
-            checkBox_NoContinue.Text = "禁用续传";
-            toolTip.SetToolTip(checkBox_NoContinue, "禁用继续传输功能。\r\n传输中断将删除.part文件从头下载。");
+            toolTip.SetToolTip(checkBox_NoContinue, resources.GetString("checkBox_NoContinue.ToolTip"));
             checkBox_NoContinue.UseVisualStyleBackColor = true;
             // 
             // comboBox_OverWritesMode
             // 
+            resources.ApplyResources(comboBox_OverWritesMode, "comboBox_OverWritesMode");
             comboBox_OverWritesMode.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_OverWritesMode.Font = new Font("微软雅黑", 16.2F);
             comboBox_OverWritesMode.FormattingEnabled = true;
-            comboBox_OverWritesMode.Items.AddRange(new object[] { "保护模式", "智能模式", "强制模式" });
-            comboBox_OverWritesMode.Location = new Point(148, 233);
+            comboBox_OverWritesMode.Items.AddRange(new object[] { resources.GetString("comboBox_OverWritesMode.Items"), resources.GetString("comboBox_OverWritesMode.Items1"), resources.GetString("comboBox_OverWritesMode.Items2") });
             comboBox_OverWritesMode.Name = "comboBox_OverWritesMode";
-            comboBox_OverWritesMode.Size = new Size(135, 43);
-            comboBox_OverWritesMode.TabIndex = 69;
+            toolTip.SetToolTip(comboBox_OverWritesMode, resources.GetString("comboBox_OverWritesMode.ToolTip"));
             // 
             // checkBox_OverWritesMode
             // 
-            checkBox_OverWritesMode.AutoSize = true;
-            checkBox_OverWritesMode.Font = new Font("微软雅黑", 16.2F);
-            checkBox_OverWritesMode.Location = new Point(8, 234);
+            resources.ApplyResources(checkBox_OverWritesMode, "checkBox_OverWritesMode");
             checkBox_OverWritesMode.Name = "checkBox_OverWritesMode";
-            checkBox_OverWritesMode.Size = new Size(149, 40);
-            checkBox_OverWritesMode.TabIndex = 68;
-            checkBox_OverWritesMode.Text = "覆盖策略";
-            toolTip.SetToolTip(checkBox_OverWritesMode, "修改文件储存策略，默认为智能模式\r\n保护模式\t文件存在则跳过\r\n智能模式\t视频不覆盖，相关文件覆盖\r\n强制模式\t全部覆盖，重新下载");
+            toolTip.SetToolTip(checkBox_OverWritesMode, resources.GetString("checkBox_OverWritesMode.ToolTip"));
             checkBox_OverWritesMode.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Controls.Add(checkBox_WriteComments);
             groupBox4.Controls.Add(checkBox_WritePlayListMetaFiles);
             groupBox4.Controls.Add(checkBox_WriteInfoJson);
             groupBox4.Controls.Add(checkBox_WriteDescription);
-            groupBox4.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox4.Location = new Point(3, 6);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(288, 222);
-            groupBox4.TabIndex = 50;
             groupBox4.TabStop = false;
-            groupBox4.Text = "元数据文件系统";
+            toolTip.SetToolTip(groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // checkBox_WriteComments
             // 
-            checkBox_WriteComments.AutoSize = true;
-            checkBox_WriteComments.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_WriteComments, "checkBox_WriteComments");
             checkBox_WriteComments.ForeColor = Color.FromArgb(192, 0, 0);
-            checkBox_WriteComments.Location = new Point(13, 126);
             checkBox_WriteComments.Name = "checkBox_WriteComments";
-            checkBox_WriteComments.Size = new Size(205, 40);
-            checkBox_WriteComments.TabIndex = 41;
-            checkBox_WriteComments.Text = "导出所有评论";
-            toolTip.SetToolTip(checkBox_WriteComments, "输出一个带有视频所有评论的文件\r\n文件类型：嵌入infjson\r\n");
+            toolTip.SetToolTip(checkBox_WriteComments, resources.GetString("checkBox_WriteComments.ToolTip"));
             checkBox_WriteComments.UseVisualStyleBackColor = true;
             // 
             // checkBox_WritePlayListMetaFiles
             // 
-            checkBox_WritePlayListMetaFiles.AutoSize = true;
-            checkBox_WritePlayListMetaFiles.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WritePlayListMetaFiles.Location = new Point(13, 172);
+            resources.ApplyResources(checkBox_WritePlayListMetaFiles, "checkBox_WritePlayListMetaFiles");
             checkBox_WritePlayListMetaFiles.Name = "checkBox_WritePlayListMetaFiles";
-            checkBox_WritePlayListMetaFiles.Size = new Size(261, 40);
-            checkBox_WritePlayListMetaFiles.TabIndex = 42;
-            checkBox_WritePlayListMetaFiles.Text = "导出播放列表信息";
-            toolTip.SetToolTip(checkBox_WritePlayListMetaFiles, "输出一个带有URL播放列表详细的文件\r\n文件类型：播放列表元数据");
+            toolTip.SetToolTip(checkBox_WritePlayListMetaFiles, resources.GetString("checkBox_WritePlayListMetaFiles.ToolTip"));
             checkBox_WritePlayListMetaFiles.UseVisualStyleBackColor = true;
             // 
             // checkBox_WriteInfoJson
             // 
-            checkBox_WriteInfoJson.AutoSize = true;
-            checkBox_WriteInfoJson.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteInfoJson.Location = new Point(13, 79);
+            resources.ApplyResources(checkBox_WriteInfoJson, "checkBox_WriteInfoJson");
             checkBox_WriteInfoJson.Name = "checkBox_WriteInfoJson";
-            checkBox_WriteInfoJson.Size = new Size(233, 40);
-            checkBox_WriteInfoJson.TabIndex = 35;
-            checkBox_WriteInfoJson.Text = "导出完整元数据";
-            toolTip.SetToolTip(checkBox_WriteInfoJson, "输出一个带有视频完整元数据（含个人信息）的文件\r\n文件类型：.info.json");
+            toolTip.SetToolTip(checkBox_WriteInfoJson, resources.GetString("checkBox_WriteInfoJson.ToolTip"));
             checkBox_WriteInfoJson.UseVisualStyleBackColor = true;
             // 
             // checkBox_WriteDescription
             // 
-            checkBox_WriteDescription.AutoSize = true;
-            checkBox_WriteDescription.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteDescription.Location = new Point(13, 33);
+            resources.ApplyResources(checkBox_WriteDescription, "checkBox_WriteDescription");
             checkBox_WriteDescription.Name = "checkBox_WriteDescription";
-            checkBox_WriteDescription.Size = new Size(261, 40);
-            checkBox_WriteDescription.TabIndex = 37;
-            checkBox_WriteDescription.Text = "导出视频描述文本";
-            toolTip.SetToolTip(checkBox_WriteDescription, "输出一个带有视频描述文本（简介）的文件\r\n文件类型：.description");
+            toolTip.SetToolTip(checkBox_WriteDescription, resources.GetString("checkBox_WriteDescription.ToolTip"));
             checkBox_WriteDescription.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Controls.Add(groupBox8);
             tabPage3.Controls.Add(groupBox7);
             tabPage3.Controls.Add(groupBox6);
-            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(927, 418);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "变通参数";
+            toolTip.SetToolTip(tabPage3, resources.GetString("tabPage3.ToolTip"));
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
+            resources.ApplyResources(groupBox8, "groupBox8");
             groupBox8.Controls.Add(richTextBox_AddHeaders);
             groupBox8.Controls.Add(button_AddHeaders_Preset);
             groupBox8.Controls.Add(button_AddHeaders_Save);
             groupBox8.Controls.Add(button_AddHeaders_Load);
             groupBox8.Controls.Add(checkBox_AddHeaders);
-            groupBox8.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox8.Location = new Point(393, 6);
             groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(524, 397);
-            groupBox8.TabIndex = 80;
             groupBox8.TabStop = false;
-            groupBox8.Text = "自定义HTTP头";
+            toolTip.SetToolTip(groupBox8, resources.GetString("groupBox8.ToolTip"));
             // 
             // richTextBox_AddHeaders
             // 
-            richTextBox_AddHeaders.Location = new Point(6, 78);
+            resources.ApplyResources(richTextBox_AddHeaders, "richTextBox_AddHeaders");
             richTextBox_AddHeaders.Name = "richTextBox_AddHeaders";
-            richTextBox_AddHeaders.Size = new Size(512, 312);
-            richTextBox_AddHeaders.TabIndex = 89;
-            richTextBox_AddHeaders.Text = "";
+            toolTip.SetToolTip(richTextBox_AddHeaders, resources.GetString("richTextBox_AddHeaders.ToolTip"));
             // 
             // button_AddHeaders_Preset
             // 
-            button_AddHeaders_Preset.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            resources.ApplyResources(button_AddHeaders_Preset, "button_AddHeaders_Preset");
             button_AddHeaders_Preset.ForeColor = Color.FromArgb(128, 64, 0);
-            button_AddHeaders_Preset.Location = new Point(329, 30);
             button_AddHeaders_Preset.Name = "button_AddHeaders_Preset";
-            button_AddHeaders_Preset.Size = new Size(189, 43);
-            button_AddHeaders_Preset.TabIndex = 88;
-            button_AddHeaders_Preset.Text = "简易预设";
-            toolTip.SetToolTip(button_AddHeaders_Preset, "简易预设，一个示例");
+            toolTip.SetToolTip(button_AddHeaders_Preset, resources.GetString("button_AddHeaders_Preset.ToolTip"));
             button_AddHeaders_Preset.UseVisualStyleBackColor = true;
             button_AddHeaders_Preset.Click += button_AddHeaders_Preset_Click;
             // 
             // button_AddHeaders_Save
             // 
-            button_AddHeaders_Save.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            resources.ApplyResources(button_AddHeaders_Save, "button_AddHeaders_Save");
             button_AddHeaders_Save.ForeColor = Color.FromArgb(128, 64, 0);
-            button_AddHeaders_Save.Location = new Point(241, 30);
             button_AddHeaders_Save.Name = "button_AddHeaders_Save";
-            button_AddHeaders_Save.Size = new Size(82, 43);
-            button_AddHeaders_Save.TabIndex = 87;
-            button_AddHeaders_Save.Text = "保存";
+            toolTip.SetToolTip(button_AddHeaders_Save, resources.GetString("button_AddHeaders_Save.ToolTip"));
             button_AddHeaders_Save.UseVisualStyleBackColor = true;
             button_AddHeaders_Save.Click += button_AddHeaders_Save_Click;
             // 
             // button_AddHeaders_Load
             // 
-            button_AddHeaders_Load.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            resources.ApplyResources(button_AddHeaders_Load, "button_AddHeaders_Load");
             button_AddHeaders_Load.ForeColor = Color.FromArgb(128, 64, 0);
-            button_AddHeaders_Load.Location = new Point(154, 30);
             button_AddHeaders_Load.Name = "button_AddHeaders_Load";
-            button_AddHeaders_Load.Size = new Size(82, 43);
-            button_AddHeaders_Load.TabIndex = 86;
-            button_AddHeaders_Load.Text = "加载";
+            toolTip.SetToolTip(button_AddHeaders_Load, resources.GetString("button_AddHeaders_Load.ToolTip"));
             button_AddHeaders_Load.UseVisualStyleBackColor = true;
             button_AddHeaders_Load.Click += button_AddHeaders_Load_Click;
             // 
             // checkBox_AddHeaders
             // 
-            checkBox_AddHeaders.AutoSize = true;
-            checkBox_AddHeaders.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_AddHeaders, "checkBox_AddHeaders");
             checkBox_AddHeaders.ForeColor = SystemColors.ControlText;
-            checkBox_AddHeaders.Location = new Point(9, 32);
             checkBox_AddHeaders.Name = "checkBox_AddHeaders";
-            checkBox_AddHeaders.Size = new Size(149, 40);
-            checkBox_AddHeaders.TabIndex = 72;
-            checkBox_AddHeaders.Text = "开启功能";
+            toolTip.SetToolTip(checkBox_AddHeaders, resources.GetString("checkBox_AddHeaders.ToolTip"));
             checkBox_AddHeaders.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
+            resources.ApplyResources(groupBox7, "groupBox7");
             groupBox7.Controls.Add(button_SuperFriendlyMode);
             groupBox7.Controls.Add(comboBox_SleepSubtitles);
             groupBox7.Controls.Add(checkBox_SleepSubtitles);
@@ -1319,264 +1027,179 @@
             groupBox7.Controls.Add(checkBox_SleepInterval);
             groupBox7.Controls.Add(comboBox_SleepRequests);
             groupBox7.Controls.Add(checkBox_SleepRequests);
-            groupBox7.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox7.Location = new Point(5, 230);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(377, 173);
-            groupBox7.TabIndex = 79;
             groupBox7.TabStop = false;
-            groupBox7.Text = "下载间隔";
+            toolTip.SetToolTip(groupBox7, resources.GetString("groupBox7.ToolTip"));
             // 
             // button_SuperFriendlyMode
             // 
+            resources.ApplyResources(button_SuperFriendlyMode, "button_SuperFriendlyMode");
             button_SuperFriendlyMode.ForeColor = Color.FromArgb(128, 64, 0);
-            button_SuperFriendlyMode.Location = new Point(232, 123);
             button_SuperFriendlyMode.Name = "button_SuperFriendlyMode";
-            button_SuperFriendlyMode.Size = new Size(137, 43);
-            button_SuperFriendlyMode.TabIndex = 85;
-            button_SuperFriendlyMode.Text = "超友好模式";
-            toolTip.SetToolTip(button_SuperFriendlyMode, "一键开启超友好模式（针对小网站或敏感地区）\r\n但恕我直言，一点用都没有");
+            toolTip.SetToolTip(button_SuperFriendlyMode, resources.GetString("button_SuperFriendlyMode.ToolTip"));
             button_SuperFriendlyMode.UseVisualStyleBackColor = true;
             button_SuperFriendlyMode.Click += button_SuperFriendlyMode_Click;
             // 
             // comboBox_SleepSubtitles
             // 
-            comboBox_SleepSubtitles.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_SleepSubtitles, "comboBox_SleepSubtitles");
             comboBox_SleepSubtitles.FormattingEnabled = true;
-            comboBox_SleepSubtitles.Items.AddRange(new object[] { "1", "2", "3", "5", "10", "20", "30", "60", "120" });
-            comboBox_SleepSubtitles.Location = new Point(149, 123);
+            comboBox_SleepSubtitles.Items.AddRange(new object[] { resources.GetString("comboBox_SleepSubtitles.Items"), resources.GetString("comboBox_SleepSubtitles.Items1"), resources.GetString("comboBox_SleepSubtitles.Items2"), resources.GetString("comboBox_SleepSubtitles.Items3"), resources.GetString("comboBox_SleepSubtitles.Items4"), resources.GetString("comboBox_SleepSubtitles.Items5"), resources.GetString("comboBox_SleepSubtitles.Items6"), resources.GetString("comboBox_SleepSubtitles.Items7"), resources.GetString("comboBox_SleepSubtitles.Items8") });
             comboBox_SleepSubtitles.Name = "comboBox_SleepSubtitles";
-            comboBox_SleepSubtitles.Size = new Size(79, 43);
-            comboBox_SleepSubtitles.TabIndex = 84;
-            comboBox_SleepSubtitles.Text = "2";
+            toolTip.SetToolTip(comboBox_SleepSubtitles, resources.GetString("comboBox_SleepSubtitles.ToolTip"));
             // 
             // checkBox_SleepSubtitles
             // 
-            checkBox_SleepSubtitles.AutoSize = true;
-            checkBox_SleepSubtitles.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SleepSubtitles.Location = new Point(6, 124);
+            resources.ApplyResources(checkBox_SleepSubtitles, "checkBox_SleepSubtitles");
             checkBox_SleepSubtitles.Name = "checkBox_SleepSubtitles";
-            checkBox_SleepSubtitles.Size = new Size(149, 40);
-            checkBox_SleepSubtitles.TabIndex = 83;
-            checkBox_SleepSubtitles.Text = "字幕间隔";
-            toolTip.SetToolTip(checkBox_SleepSubtitles, "数据提取期间，每个请求之间的休眠时间。\r\n单位：秒");
+            toolTip.SetToolTip(checkBox_SleepSubtitles, resources.GetString("checkBox_SleepSubtitles.ToolTip"));
             checkBox_SleepSubtitles.UseVisualStyleBackColor = true;
             // 
             // comboBox_MaxSleepInterval
             // 
-            comboBox_MaxSleepInterval.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_MaxSleepInterval, "comboBox_MaxSleepInterval");
             comboBox_MaxSleepInterval.FormattingEnabled = true;
-            comboBox_MaxSleepInterval.Items.AddRange(new object[] { "1", "2", "3", "5", "10", "20", "30", "60", "120" });
-            comboBox_MaxSleepInterval.Location = new Point(290, 77);
+            comboBox_MaxSleepInterval.Items.AddRange(new object[] { resources.GetString("comboBox_MaxSleepInterval.Items"), resources.GetString("comboBox_MaxSleepInterval.Items1"), resources.GetString("comboBox_MaxSleepInterval.Items2"), resources.GetString("comboBox_MaxSleepInterval.Items3"), resources.GetString("comboBox_MaxSleepInterval.Items4"), resources.GetString("comboBox_MaxSleepInterval.Items5"), resources.GetString("comboBox_MaxSleepInterval.Items6"), resources.GetString("comboBox_MaxSleepInterval.Items7"), resources.GetString("comboBox_MaxSleepInterval.Items8") });
             comboBox_MaxSleepInterval.Name = "comboBox_MaxSleepInterval";
-            comboBox_MaxSleepInterval.Size = new Size(79, 43);
-            comboBox_MaxSleepInterval.TabIndex = 82;
-            comboBox_MaxSleepInterval.Text = "2";
+            toolTip.SetToolTip(comboBox_MaxSleepInterval, resources.GetString("comboBox_MaxSleepInterval.ToolTip"));
             // 
             // checkBox_MaxSleepInterval
             // 
-            checkBox_MaxSleepInterval.AutoSize = true;
-            checkBox_MaxSleepInterval.Font = new Font("微软雅黑", 16.2F);
-            checkBox_MaxSleepInterval.Location = new Point(232, 78);
+            resources.ApplyResources(checkBox_MaxSleepInterval, "checkBox_MaxSleepInterval");
             checkBox_MaxSleepInterval.Name = "checkBox_MaxSleepInterval";
-            checkBox_MaxSleepInterval.Size = new Size(65, 40);
-            checkBox_MaxSleepInterval.TabIndex = 81;
-            checkBox_MaxSleepInterval.Text = "至";
-            toolTip.SetToolTip(checkBox_MaxSleepInterval, "数据提取期间，每个请求之间的休眠时间。\r\n单位：秒");
+            toolTip.SetToolTip(checkBox_MaxSleepInterval, resources.GetString("checkBox_MaxSleepInterval.ToolTip"));
             checkBox_MaxSleepInterval.UseVisualStyleBackColor = true;
             // 
             // comboBox_SleepInterval
             // 
-            comboBox_SleepInterval.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_SleepInterval, "comboBox_SleepInterval");
             comboBox_SleepInterval.FormattingEnabled = true;
-            comboBox_SleepInterval.Items.AddRange(new object[] { "1", "2", "3", "5", "10", "20", "30", "60", "120" });
-            comboBox_SleepInterval.Location = new Point(149, 77);
+            comboBox_SleepInterval.Items.AddRange(new object[] { resources.GetString("comboBox_SleepInterval.Items"), resources.GetString("comboBox_SleepInterval.Items1"), resources.GetString("comboBox_SleepInterval.Items2"), resources.GetString("comboBox_SleepInterval.Items3"), resources.GetString("comboBox_SleepInterval.Items4"), resources.GetString("comboBox_SleepInterval.Items5"), resources.GetString("comboBox_SleepInterval.Items6"), resources.GetString("comboBox_SleepInterval.Items7"), resources.GetString("comboBox_SleepInterval.Items8") });
             comboBox_SleepInterval.Name = "comboBox_SleepInterval";
-            comboBox_SleepInterval.Size = new Size(79, 43);
-            comboBox_SleepInterval.TabIndex = 80;
-            comboBox_SleepInterval.Text = "1";
+            toolTip.SetToolTip(comboBox_SleepInterval, resources.GetString("comboBox_SleepInterval.ToolTip"));
             // 
             // checkBox_SleepInterval
             // 
-            checkBox_SleepInterval.AutoSize = true;
-            checkBox_SleepInterval.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SleepInterval.Location = new Point(6, 78);
+            resources.ApplyResources(checkBox_SleepInterval, "checkBox_SleepInterval");
             checkBox_SleepInterval.Name = "checkBox_SleepInterval";
-            checkBox_SleepInterval.Size = new Size(149, 40);
-            checkBox_SleepInterval.TabIndex = 79;
-            checkBox_SleepInterval.Text = "下载间隔";
-            toolTip.SetToolTip(checkBox_SleepInterval, "数据提取期间，每个请求之间的休眠时间。\r\n单位：秒");
+            toolTip.SetToolTip(checkBox_SleepInterval, resources.GetString("checkBox_SleepInterval.ToolTip"));
             checkBox_SleepInterval.UseVisualStyleBackColor = true;
             // 
             // comboBox_SleepRequests
             // 
-            comboBox_SleepRequests.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_SleepRequests, "comboBox_SleepRequests");
             comboBox_SleepRequests.FormattingEnabled = true;
-            comboBox_SleepRequests.Items.AddRange(new object[] { "1", "2", "3", "5", "10", "20", "30", "60", "120" });
-            comboBox_SleepRequests.Location = new Point(149, 31);
+            comboBox_SleepRequests.Items.AddRange(new object[] { resources.GetString("comboBox_SleepRequests.Items"), resources.GetString("comboBox_SleepRequests.Items1"), resources.GetString("comboBox_SleepRequests.Items2"), resources.GetString("comboBox_SleepRequests.Items3"), resources.GetString("comboBox_SleepRequests.Items4"), resources.GetString("comboBox_SleepRequests.Items5"), resources.GetString("comboBox_SleepRequests.Items6"), resources.GetString("comboBox_SleepRequests.Items7"), resources.GetString("comboBox_SleepRequests.Items8") });
             comboBox_SleepRequests.Name = "comboBox_SleepRequests";
-            comboBox_SleepRequests.Size = new Size(220, 43);
-            comboBox_SleepRequests.TabIndex = 78;
-            comboBox_SleepRequests.Text = "2";
+            toolTip.SetToolTip(comboBox_SleepRequests, resources.GetString("comboBox_SleepRequests.ToolTip"));
             // 
             // checkBox_SleepRequests
             // 
-            checkBox_SleepRequests.AutoSize = true;
-            checkBox_SleepRequests.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SleepRequests.Location = new Point(6, 32);
+            resources.ApplyResources(checkBox_SleepRequests, "checkBox_SleepRequests");
             checkBox_SleepRequests.Name = "checkBox_SleepRequests";
-            checkBox_SleepRequests.Size = new Size(149, 40);
-            checkBox_SleepRequests.TabIndex = 77;
-            checkBox_SleepRequests.Text = "请求间隔";
-            toolTip.SetToolTip(checkBox_SleepRequests, "数据提取期间，每个请求之间的休眠时间。\r\n单位：秒");
+            toolTip.SetToolTip(checkBox_SleepRequests, resources.GetString("checkBox_SleepRequests.ToolTip"));
             checkBox_SleepRequests.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
+            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Controls.Add(checkBox_NoCheckCertificates);
             groupBox6.Controls.Add(comboBox_Encoding);
             groupBox6.Controls.Add(checkBox_PreferInsecure);
             groupBox6.Controls.Add(checkBox_Encoding);
             groupBox6.Controls.Add(checkBox_LegacyServerConnect);
-            groupBox6.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox6.Location = new Point(5, 6);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(377, 218);
-            groupBox6.TabIndex = 77;
             groupBox6.TabStop = false;
-            groupBox6.Text = "连接变通方法";
+            toolTip.SetToolTip(groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // checkBox_NoCheckCertificates
             // 
-            checkBox_NoCheckCertificates.AutoSize = true;
-            checkBox_NoCheckCertificates.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_NoCheckCertificates, "checkBox_NoCheckCertificates");
             checkBox_NoCheckCertificates.ForeColor = SystemColors.ControlText;
-            checkBox_NoCheckCertificates.Location = new Point(9, 32);
             checkBox_NoCheckCertificates.Name = "checkBox_NoCheckCertificates";
-            checkBox_NoCheckCertificates.Size = new Size(292, 40);
-            checkBox_NoCheckCertificates.TabIndex = 72;
-            checkBox_NoCheckCertificates.Text = "跳过HTTPS证书验证";
-            toolTip.SetToolTip(checkBox_NoCheckCertificates, "跳过HTTPS证书验证\r\n⚠️ 高危，降低安全性");
+            toolTip.SetToolTip(checkBox_NoCheckCertificates, resources.GetString("checkBox_NoCheckCertificates.ToolTip"));
             checkBox_NoCheckCertificates.UseVisualStyleBackColor = true;
             // 
             // comboBox_Encoding
             // 
-            comboBox_Encoding.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Encoding, "comboBox_Encoding");
             comboBox_Encoding.FormattingEnabled = true;
-            comboBox_Encoding.Items.AddRange(new object[] { "UTF-8", "GBK", "GB2312", "BIG5", "Shift-JIS", "EUC-KR" });
-            comboBox_Encoding.Location = new Point(152, 169);
+            comboBox_Encoding.Items.AddRange(new object[] { resources.GetString("comboBox_Encoding.Items"), resources.GetString("comboBox_Encoding.Items1"), resources.GetString("comboBox_Encoding.Items2"), resources.GetString("comboBox_Encoding.Items3"), resources.GetString("comboBox_Encoding.Items4"), resources.GetString("comboBox_Encoding.Items5") });
             comboBox_Encoding.Name = "comboBox_Encoding";
-            comboBox_Encoding.Size = new Size(149, 43);
-            comboBox_Encoding.TabIndex = 76;
-            comboBox_Encoding.Text = "UTF-8";
+            toolTip.SetToolTip(comboBox_Encoding, resources.GetString("comboBox_Encoding.ToolTip"));
             // 
             // checkBox_PreferInsecure
             // 
-            checkBox_PreferInsecure.AutoSize = true;
-            checkBox_PreferInsecure.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_PreferInsecure, "checkBox_PreferInsecure");
             checkBox_PreferInsecure.ForeColor = SystemColors.ControlText;
-            checkBox_PreferInsecure.Location = new Point(9, 78);
             checkBox_PreferInsecure.Name = "checkBox_PreferInsecure";
-            checkBox_PreferInsecure.Size = new Size(205, 40);
-            checkBox_PreferInsecure.TabIndex = 73;
-            checkBox_PreferInsecure.Text = "不安全的连接";
-            toolTip.SetToolTip(checkBox_PreferInsecure, "优先使用HTTP而非HTTPS获取信息\r\n目前仅支持 YouTube 且仅数据明文传输");
+            toolTip.SetToolTip(checkBox_PreferInsecure, resources.GetString("checkBox_PreferInsecure.ToolTip"));
             checkBox_PreferInsecure.UseVisualStyleBackColor = true;
             // 
             // checkBox_Encoding
             // 
-            checkBox_Encoding.AutoSize = true;
-            checkBox_Encoding.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Encoding.Location = new Point(9, 170);
+            resources.ApplyResources(checkBox_Encoding, "checkBox_Encoding");
             checkBox_Encoding.Name = "checkBox_Encoding";
-            checkBox_Encoding.Size = new Size(149, 40);
-            checkBox_Encoding.TabIndex = 75;
-            checkBox_Encoding.Text = "强制编码";
-            toolTip.SetToolTip(checkBox_Encoding, "强制使用指定的字符编码（实验性）");
+            toolTip.SetToolTip(checkBox_Encoding, resources.GetString("checkBox_Encoding.ToolTip"));
             checkBox_Encoding.UseVisualStyleBackColor = true;
             // 
             // checkBox_LegacyServerConnect
             // 
-            checkBox_LegacyServerConnect.AutoSize = true;
-            checkBox_LegacyServerConnect.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_LegacyServerConnect, "checkBox_LegacyServerConnect");
             checkBox_LegacyServerConnect.ForeColor = SystemColors.ControlText;
-            checkBox_LegacyServerConnect.Location = new Point(9, 124);
             checkBox_LegacyServerConnect.Name = "checkBox_LegacyServerConnect";
-            checkBox_LegacyServerConnect.Size = new Size(233, 40);
-            checkBox_LegacyServerConnect.TabIndex = 74;
-            checkBox_LegacyServerConnect.Text = "旧版服务器兼容";
-            toolTip.SetToolTip(checkBox_LegacyServerConnect, "允许连接到不支持RFC 5746安全重协商的服务器\r\n用于连接到一些非常老的服务器\r\n（RFC 5746：TLS重新协商指示扩展，防止重协商攻击）");
+            toolTip.SetToolTip(checkBox_LegacyServerConnect, resources.GetString("checkBox_LegacyServerConnect.ToolTip"));
             checkBox_LegacyServerConnect.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            resources.ApplyResources(tabPage4, "tabPage4");
             tabPage4.Controls.Add(groupBox19);
             tabPage4.Controls.Add(groupBox10);
             tabPage4.Controls.Add(groupBox9);
-            tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(927, 418);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "格式字幕";
+            toolTip.SetToolTip(tabPage4, resources.GetString("tabPage4.ToolTip"));
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox19
             // 
+            resources.ApplyResources(groupBox19, "groupBox19");
             groupBox19.Controls.Add(checkBox_ListThumbnails);
             groupBox19.Controls.Add(checkBox_WriteAllThumbnails);
             groupBox19.Controls.Add(checkBox_WriteThumbnail);
-            groupBox19.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox19.Location = new Point(438, 190);
             groupBox19.Name = "groupBox19";
-            groupBox19.Size = new Size(477, 222);
-            groupBox19.TabIndex = 80;
             groupBox19.TabStop = false;
-            groupBox19.Text = "缩略图参数";
+            toolTip.SetToolTip(groupBox19, resources.GetString("groupBox19.ToolTip"));
             // 
             // checkBox_ListThumbnails
             // 
-            checkBox_ListThumbnails.AutoSize = true;
-            checkBox_ListThumbnails.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_ListThumbnails, "checkBox_ListThumbnails");
             checkBox_ListThumbnails.ForeColor = Color.FromArgb(128, 64, 64);
-            checkBox_ListThumbnails.Location = new Point(7, 78);
             checkBox_ListThumbnails.Name = "checkBox_ListThumbnails";
-            checkBox_ListThumbnails.Size = new Size(429, 40);
-            checkBox_ListThumbnails.TabIndex = 80;
-            checkBox_ListThumbnails.Text = "解析模式：列出可用缩略图文件";
-            toolTip.SetToolTip(checkBox_ListThumbnails, "执行解析时列出可用的缩略图与其尺寸");
+            toolTip.SetToolTip(checkBox_ListThumbnails, resources.GetString("checkBox_ListThumbnails.ToolTip"));
             checkBox_ListThumbnails.UseVisualStyleBackColor = true;
             // 
             // checkBox_WriteAllThumbnails
             // 
-            checkBox_WriteAllThumbnails.AutoSize = true;
-            checkBox_WriteAllThumbnails.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteAllThumbnails.Location = new Point(234, 32);
+            resources.ApplyResources(checkBox_WriteAllThumbnails, "checkBox_WriteAllThumbnails");
             checkBox_WriteAllThumbnails.Name = "checkBox_WriteAllThumbnails";
-            checkBox_WriteAllThumbnails.Size = new Size(233, 40);
-            checkBox_WriteAllThumbnails.TabIndex = 42;
-            checkBox_WriteAllThumbnails.Text = "下载所有缩略图";
-            toolTip.SetToolTip(checkBox_WriteAllThumbnails, "下载所有可用的缩略图格式和尺寸");
+            toolTip.SetToolTip(checkBox_WriteAllThumbnails, resources.GetString("checkBox_WriteAllThumbnails.ToolTip"));
             checkBox_WriteAllThumbnails.UseVisualStyleBackColor = true;
             checkBox_WriteAllThumbnails.CheckedChanged += checkBox_WriteAllThumbnails_CheckedChanged;
             // 
             // checkBox_WriteThumbnail
             // 
-            checkBox_WriteThumbnail.AutoSize = true;
+            resources.ApplyResources(checkBox_WriteThumbnail, "checkBox_WriteThumbnail");
             checkBox_WriteThumbnail.Checked = true;
             checkBox_WriteThumbnail.CheckState = CheckState.Checked;
-            checkBox_WriteThumbnail.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteThumbnail.Location = new Point(7, 32);
             checkBox_WriteThumbnail.Name = "checkBox_WriteThumbnail";
-            checkBox_WriteThumbnail.Size = new Size(233, 40);
-            checkBox_WriteThumbnail.TabIndex = 41;
-            checkBox_WriteThumbnail.Text = "下载默认缩略图";
-            toolTip.SetToolTip(checkBox_WriteThumbnail, "下载视频的默认/最佳缩略图");
+            toolTip.SetToolTip(checkBox_WriteThumbnail, resources.GetString("checkBox_WriteThumbnail.ToolTip"));
             checkBox_WriteThumbnail.UseVisualStyleBackColor = true;
             checkBox_WriteThumbnail.CheckedChanged += checkBox_WriteThumbnail_CheckedChanged;
             // 
             // groupBox10
             // 
+            resources.ApplyResources(groupBox10, "groupBox10");
             groupBox10.Controls.Add(checkBox_ListSubs);
             groupBox10.Controls.Add(comboBox_SubLangs);
             groupBox10.Controls.Add(checkBox_SubLangs);
@@ -1584,98 +1207,65 @@
             groupBox10.Controls.Add(checkBox_SubFormat);
             groupBox10.Controls.Add(checkBox_WriteAutoSubs);
             groupBox10.Controls.Add(checkBox_WriteSubs);
-            groupBox10.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox10.Location = new Point(9, 190);
             groupBox10.Name = "groupBox10";
-            groupBox10.Size = new Size(423, 222);
-            groupBox10.TabIndex = 79;
             groupBox10.TabStop = false;
-            groupBox10.Text = "字幕参数";
+            toolTip.SetToolTip(groupBox10, resources.GetString("groupBox10.ToolTip"));
             // 
             // checkBox_ListSubs
             // 
-            checkBox_ListSubs.AutoSize = true;
-            checkBox_ListSubs.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_ListSubs, "checkBox_ListSubs");
             checkBox_ListSubs.ForeColor = Color.FromArgb(128, 64, 64);
-            checkBox_ListSubs.Location = new Point(7, 176);
             checkBox_ListSubs.Name = "checkBox_ListSubs";
-            checkBox_ListSubs.Size = new Size(401, 40);
-            checkBox_ListSubs.TabIndex = 80;
-            checkBox_ListSubs.Text = "解析模式：列出可用字幕语言";
-            toolTip.SetToolTip(checkBox_ListSubs, "执行解析时列出可用的字幕与其语言");
+            toolTip.SetToolTip(checkBox_ListSubs, resources.GetString("checkBox_ListSubs.ToolTip"));
             checkBox_ListSubs.UseVisualStyleBackColor = true;
             // 
             // comboBox_SubLangs
             // 
-            comboBox_SubLangs.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_SubLangs, "comboBox_SubLangs");
             comboBox_SubLangs.FormattingEnabled = true;
-            comboBox_SubLangs.Items.AddRange(new object[] { "all", "zh-Hans,en,ja", "all,-live_chat,-en", "\"zh.*\"", "\"en|fr|de|es|it\"", "\"all, -live.*, -comment.*\"" });
-            comboBox_SubLangs.Location = new Point(150, 126);
+            comboBox_SubLangs.Items.AddRange(new object[] { resources.GetString("comboBox_SubLangs.Items"), resources.GetString("comboBox_SubLangs.Items1"), resources.GetString("comboBox_SubLangs.Items2"), resources.GetString("comboBox_SubLangs.Items3"), resources.GetString("comboBox_SubLangs.Items4"), resources.GetString("comboBox_SubLangs.Items5") });
             comboBox_SubLangs.Name = "comboBox_SubLangs";
-            comboBox_SubLangs.Size = new Size(261, 43);
-            comboBox_SubLangs.TabIndex = 46;
-            comboBox_SubLangs.Text = "all";
+            toolTip.SetToolTip(comboBox_SubLangs, resources.GetString("comboBox_SubLangs.ToolTip"));
             // 
             // checkBox_SubLangs
             // 
-            checkBox_SubLangs.AutoSize = true;
-            checkBox_SubLangs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SubLangs.Location = new Point(7, 127);
+            resources.ApplyResources(checkBox_SubLangs, "checkBox_SubLangs");
             checkBox_SubLangs.Name = "checkBox_SubLangs";
-            checkBox_SubLangs.Size = new Size(149, 40);
-            checkBox_SubLangs.TabIndex = 45;
-            checkBox_SubLangs.Text = "字幕语言";
+            toolTip.SetToolTip(checkBox_SubLangs, resources.GetString("checkBox_SubLangs.ToolTip"));
             checkBox_SubLangs.UseVisualStyleBackColor = true;
             // 
             // comboBox_SubFormat
             // 
-            comboBox_SubFormat.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_SubFormat, "comboBox_SubFormat");
             comboBox_SubFormat.FormattingEnabled = true;
-            comboBox_SubFormat.Items.AddRange(new object[] { "srt", "ass", "vtt", "ttml", "\"ass/srt/best\"", "\"srt/ass/vtt\"" });
-            comboBox_SubFormat.Location = new Point(150, 77);
+            comboBox_SubFormat.Items.AddRange(new object[] { resources.GetString("comboBox_SubFormat.Items"), resources.GetString("comboBox_SubFormat.Items1"), resources.GetString("comboBox_SubFormat.Items2"), resources.GetString("comboBox_SubFormat.Items3"), resources.GetString("comboBox_SubFormat.Items4"), resources.GetString("comboBox_SubFormat.Items5") });
             comboBox_SubFormat.Name = "comboBox_SubFormat";
-            comboBox_SubFormat.Size = new Size(261, 43);
-            comboBox_SubFormat.TabIndex = 44;
-            comboBox_SubFormat.Text = "\"ass/srt/best\"";
+            toolTip.SetToolTip(comboBox_SubFormat, resources.GetString("comboBox_SubFormat.ToolTip"));
             // 
             // checkBox_SubFormat
             // 
-            checkBox_SubFormat.AutoSize = true;
-            checkBox_SubFormat.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SubFormat.Location = new Point(7, 78);
+            resources.ApplyResources(checkBox_SubFormat, "checkBox_SubFormat");
             checkBox_SubFormat.Name = "checkBox_SubFormat";
-            checkBox_SubFormat.Size = new Size(149, 40);
-            checkBox_SubFormat.TabIndex = 43;
-            checkBox_SubFormat.Text = "字幕格式";
-            toolTip.SetToolTip(checkBox_SubFormat, "可用格式：\r\n格式\t优点\t\t    缺点\t\t适用场景\r\nsrt\t最简单，通用\t    样式有限\t通用播放器\r\nass\t丰富样式，特效\t    文件大\t动画、特效字幕\r\nvtt\t支持样式，网页\t    兼容性一般\t网页播放\r\nttml\t标准化\t不常用\t    专业制作");
+            toolTip.SetToolTip(checkBox_SubFormat, resources.GetString("checkBox_SubFormat.ToolTip"));
             checkBox_SubFormat.UseVisualStyleBackColor = true;
             // 
             // checkBox_WriteAutoSubs
             // 
-            checkBox_WriteAutoSubs.AutoSize = true;
-            checkBox_WriteAutoSubs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteAutoSubs.Location = new Point(206, 32);
+            resources.ApplyResources(checkBox_WriteAutoSubs, "checkBox_WriteAutoSubs");
             checkBox_WriteAutoSubs.Name = "checkBox_WriteAutoSubs";
-            checkBox_WriteAutoSubs.Size = new Size(205, 40);
-            checkBox_WriteAutoSubs.TabIndex = 42;
-            checkBox_WriteAutoSubs.Text = "下载自动字幕";
-            toolTip.SetToolTip(checkBox_WriteAutoSubs, "下载自动生成的字幕（YouTube自动字幕等）");
+            toolTip.SetToolTip(checkBox_WriteAutoSubs, resources.GetString("checkBox_WriteAutoSubs.ToolTip"));
             checkBox_WriteAutoSubs.UseVisualStyleBackColor = true;
             // 
             // checkBox_WriteSubs
             // 
-            checkBox_WriteSubs.AutoSize = true;
-            checkBox_WriteSubs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_WriteSubs.Location = new Point(7, 32);
+            resources.ApplyResources(checkBox_WriteSubs, "checkBox_WriteSubs");
             checkBox_WriteSubs.Name = "checkBox_WriteSubs";
-            checkBox_WriteSubs.Size = new Size(205, 40);
-            checkBox_WriteSubs.TabIndex = 41;
-            checkBox_WriteSubs.Text = "下载手动字幕";
-            toolTip.SetToolTip(checkBox_WriteSubs, "下载手动上传的字幕");
+            toolTip.SetToolTip(checkBox_WriteSubs, resources.GetString("checkBox_WriteSubs.ToolTip"));
             checkBox_WriteSubs.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
+            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Controls.Add(checkBox_AudioMultistreams);
             groupBox9.Controls.Add(checkBox_VideoMultistreams);
             groupBox9.Controls.Add(checkBox_PreferFreeFormats);
@@ -1684,205 +1274,138 @@
             groupBox9.Controls.Add(checkBox_Format);
             groupBox9.Controls.Add(checkBox_FormatSort);
             groupBox9.Controls.Add(checkBox_FormatSortForce);
-            groupBox9.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox9.Location = new Point(9, 6);
             groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(910, 178);
-            groupBox9.TabIndex = 78;
             groupBox9.TabStop = false;
-            groupBox9.Text = "格式策略参数";
+            toolTip.SetToolTip(groupBox9, resources.GetString("groupBox9.ToolTip"));
             // 
             // checkBox_AudioMultistreams
             // 
-            checkBox_AudioMultistreams.AutoSize = true;
-            checkBox_AudioMultistreams.Font = new Font("微软雅黑", 16.2F);
-            checkBox_AudioMultistreams.Location = new Point(642, 128);
+            resources.ApplyResources(checkBox_AudioMultistreams, "checkBox_AudioMultistreams");
             checkBox_AudioMultistreams.Name = "checkBox_AudioMultistreams";
-            checkBox_AudioMultistreams.Size = new Size(261, 40);
-            checkBox_AudioMultistreams.TabIndex = 47;
-            checkBox_AudioMultistreams.Text = "允许多音频流合并";
-            toolTip.SetToolTip(checkBox_AudioMultistreams, "允许多音频流合并（多语言+描述）\r\n推荐搭配指定格式使用");
+            toolTip.SetToolTip(checkBox_AudioMultistreams, resources.GetString("checkBox_AudioMultistreams.ToolTip"));
             checkBox_AudioMultistreams.UseVisualStyleBackColor = true;
             // 
             // checkBox_VideoMultistreams
             // 
-            checkBox_VideoMultistreams.AutoSize = true;
-            checkBox_VideoMultistreams.Font = new Font("微软雅黑", 16.2F);
-            checkBox_VideoMultistreams.Location = new Point(384, 128);
+            resources.ApplyResources(checkBox_VideoMultistreams, "checkBox_VideoMultistreams");
             checkBox_VideoMultistreams.Name = "checkBox_VideoMultistreams";
-            checkBox_VideoMultistreams.Size = new Size(261, 40);
-            checkBox_VideoMultistreams.TabIndex = 46;
-            checkBox_VideoMultistreams.Text = "允许多视频流合并";
-            toolTip.SetToolTip(checkBox_VideoMultistreams, "允许多视频流合并（HDR+SDR等）\r\n推荐搭配指定格式使用");
+            toolTip.SetToolTip(checkBox_VideoMultistreams, resources.GetString("checkBox_VideoMultistreams.ToolTip"));
             checkBox_VideoMultistreams.UseVisualStyleBackColor = true;
             // 
             // checkBox_PreferFreeFormats
             // 
-            checkBox_PreferFreeFormats.AutoSize = true;
-            checkBox_PreferFreeFormats.Font = new Font("微软雅黑", 16.2F);
-            checkBox_PreferFreeFormats.Location = new Point(153, 128);
+            resources.ApplyResources(checkBox_PreferFreeFormats, "checkBox_PreferFreeFormats");
             checkBox_PreferFreeFormats.Name = "checkBox_PreferFreeFormats";
-            checkBox_PreferFreeFormats.Size = new Size(233, 40);
-            checkBox_PreferFreeFormats.TabIndex = 48;
-            checkBox_PreferFreeFormats.Text = "优先用开放格式";
-            toolTip.SetToolTip(checkBox_PreferFreeFormats, "格式优先级：\r\n视频：webm (VP9/AV1) > mp4 (H264)\r\n音频：opus > m4a > mp3\r\n\r\n格式对比：\r\n容器\t视频编码\t音频编码\t是否开放\t特点\r\nmp4\tH264/H265\tAAC\t\t部分专利\t兼容性好\r\nwebm\tVP9/AV1\tOpus\t\t完全开放\t压缩率高\r\nmkv\t任意\t\t任意\t\t完全开放\t功能丰富\r\navi\t多种\t\t多种\t\t老旧\t\t兼容性差");
+            toolTip.SetToolTip(checkBox_PreferFreeFormats, resources.GetString("checkBox_PreferFreeFormats.ToolTip"));
             checkBox_PreferFreeFormats.UseVisualStyleBackColor = true;
             // 
             // comboBox_Format
             // 
-            comboBox_Format.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Format, "comboBox_Format");
             comboBox_Format.FormattingEnabled = true;
-            comboBox_Format.Items.AddRange(new object[] { "best", "worst", "bestvideo", "bestaudio", "best[height=1080]", "best[ext=mp4]", "best[filesize<50M]", "best[vcodec=avc1]", "\"bestvideo[height<=1080]+bestaudio/best[height<=1080]\"", "\"bestvideo+bestaudio/best\"" });
-            comboBox_Format.Location = new Point(150, 31);
+            comboBox_Format.Items.AddRange(new object[] { resources.GetString("comboBox_Format.Items"), resources.GetString("comboBox_Format.Items1"), resources.GetString("comboBox_Format.Items2"), resources.GetString("comboBox_Format.Items3"), resources.GetString("comboBox_Format.Items4"), resources.GetString("comboBox_Format.Items5"), resources.GetString("comboBox_Format.Items6"), resources.GetString("comboBox_Format.Items7"), resources.GetString("comboBox_Format.Items8"), resources.GetString("comboBox_Format.Items9") });
             comboBox_Format.Name = "comboBox_Format";
-            comboBox_Format.Size = new Size(756, 43);
-            comboBox_Format.TabIndex = 42;
-            comboBox_Format.Text = "\"bestvideo+bestaudio/best\"";
+            toolTip.SetToolTip(comboBox_Format, resources.GetString("comboBox_Format.ToolTip"));
             // 
             // comboBox_FormatSort
             // 
-            comboBox_FormatSort.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_FormatSort, "comboBox_FormatSort");
             comboBox_FormatSort.FormattingEnabled = true;
-            comboBox_FormatSort.Items.AddRange(new object[] { "quality,res,fps,vcodec,acodec,filesize,fs_approx,bitrate", "filesize,-res", "res,fps,vcodec,acodec", "vcodec:av1,vcodec:vp9,res", "filesize,res" });
-            comboBox_FormatSort.Location = new Point(150, 79);
+            comboBox_FormatSort.Items.AddRange(new object[] { resources.GetString("comboBox_FormatSort.Items"), resources.GetString("comboBox_FormatSort.Items1"), resources.GetString("comboBox_FormatSort.Items2"), resources.GetString("comboBox_FormatSort.Items3"), resources.GetString("comboBox_FormatSort.Items4") });
             comboBox_FormatSort.Name = "comboBox_FormatSort";
-            comboBox_FormatSort.Size = new Size(754, 43);
-            comboBox_FormatSort.TabIndex = 44;
-            comboBox_FormatSort.Text = "quality,res,fps,vcodec,acodec,filesize,fs_approx,bitrate";
+            toolTip.SetToolTip(comboBox_FormatSort, resources.GetString("comboBox_FormatSort.ToolTip"));
             // 
             // checkBox_Format
             // 
-            checkBox_Format.AutoSize = true;
+            resources.ApplyResources(checkBox_Format, "checkBox_Format");
             checkBox_Format.Checked = true;
             checkBox_Format.CheckState = CheckState.Checked;
-            checkBox_Format.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Format.Location = new Point(7, 32);
             checkBox_Format.Name = "checkBox_Format";
-            checkBox_Format.Size = new Size(149, 40);
-            checkBox_Format.TabIndex = 41;
-            checkBox_Format.Text = "指定格式";
-            toolTip.SetToolTip(checkBox_Format, "指定要下载的视频格式代码\r\n可以填入解析中的ID，结合用 '+' 链接\r\nbest：最佳质量\r\nworst：最佳质量\r\nbestvideo：最佳视频流\r\nbestaudio：最佳音频流");
+            toolTip.SetToolTip(checkBox_Format, resources.GetString("checkBox_Format.ToolTip"));
             checkBox_Format.UseVisualStyleBackColor = true;
             // 
             // checkBox_FormatSort
             // 
-            checkBox_FormatSort.AutoSize = true;
-            checkBox_FormatSort.Font = new Font("微软雅黑", 16.2F);
-            checkBox_FormatSort.Location = new Point(7, 80);
+            resources.ApplyResources(checkBox_FormatSort, "checkBox_FormatSort");
             checkBox_FormatSort.Name = "checkBox_FormatSort";
-            checkBox_FormatSort.Size = new Size(149, 40);
-            checkBox_FormatSort.TabIndex = 43;
-            checkBox_FormatSort.Text = "格式排序";
             toolTip.SetToolTip(checkBox_FormatSort, resources.GetString("checkBox_FormatSort.ToolTip"));
             checkBox_FormatSort.UseVisualStyleBackColor = true;
             checkBox_FormatSort.CheckedChanged += checkBox_FormatSort_CheckedChanged;
             // 
             // checkBox_FormatSortForce
             // 
-            checkBox_FormatSortForce.AutoSize = true;
-            checkBox_FormatSortForce.Enabled = false;
-            checkBox_FormatSortForce.Font = new Font("微软雅黑", 16.2F);
-            checkBox_FormatSortForce.Location = new Point(7, 128);
+            resources.ApplyResources(checkBox_FormatSortForce, "checkBox_FormatSortForce");
             checkBox_FormatSortForce.Name = "checkBox_FormatSortForce";
-            checkBox_FormatSortForce.Size = new Size(149, 40);
-            checkBox_FormatSortForce.TabIndex = 45;
-            checkBox_FormatSortForce.Text = "严格模式";
-            toolTip.SetToolTip(checkBox_FormatSortForce, "某些字段有优先级，如分辨率会覆盖用户排序。\r\n例如指定 \"filesize\" 可能仍然会选择高分辨率，因为res有更高优先级\r\n勾选此选项将严格以用户排序，覆盖所有优先级");
+            toolTip.SetToolTip(checkBox_FormatSortForce, resources.GetString("checkBox_FormatSortForce.ToolTip"));
             checkBox_FormatSortForce.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Controls.Add(groupBox14);
             tabPage5.Controls.Add(groupBox13);
             tabPage5.Controls.Add(groupBox12);
             tabPage5.Controls.Add(groupBox11);
-            tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(927, 418);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "认证参数";
+            toolTip.SetToolTip(tabPage5, resources.GetString("tabPage5.ToolTip"));
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
+            resources.ApplyResources(groupBox14, "groupBox14");
             groupBox14.Controls.Add(textBox_ClientCertificate);
             groupBox14.Controls.Add(textBox_ClientCertificate_PassWord);
             groupBox14.Controls.Add(checkBox_ClientCertificate_PassWord);
             groupBox14.Controls.Add(textBox_ClientCertificate_Key);
             groupBox14.Controls.Add(checkBox_ClientCertificate_Key);
             groupBox14.Controls.Add(checkBox_ClientCertificate);
-            groupBox14.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox14.Location = new Point(473, 235);
             groupBox14.Name = "groupBox14";
-            groupBox14.Size = new Size(447, 183);
-            groupBox14.TabIndex = 83;
             groupBox14.TabStop = false;
-            groupBox14.Text = "SSL认证（客户端证书认证）";
+            toolTip.SetToolTip(groupBox14, resources.GetString("groupBox14.ToolTip"));
             // 
             // textBox_ClientCertificate
             // 
-            textBox_ClientCertificate.Font = new Font("微软雅黑", 16.2F);
-            textBox_ClientCertificate.Location = new Point(151, 29);
+            resources.ApplyResources(textBox_ClientCertificate, "textBox_ClientCertificate");
             textBox_ClientCertificate.Name = "textBox_ClientCertificate";
-            textBox_ClientCertificate.Size = new Size(289, 43);
-            textBox_ClientCertificate.TabIndex = 52;
+            toolTip.SetToolTip(textBox_ClientCertificate, resources.GetString("textBox_ClientCertificate.ToolTip"));
             // 
             // textBox_ClientCertificate_PassWord
             // 
-            textBox_ClientCertificate_PassWord.Font = new Font("微软雅黑", 16.2F);
-            textBox_ClientCertificate_PassWord.Location = new Point(151, 122);
+            resources.ApplyResources(textBox_ClientCertificate_PassWord, "textBox_ClientCertificate_PassWord");
             textBox_ClientCertificate_PassWord.Name = "textBox_ClientCertificate_PassWord";
-            textBox_ClientCertificate_PassWord.Size = new Size(289, 43);
-            textBox_ClientCertificate_PassWord.TabIndex = 49;
+            toolTip.SetToolTip(textBox_ClientCertificate_PassWord, resources.GetString("textBox_ClientCertificate_PassWord.ToolTip"));
             textBox_ClientCertificate_PassWord.UseSystemPasswordChar = true;
             // 
             // checkBox_ClientCertificate_PassWord
             // 
-            checkBox_ClientCertificate_PassWord.AutoSize = true;
-            checkBox_ClientCertificate_PassWord.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ClientCertificate_PassWord.Location = new Point(9, 123);
+            resources.ApplyResources(checkBox_ClientCertificate_PassWord, "checkBox_ClientCertificate_PassWord");
             checkBox_ClientCertificate_PassWord.Name = "checkBox_ClientCertificate_PassWord";
-            checkBox_ClientCertificate_PassWord.Size = new Size(149, 40);
-            checkBox_ClientCertificate_PassWord.TabIndex = 51;
-            checkBox_ClientCertificate_PassWord.Text = "私钥密码";
-            toolTip.SetToolTip(checkBox_ClientCertificate_PassWord, "\r\n格式\t优点\t\t    缺点\t\t适用场景\r\nsrt\t最简单，通用\t    样式有限\t通用播放器\r\nass\t丰富样式，特效\t    文件大\t动画、特效字幕\r\nvtt\t支持样式，网页\t    兼容性一般\t网页播放\r\nttml\t标准化\t不常用\t    专业制作");
+            toolTip.SetToolTip(checkBox_ClientCertificate_PassWord, resources.GetString("checkBox_ClientCertificate_PassWord.ToolTip"));
             checkBox_ClientCertificate_PassWord.UseVisualStyleBackColor = true;
             // 
             // textBox_ClientCertificate_Key
             // 
-            textBox_ClientCertificate_Key.Font = new Font("微软雅黑", 16.2F);
-            textBox_ClientCertificate_Key.Location = new Point(151, 75);
+            resources.ApplyResources(textBox_ClientCertificate_Key, "textBox_ClientCertificate_Key");
             textBox_ClientCertificate_Key.Name = "textBox_ClientCertificate_Key";
-            textBox_ClientCertificate_Key.Size = new Size(289, 43);
-            textBox_ClientCertificate_Key.TabIndex = 48;
+            toolTip.SetToolTip(textBox_ClientCertificate_Key, resources.GetString("textBox_ClientCertificate_Key.ToolTip"));
             // 
             // checkBox_ClientCertificate_Key
             // 
-            checkBox_ClientCertificate_Key.AutoSize = true;
-            checkBox_ClientCertificate_Key.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ClientCertificate_Key.Location = new Point(9, 76);
+            resources.ApplyResources(checkBox_ClientCertificate_Key, "checkBox_ClientCertificate_Key");
             checkBox_ClientCertificate_Key.Name = "checkBox_ClientCertificate_Key";
-            checkBox_ClientCertificate_Key.Size = new Size(149, 40);
-            checkBox_ClientCertificate_Key.TabIndex = 50;
-            checkBox_ClientCertificate_Key.Text = "私钥文件";
-            toolTip.SetToolTip(checkBox_ClientCertificate_Key, "\r\n格式\t优点\t\t    缺点\t\t适用场景\r\nsrt\t最简单，通用\t    样式有限\t通用播放器\r\nass\t丰富样式，特效\t    文件大\t动画、特效字幕\r\nvtt\t支持样式，网页\t    兼容性一般\t网页播放\r\nttml\t标准化\t不常用\t    专业制作");
+            toolTip.SetToolTip(checkBox_ClientCertificate_Key, resources.GetString("checkBox_ClientCertificate_Key.ToolTip"));
             checkBox_ClientCertificate_Key.UseVisualStyleBackColor = true;
             // 
             // checkBox_ClientCertificate
             // 
-            checkBox_ClientCertificate.AutoSize = true;
-            checkBox_ClientCertificate.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ClientCertificate.Location = new Point(9, 31);
+            resources.ApplyResources(checkBox_ClientCertificate, "checkBox_ClientCertificate");
             checkBox_ClientCertificate.Name = "checkBox_ClientCertificate";
-            checkBox_ClientCertificate.Size = new Size(149, 40);
-            checkBox_ClientCertificate.TabIndex = 43;
-            checkBox_ClientCertificate.Text = "证书文件";
-            toolTip.SetToolTip(checkBox_ClientCertificate, "\r\n格式\t优点\t\t    缺点\t\t适用场景\r\nsrt\t最简单，通用\t    样式有限\t通用播放器\r\nass\t丰富样式，特效\t    文件大\t动画、特效字幕\r\nvtt\t支持样式，网页\t    兼容性一般\t网页播放\r\nttml\t标准化\t不常用\t    专业制作");
+            toolTip.SetToolTip(checkBox_ClientCertificate, resources.GetString("checkBox_ClientCertificate.ToolTip"));
             checkBox_ClientCertificate.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
+            resources.ApplyResources(groupBox13, "groupBox13");
             groupBox13.Controls.Add(comboBox_AP_MSO);
             groupBox13.Controls.Add(label_AP_MSO);
             groupBox13.Controls.Add(textBox_AP_PassWord);
@@ -1890,130 +1413,89 @@
             groupBox13.Controls.Add(label_AP_PassWord);
             groupBox13.Controls.Add(label_AP_UserName);
             groupBox13.Controls.Add(checkBox_AdobePass);
-            groupBox13.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox13.Location = new Point(9, 235);
             groupBox13.Name = "groupBox13";
-            groupBox13.Size = new Size(457, 183);
-            groupBox13.TabIndex = 82;
             groupBox13.TabStop = false;
-            groupBox13.Text = "Adobe Pass认证（电视提供商）";
+            toolTip.SetToolTip(groupBox13, resources.GetString("groupBox13.ToolTip"));
             // 
             // comboBox_AP_MSO
             // 
-            comboBox_AP_MSO.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_AP_MSO, "comboBox_AP_MSO");
             comboBox_AP_MSO.FormattingEnabled = true;
-            comboBox_AP_MSO.Items.AddRange(new object[] { "comcast", "directv", "spectrum", "verizon", "att", "cox" });
-            comboBox_AP_MSO.Location = new Point(269, 27);
+            comboBox_AP_MSO.Items.AddRange(new object[] { resources.GetString("comboBox_AP_MSO.Items"), resources.GetString("comboBox_AP_MSO.Items1"), resources.GetString("comboBox_AP_MSO.Items2"), resources.GetString("comboBox_AP_MSO.Items3"), resources.GetString("comboBox_AP_MSO.Items4"), resources.GetString("comboBox_AP_MSO.Items5") });
             comboBox_AP_MSO.Name = "comboBox_AP_MSO";
-            comboBox_AP_MSO.Size = new Size(171, 43);
-            comboBox_AP_MSO.TabIndex = 50;
-            comboBox_AP_MSO.Text = "comcast";
+            toolTip.SetToolTip(comboBox_AP_MSO, resources.GetString("comboBox_AP_MSO.ToolTip"));
             // 
             // label_AP_MSO
             // 
-            label_AP_MSO.AutoSize = true;
-            label_AP_MSO.Font = new Font("Microsoft YaHei UI", 16.2F);
-            label_AP_MSO.Location = new Point(194, 32);
+            resources.ApplyResources(label_AP_MSO, "label_AP_MSO");
             label_AP_MSO.Name = "label_AP_MSO";
-            label_AP_MSO.Size = new Size(81, 36);
-            label_AP_MSO.TabIndex = 50;
-            label_AP_MSO.Text = "MSO";
+            toolTip.SetToolTip(label_AP_MSO, resources.GetString("label_AP_MSO.ToolTip"));
             // 
             // textBox_AP_PassWord
             // 
-            textBox_AP_PassWord.Font = new Font("微软雅黑", 16.2F);
-            textBox_AP_PassWord.Location = new Point(72, 122);
+            resources.ApplyResources(textBox_AP_PassWord, "textBox_AP_PassWord");
             textBox_AP_PassWord.Name = "textBox_AP_PassWord";
-            textBox_AP_PassWord.Size = new Size(368, 43);
-            textBox_AP_PassWord.TabIndex = 49;
+            toolTip.SetToolTip(textBox_AP_PassWord, resources.GetString("textBox_AP_PassWord.ToolTip"));
             textBox_AP_PassWord.UseSystemPasswordChar = true;
             // 
             // textBox_AP_UserName
             // 
-            textBox_AP_UserName.Font = new Font("微软雅黑", 16.2F);
-            textBox_AP_UserName.Location = new Point(72, 75);
+            resources.ApplyResources(textBox_AP_UserName, "textBox_AP_UserName");
             textBox_AP_UserName.Name = "textBox_AP_UserName";
-            textBox_AP_UserName.Size = new Size(368, 43);
-            textBox_AP_UserName.TabIndex = 48;
+            toolTip.SetToolTip(textBox_AP_UserName, resources.GetString("textBox_AP_UserName.ToolTip"));
             // 
             // label_AP_PassWord
             // 
-            label_AP_PassWord.AutoSize = true;
-            label_AP_PassWord.Font = new Font("Microsoft YaHei UI", 16.2F);
-            label_AP_PassWord.Location = new Point(7, 125);
+            resources.ApplyResources(label_AP_PassWord, "label_AP_PassWord");
             label_AP_PassWord.Name = "label_AP_PassWord";
-            label_AP_PassWord.Size = new Size(71, 36);
-            label_AP_PassWord.TabIndex = 47;
-            label_AP_PassWord.Text = "密码";
+            toolTip.SetToolTip(label_AP_PassWord, resources.GetString("label_AP_PassWord.ToolTip"));
             // 
             // label_AP_UserName
             // 
-            label_AP_UserName.AutoSize = true;
-            label_AP_UserName.Font = new Font("Microsoft YaHei UI", 16.2F);
-            label_AP_UserName.Location = new Point(7, 78);
+            resources.ApplyResources(label_AP_UserName, "label_AP_UserName");
             label_AP_UserName.Name = "label_AP_UserName";
-            label_AP_UserName.Size = new Size(71, 36);
-            label_AP_UserName.TabIndex = 45;
-            label_AP_UserName.Text = "账号";
+            toolTip.SetToolTip(label_AP_UserName, resources.GetString("label_AP_UserName.ToolTip"));
             // 
             // checkBox_AdobePass
             // 
-            checkBox_AdobePass.AutoSize = true;
-            checkBox_AdobePass.Font = new Font("微软雅黑", 16.2F);
-            checkBox_AdobePass.Location = new Point(9, 32);
+            resources.ApplyResources(checkBox_AdobePass, "checkBox_AdobePass");
             checkBox_AdobePass.Name = "checkBox_AdobePass";
-            checkBox_AdobePass.Size = new Size(193, 40);
-            checkBox_AdobePass.TabIndex = 43;
-            checkBox_AdobePass.Text = "Adobe Pass";
-            toolTip.SetToolTip(checkBox_AdobePass, "什么是 Adobe Pass？\r\nAdobe Pass（原Adobe Primetime）\r\n是电视提供商的多系统运营商（MSO）认证系统，\r\n用于访问需要电视订阅的付费内容（如Hulu、ESPN等）。");
+            toolTip.SetToolTip(checkBox_AdobePass, resources.GetString("checkBox_AdobePass.ToolTip"));
             checkBox_AdobePass.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
+            resources.ApplyResources(groupBox12, "groupBox12");
             groupBox12.Controls.Add(textBox_netrc_Location);
             groupBox12.Controls.Add(checkBox_netrc_Location);
             groupBox12.Controls.Add(checkBox_netrc);
-            groupBox12.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox12.Location = new Point(5, 143);
             groupBox12.Name = "groupBox12";
-            groupBox12.Size = new Size(915, 86);
-            groupBox12.TabIndex = 81;
             groupBox12.TabStop = false;
-            groupBox12.Text = ".netrc 认证系统（最安全的方式）";
+            toolTip.SetToolTip(groupBox12, resources.GetString("groupBox12.ToolTip"));
             // 
             // textBox_netrc_Location
             // 
-            textBox_netrc_Location.Font = new Font("微软雅黑", 16.2F);
-            textBox_netrc_Location.Location = new Point(530, 31);
+            resources.ApplyResources(textBox_netrc_Location, "textBox_netrc_Location");
             textBox_netrc_Location.Name = "textBox_netrc_Location";
-            textBox_netrc_Location.Size = new Size(380, 43);
-            textBox_netrc_Location.TabIndex = 48;
+            toolTip.SetToolTip(textBox_netrc_Location, resources.GetString("textBox_netrc_Location.ToolTip"));
             // 
             // checkBox_netrc_Location
             // 
-            checkBox_netrc_Location.AutoSize = true;
-            checkBox_netrc_Location.Font = new Font("微软雅黑", 16.2F);
-            checkBox_netrc_Location.Location = new Point(310, 32);
+            resources.ApplyResources(checkBox_netrc_Location, "checkBox_netrc_Location");
             checkBox_netrc_Location.Name = "checkBox_netrc_Location";
-            checkBox_netrc_Location.Size = new Size(224, 40);
-            checkBox_netrc_Location.TabIndex = 49;
-            checkBox_netrc_Location.Text = "指定.netrc文件";
+            toolTip.SetToolTip(checkBox_netrc_Location, resources.GetString("checkBox_netrc_Location.ToolTip"));
             checkBox_netrc_Location.UseVisualStyleBackColor = true;
             // 
             // checkBox_netrc
             // 
-            checkBox_netrc.AutoSize = true;
-            checkBox_netrc.Font = new Font("微软雅黑", 16.2F);
-            checkBox_netrc.Location = new Point(9, 32);
+            resources.ApplyResources(checkBox_netrc, "checkBox_netrc");
             checkBox_netrc.Name = "checkBox_netrc";
-            checkBox_netrc.Size = new Size(296, 40);
-            checkBox_netrc.TabIndex = 43;
-            checkBox_netrc.Text = "使用 .netrc 认证系统";
-            toolTip.SetToolTip(checkBox_netrc, ".netrc 是一个存储登录凭据的配置文件，可以避免在命令行中暴露密码。");
+            toolTip.SetToolTip(checkBox_netrc, resources.GetString("checkBox_netrc.ToolTip"));
             checkBox_netrc.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
+            resources.ApplyResources(groupBox11, "groupBox11");
             groupBox11.Controls.Add(textBox_VideoPassWord);
             groupBox11.Controls.Add(checkBox_VideoPassWord);
             groupBox11.Controls.Add(textBox_2FA);
@@ -2023,583 +1505,400 @@
             groupBox11.Controls.Add(label_PassWord);
             groupBox11.Controls.Add(label_UserName);
             groupBox11.Controls.Add(checkBox_UsingUP);
-            groupBox11.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox11.Location = new Point(6, 6);
             groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(915, 131);
-            groupBox11.TabIndex = 80;
             groupBox11.TabStop = false;
-            groupBox11.Text = "基础账号认证（不太安全）";
+            toolTip.SetToolTip(groupBox11, resources.GetString("groupBox11.ToolTip"));
             // 
             // textBox_VideoPassWord
             // 
-            textBox_VideoPassWord.Font = new Font("微软雅黑", 16.2F);
-            textBox_VideoPassWord.Location = new Point(712, 81);
+            resources.ApplyResources(textBox_VideoPassWord, "textBox_VideoPassWord");
             textBox_VideoPassWord.Name = "textBox_VideoPassWord";
-            textBox_VideoPassWord.Size = new Size(197, 43);
-            textBox_VideoPassWord.TabIndex = 53;
+            toolTip.SetToolTip(textBox_VideoPassWord, resources.GetString("textBox_VideoPassWord.ToolTip"));
             textBox_VideoPassWord.UseSystemPasswordChar = true;
             // 
             // checkBox_VideoPassWord
             // 
-            checkBox_VideoPassWord.AutoSize = true;
-            checkBox_VideoPassWord.Font = new Font("微软雅黑", 16.2F);
-            checkBox_VideoPassWord.Location = new Point(511, 82);
+            resources.ApplyResources(checkBox_VideoPassWord, "checkBox_VideoPassWord");
             checkBox_VideoPassWord.Name = "checkBox_VideoPassWord";
-            checkBox_VideoPassWord.Size = new Size(205, 40);
-            checkBox_VideoPassWord.TabIndex = 52;
-            checkBox_VideoPassWord.Text = "视频特定密码";
-            toolTip.SetToolTip(checkBox_VideoPassWord, "有些视频有单独的访问密码（如Vimeo的私密视频）");
+            toolTip.SetToolTip(checkBox_VideoPassWord, resources.GetString("checkBox_VideoPassWord.ToolTip"));
             checkBox_VideoPassWord.UseVisualStyleBackColor = true;
             // 
             // textBox_2FA
             // 
-            textBox_2FA.Font = new Font("微软雅黑", 16.2F);
-            textBox_2FA.Location = new Point(276, 79);
+            resources.ApplyResources(textBox_2FA, "textBox_2FA");
             textBox_2FA.Name = "textBox_2FA";
-            textBox_2FA.Size = new Size(229, 43);
-            textBox_2FA.TabIndex = 51;
+            toolTip.SetToolTip(textBox_2FA, resources.GetString("textBox_2FA.ToolTip"));
             // 
             // checkBox_2FA
             // 
-            checkBox_2FA.AutoSize = true;
-            checkBox_2FA.Font = new Font("微软雅黑", 16.2F);
-            checkBox_2FA.Location = new Point(9, 80);
+            resources.ApplyResources(checkBox_2FA, "checkBox_2FA");
             checkBox_2FA.Name = "checkBox_2FA";
-            checkBox_2FA.Size = new Size(284, 40);
-            checkBox_2FA.TabIndex = 50;
-            checkBox_2FA.Text = "双因素认证（2FA）";
             toolTip.SetToolTip(checkBox_2FA, resources.GetString("checkBox_2FA.ToolTip"));
             checkBox_2FA.UseVisualStyleBackColor = true;
             // 
             // textBox_PassWord
             // 
-            textBox_PassWord.Font = new Font("微软雅黑", 16.2F);
-            textBox_PassWord.Location = new Point(574, 31);
+            resources.ApplyResources(textBox_PassWord, "textBox_PassWord");
             textBox_PassWord.Name = "textBox_PassWord";
-            textBox_PassWord.Size = new Size(335, 43);
-            textBox_PassWord.TabIndex = 49;
+            toolTip.SetToolTip(textBox_PassWord, resources.GetString("textBox_PassWord.ToolTip"));
             textBox_PassWord.UseSystemPasswordChar = true;
             // 
             // textBox_UserName
             // 
-            textBox_UserName.Font = new Font("微软雅黑", 16.2F);
-            textBox_UserName.Location = new Point(276, 31);
+            resources.ApplyResources(textBox_UserName, "textBox_UserName");
             textBox_UserName.Name = "textBox_UserName";
-            textBox_UserName.Size = new Size(229, 43);
-            textBox_UserName.TabIndex = 48;
+            toolTip.SetToolTip(textBox_UserName, resources.GetString("textBox_UserName.ToolTip"));
             // 
             // label_PassWord
             // 
-            label_PassWord.AutoSize = true;
-            label_PassWord.Font = new Font("Microsoft YaHei UI", 16.2F);
-            label_PassWord.Location = new Point(509, 34);
+            resources.ApplyResources(label_PassWord, "label_PassWord");
             label_PassWord.Name = "label_PassWord";
-            label_PassWord.Size = new Size(71, 36);
-            label_PassWord.TabIndex = 47;
-            label_PassWord.Text = "密码";
+            toolTip.SetToolTip(label_PassWord, resources.GetString("label_PassWord.ToolTip"));
             // 
             // label_UserName
             // 
-            label_UserName.AutoSize = true;
-            label_UserName.Font = new Font("Microsoft YaHei UI", 16.2F);
-            label_UserName.Location = new Point(211, 34);
+            resources.ApplyResources(label_UserName, "label_UserName");
             label_UserName.Name = "label_UserName";
-            label_UserName.Size = new Size(71, 36);
-            label_UserName.TabIndex = 45;
-            label_UserName.Text = "账号";
+            toolTip.SetToolTip(label_UserName, resources.GetString("label_UserName.ToolTip"));
             // 
             // checkBox_UsingUP
             // 
-            checkBox_UsingUP.AutoSize = true;
-            checkBox_UsingUP.Font = new Font("微软雅黑", 16.2F);
-            checkBox_UsingUP.Location = new Point(9, 32);
+            resources.ApplyResources(checkBox_UsingUP, "checkBox_UsingUP");
             checkBox_UsingUP.Name = "checkBox_UsingUP";
-            checkBox_UsingUP.Size = new Size(205, 40);
-            checkBox_UsingUP.TabIndex = 43;
-            checkBox_UsingUP.Text = "账号密码登录";
+            toolTip.SetToolTip(checkBox_UsingUP, resources.GetString("checkBox_UsingUP.ToolTip"));
             checkBox_UsingUP.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
+            resources.ApplyResources(tabPage6, "tabPage6");
             tabPage6.Controls.Add(groupBox18);
             tabPage6.Controls.Add(groupBox17);
             tabPage6.Controls.Add(comboBox_PostProcessorArgs);
             tabPage6.Controls.Add(checkBox_PostProcessorArgs);
             tabPage6.Controls.Add(groupBox16);
             tabPage6.Controls.Add(groupBox15);
-            tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(927, 418);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "后期处理";
+            toolTip.SetToolTip(tabPage6, resources.GetString("tabPage6.ToolTip"));
             tabPage6.UseVisualStyleBackColor = true;
             // 
             // groupBox18
             // 
+            resources.ApplyResources(groupBox18, "groupBox18");
             groupBox18.Controls.Add(comboBox_Convert_Thumbnails);
             groupBox18.Controls.Add(checkBox_Convert_Thumbnails);
             groupBox18.Controls.Add(comboBox_Convert_Subs);
             groupBox18.Controls.Add(checkBox_Convert_Subs);
-            groupBox18.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox18.Location = new Point(410, 190);
             groupBox18.Name = "groupBox18";
-            groupBox18.Size = new Size(507, 174);
-            groupBox18.TabIndex = 83;
             groupBox18.TabStop = false;
-            groupBox18.Text = "其他转换";
+            toolTip.SetToolTip(groupBox18, resources.GetString("groupBox18.ToolTip"));
             // 
             // comboBox_Convert_Thumbnails
             // 
-            comboBox_Convert_Thumbnails.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Convert_Thumbnails, "comboBox_Convert_Thumbnails");
             comboBox_Convert_Thumbnails.FormattingEnabled = true;
-            comboBox_Convert_Thumbnails.Items.AddRange(new object[] { "jpg", "png", "webp" });
-            comboBox_Convert_Thumbnails.Location = new Point(174, 79);
+            comboBox_Convert_Thumbnails.Items.AddRange(new object[] { resources.GetString("comboBox_Convert_Thumbnails.Items"), resources.GetString("comboBox_Convert_Thumbnails.Items1"), resources.GetString("comboBox_Convert_Thumbnails.Items2") });
             comboBox_Convert_Thumbnails.Name = "comboBox_Convert_Thumbnails";
-            comboBox_Convert_Thumbnails.Size = new Size(327, 43);
-            comboBox_Convert_Thumbnails.TabIndex = 48;
-            comboBox_Convert_Thumbnails.Text = "png";
+            toolTip.SetToolTip(comboBox_Convert_Thumbnails, resources.GetString("comboBox_Convert_Thumbnails.ToolTip"));
             // 
             // checkBox_Convert_Thumbnails
             // 
-            checkBox_Convert_Thumbnails.AutoSize = true;
-            checkBox_Convert_Thumbnails.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Convert_Thumbnails.Location = new Point(7, 80);
+            resources.ApplyResources(checkBox_Convert_Thumbnails, "checkBox_Convert_Thumbnails");
             checkBox_Convert_Thumbnails.Name = "checkBox_Convert_Thumbnails";
-            checkBox_Convert_Thumbnails.Size = new Size(177, 40);
-            checkBox_Convert_Thumbnails.TabIndex = 47;
-            checkBox_Convert_Thumbnails.Text = "缩略图格式";
-            toolTip.SetToolTip(checkBox_Convert_Thumbnails, "改变视频容器格式，不重新编码（快速）\r\n（只改变封装格式，视频和音频流不变）");
+            toolTip.SetToolTip(checkBox_Convert_Thumbnails, resources.GetString("checkBox_Convert_Thumbnails.ToolTip"));
             checkBox_Convert_Thumbnails.UseVisualStyleBackColor = true;
             // 
             // comboBox_Convert_Subs
             // 
-            comboBox_Convert_Subs.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_Convert_Subs, "comboBox_Convert_Subs");
             comboBox_Convert_Subs.FormattingEnabled = true;
-            comboBox_Convert_Subs.Items.AddRange(new object[] { "srt", "ass", "vtt", "\"srt/ass>srt/vtt\"" });
-            comboBox_Convert_Subs.Location = new Point(150, 31);
+            comboBox_Convert_Subs.Items.AddRange(new object[] { resources.GetString("comboBox_Convert_Subs.Items"), resources.GetString("comboBox_Convert_Subs.Items1"), resources.GetString("comboBox_Convert_Subs.Items2"), resources.GetString("comboBox_Convert_Subs.Items3") });
             comboBox_Convert_Subs.Name = "comboBox_Convert_Subs";
-            comboBox_Convert_Subs.Size = new Size(351, 43);
-            comboBox_Convert_Subs.TabIndex = 46;
-            comboBox_Convert_Subs.Text = "srt";
+            toolTip.SetToolTip(comboBox_Convert_Subs, resources.GetString("comboBox_Convert_Subs.ToolTip"));
             // 
             // checkBox_Convert_Subs
             // 
-            checkBox_Convert_Subs.AutoSize = true;
-            checkBox_Convert_Subs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Convert_Subs.Location = new Point(7, 32);
+            resources.ApplyResources(checkBox_Convert_Subs, "checkBox_Convert_Subs");
             checkBox_Convert_Subs.Name = "checkBox_Convert_Subs";
-            checkBox_Convert_Subs.Size = new Size(149, 40);
-            checkBox_Convert_Subs.TabIndex = 45;
-            checkBox_Convert_Subs.Text = "字幕格式";
-            toolTip.SetToolTip(checkBox_Convert_Subs, "改变视频容器格式，不重新编码（快速）\r\n（只改变封装格式，视频和音频流不变）");
+            toolTip.SetToolTip(checkBox_Convert_Subs, resources.GetString("checkBox_Convert_Subs.ToolTip"));
             checkBox_Convert_Subs.UseVisualStyleBackColor = true;
             // 
             // groupBox17
             // 
+            resources.ApplyResources(groupBox17, "groupBox17");
             groupBox17.Controls.Add(checkBox_Embed_InfoJson);
             groupBox17.Controls.Add(checkBox_Embed_Chapters);
             groupBox17.Controls.Add(checkBox_Embed_Metadata);
             groupBox17.Controls.Add(checkBox_Embed_Thumbnail);
             groupBox17.Controls.Add(checkBox_Embed_Subs);
-            groupBox17.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox17.Location = new Point(6, 190);
             groupBox17.Name = "groupBox17";
-            groupBox17.Size = new Size(389, 174);
-            groupBox17.TabIndex = 82;
             groupBox17.TabStop = false;
-            groupBox17.Text = "嵌入处理";
+            toolTip.SetToolTip(groupBox17, resources.GetString("groupBox17.ToolTip"));
             // 
             // checkBox_Embed_InfoJson
             // 
-            checkBox_Embed_InfoJson.AutoSize = true;
-            checkBox_Embed_InfoJson.Enabled = false;
-            checkBox_Embed_InfoJson.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Embed_InfoJson.Location = new Point(192, 78);
+            resources.ApplyResources(checkBox_Embed_InfoJson, "checkBox_Embed_InfoJson");
             checkBox_Embed_InfoJson.Name = "checkBox_Embed_InfoJson";
-            checkBox_Embed_InfoJson.Size = new Size(200, 40);
-            checkBox_Embed_InfoJson.TabIndex = 45;
-            checkBox_Embed_InfoJson.Text = "嵌入infojson";
-            toolTip.SetToolTip(checkBox_Embed_InfoJson, "将完整infojson元数据嵌入视频文件中。\r\n下载元数据相关内容位于【文件参数】栏\r\n注：仅mkv，请使用重新封装或重新编码才可用此功能");
+            toolTip.SetToolTip(checkBox_Embed_InfoJson, resources.GetString("checkBox_Embed_InfoJson.ToolTip"));
             checkBox_Embed_InfoJson.UseVisualStyleBackColor = true;
             // 
             // checkBox_Embed_Chapters
             // 
-            checkBox_Embed_Chapters.AutoSize = true;
-            checkBox_Embed_Chapters.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Embed_Chapters.Location = new Point(192, 32);
+            resources.ApplyResources(checkBox_Embed_Chapters, "checkBox_Embed_Chapters");
             checkBox_Embed_Chapters.Name = "checkBox_Embed_Chapters";
-            checkBox_Embed_Chapters.Size = new Size(149, 40);
-            checkBox_Embed_Chapters.TabIndex = 44;
-            checkBox_Embed_Chapters.Text = "嵌入章节";
-            toolTip.SetToolTip(checkBox_Embed_Chapters, "将元数据嵌入视频文件中。\r\n下载元数据相关内容位于【文件参数】栏\r\n");
+            toolTip.SetToolTip(checkBox_Embed_Chapters, resources.GetString("checkBox_Embed_Chapters.ToolTip"));
             checkBox_Embed_Chapters.UseVisualStyleBackColor = true;
             // 
             // checkBox_Embed_Metadata
             // 
-            checkBox_Embed_Metadata.AutoSize = true;
-            checkBox_Embed_Metadata.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Embed_Metadata.Location = new Point(11, 124);
+            resources.ApplyResources(checkBox_Embed_Metadata, "checkBox_Embed_Metadata");
             checkBox_Embed_Metadata.Name = "checkBox_Embed_Metadata";
-            checkBox_Embed_Metadata.Size = new Size(177, 40);
-            checkBox_Embed_Metadata.TabIndex = 43;
-            checkBox_Embed_Metadata.Text = "嵌入元数据";
-            toolTip.SetToolTip(checkBox_Embed_Metadata, "将元数据嵌入视频文件中。\r\n下载元数据相关内容位于【文件参数】栏\r\n");
+            toolTip.SetToolTip(checkBox_Embed_Metadata, resources.GetString("checkBox_Embed_Metadata.ToolTip"));
             checkBox_Embed_Metadata.UseVisualStyleBackColor = true;
             // 
             // checkBox_Embed_Thumbnail
             // 
-            checkBox_Embed_Thumbnail.AutoSize = true;
+            resources.ApplyResources(checkBox_Embed_Thumbnail, "checkBox_Embed_Thumbnail");
             checkBox_Embed_Thumbnail.Checked = true;
             checkBox_Embed_Thumbnail.CheckState = CheckState.Checked;
-            checkBox_Embed_Thumbnail.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Embed_Thumbnail.Location = new Point(11, 78);
             checkBox_Embed_Thumbnail.Name = "checkBox_Embed_Thumbnail";
-            checkBox_Embed_Thumbnail.Size = new Size(177, 40);
-            checkBox_Embed_Thumbnail.TabIndex = 42;
-            checkBox_Embed_Thumbnail.Text = "嵌入缩略图";
-            toolTip.SetToolTip(checkBox_Embed_Thumbnail, "将缩略图嵌入视频文件中，若有多个缩略图，则自动选择最合适的。\r\n下载缩略图相关内容位于【格式字幕】栏");
+            toolTip.SetToolTip(checkBox_Embed_Thumbnail, resources.GetString("checkBox_Embed_Thumbnail.ToolTip"));
             checkBox_Embed_Thumbnail.UseVisualStyleBackColor = true;
             // 
             // checkBox_Embed_Subs
             // 
-            checkBox_Embed_Subs.AutoSize = true;
-            checkBox_Embed_Subs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_Embed_Subs.Location = new Point(11, 32);
+            resources.ApplyResources(checkBox_Embed_Subs, "checkBox_Embed_Subs");
             checkBox_Embed_Subs.Name = "checkBox_Embed_Subs";
-            checkBox_Embed_Subs.Size = new Size(149, 40);
-            checkBox_Embed_Subs.TabIndex = 41;
-            checkBox_Embed_Subs.Text = "嵌入字幕";
-            toolTip.SetToolTip(checkBox_Embed_Subs, "将字幕嵌入视频文件中。\r\n下载字幕相关内容位于【格式字幕】栏");
+            toolTip.SetToolTip(checkBox_Embed_Subs, resources.GetString("checkBox_Embed_Subs.ToolTip"));
             checkBox_Embed_Subs.UseVisualStyleBackColor = true;
             // 
             // comboBox_PostProcessorArgs
             // 
-            comboBox_PostProcessorArgs.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_PostProcessorArgs, "comboBox_PostProcessorArgs");
             comboBox_PostProcessorArgs.FormattingEnabled = true;
-            comboBox_PostProcessorArgs.Items.AddRange(new object[] { "\"FFmpeg:-threads 4\"", "\"ExtractAudio:-vn\"", "\"Merger+ffmpeg:-max_muxing_queue_size 1024\"", "\"Merger+ffmpeg_i1:-ss 00:01:00\"", "\"Merger+ffmpeg_o1:-t 600\"", "\"FFmpeg:-threads 4 -preset ultrafast\"" });
-            comboBox_PostProcessorArgs.Location = new Point(147, 369);
+            comboBox_PostProcessorArgs.Items.AddRange(new object[] { resources.GetString("comboBox_PostProcessorArgs.Items"), resources.GetString("comboBox_PostProcessorArgs.Items1"), resources.GetString("comboBox_PostProcessorArgs.Items2"), resources.GetString("comboBox_PostProcessorArgs.Items3"), resources.GetString("comboBox_PostProcessorArgs.Items4"), resources.GetString("comboBox_PostProcessorArgs.Items5") });
             comboBox_PostProcessorArgs.Name = "comboBox_PostProcessorArgs";
-            comboBox_PostProcessorArgs.Size = new Size(774, 43);
-            comboBox_PostProcessorArgs.TabIndex = 48;
-            comboBox_PostProcessorArgs.Text = "\"FFmpeg:-threads 4\"";
+            toolTip.SetToolTip(comboBox_PostProcessorArgs, resources.GetString("comboBox_PostProcessorArgs.ToolTip"));
             // 
             // checkBox_PostProcessorArgs
             // 
-            checkBox_PostProcessorArgs.AutoSize = true;
-            checkBox_PostProcessorArgs.Font = new Font("微软雅黑", 16.2F);
-            checkBox_PostProcessorArgs.Location = new Point(4, 370);
+            resources.ApplyResources(checkBox_PostProcessorArgs, "checkBox_PostProcessorArgs");
             checkBox_PostProcessorArgs.Name = "checkBox_PostProcessorArgs";
-            checkBox_PostProcessorArgs.Size = new Size(149, 40);
-            checkBox_PostProcessorArgs.TabIndex = 47;
-            checkBox_PostProcessorArgs.Text = "参数传递";
             toolTip.SetToolTip(checkBox_PostProcessorArgs, resources.GetString("checkBox_PostProcessorArgs.ToolTip"));
             checkBox_PostProcessorArgs.UseVisualStyleBackColor = true;
             // 
             // groupBox16
             // 
+            resources.ApplyResources(groupBox16, "groupBox16");
             groupBox16.Controls.Add(checkBox_NoPostOverwrites);
             groupBox16.Controls.Add(comboBox_RecodeVideo);
             groupBox16.Controls.Add(checkBox_RecodeVideo);
             groupBox16.Controls.Add(comboBox_RemuxVideo);
             groupBox16.Controls.Add(checkBox_RemuxVideo);
-            groupBox16.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox16.Location = new Point(447, 6);
             groupBox16.Name = "groupBox16";
-            groupBox16.Size = new Size(470, 178);
-            groupBox16.TabIndex = 81;
             groupBox16.TabStop = false;
-            groupBox16.Text = "视频处理";
+            toolTip.SetToolTip(groupBox16, resources.GetString("groupBox16.ToolTip"));
             // 
             // checkBox_NoPostOverwrites
             // 
-            checkBox_NoPostOverwrites.AutoSize = true;
-            checkBox_NoPostOverwrites.Enabled = false;
-            checkBox_NoPostOverwrites.Font = new Font("微软雅黑", 16.2F);
-            checkBox_NoPostOverwrites.Location = new Point(7, 123);
+            resources.ApplyResources(checkBox_NoPostOverwrites, "checkBox_NoPostOverwrites");
             checkBox_NoPostOverwrites.Name = "checkBox_NoPostOverwrites";
-            checkBox_NoPostOverwrites.Size = new Size(345, 40);
-            checkBox_NoPostOverwrites.TabIndex = 82;
-            checkBox_NoPostOverwrites.Text = "跳过已存在的后处理文件";
-            toolTip.SetToolTip(checkBox_NoPostOverwrites, "下载自动生成的字幕（YouTube自动字幕等）");
+            toolTip.SetToolTip(checkBox_NoPostOverwrites, resources.GetString("checkBox_NoPostOverwrites.ToolTip"));
             checkBox_NoPostOverwrites.UseVisualStyleBackColor = true;
             // 
             // comboBox_RecodeVideo
             // 
-            comboBox_RecodeVideo.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_RecodeVideo, "comboBox_RecodeVideo");
             comboBox_RecodeVideo.FormattingEnabled = true;
-            comboBox_RecodeVideo.Items.AddRange(new object[] { "avi", "flv", "gif", "mkv", "mov", "mp4", "webm", "aac", "aiff", "alac", "flac", "m4a", "mka", "mp3", "ogg", "opus", "vorbis", "wav", "\"mp4/mkv\"", "\"aac>m4a/mov>mp4/mkv\"", "\"mp4/webm>mp4/mkv\"" });
-            comboBox_RecodeVideo.Location = new Point(150, 76);
+            comboBox_RecodeVideo.Items.AddRange(new object[] { resources.GetString("comboBox_RecodeVideo.Items"), resources.GetString("comboBox_RecodeVideo.Items1"), resources.GetString("comboBox_RecodeVideo.Items2"), resources.GetString("comboBox_RecodeVideo.Items3"), resources.GetString("comboBox_RecodeVideo.Items4"), resources.GetString("comboBox_RecodeVideo.Items5"), resources.GetString("comboBox_RecodeVideo.Items6"), resources.GetString("comboBox_RecodeVideo.Items7"), resources.GetString("comboBox_RecodeVideo.Items8"), resources.GetString("comboBox_RecodeVideo.Items9"), resources.GetString("comboBox_RecodeVideo.Items10"), resources.GetString("comboBox_RecodeVideo.Items11"), resources.GetString("comboBox_RecodeVideo.Items12"), resources.GetString("comboBox_RecodeVideo.Items13"), resources.GetString("comboBox_RecodeVideo.Items14"), resources.GetString("comboBox_RecodeVideo.Items15"), resources.GetString("comboBox_RecodeVideo.Items16"), resources.GetString("comboBox_RecodeVideo.Items17"), resources.GetString("comboBox_RecodeVideo.Items18"), resources.GetString("comboBox_RecodeVideo.Items19"), resources.GetString("comboBox_RecodeVideo.Items20") });
             comboBox_RecodeVideo.Name = "comboBox_RecodeVideo";
-            comboBox_RecodeVideo.Size = new Size(314, 43);
-            comboBox_RecodeVideo.TabIndex = 46;
-            comboBox_RecodeVideo.Text = "mp4";
+            toolTip.SetToolTip(comboBox_RecodeVideo, resources.GetString("comboBox_RecodeVideo.ToolTip"));
             // 
             // checkBox_RecodeVideo
             // 
-            checkBox_RecodeVideo.AutoSize = true;
-            checkBox_RecodeVideo.Font = new Font("微软雅黑", 16.2F);
-            checkBox_RecodeVideo.Location = new Point(7, 77);
+            resources.ApplyResources(checkBox_RecodeVideo, "checkBox_RecodeVideo");
             checkBox_RecodeVideo.Name = "checkBox_RecodeVideo";
-            checkBox_RecodeVideo.Size = new Size(149, 40);
-            checkBox_RecodeVideo.TabIndex = 45;
-            checkBox_RecodeVideo.Text = "重新编码";
-            toolTip.SetToolTip(checkBox_RecodeVideo, "重新编码视频到指定格式（最慢）\r\n注意：会重新压缩，耗时且可能降低质量");
+            toolTip.SetToolTip(checkBox_RecodeVideo, resources.GetString("checkBox_RecodeVideo.ToolTip"));
             checkBox_RecodeVideo.UseVisualStyleBackColor = true;
             checkBox_RecodeVideo.CheckedChanged += checkBox_RemuxVideo_CheckedChanged;
             // 
             // comboBox_RemuxVideo
             // 
-            comboBox_RemuxVideo.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_RemuxVideo, "comboBox_RemuxVideo");
             comboBox_RemuxVideo.FormattingEnabled = true;
-            comboBox_RemuxVideo.Items.AddRange(new object[] { "avi", "flv", "gif", "mkv", "mov", "mp4", "webm", "aac", "aiff", "alac", "flac", "m4a", "mka", "mp3", "ogg", "opus", "vorbis", "wav", "\"mp4/mkv\"", "\"aac>m4a/mov>mp4/mkv\"", "\"mp4/webm>mp4/mkv\"" });
-            comboBox_RemuxVideo.Location = new Point(150, 29);
+            comboBox_RemuxVideo.Items.AddRange(new object[] { resources.GetString("comboBox_RemuxVideo.Items"), resources.GetString("comboBox_RemuxVideo.Items1"), resources.GetString("comboBox_RemuxVideo.Items2"), resources.GetString("comboBox_RemuxVideo.Items3"), resources.GetString("comboBox_RemuxVideo.Items4"), resources.GetString("comboBox_RemuxVideo.Items5"), resources.GetString("comboBox_RemuxVideo.Items6"), resources.GetString("comboBox_RemuxVideo.Items7"), resources.GetString("comboBox_RemuxVideo.Items8"), resources.GetString("comboBox_RemuxVideo.Items9"), resources.GetString("comboBox_RemuxVideo.Items10"), resources.GetString("comboBox_RemuxVideo.Items11"), resources.GetString("comboBox_RemuxVideo.Items12"), resources.GetString("comboBox_RemuxVideo.Items13"), resources.GetString("comboBox_RemuxVideo.Items14"), resources.GetString("comboBox_RemuxVideo.Items15"), resources.GetString("comboBox_RemuxVideo.Items16"), resources.GetString("comboBox_RemuxVideo.Items17"), resources.GetString("comboBox_RemuxVideo.Items18"), resources.GetString("comboBox_RemuxVideo.Items19"), resources.GetString("comboBox_RemuxVideo.Items20") });
             comboBox_RemuxVideo.Name = "comboBox_RemuxVideo";
-            comboBox_RemuxVideo.Size = new Size(314, 43);
-            comboBox_RemuxVideo.TabIndex = 44;
-            comboBox_RemuxVideo.Text = "mp4";
+            toolTip.SetToolTip(comboBox_RemuxVideo, resources.GetString("comboBox_RemuxVideo.ToolTip"));
             // 
             // checkBox_RemuxVideo
             // 
-            checkBox_RemuxVideo.AutoSize = true;
-            checkBox_RemuxVideo.Font = new Font("微软雅黑", 16.2F);
-            checkBox_RemuxVideo.Location = new Point(7, 30);
+            resources.ApplyResources(checkBox_RemuxVideo, "checkBox_RemuxVideo");
             checkBox_RemuxVideo.Name = "checkBox_RemuxVideo";
-            checkBox_RemuxVideo.Size = new Size(149, 40);
-            checkBox_RemuxVideo.TabIndex = 43;
-            checkBox_RemuxVideo.Text = "重新封装";
-            toolTip.SetToolTip(checkBox_RemuxVideo, "改变视频容器格式，不重新编码（快速）\r\n（只改变封装格式，视频和音频流不变）");
+            toolTip.SetToolTip(checkBox_RemuxVideo, resources.GetString("checkBox_RemuxVideo.ToolTip"));
             checkBox_RemuxVideo.UseVisualStyleBackColor = true;
             checkBox_RemuxVideo.CheckedChanged += checkBox_RemuxVideo_CheckedChanged;
             // 
             // groupBox15
             // 
+            resources.ApplyResources(groupBox15, "groupBox15");
             groupBox15.Controls.Add(comboBox_AudioQuality);
             groupBox15.Controls.Add(checkBox_KeepVideo);
             groupBox15.Controls.Add(checkBox_ExtractAudio);
             groupBox15.Controls.Add(checkBox_AudioQuality);
             groupBox15.Controls.Add(comboBox_AudioFormat);
             groupBox15.Controls.Add(checkBox_AudioFormat);
-            groupBox15.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox15.Location = new Point(6, 6);
             groupBox15.Name = "groupBox15";
-            groupBox15.Size = new Size(435, 178);
-            groupBox15.TabIndex = 80;
             groupBox15.TabStop = false;
-            groupBox15.Text = "音频处理";
+            toolTip.SetToolTip(groupBox15, resources.GetString("groupBox15.ToolTip"));
             // 
             // comboBox_AudioQuality
             // 
-            comboBox_AudioQuality.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_AudioQuality, "comboBox_AudioQuality");
             comboBox_AudioQuality.FormattingEnabled = true;
-            comboBox_AudioQuality.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "128K", "192K", "320K" });
-            comboBox_AudioQuality.Location = new Point(154, 76);
+            comboBox_AudioQuality.Items.AddRange(new object[] { resources.GetString("comboBox_AudioQuality.Items"), resources.GetString("comboBox_AudioQuality.Items1"), resources.GetString("comboBox_AudioQuality.Items2"), resources.GetString("comboBox_AudioQuality.Items3"), resources.GetString("comboBox_AudioQuality.Items4"), resources.GetString("comboBox_AudioQuality.Items5"), resources.GetString("comboBox_AudioQuality.Items6"), resources.GetString("comboBox_AudioQuality.Items7"), resources.GetString("comboBox_AudioQuality.Items8"), resources.GetString("comboBox_AudioQuality.Items9"), resources.GetString("comboBox_AudioQuality.Items10"), resources.GetString("comboBox_AudioQuality.Items11"), resources.GetString("comboBox_AudioQuality.Items12"), resources.GetString("comboBox_AudioQuality.Items13") });
             comboBox_AudioQuality.Name = "comboBox_AudioQuality";
-            comboBox_AudioQuality.Size = new Size(279, 43);
-            comboBox_AudioQuality.TabIndex = 46;
-            comboBox_AudioQuality.Text = "0";
+            toolTip.SetToolTip(comboBox_AudioQuality, resources.GetString("comboBox_AudioQuality.ToolTip"));
             // 
             // checkBox_KeepVideo
             // 
-            checkBox_KeepVideo.AutoSize = true;
-            checkBox_KeepVideo.Enabled = false;
-            checkBox_KeepVideo.Font = new Font("微软雅黑", 16.2F);
-            checkBox_KeepVideo.Location = new Point(156, 125);
+            resources.ApplyResources(checkBox_KeepVideo, "checkBox_KeepVideo");
             checkBox_KeepVideo.Name = "checkBox_KeepVideo";
-            checkBox_KeepVideo.Size = new Size(233, 40);
-            checkBox_KeepVideo.TabIndex = 42;
-            checkBox_KeepVideo.Text = "提取后保留视频";
-            toolTip.SetToolTip(checkBox_KeepVideo, "下载自动生成的字幕（YouTube自动字幕等）");
+            toolTip.SetToolTip(checkBox_KeepVideo, resources.GetString("checkBox_KeepVideo.ToolTip"));
             checkBox_KeepVideo.UseVisualStyleBackColor = true;
             // 
             // checkBox_ExtractAudio
             // 
-            checkBox_ExtractAudio.AutoSize = true;
-            checkBox_ExtractAudio.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ExtractAudio.Location = new Point(11, 125);
+            resources.ApplyResources(checkBox_ExtractAudio, "checkBox_ExtractAudio");
             checkBox_ExtractAudio.Name = "checkBox_ExtractAudio";
-            checkBox_ExtractAudio.Size = new Size(149, 40);
-            checkBox_ExtractAudio.TabIndex = 41;
-            checkBox_ExtractAudio.Text = "提取音频";
-            toolTip.SetToolTip(checkBox_ExtractAudio, "下载手动上传的字幕");
+            toolTip.SetToolTip(checkBox_ExtractAudio, resources.GetString("checkBox_ExtractAudio.ToolTip"));
             checkBox_ExtractAudio.UseVisualStyleBackColor = true;
             checkBox_ExtractAudio.CheckedChanged += checkBox_ExtractAudio_CheckedChanged;
             // 
             // checkBox_AudioQuality
             // 
-            checkBox_AudioQuality.AutoSize = true;
-            checkBox_AudioQuality.Font = new Font("微软雅黑", 16.2F);
-            checkBox_AudioQuality.Location = new Point(11, 77);
+            resources.ApplyResources(checkBox_AudioQuality, "checkBox_AudioQuality");
             checkBox_AudioQuality.Name = "checkBox_AudioQuality";
-            checkBox_AudioQuality.Size = new Size(149, 40);
-            checkBox_AudioQuality.TabIndex = 45;
-            checkBox_AudioQuality.Text = "音频质量";
-            toolTip.SetToolTip(checkBox_AudioQuality, "指定音频编码质量。\r\n\r\n两种方式：\r\nVBR质量值：0（最好）到 10（最差），默认5\r\n固定比特率：128K、192K、320K等");
+            toolTip.SetToolTip(checkBox_AudioQuality, resources.GetString("checkBox_AudioQuality.ToolTip"));
             checkBox_AudioQuality.UseVisualStyleBackColor = true;
             // 
             // comboBox_AudioFormat
             // 
-            comboBox_AudioFormat.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_AudioFormat, "comboBox_AudioFormat");
             comboBox_AudioFormat.FormattingEnabled = true;
-            comboBox_AudioFormat.Items.AddRange(new object[] { "best", "aac", "alac", "flac", "m4a", "mp3", "opus", "vorbis", "wav", "\"mp3/m4a>m4a/flac\"" });
-            comboBox_AudioFormat.Location = new Point(154, 29);
+            comboBox_AudioFormat.Items.AddRange(new object[] { resources.GetString("comboBox_AudioFormat.Items"), resources.GetString("comboBox_AudioFormat.Items1"), resources.GetString("comboBox_AudioFormat.Items2"), resources.GetString("comboBox_AudioFormat.Items3"), resources.GetString("comboBox_AudioFormat.Items4"), resources.GetString("comboBox_AudioFormat.Items5"), resources.GetString("comboBox_AudioFormat.Items6"), resources.GetString("comboBox_AudioFormat.Items7"), resources.GetString("comboBox_AudioFormat.Items8"), resources.GetString("comboBox_AudioFormat.Items9") });
             comboBox_AudioFormat.Name = "comboBox_AudioFormat";
-            comboBox_AudioFormat.Size = new Size(279, 43);
-            comboBox_AudioFormat.TabIndex = 44;
-            comboBox_AudioFormat.Text = "best";
+            toolTip.SetToolTip(comboBox_AudioFormat, resources.GetString("comboBox_AudioFormat.ToolTip"));
             // 
             // checkBox_AudioFormat
             // 
-            checkBox_AudioFormat.AutoSize = true;
-            checkBox_AudioFormat.Font = new Font("微软雅黑", 16.2F);
-            checkBox_AudioFormat.Location = new Point(11, 30);
+            resources.ApplyResources(checkBox_AudioFormat, "checkBox_AudioFormat");
             checkBox_AudioFormat.Name = "checkBox_AudioFormat";
-            checkBox_AudioFormat.Size = new Size(149, 40);
-            checkBox_AudioFormat.TabIndex = 43;
-            checkBox_AudioFormat.Text = "音频格式";
-            toolTip.SetToolTip(checkBox_AudioFormat, "格式\t\t质量\t大小\t兼容性\t适用场景\r\nmp3\t\t一般\t中等\t最好\t通用播放器、MP3播放器\r\nm4a/aac\t较好\t中等\t好\t苹果设备、现代播放器\r\nopus\t\t最好\t小\t一般\t压缩率优先、最新格式\r\nflac\t\t无损\t大\t好\t音乐存档、发烧友\r\nwav\t\t无损\t极大\t最好\t音频编辑、专业用途\r\nvorbis\t\t好\t中等\t一般\t开源软件");
+            toolTip.SetToolTip(checkBox_AudioFormat, resources.GetString("checkBox_AudioFormat.ToolTip"));
             checkBox_AudioFormat.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
+            resources.ApplyResources(tabPage7, "tabPage7");
             tabPage7.Controls.Add(richTextBox_exec);
-            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(927, 418);
-            tabPage7.TabIndex = 6;
-            tabPage7.Text = "调用程序";
+            toolTip.SetToolTip(tabPage7, resources.GetString("tabPage7.ToolTip"));
             tabPage7.UseVisualStyleBackColor = true;
             // 
             // richTextBox_exec
             // 
-            richTextBox_exec.Dock = DockStyle.Fill;
-            richTextBox_exec.Font = new Font("Microsoft YaHei UI", 12F);
-            richTextBox_exec.Location = new Point(3, 3);
+            resources.ApplyResources(richTextBox_exec, "richTextBox_exec");
             richTextBox_exec.Name = "richTextBox_exec";
-            richTextBox_exec.Size = new Size(921, 412);
-            richTextBox_exec.TabIndex = 1;
-            richTextBox_exec.Text = resources.GetString("richTextBox_exec.Text");
+            toolTip.SetToolTip(richTextBox_exec, resources.GetString("richTextBox_exec.ToolTip"));
             // 
             // tabPage8
             // 
+            resources.ApplyResources(tabPage8, "tabPage8");
             tabPage8.Controls.Add(groupBox21);
             tabPage8.Controls.Add(groupBox20);
-            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(927, 418);
-            tabPage8.TabIndex = 7;
-            tabPage8.Text = "附加功能";
+            toolTip.SetToolTip(tabPage8, resources.GetString("tabPage8.ToolTip"));
             tabPage8.UseVisualStyleBackColor = true;
             // 
             // groupBox21
             // 
+            resources.ApplyResources(groupBox21, "groupBox21");
             groupBox21.Controls.Add(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteDescriptionFile);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage);
             groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteJsonFile);
-            groupBox21.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox21.Location = new Point(5, 140);
             groupBox21.Name = "groupBox21";
-            groupBox21.Size = new Size(500, 223);
-            groupBox21.TabIndex = 82;
             groupBox21.TabStop = false;
-            groupBox21.Text = "元数据功能：自动生成HTML";
+            toolTip.SetToolTip(groupBox21, resources.GetString("groupBox21.ToolTip"));
+            // 
+            // checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer
+            // 
+            resources.ApplyResources(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer, "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer");
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name = "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer";
+            toolTip.SetToolTip(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer, resources.GetString("checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.ToolTip"));
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.UseVisualStyleBackColor = true;
             // 
             // checkBox_GenerateInfoPage_DeleteDescriptionFile
             // 
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.AutoSize = true;
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.Font = new Font("微软雅黑", 16.2F);
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.Location = new Point(6, 124);
+            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteDescriptionFile, "checkBox_GenerateInfoPage_DeleteDescriptionFile");
             checkBox_GenerateInfoPage_DeleteDescriptionFile.Name = "checkBox_GenerateInfoPage_DeleteDescriptionFile";
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.Size = new Size(413, 40);
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.TabIndex = 44;
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.Text = "转换后删除Description原文件";
+            toolTip.SetToolTip(checkBox_GenerateInfoPage_DeleteDescriptionFile, resources.GetString("checkBox_GenerateInfoPage_DeleteDescriptionFile.ToolTip"));
             checkBox_GenerateInfoPage_DeleteDescriptionFile.UseVisualStyleBackColor = true;
             // 
             // checkBox_GenerateInfoPage
             // 
-            checkBox_GenerateInfoPage.AutoSize = true;
-            checkBox_GenerateInfoPage.Font = new Font("微软雅黑", 16.2F);
-            checkBox_GenerateInfoPage.Location = new Point(6, 32);
+            resources.ApplyResources(checkBox_GenerateInfoPage, "checkBox_GenerateInfoPage");
             checkBox_GenerateInfoPage.Name = "checkBox_GenerateInfoPage";
-            checkBox_GenerateInfoPage.Size = new Size(373, 40);
-            checkBox_GenerateInfoPage.TabIndex = 42;
-            checkBox_GenerateInfoPage.Text = "下载完成后自动生成信息页";
+            toolTip.SetToolTip(checkBox_GenerateInfoPage, resources.GetString("checkBox_GenerateInfoPage.ToolTip"));
             checkBox_GenerateInfoPage.UseVisualStyleBackColor = true;
             // 
             // checkBox_GenerateInfoPage_DeleteJsonFile
             // 
-            checkBox_GenerateInfoPage_DeleteJsonFile.AutoSize = true;
-            checkBox_GenerateInfoPage_DeleteJsonFile.Font = new Font("微软雅黑", 16.2F);
-            checkBox_GenerateInfoPage_DeleteJsonFile.Location = new Point(6, 78);
+            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteJsonFile, "checkBox_GenerateInfoPage_DeleteJsonFile");
             checkBox_GenerateInfoPage_DeleteJsonFile.Name = "checkBox_GenerateInfoPage_DeleteJsonFile";
-            checkBox_GenerateInfoPage_DeleteJsonFile.Size = new Size(320, 40);
-            checkBox_GenerateInfoPage_DeleteJsonFile.TabIndex = 43;
-            checkBox_GenerateInfoPage_DeleteJsonFile.Text = "转换后删除Json原文件";
+            toolTip.SetToolTip(checkBox_GenerateInfoPage_DeleteJsonFile, resources.GetString("checkBox_GenerateInfoPage_DeleteJsonFile.ToolTip"));
             checkBox_GenerateInfoPage_DeleteJsonFile.UseVisualStyleBackColor = true;
             // 
             // groupBox20
             // 
+            resources.ApplyResources(groupBox20, "groupBox20");
             groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS);
             groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile);
-            groupBox20.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox20.Location = new Point(5, 6);
             groupBox20.Name = "groupBox20";
-            groupBox20.Size = new Size(500, 128);
-            groupBox20.TabIndex = 81;
             groupBox20.TabStop = false;
-            groupBox20.Text = "字幕功能：XML转ASS";
+            toolTip.SetToolTip(groupBox20, resources.GetString("groupBox20.ToolTip"));
             // 
             // checkBox_DanmakuFactory_XML_To_ASS
             // 
-            checkBox_DanmakuFactory_XML_To_ASS.AutoSize = true;
-            checkBox_DanmakuFactory_XML_To_ASS.Font = new Font("微软雅黑", 16.2F);
-            checkBox_DanmakuFactory_XML_To_ASS.Location = new Point(6, 32);
+            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS, "checkBox_DanmakuFactory_XML_To_ASS");
             checkBox_DanmakuFactory_XML_To_ASS.Name = "checkBox_DanmakuFactory_XML_To_ASS";
-            checkBox_DanmakuFactory_XML_To_ASS.Size = new Size(456, 40);
-            checkBox_DanmakuFactory_XML_To_ASS.TabIndex = 42;
-            checkBox_DanmakuFactory_XML_To_ASS.Text = "下载完成后将字幕XML转换成ASS";
+            toolTip.SetToolTip(checkBox_DanmakuFactory_XML_To_ASS, resources.GetString("checkBox_DanmakuFactory_XML_To_ASS.ToolTip"));
             checkBox_DanmakuFactory_XML_To_ASS.UseVisualStyleBackColor = true;
             // 
             // checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile
             // 
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.AutoSize = true;
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Font = new Font("微软雅黑", 16.2F);
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Location = new Point(6, 78);
+            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile, "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile");
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name = "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile";
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Size = new Size(320, 40);
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.TabIndex = 43;
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Text = "转换后删除XML原文件";
+            toolTip.SetToolTip(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile, resources.GetString("checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.ToolTip"));
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Font = new Font("Microsoft YaHei UI", 12F);
-            button1.Location = new Point(806, 839);
+            resources.ApplyResources(button1, "button1");
             button1.Name = "button1";
-            button1.Size = new Size(118, 40);
-            button1.TabIndex = 47;
-            button1.Text = "重新加载";
+            toolTip.SetToolTip(button1, resources.GetString("button1.ToolTip"));
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // checkBox_IdNameMapper
             // 
-            checkBox_IdNameMapper.AutoSize = true;
-            checkBox_IdNameMapper.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_IdNameMapper, "checkBox_IdNameMapper");
             checkBox_IdNameMapper.ForeColor = Color.FromArgb(128, 64, 0);
-            checkBox_IdNameMapper.Location = new Point(522, 839);
             checkBox_IdNameMapper.Name = "checkBox_IdNameMapper";
-            checkBox_IdNameMapper.Size = new Size(290, 40);
-            checkBox_IdNameMapper.TabIndex = 46;
-            checkBox_IdNameMapper.Text = "自动下载ID映射名称";
+            toolTip.SetToolTip(checkBox_IdNameMapper, resources.GetString("checkBox_IdNameMapper.ToolTip"));
             checkBox_IdNameMapper.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(button_Option_ReSet);
             groupBox2.Controls.Add(button_Option_Load);
             groupBox2.Controls.Add(button_Option_Save);
@@ -2609,403 +1908,278 @@
             groupBox2.Controls.Add(button_OpenDownloadPath);
             groupBox2.Controls.Add(button_OpenCookiesFile);
             groupBox2.Controls.Add(button_OpenArchiveFile);
-            groupBox2.Font = new Font("Microsoft YaHei UI", 12F);
-            groupBox2.Location = new Point(16, 619);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(899, 214);
-            groupBox2.TabIndex = 45;
             groupBox2.TabStop = false;
-            groupBox2.Text = "快速操作";
+            toolTip.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // button_Option_ReSet
             // 
-            button_Option_ReSet.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            resources.ApplyResources(button_Option_ReSet, "button_Option_ReSet");
             button_Option_ReSet.ForeColor = Color.Red;
-            button_Option_ReSet.Location = new Point(714, 149);
             button_Option_ReSet.Name = "button_Option_ReSet";
-            button_Option_ReSet.Size = new Size(179, 55);
-            button_Option_ReSet.TabIndex = 41;
-            button_Option_ReSet.Text = "重置保存";
+            toolTip.SetToolTip(button_Option_ReSet, resources.GetString("button_Option_ReSet.ToolTip"));
             button_Option_ReSet.UseVisualStyleBackColor = true;
             button_Option_ReSet.Click += button_Option_ReSet_Click;
             // 
             // button_Option_Load
             // 
-            button_Option_Load.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_Option_Load.Location = new Point(714, 88);
+            resources.ApplyResources(button_Option_Load, "button_Option_Load");
             button_Option_Load.Name = "button_Option_Load";
-            button_Option_Load.Size = new Size(179, 55);
-            button_Option_Load.TabIndex = 40;
-            button_Option_Load.Text = "重载选项";
+            toolTip.SetToolTip(button_Option_Load, resources.GetString("button_Option_Load.ToolTip"));
             button_Option_Load.UseVisualStyleBackColor = true;
             button_Option_Load.Click += button_Option_Load_Click;
             // 
             // button_Option_Save
             // 
-            button_Option_Save.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_Option_Save.Location = new Point(714, 27);
+            resources.ApplyResources(button_Option_Save, "button_Option_Save");
             button_Option_Save.Name = "button_Option_Save";
-            button_Option_Save.Size = new Size(179, 55);
-            button_Option_Save.TabIndex = 39;
-            button_Option_Save.Text = "保存选项";
+            toolTip.SetToolTip(button_Option_Save, resources.GetString("button_Option_Save.ToolTip"));
             button_Option_Save.UseVisualStyleBackColor = true;
             button_Option_Save.Click += button_Option_Save_Click;
             // 
             // button_OpenAutoDownloadNameFile
             // 
-            button_OpenAutoDownloadNameFile.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_OpenAutoDownloadNameFile.Location = new Point(280, 88);
+            resources.ApplyResources(button_OpenAutoDownloadNameFile, "button_OpenAutoDownloadNameFile");
             button_OpenAutoDownloadNameFile.Name = "button_OpenAutoDownloadNameFile";
-            button_OpenAutoDownloadNameFile.Size = new Size(428, 55);
-            button_OpenAutoDownloadNameFile.TabIndex = 38;
-            button_OpenAutoDownloadNameFile.Text = "打开 自动下载 ID 名称映射文件";
+            toolTip.SetToolTip(button_OpenAutoDownloadNameFile, resources.GetString("button_OpenAutoDownloadNameFile.ToolTip"));
             button_OpenAutoDownloadNameFile.UseVisualStyleBackColor = true;
             button_OpenAutoDownloadNameFile.Click += button_OpenAutoDownloadNameFile_Click;
             // 
             // button_AutoDownloadFile
             // 
-            button_AutoDownloadFile.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_AutoDownloadFile.Location = new Point(280, 27);
+            resources.ApplyResources(button_AutoDownloadFile, "button_AutoDownloadFile");
             button_AutoDownloadFile.Name = "button_AutoDownloadFile";
-            button_AutoDownloadFile.Size = new Size(429, 55);
-            button_AutoDownloadFile.TabIndex = 37;
-            button_AutoDownloadFile.Text = "打开 自动下载 默认列表文件";
+            toolTip.SetToolTip(button_AutoDownloadFile, resources.GetString("button_AutoDownloadFile.ToolTip"));
             button_AutoDownloadFile.UseVisualStyleBackColor = true;
             button_AutoDownloadFile.Click += button_AutoDownloadFile_Click;
             // 
             // button_OpenAutoDownloadPath
             // 
-            button_OpenAutoDownloadPath.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_OpenAutoDownloadPath.Location = new Point(7, 149);
+            resources.ApplyResources(button_OpenAutoDownloadPath, "button_OpenAutoDownloadPath");
             button_OpenAutoDownloadPath.Name = "button_OpenAutoDownloadPath";
-            button_OpenAutoDownloadPath.Size = new Size(269, 55);
-            button_OpenAutoDownloadPath.TabIndex = 36;
-            button_OpenAutoDownloadPath.Text = "打开默认保存路径";
+            toolTip.SetToolTip(button_OpenAutoDownloadPath, resources.GetString("button_OpenAutoDownloadPath.ToolTip"));
             button_OpenAutoDownloadPath.UseVisualStyleBackColor = true;
             button_OpenAutoDownloadPath.Click += button_OpenAutoDownloadPath_Click;
             // 
             // button_OpenDownloadPath
             // 
-            button_OpenDownloadPath.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_OpenDownloadPath.Location = new Point(282, 149);
+            resources.ApplyResources(button_OpenDownloadPath, "button_OpenDownloadPath");
             button_OpenDownloadPath.Name = "button_OpenDownloadPath";
-            button_OpenDownloadPath.Size = new Size(426, 55);
-            button_OpenDownloadPath.TabIndex = 35;
-            button_OpenDownloadPath.Text = "打开当前保存路径";
+            toolTip.SetToolTip(button_OpenDownloadPath, resources.GetString("button_OpenDownloadPath.ToolTip"));
             button_OpenDownloadPath.UseVisualStyleBackColor = true;
             button_OpenDownloadPath.Click += button_OpenDownloadPath_Click;
             // 
             // button_OpenCookiesFile
             // 
-            button_OpenCookiesFile.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_OpenCookiesFile.Location = new Point(7, 88);
+            resources.ApplyResources(button_OpenCookiesFile, "button_OpenCookiesFile");
             button_OpenCookiesFile.Name = "button_OpenCookiesFile";
-            button_OpenCookiesFile.Size = new Size(269, 55);
-            button_OpenCookiesFile.TabIndex = 34;
-            button_OpenCookiesFile.Text = "打开 Cookies 文件";
+            toolTip.SetToolTip(button_OpenCookiesFile, resources.GetString("button_OpenCookiesFile.ToolTip"));
             button_OpenCookiesFile.UseVisualStyleBackColor = true;
             button_OpenCookiesFile.Click += button_OpenCookiesFile_Click;
             // 
             // button_OpenArchiveFile
             // 
-            button_OpenArchiveFile.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_OpenArchiveFile.Location = new Point(6, 27);
+            resources.ApplyResources(button_OpenArchiveFile, "button_OpenArchiveFile");
             button_OpenArchiveFile.Name = "button_OpenArchiveFile";
-            button_OpenArchiveFile.Size = new Size(268, 55);
-            button_OpenArchiveFile.TabIndex = 33;
-            button_OpenArchiveFile.Text = "打开 Archive 文件";
+            toolTip.SetToolTip(button_OpenArchiveFile, resources.GetString("button_OpenArchiveFile.ToolTip"));
             button_OpenArchiveFile.UseVisualStyleBackColor = true;
             button_OpenArchiveFile.Click += button_OpenArchiveFile_Click;
             // 
             // button_SetMatchFilters
             // 
-            button_SetMatchFilters.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(button_SetMatchFilters, "button_SetMatchFilters");
             button_SetMatchFilters.ForeColor = Color.FromArgb(128, 64, 0);
-            button_SetMatchFilters.Location = new Point(783, 61);
             button_SetMatchFilters.Name = "button_SetMatchFilters";
-            button_SetMatchFilters.Size = new Size(147, 100);
-            button_SetMatchFilters.TabIndex = 43;
-            button_SetMatchFilters.Text = "编辑高级下载过滤";
+            toolTip.SetToolTip(button_SetMatchFilters, resources.GetString("button_SetMatchFilters.ToolTip"));
             button_SetMatchFilters.UseVisualStyleBackColor = true;
             button_SetMatchFilters.Click += button_SetMatchFilters_Click;
             // 
             // textBox_playlist_items
             // 
-            textBox_playlist_items.Font = new Font("微软雅黑", 16.2F);
-            textBox_playlist_items.Location = new Point(506, 118);
+            resources.ApplyResources(textBox_playlist_items, "textBox_playlist_items");
             textBox_playlist_items.Name = "textBox_playlist_items";
-            textBox_playlist_items.Size = new Size(271, 43);
-            textBox_playlist_items.TabIndex = 34;
-            textBox_playlist_items.Text = "1:-1:1";
+            toolTip.SetToolTip(textBox_playlist_items, resources.GetString("textBox_playlist_items.ToolTip"));
             // 
             // checkBox_playlist_items
             // 
-            checkBox_playlist_items.AutoSize = true;
-            checkBox_playlist_items.Font = new Font("微软雅黑", 16.2F);
-            checkBox_playlist_items.Location = new Point(251, 119);
+            resources.ApplyResources(checkBox_playlist_items, "checkBox_playlist_items");
             checkBox_playlist_items.Name = "checkBox_playlist_items";
-            checkBox_playlist_items.Size = new Size(261, 40);
-            checkBox_playlist_items.TabIndex = 33;
-            checkBox_playlist_items.Text = "下载指定播放列表";
             toolTip.SetToolTip(checkBox_playlist_items, resources.GetString("checkBox_playlist_items.ToolTip"));
             checkBox_playlist_items.UseVisualStyleBackColor = true;
             // 
             // button_AutoDownload
             // 
-            button_AutoDownload.Enabled = false;
-            button_AutoDownload.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_AutoDownload.Location = new Point(591, 976);
+            resources.ApplyResources(button_AutoDownload, "button_AutoDownload");
             button_AutoDownload.Name = "button_AutoDownload";
-            button_AutoDownload.Size = new Size(183, 55);
-            button_AutoDownload.TabIndex = 32;
-            button_AutoDownload.Text = "自动下载";
+            toolTip.SetToolTip(button_AutoDownload, resources.GetString("button_AutoDownload.ToolTip"));
             button_AutoDownload.UseVisualStyleBackColor = true;
             button_AutoDownload.Click += button_AutoDownload_Click;
             // 
             // button_Help_ArchivePlus
             // 
-            button_Help_ArchivePlus.Location = new Point(488, 846);
+            resources.ApplyResources(button_Help_ArchivePlus, "button_Help_ArchivePlus");
             button_Help_ArchivePlus.Name = "button_Help_ArchivePlus";
-            button_Help_ArchivePlus.Size = new Size(28, 29);
-            button_Help_ArchivePlus.TabIndex = 31;
-            button_Help_ArchivePlus.Text = "?";
+            toolTip.SetToolTip(button_Help_ArchivePlus, resources.GetString("button_Help_ArchivePlus.ToolTip"));
             button_Help_ArchivePlus.UseVisualStyleBackColor = true;
             button_Help_ArchivePlus.Click += button_Help_ArchivePlus_Click;
             // 
             // checkBox_ArchivePlus
             // 
-            checkBox_ArchivePlus.AutoSize = true;
-            checkBox_ArchivePlus.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(checkBox_ArchivePlus, "checkBox_ArchivePlus");
             checkBox_ArchivePlus.ForeColor = Color.FromArgb(128, 64, 0);
-            checkBox_ArchivePlus.Location = new Point(298, 839);
             checkBox_ArchivePlus.Name = "checkBox_ArchivePlus";
-            checkBox_ArchivePlus.Size = new Size(196, 40);
-            checkBox_ArchivePlus.TabIndex = 30;
-            checkBox_ArchivePlus.Text = "archive 增强";
+            toolTip.SetToolTip(checkBox_ArchivePlus, resources.GetString("checkBox_ArchivePlus.ToolTip"));
             checkBox_ArchivePlus.UseVisualStyleBackColor = true;
             checkBox_ArchivePlus.CheckedChanged += checkBox_ArchivePlus_CheckedChanged;
             // 
             // checkBox_UseArchive
             // 
-            checkBox_UseArchive.AutoSize = true;
-            checkBox_UseArchive.Font = new Font("微软雅黑", 16.2F);
-            checkBox_UseArchive.Location = new Point(12, 839);
+            resources.ApplyResources(checkBox_UseArchive, "checkBox_UseArchive");
             checkBox_UseArchive.Name = "checkBox_UseArchive";
-            checkBox_UseArchive.Size = new Size(280, 40);
-            checkBox_UseArchive.TabIndex = 29;
-            checkBox_UseArchive.Text = "自动黑名单 archive";
+            toolTip.SetToolTip(checkBox_UseArchive, resources.GetString("checkBox_UseArchive.ToolTip"));
             checkBox_UseArchive.UseVisualStyleBackColor = true;
             // 
             // checkBox_UseCookies
             // 
-            checkBox_UseCookies.AutoSize = true;
-            checkBox_UseCookies.Font = new Font("微软雅黑", 16.2F);
-            checkBox_UseCookies.Location = new Point(167, 885);
+            resources.ApplyResources(checkBox_UseCookies, "checkBox_UseCookies");
             checkBox_UseCookies.Name = "checkBox_UseCookies";
-            checkBox_UseCookies.Size = new Size(528, 40);
-            checkBox_UseCookies.TabIndex = 28;
-            checkBox_UseCookies.Text = "使用 cookies.txt 内的数据作为 cookies";
-            toolTip.SetToolTip(checkBox_UseCookies, "这会将 cookies.txt 的数据用于 cookies 来访问浏览器\r\n用于下载一些需要访问限制的内容（例如B站大会员内容）\r\ncookies.txt 位于 ./yt-dlp/cookies.txt\r\n数据建议使用 Cookie-Editor 浏览器扩展导出\r\n仅支持 Netscape 格式！！！");
+            toolTip.SetToolTip(checkBox_UseCookies, resources.GetString("checkBox_UseCookies.ToolTip"));
             checkBox_UseCookies.UseVisualStyleBackColor = true;
             // 
             // button_Update
             // 
-            button_Update.Location = new Point(736, 906);
+            resources.ApplyResources(button_Update, "button_Update");
             button_Update.Name = "button_Update";
-            button_Update.Size = new Size(194, 29);
-            button_Update.TabIndex = 22;
-            button_Update.Text = "检查更新 yt-dlp";
+            toolTip.SetToolTip(button_Update, resources.GetString("button_Update.ToolTip"));
             button_Update.UseVisualStyleBackColor = true;
             button_Update.Click += button_Update_Click;
             // 
             // checkBoxNoPlaylest
             // 
-            checkBoxNoPlaylest.AutoSize = true;
-            checkBoxNoPlaylest.Font = new Font("微软雅黑", 16.2F);
-            checkBoxNoPlaylest.Location = new Point(12, 119);
+            resources.ApplyResources(checkBoxNoPlaylest, "checkBoxNoPlaylest");
             checkBoxNoPlaylest.Name = "checkBoxNoPlaylest";
-            checkBoxNoPlaylest.Size = new Size(233, 40);
-            checkBoxNoPlaylest.TabIndex = 21;
-            checkBoxNoPlaylest.Text = "不下载播放列表";
-            toolTip.SetToolTip(checkBoxNoPlaylest, "当URL同时指向视频和播放列表时，只下载单个视频。\r\n例如YouTube的视频链接通常也在播放列表里，这个选项可以只下载当前视频。");
+            toolTip.SetToolTip(checkBoxNoPlaylest, resources.GetString("checkBoxNoPlaylest.ToolTip"));
             checkBoxNoPlaylest.UseVisualStyleBackColor = true;
             // 
             // checkBox_ChineseTip
             // 
-            checkBox_ChineseTip.AutoSize = true;
-            checkBox_ChineseTip.Checked = true;
-            checkBox_ChineseTip.CheckState = CheckState.Checked;
-            checkBox_ChineseTip.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ChineseTip.Location = new Point(12, 885);
+            resources.ApplyResources(checkBox_ChineseTip, "checkBox_ChineseTip");
             checkBox_ChineseTip.Name = "checkBox_ChineseTip";
-            checkBox_ChineseTip.Size = new Size(149, 40);
-            checkBox_ChineseTip.TabIndex = 20;
-            checkBox_ChineseTip.Text = "提示汉化";
+            toolTip.SetToolTip(checkBox_ChineseTip, resources.GetString("checkBox_ChineseTip.ToolTip"));
             checkBox_ChineseTip.UseVisualStyleBackColor = true;
             // 
             // checkBox_ReadOnClipboard
             // 
-            checkBox_ReadOnClipboard.AutoSize = true;
-            checkBox_ReadOnClipboard.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ReadOnClipboard.Location = new Point(434, 931);
+            resources.ApplyResources(checkBox_ReadOnClipboard, "checkBox_ReadOnClipboard");
             checkBox_ReadOnClipboard.Name = "checkBox_ReadOnClipboard";
-            checkBox_ReadOnClipboard.Size = new Size(289, 40);
-            checkBox_ReadOnClipboard.TabIndex = 19;
-            checkBox_ReadOnClipboard.Text = "使用粘贴板上的网址";
+            toolTip.SetToolTip(checkBox_ReadOnClipboard, resources.GetString("checkBox_ReadOnClipboard.ToolTip"));
             checkBox_ReadOnClipboard.UseVisualStyleBackColor = true;
             checkBox_ReadOnClipboard.CheckedChanged += checkBox_ReadOnClipboard_CheckedChanged;
             // 
             // checkBox_ClearURLData
             // 
-            checkBox_ClearURLData.AutoSize = true;
+            resources.ApplyResources(checkBox_ClearURLData, "checkBox_ClearURLData");
             checkBox_ClearURLData.Checked = true;
             checkBox_ClearURLData.CheckState = CheckState.Checked;
-            checkBox_ClearURLData.Font = new Font("微软雅黑", 16.2F);
-            checkBox_ClearURLData.Location = new Point(167, 931);
             checkBox_ClearURLData.Name = "checkBox_ClearURLData";
-            checkBox_ClearURLData.Size = new Size(261, 40);
-            checkBox_ClearURLData.TabIndex = 18;
-            checkBox_ClearURLData.Text = "去除网址数据交互";
+            toolTip.SetToolTip(checkBox_ClearURLData, resources.GetString("checkBox_ClearURLData.ToolTip"));
             checkBox_ClearURLData.UseVisualStyleBackColor = true;
             // 
             // comboBox_URL
             // 
-            comboBox_URL.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(comboBox_URL, "comboBox_URL");
             comboBox_URL.FormattingEnabled = true;
-            comboBox_URL.Items.AddRange(new object[] { "https://www.bilibili.com/video/BV1uT4y1P7CX", "https://www.bilibili.com/video/BV1hxd8BVEFi", "https://www.youtube.com/watch?v=dQw4w9WgXcQ" });
-            comboBox_URL.Location = new Point(189, 12);
+            comboBox_URL.Items.AddRange(new object[] { resources.GetString("comboBox_URL.Items"), resources.GetString("comboBox_URL.Items1"), resources.GetString("comboBox_URL.Items2") });
             comboBox_URL.Name = "comboBox_URL";
-            comboBox_URL.Size = new Size(588, 43);
-            comboBox_URL.TabIndex = 17;
+            toolTip.SetToolTip(comboBox_URL, resources.GetString("comboBox_URL.ToolTip"));
             comboBox_URL.TextChanged += comboBox_URL_TextChanged;
             // 
             // checkBox_OpenF
             // 
-            checkBox_OpenF.AutoSize = true;
+            resources.ApplyResources(checkBox_OpenF, "checkBox_OpenF");
             checkBox_OpenF.Checked = true;
             checkBox_OpenF.CheckState = CheckState.Checked;
-            checkBox_OpenF.Font = new Font("微软雅黑", 16.2F);
-            checkBox_OpenF.Location = new Point(12, 931);
             checkBox_OpenF.Name = "checkBox_OpenF";
-            checkBox_OpenF.Size = new Size(149, 40);
-            checkBox_OpenF.TabIndex = 16;
-            checkBox_OpenF.Text = "打开目录";
+            toolTip.SetToolTip(checkBox_OpenF, resources.GetString("checkBox_OpenF.ToolTip"));
             checkBox_OpenF.UseVisualStyleBackColor = true;
             // 
             // button_Stop
             // 
+            resources.ApplyResources(button_Stop, "button_Stop");
             button_Stop.BackColor = Color.Red;
-            button_Stop.Location = new Point(736, 941);
             button_Stop.Name = "button_Stop";
-            button_Stop.Size = new Size(94, 29);
-            button_Stop.TabIndex = 15;
-            button_Stop.Text = "停止";
+            toolTip.SetToolTip(button_Stop, resources.GetString("button_Stop.ToolTip"));
             button_Stop.UseVisualStyleBackColor = false;
             button_Stop.Click += button_Stop_Click;
             // 
             // label2
             // 
-            label2.AutoSize = true;
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.Gray;
-            label2.Location = new Point(10, 96);
             label2.Name = "label2";
-            label2.Size = new Size(189, 20);
-            label2.TabIndex = 14;
-            label2.Text = "（此参数不支持相对路径）";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // button_Text
             // 
-            button_Text.Location = new Point(836, 941);
+            resources.ApplyResources(button_Text, "button_Text");
             button_Text.Name = "button_Text";
-            button_Text.Size = new Size(94, 29);
-            button_Text.TabIndex = 13;
-            button_Text.Text = "小提示";
+            toolTip.SetToolTip(button_Text, resources.GetString("button_Text.ToolTip"));
             button_Text.UseVisualStyleBackColor = true;
             button_Text.Click += button_Text_Click;
             // 
-            // textBox_Paths
-            // 
-            textBox_Paths.Font = new Font("微软雅黑", 16.2F);
-            textBox_Paths.Location = new Point(261, 61);
-            textBox_Paths.Name = "textBox_Paths";
-            textBox_Paths.Size = new Size(516, 43);
-            textBox_Paths.TabIndex = 12;
-            // 
             // checkBox_SetPaths
             // 
-            checkBox_SetPaths.AutoSize = true;
+            resources.ApplyResources(checkBox_SetPaths, "checkBox_SetPaths");
             checkBox_SetPaths.Checked = true;
             checkBox_SetPaths.CheckState = CheckState.Checked;
-            checkBox_SetPaths.Font = new Font("微软雅黑", 16.2F);
-            checkBox_SetPaths.Location = new Point(10, 61);
             checkBox_SetPaths.Name = "checkBox_SetPaths";
-            checkBox_SetPaths.Size = new Size(261, 40);
-            checkBox_SetPaths.TabIndex = 11;
-            checkBox_SetPaths.Text = "指定下载保存路径";
+            toolTip.SetToolTip(checkBox_SetPaths, resources.GetString("checkBox_SetPaths.ToolTip"));
             checkBox_SetPaths.UseVisualStyleBackColor = true;
             checkBox_SetPaths.CheckedChanged += checkBox_SetPaths_CheckedChanged;
             // 
             // button_DoAnalysis
             // 
-            button_DoAnalysis.Font = new Font("微软雅黑", 16.2F);
+            resources.ApplyResources(button_DoAnalysis, "button_DoAnalysis");
             button_DoAnalysis.ForeColor = SystemColors.ControlText;
-            button_DoAnalysis.Location = new Point(783, 8);
             button_DoAnalysis.Name = "button_DoAnalysis";
-            button_DoAnalysis.Size = new Size(150, 49);
-            button_DoAnalysis.TabIndex = 10;
-            button_DoAnalysis.Text = "解析";
+            toolTip.SetToolTip(button_DoAnalysis, resources.GetString("button_DoAnalysis.ToolTip"));
             button_DoAnalysis.UseVisualStyleBackColor = true;
             button_DoAnalysis.Click += button_DoAnalysis_Click;
             // 
             // panel1
             // 
-            panel1.Location = new Point(1470, 637);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
-            panel1.Size = new Size(8, 8);
-            panel1.TabIndex = 9;
+            toolTip.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
             // 
             // button__DoCopyCommand
             // 
-            button__DoCopyCommand.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button__DoCopyCommand.Location = new Point(780, 976);
+            resources.ApplyResources(button__DoCopyCommand, "button__DoCopyCommand");
             button__DoCopyCommand.Name = "button__DoCopyCommand";
-            button__DoCopyCommand.Size = new Size(150, 55);
-            button__DoCopyCommand.TabIndex = 8;
-            button__DoCopyCommand.Text = "复制命令";
+            toolTip.SetToolTip(button__DoCopyCommand, resources.GetString("button__DoCopyCommand.ToolTip"));
             button__DoCopyCommand.UseVisualStyleBackColor = true;
             button__DoCopyCommand.Click += button_DoCopyCommand_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("微软雅黑", 16.2F);
-            label1.Location = new Point(10, 15);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(183, 36);
-            label1.TabIndex = 7;
-            label1.Text = "视频网站网址";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
             // button_DoDownload
             // 
-            button_DoDownload.Font = new Font("微软雅黑", 16.2F);
-            button_DoDownload.Location = new Point(12, 976);
+            resources.ApplyResources(button_DoDownload, "button_DoDownload");
             button_DoDownload.Name = "button_DoDownload";
-            button_DoDownload.Size = new Size(573, 55);
-            button_DoDownload.TabIndex = 5;
-            button_DoDownload.Text = "执行下载命令";
+            toolTip.SetToolTip(button_DoDownload, resources.GetString("button_DoDownload.ToolTip"));
             button_DoDownload.UseVisualStyleBackColor = true;
             button_DoDownload.Click += button_DoDownload_Click;
             // 
             // richTextBox
             // 
-            richTextBox.Dock = DockStyle.Fill;
-            richTextBox.Font = new Font("Microsoft YaHei UI", 12F);
-            richTextBox.Location = new Point(0, 0);
+            resources.ApplyResources(richTextBox, "richTextBox");
             richTextBox.Name = "richTextBox";
             richTextBox.ReadOnly = true;
-            richTextBox.Size = new Size(889, 1039);
-            richTextBox.TabIndex = 0;
-            richTextBox.Text = "";
+            toolTip.SetToolTip(richTextBox, resources.GetString("richTextBox.ToolTip"));
             // 
             // toolTip
             // 
@@ -3015,27 +2189,14 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
-            // checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer
-            // 
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.AutoSize = true;
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Font = new Font("微软雅黑", 16.2F);
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Location = new Point(6, 170);
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name = "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer";
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Size = new Size(503, 40);
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.TabIndex = 45;
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Text = "嵌入视频播放器而非封面（暂仅B站）";
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.UseVisualStyleBackColor = true;
-            // 
             // YtDlpTool
             // 
+            resources.ApplyResources(this, "$this");
             AllowDrop = true;
-            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1833, 1039);
             Controls.Add(splitContainer1);
             Name = "YtDlpTool";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Yt-Dlp 工具";
+            toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             Load += YtDlpTool_Load;
             DragDrop += YtDlpTool_DragDrop;
             DragEnter += YtDlpTool_DragEnter;
