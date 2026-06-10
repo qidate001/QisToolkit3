@@ -878,9 +878,9 @@ namespace QisToolkit3.Forms
             if (checkBox_DownloadSections_Start.Checked)
             {
                 if (checkBox_DownloadSections_End.Checked)
-                    command += $"--download-sections \"*{comboBox_DownloadSections_Start.Text}-{comboBox_DownloadSections_End.Text}\"";
+                    command += $" --download-sections \"*{comboBox_DownloadSections_Start.Text}-{comboBox_DownloadSections_End.Text}\"";
                 else
-                    command += $"--download-sections \"*{comboBox_DownloadSections_Start.Text}-inf\"";
+                    command += $" --download-sections \"*{comboBox_DownloadSections_Start.Text}-inf\"";
             }
 
             // 后期处理器参数传递
