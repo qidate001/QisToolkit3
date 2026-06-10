@@ -874,6 +874,15 @@ namespace QisToolkit3.Forms
 
             #endregion
 
+            // 指定下载片段
+            if (checkBox_DownloadSections_Start.Checked)
+            {
+                if (checkBox_DownloadSections_End.Checked)
+                    command += $"--download-sections \"*{comboBox_DownloadSections_Start.Text}-{comboBox_DownloadSections_End.Text}\"";
+                else
+                    command += $"--download-sections \"*{comboBox_DownloadSections_Start.Text}-inf\"";
+            }
+
             // 后期处理器参数传递
             if (checkBox_PostProcessorArgs.Checked)
                 command += $" --ppa {comboBox_PostProcessorArgs.Text}";

@@ -124,6 +124,187 @@
   <data name="textBox_Paths.Size" type="System.Drawing.Size, System.Drawing">
     <value>606, 43</value>
   </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>757, 839</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 40</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 839</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 40</value>
+  </data>
+  <data name="checkBox_IdNameMapper.Text" xml:space="preserve">
+    <value>IDNameMap</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Quick actions</value>
+  </data>
+  <data name="button_SetMatchFilters.Text" xml:space="preserve">
+    <value>Edit adv. filters</value>
+  </data>
+  <data name="textBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
+    <value>612, 118</value>
+  </data>
+  <data name="textBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 43</value>
+  </data>
+  <data name="checkBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 119</value>
+  </data>
+  <data name="checkBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 40</value>
+  </data>
+  <data name="checkBox_playlist_items.Text" xml:space="preserve">
+    <value>Download specific playlist</value>
+  </data>
+  <data name="checkBox_playlist_items.ToolTip" xml:space="preserve">
+    <value>Similar to Python slice syntax, using English commas as separators.
+
+Specify which items to download from the playlist.
+Supports flexible range syntax: [START]:[STOP][:STEP],
+Negative indices count from the end. Examples:
+• 1,3,5: download videos 1, 3, and 5
+• 1:5: download videos 1 through 5
+• -5:: download the last 5 videos
+• 1:10:2: download videos 1,3,5,7,9 (step 2)
+• 10:1:-1: download videos 10 through 1 in reverse order</value>
+  </data>
+  <data name="button_AutoDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>425, 976</value>
+  </data>
+  <data name="button_AutoDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 55</value>
+  </data>
+  <data name="button_AutoDownload.Text" xml:space="preserve">
+    <value>Auto download</value>
+  </data>
+  <data name="button_Help_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 845</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 839</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 40</value>
+  </data>
+  <data name="checkBox_ArchivePlus.Text" xml:space="preserve">
+    <value>Archive Plus</value>
+  </data>
+  <data name="checkBox_UseArchive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 40</value>
+  </data>
+  <data name="checkBox_UseArchive.Text" xml:space="preserve">
+    <value>Auto blacklist archive</value>
+  </data>
+  <data name="checkBox_UseCookies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 885</value>
+  </data>
+  <data name="checkBox_UseCookies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 40</value>
+  </data>
+  <data name="checkBox_UseCookies.Text" xml:space="preserve">
+    <value>Use cookies from cookies.txt as cookies</value>
+  </data>
+  <data name="button_Update.Text" xml:space="preserve">
+    <value>Check yt-dlp update</value>
+  </data>
+  <data name="checkBoxNoPlaylest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 40</value>
+  </data>
+  <data name="checkBoxNoPlaylest.Text" xml:space="preserve">
+    <value>Ignore playlist</value>
+  </data>
+  <data name="checkBoxNoPlaylest.ToolTip" xml:space="preserve">
+    <value>When a URL points to both a video and a playlist, download only the single video.
+For example, a YouTube video link is often also inside a playlist. This option allows downloading only the current video.</value>
+  </data>
+  <data name="checkBox_ChineseTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 40</value>
+  </data>
+  <data name="checkBox_ChineseTip.Text" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>510, 931</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 40</value>
+  </data>
+  <data name="checkBox_ReadOnClipboard.Text" xml:space="preserve">
+    <value>Paste URL</value>
+  </data>
+  <data name="checkBox_ClearURLData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 40</value>
+  </data>
+  <data name="checkBox_ClearURLData.Text" xml:space="preserve">
+    <value>Strip URL data tracking</value>
+  </data>
+  <data name="comboBox_URL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 12</value>
+  </data>
+  <data name="comboBox_URL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>611, 43</value>
+  </data>
+  <data name="checkBox_OpenF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 40</value>
+  </data>
+  <data name="checkBox_OpenF.Text" xml:space="preserve">
+    <value>Open dir</value>
+  </data>
+  <data name="button_Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 100</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 20</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(Relative paths not supported)</value>
+  </data>
+  <data name="button_Text.Text" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="checkBox_SetPaths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 40</value>
+  </data>
+  <data name="checkBox_SetPaths.Text" xml:space="preserve">
+    <value>Save path</value>
+  </data>
+  <data name="button_DoAnalysis.Text" xml:space="preserve">
+    <value>Parse</value>
+  </data>
+  <data name="button__DoCopyCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>685, 976</value>
+  </data>
+  <data name="button__DoCopyCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 55</value>
+  </data>
+  <data name="button__DoCopyCommand.Text" xml:space="preserve">
+    <value>Copy command</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 36</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Video URL</value>
+  </data>
+  <data name="button_DoDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 55</value>
+  </data>
+  <data name="button_DoDownload.Text" xml:space="preserve">
+    <value>Run download command</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Basic para</value>
+  </data>
   <data name="checkBox_Quiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 372</value>
   </data>
@@ -132,6 +313,9 @@
   </data>
   <data name="checkBox_Quiet.Text" xml:space="preserve">
     <value>Quiet mode</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Network &amp;&amp; Retry Options</value>
   </data>
   <data name="checkBox_KeepFragments.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 321</value>
@@ -341,9 +525,6 @@ Notes:
 · Increases memory and CPU usage
 Recommended value: 5-10</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Network &amp;&amp; Retry Options</value>
-  </data>
   <data name="checkBox_Verbose.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 40</value>
   </data>
@@ -358,6 +539,9 @@ Recommended value: 5-10</value>
   </data>
   <data name="checkBox_MatchFilters.Text" xml:space="preserve">
     <value>Enable advanced download filters</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Basic download filters &amp;&amp; limits</value>
   </data>
   <data name="comboBox_AgeLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 262</value>
@@ -435,12 +619,6 @@ SIZE can use K (KB), M (MB), G (GB).</value>
     <value>Only download files larger than the specified size.
 SIZE can use K (KB), M (MB), G (GB).</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Basic download filters &amp;&amp; limits</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Basic para</value>
-  </data>
   <data name="checkBox_Path_InfoJson.Text" xml:space="preserve">
     <value>InfoJson</value>
   </data>
@@ -479,24 +657,6 @@ SIZE can use K (KB), M (MB), G (GB).</value>
 # del "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].danmaku.xml"
 </value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>757, 839</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 40</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Reload</value>
-  </data>
-  <data name="checkBox_IdNameMapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 839</value>
-  </data>
-  <data name="checkBox_IdNameMapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 40</value>
-  </data>
-  <data name="checkBox_IdNameMapper.Text" xml:space="preserve">
-    <value>IDNameMap</value>
-  </data>
   <data name="button_Option_ReSet.Text" xml:space="preserve">
     <value>Reset</value>
   </data>
@@ -523,166 +683,6 @@ SIZE can use K (KB), M (MB), G (GB).</value>
   </data>
   <data name="button_OpenArchiveFile.Text" xml:space="preserve">
     <value>Open Archive file</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Quick actions</value>
-  </data>
-  <data name="button_SetMatchFilters.Text" xml:space="preserve">
-    <value>Edit adv. filters</value>
-  </data>
-  <data name="textBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
-    <value>612, 118</value>
-  </data>
-  <data name="textBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 43</value>
-  </data>
-  <data name="checkBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 119</value>
-  </data>
-  <data name="checkBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 40</value>
-  </data>
-  <data name="checkBox_playlist_items.Text" xml:space="preserve">
-    <value>Download specific playlist</value>
-  </data>
-  <data name="checkBox_playlist_items.ToolTip" xml:space="preserve">
-    <value>Similar to Python slice syntax, using English commas as separators.
-
-Specify which items to download from the playlist.
-Supports flexible range syntax: [START]:[STOP][:STEP],
-Negative indices count from the end. Examples:
-• 1,3,5: download videos 1, 3, and 5
-• 1:5: download videos 1 through 5
-• -5:: download the last 5 videos
-• 1:10:2: download videos 1,3,5,7,9 (step 2)
-• 10:1:-1: download videos 10 through 1 in reverse order</value>
-  </data>
-  <data name="button_AutoDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>425, 976</value>
-  </data>
-  <data name="button_AutoDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 55</value>
-  </data>
-  <data name="button_AutoDownload.Text" xml:space="preserve">
-    <value>Auto download</value>
-  </data>
-  <data name="button_Help_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 845</value>
-  </data>
-  <data name="checkBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 839</value>
-  </data>
-  <data name="checkBox_ArchivePlus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 40</value>
-  </data>
-  <data name="checkBox_ArchivePlus.Text" xml:space="preserve">
-    <value>Archive Plus</value>
-  </data>
-  <data name="checkBox_UseArchive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 40</value>
-  </data>
-  <data name="checkBox_UseArchive.Text" xml:space="preserve">
-    <value>Auto blacklist archive</value>
-  </data>
-  <data name="checkBox_UseCookies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 885</value>
-  </data>
-  <data name="checkBox_UseCookies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 40</value>
-  </data>
-  <data name="checkBox_UseCookies.Text" xml:space="preserve">
-    <value>Use cookies from cookies.txt as cookies</value>
-  </data>
-  <data name="button_Update.Text" xml:space="preserve">
-    <value>Check yt-dlp update</value>
-  </data>
-  <data name="checkBoxNoPlaylest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 40</value>
-  </data>
-  <data name="checkBoxNoPlaylest.Text" xml:space="preserve">
-    <value>Ignore playlist</value>
-  </data>
-  <data name="checkBoxNoPlaylest.ToolTip" xml:space="preserve">
-    <value>When a URL points to both a video and a playlist, download only the single video.
-For example, a YouTube video link is often also inside a playlist. This option allows downloading only the current video.</value>
-  </data>
-  <data name="checkBox_ChineseTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 40</value>
-  </data>
-  <data name="checkBox_ChineseTip.Text" xml:space="preserve">
-    <value>Chinese</value>
-  </data>
-  <data name="checkBox_ReadOnClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 931</value>
-  </data>
-  <data name="checkBox_ReadOnClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 40</value>
-  </data>
-  <data name="checkBox_ReadOnClipboard.Text" xml:space="preserve">
-    <value>Paste URL</value>
-  </data>
-  <data name="checkBox_ClearURLData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 40</value>
-  </data>
-  <data name="checkBox_ClearURLData.Text" xml:space="preserve">
-    <value>Strip URL data tracking</value>
-  </data>
-  <data name="comboBox_URL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 12</value>
-  </data>
-  <data name="comboBox_URL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 43</value>
-  </data>
-  <data name="checkBox_OpenF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 40</value>
-  </data>
-  <data name="checkBox_OpenF.Text" xml:space="preserve">
-    <value>Open dir</value>
-  </data>
-  <data name="button_Stop.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 100</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 20</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>(Relative paths not supported)</value>
-  </data>
-  <data name="button_Text.Text" xml:space="preserve">
-    <value>Tip</value>
-  </data>
-  <data name="checkBox_SetPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 40</value>
-  </data>
-  <data name="checkBox_SetPaths.Text" xml:space="preserve">
-    <value>Save path</value>
-  </data>
-  <data name="button_DoAnalysis.Text" xml:space="preserve">
-    <value>Parse</value>
-  </data>
-  <data name="button__DoCopyCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>685, 976</value>
-  </data>
-  <data name="button__DoCopyCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 55</value>
-  </data>
-  <data name="button__DoCopyCommand.Text" xml:space="preserve">
-    <value>Copy command</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 36</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Video URL</value>
-  </data>
-  <data name="button_DoDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>411, 55</value>
-  </data>
-  <data name="button_DoDownload.Text" xml:space="preserve">
-    <value>Run download command</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Yt-Dlp Tool</value>
