@@ -18,7 +18,6 @@ namespace QisToolkit3.Forms
     {
         private Process process;
         private RichTextBox outputBox;
-        private bool IsSetCrf = false;
         private bool isUpdating = false;
 
 
@@ -36,6 +35,7 @@ namespace QisToolkit3.Forms
             comboBox_Input.Text = @$"{actualDirectory}\yt-dlp\input.mp3";
             comboBox_Output.Text = @$"{actualDirectory}\yt-dlp\output.mp3";
             comboBox_y_or_n_or_null.SelectedIndex = 0;
+            comboBox_preset.SelectedIndex = 1;
 
             // 初始化
             Qi.FormInitDo(this.Text);
@@ -111,11 +111,12 @@ namespace QisToolkit3.Forms
                 }
             }
 
-
+            // 流禁用
             if (checkBox_vn.Checked) command += "-vn ";
             if (checkBox_an.Checked) command += "-an ";
             if (checkBox_sn.Checked) command += "-sn ";
-            if (checkBox_crf.Checked) command += $"-crf {trackBar_crf.Value} ";
+
+            #region 视频重编码
 
             if (checkBox_c_v.Checked)
             {
@@ -123,13 +124,31 @@ namespace QisToolkit3.Forms
                 {
                     "H.264" => "-c:v libx264 ",
                     "H.265" => "-c:v libx265 ",
-                    "复制" => "-c:v copy ",
-                    _ => "-c:v {comboBox_c_v.Text} ",
+                    "VP9" => "-c:v libvpx-vp9 ",
+                    "AV1" => "-c:v libaom-av1 ",
+                    _ => $"-c:v {comboBox_c_v.Text} ",
                 };
             }
+
+            // 编码速度预设 (-preset) - 仅 libx264/libx265
+            if (checkBox_preset.Checked)
+            {
+                command += comboBox_preset.Text switch
+                {
+                    "极快" => "-preset ultrafast ",
+                    "快速" => "-preset fast ",
+                    "中等" => "-preset medium ",
+                    "慢速" => "-preset slow ",
+                    "极慢" => "-preset veryslow ",
+                    _ => "-preset medium ",
+                };
+            }
+
             if (checkBox_b_v.Checked) command += $"-b:v {comboBox_b_v.Text} ";
             if (checkBox_r.Checked) command += $"-r {comboBox_r.Text} ";
             if (checkBox_s.Checked) command += $"-s {comboBox_s.Text} ";
+            if (checkBox_crf.Checked) command += $"-crf {trackBar_crf.Value} ";
+            #endregion
 
             if (checkBox_c_a.Checked)
             {
@@ -276,48 +295,17 @@ namespace QisToolkit3.Forms
             richTextBox.Text += "\n已终止进程。";
         }
 
-        private void checkBox_crf_CheckedChanged(object sender, EventArgs e)
-        {
-            trackBar_crf.Enabled = checkBox_crf.Checked;
-            comboBox_crf.Enabled = checkBox_crf.Checked;
-        }
-
-        private void trackBar_crf_Scroll(object sender, EventArgs e)
-        {
-            if (IsSetCrf) return;
-
-            IsSetCrf = true;
-            comboBox_crf.Text = trackBar_crf.Value.ToString();
-            IsSetCrf = false;
-        }
-
-        private void comboBox_crf_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (IsSetCrf) return;
-
-            IsSetCrf = true;
-            if (comboBox_crf.Text == "极佳") comboBox_crf.Text = "18";
-            else if (comboBox_crf.Text == "优秀") comboBox_crf.Text = "21";
-            else if (comboBox_crf.Text == "良好") comboBox_crf.Text = "23";
-            else if (comboBox_crf.Text == "一般") comboBox_crf.Text = "25";
-            else if (comboBox_crf.Text == "较差") comboBox_crf.Text = "28";
-
-            int crf = StrToInt(comboBox_crf.Text);
-            if (crf < trackBar_crf.Minimum || crf > trackBar_crf.Maximum)
-            {
-                crf = trackBar_crf.Minimum;
-                comboBox_crf.Text = trackBar_crf.Minimum.ToString();
-            }
-
-            trackBar_crf.Value = crf;
-            IsSetCrf = false;
-        }
-
         private void checkBox_c_v_CheckedChanged(object sender, EventArgs e) =>
             comboBox_c_v.Enabled = checkBox_c_v.Checked;
 
-        private void checkBox_b_v_CheckedChanged(object sender, EventArgs e) =>
+        private void checkBox_b_v_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isSettingCrf) return;
+
             comboBox_b_v.Enabled = checkBox_b_v.Checked;
+            checkBox_crf.Checked = !checkBox_b_v.Checked ? false : false;
+            checkBox_crf.Enabled = !checkBox_b_v.Checked;
+        }
 
         private void checkBox_r_CheckedChanged(object sender, EventArgs e) =>
             comboBox_r.Enabled = checkBox_r.Checked;
@@ -524,6 +512,131 @@ namespace QisToolkit3.Forms
                 checkBox_cd_copy.Checked = false;
             }
         }
+
+        #region CRF
+        private bool isSettingCrf = false;
+
+        private void checkBox_crf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isSettingCrf) return;
+
+            isSettingCrf = true;
+
+            // 启用/禁用控件
+            trackBar_crf.Enabled = checkBox_crf.Checked;
+            comboBox_crf.Enabled = checkBox_crf.Checked;
+
+            // 当勾选 CRF 时，自动禁用固定比特率（互斥）
+            checkBox_b_v.Checked = !checkBox_crf.Checked ? false : false;
+            checkBox_b_v.Enabled = !checkBox_crf.Checked;
+
+            isSettingCrf = false;
+        }
+
+        private void comboBox_crf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isSettingCrf) return;
+
+            isSettingCrf = true;
+
+            string selected = comboBox_crf.Text;
+            int crfValue;
+
+            // 转换预设文字为数值
+            switch (selected)
+            {
+                case "极佳":
+                    crfValue = 18;
+                    break;
+
+                case "优秀":
+                    crfValue = 21;
+                    break;
+
+                case "良好":
+                    crfValue = 23;
+                    break;
+
+                case "一般":
+                    crfValue = 25;
+                    break;
+
+                case "较差":
+                    crfValue = 28;
+                    break;
+
+                default:
+                    // 尝试解析数值
+                    if (!int.TryParse(selected, out crfValue))
+                    {
+                        crfValue = trackBar_crf.Minimum;
+                    }
+                    break;
+            }
+
+            // 限制在有效范围内
+            crfValue = Math.Clamp(crfValue, trackBar_crf.Minimum, trackBar_crf.Maximum);
+
+            // 更新显示和滑块
+            comboBox_crf.Text = crfValue.ToString();
+            trackBar_crf.Value = crfValue;
+
+            isSettingCrf = false;
+        }
+
+        private void trackBar_crf_Scroll(object sender, EventArgs e)
+        {
+            if (isSettingCrf) return;
+
+            isSettingCrf = true;
+
+            int crfValue = trackBar_crf.Value;
+            comboBox_crf.Text = crfValue.ToString();
+
+            isSettingCrf = false;
+        }
+
+        #endregion
+
+        #region Preset
+        private bool isSettingPreset = false;
+
+        private void checkBox_preset_CheckedChanged(object sender, EventArgs e)
+        {
+            // 启用/禁用控件
+            trackBar_preset.Enabled = checkBox_preset.Checked;
+            comboBox_preset.Enabled = checkBox_preset.Checked;
+        }
+
+        private void comboBox_preset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isSettingPreset) return;
+
+            isSettingPreset = true;
+
+            // 限制在有效范围内
+            int presetValue = Math.Clamp(comboBox_preset.SelectedIndex, trackBar_preset.Minimum, trackBar_preset.Maximum);
+
+            // 更新显示和滑块
+            comboBox_preset.Text = presetValue.ToString();
+            trackBar_preset.Value = presetValue;
+
+            isSettingPreset = false;
+        }
+
+        private void trackBar_preset_Scroll(object sender, EventArgs e)
+        {
+            if (isSettingPreset) return;
+
+            isSettingPreset = true;
+
+            comboBox_preset.SelectedIndex = trackBar_preset.Value;
+
+            isSettingPreset = false;
+
+        }
+
+        #endregion
     }
 }
 
