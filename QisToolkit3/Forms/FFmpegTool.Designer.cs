@@ -75,6 +75,11 @@
             comboBox_ac = new ComboBox();
             checkBox_ac = new CheckBox();
             tabPage5 = new TabPage();
+            groupBox2 = new GroupBox();
+            checkBox_cd_copy = new CheckBox();
+            checkBox_ca_copy = new CheckBox();
+            checkBox_cs_copy = new CheckBox();
+            checkBox_cv_copy = new CheckBox();
             checkBox_c_copy = new CheckBox();
             groupBox1 = new GroupBox();
             checkBox_vn = new CheckBox();
@@ -107,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)trackBar_crf).BeginInit();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
+            groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -672,7 +678,7 @@
             // 
             // tabPage5
             // 
-            tabPage5.Controls.Add(checkBox_c_copy);
+            tabPage5.Controls.Add(groupBox2);
             tabPage5.Controls.Add(groupBox1);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
@@ -682,18 +688,82 @@
             tabPage5.Text = "流映射项";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(checkBox_cd_copy);
+            groupBox2.Controls.Add(checkBox_ca_copy);
+            groupBox2.Controls.Add(checkBox_cs_copy);
+            groupBox2.Controls.Add(checkBox_cv_copy);
+            groupBox2.Controls.Add(checkBox_c_copy);
+            groupBox2.Font = new Font("Microsoft YaHei UI", 12F);
+            groupBox2.Location = new Point(201, 6);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(449, 182);
+            groupBox2.TabIndex = 55;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "流复制模式";
+            // 
+            // checkBox_cd_copy
+            // 
+            checkBox_cd_copy.AutoSize = true;
+            checkBox_cd_copy.Enabled = false;
+            checkBox_cd_copy.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_cd_copy.Location = new Point(189, 124);
+            checkBox_cd_copy.Name = "checkBox_cd_copy";
+            checkBox_cd_copy.Size = new Size(177, 40);
+            checkBox_cd_copy.TabIndex = 58;
+            checkBox_cd_copy.Text = "复制数据流";
+            checkBox_cd_copy.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_ca_copy
+            // 
+            checkBox_ca_copy.AutoSize = true;
+            checkBox_ca_copy.Enabled = false;
+            checkBox_ca_copy.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_ca_copy.Location = new Point(6, 124);
+            checkBox_ca_copy.Name = "checkBox_ca_copy";
+            checkBox_ca_copy.Size = new Size(177, 40);
+            checkBox_ca_copy.TabIndex = 56;
+            checkBox_ca_copy.Text = "复制音频流";
+            checkBox_ca_copy.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_cs_copy
+            // 
+            checkBox_cs_copy.AutoSize = true;
+            checkBox_cs_copy.Enabled = false;
+            checkBox_cs_copy.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_cs_copy.Location = new Point(189, 78);
+            checkBox_cs_copy.Name = "checkBox_cs_copy";
+            checkBox_cs_copy.Size = new Size(177, 40);
+            checkBox_cs_copy.TabIndex = 57;
+            checkBox_cs_copy.Text = "复制字幕流";
+            checkBox_cs_copy.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_cv_copy
+            // 
+            checkBox_cv_copy.AutoSize = true;
+            checkBox_cv_copy.Enabled = false;
+            checkBox_cv_copy.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_cv_copy.Location = new Point(6, 78);
+            checkBox_cv_copy.Name = "checkBox_cv_copy";
+            checkBox_cv_copy.Size = new Size(177, 40);
+            checkBox_cv_copy.TabIndex = 55;
+            checkBox_cv_copy.Text = "复制视频流";
+            checkBox_cv_copy.UseVisualStyleBackColor = true;
+            // 
             // checkBox_c_copy
             // 
             checkBox_c_copy.AutoSize = true;
             checkBox_c_copy.Checked = true;
             checkBox_c_copy.CheckState = CheckState.Checked;
             checkBox_c_copy.Font = new Font("Microsoft YaHei UI", 16.2F);
-            checkBox_c_copy.Location = new Point(201, 6);
+            checkBox_c_copy.Location = new Point(6, 32);
             checkBox_c_copy.Name = "checkBox_c_copy";
-            checkBox_c_copy.Size = new Size(177, 40);
+            checkBox_c_copy.Size = new Size(233, 40);
             checkBox_c_copy.TabIndex = 54;
-            checkBox_c_copy.Text = "流拷贝模式";
+            checkBox_c_copy.Text = "完整复制所有流";
             checkBox_c_copy.UseVisualStyleBackColor = true;
+            checkBox_c_copy.CheckedChanged += checkBox_c_copy_CheckedChanged;
             // 
             // groupBox1
             // 
@@ -910,7 +980,8 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             tabPage5.ResumeLayout(false);
-            tabPage5.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -983,5 +1054,10 @@
         private ComboBox comboBox_Input_FileName;
         private ComboBox comboBox_Output_FilePath;
         private ComboBox comboBox_Input_FilePath;
+        private GroupBox groupBox2;
+        private CheckBox checkBox_cd_copy;
+        private CheckBox checkBox_ca_copy;
+        private CheckBox checkBox_cs_copy;
+        private CheckBox checkBox_cv_copy;
     }
 }

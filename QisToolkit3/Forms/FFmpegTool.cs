@@ -172,8 +172,17 @@ namespace QisToolkit3.Forms
             if (checkBox_ac.Checked) command += $"-ac {comboBox_ac.Text} ";
 
 
-            // 流处理
+            // 流复制 完整复制
             if (checkBox_c_copy.Checked) command += $"-c copy ";
+
+            // 选择复制
+            else
+            {
+                if (checkBox_cv_copy.Checked) command += $"-c:v copy ";
+                if (checkBox_ca_copy.Checked) command += $"-c:a copy ";
+                if (checkBox_cs_copy.Checked) command += $"-c:s copy ";
+                if (checkBox_cd_copy.Checked) command += $"-c:d copy ";
+            }
 
             // 输出
             if (!string.IsNullOrWhiteSpace(output))
@@ -498,6 +507,23 @@ namespace QisToolkit3.Forms
         }
 
         #endregion
+
+        private void checkBox_c_copy_CheckedChanged(object sender, EventArgs e)
+        {
+            bool enabled = !checkBox_c_copy.Checked;
+            checkBox_cv_copy.Enabled = enabled;
+            checkBox_ca_copy.Enabled = enabled;
+            checkBox_cs_copy.Enabled = enabled;
+            checkBox_cd_copy.Enabled = enabled;
+
+            if (checkBox_c_copy.Checked)
+            {
+                checkBox_cv_copy.Checked = false;
+                checkBox_ca_copy.Checked = false;
+                checkBox_cs_copy.Checked = false;
+                checkBox_cd_copy.Checked = false;
+            }
+        }
     }
 }
 
