@@ -72,12 +72,20 @@
             checkBox_r = new CheckBox();
             checkBox_b_v = new CheckBox();
             tabPage4 = new TabPage();
+            groupBox4 = new GroupBox();
+            comboBox_af_volume = new ComboBox();
+            checkBox_af_volume = new CheckBox();
+            comboBox_ar = new ComboBox();
+            checkBox_ar = new CheckBox();
+            comboBox_q_a = new ComboBox();
+            checkBox_q_a = new CheckBox();
+            trackBar_q_a = new TrackBar();
             comboBox_c_a = new ComboBox();
             comboBox_b_a = new ComboBox();
             comboBox_ac = new ComboBox();
             checkBox_c_a = new CheckBox();
-            checkBox_b_a = new CheckBox();
             checkBox_ac = new CheckBox();
+            checkBox_b_a = new CheckBox();
             tabPage5 = new TabPage();
             groupBox2 = new GroupBox();
             checkBox_cd_copy = new CheckBox();
@@ -117,6 +125,8 @@
             ((System.ComponentModel.ISupportInitialize)trackBar_preset).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_crf).BeginInit();
             tabPage4.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)trackBar_q_a).BeginInit();
             tabPage5.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -569,8 +579,7 @@
             comboBox_crf.Size = new Size(105, 43);
             comboBox_crf.TabIndex = 28;
             comboBox_crf.Text = "23";
-            comboBox_crf.SelectedIndexChanged += comboBox_crf_SelectedIndexChanged;
-            comboBox_crf.TextChanged += comboBox_crf_SelectedIndexChanged;
+            comboBox_crf.TextChanged += comboBox_crf_TextChanged;
             // 
             // comboBox_b_v
             // 
@@ -646,12 +655,7 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(comboBox_c_a);
-            tabPage4.Controls.Add(comboBox_b_a);
-            tabPage4.Controls.Add(comboBox_ac);
-            tabPage4.Controls.Add(checkBox_c_a);
-            tabPage4.Controls.Add(checkBox_b_a);
-            tabPage4.Controls.Add(checkBox_ac);
+            tabPage4.Controls.Add(groupBox4);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -660,13 +664,120 @@
             tabPage4.Text = "音频选项";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(comboBox_af_volume);
+            groupBox4.Controls.Add(checkBox_af_volume);
+            groupBox4.Controls.Add(comboBox_ar);
+            groupBox4.Controls.Add(checkBox_ar);
+            groupBox4.Controls.Add(comboBox_q_a);
+            groupBox4.Controls.Add(checkBox_q_a);
+            groupBox4.Controls.Add(trackBar_q_a);
+            groupBox4.Controls.Add(comboBox_c_a);
+            groupBox4.Controls.Add(comboBox_b_a);
+            groupBox4.Controls.Add(comboBox_ac);
+            groupBox4.Controls.Add(checkBox_c_a);
+            groupBox4.Controls.Add(checkBox_ac);
+            groupBox4.Controls.Add(checkBox_b_a);
+            groupBox4.Font = new Font("Microsoft YaHei UI", 12F);
+            groupBox4.Location = new Point(6, 6);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(644, 234);
+            groupBox4.TabIndex = 58;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "音频重编码";
+            // 
+            // comboBox_af_volume
+            // 
+            comboBox_af_volume.Enabled = false;
+            comboBox_af_volume.Font = new Font("微软雅黑", 16.2F);
+            comboBox_af_volume.FormattingEnabled = true;
+            comboBox_af_volume.Items.AddRange(new object[] { "1", "2" });
+            comboBox_af_volume.Location = new Point(490, 78);
+            comboBox_af_volume.Name = "comboBox_af_volume";
+            comboBox_af_volume.Size = new Size(148, 43);
+            comboBox_af_volume.TabIndex = 51;
+            comboBox_af_volume.Text = "2";
+            // 
+            // checkBox_af_volume
+            // 
+            checkBox_af_volume.AutoSize = true;
+            checkBox_af_volume.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_af_volume.Location = new Point(369, 80);
+            checkBox_af_volume.Name = "checkBox_af_volume";
+            checkBox_af_volume.Size = new Size(121, 40);
+            checkBox_af_volume.TabIndex = 50;
+            checkBox_af_volume.Text = "增音量";
+            checkBox_af_volume.UseVisualStyleBackColor = true;
+            checkBox_af_volume.CheckedChanged += checkBox_af_volume_CheckedChanged;
+            // 
+            // comboBox_ar
+            // 
+            comboBox_ar.Enabled = false;
+            comboBox_ar.Font = new Font("微软雅黑", 16.2F);
+            comboBox_ar.FormattingEnabled = true;
+            comboBox_ar.Items.AddRange(new object[] { "8000", "16000", "22050", "44100", "48000", "96000" });
+            comboBox_ar.Location = new Point(178, 125);
+            comboBox_ar.Name = "comboBox_ar";
+            comboBox_ar.Size = new Size(185, 43);
+            comboBox_ar.TabIndex = 49;
+            comboBox_ar.Text = "44100";
+            // 
+            // checkBox_ar
+            // 
+            checkBox_ar.AutoSize = true;
+            checkBox_ar.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_ar.Location = new Point(6, 126);
+            checkBox_ar.Name = "checkBox_ar";
+            checkBox_ar.Size = new Size(177, 40);
+            checkBox_ar.TabIndex = 48;
+            checkBox_ar.Text = "音频采样率";
+            checkBox_ar.UseVisualStyleBackColor = true;
+            checkBox_ar.CheckedChanged += checkBox_ar_CheckedChanged;
+            // 
+            // comboBox_q_a
+            // 
+            comboBox_q_a.Enabled = false;
+            comboBox_q_a.Font = new Font("微软雅黑", 16.2F);
+            comboBox_q_a.FormattingEnabled = true;
+            comboBox_q_a.Items.AddRange(new object[] { "最佳", "极佳", "高等", "中等", "还行", "一般", "较差", "很差", "极差", "最差" });
+            comboBox_q_a.Location = new Point(533, 173);
+            comboBox_q_a.Name = "comboBox_q_a";
+            comboBox_q_a.Size = new Size(105, 43);
+            comboBox_q_a.TabIndex = 47;
+            comboBox_q_a.Text = "3";
+            comboBox_q_a.TextChanged += comboBox_q_a_TextChanged;
+            // 
+            // checkBox_q_a
+            // 
+            checkBox_q_a.AutoSize = true;
+            checkBox_q_a.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_q_a.Location = new Point(6, 174);
+            checkBox_q_a.Name = "checkBox_q_a";
+            checkBox_q_a.Size = new Size(209, 40);
+            checkBox_q_a.TabIndex = 44;
+            checkBox_q_a.Text = "MP3音频质量";
+            checkBox_q_a.UseVisualStyleBackColor = true;
+            checkBox_q_a.CheckedChanged += checkBox_q_a_CheckedChanged;
+            // 
+            // trackBar_q_a
+            // 
+            trackBar_q_a.Enabled = false;
+            trackBar_q_a.Location = new Point(206, 174);
+            trackBar_q_a.Maximum = 8;
+            trackBar_q_a.Name = "trackBar_q_a";
+            trackBar_q_a.Size = new Size(321, 56);
+            trackBar_q_a.TabIndex = 46;
+            trackBar_q_a.Value = 2;
+            trackBar_q_a.Scroll += trackBar_q_a_Scroll;
+            // 
             // comboBox_c_a
             // 
             comboBox_c_a.Enabled = false;
             comboBox_c_a.Font = new Font("微软雅黑", 16.2F);
             comboBox_c_a.FormattingEnabled = true;
-            comboBox_c_a.Items.AddRange(new object[] { "MP3编码器", "AAC编码器", "OGG编码器", "FLAC编码器", "OPUS编码器", "AC3编码器", "复制" });
-            comboBox_c_a.Location = new Point(350, 16);
+            comboBox_c_a.Items.AddRange(new object[] { "MP3编码器", "AAC编码器", "OGG编码器", "FLAC编码器", "OPUS编码器", "AC3编码器" });
+            comboBox_c_a.Location = new Point(178, 31);
             comboBox_c_a.Name = "comboBox_c_a";
             comboBox_c_a.Size = new Size(185, 43);
             comboBox_c_a.TabIndex = 39;
@@ -677,8 +788,8 @@
             comboBox_b_a.Enabled = false;
             comboBox_b_a.Font = new Font("微软雅黑", 16.2F);
             comboBox_b_a.FormattingEnabled = true;
-            comboBox_b_a.Items.AddRange(new object[] { "128k", "198k" });
-            comboBox_b_a.Location = new Point(350, 64);
+            comboBox_b_a.Items.AddRange(new object[] { "64k", "96k", "128k", "198k", "256k", "320k" });
+            comboBox_b_a.Location = new Point(178, 79);
             comboBox_b_a.Name = "comboBox_b_a";
             comboBox_b_a.Size = new Size(185, 43);
             comboBox_b_a.TabIndex = 41;
@@ -689,10 +800,10 @@
             comboBox_ac.Enabled = false;
             comboBox_ac.Font = new Font("微软雅黑", 16.2F);
             comboBox_ac.FormattingEnabled = true;
-            comboBox_ac.Items.AddRange(new object[] { "1", "2" });
-            comboBox_ac.Location = new Point(350, 112);
+            comboBox_ac.Items.AddRange(new object[] { "1", "2", "6" });
+            comboBox_ac.Location = new Point(490, 31);
             comboBox_ac.Name = "comboBox_ac";
-            comboBox_ac.Size = new Size(78, 43);
+            comboBox_ac.Size = new Size(148, 43);
             comboBox_ac.TabIndex = 43;
             comboBox_ac.Text = "2";
             // 
@@ -700,7 +811,7 @@
             // 
             checkBox_c_a.AutoSize = true;
             checkBox_c_a.Font = new Font("Microsoft YaHei UI", 16.2F);
-            checkBox_c_a.Location = new Point(178, 17);
+            checkBox_c_a.Location = new Point(6, 32);
             checkBox_c_a.Name = "checkBox_c_a";
             checkBox_c_a.Size = new Size(177, 40);
             checkBox_c_a.TabIndex = 38;
@@ -708,29 +819,30 @@
             checkBox_c_a.UseVisualStyleBackColor = true;
             checkBox_c_a.CheckedChanged += checkBox_c_a_CheckedChanged;
             // 
+            // checkBox_ac
+            // 
+            checkBox_ac.AutoSize = true;
+            checkBox_ac.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox_ac.Location = new Point(369, 31);
+            checkBox_ac.Name = "checkBox_ac";
+            checkBox_ac.Size = new Size(121, 40);
+            checkBox_ac.TabIndex = 42;
+            checkBox_ac.Text = "声道数";
+            toolTip.SetToolTip(checkBox_ac, "1：单声道\r\n2：立体声\r\n6：5.1环绕声");
+            checkBox_ac.UseVisualStyleBackColor = true;
+            checkBox_ac.CheckedChanged += checkBox_ac_CheckedChanged;
+            // 
             // checkBox_b_a
             // 
             checkBox_b_a.AutoSize = true;
             checkBox_b_a.Font = new Font("Microsoft YaHei UI", 16.2F);
-            checkBox_b_a.Location = new Point(178, 65);
+            checkBox_b_a.Location = new Point(6, 80);
             checkBox_b_a.Name = "checkBox_b_a";
             checkBox_b_a.Size = new Size(177, 40);
             checkBox_b_a.TabIndex = 40;
             checkBox_b_a.Text = "音频比特率";
             checkBox_b_a.UseVisualStyleBackColor = true;
             checkBox_b_a.CheckedChanged += checkBox_b_a_CheckedChanged;
-            // 
-            // checkBox_ac
-            // 
-            checkBox_ac.AutoSize = true;
-            checkBox_ac.Font = new Font("Microsoft YaHei UI", 16.2F);
-            checkBox_ac.Location = new Point(234, 113);
-            checkBox_ac.Name = "checkBox_ac";
-            checkBox_ac.Size = new Size(121, 40);
-            checkBox_ac.TabIndex = 42;
-            checkBox_ac.Text = "声道数";
-            checkBox_ac.UseVisualStyleBackColor = true;
-            checkBox_ac.CheckedChanged += checkBox_ac_CheckedChanged;
             // 
             // tabPage5
             // 
@@ -1036,7 +1148,9 @@
             ((System.ComponentModel.ISupportInitialize)trackBar_preset).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_crf).EndInit();
             tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)trackBar_q_a).EndInit();
             tabPage5.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -1121,5 +1235,13 @@
         private CheckBox checkBox_preset;
         private ComboBox comboBox_preset;
         private TrackBar trackBar_preset;
+        private GroupBox groupBox4;
+        private CheckBox checkBox_q_a;
+        private TrackBar trackBar_q_a;
+        private ComboBox comboBox_q_a;
+        private ComboBox comboBox_af_volume;
+        private CheckBox checkBox_af_volume;
+        private ComboBox comboBox_ar;
+        private CheckBox checkBox_ar;
     }
 }
