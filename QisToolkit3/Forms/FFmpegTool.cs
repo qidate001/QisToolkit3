@@ -19,6 +19,7 @@ namespace QisToolkit3.Forms
         private Process process;
         private RichTextBox outputBox;
         private bool IsSetCrf = false;
+        private bool isUpdating = false;
 
 
         private string FFmpegPath = Path.Combine(actualDirectory, @"yt-dlp\ffmpeg.exe");
@@ -74,7 +75,7 @@ namespace QisToolkit3.Forms
             bool AddMainInput =
 
                 // 截取片段相关
-                !EnableClipExtraction || EnableClipExtraction 
+                !EnableClipExtraction || EnableClipExtraction
                     && !(radioButton_ssto_fast.Checked || radioButton_ssto_best.Checked);
 
             // 主要输入
@@ -332,7 +333,9 @@ namespace QisToolkit3.Forms
         private void button_Open_File_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
-                comboBox_Input.Text = openFileDialog.FileNames[0];
+            {
+                comboBox_Input.Text = openFileDialog.FileName;
+            }
         }
 
         private void button_Save_File_Click(object sender, EventArgs e)
@@ -388,6 +391,113 @@ namespace QisToolkit3.Forms
             if (radioButton_ssto_fast.Checked)
                 checkBox_c_copy.Checked = false;
         }
+
+
+
+
+        #region 输入输出 路径处理
+
+        private void UpdateMainInputPath()
+        {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            string filePath = comboBox_Input.Text;
+            comboBox_Input_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+            comboBox_Input_FileType.Text = Path.GetExtension(filePath);
+            comboBox_Input_FilePath.Text = Path.GetDirectoryName(filePath);
+
+            isUpdating = false;
+        }
+
+        private void UpdateInputPath()
+        {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            string filePath = comboBox_Input_FilePath.Text;
+            string fileName = comboBox_Input_FileName.Text;
+            string fileType = comboBox_Input_FileType.Text;
+
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                comboBox_Input.Text = Path.Combine(filePath, fileName + fileType);
+            }
+
+            isUpdating = false;
+        }
+
+        private void UpdateMainOutputPath()
+        {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            string filePath = comboBox_Output.Text;
+            comboBox_Output_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+            comboBox_Output_FileType.Text = Path.GetExtension(filePath);
+            comboBox_Output_FilePath.Text = Path.GetDirectoryName(filePath);
+
+            isUpdating = false;
+        }
+
+        private void UpdateOutputPath()
+        {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            string filePath = comboBox_Output_FilePath.Text;
+            string fileName = comboBox_Output_FileName.Text;
+            string fileType = comboBox_Output_FileType.Text;
+
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                comboBox_Output.Text = Path.Combine(filePath, fileName + fileType);
+            }
+
+            isUpdating = false;
+        }
+
+        private void comboBox_Input_TextChanged(object sender, EventArgs e)
+        {
+            UpdateMainInputPath();
+        }
+
+        private void comboBox_Input_FileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input_FileType_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input_FilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Output_TextChanged(object sender, EventArgs e)
+        {
+            UpdateMainOutputPath();
+        }
+
+        private void comboBox_Output_FileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOutputPath();
+        }
+
+        private void comboBox_Output_FileType_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOutputPath();
+        }
+
+        private void comboBox_Output_FilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOutputPath();
+        }
+
+        #endregion
     }
 }
 

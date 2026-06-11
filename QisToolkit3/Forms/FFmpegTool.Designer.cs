@@ -35,6 +35,15 @@
             button_Main = new Button();
             button_CopyCommand = new Button();
             tabControl1 = new TabControl();
+            tabPage6 = new TabPage();
+            comboBox_Output_FilePath = new ComboBox();
+            comboBox_Input_FilePath = new ComboBox();
+            comboBox_Output_FileName = new ComboBox();
+            comboBox_Input_FileName = new ComboBox();
+            comboBox_Output_FileType = new ComboBox();
+            label4 = new Label();
+            comboBox_Input_FileType = new ComboBox();
+            label3 = new Label();
             tabPage1 = new TabPage();
             groupBox_ssto = new GroupBox();
             radioButton_ssto_best = new RadioButton();
@@ -71,7 +80,6 @@
             checkBox_vn = new CheckBox();
             checkBox_sn = new CheckBox();
             checkBox_an = new CheckBox();
-            tabPage6 = new TabPage();
             button_Save_File = new Button();
             button_Open_File = new Button();
             comboBox_y_or_n_or_null = new ComboBox();
@@ -92,6 +100,7 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage6.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox_ssto.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -135,9 +144,9 @@
             // button1
             // 
             button1.BackColor = Color.Red;
-            button1.Location = new Point(526, 707);
+            button1.Location = new Point(526, 693);
             button1.Name = "button1";
-            button1.Size = new Size(150, 29);
+            button1.Size = new Size(150, 43);
             button1.TabIndex = 53;
             button1.Text = "停止";
             button1.UseVisualStyleBackColor = false;
@@ -166,16 +175,120 @@
             // 
             // tabControl1
             // 
+            tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
             tabControl1.Location = new Point(12, 106);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(664, 581);
             tabControl1.TabIndex = 49;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Controls.Add(comboBox_Output_FilePath);
+            tabPage6.Controls.Add(comboBox_Input_FilePath);
+            tabPage6.Controls.Add(comboBox_Output_FileName);
+            tabPage6.Controls.Add(comboBox_Input_FileName);
+            tabPage6.Controls.Add(comboBox_Output_FileType);
+            tabPage6.Controls.Add(label4);
+            tabPage6.Controls.Add(comboBox_Input_FileType);
+            tabPage6.Controls.Add(label3);
+            tabPage6.Location = new Point(4, 29);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(656, 548);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "输入输出";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_Output_FilePath
+            // 
+            comboBox_Output_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Output_FilePath.FormattingEnabled = true;
+            comboBox_Output_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Output_FilePath.Location = new Point(9, 157);
+            comboBox_Output_FilePath.Name = "comboBox_Output_FilePath";
+            comboBox_Output_FilePath.Size = new Size(644, 43);
+            comboBox_Output_FilePath.TabIndex = 26;
+            comboBox_Output_FilePath.TextChanged += comboBox_Output_FilePath_TextChanged;
+            // 
+            // comboBox_Input_FilePath
+            // 
+            comboBox_Input_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input_FilePath.FormattingEnabled = true;
+            comboBox_Input_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input_FilePath.Location = new Point(6, 58);
+            comboBox_Input_FilePath.Name = "comboBox_Input_FilePath";
+            comboBox_Input_FilePath.Size = new Size(644, 43);
+            comboBox_Input_FilePath.TabIndex = 25;
+            comboBox_Input_FilePath.TextChanged += comboBox_Input_FilePath_TextChanged;
+            // 
+            // comboBox_Output_FileName
+            // 
+            comboBox_Output_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Output_FileName.FormattingEnabled = true;
+            comboBox_Output_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Output_FileName.Location = new Point(148, 108);
+            comboBox_Output_FileName.Name = "comboBox_Output_FileName";
+            comboBox_Output_FileName.Size = new Size(382, 43);
+            comboBox_Output_FileName.TabIndex = 24;
+            comboBox_Output_FileName.TextChanged += comboBox_Output_FileName_TextChanged;
+            // 
+            // comboBox_Input_FileName
+            // 
+            comboBox_Input_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input_FileName.FormattingEnabled = true;
+            comboBox_Input_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input_FileName.Location = new Point(148, 9);
+            comboBox_Input_FileName.Name = "comboBox_Input_FileName";
+            comboBox_Input_FileName.Size = new Size(382, 43);
+            comboBox_Input_FileName.TabIndex = 23;
+            comboBox_Input_FileName.TextChanged += comboBox_Input_FileName_TextChanged;
+            // 
+            // comboBox_Output_FileType
+            // 
+            comboBox_Output_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Output_FileType.FormattingEnabled = true;
+            comboBox_Output_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Output_FileType.Location = new Point(536, 108);
+            comboBox_Output_FileType.Name = "comboBox_Output_FileType";
+            comboBox_Output_FileType.Size = new Size(114, 43);
+            comboBox_Output_FileType.TabIndex = 22;
+            comboBox_Output_FileType.TextChanged += comboBox_Output_FileType_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("微软雅黑", 16.2F);
+            label4.Location = new Point(6, 111);
+            label4.Name = "label4";
+            label4.Size = new Size(155, 36);
+            label4.TabIndex = 21;
+            label4.Text = "输出文件：";
+            // 
+            // comboBox_Input_FileType
+            // 
+            comboBox_Input_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input_FileType.FormattingEnabled = true;
+            comboBox_Input_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Input_FileType.Location = new Point(536, 9);
+            comboBox_Input_FileType.Name = "comboBox_Input_FileType";
+            comboBox_Input_FileType.Size = new Size(114, 43);
+            comboBox_Input_FileType.TabIndex = 20;
+            comboBox_Input_FileType.TextChanged += comboBox_Input_FileType_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("微软雅黑", 16.2F);
+            label3.Location = new Point(6, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(155, 36);
+            label3.TabIndex = 19;
+            label3.Text = "输入文件：";
             // 
             // tabPage1
             // 
@@ -202,7 +315,7 @@
             groupBox_ssto.Font = new Font("Microsoft YaHei UI", 12F);
             groupBox_ssto.Location = new Point(6, 55);
             groupBox_ssto.Name = "groupBox_ssto";
-            groupBox_ssto.Size = new Size(644, 272);
+            groupBox_ssto.Size = new Size(476, 176);
             groupBox_ssto.TabIndex = 52;
             groupBox_ssto.TabStop = false;
             groupBox_ssto.Text = "截取片段";
@@ -212,7 +325,7 @@
             radioButton_ssto_best.AutoSize = true;
             radioButton_ssto_best.Checked = true;
             radioButton_ssto_best.Font = new Font("Microsoft YaHei UI", 16.2F);
-            radioButton_ssto_best.Location = new Point(6, 219);
+            radioButton_ssto_best.Location = new Point(312, 124);
             radioButton_ssto_best.Name = "radioButton_ssto_best";
             radioButton_ssto_best.Size = new Size(148, 40);
             radioButton_ssto_best.TabIndex = 59;
@@ -225,7 +338,7 @@
             // 
             radioButton_ssto_precise.AutoSize = true;
             radioButton_ssto_precise.Font = new Font("Microsoft YaHei UI", 16.2F);
-            radioButton_ssto_precise.Location = new Point(6, 173);
+            radioButton_ssto_precise.Location = new Point(160, 124);
             radioButton_ssto_precise.Name = "radioButton_ssto_precise";
             radioButton_ssto_precise.Size = new Size(148, 40);
             radioButton_ssto_precise.TabIndex = 58;
@@ -300,7 +413,7 @@
             comboBox1.Items.AddRange(new object[] { "安静模式（-8）", "恐慌模式（0）", "致命模式（8）", "错误模式（16）", "警告模式（24）", "信息模式（32）", "冗长模式（40）", "调试模式（48）" });
             comboBox1.Location = new Point(208, 6);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(247, 43);
+            comboBox1.Size = new Size(274, 43);
             comboBox1.TabIndex = 51;
             // 
             // checkBox1
@@ -628,16 +741,6 @@
             checkBox_an.Text = "禁用音频流";
             checkBox_an.UseVisualStyleBackColor = true;
             // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(656, 548);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "tabPage6";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
             // button_Save_File
             // 
             button_Save_File.Location = new Point(623, 57);
@@ -666,7 +769,7 @@
             comboBox_y_or_n_or_null.Items.AddRange(new object[] { "自动覆盖已存在文件", "不覆盖已存在文件", "默认" });
             comboBox_y_or_n_or_null.Location = new Point(12, 693);
             comboBox_y_or_n_or_null.Name = "comboBox_y_or_n_or_null";
-            comboBox_y_or_n_or_null.Size = new Size(275, 43);
+            comboBox_y_or_n_or_null.Size = new Size(508, 43);
             comboBox_y_or_n_or_null.TabIndex = 45;
             // 
             // comboBox_Output
@@ -678,6 +781,7 @@
             comboBox_Output.Name = "comboBox_Output";
             comboBox_Output.Size = new Size(474, 43);
             comboBox_Output.TabIndex = 21;
+            comboBox_Output.TextChanged += comboBox_Output_TextChanged;
             // 
             // label2
             // 
@@ -699,6 +803,7 @@
             comboBox_Input.Name = "comboBox_Input";
             comboBox_Input.Size = new Size(474, 43);
             comboBox_Input.TabIndex = 19;
+            comboBox_Input.TextChanged += comboBox_Input_TextChanged;
             // 
             // label1
             // 
@@ -793,6 +898,8 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             groupBox_ssto.ResumeLayout(false);
@@ -868,5 +975,13 @@
         private RadioButton radioButton_ssto_fast;
         private GroupBox groupBox1;
         private CheckBox checkBox_c_copy;
+        private ComboBox comboBox_Output_FileType;
+        private Label label4;
+        private ComboBox comboBox_Input_FileType;
+        private Label label3;
+        private ComboBox comboBox_Output_FileName;
+        private ComboBox comboBox_Input_FileName;
+        private ComboBox comboBox_Output_FilePath;
+        private ComboBox comboBox_Input_FilePath;
     }
 }
