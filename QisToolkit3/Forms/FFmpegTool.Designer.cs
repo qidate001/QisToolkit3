@@ -36,13 +36,25 @@
             button_CopyCommand = new Button();
             tabControl1 = new TabControl();
             tabPage6 = new TabPage();
+            comboBox_Input3_FilePath = new ComboBox();
+            comboBox_Input3_FileName = new ComboBox();
+            comboBox_Input3_FileType = new ComboBox();
+            label6 = new Label();
+            comboBox_Input2_FilePath = new ComboBox();
+            comboBox_Input2_FileName = new ComboBox();
+            comboBox_Input2_FileType = new ComboBox();
+            label7 = new Label();
+            comboBox_Input1_FilePath = new ComboBox();
+            comboBox_Input1_FileName = new ComboBox();
+            comboBox_Input1_FileType = new ComboBox();
+            label5 = new Label();
             comboBox_Output_FilePath = new ComboBox();
-            comboBox_Input_FilePath = new ComboBox();
+            comboBox_Input0_FilePath = new ComboBox();
             comboBox_Output_FileName = new ComboBox();
-            comboBox_Input_FileName = new ComboBox();
+            comboBox_Input0_FileName = new ComboBox();
             comboBox_Output_FileType = new ComboBox();
             label4 = new Label();
-            comboBox_Input_FileType = new ComboBox();
+            comboBox_Input0_FileType = new ComboBox();
             label3 = new Label();
             tabPage1 = new TabPage();
             groupBox_ssto = new GroupBox();
@@ -210,13 +222,25 @@
             // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(comboBox_Input3_FilePath);
+            tabPage6.Controls.Add(comboBox_Input3_FileName);
+            tabPage6.Controls.Add(comboBox_Input3_FileType);
+            tabPage6.Controls.Add(label6);
+            tabPage6.Controls.Add(comboBox_Input2_FilePath);
+            tabPage6.Controls.Add(comboBox_Input2_FileName);
+            tabPage6.Controls.Add(comboBox_Input2_FileType);
+            tabPage6.Controls.Add(label7);
+            tabPage6.Controls.Add(comboBox_Input1_FilePath);
+            tabPage6.Controls.Add(comboBox_Input1_FileName);
+            tabPage6.Controls.Add(comboBox_Input1_FileType);
+            tabPage6.Controls.Add(label5);
             tabPage6.Controls.Add(comboBox_Output_FilePath);
-            tabPage6.Controls.Add(comboBox_Input_FilePath);
+            tabPage6.Controls.Add(comboBox_Input0_FilePath);
             tabPage6.Controls.Add(comboBox_Output_FileName);
-            tabPage6.Controls.Add(comboBox_Input_FileName);
+            tabPage6.Controls.Add(comboBox_Input0_FileName);
             tabPage6.Controls.Add(comboBox_Output_FileType);
             tabPage6.Controls.Add(label4);
-            tabPage6.Controls.Add(comboBox_Input_FileType);
+            tabPage6.Controls.Add(comboBox_Input0_FileType);
             tabPage6.Controls.Add(label3);
             tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
@@ -226,56 +250,185 @@
             tabPage6.Text = "输入输出";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // comboBox_Input3_FilePath
+            // 
+            comboBox_Input3_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input3_FilePath.FormattingEnabled = true;
+            comboBox_Input3_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input3_FilePath.Location = new Point(6, 350);
+            comboBox_Input3_FilePath.Name = "comboBox_Input3_FilePath";
+            comboBox_Input3_FilePath.Size = new Size(644, 43);
+            comboBox_Input3_FilePath.TabIndex = 38;
+            comboBox_Input3_FilePath.TextChanged += comboBox_Input3_FilePath_TextChanged;
+            // 
+            // comboBox_Input3_FileName
+            // 
+            comboBox_Input3_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input3_FileName.FormattingEnabled = true;
+            comboBox_Input3_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input3_FileName.Location = new Point(148, 301);
+            comboBox_Input3_FileName.Name = "comboBox_Input3_FileName";
+            comboBox_Input3_FileName.Size = new Size(382, 43);
+            comboBox_Input3_FileName.TabIndex = 37;
+            comboBox_Input3_FileName.TextChanged += comboBox_Input3_FileName_TextChanged;
+            // 
+            // comboBox_Input3_FileType
+            // 
+            comboBox_Input3_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input3_FileType.FormattingEnabled = true;
+            comboBox_Input3_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Input3_FileType.Location = new Point(536, 301);
+            comboBox_Input3_FileType.Name = "comboBox_Input3_FileType";
+            comboBox_Input3_FileType.Size = new Size(114, 43);
+            comboBox_Input3_FileType.TabIndex = 36;
+            comboBox_Input3_FileType.TextChanged += comboBox_Input3_FileType_TextChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("微软雅黑", 16.2F);
+            label6.Location = new Point(6, 304);
+            label6.Name = "label6";
+            label6.Size = new Size(155, 36);
+            label6.TabIndex = 35;
+            label6.Text = "输入文件：";
+            // 
+            // comboBox_Input2_FilePath
+            // 
+            comboBox_Input2_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input2_FilePath.FormattingEnabled = true;
+            comboBox_Input2_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input2_FilePath.Location = new Point(6, 253);
+            comboBox_Input2_FilePath.Name = "comboBox_Input2_FilePath";
+            comboBox_Input2_FilePath.Size = new Size(644, 43);
+            comboBox_Input2_FilePath.TabIndex = 34;
+            comboBox_Input2_FilePath.TextChanged += comboBox_Input2_FilePath_TextChanged;
+            // 
+            // comboBox_Input2_FileName
+            // 
+            comboBox_Input2_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input2_FileName.FormattingEnabled = true;
+            comboBox_Input2_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input2_FileName.Location = new Point(148, 204);
+            comboBox_Input2_FileName.Name = "comboBox_Input2_FileName";
+            comboBox_Input2_FileName.Size = new Size(382, 43);
+            comboBox_Input2_FileName.TabIndex = 33;
+            comboBox_Input2_FileName.TextChanged += comboBox_Input2_FileName_TextChanged;
+            // 
+            // comboBox_Input2_FileType
+            // 
+            comboBox_Input2_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input2_FileType.FormattingEnabled = true;
+            comboBox_Input2_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Input2_FileType.Location = new Point(536, 204);
+            comboBox_Input2_FileType.Name = "comboBox_Input2_FileType";
+            comboBox_Input2_FileType.Size = new Size(114, 43);
+            comboBox_Input2_FileType.TabIndex = 32;
+            comboBox_Input2_FileType.TextChanged += comboBox_Input2_FileType_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("微软雅黑", 16.2F);
+            label7.Location = new Point(6, 207);
+            label7.Name = "label7";
+            label7.Size = new Size(155, 36);
+            label7.TabIndex = 31;
+            label7.Text = "输入文件：";
+            // 
+            // comboBox_Input1_FilePath
+            // 
+            comboBox_Input1_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input1_FilePath.FormattingEnabled = true;
+            comboBox_Input1_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input1_FilePath.Location = new Point(6, 155);
+            comboBox_Input1_FilePath.Name = "comboBox_Input1_FilePath";
+            comboBox_Input1_FilePath.Size = new Size(644, 43);
+            comboBox_Input1_FilePath.TabIndex = 30;
+            comboBox_Input1_FilePath.TextChanged += comboBox_Input1_FilePath_TextChanged;
+            // 
+            // comboBox_Input1_FileName
+            // 
+            comboBox_Input1_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input1_FileName.FormattingEnabled = true;
+            comboBox_Input1_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input1_FileName.Location = new Point(148, 106);
+            comboBox_Input1_FileName.Name = "comboBox_Input1_FileName";
+            comboBox_Input1_FileName.Size = new Size(382, 43);
+            comboBox_Input1_FileName.TabIndex = 29;
+            comboBox_Input1_FileName.TextChanged += comboBox_Input1_FileName_TextChanged;
+            // 
+            // comboBox_Input1_FileType
+            // 
+            comboBox_Input1_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input1_FileType.FormattingEnabled = true;
+            comboBox_Input1_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Input1_FileType.Location = new Point(536, 106);
+            comboBox_Input1_FileType.Name = "comboBox_Input1_FileType";
+            comboBox_Input1_FileType.Size = new Size(114, 43);
+            comboBox_Input1_FileType.TabIndex = 28;
+            comboBox_Input1_FileType.TextChanged += comboBox_Input1_FileType_TextChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("微软雅黑", 16.2F);
+            label5.Location = new Point(6, 109);
+            label5.Name = "label5";
+            label5.Size = new Size(155, 36);
+            label5.TabIndex = 27;
+            label5.Text = "输入文件：";
+            // 
             // comboBox_Output_FilePath
             // 
             comboBox_Output_FilePath.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FilePath.FormattingEnabled = true;
             comboBox_Output_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
-            comboBox_Output_FilePath.Location = new Point(9, 157);
+            comboBox_Output_FilePath.Location = new Point(9, 448);
             comboBox_Output_FilePath.Name = "comboBox_Output_FilePath";
             comboBox_Output_FilePath.Size = new Size(644, 43);
             comboBox_Output_FilePath.TabIndex = 26;
             comboBox_Output_FilePath.TextChanged += comboBox_Output_FilePath_TextChanged;
             // 
-            // comboBox_Input_FilePath
+            // comboBox_Input0_FilePath
             // 
-            comboBox_Input_FilePath.Font = new Font("微软雅黑", 16.2F);
-            comboBox_Input_FilePath.FormattingEnabled = true;
-            comboBox_Input_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
-            comboBox_Input_FilePath.Location = new Point(6, 58);
-            comboBox_Input_FilePath.Name = "comboBox_Input_FilePath";
-            comboBox_Input_FilePath.Size = new Size(644, 43);
-            comboBox_Input_FilePath.TabIndex = 25;
-            comboBox_Input_FilePath.TextChanged += comboBox_Input_FilePath_TextChanged;
+            comboBox_Input0_FilePath.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input0_FilePath.FormattingEnabled = true;
+            comboBox_Input0_FilePath.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input0_FilePath.Location = new Point(6, 58);
+            comboBox_Input0_FilePath.Name = "comboBox_Input0_FilePath";
+            comboBox_Input0_FilePath.Size = new Size(644, 43);
+            comboBox_Input0_FilePath.TabIndex = 25;
+            comboBox_Input0_FilePath.TextChanged += comboBox_Input_FilePath_TextChanged;
             // 
             // comboBox_Output_FileName
             // 
             comboBox_Output_FileName.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FileName.FormattingEnabled = true;
             comboBox_Output_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
-            comboBox_Output_FileName.Location = new Point(148, 108);
+            comboBox_Output_FileName.Location = new Point(148, 399);
             comboBox_Output_FileName.Name = "comboBox_Output_FileName";
             comboBox_Output_FileName.Size = new Size(382, 43);
             comboBox_Output_FileName.TabIndex = 24;
             comboBox_Output_FileName.TextChanged += comboBox_Output_FileName_TextChanged;
             // 
-            // comboBox_Input_FileName
+            // comboBox_Input0_FileName
             // 
-            comboBox_Input_FileName.Font = new Font("微软雅黑", 16.2F);
-            comboBox_Input_FileName.FormattingEnabled = true;
-            comboBox_Input_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
-            comboBox_Input_FileName.Location = new Point(148, 9);
-            comboBox_Input_FileName.Name = "comboBox_Input_FileName";
-            comboBox_Input_FileName.Size = new Size(382, 43);
-            comboBox_Input_FileName.TabIndex = 23;
-            comboBox_Input_FileName.TextChanged += comboBox_Input_FileName_TextChanged;
+            comboBox_Input0_FileName.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input0_FileName.FormattingEnabled = true;
+            comboBox_Input0_FileName.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_Input0_FileName.Location = new Point(148, 9);
+            comboBox_Input0_FileName.Name = "comboBox_Input0_FileName";
+            comboBox_Input0_FileName.Size = new Size(382, 43);
+            comboBox_Input0_FileName.TabIndex = 23;
+            comboBox_Input0_FileName.TextChanged += comboBox_Input_FileName_TextChanged;
             // 
             // comboBox_Output_FileType
             // 
             comboBox_Output_FileType.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FileType.FormattingEnabled = true;
             comboBox_Output_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
-            comboBox_Output_FileType.Location = new Point(536, 108);
+            comboBox_Output_FileType.Location = new Point(536, 399);
             comboBox_Output_FileType.Name = "comboBox_Output_FileType";
             comboBox_Output_FileType.Size = new Size(114, 43);
             comboBox_Output_FileType.TabIndex = 22;
@@ -285,22 +438,22 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("微软雅黑", 16.2F);
-            label4.Location = new Point(6, 111);
+            label4.Location = new Point(6, 402);
             label4.Name = "label4";
             label4.Size = new Size(155, 36);
             label4.TabIndex = 21;
             label4.Text = "输出文件：";
             // 
-            // comboBox_Input_FileType
+            // comboBox_Input0_FileType
             // 
-            comboBox_Input_FileType.Font = new Font("微软雅黑", 16.2F);
-            comboBox_Input_FileType.FormattingEnabled = true;
-            comboBox_Input_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
-            comboBox_Input_FileType.Location = new Point(536, 9);
-            comboBox_Input_FileType.Name = "comboBox_Input_FileType";
-            comboBox_Input_FileType.Size = new Size(114, 43);
-            comboBox_Input_FileType.TabIndex = 20;
-            comboBox_Input_FileType.TextChanged += comboBox_Input_FileType_TextChanged;
+            comboBox_Input0_FileType.Font = new Font("微软雅黑", 16.2F);
+            comboBox_Input0_FileType.FormattingEnabled = true;
+            comboBox_Input0_FileType.Items.AddRange(new object[] { ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".mp3", ".aac", ".flac", ".ogg", ".wma", ".m4a", ".wav", ".opus" });
+            comboBox_Input0_FileType.Location = new Point(536, 9);
+            comboBox_Input0_FileType.Name = "comboBox_Input0_FileType";
+            comboBox_Input0_FileType.Size = new Size(114, 43);
+            comboBox_Input0_FileType.TabIndex = 20;
+            comboBox_Input0_FileType.TextChanged += comboBox_Input_FileType_TextChanged;
             // 
             // label3
             // 
@@ -1107,6 +1260,7 @@
             // openFileDialog
             // 
             openFileDialog.Filter = "所有文件 (*.*)|*.*";
+            openFileDialog.Multiselect = true;
             // 
             // saveFileDialog
             // 
@@ -1220,12 +1374,12 @@
         private CheckBox checkBox_c_copy;
         private ComboBox comboBox_Output_FileType;
         private Label label4;
-        private ComboBox comboBox_Input_FileType;
+        private ComboBox comboBox_Input0_FileType;
         private Label label3;
         private ComboBox comboBox_Output_FileName;
-        private ComboBox comboBox_Input_FileName;
+        private ComboBox comboBox_Input0_FileName;
         private ComboBox comboBox_Output_FilePath;
-        private ComboBox comboBox_Input_FilePath;
+        private ComboBox comboBox_Input0_FilePath;
         private GroupBox groupBox2;
         private CheckBox checkBox_cd_copy;
         private CheckBox checkBox_ca_copy;
@@ -1243,5 +1397,17 @@
         private CheckBox checkBox_af_volume;
         private ComboBox comboBox_ar;
         private CheckBox checkBox_ar;
+        private ComboBox comboBox_Input3_FilePath;
+        private ComboBox comboBox_Input3_FileName;
+        private ComboBox comboBox_Input3_FileType;
+        private Label label6;
+        private ComboBox comboBox_Input2_FilePath;
+        private ComboBox comboBox_Input2_FileName;
+        private ComboBox comboBox_Input2_FileType;
+        private Label label7;
+        private ComboBox comboBox_Input1_FilePath;
+        private ComboBox comboBox_Input1_FileName;
+        private ComboBox comboBox_Input1_FileType;
+        private Label label5;
     }
 }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Qi;
 using static Qi.QisToolkit3_Datas;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace QisToolkit3.Forms
 {
@@ -80,9 +81,8 @@ namespace QisToolkit3.Forms
 
             // 主要输入
             if (AddMainInput)
-            {
-                command += $"-i \"{input}\" ";
-            }
+                foreach (string path in input.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries))
+                    command += $"-i \"{path.Trim()}\" ";
 
 
 
@@ -381,7 +381,7 @@ namespace QisToolkit3.Forms
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                comboBox_Input.Text = openFileDialog.FileName;
+                comboBox_Input.Text = string.Join('&', openFileDialog.FileNames);
             }
         }
 
@@ -449,11 +449,52 @@ namespace QisToolkit3.Forms
             if (isUpdating) return;
             isUpdating = true;
 
-            string filePath = comboBox_Input.Text;
-            comboBox_Input_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
-            comboBox_Input_FileType.Text = Path.GetExtension(filePath);
-            comboBox_Input_FilePath.Text = Path.GetDirectoryName(filePath);
+            string filePaths = comboBox_Input.Text;
+            string[] paths = filePaths.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
 
+            if (paths.Length == 0)
+            {
+                // 清空所有
+                comboBox_Input0_FileName.Text = "";
+                comboBox_Input0_FileType.Text = "";
+                comboBox_Input0_FilePath.Text = "";
+            }
+            else
+            {
+                string filePath;
+                if (paths.Length >= 1)
+                {
+                    filePath = paths[0].Trim();
+                    comboBox_Input0_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+                    comboBox_Input0_FileType.Text = Path.GetExtension(filePath);
+                    comboBox_Input0_FilePath.Text = Path.GetDirectoryName(filePath);
+                    //comboBox_Output.Text = filePath;
+                }
+
+                if (paths.Length >= 2)
+                {
+                    filePath = paths[1].Trim();
+                    comboBox_Input1_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+                    comboBox_Input1_FileType.Text = Path.GetExtension(filePath);
+                    comboBox_Input1_FilePath.Text = Path.GetDirectoryName(filePath);
+                }
+
+                if (paths.Length >= 3)
+                {
+                    filePath = paths[2].Trim();
+                    comboBox_Input2_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+                    comboBox_Input2_FileType.Text = Path.GetExtension(filePath);
+                    comboBox_Input2_FilePath.Text = Path.GetDirectoryName(filePath);
+                }
+
+                if (paths.Length >= 4)
+                {
+                    filePath = paths[3].Trim();
+                    comboBox_Input3_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
+                    comboBox_Input3_FileType.Text = Path.GetExtension(filePath);
+                    comboBox_Input3_FilePath.Text = Path.GetDirectoryName(filePath);
+                }
+            }
             isUpdating = false;
         }
 
@@ -462,14 +503,24 @@ namespace QisToolkit3.Forms
             if (isUpdating) return;
             isUpdating = true;
 
-            string filePath = comboBox_Input_FilePath.Text;
-            string fileName = comboBox_Input_FileName.Text;
-            string fileType = comboBox_Input_FileType.Text;
+            string[] filePaths = new string[4];
 
-            if (!string.IsNullOrEmpty(fileName))
-            {
-                comboBox_Input.Text = Path.Combine(filePath, fileName + fileType);
-            }
+            // 收集每个文件路径
+            if (!string.IsNullOrEmpty(comboBox_Input0_FileName.Text))
+                filePaths[0] = Path.Combine(comboBox_Input0_FilePath.Text, comboBox_Input0_FileName.Text + comboBox_Input0_FileType.Text);
+
+            if (!string.IsNullOrEmpty(comboBox_Input1_FileName.Text))
+                filePaths[1] = Path.Combine(comboBox_Input1_FilePath.Text, comboBox_Input1_FileName.Text + comboBox_Input1_FileType.Text);
+
+            if (!string.IsNullOrEmpty(comboBox_Input2_FileName.Text))
+                filePaths[2] = Path.Combine(comboBox_Input2_FilePath.Text, comboBox_Input2_FileName.Text + comboBox_Input2_FileType.Text);
+
+            if (!string.IsNullOrEmpty(comboBox_Input3_FileName.Text))
+                filePaths[3] = Path.Combine(comboBox_Input3_FilePath.Text, comboBox_Input3_FileName.Text + comboBox_Input3_FileType.Text);
+
+            // 过滤空值并用 & 连接
+            string combinedPath = string.Join(" & ", filePaths.Where(p => !string.IsNullOrEmpty(p)));
+            comboBox_Input.Text = combinedPath;
 
             isUpdating = false;
         }
@@ -520,6 +571,51 @@ namespace QisToolkit3.Forms
         }
 
         private void comboBox_Input_FilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input1_FileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input1_FileType_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input1_FilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input2_FileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input2_FileType_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input2_FilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input3_FileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input3_FileType_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInputPath();
+        }
+
+        private void comboBox_Input3_FilePath_TextChanged(object sender, EventArgs e)
         {
             UpdateInputPath();
         }
