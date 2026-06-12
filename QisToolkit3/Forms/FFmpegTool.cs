@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -19,7 +20,10 @@ namespace QisToolkit3.Forms
     {
         private Process process;
         private RichTextBox outputBox;
+        private DataTable dt_input = new DataTable();
+        //private DataTable dt_output = new DataTable();
         private bool isUpdating = false;
+        private string outputFile = "";
 
 
         private string FFmpegPath = Path.Combine(actualDirectory, @"yt-dlp\ffmpeg.exe");
@@ -32,14 +36,26 @@ namespace QisToolkit3.Forms
             if (!File.Exists(@$"{actualDirectory}\yt-dlp\ffmpeg.exe"))
                 MessageBox.Show("环境缺失！这可能会导致一些问题", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //comboBox_FFmpeg.Text = @$"{actualDirectory}\yt-dlp\ffmpeg.exe";
-            comboBox_Input.Text = @$"{actualDirectory}\yt-dlp\input.mp3";
-            comboBox_Output.Text = @$"{actualDirectory}\yt-dlp\output.mp3";
             comboBox_y_or_n_or_null.SelectedIndex = 0;
             comboBox_preset.SelectedIndex = 1;
 
+
+            dt_input.Columns.Add("FileName", typeof(string));
+            dt_input.Columns.Add("FileType", typeof(string));
+            dt_input.Columns.Add("FileNameWithExt", typeof(string));
+            dt_input.Columns.Add("FullPath", typeof(string));
+            dt_input.Columns.Add("Directory", typeof(string));
+
+            dataGridView_InputFiles.DataSource = dt_input;
+
             // 初始化
-            Qi.FormInitDo(this.Text);
+            FormInitDo(this.Text);
+        }
+
+        private void FFmpegTool_Load(object sender, EventArgs e)
+        {
+            outputFile = Path.Combine(actualDirectory, "yt-dlp", "Downloads", "output.mp4");
+            UpdateMainOutputPath();
         }
 
         private void button_Main_Click(object sender, EventArgs e)
@@ -58,13 +74,10 @@ namespace QisToolkit3.Forms
 
         public string BuildFFmpegCommand()
         {
-            string input = comboBox_Input.Text;
-            string output = comboBox_Output.Text;
-
             string command = string.Empty;
 
             // 验证输入
-            if (string.IsNullOrWhiteSpace(input))
+            if (!(dt_input.Rows.Count > 0))
             {
                 MessageBox.Show("Input 输入目标不存在或不合法！", "FFmpeg 命令构建", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return string.Empty;
@@ -80,11 +93,7 @@ namespace QisToolkit3.Forms
                     && !(radioButton_ssto_fast.Checked || radioButton_ssto_best.Checked);
 
             // 主要输入
-            if (AddMainInput)
-                foreach (string path in input.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries))
-                    command += $"-i \"{path.Trim()}\" ";
-
-
+            if (AddMainInput) command += BuildFFmpegInputFileCommand();
 
             // 截取片段
             if (EnableClipExtraction)
@@ -96,7 +105,7 @@ namespace QisToolkit3.Forms
 
                     // 快速模式 / 最佳模式（先指定时间后输入主要文件）
                     if (radioButton_ssto_fast.Checked || radioButton_ssto_best.Checked)
-                        command += $"-i \"{input}\" ";
+                        command += BuildFFmpegInputFileCommand();
                 }
 
                 // 到指定时间点结束
@@ -214,9 +223,9 @@ namespace QisToolkit3.Forms
             }
 
             // 输出
-            if (!string.IsNullOrWhiteSpace(output))
+            if (!string.IsNullOrWhiteSpace(outputFile))
             {
-                command += $"\"{output}\"";
+                command += $"\"{outputFile.Trim()}\"";
             }
             else
             {
@@ -237,6 +246,48 @@ namespace QisToolkit3.Forms
 
             return command.Trim();
         }
+
+        private string BuildFFmpegInputFileCommand()
+        {
+            string command = string.Empty;
+            foreach (DataRow row in dt_input.Rows)
+            {
+                // 跳过被标记为删除的行
+                if (row.RowState != DataRowState.Deleted)
+                {
+                    string fullPath = row["FullPath"].ToString();
+                    if (!string.IsNullOrEmpty(fullPath))
+                    {
+                        command += $"-i \"{fullPath.Trim()}\" ";
+                        Log.Info($"[FFmpeg工具] 导入文件：{fullPath.Trim()}");
+                    }
+
+                }
+            }
+
+            return command;
+        }
+
+        //private string BuildFFmpegOutputFileCommand()
+        //{
+        //    string command = string.Empty;
+        //    foreach (DataRow row in dt_output.Rows)
+        //    {
+        //        // 跳过被标记为删除的行
+        //        if (row.RowState != DataRowState.Deleted)
+        //        {
+        //            string fullPath = row["FullPath"].ToString();
+        //            if (!string.IsNullOrEmpty(fullPath))
+        //            {
+        //                command += $"-i \"{fullPath.Trim()}\" ";
+        //                Log.Info($"[FFmpeg工具] 导出文件：{fullPath.Trim()}");
+        //            }
+
+        //        }
+        //    }
+
+        //    return command;
+        //}
 
         // 处理用户数据
         private void ProcessingUserData()
@@ -372,43 +423,85 @@ namespace QisToolkit3.Forms
             SetAllCopyChecked();
         }
 
-        private void FFmpegTool_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Open_File_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                comboBox_Input.Text = string.Join('&', openFileDialog.FileNames);
+                foreach (string fullPath in openFileDialog.FileNames)
+                {
+                    AddFileToDataTable(fullPath);
+                }
             }
         }
 
         private void button_Save_File_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                comboBox_Output.Text = saveFileDialog.FileNames[0];
+            {
+                outputFile = saveFileDialog.FileName;
+                UpdateMainOutputPath();
+            }
         }
 
-        private void comboBox_FFmpeg_MouseClick(object sender, MouseEventArgs e)
+        private void FFmpegTool_DragDrop(object sender, DragEventArgs e)
         {
+            // 恢复窗口外观
+            this.BackColor = SystemColors.Control;
 
+            // 获取拖入的文件路径数组
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            // 处理文件
+            foreach (string file in files)
+            {
+                AddFileToDataTable(file);
+            }
         }
 
-        private void label3_MouseClick(object sender, MouseEventArgs e)
+        private void FFmpegTool_DragEnter(object sender, DragEventArgs e)
         {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                // 显示可拖放的光标
+                e.Effect = DragDropEffects.Copy;
 
+                // 可选：改变窗口外观提示用户
+                this.BackColor = Color.LightBlue;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void AddFileToDataTable(string fullPath)
         {
-            new TextProcessorForm(comboBox_Input.Text).Show();
-        }
+            // 1. 检查是否已存在（根据完整路径判断）
+            foreach (DataRow row in dt_input.Rows)
+            {
+                // 跳过已被标记删除的行
+                if (row.RowState != DataRowState.Deleted)
+                {
+                    string existingPath = row["FullPath"].ToString();
+                    if (existingPath == fullPath)
+                    {
+                        // 文件已存在，提示用户
+                        string _fileName = Path.GetFileName(fullPath);
+                        MessageBox.Show($"文件 \"{_fileName}\" 已经导入过了！",
+                                       "重复导入", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; // 退出方法，不添加
+                    }
+                }
+            }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            new TextProcessorForm(comboBox_Output.Text).Show();
+            // 2. 解析文件信息
+            string fileNameWithExt = Path.GetFileName(fullPath);            // 带后缀文件名
+            string fileName = Path.GetFileNameWithoutExtension(fullPath);   // 文件名
+            string extension = Path.GetExtension(fullPath);                 // 后缀名
+            string directory = Path.GetDirectoryName(fullPath);             // 所在路径
+
+            // 3. 添加到 DataTable（显示列 + 隐藏列）
+            dt_input.Rows.Add(fileName, extension, fileNameWithExt, fullPath, directory);
         }
 
         private void button_CopyCommand_Click(object sender, EventArgs e)
@@ -444,93 +537,12 @@ namespace QisToolkit3.Forms
 
         #region 输入输出 路径处理
 
-        private void UpdateMainInputPath()
-        {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            string filePaths = comboBox_Input.Text;
-            string[] paths = filePaths.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (paths.Length == 0)
-            {
-                // 清空所有
-                comboBox_Input0_FileName.Text = "";
-                comboBox_Input0_FileType.Text = "";
-                comboBox_Input0_FilePath.Text = "";
-            }
-            else
-            {
-                string filePath;
-                if (paths.Length >= 1)
-                {
-                    filePath = paths[0].Trim();
-                    comboBox_Input0_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
-                    comboBox_Input0_FileType.Text = Path.GetExtension(filePath);
-                    comboBox_Input0_FilePath.Text = Path.GetDirectoryName(filePath);
-                    //comboBox_Output.Text = filePath;
-                }
-
-                if (paths.Length >= 2)
-                {
-                    filePath = paths[1].Trim();
-                    comboBox_Input1_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
-                    comboBox_Input1_FileType.Text = Path.GetExtension(filePath);
-                    comboBox_Input1_FilePath.Text = Path.GetDirectoryName(filePath);
-                }
-
-                if (paths.Length >= 3)
-                {
-                    filePath = paths[2].Trim();
-                    comboBox_Input2_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
-                    comboBox_Input2_FileType.Text = Path.GetExtension(filePath);
-                    comboBox_Input2_FilePath.Text = Path.GetDirectoryName(filePath);
-                }
-
-                if (paths.Length >= 4)
-                {
-                    filePath = paths[3].Trim();
-                    comboBox_Input3_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
-                    comboBox_Input3_FileType.Text = Path.GetExtension(filePath);
-                    comboBox_Input3_FilePath.Text = Path.GetDirectoryName(filePath);
-                }
-            }
-            isUpdating = false;
-        }
-
-        private void UpdateInputPath()
-        {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            string[] filePaths = new string[4];
-
-            // 收集每个文件路径
-            if (!string.IsNullOrEmpty(comboBox_Input0_FileName.Text))
-                filePaths[0] = Path.Combine(comboBox_Input0_FilePath.Text, comboBox_Input0_FileName.Text + comboBox_Input0_FileType.Text);
-
-            if (!string.IsNullOrEmpty(comboBox_Input1_FileName.Text))
-                filePaths[1] = Path.Combine(comboBox_Input1_FilePath.Text, comboBox_Input1_FileName.Text + comboBox_Input1_FileType.Text);
-
-            if (!string.IsNullOrEmpty(comboBox_Input2_FileName.Text))
-                filePaths[2] = Path.Combine(comboBox_Input2_FilePath.Text, comboBox_Input2_FileName.Text + comboBox_Input2_FileType.Text);
-
-            if (!string.IsNullOrEmpty(comboBox_Input3_FileName.Text))
-                filePaths[3] = Path.Combine(comboBox_Input3_FilePath.Text, comboBox_Input3_FileName.Text + comboBox_Input3_FileType.Text);
-
-            // 过滤空值并用 & 连接
-            string combinedPath = string.Join(" & ", filePaths.Where(p => !string.IsNullOrEmpty(p)));
-            comboBox_Input.Text = combinedPath;
-
-            isUpdating = false;
-        }
-
         private void UpdateMainOutputPath()
         {
             if (isUpdating) return;
             isUpdating = true;
 
-            string filePath = comboBox_Output.Text;
+            string filePath = outputFile;
             comboBox_Output_FileName.Text = Path.GetFileNameWithoutExtension(filePath);
             comboBox_Output_FileType.Text = Path.GetExtension(filePath);
             comboBox_Output_FilePath.Text = Path.GetDirectoryName(filePath);
@@ -549,80 +561,10 @@ namespace QisToolkit3.Forms
 
             if (!string.IsNullOrEmpty(fileName))
             {
-                comboBox_Output.Text = Path.Combine(filePath, fileName + fileType);
+                outputFile = Path.Combine(filePath, fileName + fileType);
             }
 
             isUpdating = false;
-        }
-
-        private void comboBox_Input_TextChanged(object sender, EventArgs e)
-        {
-            UpdateMainInputPath();
-        }
-
-        private void comboBox_Input_FileName_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input_FileType_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input_FilePath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input1_FileName_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input1_FileType_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input1_FilePath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input2_FileName_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input2_FileType_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input2_FilePath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input3_FileName_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input3_FileType_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Input3_FilePath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInputPath();
-        }
-
-        private void comboBox_Output_TextChanged(object sender, EventArgs e)
-        {
-            UpdateMainOutputPath();
         }
 
         private void comboBox_Output_FileName_TextChanged(object sender, EventArgs e)
@@ -884,6 +826,36 @@ namespace QisToolkit3.Forms
         }
 
         #endregion
+
+        private void dataGridView_InputFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 判断点击的是否为删除按钮列
+            if (e.ColumnIndex >= 0 && dataGridView_InputFiles.Columns[e.ColumnIndex].Name == "ColumnDeleteFile")
+            {
+                // 防呆 增强鲁棒性
+                if (e.RowIndex < 0 || dt_input.Rows.Count <= 0 || e.RowIndex >= dt_input.Rows.Count)
+                    return;
+
+                // 删除数据源中的行
+                dt_input.Rows[e.RowIndex].Delete();
+                dt_input.AcceptChanges();  // 提交更改，界面会自动刷新
+            }
+        }
+
+        
+
+        //private void dataGridView_OutputFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    // 判断点击的是否为删除按钮列
+        //    if (e.ColumnIndex >= 0 && dataGridView_InputFiles.Columns[e.ColumnIndex].Name == "ColumnDeleteFile")
+        //    {
+        //        if (e.RowIndex < 0) return; // 防止点到列头
+
+        //        // 删除数据源中的行
+        //        dt_output.Rows[e.RowIndex].Delete();
+        //        dt_output.AcceptChanges();  // 提交更改，界面会自动刷新
+        //    }
+        //}
     }
 }
 
