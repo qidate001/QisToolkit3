@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegTool));
             splitContainer1 = new SplitContainer();
+            button_OpenDownloadPath = new Button();
             comboBox_Output_FileType = new ComboBox();
             comboBox_Output_FilePath = new ComboBox();
             comboBox_Output_FileName = new ComboBox();
@@ -142,6 +143,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(button_OpenDownloadPath);
             splitContainer1.Panel1.Controls.Add(comboBox_Output_FileType);
             splitContainer1.Panel1.Controls.Add(comboBox_Output_FilePath);
             splitContainer1.Panel1.Controls.Add(comboBox_Output_FileName);
@@ -160,18 +162,30 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(richTextBox);
-            splitContainer1.Size = new Size(1553, 803);
+            splitContainer1.Size = new Size(1553, 970);
             splitContainer1.SplitterDistance = 681;
             splitContainer1.TabIndex = 1;
+            // 
+            // button_OpenDownloadPath
+            // 
+            button_OpenDownloadPath.Font = new Font("微软雅黑", 16.2F);
+            button_OpenDownloadPath.ImeMode = ImeMode.NoControl;
+            button_OpenDownloadPath.Location = new Point(12, 682);
+            button_OpenDownloadPath.Name = "button_OpenDownloadPath";
+            button_OpenDownloadPath.Size = new Size(329, 55);
+            button_OpenDownloadPath.TabIndex = 59;
+            button_OpenDownloadPath.Text = "打开当前保存路径";
+            button_OpenDownloadPath.UseVisualStyleBackColor = true;
+            button_OpenDownloadPath.Click += button_OpenDownloadPath_Click;
             // 
             // comboBox_Output_FileType
             // 
             comboBox_Output_FileType.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FileType.FormattingEnabled = true;
-            comboBox_Output_FileType.Items.AddRange(new object[] { ".mp3", ".mp4", ".flac" });
-            comboBox_Output_FileType.Location = new Point(526, 584);
+            comboBox_Output_FileType.Items.AddRange(new object[] { ".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".mpg", ".3gp", ".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a", ".wma", ".ape", ".jpg", ".png", ".gif", ".bmp", ".webp" });
+            comboBox_Output_FileType.Location = new Point(528, 743);
             comboBox_Output_FileType.Name = "comboBox_Output_FileType";
-            comboBox_Output_FileType.Size = new Size(134, 43);
+            comboBox_Output_FileType.Size = new Size(150, 43);
             comboBox_Output_FileType.TabIndex = 58;
             comboBox_Output_FileType.Text = ".mp4";
             comboBox_Output_FileType.TextChanged += comboBox_Output_FileType_TextChanged;
@@ -180,9 +194,9 @@
             // 
             comboBox_Output_FilePath.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FilePath.FormattingEnabled = true;
-            comboBox_Output_FilePath.Location = new Point(10, 637);
+            comboBox_Output_FilePath.Location = new Point(12, 796);
             comboBox_Output_FilePath.Name = "comboBox_Output_FilePath";
-            comboBox_Output_FilePath.Size = new Size(650, 43);
+            comboBox_Output_FilePath.Size = new Size(666, 43);
             comboBox_Output_FilePath.TabIndex = 57;
             comboBox_Output_FilePath.TextChanged += comboBox_Output_FilePath_TextChanged;
             // 
@@ -191,7 +205,7 @@
             comboBox_Output_FileName.Font = new Font("微软雅黑", 16.2F);
             comboBox_Output_FileName.FormattingEnabled = true;
             comboBox_Output_FileName.Items.AddRange(new object[] { "output" });
-            comboBox_Output_FileName.Location = new Point(10, 584);
+            comboBox_Output_FileName.Location = new Point(12, 743);
             comboBox_Output_FileName.Name = "comboBox_Output_FileName";
             comboBox_Output_FileName.Size = new Size(510, 43);
             comboBox_Output_FileName.TabIndex = 56;
@@ -201,9 +215,9 @@
             // button_Save_File
             // 
             button_Save_File.Font = new Font("Microsoft YaHei UI", 12F);
-            button_Save_File.Location = new Point(370, 693);
+            button_Save_File.Location = new Point(391, 852);
             button_Save_File.Name = "button_Save_File";
-            button_Save_File.Size = new Size(73, 43);
+            button_Save_File.Size = new Size(131, 43);
             button_Save_File.TabIndex = 55;
             button_Save_File.Text = "导出";
             button_Save_File.UseVisualStyleBackColor = true;
@@ -211,19 +225,19 @@
             // 
             // button_Open_File
             // 
-            button_Open_File.Font = new Font("Microsoft YaHei UI", 12F);
-            button_Open_File.Location = new Point(449, 693);
+            button_Open_File.Font = new Font("微软雅黑", 16.2F);
+            button_Open_File.Location = new Point(347, 682);
             button_Open_File.Name = "button_Open_File";
-            button_Open_File.Size = new Size(71, 43);
+            button_Open_File.Size = new Size(321, 55);
             button_Open_File.TabIndex = 54;
-            button_Open_File.Text = "导入";
+            button_Open_File.Text = "添加文件";
             button_Open_File.UseVisualStyleBackColor = true;
             button_Open_File.Click += button_Open_File_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.Red;
-            button1.Location = new Point(526, 693);
+            button1.Location = new Point(528, 852);
             button1.Name = "button1";
             button1.Size = new Size(150, 43);
             button1.TabIndex = 53;
@@ -233,7 +247,7 @@
             // button_Main
             // 
             button_Main.Font = new Font("微软雅黑", 16.2F);
-            button_Main.Location = new Point(12, 742);
+            button_Main.Location = new Point(14, 901);
             button_Main.Name = "button_Main";
             button_Main.Size = new Size(508, 55);
             button_Main.TabIndex = 52;
@@ -244,7 +258,7 @@
             // button_CopyCommand
             // 
             button_CopyCommand.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button_CopyCommand.Location = new Point(526, 742);
+            button_CopyCommand.Location = new Point(528, 901);
             button_CopyCommand.Name = "button_CopyCommand";
             button_CopyCommand.Size = new Size(150, 55);
             button_CopyCommand.TabIndex = 50;
@@ -260,10 +274,10 @@
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
             tabControl1.Font = new Font("Microsoft YaHei UI", 12F);
-            tabControl1.Location = new Point(3, 3);
+            tabControl1.Location = new Point(8, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(664, 582);
+            tabControl1.Size = new Size(670, 664);
             tabControl1.TabIndex = 49;
             // 
             // tabPage2
@@ -272,7 +286,7 @@
             tabPage2.Location = new Point(4, 36);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(656, 542);
+            tabPage2.Size = new Size(662, 624);
             tabPage2.TabIndex = 6;
             tabPage2.Text = "输入流";
             tabPage2.UseVisualStyleBackColor = true;
@@ -293,7 +307,7 @@
             dataGridView_InputFiles.Location = new Point(3, 3);
             dataGridView_InputFiles.Name = "dataGridView_InputFiles";
             dataGridView_InputFiles.RowHeadersWidth = 51;
-            dataGridView_InputFiles.Size = new Size(650, 536);
+            dataGridView_InputFiles.Size = new Size(656, 618);
             dataGridView_InputFiles.TabIndex = 0;
             dataGridView_InputFiles.CellContentClick += dataGridView_InputFiles_CellContentClick;
             // 
@@ -311,6 +325,7 @@
             ColumnFileType.HeaderText = "文件类型";
             ColumnFileType.MinimumWidth = 6;
             ColumnFileType.Name = "ColumnFileType";
+            ColumnFileType.Resizable = DataGridViewTriState.True;
             ColumnFileType.Width = 125;
             // 
             // ColumnDeleteFile
@@ -357,7 +372,7 @@
             tabPage1.Location = new Point(4, 36);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(656, 542);
+            tabPage1.Size = new Size(662, 624);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "通用选项";
             tabPage1.UseVisualStyleBackColor = true;
@@ -493,7 +508,7 @@
             tabPage3.Location = new Point(4, 36);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(656, 542);
+            tabPage3.Size = new Size(662, 624);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "视频选项";
             tabPage3.UseVisualStyleBackColor = true;
@@ -696,7 +711,7 @@
             tabPage4.Location = new Point(4, 36);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(656, 542);
+            tabPage4.Size = new Size(662, 624);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "音频选项";
             tabPage4.UseVisualStyleBackColor = true;
@@ -890,16 +905,17 @@
             tabPage5.Location = new Point(4, 36);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(656, 542);
+            tabPage5.Size = new Size(662, 624);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "流映射项";
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // comboBox_disposition_additionalImages
             // 
+            comboBox_disposition_additionalImages.Enabled = false;
             comboBox_disposition_additionalImages.Font = new Font("微软雅黑", 16.2F);
             comboBox_disposition_additionalImages.FormattingEnabled = true;
-            comboBox_disposition_additionalImages.Items.AddRange(new object[] { "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v", "3gp", "mp3", "aac", "flac", "ogg", "wma", "m4a", "wav", "opus" });
+            comboBox_disposition_additionalImages.Items.AddRange(new object[] { "(无可用文件)" });
             comboBox_disposition_additionalImages.Location = new Point(185, 194);
             comboBox_disposition_additionalImages.Name = "comboBox_disposition_additionalImages";
             comboBox_disposition_additionalImages.Size = new Size(465, 43);
@@ -908,14 +924,14 @@
             // checkBox_disposition_additionalImages
             // 
             checkBox_disposition_additionalImages.AutoSize = true;
-            checkBox_disposition_additionalImages.Enabled = false;
             checkBox_disposition_additionalImages.Font = new Font("Microsoft YaHei UI", 16.2F);
             checkBox_disposition_additionalImages.Location = new Point(6, 195);
             checkBox_disposition_additionalImages.Name = "checkBox_disposition_additionalImages";
             checkBox_disposition_additionalImages.Size = new Size(205, 40);
             checkBox_disposition_additionalImages.TabIndex = 56;
-            checkBox_disposition_additionalImages.Text = "附加图片流：";
+            checkBox_disposition_additionalImages.Text = "嵌入艺术图：";
             checkBox_disposition_additionalImages.UseVisualStyleBackColor = true;
+            checkBox_disposition_additionalImages.CheckedChanged += checkBox_disposition_additionalImages_CheckedChanged;
             // 
             // groupBox2
             // 
@@ -1046,16 +1062,16 @@
             comboBox_y_or_n_or_null.Font = new Font("微软雅黑", 16.2F);
             comboBox_y_or_n_or_null.FormattingEnabled = true;
             comboBox_y_or_n_or_null.Items.AddRange(new object[] { "自动覆盖已存在文件", "不覆盖已存在文件", "默认" });
-            comboBox_y_or_n_or_null.Location = new Point(12, 693);
+            comboBox_y_or_n_or_null.Location = new Point(14, 852);
             comboBox_y_or_n_or_null.Name = "comboBox_y_or_n_or_null";
-            comboBox_y_or_n_or_null.Size = new Size(349, 43);
+            comboBox_y_or_n_or_null.Size = new Size(371, 43);
             comboBox_y_or_n_or_null.TabIndex = 45;
             // 
             // button_Stop
             // 
             button_Stop.Anchor = AnchorStyles.Bottom;
             button_Stop.BackColor = Color.Red;
-            button_Stop.Location = new Point(1077, 1372);
+            button_Stop.Location = new Point(1077, 1539);
             button_Stop.Name = "button_Stop";
             button_Stop.Size = new Size(94, 29);
             button_Stop.TabIndex = 15;
@@ -1065,7 +1081,7 @@
             // button_Text
             // 
             button_Text.Anchor = AnchorStyles.Bottom;
-            button_Text.Location = new Point(1177, 1372);
+            button_Text.Location = new Point(1177, 1539);
             button_Text.Name = "button_Text";
             button_Text.Size = new Size(94, 29);
             button_Text.TabIndex = 13;
@@ -1083,7 +1099,7 @@
             // 
             button__DoCopyCommand.Anchor = AnchorStyles.Bottom;
             button__DoCopyCommand.Font = new Font("微软雅黑", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button__DoCopyCommand.Location = new Point(1020, 1407);
+            button__DoCopyCommand.Location = new Point(1020, 1574);
             button__DoCopyCommand.Name = "button__DoCopyCommand";
             button__DoCopyCommand.Size = new Size(251, 55);
             button__DoCopyCommand.TabIndex = 8;
@@ -1097,7 +1113,7 @@
             richTextBox.Location = new Point(0, 0);
             richTextBox.Name = "richTextBox";
             richTextBox.ReadOnly = true;
-            richTextBox.Size = new Size(868, 803);
+            richTextBox.Size = new Size(868, 970);
             richTextBox.TabIndex = 0;
             richTextBox.Text = "";
             // 
@@ -1124,7 +1140,7 @@
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1553, 803);
+            ClientSize = new Size(1553, 970);
             Controls.Add(splitContainer1);
             Name = "FFmpegTool";
             Text = "FFmpeg 工具";
@@ -1244,5 +1260,6 @@
         private DataGridViewTextBoxColumn ColumnDirectory;
         private DataGridViewTextBoxColumn ColumnFullPath;
         private DataGridViewTextBoxColumn ColumnFileNameWithExt;
+        private Button button_OpenDownloadPath;
     }
 }

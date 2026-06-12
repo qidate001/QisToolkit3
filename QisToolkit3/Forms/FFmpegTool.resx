@@ -184,6 +184,6 @@ debug		48	全部调试信息		深度排查问题</value>
     <value>18, 5</value>
   </metadata>
   <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>所有支持的媒体文件|*.mp4;*.avi;*.mkv;*.mov;*.wmv;*.flv;*.webm;*.m4v;*.mpg;*.mpeg;*.3gp;*.ts;*.mts;*.m2ts;*.mp3;*.wav;*.wma;*.aac;*.flac;*.ogg;*.m4a;*.ape;*.ac3;*.dts|视频文件 (*.mp4, *.avi, *.mkv)|*.mp4;*.avi;*.mkv;*.mov;*.wmv;*.flv;*.webm;*.m4v;*.mpg;*.mpeg;*.3gp;*.ts;*.mts;*.m2ts|音频文件 (*.mp3, *.wav, *.flac)|*.mp3;*.wav;*.wma;*.aac;*.flac;*.ogg;*.m4a;*.ape;*.ac3;*.dts|所有文件 (*.*)|*.*</value>
+    <value>MP4 文件 (*.mp4)|*.mp4|AVI 文件 (*.avi)|*.avi|MKV 文件 (*.mkv)|*.mkv|MOV 文件 (*.mov)|*.mov|WMV 文件 (*.wmv)|*.wmv|FLV 文件 (*.flv)|*.flv|WebM 文件 (*.webm)|*.webm|M4V 文件 (*.m4v)|*.m4v|MPG 文件 (*.mpg)|*.mpg|MPEG 文件 (*.mpeg)|*.mpeg|3GP 文件 (*.3gp)|*.3gp|TS 文件 (*.ts)|*.ts|MTS 文件 (*.mts)|*.mts|M2TS 文件 (*.m2ts)|*.m2ts|MP3 文件 (*.mp3)|*.mp3|WAV 文件 (*.wav)|*.wav|WMA 文件 (*.wma)|*.wma|AAC 文件 (*.aac)|*.aac|FLAC 文件 (*.flac)|*.flac|OGG 文件 (*.ogg)|*.ogg|M4A 文件 (*.m4a)|*.m4a|APE 文件 (*.ape)|*.ape|AC3 文件 (*.ac3)|*.ac3|DTS 文件 (*.dts)|*.dts|JPG 文件 (*.jpg)|*.jpg|JPEG 文件 (*.jpeg)|*.jpeg|PNG 文件 (*.png)|*.png|GIF 文件 (*.gif)|*.gif|BMP 文件 (*.bmp)|*.bmp|WebP 文件 (*.webp)|*.webp|所有文件 (*.*)|*.*</value>
   </data>
 </root>

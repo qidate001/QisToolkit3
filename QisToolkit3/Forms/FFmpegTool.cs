@@ -138,6 +138,7 @@ namespace QisToolkit3.Forms
                 if (checkBox_cd_copy.Checked) command += $"-c:d copy ";
             }
 
+            // 重编码（和复制流互斥的部分）
             else
             {
 
@@ -222,6 +223,13 @@ namespace QisToolkit3.Forms
                 #endregion
             }
 
+
+            // 流作用描述
+
+            // 艺术图
+            if (checkBox_disposition_additionalImages.Checked) 
+                command += $"-disposition:v:{GetFilAvailableOptionsIndex(comboBox_disposition_additionalImages.Text)} attached_pic ";
+
             // 输出
             if (!string.IsNullOrWhiteSpace(outputFile))
             {
@@ -265,31 +273,24 @@ namespace QisToolkit3.Forms
                 }
             }
 
+            for (int i = 0; i < dt_input.Rows.Count; i++)
+                command += $"-map {i} ";
+
             return command;
         }
 
-        //private string BuildFFmpegOutputFileCommand()
-        //{
-        //    string command = string.Empty;
-        //    foreach (DataRow row in dt_output.Rows)
-        //    {
-        //        // 跳过被标记为删除的行
-        //        if (row.RowState != DataRowState.Deleted)
-        //        {
-        //            string fullPath = row["FullPath"].ToString();
-        //            if (!string.IsNullOrEmpty(fullPath))
-        //            {
-        //                command += $"-i \"{fullPath.Trim()}\" ";
-        //                Log.Info($"[FFmpeg工具] 导出文件：{fullPath.Trim()}");
-        //            }
+        private string GetFilAvailableOptionsIndex(string input)
+        {
+            if (input.Trim() == "(无可用文件)")
+                return string.Empty;
 
-        //        }
-        //    }
-
-        //    return command;
-        //}
-
-        // 处理用户数据
+            Match match = Regex.Match(input.Trim(), @"^\d+");
+            if (match.Success)
+            {
+                return match.Value;
+            }
+            return string.Empty;
+        }
         private void ProcessingUserData()
         {
 
@@ -423,14 +424,16 @@ namespace QisToolkit3.Forms
             SetAllCopyChecked();
         }
 
+        private void checkBox_disposition_additionalImages_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBox_disposition_additionalImages.Enabled = checkBox_disposition_additionalImages.Checked;
+        }
+
         private void button_Open_File_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                foreach (string fullPath in openFileDialog.FileNames)
-                {
-                    AddFileToDataTable(fullPath);
-                }
+                AddFilesToDataTable(openFileDialog.FileNames);
             }
         }
 
@@ -452,10 +455,7 @@ namespace QisToolkit3.Forms
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
             // 处理文件
-            foreach (string file in files)
-            {
-                AddFileToDataTable(file);
-            }
+            AddFilesToDataTable(files);
         }
 
         private void FFmpegTool_DragEnter(object sender, DragEventArgs e)
@@ -488,7 +488,7 @@ namespace QisToolkit3.Forms
                         // 文件已存在，提示用户
                         string _fileName = Path.GetFileName(fullPath);
                         MessageBox.Show($"文件 \"{_fileName}\" 已经导入过了！",
-                                       "重复导入", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                         "重复导入", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return; // 退出方法，不添加
                     }
                 }
@@ -502,6 +502,64 @@ namespace QisToolkit3.Forms
 
             // 3. 添加到 DataTable（显示列 + 隐藏列）
             dt_input.Rows.Add(fileName, extension, fileNameWithExt, fullPath, directory);
+        }
+
+        private void AddFilesToDataTable(string[] fullPaths)
+        {
+            foreach (string fullPath in fullPaths)
+            {
+                AddFileToDataTable(fullPath);
+            }
+
+            ReloadFilAvailableOptions();
+        }
+
+        private void ReloadFilAvailableOptions()
+        {
+            // 保存当前选中的值（如果有）
+            string currentSelection = comboBox_disposition_additionalImages.SelectedItem?.ToString();
+
+            // 清空现有的 Items
+            comboBox_disposition_additionalImages.Items.Clear();
+
+            // 检查是否有数据源
+            if (dt_input == null || dt_input.Rows.Count == 0)
+            {
+                comboBox_disposition_additionalImages.Enabled = false;
+                comboBox_disposition_additionalImages.Items.Add("(无可用文件)");
+                comboBox_disposition_additionalImages.SelectedIndex = 0;
+                return;
+            }
+
+            //comboBox_disposition_additionalImages.Enabled = true;
+
+            // 遍历 DataTable，将 FileNameWithExt 填入 ComboBox
+            int index = 0;
+            foreach (DataRow row in dt_input.Rows)
+            {
+                // 跳过已删除的行
+                if (row.RowState == DataRowState.Deleted) continue;
+
+                string fileNameWithExt = row["FileNameWithExt"]?.ToString();
+
+                if (!string.IsNullOrEmpty(fileNameWithExt))
+                {
+                    string displayText = $"{index}: {fileNameWithExt}";
+                    comboBox_disposition_additionalImages.Items.Add(displayText);
+                    index++;
+                }
+            }
+
+            // 恢复之前的选中项（如果还存在）
+            if (!string.IsNullOrEmpty(currentSelection) && comboBox_disposition_additionalImages.Items.Contains(currentSelection))
+            {
+                comboBox_disposition_additionalImages.SelectedItem = currentSelection;
+            }
+            else if (comboBox_disposition_additionalImages.Items.Count > 0)
+            {
+                // 否则默认选中第一个
+                comboBox_disposition_additionalImages.SelectedIndex = 0;
+            }
         }
 
         private void button_CopyCommand_Click(object sender, EventArgs e)
@@ -839,10 +897,25 @@ namespace QisToolkit3.Forms
                 // 删除数据源中的行
                 dt_input.Rows[e.RowIndex].Delete();
                 dt_input.AcceptChanges();  // 提交更改，界面会自动刷新
+                ReloadFilAvailableOptions();
             }
         }
 
-        
+        private void button_OpenDownloadPath_Click(object sender, EventArgs e)
+        {
+            string path = comboBox_Output_FilePath.Text;
+            Directory.CreateDirectory(path);
+            ExplorerStart(path);
+        }
+
+        private void button_OpenAutoDownloadPath_Click(object sender, EventArgs e)
+        {
+            string path = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
+            Directory.CreateDirectory(path);
+            ExplorerStart(path);
+        }
+
+
 
         //private void dataGridView_OutputFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
