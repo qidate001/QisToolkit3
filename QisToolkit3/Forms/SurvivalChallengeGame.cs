@@ -2030,6 +2030,7 @@ namespace QisToolkit3.Forms
 
             // 执行事件
             ExecuteEvent(selectedEventType, head);
+            //ExecuteEvent(34, head);
         }
 
         // 根据幸运值获取随机事件
@@ -2124,36 +2125,27 @@ namespace QisToolkit3.Forms
                 case 15:
                     XAddMessage(head + "喜欢提携后辈的\"小镇做题家\"张九龄，给你写了一首诗！", 0, 0, 0, 20);
                     break;
-                case 16:
+
+                case 16: case 17: case 18: case 19: case 20: case 21:
                     XAddMessage(head + "平平淡淡的一晚。");
                     break;
-                case 17:
-                    XAddMessage(head + "平平淡淡的一晚。");
-                    break;
-                case 18:
-                    XAddMessage(head + "平平淡淡的一晚。");
-                    break;
-                case 19:
-                    XAddMessage(head + "平平淡淡的一晚。");
-                    break;
-                case 20:
-                    XAddMessage(head + "平平淡淡的一晚。");
-                    break;
-                case 21:
-                    XAddMessage(head + "平平淡淡的一晚。");
-                    break;
+
                 case 22:
                     XAddMessage(head + "你看了舞剧《李白》，还和主创合影，感动又开心。", 0, 0, 5, 15);
                     break;
+
                 case 23:
                     XAddMessage(head + "你称霸武林，笑傲江湖，大笑中忽然被门槛绊倒……原来是一场梦", 0, 0, 0, -2);
                     break;
+
                 case 24:
                     XAddMessage(head + "大街小巷响起了琼瑶的《一帘幽梦》主题曲，你听了十分伤怀。", 0, 0, 2, -2);
                     break;
+
                 case 25:
                     XAddMessage(head + "你扮演鬼屋的NPC，把客人吓得半死。", 0, 0, 0, 5);
                     break;
+
                 case 26:
                     XAddMessage(head + "你手持三尺青锋，随意挽了几个剑花，赢得路人喝彩。", 0, 0, 0, 5, 25);
                     break;
@@ -2207,6 +2199,120 @@ namespace QisToolkit3.Forms
                     break;
                 case 33:
                     XAddMessage(head + "你看着左右摇摆的钟摆，陷入了沉思。");
+                    break;
+                case 34: case 35:
+                    var foundItems = new List<string>();
+
+                    // ========== 1. 基础消耗品（0~2） ==========
+                    int water = random.Next(0, 3);
+                    Item_BottledWater += water;
+                    if (water > 0) foundItems.Add($"{water}瓶矿泉水");
+
+                    int beverage = random.Next(0, 3);
+                    Item_BottledBeverage += beverage;
+                    if (beverage > 0) foundItems.Add($"{beverage}瓶瓶装饮料");
+
+                    int biscuit = random.Next(0, 3);
+                    Item_CompressedBiscuit += biscuit;
+                    if (biscuit > 0) foundItems.Add($"{biscuit}包压缩饼干");
+
+                    // ========== 2. 基础金钱（50% 概率，200~2000 + Luck 加成） ==========
+                    int gold = 0;
+                    if (random.Next(0, 2) == 1)
+                    {
+                        gold = random.Next(200 + Luck * 30, 3000 + Luck * 60);
+                    }
+
+                    // ========== 3. 特殊物品：四个布尔物品（20% 概率，必得一个未拥有的，否则给 500~1000 金钱） ==========
+                    if (random.Next(0, 100) < 20)   // 20% 概率触发
+                    {
+                        var specialItems = new (bool flag, string name, Action setTrue)[]
+                        {
+                            (Item_FirstAidKit, "急救包", () => Item_FirstAidKit = true),
+                            (Item_Antidote, "解毒剂", () => Item_Antidote = true),
+                            (Item_LuckyCharm, "幸运符", () => Item_LuckyCharm = true),
+                            (Item_SoothingMedicine, "舒缓药", () => Item_SoothingMedicine = true)
+                        };
+
+                        var missing = specialItems.Where(item => !item.flag).ToList();
+
+                        if (missing.Any())
+                        {
+                            var chosen = missing[random.Next(0, missing.Count)];
+                            chosen.setTrue();
+                            foundItems.Add(chosen.name);
+                        }
+                        else
+                        {
+                            int extraGold = random.Next(500, 1001);
+                            gold += extraGold;
+                            //foundItems.Add($"{extraGold}块钱（特殊全满奖励）");
+                        }
+                    }
+
+                    // ========== 4. 御寒服 & 御焰服（20% 概率，按天数决定优先级） ==========
+                    if (random.Next(0, 100) < 20)   // 20% 概率触发衣服事件
+                    {
+                        if (Days < EndOfExtremeCold)
+                        {
+                            // 优先给御寒服
+                            if (Item_WinterClothing == 0)
+                            {
+                                Item_WinterClothing = 1;
+                                foundItems.Add("御寒服");
+                            }
+                            else if (Item_SummerClothing == 0)
+                            {
+                                Item_SummerClothing = 1;
+                                foundItems.Add("御焰服");
+                            }
+                            else
+                            {
+                                gold += random.Next(100, 301);
+                                //foundItems.Add($"{extraGoldForClothes}块钱（衣物全满奖励）");
+                            }
+                        }
+                        else
+                        {
+                            // 优先给御焰服
+                            if (Item_SummerClothing == 0)
+                            {
+                                Item_SummerClothing = 1;
+                                foundItems.Add("御焰服");
+                            }
+                            else if (Item_WinterClothing == 0)
+                            {
+                                Item_WinterClothing = 1;
+                                foundItems.Add("御寒服");
+                            }
+                            else
+                            {
+                                gold += random.Next(100, 301);
+                                //foundItems.Add($"{extraGoldForClothes}块钱（衣物全满奖励）");
+                            }
+                        }
+                    }
+
+                    // ========== 5. 将最终金币加入列表 ==========
+                    if (gold > 0)
+                    {
+                        foundItems.Add($"{gold}块钱");
+                    }
+
+                    // ========== 6. 自然连接并输出消息 ==========
+                    string itemList = foundItems.Count switch
+                    {
+                        0 => "……什么也没有！！",
+                        1 => foundItems[0],
+                        _ => string.Join("、", foundItems.Take(foundItems.Count - 1)) + "和" + foundItems.Last()
+                    };
+
+                    XAddMessage(head + "你在路边找到一个宝箱！你在里面找到了\n" + itemList + "！",
+                        0, 0,
+                        (water + beverage + biscuit) * 10 + gold / 150,
+                        (water + beverage + biscuit) * 7 + gold / 300,
+                        gold, 0, 0, 0
+                    );
                     break;
             }
         }
@@ -2765,7 +2871,7 @@ namespace QisToolkit3.Forms
         // 获取好事件
         private int GetGoodEvent(Random random)
         {
-            int[] goodEvents = { 3, 7, 9, 11, 15, 22, 25, 26, 28, 32 };
+            int[] goodEvents = { 3, 7, 9, 11, 15, 22, 25, 26, 28, 32, 34, 35 };
             return goodEvents[random.Next(goodEvents.Length)];
         }
 
