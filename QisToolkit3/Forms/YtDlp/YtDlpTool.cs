@@ -32,6 +32,7 @@ namespace QisToolkit3.Forms
         private string AutoDownloadNameFilePath = Path.Combine(actualDirectory, @"yt-dlp\AutoDownloadName.txt");
         private string HeadersFilePath = Path.Combine(actualDirectory, @"yt-dlp\Headers.txt");
         private string DefaultConfigFilePath = Path.Combine(actualDirectory, @"yt-dlp\DefaultConfig.xml");
+        private string AutoDownloadConfigFilePath = Path.Combine(actualDirectory, @"yt-dlp\AutoDownloadConfig.txt");
         public static string MatchFiltersPath = Path.Combine(actualDirectory, @"yt-dlp\MatchFilters.txt");
 
 
@@ -204,7 +205,7 @@ namespace QisToolkit3.Forms
 
                     AppendText("信息页生成完成", "QisToolkit");
                 }
-                
+
                 // 将字幕文件 XML 转换成 ASS
                 if (checkBox_DanmakuFactory_XML_To_ASS.Checked)
                 {
@@ -234,8 +235,8 @@ namespace QisToolkit3.Forms
 
                 if (checkBox_OpenF.Checked)
                 {
-                    string currentDir = checkBox_Path_Home.Checked ? 
-                        comboBox_Path_Home.Text : checkBox_SetPaths.Checked ? 
+                    string currentDir = checkBox_Path_Home.Checked ?
+                        comboBox_Path_Home.Text : checkBox_SetPaths.Checked ?
                         textBox_Paths.Text : AppDomain.CurrentDomain.BaseDirectory;
 
                     Log.Info($"[YtDlp工具] 打开文件夹 {currentDir}");
@@ -959,7 +960,7 @@ namespace QisToolkit3.Forms
             foreach (var line in lineArray)
             {
                 var trimmedLine = line.Trim();
-                
+
                 // 跳过空行
                 if (string.IsNullOrEmpty(trimmedLine))
                     continue;
@@ -1486,129 +1487,367 @@ namespace QisToolkit3.Forms
 
         private async void button_AutoDownload_Click(object sender, EventArgs e)
         {
-            bool UseAutoDownloadFile = false;
-            if (!File.Exists(comboBox_URL.Text))
+            // 检查配置文件是否存在
+            if (!File.Exists(AutoDownloadConfigFilePath))
             {
-                if (File.Exists(AutoDownloadFilePath))
-                {
-                    if (!string.IsNullOrWhiteSpace(File.ReadAllText(AutoDownloadFilePath)))
-                    {
-                        comboBox_URL.Text = AutoDownloadFilePath;
-                        UseAutoDownloadFile = true;
-                    }
-                }
-                else
-                {
-                    Log.Err($"[YtDlp工具] 执行自动下载时未找到文件 {comboBox_URL.Text}");
-                    return;
-                }
+                CreateDefaultAutoDownloadConfig(AutoDownloadConfigFilePath);
+                MessageBox.Show("已创建默认配置文件，请编辑后再执行自动下载。\n" +
+                                $"文件位置：{AutoDownloadConfigFilePath}",
+                                "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
+            // 解析配置文件
+            var downloadItems = ParseAutoDownloadConfig(AutoDownloadConfigFilePath);
 
-            // 初始化一些东西
+            if (downloadItems.Count == 0)
+            {
+                MessageBox.Show("配置文件中没有有效的下载项，请检查格式。", "提示",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 禁用按钮防止重复点击
+            button_AutoDownload.Enabled = false;
+            button_DoDownload.Enabled = false;
+            button_DoAnalysis.Enabled = false;
+
+            // 保存原始设置，以便下载完成后恢复
+            var originalSettings = new
+            {
+                UseArchive = checkBox_UseArchive.Checked,
+                ArchivePlus = checkBox_ArchivePlus.Checked,
+                ClearURLData = checkBox_ClearURLData.Checked,
+                OpenF = checkBox_OpenF.Checked,
+                MatchFilters = checkBox_MatchFilters.Checked,
+                PathHome = checkBox_Path_Home.Checked,
+                HomePath = comboBox_Path_Home.Text,
+                SetPaths = checkBox_SetPaths.Checked,
+                Paths = textBox_Paths.Text
+            };
+
+            // 设置自动下载需要的配置
             checkBox_UseArchive.Checked = true;
             checkBox_ArchivePlus.Checked = true;
             checkBox_ClearURLData.Checked = true;
             checkBox_OpenF.Checked = false;
 
-            // 禁用按钮防止重复点击
-            button_AutoDownload.Enabled = false;
+            int successCount = 0;
+            int failCount = 0;
 
-            // 导入默认文件
-            if (!UseAutoDownloadFile)
-                File.WriteAllText(AutoDownloadFilePath, File.ReadAllText(comboBox_URL.Text));
-
-            // 保存初始地址
-            string InitialPath = textBox_Paths.Text;
-
-
-            // 执行下载
             try
             {
-                using (StreamReader sr = new StreamReader(comboBox_URL.Text))
+                foreach (var item in downloadItems)
                 {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
+                    Log.Info($"[YtDlp工具] 开始处理: {item.Url}");
+                    Log.Info($"  名称: {(item.HasCustomName ? item.Name : "(自动解析)")}");
+                    Log.Info($"  MatchFilters: {item.MatchFilters}");
+
+                    // 设置 MatchFilters
+                    checkBox_MatchFilters.Checked = item.MatchFilters;
+
+                    // 设置 URL
+                    comboBox_URL.Text = item.Url;
+
+                    // 获取目标目录名称
+                    string directoryName = item.GetDefaultName();
+
+                    // 清理名称中的非法字符
+                    directoryName = IdNameMapper.SanitizeFileName(directoryName);
+
+                    // 构建下载路径
+                    string downloadPath = Path.Combine(actualDirectory, @"yt-dlp\Downloads", directoryName);
+
+                    Log.Info($"下载目录: {downloadPath}");
+
+                    // 设置路径
+                    if (checkBox_Path_Home.Checked)
+                        comboBox_Path_Home.Text = downloadPath;
+                    else
+                        textBox_Paths.Text = downloadPath;
+
+                    // 确保目录存在
+                    Directory.CreateDirectory(downloadPath);
+
+                    // 执行下载
+                    try
                     {
-                        // 跳过空行
-                        if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            // 跳过注释行
-                            if (line[0] != '#')
-                            {
-                                var UrlData = BilibiliUrlParser.ParseBilibiliUrl(line);
-                                comboBox_URL.Text = line;
-
-                                if (UrlData.IsValid)
-                                {
-                                    // 获取要使用的目录名称（优先使用映射的名称，否则使用ID）
-                                    string directoryName = UrlData.ListId;
-
-                                    // 如果有映射器且映射器已加载，尝试获取名称
-                                    if (checkBox_IdNameMapper.Checked && _idNameMapper != null)
-                                    {
-                                        string mappedName = _idNameMapper.GetNameOrDefault(UrlData.ListId);
-
-                                        // 如果映射名称不同于ID，则使用"ID_名称"的格式
-                                        if (mappedName != UrlData.ListId)
-                                        {
-                                            // 清理名称中的非法字符
-                                            string safeName = IdNameMapper.SanitizeFileName(mappedName);
-                                            directoryName = $"{safeName}";
-                                        }
-                                    }
-
-                                    Log.Info($"文件夹名: {directoryName}");
-
-                                    string path = @$"{actualDirectory}\yt-dlp\Downloads\{directoryName}";
-
-                                    // 指定路径
-                                    if (checkBox_Path_Home.Checked) comboBox_Path_Home.Text = path;
-                                    else textBox_Paths.Text = path;
-
-                                    Directory.CreateDirectory(path);
-
-                                    // 等待当前下载完成后再继续下一个
-                                    await DoDownload();
-                                }
-
-                                // 回退普通模式
-                                else
-                                {
-                                    string path = @$"{actualDirectory}\yt-dlp\Downloads";
-
-                                    textBox_Paths.Text = path;
-                                    Directory.CreateDirectory(path);
-
-                                    // 等待当前下载完成后再继续下一个
-                                    await DoDownload();
-                                }
-                            }
-                        }
+                        await DoDownload();
+                        successCount++;
+                        Log.Info($"[YtDlp工具] 完成: {item.Url}");
+                    }
+                    catch (Exception ex)
+                    {
+                        failCount++;
+                        Log.Err($"[YtDlp工具] 下载失败: {item.Url}, 错误: {ex.Message}");
                     }
                 }
-                MessageBox.Show("所有下载任务已完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // 显示完成信息
+                string resultMsg = $"自动下载完成！\n成功: {successCount} 个\n失败: {failCount} 个";
+                Log.Info($"[YtDlp工具] {resultMsg}");
+                MessageBox.Show(resultMsg, "下载完成", MessageBoxButtons.OK,
+                                failCount > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Log.Err($"[YtDlp工具] 自动下载过程中出现错误：{ex.Message}");
-                MessageBox.Show($"下载过程中出现错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"下载过程中出现错误：{ex.Message}", "错误",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
+                // 恢复原始设置
+                checkBox_UseArchive.Checked = originalSettings.UseArchive;
+                checkBox_ArchivePlus.Checked = originalSettings.ArchivePlus;
+                checkBox_ClearURLData.Checked = originalSettings.ClearURLData;
+                checkBox_OpenF.Checked = originalSettings.OpenF;
+                checkBox_MatchFilters.Checked = originalSettings.MatchFilters;
+
+                if (originalSettings.PathHome)
+                {
+                    checkBox_Path_Home.Checked = true;
+                    comboBox_Path_Home.Text = originalSettings.HomePath;
+                }
+                else if (originalSettings.SetPaths)
+                {
+                    checkBox_SetPaths.Checked = true;
+                    textBox_Paths.Text = originalSettings.Paths;
+                }
+
                 // 恢复按钮状态
                 button_AutoDownload.Enabled = true;
+                button_DoDownload.Enabled = true;
+                button_DoAnalysis.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// 自动下载配置项
+        /// </summary>
+        private class AutoDownloadItem
+        {
+            public string Url { get; set; } = string.Empty;
+            public string Name { get; set; } = string.Empty;
+            public bool MatchFilters { get; set; } = false;
+            public bool HasCustomName => !string.IsNullOrEmpty(Name);
+
+            /// <summary>
+            /// 获取默认名称
+            /// </summary>
+            public string GetDefaultName()
+            {
+                if (HasCustomName)
+                    return Name;
+
+                return ParseDefaultNameFromUrl(Url);
             }
 
+            /// <summary>
+            /// 从 URL 解析默认名称
+            /// </summary>
+            private string ParseDefaultNameFromUrl(string url)
+            {
+                // 合集: https://space.bilibili.com/697987209/lists/8033161 -> 697987209_8033161
+                if (url.Contains("/lists/"))
+                {
+                    var match = System.Text.RegularExpressions.Regex.Match(url, @"space\.bilibili\.com/(\d+)/lists/(\d+)");
+                    if (match.Success)
+                        return $"{match.Groups[1]}_{match.Groups[2]}";
+                }
 
-            // 下载完成 还原初始地址
-            if (checkBox_Path_Home.Checked) comboBox_Path_Home.Text = InitialPath;
-            else textBox_Paths.Text = InitialPath;
+                // 视频: https://www.bilibili.com/video/BV19EJJ68EK8 -> BV19EJJ68EK8
+                if (url.Contains("/video/"))
+                {
+                    var match = System.Text.RegularExpressions.Regex.Match(url, @"/video/([a-zA-Z0-9]+)");
+                    if (match.Success)
+                        return match.Groups[1].Value;
+                }
+
+                // 频道: https://space.bilibili.com/647267811 -> 647267811
+                if (url.Contains("space.bilibili.com/"))
+                {
+                    var match = System.Text.RegularExpressions.Regex.Match(url, @"space\.bilibili\.com/(\d+)");
+                    if (match.Success)
+                        return match.Groups[1].Value;
+                }
+
+                // 通用 fallback：使用 URL 的最后一段
+                var uri = new Uri(url);
+                return SanitizeFileName(uri.Segments.LastOrDefault()?.Trim('/') ?? "unknown");
+            }
+
+            private string SanitizeFileName(string name)
+            {
+                if (string.IsNullOrEmpty(name))
+                    return "unknown";
+
+                var invalidChars = Path.GetInvalidFileNameChars();
+                return string.Join("_", name.Split(invalidChars, StringSplitOptions.RemoveEmptyEntries));
+            }
+        }
+
+        /// <summary>
+        /// 解析自动下载配置文件
+        /// </summary>
+        private List<AutoDownloadItem> ParseAutoDownloadConfig(string configPath)
+        {
+            var items = new List<AutoDownloadItem>();
+
+            if (!File.Exists(configPath))
+            {
+                CreateDefaultAutoDownloadConfig(configPath);
+                return items;
+            }
+
+            var lines = File.ReadAllLines(configPath);
+            AutoDownloadItem currentItem = null;
+
+            foreach (var rawLine in lines)
+            {
+                var line = rawLine.Trim();
+
+                // 跳过空行
+                if (string.IsNullOrEmpty(line))
+                    continue;
+
+                // 注释行（以 # 开头）
+                if (line.StartsWith("#"))
+                    continue;
+
+                // 检查是否是 URL（不以 Key: 开头，且包含 http:// 或 https:// 或 bilibili.com）
+                bool isUrl = line.StartsWith("http://") || line.StartsWith("https://") ||
+                             (line.Contains("bilibili.com") && !line.Contains(':'));
+
+                if (isUrl)
+                {
+                    // 如果有当前项，先添加到列表
+                    if (currentItem != null && !string.IsNullOrEmpty(currentItem.Url))
+                    {
+                        items.Add(currentItem);
+                    }
+
+                    // 创建新项
+                    currentItem = new AutoDownloadItem { Url = line };
+                    continue;
+                }
+
+                // 解析属性（仅当有当前项时）
+                if (currentItem != null && line.Contains(':'))
+                {
+                    var colonIndex = line.IndexOf(':');
+                    var key = line.Substring(0, colonIndex).Trim().ToLowerInvariant();
+                    var value = line.Substring(colonIndex + 1).Trim();
+
+                    switch (key)
+                    {
+                        case "name":
+                            currentItem.Name = value;
+                            break;
+                        case "matchfilters":
+                            currentItem.MatchFilters = value.Equals("true", StringComparison.OrdinalIgnoreCase) ||
+                                                        value.Equals("1") ||
+                                                        value.Equals("yes");
+                            break;
+                    }
+                }
+            }
+
+            // 添加最后一个项
+            if (currentItem != null && !string.IsNullOrEmpty(currentItem.Url))
+            {
+                items.Add(currentItem);
+            }
+
+            // 输出解析结果日志
+            Log.Info($"[YtDlp工具] 解析到 {items.Count} 个下载项");
+            foreach (var item in items)
+            {
+                Log.Info($"  - {item.Url}");
+                Log.Info($"    名称: {(string.IsNullOrEmpty(item.Name) ? "(自动解析)" : item.Name)}");
+                Log.Info($"    MatchFilters: {item.MatchFilters}");
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// 创建默认的自动下载配置文件
+        /// </summary>
+        private void CreateDefaultAutoDownloadConfig(string configPath)
+        {
+            var defaultContent = @"# ============================================
+# 自动下载配置文件
+# ============================================
+# 格式说明：
+# 1. URL 单独一行
+# 2. 可选参数：
+#    Name: 自定义名称（不指定则自动从 URL 解析）
+#    MatchFilters: true/false（是否启用匹配过滤器，默认 false）
+#
+# ============================================
+
+# 师傅你变了
+https://space.bilibili.com/3494379457087582/lists/4459703
+Name: 《师傅你变了》
+MatchFilters: false
+
+# 甜橙盛夏
+https://space.bilibili.com/697987209/lists/8033161
+Name: 《甜橙盛夏》
+MatchFilters: false
+
+# 姜糖恋语
+https://space.bilibili.com/1411920158/lists/6668649
+Name: 《姜糖恋语》
+
+# 逆徒与逆师
+https://space.bilibili.com/5538/lists/6715609
+Name: 《逆徒与逆师》
+
+# 师兄绝非反派
+https://space.bilibili.com/3546830767917809/lists/4728895
+Name: 《师兄绝非反派》
+
+# 熙玥救赎
+https://space.bilibili.com/3690975687870895/lists/7035241
+Name: 《熙玥救赎》
+
+# 我竟是伟大存在
+https://space.bilibili.com/32160535/lists/5578590
+Name: 《我竟是伟大存在》
+
+# 不当人的选手
+https://space.bilibili.com/589953538/lists/7712111
+Name: 《不当人的选手》
+
+# 御兽老大
+https://space.bilibili.com/429403980/lists/2639451
+Name: 《御兽老大》
+
+# 我的灵根是系统
+https://space.bilibili.com/3494369006979716/lists/6714915
+Name: 《我的灵根是系统》
+
+# 摆烂也能无敌第二季
+https://space.bilibili.com/3546743408953776/lists/7706348
+Name: 《摆烂也能无敌第二季》
+
+# 无免之门（已注释，如需下载请取消注释）
+# https://space.bilibili.com/3546697831549463/lists/5684545
+# Name: 《无免之门》
+
+# 遗忘世间
+https://space.bilibili.com/71130413/lists/5525218
+Name: 《遗忘世间》
+";
+            File.WriteAllText(configPath, defaultContent, Encoding.UTF8);
         }
 
         private void comboBox_URL_TextChanged(object sender, EventArgs e)
         {
-            button_AutoDownload.Enabled = File.Exists(comboBox_URL.Text) || File.Exists(AutoDownloadFilePath);
+            button_AutoDownload.Enabled = File.Exists(AutoDownloadConfigFilePath) ||
+                                          File.Exists(comboBox_URL.Text);
         }
 
         private void checkBox_ArchivePlus_CheckedChanged(object sender, EventArgs e)
@@ -1687,17 +1926,14 @@ namespace QisToolkit3.Forms
         private void button_AutoDownloadFile_Click(object sender, EventArgs e)
         {
             // 文件不存在就创建
-            if (!File.Exists(AutoDownloadFilePath))
+            if (!File.Exists(AutoDownloadConfigFilePath))
             {
-                File.WriteAllText(AutoDownloadFilePath,
-                    "# 此文件会当未在指定列表时点击自动下载按钮时执行。\r\n" +
-                    "# 一行一个，从上至下依次下载，会自动跳过空行空白行。\r\n" +
-                    "# 以 '#' 开头为注释行\r\n\r\n");
+                CreateDefaultAutoDownloadConfig(AutoDownloadConfigFilePath);
             }
 
             // 打开文件
-            Log.Info($"[YtDlp工具] 打开文件 {AutoDownloadFilePath}");
-            StartFile($"{AutoDownloadFilePath}");
+            Log.Info($"[YtDlp工具] 打开文件 {AutoDownloadConfigFilePath}");
+            StartFile(AutoDownloadConfigFilePath);
         }
 
         private void button_OpenAutoDownloadNameFile_Click(object sender, EventArgs e)
@@ -1951,6 +2187,11 @@ namespace QisToolkit3.Forms
             {
                 checkBox_WriteThumbnail.Enabled = true;
             }
+        }
+
+        private void button_YtDlpRunDir_Click(object sender, EventArgs e)
+        {
+            Qi.ExplorerStart(YtDlpWorkDirPath);
         }
     }
 }

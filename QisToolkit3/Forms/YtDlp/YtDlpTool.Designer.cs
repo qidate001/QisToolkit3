@@ -227,7 +227,6 @@
             button_Option_ReSet = new Button();
             button_Option_Load = new Button();
             button_Option_Save = new Button();
-            button_OpenAutoDownloadNameFile = new Button();
             button_AutoDownloadFile = new Button();
             button_OpenAutoDownloadPath = new Button();
             button_OpenDownloadPath = new Button();
@@ -259,6 +258,7 @@
             button_DoDownload = new Button();
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
+            button_YtDlpRunDir = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -1834,10 +1834,10 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button_YtDlpRunDir);
             groupBox2.Controls.Add(button_Option_ReSet);
             groupBox2.Controls.Add(button_Option_Load);
             groupBox2.Controls.Add(button_Option_Save);
-            groupBox2.Controls.Add(button_OpenAutoDownloadNameFile);
             groupBox2.Controls.Add(button_AutoDownloadFile);
             groupBox2.Controls.Add(button_OpenAutoDownloadPath);
             groupBox2.Controls.Add(button_OpenDownloadPath);
@@ -1868,13 +1868,6 @@
             button_Option_Save.Name = "button_Option_Save";
             button_Option_Save.UseVisualStyleBackColor = true;
             button_Option_Save.Click += button_Option_Save_Click;
-            // 
-            // button_OpenAutoDownloadNameFile
-            // 
-            resources.ApplyResources(button_OpenAutoDownloadNameFile, "button_OpenAutoDownloadNameFile");
-            button_OpenAutoDownloadNameFile.Name = "button_OpenAutoDownloadNameFile";
-            button_OpenAutoDownloadNameFile.UseVisualStyleBackColor = true;
-            button_OpenAutoDownloadNameFile.Click += button_OpenAutoDownloadNameFile_Click;
             // 
             // button_AutoDownloadFile
             // 
@@ -2093,6 +2086,13 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
+            // button_YtDlpRunDir
+            // 
+            resources.ApplyResources(button_YtDlpRunDir, "button_YtDlpRunDir");
+            button_YtDlpRunDir.Name = "button_YtDlpRunDir";
+            button_YtDlpRunDir.UseVisualStyleBackColor = true;
+            button_YtDlpRunDir.Click += button_YtDlpRunDir_Click;
+            // 
             // YtDlpTool
             // 
             AllowDrop = true;
@@ -2202,7 +2202,6 @@
         private Button button_OpenCookiesFile;
         private Button button_OpenArchiveFile;
         private CheckBox checkBox_IdNameMapper;
-        private Button button_OpenAutoDownloadNameFile;
         private Button button1;
         private Button button_Option_Save;
         private TabControl tabControl1;
@@ -2396,5 +2395,6 @@
         private CheckBox checkBox_DownloadSections_End;
         private ComboBox comboBox_DownloadSections_Start;
         private CheckBox checkBox_DownloadSections_Start;
+        private Button button_YtDlpRunDir;
     }
 }

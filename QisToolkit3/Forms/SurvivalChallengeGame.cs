@@ -45,7 +45,7 @@ namespace QisToolkit3.Forms
         private static bool[] HAC_AskSoul = { false, false, false };
         private static string MessageLog = "你出生了......";
         private static string NowDoing = "Main", World = "Main";
-        private static bool DeBugMode = true, DeBug_2Gold = false;
+        private static bool DeBugMode = false, DeBug_2Gold = false;
         private static bool[] TC = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
         // 通用主线状态

@@ -6964,6 +6964,36 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="&gt;&gt;checkBox_IdNameMapper.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="button_YtDlpRunDir.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_YtDlpRunDir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_YtDlpRunDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 88</value>
+  </data>
+  <data name="button_YtDlpRunDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 55</value>
+  </data>
+  <data name="button_YtDlpRunDir.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="button_YtDlpRunDir.Text" xml:space="preserve">
+    <value>打开 YtDlp 运行目录</value>
+  </data>
+  <data name="&gt;&gt;button_YtDlpRunDir.Name" xml:space="preserve">
+    <value>button_YtDlpRunDir</value>
+  </data>
+  <data name="&gt;&gt;button_YtDlpRunDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_YtDlpRunDir.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;button_YtDlpRunDir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button_Option_ReSet.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
   </data>
@@ -6989,7 +7019,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;button_Option_ReSet.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button_Option_Load.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7016,7 +7046,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;button_Option_Load.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_Option_Save.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7043,33 +7073,6 @@ vorbis		好	中等	一般	开源软件</value>
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;button_Option_Save.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button_OpenAutoDownloadNameFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="button_OpenAutoDownloadNameFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 88</value>
-  </data>
-  <data name="button_OpenAutoDownloadNameFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 55</value>
-  </data>
-  <data name="button_OpenAutoDownloadNameFile.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="button_OpenAutoDownloadNameFile.Text" xml:space="preserve">
-    <value>打开 自动下载 ID 名称映射文件</value>
-  </data>
-  <data name="&gt;&gt;button_OpenAutoDownloadNameFile.Name" xml:space="preserve">
-    <value>button_OpenAutoDownloadNameFile</value>
-  </data>
-  <data name="&gt;&gt;button_OpenAutoDownloadNameFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_OpenAutoDownloadNameFile.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;button_OpenAutoDownloadNameFile.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="button_AutoDownloadFile.Font" type="System.Drawing.Font, System.Drawing">
@@ -7085,7 +7088,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>37</value>
   </data>
   <data name="button_AutoDownloadFile.Text" xml:space="preserve">
-    <value>打开 自动下载 默认列表文件</value>
+    <value>打开 自动下载配置文件</value>
   </data>
   <data name="&gt;&gt;button_AutoDownloadFile.Name" xml:space="preserve">
     <value>button_AutoDownloadFile</value>
