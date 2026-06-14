@@ -1542,9 +1542,12 @@ namespace QisToolkit3.Forms
                     Log.Info($"[YtDlp工具] 开始处理: {item.Url}");
                     Log.Info($"  名称: {(item.HasCustomName ? item.Name : "(自动解析)")}");
                     Log.Info($"  MatchFilters: {item.MatchFilters}");
+                    Log.Info($"  Playlist: {item.Playlist}");
 
-                    // 设置 MatchFilters
+                    // 设置 参数
                     checkBox_MatchFilters.Checked = item.MatchFilters;
+                    checkBox_playlist_items.Checked = !string.IsNullOrWhiteSpace(item.Playlist);
+                    textBox_playlist_items.Text = item.Playlist;
 
                     // 设置 URL
                     comboBox_URL.Text = item.Url;
@@ -1630,7 +1633,9 @@ namespace QisToolkit3.Forms
             public string Url { get; set; } = string.Empty;
             public string Name { get; set; } = string.Empty;
             public bool MatchFilters { get; set; } = false;
+            public string Playlist { get; set; } = string.Empty;
             public bool HasCustomName => !string.IsNullOrEmpty(Name);
+            public bool HasPlaylistSetting => !string.IsNullOrEmpty(Playlist);
 
             /// <summary>
             /// 获取默认名称
@@ -1685,6 +1690,33 @@ namespace QisToolkit3.Forms
                 var invalidChars = Path.GetInvalidFileNameChars();
                 return string.Join("_", name.Split(invalidChars, StringSplitOptions.RemoveEmptyEntries));
             }
+
+            /// <summary>
+            /// 检查 Playlist 是否等于 false（布尔值）
+            /// </summary>
+            public bool IsPlaylistFalse()
+            {
+                if (string.IsNullOrEmpty(Playlist))
+                    return false;
+
+                return Playlist.Equals("false", StringComparison.OrdinalIgnoreCase);
+            }
+
+            /// <summary>
+            /// 获取播放列表参数（用于命令行）
+            /// </summary>
+            public string GetPlaylistArgument()
+            {
+                if (string.IsNullOrEmpty(Playlist))
+                    return string.Empty;
+
+                // 如果是 false，返回 --no-playlist
+                if (IsPlaylistFalse())
+                    return " --no-playlist";
+
+                // 否则返回 --playlist-items 参数
+                return $" --playlist-items {Playlist.Trim()}";
+            }
         }
 
         /// <summary>
@@ -1715,7 +1747,7 @@ namespace QisToolkit3.Forms
                 if (line.StartsWith("#"))
                     continue;
 
-                // 检查是否是 URL（不以 Key: 开头，且包含 http:// 或 https:// 或 bilibili.com）
+                // 检查是否是 URL
                 bool isUrl = line.StartsWith("http://") || line.StartsWith("https://") ||
                              (line.Contains("bilibili.com") && !line.Contains(':'));
 
@@ -1746,8 +1778,11 @@ namespace QisToolkit3.Forms
                             break;
                         case "matchfilters":
                             currentItem.MatchFilters = value.Equals("true", StringComparison.OrdinalIgnoreCase) ||
-                                                        value.Equals("1") ||
-                                                        value.Equals("yes");
+                                                       value.Equals("1") ||
+                                                       value.Equals("yes");
+                            break;
+                        case "playlist":
+                            currentItem.Playlist = value;
                             break;
                     }
                 }
@@ -1766,6 +1801,7 @@ namespace QisToolkit3.Forms
                 Log.Info($"  - {item.Url}");
                 Log.Info($"    名称: {(string.IsNullOrEmpty(item.Name) ? "(自动解析)" : item.Name)}");
                 Log.Info($"    MatchFilters: {item.MatchFilters}");
+                Log.Info($"    Playlist: {(string.IsNullOrEmpty(item.Playlist) ? "(未设置)" : item.Playlist)}");
             }
 
             return items;
@@ -1784,6 +1820,13 @@ namespace QisToolkit3.Forms
 # 2. 可选参数：
 #    Name: 自定义名称（不指定则自动从 URL 解析）
 #    MatchFilters: true/false（是否启用匹配过滤器，默认 false）
+#    Playlist: 下载播放列表指定索引项（默认 false）
+#       - false: 不指定下载播放列表索引，下载完整列表。
+#       - 数字: 指定索引，如 ""5"" 只下载第5个
+#       - 范围: 如 ""1-10"" 下载第1到第10个
+#       - 倒序: 如 ""-1:-1"" 只下载最后一个
+#       - 复杂: 如 ""1,3,5-7,10"" 或 ""1:-1:2""（起始:结束:步进）
+#       - 末尾: 如 ""-5:"" 最后5个，""::-2"" 所有偶数项倒序
 #
 # ============================================
 
@@ -1796,6 +1839,7 @@ MatchFilters: false
 https://space.bilibili.com/697987209/lists/8033161
 Name: 《甜橙盛夏》
 MatchFilters: false
+Playlist: false
 
 # 姜糖恋语
 https://space.bilibili.com/1411920158/lists/6668649
