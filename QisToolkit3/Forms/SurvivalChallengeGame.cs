@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.VisualBasic.Devices;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +46,7 @@ namespace QisToolkit3.Forms
         private static bool[] HAC_AskSoul = { false, false, false };
         private static string MessageLog = "你出生了......";
         private static string NowDoing = "Main", World = "Main";
-        private static bool DeBugMode = false, DeBug_2Gold = false;
+        private static bool DeBugMode = true, DeBug_2Gold = false;
         private static bool[] TC = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
         // 通用主线状态
@@ -57,8 +58,15 @@ namespace QisToolkit3.Forms
         private static bool SecMorning = true;
 
         // 时空碎块：大陆终焉
-        private static bool LTEOTC_KnowYanName = false, LTEOTC_KnowPrologue_0_1 = false, LTEOTC_KnowPrologue_KnowHowToLeave = false;
-        private static bool LTEOTC_FirstLeave = true;
+        private static bool LTEOTC_KnowYanName = false; // 知道 岩 的名字
+        private static bool LTEOTC_KnowPrologue_0_1 = false, LTEOTC_KnowPrologue_KnowHowToLeave = false;
+        private static bool LTEOTC_KnowOuterCity_RecyclingYard = true; // 知道垃圾回收站在哪
+        private static bool LTEOTC_KnowOuterCity_UndergroundClinic = false; // 知道黑市在哪
+        private static bool LTEOTC_KnowOuterCity_GarbageMountain = false; // 知道垃圾山在哪
+        private static bool LTEOTC_KnowOuterCity_BlackMarket = false; // 知道黑市在哪
+        private static bool LTEOTC_KnowOuterCity_Home = true; // 知道住的地方在哪
+        private static bool LTEOTC_FirstLeave = true; // 首次离开序章
+        private static bool LTEOTC_UnlockTheGarbageMountainPlot = true; // 解锁垃圾山剧情（首次前往回收站）
         private static string YanName = "未知";
         private static int YanSuspicion = -60;
 
@@ -106,7 +114,7 @@ namespace QisToolkit3.Forms
             labelPollution.ForeColor = Pollution >= 60 ? Color.Red : Color.Black;
 
 
-            if (NowDoing == "Main")
+            if (World == "Main")
             {
                 labelDays.Text = $"今天是第 {Days} 天 {(Morning ? "上午" : "下午")}";
                 labelGold.Text = $"金币：{Gold}G";
@@ -195,7 +203,7 @@ namespace QisToolkit3.Forms
                 }
             }
 
-            else if (NowDoing == "L_TheEndOfTheContinent")
+            else if (World == "L_TheEndOfTheContinent")
             {
                 labelDays.Text = $"今天是第 {SecDays} 天 {(SecMorning ? "上午" : "下午")}";
                 labelGold.Text = $"金币：{SecGold}G";
@@ -216,16 +224,16 @@ namespace QisToolkit3.Forms
         // 主函数
         private void Main()
         {
-            if (NowDoing == "Main")
+            if (NowDoing == "Main" || NowDoing == "LTEOTC_OuterCityMain")
             {
                 // 主界
                 if (World == "Main")
                 {
-                    AddLog("执行了主函数");
+                    //AddLog("执行了主函数");
                     Morning = !Morning; // 上下午转换
 
                     // 每天执行
-                    if (Morning == true)
+                    if (Morning)
                     {
                         DailyRandomEvents(); // 每日随机事件
                         Hunger -= Natural_Hunger;
@@ -319,7 +327,13 @@ namespace QisToolkit3.Forms
                 // 时空碎块：大陆终焉
                 else if (World == "L_TheEndOfTheContinent")
                 {
+                    SecMorning = !SecMorning; // 上下午转换
 
+                    // 每天执行
+                    if (SecMorning)
+                    {
+                        ++SecDays;
+                    }
                 }
             }
 
@@ -533,14 +547,19 @@ namespace QisToolkit3.Forms
 
                     switch (NowDoing)
                     {
-                        // 开篇对话 0
+                        // 序章 0
                         case "LTEOTC_Prologue_0_0":
                             PL_LTEOTC_Prologue_0(Id);
                             break;
 
-                        // 开篇对话 0-1
+                        // 序章 0-1
                         case "LTEOTC_Prologue_0_1":
                             PL_LTEOTC_Prologue_0_1(Id);
+                            break;
+
+                        // 外城选项
+                        case "LTEOTC_OuterCityMain":
+                            PL_LTEOTC_OuterCity_Choice(Id);
                             break;
                     }
                     break;
@@ -1819,7 +1838,7 @@ namespace QisToolkit3.Forms
 
         #region 时空碎块：大陆终焉
 
-        // 开篇对话 0
+        // 序章 前往
         private void To_LTEOTC_Prologue_0(int Mode = 0)
         {
             if (Mode == 0)
@@ -1851,7 +1870,7 @@ namespace QisToolkit3.Forms
             }
         }
 
-        // 开篇对话 0
+        // 序章 0 实现
         private void PL_LTEOTC_Prologue_0(int Id)
         {
             switch (Id)
@@ -1903,7 +1922,7 @@ namespace QisToolkit3.Forms
             To_LTEOTC_Prologue_0();  // 刷新
         }
 
-        // 开篇对话 0-1
+        // 序章 0-1 实现
         private void PL_LTEOTC_Prologue_0_1(int Id)
         {
             switch (Id)
@@ -1915,6 +1934,7 @@ namespace QisToolkit3.Forms
                         $"{YanName}：“回去得让疤姨仔细看看。”"
                     );
                     YanSuspicion -= 3;
+                    To_LTEOTC_Prologue_0(1);  // 刷新
                     break;
 
                 case 1:
@@ -1924,27 +1944,135 @@ namespace QisToolkit3.Forms
                     );
                     YanSuspicion += 2;
                     LTEOTC_KnowPrologue_KnowHowToLeave = true;
+                    To_LTEOTC_Prologue_0(1);  // 刷新
                     break;
 
                 case 2:
                     SetMessage(
                         $"{YanName}：“行了，天快黑了，我们出去吧。”\n" +
-                        "你和岩从山洞里钻出来，外环区的破败街道在暮色中像一道未愈合的伤口。\n" +
-                        "岩拍了拍你的肩膀，朝老炉的废铁回收站走去。\n" +
+                        $"你和{YanName}从山洞里钻出来，外环区的破败街道在暮色中像一道未愈合的伤口。\n" +
+                        $"{YanName}拍了拍你的肩膀，朝老炉的废铁回收站走去。\n" +
                         "那里是你们的落脚点，也是你们这个月换口粮的地方。\n\n" +
                         "【序章结束】\n" +
                         "你是一个无籍者，没有户籍，没有家。\n" +
-                        "你有一个兄弟叫岩。\n" +
+                        (LTEOTC_KnowYanName ? "你有一个兄弟叫岩。\n" : "你有一个不知名的兄弟\n") +
                         "你住在老炉的回收站附近。\n" +
-                        "你不知道自己为什么出现在那个隧道里，也不知道那面镜子是什么。\n" +
+                        "你不知道自己为什么想进入那个隧道里，也不知道那面镜子是什么。\n" +
                         "但你的左手隐隐作痛，像是在提醒你——" + 
                         (LTEOTC_FirstLeave ? "你肯定发生了什么。" : "你又回来了。")
                     );
                     Lost += LTEOTC_FirstLeave ? 5 : 1;
+
+                    To_LTEOTC_OuterCity_Choice();
+                    break;
+            }
+        }
+
+        // 外城选项 前往
+        private void To_LTEOTC_OuterCity_Choice(int Mode = 0)
+        {
+            if (Mode == 0)
+            {
+                NowDoing = "LTEOTC_OuterCityMain";
+                SetButtonTexts(
+                    "前往回收站",
+                    "前往地下诊所",
+                    "前往垃圾山",
+                    "前往黑市",
+                    "返回住的地方"
+                );
+                SetButtonOptionFont();
+                SetButtonEnableds(
+                    LTEOTC_KnowOuterCity_RecyclingYard,
+                    LTEOTC_KnowOuterCity_UndergroundClinic,
+                    LTEOTC_KnowOuterCity_GarbageMountain,
+                    LTEOTC_KnowOuterCity_BlackMarket,
+                    LTEOTC_KnowOuterCity_Home
+                );
+                NextBackEnable(false);
+
+                //SetMessage(SecMorning ? "又是新的一天！今天准备......" : "下午准备......");
+            }
+        }
+
+        // 外城选项 实现中转站
+        private void PL_LTEOTC_OuterCity_Choice(int Id)
+        {
+            switch (Id)
+            {
+                case 0:
+                    PL_LTEOTC_RecyclingYard();
+                    break;  
+
+                case 1:
+
+                    break;
+
+                case 2:
+                    PL_LTEOTC_GarbageMountain();
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+                    PL_LTEOTC_Home();
                     break;
             }
 
-            To_LTEOTC_Prologue_0(1);  // 刷新
+            To_LTEOTC_OuterCity_Choice();
+        }
+
+        // 回收站
+        private void PL_LTEOTC_RecyclingYard()
+        {
+            // 首次前往回收站，解锁垃圾山
+            if (LTEOTC_UnlockTheGarbageMountainPlot)
+            {
+                SetMessage(
+                    "你刚到回收站门口，就听见身后有人喊你。\n" +
+                    $"{YanName}：“喂，等会儿！”\n" +
+                    $"你回头，是{YanName}。他手里攥着一条破麻袋，小跑过来。\n" +
+                    $"{YanName}：“今天垃圾山那边没人管，一起去？”\n" +
+                    $"{YanName}：“前两天我在那边翻到一块完整的理式板，老炉说能换三天的口粮。”\n" +
+                    $"{YanName}晃了晃手里的麻袋。\n" +
+                    $"{YanName}：“走不走？”\n" +
+                    "你看了他一眼，点了点头。\n" +
+                    $"{YanName}：“走！天黑前回来。”"
+                );
+
+                PL_LTEOTC_OuterCity_Choice(2);
+
+                // 解锁垃圾山
+                LTEOTC_KnowOuterCity_GarbageMountain = true;
+                return;
+            }
+        }
+
+        // 垃圾山
+        private void PL_LTEOTC_GarbageMountain()
+        {
+            AddMessage("你前往了垃圾山，在上面寻找一些值钱的东西......");
+        }
+
+        // 返回住的地方
+        private void PL_LTEOTC_Home()
+        {
+            int lostReduce = random.Next(1, 6);
+            Lost -= lostReduce;
+            Lost = Math.Clamp(Lost, 0, 100);
+
+            string lostMessage = lostReduce == 1 ? "你翻来覆去，几乎没怎么睡着。" :
+                                 lostReduce <= 3 ? "你迷迷糊糊睡了一夜，醒来时脑子还算清醒。" :
+                                 "你睡得很沉，没有做梦。或者说，梦了但什么都没记住。";
+
+            AddMessage(
+                "你推开住处的门。\n" + 
+                "你闭上眼睛。\n" +
+                lostMessage + "\n" +
+                $"【迷失值 -{lostReduce}】\n"
+            );
         }
 
         #endregion
