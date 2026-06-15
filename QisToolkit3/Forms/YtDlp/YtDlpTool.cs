@@ -1534,6 +1534,7 @@ namespace QisToolkit3.Forms
 
             int successCount = 0;
             int failCount = 0;
+            bool UsePlayListItems = false;
 
             try
             {
@@ -1544,10 +1545,18 @@ namespace QisToolkit3.Forms
                     Log.Info($"  MatchFilters: {item.MatchFilters}");
                     Log.Info($"  Playlist: {item.Playlist}");
 
+                    UsePlayListItems = 
+                        !string.IsNullOrWhiteSpace(item.Playlist) &&
+                        item.Playlist.ToLower() != "false" &&
+                        item.Playlist.ToLower() != "no";
+
                     // 设置 参数
                     checkBox_MatchFilters.Checked = item.MatchFilters;
-                    checkBox_playlist_items.Checked = !string.IsNullOrWhiteSpace(item.Playlist);
-                    textBox_playlist_items.Text = item.Playlist;
+
+                    checkBox_playlist_items.Checked = UsePlayListItems;
+
+                    if (UsePlayListItems)
+                        textBox_playlist_items.Text = item.Playlist;
 
                     // 设置 URL
                     comboBox_URL.Text = item.Url;
