@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace QisToolkit3.Forms
     public partial class SurvivalChallengeGame : Form
     {
         private static readonly Random random = new Random();
+        private static string SetMessageTextTemporarilyStored = string.Empty;
 
         // 主界
         private static int Days = 1, Gold = 50, San = 80, Mood = 55, Health = 100, Hunger = 60, Thirsty = 60, BaseLuck = 0, Luck = 0;
@@ -35,19 +37,48 @@ namespace QisToolkit3.Forms
         private static int Food_Dumpling = 50, Food_RouJiaMo = 40, Food_RoastedCorn = 10, Food_Lemonade = 10, Food_Coffee = 30;
         private static int Food_Popsicle = 5, Food_PurificationPackage = 1000, Food_HungerJelly = 25, Food_ThirstJelly = 25, Food_GluttonousFeast = 1000;
         private static int PrincipalLine = 0, KnowledgeCd = 0; bool Morning = true, TC_Wall = true, TC_Set = false; // TC 是塔罗牌
-        private static bool Item_DarkBlocker = false, Item_SunWaterDrop = false, Item_MoonWaterDrop = false, Item_PollutionJammer = false;
-        private static bool Item_FirstAidKit = false, Item_Antidote = false, Item_LuckyCharm = false, Item_SoothingMedicine = false;
-        private static int Item_God = 0, Item_WinterClothing = 0, Item_SummerClothing = 0;
-        private static int Item_EssenceReason = 0, Item_CompressedBiscuit = 0, Item_BottledWater = 0, Item_BottledBeverage = 0;
-        private static int G_AvoidingDeath = 0, G_MustGoodRandomEvent = 0, G_AbsoluteRationality = 0, G_DoubleTheValue = 0;
-        private static bool L_ForestGrass = false, R_ForestGrass = false;
+        private static bool L_ForestGrass = false, R_ForestGrass = false;  // 左右草丛解锁状态
         private static bool[] HAC_AskBody = { false, false, false };
         private static bool[] HAC_AskSelf = { false, false, false };
         private static bool[] HAC_AskSoul = { false, false, false };
+
+        // 道具
+        private static bool Item_DarkBlocker = false;        // 黑暗屏蔽器
+        private static bool Item_SunWaterDrop = false;       // 太阳水滴
+        private static bool Item_MoonWaterDrop = false;      // 月亮水滴
+        private static bool Item_PollutionJammer = false;    // 污染干扰器
+        private static bool Item_FirstAidKit = false;        // 急救包
+        private static bool Item_Antidote = false;           // 解毒剂
+        private static bool Item_LuckyCharm = false;         // 幸运符
+        private static bool Item_SoothingMedicine = false;   // 舒缓药
+
+        private static int Item_God = 0;                     // 神赐道具
+        private static int Item_WinterClothing = 0;          // 御寒服
+        private static int Item_SummerClothing = 0;          // 御焰服
+        private static int Item_EssenceReason = 0;           // 理智精华
+        private static int Item_CompressedBiscuit = 0;       // 压缩饼干
+        private static int Item_BottledWater = 0;            // 矿泉水
+        private static int Item_BottledBeverage = 0;         // 瓶装饮料
+        private static int Item_Scrap = 0;                   // 废料
+        private static int Item_QualityScrap = 0;            // 优质废料
+
+        // 状态
+        private static int G_AvoidingDeath = 0;              // 避死状态（死亡神赐道具技能）
+        private static int G_MustGoodRandomEvent = 0;        // 随机事件必然是好事件
+        private static int G_AbsoluteRationality = 0;        // 绝对理性
+        private static int G_DoubleTheValue = 0;             // 双倍数值
+
+        // 其他
         private static string MessageLog = "你出生了......";
         private static string NowDoing = "Main", World = "Main";
         private static bool DeBugMode = true, DeBug_2Gold = false;
-        private static bool[] TC = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+        private static bool[] TC = 
+        { 
+            false, false, false, false, false, false,
+            false, false, false, false, false, false,
+            false, false, false, false, false, false,
+            false, false, false, false
+        };
 
         // 通用主线状态
         private static bool KnowVoid = false;
@@ -61,6 +92,7 @@ namespace QisToolkit3.Forms
         private static bool LTEOTC_KnowYanName = false; // 知道 岩 的名字
         private static bool LTEOTC_KnowPrologue_0_1 = false, LTEOTC_KnowPrologue_KnowHowToLeave = false;
         private static bool LTEOTC_KnowOuterCity_RecyclingYard = true; // 知道垃圾回收站在哪
+        private static bool LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade = true; // 知道垃圾回收站后门
         private static bool LTEOTC_KnowOuterCity_UndergroundClinic = false; // 知道黑市在哪
         private static bool LTEOTC_KnowOuterCity_GarbageMountain = false; // 知道垃圾山在哪
         private static bool LTEOTC_KnowOuterCity_BlackMarket = false; // 知道黑市在哪
@@ -129,64 +161,6 @@ namespace QisToolkit3.Forms
                 labelThirsty.ForeColor = Thirsty <= 30 ? Color.Red : Color.Black;
 
 
-                labelDarkBlocker.Visible = Item_DarkBlocker;
-                labelSunWaterDrop.Visible = Item_SunWaterDrop;
-                labelMoonWaterDrop.Visible = Item_MoonWaterDrop;
-                labelPollutionJammer.Visible = Item_PollutionJammer;
-
-                labelItem_Antidote.Visible = Item_Antidote;
-                labelItem_LuckyCharm.Visible = Item_LuckyCharm;
-                labelItem_FirstAidKit.Visible = Item_FirstAidKit;
-                label_SoothingMedicine.Visible = Item_SoothingMedicine;
-
-                labelWinterClothing.Visible = Item_WinterClothing != 0;
-                labelWinterClothing.Text = Item_WinterClothing == 1
-                    ? "御寒服" : Item_WinterClothing == 2
-                    ? "太阳·御寒服" : labelWinterClothing.Text;
-
-                labelSummerClothing.Visible = Item_SummerClothing != 0;
-                labelSummerClothing.Text = Item_SummerClothing == 1
-                    ? "御焰服" : Item_SummerClothing == 2
-                    ? "月亮·御焰服" : labelSummerClothing.Text;
-
-                labelGodItem.Visible = Item_God != 0;
-
-                // 神赐道具
-                switch (Item_God)
-                {
-                    case 1:
-                        labelGodItem.Text = "欺诈之面";
-                        break;
-
-                    case 2:
-                        labelGodItem.Text = "命运之骰";
-                        break;
-
-                    case 3:
-                        labelGodItem.Text = "死亡之镰";
-                        break;
-
-                    case 4:
-                        labelGodItem.Text = "秩序之杖";
-                        break;
-
-                    case 5:
-                        labelGodItem.Text = "记忆之书";
-                        break;
-                }
-                labelEssenceReason.Visible = Item_EssenceReason > 0;
-                labelEssenceReason.Text = $"理智精华 × {Item_EssenceReason}";
-
-                labelCompressedBiscuit.Visible = Item_CompressedBiscuit > 0;
-                labelCompressedBiscuit.Text = $"压缩饼干 × {Item_CompressedBiscuit}";
-
-                labelBottledWater.Visible = Item_BottledWater > 0;
-                labelBottledWater.Text = $"矿泉水 × {Item_BottledWater}";
-
-                labelBottledBeverage.Visible = Item_BottledBeverage > 0;
-                labelBottledBeverage.Text = $"瓶装饮料 × {Item_BottledBeverage}";
-
-
 
                 bool showAsk = HAC_AskBody.Contains(true) || HAC_AskSelf.Contains(true) || HAC_AskSoul.Contains(true);
 
@@ -217,6 +191,71 @@ namespace QisToolkit3.Forms
                 labelHealth.ForeColor = SecHealth <= 30 ? Color.Red : Color.Black;
                 labelThirsty.ForeColor = SecThirsty <= 30 ? Color.Red : Color.Black;
             }
+
+
+            // 道具显示
+            labelDarkBlocker.Visible = Item_DarkBlocker;
+            labelSunWaterDrop.Visible = Item_SunWaterDrop;
+            labelMoonWaterDrop.Visible = Item_MoonWaterDrop;
+            labelPollutionJammer.Visible = Item_PollutionJammer;
+
+            labelItem_Antidote.Visible = Item_Antidote;
+            labelItem_LuckyCharm.Visible = Item_LuckyCharm;
+            labelItem_FirstAidKit.Visible = Item_FirstAidKit;
+            label_SoothingMedicine.Visible = Item_SoothingMedicine;
+
+            labelWinterClothing.Visible = Item_WinterClothing != 0;
+            labelWinterClothing.Text = Item_WinterClothing == 1
+                ? "御寒服" : Item_WinterClothing == 2
+                ? "太阳·御寒服" : labelWinterClothing.Text;
+
+            labelSummerClothing.Visible = Item_SummerClothing != 0;
+            labelSummerClothing.Text = Item_SummerClothing == 1
+                ? "御焰服" : Item_SummerClothing == 2
+                ? "月亮·御焰服" : labelSummerClothing.Text;
+
+            labelGodItem.Visible = Item_God != 0;
+
+            // 神赐道具
+            switch (Item_God)
+            {
+                case 1:
+                    labelGodItem.Text = "欺诈之面";
+                    break;
+
+                case 2:
+                    labelGodItem.Text = "命运之骰";
+                    break;
+
+                case 3:
+                    labelGodItem.Text = "死亡之镰";
+                    break;
+
+                case 4:
+                    labelGodItem.Text = "秩序之杖";
+                    break;
+
+                case 5:
+                    labelGodItem.Text = "记忆之书";
+                    break;
+            }
+            labelEssenceReason.Visible = Item_EssenceReason > 0;
+            labelEssenceReason.Text = $"理智精华 × {Item_EssenceReason}";
+
+            labelCompressedBiscuit.Visible = Item_CompressedBiscuit > 0;
+            labelCompressedBiscuit.Text = $"压缩饼干 × {Item_CompressedBiscuit}";
+
+            labelBottledWater.Visible = Item_BottledWater > 0;
+            labelBottledWater.Text = $"矿泉水 × {Item_BottledWater}";
+
+            labelBottledBeverage.Visible = Item_BottledBeverage > 0;
+            labelBottledBeverage.Text = $"瓶装饮料 × {Item_BottledBeverage}";
+
+            labelScrap.Visible = Item_Scrap > 0;
+            labelScrap.Text = $"废料 × {Item_Scrap}";
+
+            labelQualityScrap.Visible = Item_QualityScrap > 0;
+            labelQualityScrap.Text = $"优质废料 × {Item_QualityScrap}";
 
             SetButtonEnabledsColor(buttonOption0.Enabled, buttonOption1.Enabled, buttonOption2.Enabled, buttonOption3.Enabled, buttonOption4.Enabled);
         }
@@ -324,8 +363,8 @@ namespace QisToolkit3.Forms
                     SetButtonOptionFont();
                 }
 
-                // 时空碎块：大陆终焉
-                else if (World == "L_TheEndOfTheContinent")
+                // 时空碎块
+                else
                 {
                     SecMorning = !SecMorning; // 上下午转换
 
@@ -333,6 +372,14 @@ namespace QisToolkit3.Forms
                     if (SecMorning)
                     {
                         ++SecDays;
+                    }
+
+
+
+                    // 时空碎块：大陆终焉
+                    if (World == "L_TheEndOfTheContinent")
+                    {
+
                     }
                 }
             }
@@ -1995,7 +2042,7 @@ namespace QisToolkit3.Forms
             }
         }
 
-        // 外城选项 实现中转站
+        // 外城选项 中转站
         private void PL_LTEOTC_OuterCity_Choice(int Id)
         {
             switch (Id)
@@ -2030,7 +2077,7 @@ namespace QisToolkit3.Forms
             // 首次前往回收站，解锁垃圾山
             if (LTEOTC_UnlockTheGarbageMountainPlot)
             {
-                SetMessage(
+                SetMessageTextTemporarilyStored =
                     "你刚到回收站门口，就听见身后有人喊你。\n" +
                     $"{YanName}：“喂，等会儿！”\n" +
                     $"你回头，是{YanName}。他手里攥着一条破麻袋，小跑过来。\n" +
@@ -2039,8 +2086,7 @@ namespace QisToolkit3.Forms
                     $"{YanName}晃了晃手里的麻袋。\n" +
                     $"{YanName}：“走不走？”\n" +
                     "你看了他一眼，点了点头。\n" +
-                    $"{YanName}：“走！天黑前回来。”"
-                );
+                    $"{YanName}：“走！天黑前回来。”\n";
 
                 PL_LTEOTC_OuterCity_Choice(2);
 
@@ -2048,12 +2094,485 @@ namespace QisToolkit3.Forms
                 LTEOTC_KnowOuterCity_GarbageMountain = true;
                 return;
             }
+
+            // 废料兑换
+            if (Item_Scrap > 0 || Item_QualityScrap > 0)
+            {
+                // ========== 只有普通废料 ==========
+                if (Item_Scrap > 0 && Item_QualityScrap <= 0)
+                {
+                    // 普通废料 < 50
+                    if (Item_Scrap < 50)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把一袋子废料倒在老炉面前。\n" +
+                            $"老炉低头看了一眼，用脚踢了踢。\n" +
+                            $"老炉：“就这点？才{Item_Scrap.ToString()}个？也太少了吧！”\n" +
+                            $"老炉：“这连塞牙缝都不够的。你是不是又偷懒了？”\n" +
+                            $"{YanName}在旁边插嘴：“今天垃圾山那边条子多，不好翻。”\n" +
+                            $"老炉哼了一声，从口袋里摸出几个硬币丢在桌上。\n" +
+                            $"老炉：“算了算了，给你折算。下次多搞点再来，别浪费我时间。”\n" +
+                            $"你收起钱，老炉已经转身去摆弄他那堆废铁了。",
+                            0, 0, -2, -5, Item_Scrap / 10
+                        );
+                    }
+
+                    // 普通废料 50-200
+                    else if (Item_Scrap <= 200)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把一袋子废料倒在老炉面前。\n" +
+                            $"老炉蹲下来翻了翻。\n" +
+                            $"老炉：“哟，今天收获不错嘛，有{Item_Scrap.ToString()}个呐！”\n" +
+                            $"老炉：“虽然都是些破烂货，但量还行。”\n" +
+                            $"他站起来，拍了拍手上的灰，从抽屉里数出几张票子递给你。\n" +
+                            $"老炉：“拿去吧。省着点花。”\n" +
+                            $"{YanName}笑嘻嘻地凑过来：“老炉，能不能多给点？我们下顿饭还没着落。”\n" +
+                            $"老炉瞪了他一眼：“滚蛋。”",
+                            0, 0, -2, -5, Item_Scrap / 10
+                        );
+                    }
+
+                    // 普通废料 > 200
+                    else if (Item_Scrap > 200)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把两大袋子废料倒在老炉面前。\n" +
+                            $"老炉惊了一下，随即蹲下来仔细翻看。\n" +
+                            $"老炉：“哟，这么多？攒了几天呐？”\n" +
+                            $"老炉：“不过……你咋一个优质的都没有阿？”\n" +
+                            $"他抬头看了你一眼，眼神有点复杂。\n" +
+                            $"老炉：“光靠量可不行。下次眼睛放亮点，好的和坏的混在一起，那才亏。”\n" +
+                            $"他掏出钱，数了数，又加了两张。\n" +
+                            $"老炉：“给你多算点吧。看来能吃点好点的了这两天……”\n" +
+                            $"{YanName}在你旁边低声说：“老炉今天心情不错啊，平时他可不这样。”",
+                            0, 0, -2, -5, Item_Scrap / 9
+                        );
+                    }
+                }
+
+                // ========== 只有优质废料 ==========
+                else if (Item_QualityScrap > 0 && Item_Scrap <= 0)
+                {
+                    // 优质废料 < 5
+                    if (Item_QualityScrap < 5)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，小心翼翼地从怀里掏出几块优质废料放在桌上。\n" +
+                            $"老炉眼睛一亮，拿起一块对着光看了看。\n" +
+                            $"老炉：“嗯……品相不错。就是太少了。”\n" +
+                            $"老炉：“{Item_QualityScrap.ToString()}块，也就够你换两顿饱饭。”\n" +
+                            $"他数了钱递给你。\n" +
+                            $"老炉：“下次多找点这种的，我给你高价。”",
+                            0, 0, -2, -5, Item_QualityScrap * 15
+                        );
+                    }
+
+                    // 优质废料 5-20
+                    else if (Item_QualityScrap <= 20)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把一袋优质废料倒在老炉桌上。\n" +
+                            $"老炉拿起一块，用手指敲了敲，又放到鼻子前闻了一下。\n" +
+                            $"老炉：“好东西。这是从哪翻的？”\n" +
+                            $"你没说话。老炉也没追问。\n" +
+                            $"老炉：“行，我不问。你有你的路。”\n" +
+                            $"他数钱的时候比平时慢，一张一张地数。\n" +
+                            $"老炉：“{Item_QualityScrap.ToString()}块……够你吃小半个月了。”\n" +
+                            $"他把钱推到你面前。\n" +
+                            $"老炉：“下次再有，优先拿来给我。别让篾片那小子截了。”",
+                            0, 0, -2, -5, Item_QualityScrap * 18
+                        );
+                    }
+
+                    // 优质废料 > 20
+                    else if (Item_QualityScrap > 20)
+                    {
+                        // 走后门
+                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        {
+                            XSecSetMessage(
+                                $"你从后门走进回收站，把满满一袋优质废料放在老炉面前。\n" +
+                                $"老炉愣了一下，然后一块一块地翻看。\n" +
+                                $"他看了很久，沉默了一会儿。\n" +
+                                $"他把钱全部拿出来，又加了一些。\n" +
+                                $"老炉：“拿着。这趟活我不问。”\n" +
+                                $"你拿起钱的时候，老炉低声说了一句：“走的后门，你应该知道的吧。有些东西……翻出来是福，也是祸。”",
+                                0, 0, -2, -5, Item_QualityScrap * 22, 0, 0, 3
+                            );
+                        }
+
+                        // 走正门
+                        else
+                        {
+                            XSecSetMessage(
+                                $"你走进回收站，把满满一袋优质废料放在老炉面前。\n" +
+                                $"老炉愣了一下，然后一块一块地翻看。\n" +
+                                $"他看了很久。\n" +
+                                $"老炉：“……你这是在塔底下翻的？”\n" +
+                                $"你摇头。老炉盯着你，不相信。\n" +
+                                $"老炉：“这些不是普通废料。这是塔里流出来的那种。封塔之前的。”\n" +
+                                $"他沉默了一会儿。\n" +
+                                $"老炉：“我不管你在哪翻的。但你听好了——别让条子知道你有这东西。”\n" +
+                                $"他把钱全部拿出来，又加了一些。\n" +
+                                $"老炉：“拿着。这趟活我不问。”\n" +
+                                $"你拿起钱的时候，老炉低声说了一句：“有些东西……翻出来是福，也是祸。”",
+                                0, 0, -2, -5, Item_QualityScrap * 22, 0, 0, 3
+                            );
+                        }
+                    }
+                }
+
+                // ========== 普通 + 优质都有 ==========
+                else if (Item_Scrap > 0 && Item_QualityScrap > 0)
+                {
+                    // 普通 < 50，优质 < 5
+                    if (Item_Scrap < 50 && Item_QualityScrap < 5)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把两袋子废料倒在老炉面前。\n" +
+                            $"一袋是普通废料，另一袋是挑出来的优质品。\n" +
+                            $"老炉先翻了翻那袋普通货：“嗯，量不多。”\n" +
+                            $"又看了看那几块优质废料：“品相还行，就是太少了。”\n" +
+                            $"老炉：“行吧，凑一起给你算。”\n" +
+                            $"他算了算，把钱递给你。\n" +
+                            $"老炉：“下次多攒点再过来，分开跑不嫌累啊？”",
+                            0, 0, -2, -5, Item_Scrap / 10 + Item_QualityScrap * 15
+                        );
+                    }
+
+                    // 普通 50-200，优质 5-20
+                    else if (Item_Scrap <= 200 && Item_QualityScrap <= 20)
+                    {
+                        XSecSetMessage(
+                            $"你走进回收站，把两袋子废料倒在老炉面前。\n" +
+                            $"老炉先翻了翻普通货：“嗯，量还行。”\n" +
+                            $"又翻了翻优质货：“啧，这个不错。”\n" +
+                            $"他抬头看了你一眼。\n" +
+                            $"老炉：“今天没少下功夫啊。”\n" +
+                            $"他数钱的时候难得露出了一点笑意。\n" +
+                            $"老炉：“这袋子优质货成色很好，以后多找这种的。”\n" +
+                            $"他把钱递给你，又额外扔了一块干饼过来。\n" +
+                            $"老炉：“搭你的。”\n" +
+                            $"{YanName}一把抢过去咬了一口：“老炉你偏心！”",
+                            5, 0, -2, -5, Item_Scrap / 10 + Item_QualityScrap * 18
+                        );
+                        Item_CompressedBiscuit += 1;
+                    }
+
+                    // 普通 > 200，优质 5-20
+                    else if (Item_Scrap > 200 && Item_QualityScrap <= 20)
+                    {
+                        // 走后门
+                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        {
+                            XSecSetMessage(
+                                $"你走进回收站，把两大袋普通废料和一袋优质废料倒在地。\n" +
+                                $"老炉看着那堆东西，吹了声口哨。\n" +
+                                $"老炉：“你这是把垃圾山搬空了吧？”\n" +
+                                $"他蹲下来仔细翻看。\n" +
+                                $"老炉：“普通货量大，优质货成色也好。”\n" +
+                                $"老炉：“不过……”他拿起一块优质废料看了看，“这个纹路不太对。”\n" +
+                                $"他看了你一眼，没有继续说下去。\n" +
+                                $"老炉：“行，算你聪明，没明面拿来…… 算了，收。”\n" +
+                                $"他给了你一大笔钱。\n" +
+                                $"{YanName}在旁边看得眼睛都直了。\n",
+                                0, 0, -2, -5, Item_Scrap / 9 + Item_QualityScrap * 20
+                            );
+                        }
+
+                        // 走正门
+                        else
+                        {
+                            XSecSetMessage(
+                                $"你走进回收站，把两大袋普通废料和一袋优质废料倒在地。\n" +
+                                $"老炉看着那堆东西，吹了声口哨。\n" +
+                                $"老炉：“你这是把垃圾山搬空了吧？”\n" +
+                                $"他蹲下来仔细翻看。\n" +
+                                $"老炉：“普通货量大，优质货成色也好。”\n" +
+                                $"老炉：“不过……”他拿起一块优质废料看了看，“这个纹路不太对。”\n" +
+                                $"他看了你一眼，没有继续说下去。\n" +
+                                $"老炉：“算了，收。”\n" +
+                                $"他给了你一大笔钱。\n" +
+                                $"{YanName}在旁边看得眼睛都直了。\n" +
+                                $"老炉：“下次再拿这种东西来，别这么大张旗鼓。走后面。”\n" +
+                                $"他朝棚子后面努了努嘴。",
+                                0, 0, -2, -5, Item_Scrap / 9 + Item_QualityScrap * 20
+                            );
+                            LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade = true;
+                        }
+                    }
+
+                    // 普通 50-200，优质 > 20
+                    else if (Item_Scrap <= 200 && Item_QualityScrap > 20)
+                    {
+                        // 走后门
+                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        {
+                            XSecSetMessage(
+                                $"你从后门走进回收站，把一袋普通废料和一袋优质废料放在老炉面前。\n" +
+                                $"老炉：“……这么多？”\n" +
+                                $"他拿起一块，又拿起一块，越看眉头皱得越紧。\n" +
+                                $"老炉：“这成色不对。这不是垃圾山能翻出来的东西。”\n" +
+                                $"他盯着你：“你下塔了？”\n" +
+                                $"你摇头。\n" +
+                                $"老炉：“你最好没有。”\n" +
+                                $"他压低声音：“这些东西上面有编号。是塔里的。”\n" +
+                                $"老炉：“收。但以后走后面。别让任何人看见。”\n" +
+                                $"他快速数了钱塞到你手里。\n" +
+                                $"他只是看着那袋子废料，不知道在想什么。",
+                                0, 0, 2, 5, Item_Scrap / 10 + Item_QualityScrap * 23, 0, 0, 3
+                            );
+                        }
+
+                        // 走正门
+                        else
+                        {
+                            XSecSetMessage(
+                                $"你走进回收站，把一袋普通废料和一袋优质废料放在老炉面前。\n" +
+                                $"老炉先看了普通货，点了点头。\n" +
+                                $"然后他打开那袋优质废料。\n" +
+                                $"他的动作停住了。\n" +
+                                $"老炉：“……这么多？”\n" +
+                                $"他拿起一块，又拿起一块，越看眉头皱得越紧。\n" +
+                                $"老炉：“这成色不对。这不是垃圾山能翻出来的东西。”\n" +
+                                $"他盯着你：“你下塔了？”\n" +
+                                $"你摇头。\n" +
+                                $"老炉：“你最好没有。”\n" +
+                                $"他压低声音：“这些东西上面有编号。是塔里的。”\n" +
+                                $"老炉：“收。但以后走后面。别让任何人看见。”\n" +
+                                $"他快速数了钱塞到你手里。\n" +
+                                $"你走的时候，老炉没有像往常一样说“下次再来”。\n" +
+                                $"他只是看着那袋子废料，不知道在想什么。",
+                                0, 0, 0, 0, Item_Scrap / 10 + Item_QualityScrap * 23, 0, 0, 3
+                            );
+                            LTEOTC_KnowOuterCity_BlackMarket = true;
+                        }
+                    }
+
+                    // 普通 > 200，优质 > 20
+                    else if (Item_Scrap > 200 && Item_QualityScrap > 20)
+                    {
+                        // 走后门
+                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        {
+                            XSecSetMessage(
+                                $"你从后门走进回收站，把三袋子废料倒在地上。\n" +
+                                $"老炉站起来，走到棚子门口往外看了一眼，然后把帘子拉了下来。\n" +
+                                $"老炉看着那堆东西，沉默了。\n" +
+                                $"他蹲下去，一块一块地翻。\n" +
+                                $"翻到后面，他的动作越来越慢。\n" +
+                                $"老炉：“这些……”\n" +
+                                $"他拿起一块优质废料，翻过来看了看背面。\n" +
+                                $"老炉：“封塔之后被埋掉的东西是吗？”\n" +
+                                $"老炉：“按理说，这种东西不该再出现在地面上。”\n" +
+                                $"他看了你很久。\n" +
+                                $"老炉：“行，批货我收了。”\n" +
+                                $"他给了你比平时多一倍的价钱。\n",
+                                0, 0, 3, 7, Item_Scrap / 9 + Item_QualityScrap * 26, 0, 0, 5
+                            );
+                        }
+
+                        // 走正门
+                        else
+                        {
+                            XSecSetMessage(
+                                $"你走进回收站，把三袋子废料倒在地上。\n" +
+                                $"老炉看着那堆东西，沉默了。\n" +
+                                $"他蹲下去，一块一块地翻。\n" +
+                                $"翻到后面，他的动作越来越慢。\n" +
+                                $"老炉：“这些……”\n" +
+                                $"他拿起一块优质废料，翻过来看了看背面。\n" +
+                                $"老炉的手停住了。\n" +
+                                $"老炉：“这东西你从哪翻的？”\n" +
+                                $"你没说话。\n" +
+                                $"老炉站起来，走到棚子门口往外看了一眼，然后把帘子拉了下来。\n" +
+                                $"老炉：“这块上面有塔的研究编号。这是封塔之后被埋掉的东西。”\n" +
+                                $"老炉：“按理说，这种东西不该再出现在地面上。”\n" +
+                                $"他看了你很久。\n" +
+                                $"老炉：“这批货我收了。但你听好了——”\n" +
+                                $"老炉：“以后翻到带纹路、带编号的，不要拿到明面上来。”\n" +
+                                $"老炉：“直接走后面找我。”\n" +
+                                $"他给了你比平时多一倍的价钱。\n" +
+                                $"你走出回收站的时候，{YanName}拉了拉你的袖子。\n" +
+                                $"{YanName}：“老炉今天……不对劲。”",
+                                0, 0, 2, 5, Item_Scrap / 9 + Item_QualityScrap * 25, 0, 0, 5
+                            );
+                            LTEOTC_KnowOuterCity_BlackMarket = true;
+                        }
+                    }
+                }
+
+                // 清空废料
+                Item_Scrap = 0;
+                Item_QualityScrap = 0;
+            }
+
+            // 没有废料时的对话
+            else
+            {
+                int talkRoll = random.Next(1, 5);
+                string talkMsg = "";
+
+                switch (talkRoll)
+                {
+                    case 1:
+                        talkMsg =
+                            "你走进回收站，老炉正在给一个铁架子焊腿。\n" +
+                            "他头也没抬：“空手来的？”\n" +
+                            "你嗯了一声。\n" +
+                            "老炉：“那就别站这碍事。去垃圾山翻点东西再回来。”\n" +
+                            "他继续焊他的铁架子。火花溅了一地。\n" +
+                            "岩在旁边找了个角落蹲着，捡了根铁丝在土里划拉。\n" +
+                            $"{YanName}：“老炉，你这有没喝的？”\n" +
+                            "老炉：“滚。”\n";
+                        break;
+
+                    case 2:
+                        talkMsg =
+                            "你走进回收站，老炉正在门口坐着晒太阳。\n" +
+                            "他看了你一眼。\n" +
+                            "老炉：“今天垃圾山那边条子少，不去翻两把？”\n" +
+                            "老炉：“别跟我说你吃饱了。看你那脸色，三天没吃饭的样子。”\n" +
+                            "你摸了摸自己的脸。\n" +
+                            "老炉叹了口气：“年轻的时候不好好攒，老了就像我这样。”\n" +
+                            "他拍了拍自己的瘸腿。\n";
+                        break;
+
+                    case 3:
+                        talkMsg =
+                            "你走进回收站，闻到一股糊味。\n" +
+                            "老炉正对着一口小锅发愁。锅里的东西黑成一团。\n" +
+                            "老炉：“……妈的。”\n" +
+                            "岩凑过去看了一眼：“老炉你这是炖啥呢？”\n" +
+                            "老炉：“本来想炖点汤。”\n" +
+                            "他看了一眼锅里的黑炭，放弃了。\n" +
+                            "老炉：“算了。等你有废料了再过来，我请你吃顿正经的。”\n" +
+                            "你点了点头。老炉摆了摆手。\n";
+                        break;
+
+                    case 4:
+                        talkMsg =
+                            "你走进回收站，老炉正在跟一个人说话。\n" +
+                            "那人背对着你，穿一件灰色斗篷。\n" +
+                            "你进来的一瞬间，那个人的话停住了。\n" +
+                            "他侧过头看了你一眼。\n" +
+                            "你只看见他下巴上有一道很长的疤。\n" +
+                            "然后他转身走了，经过你身边的时候带起一阵风，里面混着药味和铁锈味。\n" +
+                            "老炉看着你，脸色不太好看。\n" +
+                            "老炉：“……你下次来之前能不能先叫一声？”\n" +
+                            "你没理他，看着那个人消失的方向。\n" +
+                            "老炉：“那只是个送货的。”\n" +
+                            "老炉：“……你信就信，不信拉倒。”\n";
+                        break;
+                }
+
+                SetMessage(talkMsg);
+            }
         }
 
         // 垃圾山
         private void PL_LTEOTC_GarbageMountain()
         {
-            AddMessage("你前往了垃圾山，在上面寻找一些值钱的东西......");
+            // 基础收益
+            int scrap = random.Next(30 + Luck * 2, 100 + Luck * 3);
+            int qualityScrap = random.Next(0, 10 + Luck / 10);
+
+            // 随机事件（20%概率触发）
+            int eventRoll = random.Next(1, 101);
+
+            string eventText = "";
+            int healthCost = 0;
+            int extraBottledWater = 0;
+            int extraScrap = 0;
+
+            if (eventRoll <= 20)
+            {
+                // 事件池
+                int subEvent = random.Next(1, 5);
+
+                switch (subEvent)
+                {
+                    case 1: // 遇到其他拾荒者抢地盘
+                        healthCost = random.Next(5, 15);
+                        eventText =
+                            "你正低头翻找，突然被人从后面推了一把。\n" +
+                            "三个外环区的拾荒者站在你面前，手里拿着铁管。\n" +
+                            "领头的那个吐了口唾沫：“这片是老子的。”\n" +
+                            "你冲上去跟对方扭打在一起。\n" +
+                            "你抄起一块废铁板砸了过去。\n" +
+                            "对方骂骂咧咧地退了。但你挨了一顿打。\n" +
+                            $"【生命 -{healthCost}】\n";
+                        break;
+
+                    case 2: // 翻到好东西
+                        extraScrap = random.Next(30, 80);
+                        extraBottledWater = random.Next(1, 3);
+                        eventText =
+                            "你一脚踢开一块铁皮，下面露出一个半埋的箱子。\n" +
+                            "撬开一看——两瓶没开封的水，还有一捆废料。\n" +
+                            //"岩凑过来：“发财了！”\n" +
+                            "你把水塞进怀里。\n" +
+                            $"【额外获得 废料 +{extraScrap}，矿泉水 ×{extraBottledWater}】\n";
+                        break;
+
+                    case 3: // 塌方
+                        healthCost = random.Next(15, 35);
+                        eventText =
+                            "你听见头顶传来一阵细碎的响声。\n" +
+                            "抬头一看——垃圾山顶部正在往下滑。\n" +
+                            "你来不及跑，被废铁和碎石埋了半截身子。\n" +
+                            //"岩发了疯一样把你往外扒。\n" +
+                            "你被拖出来的时候，浑身是血。\n" +
+                            $"【生命 -{healthCost}】\n";
+                        break;
+
+                    case 4: // 遇到一个快死的拾荒者
+                        eventText =
+                            "你听到一堆废铁后面传来微弱的呻吟声。\n" +
+                            "绕过去一看，一个人蜷缩在那里。\n" +
+                            "他身上的衣服破得不成样子，手上满是黑纹——比你深得多。\n" +
+                            "他看到你，嘴唇动了动，但又什么都没有说。\n" +
+                            //"他：“……塔……塔底下……不是……不要下去……”\n" +
+                            "他抓住你的手腕，力气大得吓人。\n" +
+                            "然后他的手松开了。\n" +
+                            "他死了。\n" +
+                            "他的眼睛还睁着，盯着智慧之塔的方向。\n" +
+                            (Lost < 50 ? "你站了很久。\n" : "你冷漠的走了。") +
+                            (Lost < 50 ? "你走的时候，把身上半块面包放在了他身边。\n" : "") +
+                            (Lost < 50 ? "【迷失值 +5】\n" : "【迷失值 +9】\n") +
+                            (Lost < 50 ? "【你忘不掉他眼睛里的东西】\n" : "");
+
+                        Lost += Lost < 50 ? 5 : 9;
+                        break;
+                }
+            }
+
+            // 处理收益
+            Item_Scrap += scrap + extraScrap;
+            Item_QualityScrap += qualityScrap;
+            Health -= healthCost;
+            Item_BottledWater += extraBottledWater;
+
+            // 构建消息
+            string scrapMsg = qualityScrap > 0
+                ? $"你翻找了一番，找到了 {scrap} 份普通废料和 {qualityScrap} 份优质废料。"
+                : $"你翻找了一番，找到了 {scrap} 份普通废料。";
+
+            //string extraMsg = "";
+            //if (extraBottledWater > 0) extraMsg += $"\n【获得矿泉水 ×{extraBottledWater}】";
+
+            SetMessage(
+                "你前往了垃圾山，在上面寻找一些值钱的东西......\n" +
+                (eventRoll <= 20 ? "\n" + eventText + "\n" : "") +
+                scrapMsg
+            );
+
+            // 生命值下限保护
+            if (SecHealth < 1) SecHealth = 1;
+
+            // 回收站首次前往事件禁用
+            LTEOTC_UnlockTheGarbageMountainPlot = false;
         }
 
         // 返回住的地方
@@ -2749,7 +3268,7 @@ namespace QisToolkit3.Forms
         // 信息文本核心
         private string MessageMain(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
         {
-            string Str = message;
+            string Str = SetMessageTextTemporarilyStored + message;
 
             if (hunger != 0 || thirsty != 0 || san != 0 || mood != 0 || gold != 0 || workExperience != 0 || health != 0)
             {
@@ -2797,6 +3316,7 @@ namespace QisToolkit3.Forms
             }
 
 
+            SetMessageTextTemporarilyStored = string.Empty;
             return Str;
         }
 
@@ -2928,6 +3448,42 @@ namespace QisToolkit3.Forms
             MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
         }
 
+        // 时空碎块 设置信息 & 属性加减生效
+        private void XSecSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        {
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
+            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+        }
+
+        // 时空碎块 添加信息 & 属性加减生效
+        private void XSecAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        {
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
+            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+        }
+
+        // 自动跳转 设置信息 & 属性加减生效
+        private void AutoXSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        {
+            if (World == "Main")
+                XSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+
+            else
+                XSecSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+        }
+
+        // 自动跳转 添加信息 & 属性加减生效
+        private void AutoXAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        {
+            if (World == "Main")
+                XAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+
+            else
+                XSecAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+        }
+
         private void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution)
         {
             Hunger += hunger;
@@ -2944,6 +3500,24 @@ namespace QisToolkit3.Forms
 
             // 生命值
             Health += health; if (Health > MaxHealth) Health = MaxHealth;
+        }
+
+        private void MessageSetSecData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution)
+        {
+            SecHunger += hunger;
+            SecThirsty += thirsty;
+            San += san;
+            Mood += mood;
+            SecGold += gold;
+            Pollution += pollution;
+            WorkExperience += workExperience;
+
+            // 工作经验上限
+            if (WorkExperience > 150 && comboBoxTarotCard.Text != "月亮") WorkExperience = 150;
+            else if (WorkExperience > 100 && comboBoxTarotCard.Text == "月亮") WorkExperience = 100;
+
+            // 生命值
+            SecHealth += health; if (SecHealth > SecMaxHealth) SecHealth = SecMaxHealth;
         }
 
         // 数据加成
@@ -3324,33 +3898,33 @@ namespace QisToolkit3.Forms
         // 压缩饼干
         private void labelCompressedBiscuit_Click(object sender, EventArgs e)
         {
-            if (Item_CompressedBiscuit <= 0 || World != "Main")
+            if (Item_CompressedBiscuit <= 0)
                 return;
 
             Item_CompressedBiscuit -= 1;
-            XAddMessage("你吃了一块压缩饼干。", 60, -10, -1, -5, 0, 0, -3);
+            AutoXAddMessage("你吃了一块压缩饼干。", 60, -10, -1, -5, 0, 0, -3);
             ShowMessage(); DeathJudgment();
         }
 
         // 瓶装饮料
         private void labelBottledBeverage_Click(object sender, EventArgs e)
         {
-            if (Item_BottledBeverage <= 0 || World != "Main")
+            if (Item_BottledBeverage <= 0)
                 return;
 
             Item_BottledBeverage -= 1;
-            XAddMessage("你喝一瓶饮料。", 10, 35, -5, 40, 0, 0, -10);
+            AutoXAddMessage("你喝一瓶饮料。", 10, 35, -5, 40, 0, 0, -10);
             ShowMessage(); DeathJudgment();
         }
 
         // 矿泉水
         private void labelBottledWater_Click(object sender, EventArgs e)
         {
-            if (Item_BottledWater <= 0 || World != "Main")
+            if (Item_BottledWater <= 0)
                 return;
 
             Item_BottledWater -= 1;
-            XAddMessage("你喝一瓶饮料。", -5, 50, -1, 2, 0, 0, -1);
+            AutoXAddMessage("你喝一瓶饮料。", -5, 50, -1, 2, 0, 0, -1);
             ShowMessage(); DeathJudgment();
         }
 

@@ -61,6 +61,8 @@
             button_OpenGameDoc = new Button();
             button_HowToPlay = new Button();
             panelItem = new Panel();
+            labelQualityScrap = new Label();
+            labelScrap = new Label();
             labelBottledWater = new Label();
             labelBottledBeverage = new Label();
             labelCompressedBiscuit = new Label();
@@ -541,6 +543,8 @@
             // 
             panelItem.AutoScroll = true;
             panelItem.BackColor = Color.FromArgb(255, 255, 170);
+            panelItem.Controls.Add(labelQualityScrap);
+            panelItem.Controls.Add(labelScrap);
             panelItem.Controls.Add(labelBottledWater);
             panelItem.Controls.Add(labelBottledBeverage);
             panelItem.Controls.Add(labelCompressedBiscuit);
@@ -563,12 +567,38 @@
             panelItem.Size = new Size(367, 450);
             panelItem.TabIndex = 19;
             // 
+            // labelQualityScrap
+            // 
+            labelQualityScrap.AutoSize = true;
+            labelQualityScrap.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            labelQualityScrap.ForeColor = Color.FromArgb(128, 64, 64);
+            labelQualityScrap.Location = new Point(130, 416);
+            labelQualityScrap.Margin = new Padding(2, 0, 2, 0);
+            labelQualityScrap.Name = "labelQualityScrap";
+            labelQualityScrap.Size = new Size(131, 27);
+            labelQualityScrap.TabIndex = 37;
+            labelQualityScrap.Text = "优质废料 × 0";
+            labelQualityScrap.Visible = false;
+            // 
+            // labelScrap
+            // 
+            labelScrap.AutoSize = true;
+            labelScrap.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            labelScrap.ForeColor = Color.FromArgb(128, 64, 64);
+            labelScrap.Location = new Point(130, 392);
+            labelScrap.Margin = new Padding(2, 0, 2, 0);
+            labelScrap.Name = "labelScrap";
+            labelScrap.Size = new Size(91, 27);
+            labelScrap.TabIndex = 36;
+            labelScrap.Text = "废料 × 0";
+            labelScrap.Visible = false;
+            // 
             // labelBottledWater
             // 
             labelBottledWater.AutoSize = true;
             labelBottledWater.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
             labelBottledWater.ForeColor = Color.DarkOliveGreen;
-            labelBottledWater.Location = new Point(3, 333);
+            labelBottledWater.Location = new Point(3, 342);
             labelBottledWater.Margin = new Padding(2, 0, 2, 0);
             labelBottledWater.Name = "labelBottledWater";
             labelBottledWater.Size = new Size(111, 27);
@@ -582,7 +612,7 @@
             labelBottledBeverage.AutoSize = true;
             labelBottledBeverage.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
             labelBottledBeverage.ForeColor = Color.DarkOliveGreen;
-            labelBottledBeverage.Location = new Point(3, 360);
+            labelBottledBeverage.Location = new Point(3, 367);
             labelBottledBeverage.Margin = new Padding(2, 0, 2, 0);
             labelBottledBeverage.Name = "labelBottledBeverage";
             labelBottledBeverage.Size = new Size(131, 27);
@@ -596,7 +626,7 @@
             labelCompressedBiscuit.AutoSize = true;
             labelCompressedBiscuit.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
             labelCompressedBiscuit.ForeColor = Color.DarkOliveGreen;
-            labelCompressedBiscuit.Location = new Point(3, 387);
+            labelCompressedBiscuit.Location = new Point(3, 392);
             labelCompressedBiscuit.Margin = new Padding(2, 0, 2, 0);
             labelCompressedBiscuit.Name = "labelCompressedBiscuit";
             labelCompressedBiscuit.Size = new Size(131, 27);
@@ -608,7 +638,7 @@
             // buttonCopyDatas
             // 
             buttonCopyDatas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonCopyDatas.Location = new Point(273, 379);
+            buttonCopyDatas.Location = new Point(283, 419);
             buttonCopyDatas.Name = "buttonCopyDatas";
             buttonCopyDatas.Size = new Size(82, 29);
             buttonCopyDatas.TabIndex = 32;
@@ -645,7 +675,7 @@
             // button_KillSelf
             // 
             button_KillSelf.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button_KillSelf.Location = new Point(273, 414);
+            button_KillSelf.Location = new Point(283, 387);
             button_KillSelf.Name = "button_KillSelf";
             button_KillSelf.Size = new Size(82, 29);
             button_KillSelf.TabIndex = 23;
@@ -975,5 +1005,7 @@
         private Label labelBottledWater;
         private Label labelBottledBeverage;
         private Label labelCompressedBiscuit;
+        private Label labelScrap;
+        private Label labelQualityScrap;
     }
 }
