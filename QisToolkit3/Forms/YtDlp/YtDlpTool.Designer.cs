@@ -224,6 +224,7 @@
             button1 = new Button();
             checkBox_IdNameMapper = new CheckBox();
             groupBox2 = new GroupBox();
+            button_YtDlpRunDir = new Button();
             button_Option_ReSet = new Button();
             button_Option_Load = new Button();
             button_Option_Save = new Button();
@@ -258,7 +259,6 @@
             button_DoDownload = new Button();
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
-            button_YtDlpRunDir = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -1847,6 +1847,13 @@
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             // 
+            // button_YtDlpRunDir
+            // 
+            resources.ApplyResources(button_YtDlpRunDir, "button_YtDlpRunDir");
+            button_YtDlpRunDir.Name = "button_YtDlpRunDir";
+            button_YtDlpRunDir.UseVisualStyleBackColor = true;
+            button_YtDlpRunDir.Click += button_YtDlpRunDir_Click;
+            // 
             // button_Option_ReSet
             // 
             resources.ApplyResources(button_Option_ReSet, "button_Option_ReSet");
@@ -2085,13 +2092,6 @@
             toolTip.InitialDelay = 200;
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
-            // 
-            // button_YtDlpRunDir
-            // 
-            resources.ApplyResources(button_YtDlpRunDir, "button_YtDlpRunDir");
-            button_YtDlpRunDir.Name = "button_YtDlpRunDir";
-            button_YtDlpRunDir.UseVisualStyleBackColor = true;
-            button_YtDlpRunDir.Click += button_YtDlpRunDir_Click;
             // 
             // YtDlpTool
             // 
