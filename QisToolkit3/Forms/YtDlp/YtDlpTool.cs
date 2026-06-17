@@ -1025,7 +1025,7 @@ namespace QisToolkit3.Forms
 
 
                 if (!string.IsNullOrWhiteSpace(containsText))
-                    comboBox_URL.Text = GetContainsText();
+                    comboBox_URL.Text = containsText;
             }
 
             if (checkBox_ClearURLData.Checked)
