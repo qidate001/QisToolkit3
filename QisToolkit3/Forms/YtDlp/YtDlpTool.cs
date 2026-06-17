@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -1016,8 +1017,16 @@ namespace QisToolkit3.Forms
         // 处理用户数据
         private void ProcessingUserData()
         {
+            string containsText = string.Empty;
+
             if (checkBox_ReadOnClipboard.Checked)
-                comboBox_URL.Text = GetContainsText();
+            {
+                containsText = GetContainsText();
+
+
+                if (!string.IsNullOrWhiteSpace(containsText))
+                    comboBox_URL.Text = GetContainsText();
+            }
 
             if (checkBox_ClearURLData.Checked)
                 comboBox_URL.Text = ClearURLData(comboBox_URL.Text);
@@ -1043,19 +1052,42 @@ namespace QisToolkit3.Forms
         {
             try
             {
-                if (Clipboard.ContainsText()) // 检查剪贴板中是否有文本
-                    return Clipboard.GetText();
+                if (!Clipboard.ContainsText())
+                {
+                    Log.Warn("[YtDlp工具] 剪贴板中没有文本内容。");
+                    MessageBox.Show("剪贴板中没有文本内容。");
+                    return null;
+                }
 
+                string text = Clipboard.GetText();
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    Log.Warn("[YtDlp工具] 剪贴板文本为空。");
+                    MessageBox.Show("剪贴板文本为空。");
+                    return null;
+                }
+
+                // 匹配 URL（支持 http/https，可扩展其他协议）
+                const string urlPattern = @"https?://[^\s]+";
+                Match match = Regex.Match(text, urlPattern, RegexOptions.IgnoreCase);
+                if (match.Success)
+                {
+                    string url = match.Value;
+                    Log.Info($"[YtDlp工具] 剪贴板文本成功提取 URL: {url}");
+                    return url;
+                }
                 else
                 {
-                    MessageBox.Show("剪贴板中没有文本内容。");
-                    return "!!! Not Have Text";
+                    Log.Warn("[YtDlp工具] 剪贴板中未找到有效的 URL。");
+                    MessageBox.Show("剪贴板中未找到有效的 URL。");
+                    return null;
                 }
             }
             catch (Exception ex)
             {
+                Log.Err($"[YtDlp工具] 访问剪贴板失败: {ex.Message}");
                 MessageBox.Show($"访问剪贴板失败: {ex.Message}");
-                return "!!! ERROR";
+                return null;
             }
         }
 
