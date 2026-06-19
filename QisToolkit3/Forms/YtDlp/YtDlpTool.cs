@@ -513,7 +513,7 @@ namespace QisToolkit3.Forms
 
             AppendText("开始应用规则引擎重命名文件...", "QisToolkit");
 
-            var ruleEngine = new TextProcessor.RuleEngine();
+            var ruleEngine = new RuleEngine();
             var rules = richTextBox_StringRuleEngine.Text;
 
             // 获取所有视频文件

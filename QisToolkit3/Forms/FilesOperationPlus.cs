@@ -508,7 +508,7 @@ FolderType=Videos";
             // 应用规则
             if (!string.IsNullOrWhiteSpace(rule))
             {
-                var ruleEngine = new TextProcessor.RuleEngine();
+                var ruleEngine = new RuleEngine();
                 text = ruleEngine.ProcessText(text, rule);
             }
 

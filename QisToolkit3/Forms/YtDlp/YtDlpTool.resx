@@ -6932,7 +6932,8 @@ vorbis		好	中等	一般	开源软件</value>
     <value>1</value>
   </data>
   <data name="richTextBox_StringRuleEngine.Text" xml:space="preserve">
-    <value />
+    <value>(→（;
+)→）</value>
   </data>
   <data name="&gt;&gt;richTextBox_StringRuleEngine.Name" xml:space="preserve">
     <value>richTextBox_StringRuleEngine</value>
