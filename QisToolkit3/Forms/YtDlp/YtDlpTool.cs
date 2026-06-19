@@ -43,7 +43,7 @@ namespace QisToolkit3.Forms
 
             // 初始化
             Qi.FormInitDo(this.Text);
-
+            comboBox_StringRuleEngine.SelectedIndex = 0;
 
             //if (YtDlpPath.Contains(' '))
             //{
@@ -237,6 +237,9 @@ namespace QisToolkit3.Forms
                 // 规则引擎重命名
                 if (checkBox_StringRuleEngine.Checked && !string.IsNullOrWhiteSpace(richTextBox_StringRuleEngine.Text))
                 {
+                    // 等待文件写入完成
+                    await Task.Delay(1000);
+
                     string downloadPath = checkBox_Path_Home.Checked ?
                         comboBox_Path_Home.Text :
                         (checkBox_SetPaths.Checked ? textBox_Paths.Text : DefaultDownloadPath);
@@ -542,18 +545,27 @@ namespace QisToolkit3.Forms
                         // 处理重名情况
                         if (File.Exists(newPath))
                         {
-                            int counter = 1;
-                            string baseName = newFileName;
-                            while (File.Exists(Path.Combine(directory, newFileName + extension)))
+                            if (comboBox_StringRuleEngine.SelectedIndex == 0)
                             {
-                                newFileName = $"{baseName}_{counter}";
-                                counter++;
-                                newPath = Path.Combine(directory, newFileName + extension);
+                                AppendText($"✅ 保护模式跳过文件: {fileName}{extension}", "QisToolkit");
+                            }
+
+                            else if (comboBox_StringRuleEngine.SelectedIndex == 1)
+                            {
+                                AppendText($"✅ 强制模式删除文件: {fileName}{extension}", "QisToolkit");
+                                TryDeleteFile(newPath);
+                                File.Move(videoPath, newPath);
+                                renamedCount++;
                             }
                         }
 
-                        File.Move(videoPath, newPath);
-                        renamedCount++;
+                        else
+                        {
+                            File.Move(videoPath, newPath);
+                            renamedCount++;
+                        }
+
+
                         AppendText($"✅ 重命名: {fileName}{extension} → {newFileName}{extension}", "QisToolkit");
 
                         // 同时重命名关联的 .info.json 和 .description 文件
@@ -575,23 +587,45 @@ namespace QisToolkit3.Forms
         /// </summary>
         private void RenameAssociatedFiles(string directory, string oldName, string newName)
         {
-            string[] extensions = { ".info.json", ".信息.json", ".description", ".danmaku.xml", ".ass" };
+            string[] extensions = { ".info.json", ".信息.json", ".description", ".danmaku.xml", ".ass", ".html" };
 
             foreach (var ext in extensions)
             {
                 string oldPath = Path.Combine(directory, oldName + ext);
                 string newPath = Path.Combine(directory, newName + ext);
+                Log.Info(oldPath + " - " + oldPath);
 
-                if (File.Exists(oldPath) && !File.Exists(newPath))
+                if (File.Exists(oldPath))
                 {
                     try
                     {
-                        File.Move(oldPath, newPath);
-                        AppendText($"   📎 重命名关联: {oldName}{ext} → {newName}{ext}", "QisToolkit");
+                        // 处理重名情况
+                        if (File.Exists(newPath))
+                        {
+                            if (comboBox_StringRuleEngine.SelectedIndex == 0)
+                            {
+                                File.Move(oldPath, newPath);
+                                AppendText($"   📎 跳过重命名关联: {oldName}{ext}", "QisToolkit");
+                                TryDeleteFile(newPath);
+                            }
+
+                            else if (comboBox_StringRuleEngine.SelectedIndex == 1)
+                            {
+                                AppendText($"   📎 覆盖重命名关联: {oldName}{ext}", "QisToolkit");
+                                TryDeleteFile(newPath);
+                                File.Move(oldPath, newPath);
+                            }
+                        }
+
+                        else
+                        {
+                            File.Move(oldPath, newPath);
+                            AppendText($"   📎 重命名关联: {oldName}{ext} → {newName}{ext}", "QisToolkit");
+                        }
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"重命名关联文件失败 {oldName}{ext}: {ex.Message}");
+                        Log.Warn($"[YtDlp工具] 重命名关联文件失败 {oldName}{ext}: {ex.Message}");
                     }
                 }
             }
@@ -1452,7 +1486,7 @@ namespace QisToolkit3.Forms
 
         private void button_Update_Click(object sender, EventArgs e)
         {
-            ExecuteCommand(@$"{actualDirectory}\yt-dlp\yt-dlp.exe --update-to master");
+            ExecuteCommand(@$"{actualDirectory}\yt-dlp\yt-dlp.exe -U");
         }
 
         private void YtDlpTool_DragEnter(object sender, DragEventArgs e)

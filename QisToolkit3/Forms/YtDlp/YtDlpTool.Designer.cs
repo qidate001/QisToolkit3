@@ -222,6 +222,7 @@
             checkBox_DanmakuFactory_XML_To_ASS = new CheckBox();
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile = new CheckBox();
             tabPage9 = new TabPage();
+            comboBox_StringRuleEngine = new ComboBox();
             checkBox_StringRuleEngine = new CheckBox();
             richTextBox_StringRuleEngine = new RichTextBox();
             button1 = new Button();
@@ -1825,15 +1826,26 @@
             // 
             // tabPage9
             // 
+            tabPage9.Controls.Add(comboBox_StringRuleEngine);
             tabPage9.Controls.Add(checkBox_StringRuleEngine);
             tabPage9.Controls.Add(richTextBox_StringRuleEngine);
             resources.ApplyResources(tabPage9, "tabPage9");
             tabPage9.Name = "tabPage9";
             tabPage9.UseVisualStyleBackColor = true;
             // 
+            // comboBox_StringRuleEngine
+            // 
+            comboBox_StringRuleEngine.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBox_StringRuleEngine, "comboBox_StringRuleEngine");
+            comboBox_StringRuleEngine.FormattingEnabled = true;
+            comboBox_StringRuleEngine.Items.AddRange(new object[] { resources.GetString("comboBox_StringRuleEngine.Items"), resources.GetString("comboBox_StringRuleEngine.Items1") });
+            comboBox_StringRuleEngine.Name = "comboBox_StringRuleEngine";
+            // 
             // checkBox_StringRuleEngine
             // 
             resources.ApplyResources(checkBox_StringRuleEngine, "checkBox_StringRuleEngine");
+            checkBox_StringRuleEngine.Checked = true;
+            checkBox_StringRuleEngine.CheckState = CheckState.Checked;
             checkBox_StringRuleEngine.Name = "checkBox_StringRuleEngine";
             checkBox_StringRuleEngine.UseVisualStyleBackColor = true;
             // 
@@ -2425,5 +2437,6 @@
         private TabPage tabPage9;
         private RichTextBox richTextBox_StringRuleEngine;
         private CheckBox checkBox_StringRuleEngine;
+        private ComboBox comboBox_StringRuleEngine;
     }
 }

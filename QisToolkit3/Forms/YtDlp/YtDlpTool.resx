@@ -6886,6 +6886,36 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="&gt;&gt;tabPage8.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="comboBox_StringRuleEngine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="comboBox_StringRuleEngine.Items" xml:space="preserve">
+    <value>保护模式</value>
+  </data>
+  <data name="comboBox_StringRuleEngine.Items1" xml:space="preserve">
+    <value>强制模式</value>
+  </data>
+  <data name="comboBox_StringRuleEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 44</value>
+  </data>
+  <data name="comboBox_StringRuleEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 43</value>
+  </data>
+  <data name="comboBox_StringRuleEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;comboBox_StringRuleEngine.Name" xml:space="preserve">
+    <value>comboBox_StringRuleEngine</value>
+  </data>
+  <data name="&gt;&gt;comboBox_StringRuleEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_StringRuleEngine.Parent" xml:space="preserve">
+    <value>tabPage9</value>
+  </data>
+  <data name="&gt;&gt;comboBox_StringRuleEngine.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="checkBox_StringRuleEngine.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6914,7 +6944,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage9</value>
   </data>
   <data name="&gt;&gt;checkBox_StringRuleEngine.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="richTextBox_StringRuleEngine.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -6933,7 +6963,9 @@ vorbis		好	中等	一般	开源软件</value>
   </data>
   <data name="richTextBox_StringRuleEngine.Text" xml:space="preserve">
     <value>(→（;
-)→）</value>
+)→）;
+&lt;[〇一二三四五六七八九十百千万亿兆京]&gt;↓CN2;
+&lt;[零壹贰叁肆伍陆柒捌玖佰仟万兆京]&gt;↓CN2</value>
   </data>
   <data name="&gt;&gt;richTextBox_StringRuleEngine.Name" xml:space="preserve">
     <value>richTextBox_StringRuleEngine</value>
@@ -6945,7 +6977,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage9</value>
   </data>
   <data name="&gt;&gt;richTextBox_StringRuleEngine.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabPage9.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>

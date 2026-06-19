@@ -10,14 +10,14 @@ namespace QisToolkit3
         // ---------- 公共入口 ----------
         public string ProcessText(string input, string ruleString)
         {
-            Log.Info($"[RuleEngine] 输入：{input}");
-            Log.Info($"[RuleEngine] 规则：{ruleString}");
+            //Log.Info($"[RuleEngine] 输入：{input}");
+            //Log.Info($"[RuleEngine] 规则：{ruleString}");
             if (string.IsNullOrEmpty(ruleString)) return input;
             var rules = ParseRules(ruleString);
             string current = input;
             foreach (var rule in rules)
                 current = ApplyRule(current, rule);
-            Log.Info($"[RuleEngine] 输出：{current}");
+            //Log.Info($"[RuleEngine] 输出：{current}");
             return current;
         }
 
