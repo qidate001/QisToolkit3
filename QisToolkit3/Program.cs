@@ -1,12 +1,13 @@
+using QisToolkit3.Console;
 using QisToolkit3.Forms;
 using QisToolkit3.Forms.SoftwareFunctionForms;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
-using QisToolkit3.Console;
+using System.Xml.Linq;
 using static BufferedLogger;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace QisToolkit3
 {
@@ -57,6 +58,7 @@ namespace QisToolkit3
                 else
                     return; // 退出程序
             }
+            
 
 
             Log.Info("=== 启动信息 ===");
@@ -71,6 +73,20 @@ namespace QisToolkit3
 
             Log.Info("=== 加载数据 ===");
             Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.IsRunMinSudo}");
+
+            bool UseSPLArg = false;
+            for (int i = 0; i < args.Length - 1; i++)
+            {
+                if (args[i].Equals("-SPL", StringComparison.OrdinalIgnoreCase))
+                {
+                    string program = args[i + 1];
+                    Qi.RunNSudo(program);
+                    UseSPLArg = true;
+                    i++; // 跳过已处理的程序名
+                }
+            }
+
+            if (UseSPLArg) return;
 
             // 注册编码提供程序
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
