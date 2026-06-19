@@ -221,6 +221,9 @@
             groupBox20 = new GroupBox();
             checkBox_DanmakuFactory_XML_To_ASS = new CheckBox();
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile = new CheckBox();
+            tabPage9 = new TabPage();
+            checkBox_StringRuleEngine = new CheckBox();
+            richTextBox_StringRuleEngine = new RichTextBox();
             button1 = new Button();
             checkBox_IdNameMapper = new CheckBox();
             groupBox2 = new GroupBox();
@@ -293,6 +296,7 @@
             tabPage8.SuspendLayout();
             groupBox21.SuspendLayout();
             groupBox20.SuspendLayout();
+            tabPage9.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -352,6 +356,7 @@
             tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage7);
             tabControl1.Controls.Add(tabPage8);
+            tabControl1.Controls.Add(tabPage9);
             resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -1818,6 +1823,25 @@
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name = "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile";
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.UseVisualStyleBackColor = true;
             // 
+            // tabPage9
+            // 
+            tabPage9.Controls.Add(checkBox_StringRuleEngine);
+            tabPage9.Controls.Add(richTextBox_StringRuleEngine);
+            resources.ApplyResources(tabPage9, "tabPage9");
+            tabPage9.Name = "tabPage9";
+            tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_StringRuleEngine
+            // 
+            resources.ApplyResources(checkBox_StringRuleEngine, "checkBox_StringRuleEngine");
+            checkBox_StringRuleEngine.Name = "checkBox_StringRuleEngine";
+            checkBox_StringRuleEngine.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox_StringRuleEngine
+            // 
+            resources.ApplyResources(richTextBox_StringRuleEngine, "richTextBox_StringRuleEngine");
+            richTextBox_StringRuleEngine.Name = "richTextBox_StringRuleEngine";
+            // 
             // button1
             // 
             resources.ApplyResources(button1, "button1");
@@ -2161,6 +2185,8 @@
             groupBox21.PerformLayout();
             groupBox20.ResumeLayout(false);
             groupBox20.PerformLayout();
+            tabPage9.ResumeLayout(false);
+            tabPage9.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -2396,5 +2422,8 @@
         private ComboBox comboBox_DownloadSections_Start;
         private CheckBox checkBox_DownloadSections_Start;
         private Button button_YtDlpRunDir;
+        private TabPage tabPage9;
+        private RichTextBox richTextBox_StringRuleEngine;
+        private CheckBox checkBox_StringRuleEngine;
     }
 }

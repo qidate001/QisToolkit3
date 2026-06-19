@@ -71,7 +71,7 @@ namespace QisToolkit3.Forms
         // 其他
         private static string MessageLog = "你出生了......";
         private static string NowDoing = "Main", World = "Main";
-        private static bool DeBugMode = true, DeBug_2Gold = false;
+        private static bool DeBugMode = false, DeBug_2Gold = false;
         private static bool[] TC = 
         { 
             false, false, false, false, false, false,
@@ -3994,16 +3994,28 @@ namespace QisToolkit3.Forms
 
         private void button_HowToPlay_Click(object sender, EventArgs e)
         {
-            //labelMessage.Text =
-            //    "通关目标：坚持生活100天！\r\n游戏内容：你每天只能干两件事，知识区每天只能去一次。" +
-            //    "\r\n\r\n注意事项：\r\n1. 饥饿值与口渴值大于100或小于等于 0 会死。\r\n\r\n" +
-            //    "2. 理智低于0会死，心情低于10会掉理智，很危险。\r\n\r\n" +
-            //    "3. 各项数值每天都会减少。\r\n\r\n" +
-            //    "4. 饥饿、口渴可以通过去美食街回复，理智可以通过知识来回复，\r\n心情可以通过出门玩回复。健康通过医院回复，医院在冒险区。\r\n\r\n" +
-            //    "5. 每天会有事件，造成各项数值波动。\r\n\r\n" +
-            //    "6. 极端天气需要用到特殊道具特殊道具在冒险区，\r\n需要达到特定理智与金钱才能开启。\r\n\r\n" +
-            //    "7. 游戏存在隐藏主线，找到主线才能探明真相。\r\n请自行探索哦~（主线参考了许多作品qwq）\r\n\r\n" +
-            //    "祝您游戏愉快~";
+            labelMessage.Text =
+                "主线任务：\n" +
+                " · 方向1：存活一百天（基础 愚者结局）\n" +
+                " · 方向2：完成问心崖挑战（进阶 女祭司结局）\n" +
+                " · 方向3：通过六大时空碎块（终极 结局开发中）\n" +
+
+                "\n" +
+                "存活提示：\n" +
+                " · 注意左侧数值，超出限制会死亡。\n" +
+                " · 有三大天灾会降临（极寒、污染、极热），注意做好特别准备。\n" +
+                " · 极致的天灾普通的防护手段不足以抵挡，或许你该去接触神明？\n" +
+                " · 当字迹不清时，也许你需要黑暗屏蔽器。\n" +
+                " · 神秘商店以理智为货币，不仅有特殊道具，还有特殊项目哦！\n" +
+                " · 初入神秘森林，需要特殊的理智状态。\n" +
+                " · 神秘森林的工作房室是个奇妙的地方。\n" +
+
+                "\n" +
+                "工作房室：\n" +
+                " · 太阳·御寒服：抵挡极致低温的必备道具，由【御寒服】和【太阳水滴】合成。\n" +
+                " · 月亮·御焰服：抵挡极致高温的必备道具，由【御焰服】和【月亮水滴】合成。\n" +
+                " · 污染干扰器：抵挡污染入侵的必备道具，由【理智精华】合成。\n" +
+                " · 理智精华由理智提纯而来。\n";
 
             //SetMessage(
             //    "你走向了那漆黑且望不尽头的隧道，勇敢的走了进去！\n" +

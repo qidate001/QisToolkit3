@@ -44,6 +44,7 @@ namespace QisToolkit3.Forms
             // 初始化
             Qi.FormInitDo(this.Text);
 
+
             //if (YtDlpPath.Contains(' '))
             //{
             //    Log.Err($"[YtDlp工具] 齐的工具包3路径包含空格或特殊符号，无法运行YtDlp。");
@@ -233,6 +234,21 @@ namespace QisToolkit3.Forms
                     }
                 }
 
+                // 规则引擎重命名
+                if (checkBox_StringRuleEngine.Checked && !string.IsNullOrWhiteSpace(richTextBox_StringRuleEngine.Text))
+                {
+                    string downloadPath = checkBox_Path_Home.Checked ?
+                        comboBox_Path_Home.Text :
+                        (checkBox_SetPaths.Checked ? textBox_Paths.Text : DefaultDownloadPath);
+
+                    // 确保路径是绝对路径
+                    if (!Path.IsPathRooted(downloadPath))
+                    {
+                        downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpPath), downloadPath));
+                    }
+
+                    await RenameFilesWithRuleEngine(downloadPath);
+                }
 
                 if (checkBox_OpenF.Checked)
                 {
@@ -486,6 +502,99 @@ namespace QisToolkit3.Forms
             Clipboard.SetText(command);
             Log.Info($"[YtDlp工具] 复制命令 {command}");
             MessageBox.Show($"已复制命令\n\n{command}");
+        }
+
+        // 在 YtDlpTool 类中添加一个新方法
+        private async Task RenameFilesWithRuleEngine(string directoryPath)
+        {
+            if (!checkBox_StringRuleEngine.Checked ||
+                string.IsNullOrWhiteSpace(richTextBox_StringRuleEngine.Text))
+                return;
+
+            AppendText("开始应用规则引擎重命名文件...", "QisToolkit");
+
+            var ruleEngine = new TextProcessor.RuleEngine();
+            var rules = richTextBox_StringRuleEngine.Text;
+
+            // 获取所有视频文件
+            var videoFiles = GetAllVideoFiles();
+            int renamedCount = 0;
+
+            foreach (var videoPath in videoFiles)
+            {
+                try
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(videoPath);
+                    string extension = Path.GetExtension(videoPath);
+                    string directory = Path.GetDirectoryName(videoPath);
+
+                    // 应用规则引擎处理文件名
+                    string newFileName = ruleEngine.ProcessText(fileName, rules);
+
+                    // 清理非法字符
+                    newFileName = IdNameMapper.SanitizeFileName(newFileName);
+
+                    // 如果新文件名与旧文件名不同，则重命名
+                    if (!string.Equals(newFileName, fileName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        string newPath = Path.Combine(directory, newFileName + extension);
+
+                        // 处理重名情况
+                        if (File.Exists(newPath))
+                        {
+                            int counter = 1;
+                            string baseName = newFileName;
+                            while (File.Exists(Path.Combine(directory, newFileName + extension)))
+                            {
+                                newFileName = $"{baseName}_{counter}";
+                                counter++;
+                                newPath = Path.Combine(directory, newFileName + extension);
+                            }
+                        }
+
+                        File.Move(videoPath, newPath);
+                        renamedCount++;
+                        AppendText($"✅ 重命名: {fileName}{extension} → {newFileName}{extension}", "QisToolkit");
+
+                        // 同时重命名关联的 .info.json 和 .description 文件
+                        RenameAssociatedFiles(directory, fileName, newFileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    AppendText($"❌ 重命名失败 {Path.GetFileName(videoPath)}: {ex.Message}", "QisToolkit");
+                    Log.Err($"重命名文件失败: {ex.Message}");
+                }
+            }
+
+            AppendText($"规则引擎重命名完成，共重命名 {renamedCount} 个文件", "QisToolkit");
+        }
+
+        /// <summary>
+        /// 重命名关联文件（.info.json, .description 等）
+        /// </summary>
+        private void RenameAssociatedFiles(string directory, string oldName, string newName)
+        {
+            string[] extensions = { ".info.json", ".信息.json", ".description", ".danmaku.xml", ".ass" };
+
+            foreach (var ext in extensions)
+            {
+                string oldPath = Path.Combine(directory, oldName + ext);
+                string newPath = Path.Combine(directory, newName + ext);
+
+                if (File.Exists(oldPath) && !File.Exists(newPath))
+                {
+                    try
+                    {
+                        File.Move(oldPath, newPath);
+                        AppendText($"   📎 重命名关联: {oldName}{ext} → {newName}{ext}", "QisToolkit");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"重命名关联文件失败 {oldName}{ext}: {ex.Message}");
+                    }
+                }
+            }
         }
 
         private string MakeCommand()
