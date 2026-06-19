@@ -38,6 +38,12 @@
             checkBox_legalnoticecaption = new CheckBox();
             label_registeredOrganization = new Label();
             label_registeredOwner = new Label();
+            label_SoftwareType = new Label();
+            label_CompositionEditionID = new Label();
+            label_BuildBranch = new Label();
+            label_BaseBuildRevisionNumber = new Label();
+            label_CurrentBuild = new Label();
+            label_BuildLabEx = new Label();
             tabPage6 = new TabPage();
             tabControl2 = new TabControl();
             tabPage_UAC = new TabPage();
@@ -117,11 +123,51 @@
             label8 = new Label();
             checkBox_WinDefender_DisableAntiSpyware = new CheckBox();
             tabPage1 = new TabPage();
-            comboBox_WindowsEditionID = new ComboBox();
-            button_WindowsEditionID_Set = new Button();
-            label_WindowsEditionID = new Label();
+            groupBox2 = new GroupBox();
+            comboBox4 = new ComboBox();
+            label5 = new Label();
+            button4 = new Button();
+            comboBox5 = new ComboBox();
+            label6 = new Label();
+            button5 = new Button();
+            comboBox6 = new ComboBox();
+            label19 = new Label();
+            button6 = new Button();
+            comboBox7 = new ComboBox();
+            label20 = new Label();
+            button7 = new Button();
+            comboBox2 = new ComboBox();
+            label2 = new Label();
+            button2 = new Button();
+            comboBox3 = new ComboBox();
+            label3 = new Label();
+            button3 = new Button();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
+            button1 = new Button();
             tabPage2 = new TabPage();
             groupBox_WindowsSystemIdentification = new GroupBox();
+            comboBox_BuildGUID = new ComboBox();
+            label_BuildGUID = new Label();
+            button_BuildGUID = new Button();
+            comboBox_BuildBranch = new ComboBox();
+            comboBox_BaseBuildRevisionNumber = new ComboBox();
+            button_BuildBranch = new Button();
+            button_BaseBuildRevisionNumber = new Button();
+            comboBox_CurrentBuild = new ComboBox();
+            comboBox_BuildLabEx = new ComboBox();
+            button_CurrentBuild = new Button();
+            button_BuildLabEx = new Button();
+            comboBox_ProductName = new ComboBox();
+            label_ProductName = new Label();
+            button_ProductName = new Button();
+            comboBox_SoftwareType = new ComboBox();
+            comboBox_CompositionEditionID = new ComboBox();
+            button_SoftwareType = new Button();
+            button_CompositionEditionID = new Button();
+            comboBox_WindowsEditionID = new ComboBox();
+            label_WindowsEditionID = new Label();
+            button_WindowsEditionID_Set = new Button();
             comboBox_registeredOrganization = new ComboBox();
             comboBox_registeredOwner = new ComboBox();
             button_registeredOrganization = new Button();
@@ -225,6 +271,45 @@
             label17 = new Label();
             label18 = new Label();
             tabControl = new TabControl();
+            comboBox_PathName = new ComboBox();
+            label_PathName = new Label();
+            button_PathName = new Button();
+            label_SystemRoot = new Label();
+            label_InstallationType = new Label();
+            comboBox_SystemRoot = new ComboBox();
+            comboBox_InstallationType = new ComboBox();
+            button_SystemRoot = new Button();
+            button_InstallationType = new Button();
+            comboBox_CurrentType = new ComboBox();
+            label_CurrentType = new Label();
+            button_CurrentType = new Button();
+            comboBox_DisplayVersion = new ComboBox();
+            label_DisplayVersion = new Label();
+            button_DisplayVersion = new Button();
+            label_CurrentMinorVersionNumber = new Label();
+            label_CurrentMajorVersionNumber = new Label();
+            comboBox_CurrentMinorVersionNumber = new ComboBox();
+            comboBox_CurrentMajorVersionNumber = new ComboBox();
+            button_CurrentMinorVersionNumber = new Button();
+            button_CurrentMajorVersionNumber = new Button();
+            comboBox_CurrentVersion = new ComboBox();
+            label_CurrentVersion = new Label();
+            button_CurrentVersion = new Button();
+            comboBox_BuildLab = new ComboBox();
+            label_BuildLab = new Label();
+            button_BuildLab = new Button();
+            label_ReleaseId = new Label();
+            comboBox_ReleaseId = new ComboBox();
+            button_ReleaseId = new Button();
+            label_UBR = new Label();
+            comboBox_UBR = new ComboBox();
+            button_UBR = new Button();
+            label_ProductId = new Label();
+            comboBox_ProductId = new ComboBox();
+            button_ProductId = new Button();
+            comboBox_WinREVersion = new ComboBox();
+            label_WinREVersion = new Label();
+            button_WinREVersion = new Button();
             tabPage6.SuspendLayout();
             tabControl2.SuspendLayout();
             tabPage_UAC.SuspendLayout();
@@ -233,6 +318,7 @@
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
             tabPage1.SuspendLayout();
+            groupBox2.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox_WindowsSystemIdentification.SuspendLayout();
             groupBox_HardwarePseudoRenaming.SuspendLayout();
@@ -299,25 +385,58 @@
             label_registeredOwner.Name = "label_registeredOwner";
             toolTip.SetToolTip(label_registeredOwner, resources.GetString("label_registeredOwner.ToolTip"));
             // 
+            // label_SoftwareType
+            // 
+            resources.ApplyResources(label_SoftwareType, "label_SoftwareType");
+            label_SoftwareType.Name = "label_SoftwareType";
+            toolTip.SetToolTip(label_SoftwareType, resources.GetString("label_SoftwareType.ToolTip"));
+            // 
+            // label_CompositionEditionID
+            // 
+            resources.ApplyResources(label_CompositionEditionID, "label_CompositionEditionID");
+            label_CompositionEditionID.Name = "label_CompositionEditionID";
+            toolTip.SetToolTip(label_CompositionEditionID, resources.GetString("label_CompositionEditionID.ToolTip"));
+            // 
+            // label_BuildBranch
+            // 
+            resources.ApplyResources(label_BuildBranch, "label_BuildBranch");
+            label_BuildBranch.Name = "label_BuildBranch";
+            toolTip.SetToolTip(label_BuildBranch, resources.GetString("label_BuildBranch.ToolTip"));
+            // 
+            // label_BaseBuildRevisionNumber
+            // 
+            resources.ApplyResources(label_BaseBuildRevisionNumber, "label_BaseBuildRevisionNumber");
+            label_BaseBuildRevisionNumber.Name = "label_BaseBuildRevisionNumber";
+            toolTip.SetToolTip(label_BaseBuildRevisionNumber, resources.GetString("label_BaseBuildRevisionNumber.ToolTip"));
+            // 
+            // label_CurrentBuild
+            // 
+            resources.ApplyResources(label_CurrentBuild, "label_CurrentBuild");
+            label_CurrentBuild.Name = "label_CurrentBuild";
+            toolTip.SetToolTip(label_CurrentBuild, resources.GetString("label_CurrentBuild.ToolTip"));
+            // 
+            // label_BuildLabEx
+            // 
+            resources.ApplyResources(label_BuildLabEx, "label_BuildLabEx");
+            label_BuildLabEx.Name = "label_BuildLabEx";
+            toolTip.SetToolTip(label_BuildLabEx, resources.GetString("label_BuildLabEx.ToolTip"));
+            // 
             // tabPage6
             // 
-            resources.ApplyResources(tabPage6, "tabPage6");
             tabPage6.Controls.Add(tabControl2);
+            resources.ApplyResources(tabPage6, "tabPage6");
             tabPage6.Name = "tabPage6";
-            toolTip.SetToolTip(tabPage6, resources.GetString("tabPage6.ToolTip"));
             tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
-            resources.ApplyResources(tabControl2, "tabControl2");
             tabControl2.Controls.Add(tabPage_UAC);
+            resources.ApplyResources(tabControl2, "tabControl2");
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            toolTip.SetToolTip(tabControl2, resources.GetString("tabControl2.ToolTip"));
             // 
             // tabPage_UAC
             // 
-            resources.ApplyResources(tabPage_UAC, "tabPage_UAC");
             tabPage_UAC.Controls.Add(comboBox_FilterAdministratorToken);
             tabPage_UAC.Controls.Add(label_FilterAdministratorToken);
             tabPage_UAC.Controls.Add(comboBox_PromptOnSecureDesktop);
@@ -330,47 +449,42 @@
             tabPage_UAC.Controls.Add(label_ConsentPromptBehaviorAdmin);
             tabPage_UAC.Controls.Add(comboBox_EnableLUA);
             tabPage_UAC.Controls.Add(label_EnableLUA);
+            resources.ApplyResources(tabPage_UAC, "tabPage_UAC");
             tabPage_UAC.Name = "tabPage_UAC";
-            toolTip.SetToolTip(tabPage_UAC, resources.GetString("tabPage_UAC.ToolTip"));
             tabPage_UAC.UseVisualStyleBackColor = true;
             // 
             // comboBox_FilterAdministratorToken
             // 
-            resources.ApplyResources(comboBox_FilterAdministratorToken, "comboBox_FilterAdministratorToken");
             comboBox_FilterAdministratorToken.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_FilterAdministratorToken.FormattingEnabled = true;
             comboBox_FilterAdministratorToken.Items.AddRange(new object[] { resources.GetString("comboBox_FilterAdministratorToken.Items"), resources.GetString("comboBox_FilterAdministratorToken.Items1"), resources.GetString("comboBox_FilterAdministratorToken.Items2"), resources.GetString("comboBox_FilterAdministratorToken.Items3"), resources.GetString("comboBox_FilterAdministratorToken.Items4"), resources.GetString("comboBox_FilterAdministratorToken.Items5") });
+            resources.ApplyResources(comboBox_FilterAdministratorToken, "comboBox_FilterAdministratorToken");
             comboBox_FilterAdministratorToken.Name = "comboBox_FilterAdministratorToken";
-            toolTip.SetToolTip(comboBox_FilterAdministratorToken, resources.GetString("comboBox_FilterAdministratorToken.ToolTip"));
             // 
             // label_FilterAdministratorToken
             // 
-            resources.ApplyResources(label_FilterAdministratorToken, "label_FilterAdministratorToken");
             label_FilterAdministratorToken.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_FilterAdministratorToken, "label_FilterAdministratorToken");
             label_FilterAdministratorToken.Name = "label_FilterAdministratorToken";
-            toolTip.SetToolTip(label_FilterAdministratorToken, resources.GetString("label_FilterAdministratorToken.ToolTip"));
             // 
             // comboBox_PromptOnSecureDesktop
             // 
-            resources.ApplyResources(comboBox_PromptOnSecureDesktop, "comboBox_PromptOnSecureDesktop");
             comboBox_PromptOnSecureDesktop.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_PromptOnSecureDesktop.FormattingEnabled = true;
             comboBox_PromptOnSecureDesktop.Items.AddRange(new object[] { resources.GetString("comboBox_PromptOnSecureDesktop.Items"), resources.GetString("comboBox_PromptOnSecureDesktop.Items1") });
+            resources.ApplyResources(comboBox_PromptOnSecureDesktop, "comboBox_PromptOnSecureDesktop");
             comboBox_PromptOnSecureDesktop.Name = "comboBox_PromptOnSecureDesktop";
-            toolTip.SetToolTip(comboBox_PromptOnSecureDesktop, resources.GetString("comboBox_PromptOnSecureDesktop.ToolTip"));
             // 
             // label_PromptOnSecureDesktop
             // 
-            resources.ApplyResources(label_PromptOnSecureDesktop, "label_PromptOnSecureDesktop");
             label_PromptOnSecureDesktop.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_PromptOnSecureDesktop, "label_PromptOnSecureDesktop");
             label_PromptOnSecureDesktop.Name = "label_PromptOnSecureDesktop";
-            toolTip.SetToolTip(label_PromptOnSecureDesktop, resources.GetString("label_PromptOnSecureDesktop.ToolTip"));
             // 
             // button_UAC_Save
             // 
             resources.ApplyResources(button_UAC_Save, "button_UAC_Save");
             button_UAC_Save.Name = "button_UAC_Save";
-            toolTip.SetToolTip(button_UAC_Save, resources.GetString("button_UAC_Save.ToolTip"));
             button_UAC_Save.UseVisualStyleBackColor = true;
             button_UAC_Save.Click += button_UAC_Save_Click;
             // 
@@ -378,78 +492,68 @@
             // 
             resources.ApplyResources(button_UAC_Read, "button_UAC_Read");
             button_UAC_Read.Name = "button_UAC_Read";
-            toolTip.SetToolTip(button_UAC_Read, resources.GetString("button_UAC_Read.ToolTip"));
             button_UAC_Read.UseVisualStyleBackColor = true;
             button_UAC_Read.Click += button_UAC_Read_Click;
             // 
             // comboBox_ConsentPromptBehaviorUser
             // 
-            resources.ApplyResources(comboBox_ConsentPromptBehaviorUser, "comboBox_ConsentPromptBehaviorUser");
             comboBox_ConsentPromptBehaviorUser.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_ConsentPromptBehaviorUser.FormattingEnabled = true;
             comboBox_ConsentPromptBehaviorUser.Items.AddRange(new object[] { resources.GetString("comboBox_ConsentPromptBehaviorUser.Items"), resources.GetString("comboBox_ConsentPromptBehaviorUser.Items1"), resources.GetString("comboBox_ConsentPromptBehaviorUser.Items2") });
+            resources.ApplyResources(comboBox_ConsentPromptBehaviorUser, "comboBox_ConsentPromptBehaviorUser");
             comboBox_ConsentPromptBehaviorUser.Name = "comboBox_ConsentPromptBehaviorUser";
-            toolTip.SetToolTip(comboBox_ConsentPromptBehaviorUser, resources.GetString("comboBox_ConsentPromptBehaviorUser.ToolTip"));
             // 
             // label_ConsentPromptBehaviorUser
             // 
-            resources.ApplyResources(label_ConsentPromptBehaviorUser, "label_ConsentPromptBehaviorUser");
             label_ConsentPromptBehaviorUser.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_ConsentPromptBehaviorUser, "label_ConsentPromptBehaviorUser");
             label_ConsentPromptBehaviorUser.Name = "label_ConsentPromptBehaviorUser";
-            toolTip.SetToolTip(label_ConsentPromptBehaviorUser, resources.GetString("label_ConsentPromptBehaviorUser.ToolTip"));
             // 
             // comboBox_ConsentPromptBehaviorAdmin
             // 
-            resources.ApplyResources(comboBox_ConsentPromptBehaviorAdmin, "comboBox_ConsentPromptBehaviorAdmin");
             comboBox_ConsentPromptBehaviorAdmin.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_ConsentPromptBehaviorAdmin.FormattingEnabled = true;
             comboBox_ConsentPromptBehaviorAdmin.Items.AddRange(new object[] { resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items"), resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items1"), resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items2"), resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items3"), resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items4"), resources.GetString("comboBox_ConsentPromptBehaviorAdmin.Items5") });
+            resources.ApplyResources(comboBox_ConsentPromptBehaviorAdmin, "comboBox_ConsentPromptBehaviorAdmin");
             comboBox_ConsentPromptBehaviorAdmin.Name = "comboBox_ConsentPromptBehaviorAdmin";
-            toolTip.SetToolTip(comboBox_ConsentPromptBehaviorAdmin, resources.GetString("comboBox_ConsentPromptBehaviorAdmin.ToolTip"));
             // 
             // label_ConsentPromptBehaviorAdmin
             // 
-            resources.ApplyResources(label_ConsentPromptBehaviorAdmin, "label_ConsentPromptBehaviorAdmin");
             label_ConsentPromptBehaviorAdmin.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_ConsentPromptBehaviorAdmin, "label_ConsentPromptBehaviorAdmin");
             label_ConsentPromptBehaviorAdmin.Name = "label_ConsentPromptBehaviorAdmin";
-            toolTip.SetToolTip(label_ConsentPromptBehaviorAdmin, resources.GetString("label_ConsentPromptBehaviorAdmin.ToolTip"));
             // 
             // comboBox_EnableLUA
             // 
-            resources.ApplyResources(comboBox_EnableLUA, "comboBox_EnableLUA");
             comboBox_EnableLUA.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_EnableLUA.FormattingEnabled = true;
             comboBox_EnableLUA.Items.AddRange(new object[] { resources.GetString("comboBox_EnableLUA.Items"), resources.GetString("comboBox_EnableLUA.Items1") });
+            resources.ApplyResources(comboBox_EnableLUA, "comboBox_EnableLUA");
             comboBox_EnableLUA.Name = "comboBox_EnableLUA";
-            toolTip.SetToolTip(comboBox_EnableLUA, resources.GetString("comboBox_EnableLUA.ToolTip"));
             // 
             // label_EnableLUA
             // 
-            resources.ApplyResources(label_EnableLUA, "label_EnableLUA");
             label_EnableLUA.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_EnableLUA, "label_EnableLUA");
             label_EnableLUA.Name = "label_EnableLUA";
-            toolTip.SetToolTip(label_EnableLUA, resources.GetString("label_EnableLUA.ToolTip"));
             // 
             // tabPage3
             // 
-            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Controls.Add(tabControl1);
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Name = "tabPage3";
-            toolTip.SetToolTip(tabPage3, resources.GetString("tabPage3.ToolTip"));
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
-            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            toolTip.SetToolTip(tabControl1, resources.GetString("tabControl1.ToolTip"));
             // 
             // tabPage4
             // 
-            resources.ApplyResources(tabPage4, "tabPage4");
             tabPage4.Controls.Add(checkBox_NoRecentDocsMenu);
             tabPage4.Controls.Add(checkBox_NoControlPanel);
             tabPage4.Controls.Add(checkBox_NoWindowsUpdatesPage);
@@ -493,88 +597,77 @@
             tabPage4.Controls.Add(checkBox_NoDriveTypeAutoRun);
             tabPage4.Controls.Add(checkBox_NoDesktop);
             tabPage4.Controls.Add(checkBox_NoClose);
+            resources.ApplyResources(tabPage4, "tabPage4");
             tabPage4.Name = "tabPage4";
-            toolTip.SetToolTip(tabPage4, resources.GetString("tabPage4.ToolTip"));
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoRecentDocsMenu
             // 
             resources.ApplyResources(checkBox_NoRecentDocsMenu, "checkBox_NoRecentDocsMenu");
             checkBox_NoRecentDocsMenu.Name = "checkBox_NoRecentDocsMenu";
-            toolTip.SetToolTip(checkBox_NoRecentDocsMenu, resources.GetString("checkBox_NoRecentDocsMenu.ToolTip"));
             checkBox_NoRecentDocsMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoControlPanel
             // 
             resources.ApplyResources(checkBox_NoControlPanel, "checkBox_NoControlPanel");
             checkBox_NoControlPanel.Name = "checkBox_NoControlPanel";
-            toolTip.SetToolTip(checkBox_NoControlPanel, resources.GetString("checkBox_NoControlPanel.ToolTip"));
             checkBox_NoControlPanel.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoWindowsUpdatesPage
             // 
             resources.ApplyResources(checkBox_NoWindowsUpdatesPage, "checkBox_NoWindowsUpdatesPage");
             checkBox_NoWindowsUpdatesPage.Name = "checkBox_NoWindowsUpdatesPage";
-            toolTip.SetToolTip(checkBox_NoWindowsUpdatesPage, resources.GetString("checkBox_NoWindowsUpdatesPage.ToolTip"));
             checkBox_NoWindowsUpdatesPage.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoProgramInstall
             // 
             resources.ApplyResources(checkBox_NoProgramInstall, "checkBox_NoProgramInstall");
             checkBox_NoProgramInstall.Name = "checkBox_NoProgramInstall";
-            toolTip.SetToolTip(checkBox_NoProgramInstall, resources.GetString("checkBox_NoProgramInstall.ToolTip"));
             checkBox_NoProgramInstall.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms
             // 
             resources.ApplyResources(checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms, "checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms");
             checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms.Name = "checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms";
-            toolTip.SetToolTip(checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms, resources.GetString("checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms.ToolTip"));
             checkBox_NoUninstallFromStart_And_NoUninstallFromPrograms.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoProgramsAndFeatures
             // 
             resources.ApplyResources(checkBox_NoProgramsAndFeatures, "checkBox_NoProgramsAndFeatures");
             checkBox_NoProgramsAndFeatures.Name = "checkBox_NoProgramsAndFeatures";
-            toolTip.SetToolTip(checkBox_NoProgramsAndFeatures, resources.GetString("checkBox_NoProgramsAndFeatures.ToolTip"));
             checkBox_NoProgramsAndFeatures.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
-            resources.ApplyResources(label11, "label11");
             label11.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label11, "label11");
             label11.Name = "label11";
-            toolTip.SetToolTip(label11, resources.GetString("label11.ToolTip"));
             // 
             // checkBox_DisableRegistryTools
             // 
             resources.ApplyResources(checkBox_DisableRegistryTools, "checkBox_DisableRegistryTools");
             checkBox_DisableRegistryTools.Name = "checkBox_DisableRegistryTools";
-            toolTip.SetToolTip(checkBox_DisableRegistryTools, resources.GetString("checkBox_DisableRegistryTools.ToolTip"));
             checkBox_DisableRegistryTools.UseVisualStyleBackColor = true;
             // 
             // checkBox_DisableCMD
             // 
             resources.ApplyResources(checkBox_DisableCMD, "checkBox_DisableCMD");
             checkBox_DisableCMD.Name = "checkBox_DisableCMD";
-            toolTip.SetToolTip(checkBox_DisableCMD, resources.GetString("checkBox_DisableCMD.ToolTip"));
             checkBox_DisableCMD.UseVisualStyleBackColor = true;
             // 
             // comboBox_RegPoliciesExplorer_Type
             // 
-            resources.ApplyResources(comboBox_RegPoliciesExplorer_Type, "comboBox_RegPoliciesExplorer_Type");
             comboBox_RegPoliciesExplorer_Type.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBox_RegPoliciesExplorer_Type, "comboBox_RegPoliciesExplorer_Type");
             comboBox_RegPoliciesExplorer_Type.FormattingEnabled = true;
             comboBox_RegPoliciesExplorer_Type.Items.AddRange(new object[] { resources.GetString("comboBox_RegPoliciesExplorer_Type.Items"), resources.GetString("comboBox_RegPoliciesExplorer_Type.Items1") });
             comboBox_RegPoliciesExplorer_Type.Name = "comboBox_RegPoliciesExplorer_Type";
-            toolTip.SetToolTip(comboBox_RegPoliciesExplorer_Type, resources.GetString("comboBox_RegPoliciesExplorer_Type.ToolTip"));
             comboBox_RegPoliciesExplorer_Type.SelectedIndexChanged += comboBox_RegPoliciesExplorer_Type_SelectedIndexChanged;
             // 
             // button_RegPoliciesExplorer_Save
             // 
             resources.ApplyResources(button_RegPoliciesExplorer_Save, "button_RegPoliciesExplorer_Save");
             button_RegPoliciesExplorer_Save.Name = "button_RegPoliciesExplorer_Save";
-            toolTip.SetToolTip(button_RegPoliciesExplorer_Save, resources.GetString("button_RegPoliciesExplorer_Save.ToolTip"));
             button_RegPoliciesExplorer_Save.UseVisualStyleBackColor = true;
             button_RegPoliciesExplorer_Save.Click += button_RegPoliciesExplorer_Save_Click;
             // 
@@ -582,7 +675,6 @@
             // 
             resources.ApplyResources(button_RegPoliciesExplorer_Set, "button_RegPoliciesExplorer_Set");
             button_RegPoliciesExplorer_Set.Name = "button_RegPoliciesExplorer_Set";
-            toolTip.SetToolTip(button_RegPoliciesExplorer_Set, resources.GetString("button_RegPoliciesExplorer_Set.ToolTip"));
             button_RegPoliciesExplorer_Set.UseVisualStyleBackColor = true;
             button_RegPoliciesExplorer_Set.Click += button_RegPoliciesExplorer_Set_Click;
             // 
@@ -590,223 +682,191 @@
             // 
             resources.ApplyResources(button_RegPoliciesExplorer_Get, "button_RegPoliciesExplorer_Get");
             button_RegPoliciesExplorer_Get.Name = "button_RegPoliciesExplorer_Get";
-            toolTip.SetToolTip(button_RegPoliciesExplorer_Get, resources.GetString("button_RegPoliciesExplorer_Get.ToolTip"));
             button_RegPoliciesExplorer_Get.UseVisualStyleBackColor = true;
             button_RegPoliciesExplorer_Get.Click += button_RegPoliciesExplorer_Get_Click;
             // 
             // label7
             // 
-            resources.ApplyResources(label7, "label7");
             label7.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label7, "label7");
             label7.Name = "label7";
-            toolTip.SetToolTip(label7, resources.GetString("label7.ToolTip"));
             // 
             // checkBox_NoSetTaskbar
             // 
             resources.ApplyResources(checkBox_NoSetTaskbar, "checkBox_NoSetTaskbar");
             checkBox_NoSetTaskbar.Name = "checkBox_NoSetTaskbar";
-            toolTip.SetToolTip(checkBox_NoSetTaskbar, resources.GetString("checkBox_NoSetTaskbar.ToolTip"));
             checkBox_NoSetTaskbar.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoWindowsUpdate
             // 
             resources.ApplyResources(checkBox_NoWindowsUpdate, "checkBox_NoWindowsUpdate");
             checkBox_NoWindowsUpdate.Name = "checkBox_NoWindowsUpdate";
-            toolTip.SetToolTip(checkBox_NoWindowsUpdate, resources.GetString("checkBox_NoWindowsUpdate.ToolTip"));
             checkBox_NoWindowsUpdate.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoSetActiveDesktop
             // 
             resources.ApplyResources(checkBox_NoSetActiveDesktop, "checkBox_NoSetActiveDesktop");
             checkBox_NoSetActiveDesktop.Name = "checkBox_NoSetActiveDesktop";
-            toolTip.SetToolTip(checkBox_NoSetActiveDesktop, resources.GetString("checkBox_NoSetActiveDesktop.ToolTip"));
             checkBox_NoSetActiveDesktop.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoPrinterTabs
             // 
             resources.ApplyResources(checkBox_NoPrinterTabs, "checkBox_NoPrinterTabs");
             checkBox_NoPrinterTabs.Name = "checkBox_NoPrinterTabs";
-            toolTip.SetToolTip(checkBox_NoPrinterTabs, resources.GetString("checkBox_NoPrinterTabs.ToolTip"));
             checkBox_NoPrinterTabs.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoDeletePrinter
             // 
             resources.ApplyResources(checkBox_NoDeletePrinter, "checkBox_NoDeletePrinter");
             checkBox_NoDeletePrinter.Name = "checkBox_NoDeletePrinter";
-            toolTip.SetToolTip(checkBox_NoDeletePrinter, resources.GetString("checkBox_NoDeletePrinter.ToolTip"));
             checkBox_NoDeletePrinter.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoAddPrinter
             // 
             resources.ApplyResources(checkBox_NoAddPrinter, "checkBox_NoAddPrinter");
             checkBox_NoAddPrinter.Name = "checkBox_NoAddPrinter";
-            toolTip.SetToolTip(checkBox_NoAddPrinter, resources.GetString("checkBox_NoAddPrinter.ToolTip"));
             checkBox_NoAddPrinter.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoTrayContextMenu
             // 
             resources.ApplyResources(checkBox_NoTrayContextMenu, "checkBox_NoTrayContextMenu");
             checkBox_NoTrayContextMenu.Name = "checkBox_NoTrayContextMenu";
-            toolTip.SetToolTip(checkBox_NoTrayContextMenu, resources.GetString("checkBox_NoTrayContextMenu.ToolTip"));
             checkBox_NoTrayContextMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoViewContextMenu
             // 
             resources.ApplyResources(checkBox_NoViewContextMenu, "checkBox_NoViewContextMenu");
             checkBox_NoViewContextMenu.Name = "checkBox_NoViewContextMenu";
-            toolTip.SetToolTip(checkBox_NoViewContextMenu, resources.GetString("checkBox_NoViewContextMenu.ToolTip"));
             checkBox_NoViewContextMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoChangeStartMenu
             // 
             resources.ApplyResources(checkBox_NoChangeStartMenu, "checkBox_NoChangeStartMenu");
             checkBox_NoChangeStartMenu.Name = "checkBox_NoChangeStartMenu";
-            toolTip.SetToolTip(checkBox_NoChangeStartMenu, resources.GetString("checkBox_NoChangeStartMenu.ToolTip"));
             checkBox_NoChangeStartMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoActiveDesktop
             // 
             resources.ApplyResources(checkBox_NoActiveDesktop, "checkBox_NoActiveDesktop");
             checkBox_NoActiveDesktop.Name = "checkBox_NoActiveDesktop";
-            toolTip.SetToolTip(checkBox_NoActiveDesktop, resources.GetString("checkBox_NoActiveDesktop.ToolTip"));
             checkBox_NoActiveDesktop.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoFileMenu
             // 
             resources.ApplyResources(checkBox_NoFileMenu, "checkBox_NoFileMenu");
             checkBox_NoFileMenu.Name = "checkBox_NoFileMenu";
-            toolTip.SetToolTip(checkBox_NoFileMenu, resources.GetString("checkBox_NoFileMenu.ToolTip"));
             checkBox_NoFileMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoSaveSettings
             // 
             resources.ApplyResources(checkBox_NoSaveSettings, "checkBox_NoSaveSettings");
             checkBox_NoSaveSettings.Name = "checkBox_NoSaveSettings";
-            toolTip.SetToolTip(checkBox_NoSaveSettings, resources.GetString("checkBox_NoSaveSettings.ToolTip"));
             checkBox_NoSaveSettings.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoNetHood
             // 
             resources.ApplyResources(checkBox_NoNetHood, "checkBox_NoNetHood");
             checkBox_NoNetHood.Name = "checkBox_NoNetHood";
-            toolTip.SetToolTip(checkBox_NoNetHood, resources.GetString("checkBox_NoNetHood.ToolTip"));
             checkBox_NoNetHood.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoInternetIcon
             // 
             resources.ApplyResources(checkBox_NoInternetIcon, "checkBox_NoInternetIcon");
             checkBox_NoInternetIcon.Name = "checkBox_NoInternetIcon";
-            toolTip.SetToolTip(checkBox_NoInternetIcon, resources.GetString("checkBox_NoInternetIcon.ToolTip"));
             checkBox_NoInternetIcon.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
-            resources.ApplyResources(label4, "label4");
             label4.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            toolTip.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // checkBox_NoRecentDocsHistory
             // 
             resources.ApplyResources(checkBox_NoRecentDocsHistory, "checkBox_NoRecentDocsHistory");
             checkBox_NoRecentDocsHistory.Name = "checkBox_NoRecentDocsHistory";
-            toolTip.SetToolTip(checkBox_NoRecentDocsHistory, resources.GetString("checkBox_NoRecentDocsHistory.ToolTip"));
             checkBox_NoRecentDocsHistory.UseVisualStyleBackColor = true;
             // 
             // checkBox_ClearRecentDocsonExit
             // 
             resources.ApplyResources(checkBox_ClearRecentDocsonExit, "checkBox_ClearRecentDocsonExit");
             checkBox_ClearRecentDocsonExit.Name = "checkBox_ClearRecentDocsonExit";
-            toolTip.SetToolTip(checkBox_ClearRecentDocsonExit, resources.GetString("checkBox_ClearRecentDocsonExit.ToolTip"));
             checkBox_ClearRecentDocsonExit.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoStartBanner
             // 
             resources.ApplyResources(checkBox_NoStartBanner, "checkBox_NoStartBanner");
             checkBox_NoStartBanner.Name = "checkBox_NoStartBanner";
-            toolTip.SetToolTip(checkBox_NoStartBanner, resources.GetString("checkBox_NoStartBanner.ToolTip"));
             checkBox_NoStartBanner.UseVisualStyleBackColor = true;
             // 
             // checkBox_EditLevel
             // 
             resources.ApplyResources(checkBox_EditLevel, "checkBox_EditLevel");
             checkBox_EditLevel.Name = "checkBox_EditLevel";
-            toolTip.SetToolTip(checkBox_EditLevel, resources.GetString("checkBox_EditLevel.ToolTip"));
             checkBox_EditLevel.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoFavoritesMenu
             // 
             resources.ApplyResources(checkBox_NoFavoritesMenu, "checkBox_NoFavoritesMenu");
             checkBox_NoFavoritesMenu.Name = "checkBox_NoFavoritesMenu";
-            toolTip.SetToolTip(checkBox_NoFavoritesMenu, resources.GetString("checkBox_NoFavoritesMenu.ToolTip"));
             checkBox_NoFavoritesMenu.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoSetFolders
             // 
             resources.ApplyResources(checkBox_NoSetFolders, "checkBox_NoSetFolders");
             checkBox_NoSetFolders.Name = "checkBox_NoSetFolders";
-            toolTip.SetToolTip(checkBox_NoSetFolders, resources.GetString("checkBox_NoSetFolders.ToolTip"));
             checkBox_NoSetFolders.UseVisualStyleBackColor = true;
             // 
             // checkBox_Nofind
             // 
             resources.ApplyResources(checkBox_Nofind, "checkBox_Nofind");
             checkBox_Nofind.Name = "checkBox_Nofind";
-            toolTip.SetToolTip(checkBox_Nofind, resources.GetString("checkBox_Nofind.ToolTip"));
             checkBox_Nofind.UseVisualStyleBackColor = true;
             // 
             // checkBox_DisableTaskMgr
             // 
             resources.ApplyResources(checkBox_DisableTaskMgr, "checkBox_DisableTaskMgr");
             checkBox_DisableTaskMgr.Name = "checkBox_DisableTaskMgr";
-            toolTip.SetToolTip(checkBox_DisableTaskMgr, resources.GetString("checkBox_DisableTaskMgr.ToolTip"));
             checkBox_DisableTaskMgr.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoRun
             // 
             resources.ApplyResources(checkBox_NoRun, "checkBox_NoRun");
             checkBox_NoRun.Name = "checkBox_NoRun";
-            toolTip.SetToolTip(checkBox_NoRun, resources.GetString("checkBox_NoRun.ToolTip"));
             checkBox_NoRun.UseVisualStyleBackColor = true;
             // 
             // checkBox_NofolderOptions
             // 
             resources.ApplyResources(checkBox_NofolderOptions, "checkBox_NofolderOptions");
             checkBox_NofolderOptions.Name = "checkBox_NofolderOptions";
-            toolTip.SetToolTip(checkBox_NofolderOptions, resources.GetString("checkBox_NofolderOptions.ToolTip"));
             checkBox_NofolderOptions.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoLogOff
             // 
             resources.ApplyResources(checkBox_NoLogOff, "checkBox_NoLogOff");
             checkBox_NoLogOff.Name = "checkBox_NoLogOff";
-            toolTip.SetToolTip(checkBox_NoLogOff, resources.GetString("checkBox_NoLogOff.ToolTip"));
             checkBox_NoLogOff.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoDriveTypeAutoRun
             // 
             resources.ApplyResources(checkBox_NoDriveTypeAutoRun, "checkBox_NoDriveTypeAutoRun");
             checkBox_NoDriveTypeAutoRun.Name = "checkBox_NoDriveTypeAutoRun";
-            toolTip.SetToolTip(checkBox_NoDriveTypeAutoRun, resources.GetString("checkBox_NoDriveTypeAutoRun.ToolTip"));
             checkBox_NoDriveTypeAutoRun.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoDesktop
             // 
             resources.ApplyResources(checkBox_NoDesktop, "checkBox_NoDesktop");
             checkBox_NoDesktop.Name = "checkBox_NoDesktop";
-            toolTip.SetToolTip(checkBox_NoDesktop, resources.GetString("checkBox_NoDesktop.ToolTip"));
             checkBox_NoDesktop.UseVisualStyleBackColor = true;
             // 
             // checkBox_NoClose
             // 
             resources.ApplyResources(checkBox_NoClose, "checkBox_NoClose");
             checkBox_NoClose.Name = "checkBox_NoClose";
-            toolTip.SetToolTip(checkBox_NoClose, resources.GetString("checkBox_NoClose.ToolTip"));
             checkBox_NoClose.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Controls.Add(button_RegWinDefender_NoSystem);
             tabPage5.Controls.Add(button_RegWinDefender_Save);
             tabPage5.Controls.Add(button_RegWinDefender_Get);
@@ -823,8 +883,8 @@
             tabPage5.Controls.Add(checkBox_WinDefender_DisableRealtimeMonitoring);
             tabPage5.Controls.Add(label8);
             tabPage5.Controls.Add(checkBox_WinDefender_DisableAntiSpyware);
+            resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Name = "tabPage5";
-            toolTip.SetToolTip(tabPage5, resources.GetString("tabPage5.ToolTip"));
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // button_RegWinDefender_NoSystem
@@ -832,13 +892,11 @@
             resources.ApplyResources(button_RegWinDefender_NoSystem, "button_RegWinDefender_NoSystem");
             button_RegWinDefender_NoSystem.ForeColor = Color.Red;
             button_RegWinDefender_NoSystem.Name = "button_RegWinDefender_NoSystem";
-            toolTip.SetToolTip(button_RegWinDefender_NoSystem, resources.GetString("button_RegWinDefender_NoSystem.ToolTip"));
             // 
             // button_RegWinDefender_Save
             // 
             resources.ApplyResources(button_RegWinDefender_Save, "button_RegWinDefender_Save");
             button_RegWinDefender_Save.Name = "button_RegWinDefender_Save";
-            toolTip.SetToolTip(button_RegWinDefender_Save, resources.GetString("button_RegWinDefender_Save.ToolTip"));
             button_RegWinDefender_Save.UseVisualStyleBackColor = true;
             button_RegWinDefender_Save.Click += button_RegWinDefender_Save_Click;
             // 
@@ -846,7 +904,6 @@
             // 
             resources.ApplyResources(button_RegWinDefender_Get, "button_RegWinDefender_Get");
             button_RegWinDefender_Get.Name = "button_RegWinDefender_Get";
-            toolTip.SetToolTip(button_RegWinDefender_Get, resources.GetString("button_RegWinDefender_Get.ToolTip"));
             button_RegWinDefender_Get.UseVisualStyleBackColor = true;
             button_RegWinDefender_Get.Click += button_RegWinDefender_Get_Click;
             // 
@@ -854,135 +911,314 @@
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableBlockAtFirstSeen, "checkBox_WinDefender_DisableBlockAtFirstSeen");
             checkBox_WinDefender_DisableBlockAtFirstSeen.Name = "checkBox_WinDefender_DisableBlockAtFirstSeen";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableBlockAtFirstSeen, resources.GetString("checkBox_WinDefender_DisableBlockAtFirstSeen.ToolTip"));
             checkBox_WinDefender_DisableBlockAtFirstSeen.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             resources.ApplyResources(label10, "label10");
             label10.Name = "label10";
-            toolTip.SetToolTip(label10, resources.GetString("label10.ToolTip"));
             // 
             // checkBox_WinDefender_DisableRealtimeMonitoring2
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableRealtimeMonitoring2, "checkBox_WinDefender_DisableRealtimeMonitoring2");
             checkBox_WinDefender_DisableRealtimeMonitoring2.Name = "checkBox_WinDefender_DisableRealtimeMonitoring2";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableRealtimeMonitoring2, resources.GetString("checkBox_WinDefender_DisableRealtimeMonitoring2.ToolTip"));
             checkBox_WinDefender_DisableRealtimeMonitoring2.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableScanOnRealtimeEnable
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableScanOnRealtimeEnable, "checkBox_WinDefender_DisableScanOnRealtimeEnable");
             checkBox_WinDefender_DisableScanOnRealtimeEnable.Name = "checkBox_WinDefender_DisableScanOnRealtimeEnable";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableScanOnRealtimeEnable, resources.GetString("checkBox_WinDefender_DisableScanOnRealtimeEnable.ToolTip"));
             checkBox_WinDefender_DisableScanOnRealtimeEnable.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableOnAccessProtection
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableOnAccessProtection, "checkBox_WinDefender_DisableOnAccessProtection");
             checkBox_WinDefender_DisableOnAccessProtection.Name = "checkBox_WinDefender_DisableOnAccessProtection";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableOnAccessProtection, resources.GetString("checkBox_WinDefender_DisableOnAccessProtection.ToolTip"));
             checkBox_WinDefender_DisableOnAccessProtection.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
-            toolTip.SetToolTip(label9, resources.GetString("label9.ToolTip"));
             // 
             // checkBox_WinDefender_DisableBehaviorMonitoring
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableBehaviorMonitoring, "checkBox_WinDefender_DisableBehaviorMonitoring");
             checkBox_WinDefender_DisableBehaviorMonitoring.Name = "checkBox_WinDefender_DisableBehaviorMonitoring";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableBehaviorMonitoring, resources.GetString("checkBox_WinDefender_DisableBehaviorMonitoring.ToolTip"));
             checkBox_WinDefender_DisableBehaviorMonitoring.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableRoutinelyTakingAction
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableRoutinelyTakingAction, "checkBox_WinDefender_DisableRoutinelyTakingAction");
             checkBox_WinDefender_DisableRoutinelyTakingAction.Name = "checkBox_WinDefender_DisableRoutinelyTakingAction";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableRoutinelyTakingAction, resources.GetString("checkBox_WinDefender_DisableRoutinelyTakingAction.ToolTip"));
             checkBox_WinDefender_DisableRoutinelyTakingAction.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableSpecialRunningModes
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableSpecialRunningModes, "checkBox_WinDefender_DisableSpecialRunningModes");
             checkBox_WinDefender_DisableSpecialRunningModes.Name = "checkBox_WinDefender_DisableSpecialRunningModes";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableSpecialRunningModes, resources.GetString("checkBox_WinDefender_DisableSpecialRunningModes.ToolTip"));
             checkBox_WinDefender_DisableSpecialRunningModes.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableAntiVirus
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableAntiVirus, "checkBox_WinDefender_DisableAntiVirus");
             checkBox_WinDefender_DisableAntiVirus.Name = "checkBox_WinDefender_DisableAntiVirus";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableAntiVirus, resources.GetString("checkBox_WinDefender_DisableAntiVirus.ToolTip"));
             checkBox_WinDefender_DisableAntiVirus.UseVisualStyleBackColor = true;
             // 
             // checkBox_WinDefender_DisableRealtimeMonitoring
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableRealtimeMonitoring, "checkBox_WinDefender_DisableRealtimeMonitoring");
             checkBox_WinDefender_DisableRealtimeMonitoring.Name = "checkBox_WinDefender_DisableRealtimeMonitoring";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableRealtimeMonitoring, resources.GetString("checkBox_WinDefender_DisableRealtimeMonitoring.ToolTip"));
             checkBox_WinDefender_DisableRealtimeMonitoring.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             resources.ApplyResources(label8, "label8");
             label8.Name = "label8";
-            toolTip.SetToolTip(label8, resources.GetString("label8.ToolTip"));
             // 
             // checkBox_WinDefender_DisableAntiSpyware
             // 
             resources.ApplyResources(checkBox_WinDefender_DisableAntiSpyware, "checkBox_WinDefender_DisableAntiSpyware");
             checkBox_WinDefender_DisableAntiSpyware.Name = "checkBox_WinDefender_DisableAntiSpyware";
-            toolTip.SetToolTip(checkBox_WinDefender_DisableAntiSpyware, resources.GetString("checkBox_WinDefender_DisableAntiSpyware.ToolTip"));
             checkBox_WinDefender_DisableAntiSpyware.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox2);
             resources.ApplyResources(tabPage1, "tabPage1");
-            tabPage1.Controls.Add(comboBox_WindowsEditionID);
-            tabPage1.Controls.Add(button_WindowsEditionID_Set);
-            tabPage1.Controls.Add(label_WindowsEditionID);
             tabPage1.Name = "tabPage1";
-            toolTip.SetToolTip(tabPage1, resources.GetString("tabPage1.ToolTip"));
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox_WindowsEditionID
+            // groupBox2
             // 
-            resources.ApplyResources(comboBox_WindowsEditionID, "comboBox_WindowsEditionID");
-            comboBox_WindowsEditionID.FormattingEnabled = true;
-            comboBox_WindowsEditionID.Items.AddRange(new object[] { resources.GetString("comboBox_WindowsEditionID.Items"), resources.GetString("comboBox_WindowsEditionID.Items1"), resources.GetString("comboBox_WindowsEditionID.Items2"), resources.GetString("comboBox_WindowsEditionID.Items3"), resources.GetString("comboBox_WindowsEditionID.Items4") });
-            comboBox_WindowsEditionID.Name = "comboBox_WindowsEditionID";
-            toolTip.SetToolTip(comboBox_WindowsEditionID, resources.GetString("comboBox_WindowsEditionID.ToolTip"));
+            groupBox2.Controls.Add(comboBox4);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(button4);
+            groupBox2.Controls.Add(comboBox5);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(button5);
+            groupBox2.Controls.Add(comboBox6);
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(button6);
+            groupBox2.Controls.Add(comboBox7);
+            groupBox2.Controls.Add(label20);
+            groupBox2.Controls.Add(button7);
+            groupBox2.Controls.Add(comboBox2);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(comboBox3);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(button1);
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Name = "groupBox2";
+            groupBox2.TabStop = false;
             // 
-            // button_WindowsEditionID_Set
+            // comboBox4
             // 
-            resources.ApplyResources(button_WindowsEditionID_Set, "button_WindowsEditionID_Set");
-            button_WindowsEditionID_Set.Name = "button_WindowsEditionID_Set";
-            toolTip.SetToolTip(button_WindowsEditionID_Set, resources.GetString("button_WindowsEditionID_Set.ToolTip"));
-            button_WindowsEditionID_Set.UseVisualStyleBackColor = true;
-            button_WindowsEditionID_Set.Click += button_WindowsEditionID_Set_Click;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { resources.GetString("comboBox4.Items"), resources.GetString("comboBox4.Items1"), resources.GetString("comboBox4.Items2"), resources.GetString("comboBox4.Items3"), resources.GetString("comboBox4.Items4") });
+            resources.ApplyResources(comboBox4, "comboBox4");
+            comboBox4.Name = "comboBox4";
             // 
-            // label_WindowsEditionID
+            // label5
             // 
-            resources.ApplyResources(label_WindowsEditionID, "label_WindowsEditionID");
-            label_WindowsEditionID.Name = "label_WindowsEditionID";
-            toolTip.SetToolTip(label_WindowsEditionID, resources.GetString("label_WindowsEditionID.ToolTip"));
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
+            // button4
+            // 
+            resources.ApplyResources(button4, "button4");
+            button4.Name = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { resources.GetString("comboBox5.Items"), resources.GetString("comboBox5.Items1"), resources.GetString("comboBox5.Items2"), resources.GetString("comboBox5.Items3"), resources.GetString("comboBox5.Items4") });
+            resources.ApplyResources(comboBox5, "comboBox5");
+            comboBox5.Name = "comboBox5";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // button5
+            // 
+            resources.ApplyResources(button5, "button5");
+            button5.Name = "button5";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Items.AddRange(new object[] { resources.GetString("comboBox6.Items"), resources.GetString("comboBox6.Items1"), resources.GetString("comboBox6.Items2"), resources.GetString("comboBox6.Items3"), resources.GetString("comboBox6.Items4") });
+            resources.ApplyResources(comboBox6, "comboBox6");
+            comboBox6.Name = "comboBox6";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(label19, "label19");
+            label19.Name = "label19";
+            // 
+            // button6
+            // 
+            resources.ApplyResources(button6, "button6");
+            button6.Name = "button6";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox7
+            // 
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { resources.GetString("comboBox7.Items"), resources.GetString("comboBox7.Items1"), resources.GetString("comboBox7.Items2"), resources.GetString("comboBox7.Items3"), resources.GetString("comboBox7.Items4") });
+            resources.ApplyResources(comboBox7, "comboBox7");
+            comboBox7.Name = "comboBox7";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(label20, "label20");
+            label20.Name = "label20";
+            // 
+            // button7
+            // 
+            resources.ApplyResources(button7, "button7");
+            button7.Name = "button7";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { resources.GetString("comboBox2.Items"), resources.GetString("comboBox2.Items1"), resources.GetString("comboBox2.Items2"), resources.GetString("comboBox2.Items3"), resources.GetString("comboBox2.Items4") });
+            resources.ApplyResources(comboBox2, "comboBox2");
+            comboBox2.Name = "comboBox2";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { resources.GetString("comboBox3.Items"), resources.GetString("comboBox3.Items1"), resources.GetString("comboBox3.Items2"), resources.GetString("comboBox3.Items3"), resources.GetString("comboBox3.Items4") });
+            resources.ApplyResources(comboBox3, "comboBox3");
+            comboBox3.Name = "comboBox3";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // button3
+            // 
+            resources.ApplyResources(button3, "button3");
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { resources.GetString("comboBox1.Items"), resources.GetString("comboBox1.Items1"), resources.GetString("comboBox1.Items2"), resources.GetString("comboBox1.Items3"), resources.GetString("comboBox1.Items4") });
+            resources.ApplyResources(comboBox1, "comboBox1");
+            comboBox1.Name = "comboBox1";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Controls.Add(groupBox_WindowsSystemIdentification);
             tabPage2.Controls.Add(groupBox_HardwarePseudoRenaming);
             tabPage2.Controls.Add(groupBoxOEM);
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
-            toolTip.SetToolTip(tabPage2, resources.GetString("tabPage2.ToolTip"));
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox_WindowsSystemIdentification
             // 
-            resources.ApplyResources(groupBox_WindowsSystemIdentification, "groupBox_WindowsSystemIdentification");
+            groupBox_WindowsSystemIdentification.Controls.Add(label_ProductId);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_ProductId);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_ProductId);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_WinREVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_WinREVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_WinREVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_UBR);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_UBR);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_UBR);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_BuildLab);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_BuildLab);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_BuildLab);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_ReleaseId);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_ReleaseId);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_ReleaseId);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_PathName);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_PathName);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_PathName);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_SystemRoot);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_InstallationType);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_SystemRoot);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_InstallationType);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_SystemRoot);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_InstallationType);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CurrentType);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CurrentType);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CurrentType);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_DisplayVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_DisplayVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_DisplayVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CurrentMinorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CurrentMajorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CurrentMinorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CurrentMajorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CurrentMinorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CurrentMajorVersionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CurrentVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CurrentVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CurrentVersion);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_BuildGUID);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_BuildGUID);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_BuildGUID);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_BuildBranch);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_BaseBuildRevisionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_BuildBranch);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_BaseBuildRevisionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_BuildBranch);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_BaseBuildRevisionNumber);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CurrentBuild);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_BuildLabEx);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CurrentBuild);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_BuildLabEx);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CurrentBuild);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_BuildLabEx);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_ProductName);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_ProductName);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_ProductName);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_SoftwareType);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_CompositionEditionID);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_SoftwareType);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_CompositionEditionID);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_SoftwareType);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_CompositionEditionID);
+            groupBox_WindowsSystemIdentification.Controls.Add(comboBox_WindowsEditionID);
+            groupBox_WindowsSystemIdentification.Controls.Add(label_WindowsEditionID);
+            groupBox_WindowsSystemIdentification.Controls.Add(button_WindowsEditionID_Set);
             groupBox_WindowsSystemIdentification.Controls.Add(label_registeredOrganization);
             groupBox_WindowsSystemIdentification.Controls.Add(label_registeredOwner);
             groupBox_WindowsSystemIdentification.Controls.Add(comboBox_registeredOrganization);
@@ -995,31 +1231,169 @@
             groupBox_WindowsSystemIdentification.Controls.Add(checkBox_legalnoticecaption);
             groupBox_WindowsSystemIdentification.Controls.Add(button_legalnoticecaption);
             groupBox_WindowsSystemIdentification.Controls.Add(checkBox_legalnoticetext);
+            resources.ApplyResources(groupBox_WindowsSystemIdentification, "groupBox_WindowsSystemIdentification");
             groupBox_WindowsSystemIdentification.Name = "groupBox_WindowsSystemIdentification";
             groupBox_WindowsSystemIdentification.TabStop = false;
-            toolTip.SetToolTip(groupBox_WindowsSystemIdentification, resources.GetString("groupBox_WindowsSystemIdentification.ToolTip"));
+            // 
+            // comboBox_BuildGUID
+            // 
+            comboBox_BuildGUID.FormattingEnabled = true;
+            comboBox_BuildGUID.Items.AddRange(new object[] { resources.GetString("comboBox_BuildGUID.Items"), resources.GetString("comboBox_BuildGUID.Items1"), resources.GetString("comboBox_BuildGUID.Items2"), resources.GetString("comboBox_BuildGUID.Items3"), resources.GetString("comboBox_BuildGUID.Items4") });
+            resources.ApplyResources(comboBox_BuildGUID, "comboBox_BuildGUID");
+            comboBox_BuildGUID.Name = "comboBox_BuildGUID";
+            // 
+            // label_BuildGUID
+            // 
+            resources.ApplyResources(label_BuildGUID, "label_BuildGUID");
+            label_BuildGUID.Name = "label_BuildGUID";
+            // 
+            // button_BuildGUID
+            // 
+            resources.ApplyResources(button_BuildGUID, "button_BuildGUID");
+            button_BuildGUID.Name = "button_BuildGUID";
+            button_BuildGUID.UseVisualStyleBackColor = true;
+            button_BuildGUID.Click += button_BuildGUID_Click;
+            // 
+            // comboBox_BuildBranch
+            // 
+            comboBox_BuildBranch.FormattingEnabled = true;
+            comboBox_BuildBranch.Items.AddRange(new object[] { resources.GetString("comboBox_BuildBranch.Items") });
+            resources.ApplyResources(comboBox_BuildBranch, "comboBox_BuildBranch");
+            comboBox_BuildBranch.Name = "comboBox_BuildBranch";
+            // 
+            // comboBox_BaseBuildRevisionNumber
+            // 
+            comboBox_BaseBuildRevisionNumber.FormattingEnabled = true;
+            comboBox_BaseBuildRevisionNumber.Items.AddRange(new object[] { resources.GetString("comboBox_BaseBuildRevisionNumber.Items") });
+            resources.ApplyResources(comboBox_BaseBuildRevisionNumber, "comboBox_BaseBuildRevisionNumber");
+            comboBox_BaseBuildRevisionNumber.Name = "comboBox_BaseBuildRevisionNumber";
+            // 
+            // button_BuildBranch
+            // 
+            resources.ApplyResources(button_BuildBranch, "button_BuildBranch");
+            button_BuildBranch.Name = "button_BuildBranch";
+            button_BuildBranch.UseVisualStyleBackColor = true;
+            button_BuildBranch.Click += button_BuildBranch_Click;
+            // 
+            // button_BaseBuildRevisionNumber
+            // 
+            resources.ApplyResources(button_BaseBuildRevisionNumber, "button_BaseBuildRevisionNumber");
+            button_BaseBuildRevisionNumber.Name = "button_BaseBuildRevisionNumber";
+            button_BaseBuildRevisionNumber.UseVisualStyleBackColor = true;
+            button_BaseBuildRevisionNumber.Click += button_BaseBuildRevisionNumber_Click;
+            // 
+            // comboBox_CurrentBuild
+            // 
+            comboBox_CurrentBuild.FormattingEnabled = true;
+            comboBox_CurrentBuild.Items.AddRange(new object[] { resources.GetString("comboBox_CurrentBuild.Items") });
+            resources.ApplyResources(comboBox_CurrentBuild, "comboBox_CurrentBuild");
+            comboBox_CurrentBuild.Name = "comboBox_CurrentBuild";
+            // 
+            // comboBox_BuildLabEx
+            // 
+            comboBox_BuildLabEx.FormattingEnabled = true;
+            comboBox_BuildLabEx.Items.AddRange(new object[] { resources.GetString("comboBox_BuildLabEx.Items") });
+            resources.ApplyResources(comboBox_BuildLabEx, "comboBox_BuildLabEx");
+            comboBox_BuildLabEx.Name = "comboBox_BuildLabEx";
+            // 
+            // button_CurrentBuild
+            // 
+            resources.ApplyResources(button_CurrentBuild, "button_CurrentBuild");
+            button_CurrentBuild.Name = "button_CurrentBuild";
+            button_CurrentBuild.UseVisualStyleBackColor = true;
+            button_CurrentBuild.Click += button_CurrentBuild_Click;
+            // 
+            // button_BuildLabEx
+            // 
+            resources.ApplyResources(button_BuildLabEx, "button_BuildLabEx");
+            button_BuildLabEx.Name = "button_BuildLabEx";
+            button_BuildLabEx.UseVisualStyleBackColor = true;
+            button_BuildLabEx.Click += button_BuildLabEx_Click;
+            // 
+            // comboBox_ProductName
+            // 
+            comboBox_ProductName.FormattingEnabled = true;
+            comboBox_ProductName.Items.AddRange(new object[] { resources.GetString("comboBox_ProductName.Items"), resources.GetString("comboBox_ProductName.Items1"), resources.GetString("comboBox_ProductName.Items2"), resources.GetString("comboBox_ProductName.Items3"), resources.GetString("comboBox_ProductName.Items4") });
+            resources.ApplyResources(comboBox_ProductName, "comboBox_ProductName");
+            comboBox_ProductName.Name = "comboBox_ProductName";
+            // 
+            // label_ProductName
+            // 
+            resources.ApplyResources(label_ProductName, "label_ProductName");
+            label_ProductName.Name = "label_ProductName";
+            // 
+            // button_ProductName
+            // 
+            resources.ApplyResources(button_ProductName, "button_ProductName");
+            button_ProductName.Name = "button_ProductName";
+            button_ProductName.UseVisualStyleBackColor = true;
+            button_ProductName.Click += button_ProductName_Click;
+            // 
+            // comboBox_SoftwareType
+            // 
+            comboBox_SoftwareType.FormattingEnabled = true;
+            comboBox_SoftwareType.Items.AddRange(new object[] { resources.GetString("comboBox_SoftwareType.Items") });
+            resources.ApplyResources(comboBox_SoftwareType, "comboBox_SoftwareType");
+            comboBox_SoftwareType.Name = "comboBox_SoftwareType";
+            // 
+            // comboBox_CompositionEditionID
+            // 
+            comboBox_CompositionEditionID.FormattingEnabled = true;
+            comboBox_CompositionEditionID.Items.AddRange(new object[] { resources.GetString("comboBox_CompositionEditionID.Items") });
+            resources.ApplyResources(comboBox_CompositionEditionID, "comboBox_CompositionEditionID");
+            comboBox_CompositionEditionID.Name = "comboBox_CompositionEditionID";
+            // 
+            // button_SoftwareType
+            // 
+            resources.ApplyResources(button_SoftwareType, "button_SoftwareType");
+            button_SoftwareType.Name = "button_SoftwareType";
+            button_SoftwareType.UseVisualStyleBackColor = true;
+            button_SoftwareType.Click += button_SoftwareType_Click;
+            // 
+            // button_CompositionEditionID
+            // 
+            resources.ApplyResources(button_CompositionEditionID, "button_CompositionEditionID");
+            button_CompositionEditionID.Name = "button_CompositionEditionID";
+            button_CompositionEditionID.UseVisualStyleBackColor = true;
+            button_CompositionEditionID.Click += button_CompositionEditionID_Click;
+            // 
+            // comboBox_WindowsEditionID
+            // 
+            comboBox_WindowsEditionID.FormattingEnabled = true;
+            comboBox_WindowsEditionID.Items.AddRange(new object[] { resources.GetString("comboBox_WindowsEditionID.Items"), resources.GetString("comboBox_WindowsEditionID.Items1"), resources.GetString("comboBox_WindowsEditionID.Items2"), resources.GetString("comboBox_WindowsEditionID.Items3"), resources.GetString("comboBox_WindowsEditionID.Items4") });
+            resources.ApplyResources(comboBox_WindowsEditionID, "comboBox_WindowsEditionID");
+            comboBox_WindowsEditionID.Name = "comboBox_WindowsEditionID";
+            // 
+            // label_WindowsEditionID
+            // 
+            resources.ApplyResources(label_WindowsEditionID, "label_WindowsEditionID");
+            label_WindowsEditionID.Name = "label_WindowsEditionID";
+            // 
+            // button_WindowsEditionID_Set
+            // 
+            resources.ApplyResources(button_WindowsEditionID_Set, "button_WindowsEditionID_Set");
+            button_WindowsEditionID_Set.Name = "button_WindowsEditionID_Set";
+            button_WindowsEditionID_Set.UseVisualStyleBackColor = true;
+            button_WindowsEditionID_Set.Click += button_WindowsEditionID_Set_Click;
             // 
             // comboBox_registeredOrganization
             // 
-            resources.ApplyResources(comboBox_registeredOrganization, "comboBox_registeredOrganization");
             comboBox_registeredOrganization.FormattingEnabled = true;
             comboBox_registeredOrganization.Items.AddRange(new object[] { resources.GetString("comboBox_registeredOrganization.Items") });
+            resources.ApplyResources(comboBox_registeredOrganization, "comboBox_registeredOrganization");
             comboBox_registeredOrganization.Name = "comboBox_registeredOrganization";
-            toolTip.SetToolTip(comboBox_registeredOrganization, resources.GetString("comboBox_registeredOrganization.ToolTip"));
             // 
             // comboBox_registeredOwner
             // 
-            resources.ApplyResources(comboBox_registeredOwner, "comboBox_registeredOwner");
             comboBox_registeredOwner.FormattingEnabled = true;
             comboBox_registeredOwner.Items.AddRange(new object[] { resources.GetString("comboBox_registeredOwner.Items") });
+            resources.ApplyResources(comboBox_registeredOwner, "comboBox_registeredOwner");
             comboBox_registeredOwner.Name = "comboBox_registeredOwner";
-            toolTip.SetToolTip(comboBox_registeredOwner, resources.GetString("comboBox_registeredOwner.ToolTip"));
             // 
             // button_registeredOrganization
             // 
             resources.ApplyResources(button_registeredOrganization, "button_registeredOrganization");
             button_registeredOrganization.Name = "button_registeredOrganization";
-            toolTip.SetToolTip(button_registeredOrganization, resources.GetString("button_registeredOrganization.ToolTip"));
             button_registeredOrganization.UseVisualStyleBackColor = true;
             button_registeredOrganization.Click += button_registeredOrganization_Click;
             // 
@@ -1027,7 +1401,6 @@
             // 
             resources.ApplyResources(button_registeredOwner, "button_registeredOwner");
             button_registeredOwner.Name = "button_registeredOwner";
-            toolTip.SetToolTip(button_registeredOwner, resources.GetString("button_registeredOwner.ToolTip"));
             button_registeredOwner.UseVisualStyleBackColor = true;
             button_registeredOwner.Click += button_registeredOwner_Click;
             // 
@@ -1035,13 +1408,11 @@
             // 
             resources.ApplyResources(textBox_legalnoticecaption, "textBox_legalnoticecaption");
             textBox_legalnoticecaption.Name = "textBox_legalnoticecaption";
-            toolTip.SetToolTip(textBox_legalnoticecaption, resources.GetString("textBox_legalnoticecaption.ToolTip"));
             // 
             // button_legalnoticetext
             // 
             resources.ApplyResources(button_legalnoticetext, "button_legalnoticetext");
             button_legalnoticetext.Name = "button_legalnoticetext";
-            toolTip.SetToolTip(button_legalnoticetext, resources.GetString("button_legalnoticetext.ToolTip"));
             button_legalnoticetext.UseVisualStyleBackColor = true;
             button_legalnoticetext.Click += button_legalnoticetext_Click;
             // 
@@ -1049,19 +1420,16 @@
             // 
             resources.ApplyResources(textBox_legalnoticetext, "textBox_legalnoticetext");
             textBox_legalnoticetext.Name = "textBox_legalnoticetext";
-            toolTip.SetToolTip(textBox_legalnoticetext, resources.GetString("textBox_legalnoticetext.ToolTip"));
             // 
             // button_legalnoticecaption
             // 
             resources.ApplyResources(button_legalnoticecaption, "button_legalnoticecaption");
             button_legalnoticecaption.Name = "button_legalnoticecaption";
-            toolTip.SetToolTip(button_legalnoticecaption, resources.GetString("button_legalnoticecaption.ToolTip"));
             button_legalnoticecaption.UseVisualStyleBackColor = true;
             button_legalnoticecaption.Click += button_legalnoticecaption_Click;
             // 
             // groupBox_HardwarePseudoRenaming
             // 
-            resources.ApplyResources(groupBox_HardwarePseudoRenaming, "groupBox_HardwarePseudoRenaming");
             groupBox_HardwarePseudoRenaming.Controls.Add(button_GpuName_SetDeviceDesc);
             groupBox_HardwarePseudoRenaming.Controls.Add(button_GpuName_DeleteFriendlyName);
             groupBox_HardwarePseudoRenaming.Controls.Add(label16);
@@ -1077,16 +1445,15 @@
             groupBox_HardwarePseudoRenaming.Controls.Add(labelCpuName);
             groupBox_HardwarePseudoRenaming.Controls.Add(buttonGetCpuName);
             groupBox_HardwarePseudoRenaming.Controls.Add(buttonSetCpuName);
+            resources.ApplyResources(groupBox_HardwarePseudoRenaming, "groupBox_HardwarePseudoRenaming");
             groupBox_HardwarePseudoRenaming.Name = "groupBox_HardwarePseudoRenaming";
             groupBox_HardwarePseudoRenaming.TabStop = false;
-            toolTip.SetToolTip(groupBox_HardwarePseudoRenaming, resources.GetString("groupBox_HardwarePseudoRenaming.ToolTip"));
             // 
             // button_GpuName_SetDeviceDesc
             // 
-            resources.ApplyResources(button_GpuName_SetDeviceDesc, "button_GpuName_SetDeviceDesc");
             button_GpuName_SetDeviceDesc.ForeColor = Color.Red;
+            resources.ApplyResources(button_GpuName_SetDeviceDesc, "button_GpuName_SetDeviceDesc");
             button_GpuName_SetDeviceDesc.Name = "button_GpuName_SetDeviceDesc";
-            toolTip.SetToolTip(button_GpuName_SetDeviceDesc, resources.GetString("button_GpuName_SetDeviceDesc.ToolTip"));
             button_GpuName_SetDeviceDesc.UseVisualStyleBackColor = true;
             button_GpuName_SetDeviceDesc.Click += button_GpuName_SetDeviceDesc_Click;
             // 
@@ -1094,7 +1461,6 @@
             // 
             resources.ApplyResources(button_GpuName_DeleteFriendlyName, "button_GpuName_DeleteFriendlyName");
             button_GpuName_DeleteFriendlyName.Name = "button_GpuName_DeleteFriendlyName";
-            toolTip.SetToolTip(button_GpuName_DeleteFriendlyName, resources.GetString("button_GpuName_DeleteFriendlyName.ToolTip"));
             button_GpuName_DeleteFriendlyName.UseVisualStyleBackColor = true;
             button_GpuName_DeleteFriendlyName.Click += button_GpuName_DeleteFriendlyName_Click;
             // 
@@ -1102,21 +1468,18 @@
             // 
             resources.ApplyResources(label16, "label16");
             label16.Name = "label16";
-            toolTip.SetToolTip(label16, resources.GetString("label16.ToolTip"));
             // 
             // comboBox_GPUPNPDeviceID
             // 
-            resources.ApplyResources(comboBox_GPUPNPDeviceID, "comboBox_GPUPNPDeviceID");
             comboBox_GPUPNPDeviceID.FormattingEnabled = true;
             comboBox_GPUPNPDeviceID.Items.AddRange(new object[] { resources.GetString("comboBox_GPUPNPDeviceID.Items") });
+            resources.ApplyResources(comboBox_GPUPNPDeviceID, "comboBox_GPUPNPDeviceID");
             comboBox_GPUPNPDeviceID.Name = "comboBox_GPUPNPDeviceID";
-            toolTip.SetToolTip(comboBox_GPUPNPDeviceID, resources.GetString("comboBox_GPUPNPDeviceID.ToolTip"));
             // 
             // button_GpuName_SetFriendlyName
             // 
             resources.ApplyResources(button_GpuName_SetFriendlyName, "button_GpuName_SetFriendlyName");
             button_GpuName_SetFriendlyName.Name = "button_GpuName_SetFriendlyName";
-            toolTip.SetToolTip(button_GpuName_SetFriendlyName, resources.GetString("button_GpuName_SetFriendlyName.ToolTip"));
             button_GpuName_SetFriendlyName.UseVisualStyleBackColor = true;
             button_GpuName_SetFriendlyName.Click += button_GpuName_SetFriendlyName_Click;
             // 
@@ -1124,45 +1487,39 @@
             // 
             resources.ApplyResources(button_GPUPNPDeviceID_Get, "button_GPUPNPDeviceID_Get");
             button_GPUPNPDeviceID_Get.Name = "button_GPUPNPDeviceID_Get";
-            toolTip.SetToolTip(button_GPUPNPDeviceID_Get, resources.GetString("button_GPUPNPDeviceID_Get.ToolTip"));
             button_GPUPNPDeviceID_Get.UseVisualStyleBackColor = true;
             // 
             // button_GPUPNPDeviceID_Set
             // 
             resources.ApplyResources(button_GPUPNPDeviceID_Set, "button_GPUPNPDeviceID_Set");
             button_GPUPNPDeviceID_Set.Name = "button_GPUPNPDeviceID_Set";
-            toolTip.SetToolTip(button_GPUPNPDeviceID_Set, resources.GetString("button_GPUPNPDeviceID_Set.ToolTip"));
             button_GPUPNPDeviceID_Set.UseVisualStyleBackColor = true;
             // 
             // comboBox_GpuName
             // 
-            resources.ApplyResources(comboBox_GpuName, "comboBox_GpuName");
             comboBox_GpuName.FormattingEnabled = true;
             comboBox_GpuName.Items.AddRange(new object[] { resources.GetString("comboBox_GpuName.Items"), resources.GetString("comboBox_GpuName.Items1"), resources.GetString("comboBox_GpuName.Items2"), resources.GetString("comboBox_GpuName.Items3"), resources.GetString("comboBox_GpuName.Items4"), resources.GetString("comboBox_GpuName.Items5"), resources.GetString("comboBox_GpuName.Items6"), resources.GetString("comboBox_GpuName.Items7"), resources.GetString("comboBox_GpuName.Items8"), resources.GetString("comboBox_GpuName.Items9"), resources.GetString("comboBox_GpuName.Items10"), resources.GetString("comboBox_GpuName.Items11"), resources.GetString("comboBox_GpuName.Items12"), resources.GetString("comboBox_GpuName.Items13"), resources.GetString("comboBox_GpuName.Items14"), resources.GetString("comboBox_GpuName.Items15"), resources.GetString("comboBox_GpuName.Items16"), resources.GetString("comboBox_GpuName.Items17"), resources.GetString("comboBox_GpuName.Items18"), resources.GetString("comboBox_GpuName.Items19"), resources.GetString("comboBox_GpuName.Items20"), resources.GetString("comboBox_GpuName.Items21"), resources.GetString("comboBox_GpuName.Items22"), resources.GetString("comboBox_GpuName.Items23"), resources.GetString("comboBox_GpuName.Items24"), resources.GetString("comboBox_GpuName.Items25"), resources.GetString("comboBox_GpuName.Items26"), resources.GetString("comboBox_GpuName.Items27"), resources.GetString("comboBox_GpuName.Items28"), resources.GetString("comboBox_GpuName.Items29"), resources.GetString("comboBox_GpuName.Items30"), resources.GetString("comboBox_GpuName.Items31"), resources.GetString("comboBox_GpuName.Items32"), resources.GetString("comboBox_GpuName.Items33"), resources.GetString("comboBox_GpuName.Items34"), resources.GetString("comboBox_GpuName.Items35"), resources.GetString("comboBox_GpuName.Items36"), resources.GetString("comboBox_GpuName.Items37"), resources.GetString("comboBox_GpuName.Items38"), resources.GetString("comboBox_GpuName.Items39"), resources.GetString("comboBox_GpuName.Items40"), resources.GetString("comboBox_GpuName.Items41"), resources.GetString("comboBox_GpuName.Items42"), resources.GetString("comboBox_GpuName.Items43"), resources.GetString("comboBox_GpuName.Items44"), resources.GetString("comboBox_GpuName.Items45"), resources.GetString("comboBox_GpuName.Items46"), resources.GetString("comboBox_GpuName.Items47"), resources.GetString("comboBox_GpuName.Items48"), resources.GetString("comboBox_GpuName.Items49"), resources.GetString("comboBox_GpuName.Items50"), resources.GetString("comboBox_GpuName.Items51"), resources.GetString("comboBox_GpuName.Items52"), resources.GetString("comboBox_GpuName.Items53"), resources.GetString("comboBox_GpuName.Items54"), resources.GetString("comboBox_GpuName.Items55"), resources.GetString("comboBox_GpuName.Items56"), resources.GetString("comboBox_GpuName.Items57"), resources.GetString("comboBox_GpuName.Items58"), resources.GetString("comboBox_GpuName.Items59"), resources.GetString("comboBox_GpuName.Items60") });
+            resources.ApplyResources(comboBox_GpuName, "comboBox_GpuName");
             comboBox_GpuName.Name = "comboBox_GpuName";
-            toolTip.SetToolTip(comboBox_GpuName, resources.GetString("comboBox_GpuName.ToolTip"));
             // 
             // button_GpuName_Get
             // 
             resources.ApplyResources(button_GpuName_Get, "button_GpuName_Get");
             button_GpuName_Get.Name = "button_GpuName_Get";
-            toolTip.SetToolTip(button_GpuName_Get, resources.GetString("button_GpuName_Get.ToolTip"));
             button_GpuName_Get.UseVisualStyleBackColor = true;
             button_GpuName_Get.Click += button_GpuName_Get_Click;
             // 
             // comboBoxCpuName
             // 
-            resources.ApplyResources(comboBoxCpuName, "comboBoxCpuName");
             comboBoxCpuName.FormattingEnabled = true;
             comboBoxCpuName.Items.AddRange(new object[] { resources.GetString("comboBoxCpuName.Items"), resources.GetString("comboBoxCpuName.Items1"), resources.GetString("comboBoxCpuName.Items2"), resources.GetString("comboBoxCpuName.Items3"), resources.GetString("comboBoxCpuName.Items4") });
+            resources.ApplyResources(comboBoxCpuName, "comboBoxCpuName");
             comboBoxCpuName.Name = "comboBoxCpuName";
-            toolTip.SetToolTip(comboBoxCpuName, resources.GetString("comboBoxCpuName.ToolTip"));
             // 
             // buttonGetCpuName
             // 
             resources.ApplyResources(buttonGetCpuName, "buttonGetCpuName");
             buttonGetCpuName.Name = "buttonGetCpuName";
-            toolTip.SetToolTip(buttonGetCpuName, resources.GetString("buttonGetCpuName.ToolTip"));
             buttonGetCpuName.UseVisualStyleBackColor = true;
             buttonGetCpuName.Click += buttonGetCpuName_Click;
             // 
@@ -1170,13 +1527,11 @@
             // 
             resources.ApplyResources(buttonSetCpuName, "buttonSetCpuName");
             buttonSetCpuName.Name = "buttonSetCpuName";
-            toolTip.SetToolTip(buttonSetCpuName, resources.GetString("buttonSetCpuName.ToolTip"));
             buttonSetCpuName.UseVisualStyleBackColor = true;
             buttonSetCpuName.Click += buttonSetCpuName_Click;
             // 
             // groupBoxOEM
             // 
-            resources.ApplyResources(groupBoxOEM, "groupBoxOEM");
             groupBoxOEM.Controls.Add(button_OEM_SupportURL);
             groupBoxOEM.Controls.Add(textBox_OEM_SupportURL);
             groupBoxOEM.Controls.Add(label_OEM_SupportURL);
@@ -1193,15 +1548,14 @@
             groupBoxOEM.Controls.Add(textBox_OEM_ManuFacturer);
             groupBoxOEM.Controls.Add(label_OEM_ManuFacturer);
             groupBoxOEM.Controls.Add(checkBoxOEM);
+            resources.ApplyResources(groupBoxOEM, "groupBoxOEM");
             groupBoxOEM.Name = "groupBoxOEM";
             groupBoxOEM.TabStop = false;
-            toolTip.SetToolTip(groupBoxOEM, resources.GetString("groupBoxOEM.ToolTip"));
             // 
             // button_OEM_SupportURL
             // 
             resources.ApplyResources(button_OEM_SupportURL, "button_OEM_SupportURL");
             button_OEM_SupportURL.Name = "button_OEM_SupportURL";
-            toolTip.SetToolTip(button_OEM_SupportURL, resources.GetString("button_OEM_SupportURL.ToolTip"));
             button_OEM_SupportURL.UseVisualStyleBackColor = true;
             button_OEM_SupportURL.Click += button_OEM_SupportURL_Click;
             // 
@@ -1209,19 +1563,16 @@
             // 
             resources.ApplyResources(textBox_OEM_SupportURL, "textBox_OEM_SupportURL");
             textBox_OEM_SupportURL.Name = "textBox_OEM_SupportURL";
-            toolTip.SetToolTip(textBox_OEM_SupportURL, resources.GetString("textBox_OEM_SupportURL.ToolTip"));
             // 
             // label_OEM_SupportURL
             // 
             resources.ApplyResources(label_OEM_SupportURL, "label_OEM_SupportURL");
             label_OEM_SupportURL.Name = "label_OEM_SupportURL";
-            toolTip.SetToolTip(label_OEM_SupportURL, resources.GetString("label_OEM_SupportURL.ToolTip"));
             // 
             // button_OEM_SupportPhone
             // 
             resources.ApplyResources(button_OEM_SupportPhone, "button_OEM_SupportPhone");
             button_OEM_SupportPhone.Name = "button_OEM_SupportPhone";
-            toolTip.SetToolTip(button_OEM_SupportPhone, resources.GetString("button_OEM_SupportPhone.ToolTip"));
             button_OEM_SupportPhone.UseVisualStyleBackColor = true;
             button_OEM_SupportPhone.Click += button_OEM_SupportPhone_Click;
             // 
@@ -1229,19 +1580,16 @@
             // 
             resources.ApplyResources(textBox_OEM_SupportPhone, "textBox_OEM_SupportPhone");
             textBox_OEM_SupportPhone.Name = "textBox_OEM_SupportPhone";
-            toolTip.SetToolTip(textBox_OEM_SupportPhone, resources.GetString("textBox_OEM_SupportPhone.ToolTip"));
             // 
             // label_OEM_SupportPhone
             // 
             resources.ApplyResources(label_OEM_SupportPhone, "label_OEM_SupportPhone");
             label_OEM_SupportPhone.Name = "label_OEM_SupportPhone";
-            toolTip.SetToolTip(label_OEM_SupportPhone, resources.GetString("label_OEM_SupportPhone.ToolTip"));
             // 
             // button_OEM_SupportHours
             // 
             resources.ApplyResources(button_OEM_SupportHours, "button_OEM_SupportHours");
             button_OEM_SupportHours.Name = "button_OEM_SupportHours";
-            toolTip.SetToolTip(button_OEM_SupportHours, resources.GetString("button_OEM_SupportHours.ToolTip"));
             button_OEM_SupportHours.UseVisualStyleBackColor = true;
             button_OEM_SupportHours.Click += button_OEM_SupportHours_Click;
             // 
@@ -1249,19 +1597,16 @@
             // 
             resources.ApplyResources(textBox_OEM_SupportHours, "textBox_OEM_SupportHours");
             textBox_OEM_SupportHours.Name = "textBox_OEM_SupportHours";
-            toolTip.SetToolTip(textBox_OEM_SupportHours, resources.GetString("textBox_OEM_SupportHours.ToolTip"));
             // 
             // label_OEM_SupportHours
             // 
             resources.ApplyResources(label_OEM_SupportHours, "label_OEM_SupportHours");
             label_OEM_SupportHours.Name = "label_OEM_SupportHours";
-            toolTip.SetToolTip(label_OEM_SupportHours, resources.GetString("label_OEM_SupportHours.ToolTip"));
             // 
             // button_OEM_Model
             // 
             resources.ApplyResources(button_OEM_Model, "button_OEM_Model");
             button_OEM_Model.Name = "button_OEM_Model";
-            toolTip.SetToolTip(button_OEM_Model, resources.GetString("button_OEM_Model.ToolTip"));
             button_OEM_Model.UseVisualStyleBackColor = true;
             button_OEM_Model.Click += button_OEM_Model_Click;
             // 
@@ -1269,19 +1614,16 @@
             // 
             resources.ApplyResources(textBox_OEM_Model, "textBox_OEM_Model");
             textBox_OEM_Model.Name = "textBox_OEM_Model";
-            toolTip.SetToolTip(textBox_OEM_Model, resources.GetString("textBox_OEM_Model.ToolTip"));
             // 
             // label_OEM_Model
             // 
             resources.ApplyResources(label_OEM_Model, "label_OEM_Model");
             label_OEM_Model.Name = "label_OEM_Model";
-            toolTip.SetToolTip(label_OEM_Model, resources.GetString("label_OEM_Model.ToolTip"));
             // 
             // button_OEM_ManuFacturer
             // 
             resources.ApplyResources(button_OEM_ManuFacturer, "button_OEM_ManuFacturer");
             button_OEM_ManuFacturer.Name = "button_OEM_ManuFacturer";
-            toolTip.SetToolTip(button_OEM_ManuFacturer, resources.GetString("button_OEM_ManuFacturer.ToolTip"));
             button_OEM_ManuFacturer.UseVisualStyleBackColor = true;
             button_OEM_ManuFacturer.Click += button_OEM_ManuFacturer_Click;
             // 
@@ -1289,46 +1631,40 @@
             // 
             resources.ApplyResources(textBox_OEM_ManuFacturer, "textBox_OEM_ManuFacturer");
             textBox_OEM_ManuFacturer.Name = "textBox_OEM_ManuFacturer";
-            toolTip.SetToolTip(textBox_OEM_ManuFacturer, resources.GetString("textBox_OEM_ManuFacturer.ToolTip"));
             // 
             // label_OEM_ManuFacturer
             // 
             resources.ApplyResources(label_OEM_ManuFacturer, "label_OEM_ManuFacturer");
             label_OEM_ManuFacturer.Name = "label_OEM_ManuFacturer";
-            toolTip.SetToolTip(label_OEM_ManuFacturer, resources.GetString("label_OEM_ManuFacturer.ToolTip"));
             // 
             // checkBoxOEM
             // 
             resources.ApplyResources(checkBoxOEM, "checkBoxOEM");
             checkBoxOEM.Name = "checkBoxOEM";
-            toolTip.SetToolTip(checkBoxOEM, resources.GetString("checkBoxOEM.ToolTip"));
             checkBoxOEM.UseVisualStyleBackColor = true;
             checkBoxOEM.CheckedChanged += checkBoxOEM_CheckedChanged;
             // 
             // tabPageCMD
             // 
-            resources.ApplyResources(tabPageCMD, "tabPageCMD");
             tabPageCMD.Controls.Add(comboBox_cmd_autorun);
             tabPageCMD.Controls.Add(button_cmd_autorun);
             tabPageCMD.Controls.Add(checkBox_cmd_autorun);
+            resources.ApplyResources(tabPageCMD, "tabPageCMD");
             tabPageCMD.Name = "tabPageCMD";
-            toolTip.SetToolTip(tabPageCMD, resources.GetString("tabPageCMD.ToolTip"));
             tabPageCMD.UseVisualStyleBackColor = true;
             tabPageCMD.Click += tabPageCMD_Click;
             // 
             // comboBox_cmd_autorun
             // 
-            resources.ApplyResources(comboBox_cmd_autorun, "comboBox_cmd_autorun");
             comboBox_cmd_autorun.FormattingEnabled = true;
             comboBox_cmd_autorun.Items.AddRange(new object[] { resources.GetString("comboBox_cmd_autorun.Items") });
+            resources.ApplyResources(comboBox_cmd_autorun, "comboBox_cmd_autorun");
             comboBox_cmd_autorun.Name = "comboBox_cmd_autorun";
-            toolTip.SetToolTip(comboBox_cmd_autorun, resources.GetString("comboBox_cmd_autorun.ToolTip"));
             // 
             // button_cmd_autorun
             // 
             resources.ApplyResources(button_cmd_autorun, "button_cmd_autorun");
             button_cmd_autorun.Name = "button_cmd_autorun";
-            toolTip.SetToolTip(button_cmd_autorun, resources.GetString("button_cmd_autorun.ToolTip"));
             button_cmd_autorun.UseVisualStyleBackColor = true;
             button_cmd_autorun.Click += button_cmd_autorun_Click;
             // 
@@ -1336,38 +1672,33 @@
             // 
             resources.ApplyResources(checkBox_cmd_autorun, "checkBox_cmd_autorun");
             checkBox_cmd_autorun.Name = "checkBox_cmd_autorun";
-            toolTip.SetToolTip(checkBox_cmd_autorun, resources.GetString("checkBox_cmd_autorun.ToolTip"));
             checkBox_cmd_autorun.UseVisualStyleBackColor = true;
             checkBox_cmd_autorun.CheckedChanged += checkBox_cmd_autorun_CheckedChanged;
             // 
             // tabPage_Explorer
             // 
-            resources.ApplyResources(tabPage_Explorer, "tabPage_Explorer");
             tabPage_Explorer.Controls.Add(tabControl3);
+            resources.ApplyResources(tabPage_Explorer, "tabPage_Explorer");
             tabPage_Explorer.Name = "tabPage_Explorer";
-            toolTip.SetToolTip(tabPage_Explorer, resources.GetString("tabPage_Explorer.ToolTip"));
             tabPage_Explorer.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
-            resources.ApplyResources(tabControl3, "tabControl3");
             tabControl3.Controls.Add(tabPage7);
             tabControl3.Controls.Add(tabPage8);
+            resources.ApplyResources(tabControl3, "tabControl3");
             tabControl3.Name = "tabControl3";
             tabControl3.SelectedIndex = 0;
-            toolTip.SetToolTip(tabControl3, resources.GetString("tabControl3.ToolTip"));
             // 
             // tabPage7
             // 
-            resources.ApplyResources(tabPage7, "tabPage7");
             tabPage7.Controls.Add(groupBox1);
+            resources.ApplyResources(tabPage7, "tabPage7");
             tabPage7.Name = "tabPage7";
-            toolTip.SetToolTip(tabPage7, resources.GetString("tabPage7.ToolTip"));
             tabPage7.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(button_Power_Reset);
             groupBox1.Controls.Add(button_PowerGUID_ReLoad);
             groupBox1.Controls.Add(button_PowerGUID_Set);
@@ -1384,16 +1715,15 @@
             groupBox1.Controls.Add(button_UltimatePerformancePowerPlan_Disabled);
             groupBox1.Controls.Add(label_UltimatePerformancePowerPlan);
             groupBox1.Controls.Add(button_UltimatePerformancePowerPlan_Enable);
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
-            toolTip.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // button_Power_Reset
             // 
             resources.ApplyResources(button_Power_Reset, "button_Power_Reset");
             button_Power_Reset.ForeColor = Color.Red;
             button_Power_Reset.Name = "button_Power_Reset";
-            toolTip.SetToolTip(button_Power_Reset, resources.GetString("button_Power_Reset.ToolTip"));
             button_Power_Reset.UseVisualStyleBackColor = true;
             button_Power_Reset.Click += button_Power_Reset_Click;
             // 
@@ -1401,7 +1731,6 @@
             // 
             resources.ApplyResources(button_PowerGUID_ReLoad, "button_PowerGUID_ReLoad");
             button_PowerGUID_ReLoad.Name = "button_PowerGUID_ReLoad";
-            toolTip.SetToolTip(button_PowerGUID_ReLoad, resources.GetString("button_PowerGUID_ReLoad.ToolTip"));
             button_PowerGUID_ReLoad.UseVisualStyleBackColor = true;
             button_PowerGUID_ReLoad.Click += button_PowerGUID_ReLoad_Click;
             // 
@@ -1409,7 +1738,6 @@
             // 
             resources.ApplyResources(button_PowerGUID_Set, "button_PowerGUID_Set");
             button_PowerGUID_Set.Name = "button_PowerGUID_Set";
-            toolTip.SetToolTip(button_PowerGUID_Set, resources.GetString("button_PowerGUID_Set.ToolTip"));
             button_PowerGUID_Set.UseVisualStyleBackColor = true;
             button_PowerGUID_Set.Click += button_PowerGUID_Set_Click;
             // 
@@ -1417,73 +1745,64 @@
             // 
             resources.ApplyResources(button_PowerGUID_Delete, "button_PowerGUID_Delete");
             button_PowerGUID_Delete.Name = "button_PowerGUID_Delete";
-            toolTip.SetToolTip(button_PowerGUID_Delete, resources.GetString("button_PowerGUID_Delete.ToolTip"));
             button_PowerGUID_Delete.UseVisualStyleBackColor = true;
             button_PowerGUID_Delete.Click += button_PowerGUID_Delete_Click;
             // 
             // comboBox_PowerGUID
             // 
-            resources.ApplyResources(comboBox_PowerGUID, "comboBox_PowerGUID");
             comboBox_PowerGUID.FormattingEnabled = true;
             comboBox_PowerGUID.Items.AddRange(new object[] { resources.GetString("comboBox_PowerGUID.Items"), resources.GetString("comboBox_PowerGUID.Items1"), resources.GetString("comboBox_PowerGUID.Items2"), resources.GetString("comboBox_PowerGUID.Items3") });
+            resources.ApplyResources(comboBox_PowerGUID, "comboBox_PowerGUID");
             comboBox_PowerGUID.Name = "comboBox_PowerGUID";
-            toolTip.SetToolTip(comboBox_PowerGUID, resources.GetString("comboBox_PowerGUID.ToolTip"));
             // 
             // label15
             // 
-            resources.ApplyResources(label15, "label15");
             label15.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label15, "label15");
             label15.Name = "label15";
-            toolTip.SetToolTip(label15, resources.GetString("label15.ToolTip"));
             // 
             // label14
             // 
-            resources.ApplyResources(label14, "label14");
             label14.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label14, "label14");
             label14.Name = "label14";
-            toolTip.SetToolTip(label14, resources.GetString("label14.ToolTip"));
             // 
             // label13
             // 
-            resources.ApplyResources(label13, "label13");
             label13.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label13, "label13");
             label13.Name = "label13";
-            toolTip.SetToolTip(label13, resources.GetString("label13.ToolTip"));
             // 
             // radioButton_ActiveScheme_3
             // 
-            resources.ApplyResources(radioButton_ActiveScheme_3, "radioButton_ActiveScheme_3");
             radioButton_ActiveScheme_3.BackColor = Color.Gainsboro;
+            resources.ApplyResources(radioButton_ActiveScheme_3, "radioButton_ActiveScheme_3");
             radioButton_ActiveScheme_3.ForeColor = Color.Red;
             radioButton_ActiveScheme_3.Name = "radioButton_ActiveScheme_3";
-            toolTip.SetToolTip(radioButton_ActiveScheme_3, resources.GetString("radioButton_ActiveScheme_3.ToolTip"));
             radioButton_ActiveScheme_3.UseVisualStyleBackColor = false;
             radioButton_ActiveScheme_3.CheckedChanged += radioButton_ActiveScheme_3_CheckedChanged;
             // 
             // radioButton_ActiveScheme_2
             // 
-            resources.ApplyResources(radioButton_ActiveScheme_2, "radioButton_ActiveScheme_2");
             radioButton_ActiveScheme_2.BackColor = Color.Gainsboro;
+            resources.ApplyResources(radioButton_ActiveScheme_2, "radioButton_ActiveScheme_2");
             radioButton_ActiveScheme_2.Name = "radioButton_ActiveScheme_2";
-            toolTip.SetToolTip(radioButton_ActiveScheme_2, resources.GetString("radioButton_ActiveScheme_2.ToolTip"));
             radioButton_ActiveScheme_2.UseVisualStyleBackColor = false;
             radioButton_ActiveScheme_2.CheckedChanged += radioButton_ActiveScheme_2_CheckedChanged;
             // 
             // radioButton_ActiveScheme_1
             // 
-            resources.ApplyResources(radioButton_ActiveScheme_1, "radioButton_ActiveScheme_1");
             radioButton_ActiveScheme_1.BackColor = Color.Gainsboro;
+            resources.ApplyResources(radioButton_ActiveScheme_1, "radioButton_ActiveScheme_1");
             radioButton_ActiveScheme_1.Name = "radioButton_ActiveScheme_1";
-            toolTip.SetToolTip(radioButton_ActiveScheme_1, resources.GetString("radioButton_ActiveScheme_1.ToolTip"));
             radioButton_ActiveScheme_1.UseVisualStyleBackColor = false;
             radioButton_ActiveScheme_1.CheckedChanged += radioButton_ActiveScheme_1_CheckedChanged;
             // 
             // radioButton_ActiveScheme_0
             // 
-            resources.ApplyResources(radioButton_ActiveScheme_0, "radioButton_ActiveScheme_0");
             radioButton_ActiveScheme_0.BackColor = Color.Gainsboro;
+            resources.ApplyResources(radioButton_ActiveScheme_0, "radioButton_ActiveScheme_0");
             radioButton_ActiveScheme_0.Name = "radioButton_ActiveScheme_0";
-            toolTip.SetToolTip(radioButton_ActiveScheme_0, resources.GetString("radioButton_ActiveScheme_0.ToolTip"));
             radioButton_ActiveScheme_0.UseVisualStyleBackColor = false;
             radioButton_ActiveScheme_0.CheckedChanged += radioButton_ActiveScheme_0_CheckedChanged;
             // 
@@ -1491,34 +1810,29 @@
             // 
             resources.ApplyResources(label12, "label12");
             label12.Name = "label12";
-            toolTip.SetToolTip(label12, resources.GetString("label12.ToolTip"));
             // 
             // button_UltimatePerformancePowerPlan_Disabled
             // 
             resources.ApplyResources(button_UltimatePerformancePowerPlan_Disabled, "button_UltimatePerformancePowerPlan_Disabled");
             button_UltimatePerformancePowerPlan_Disabled.Name = "button_UltimatePerformancePowerPlan_Disabled";
-            toolTip.SetToolTip(button_UltimatePerformancePowerPlan_Disabled, resources.GetString("button_UltimatePerformancePowerPlan_Disabled.ToolTip"));
             button_UltimatePerformancePowerPlan_Disabled.UseVisualStyleBackColor = true;
             button_UltimatePerformancePowerPlan_Disabled.Click += button_UltimatePerformancePowerPlan_Disabled_Click;
             // 
             // label_UltimatePerformancePowerPlan
             // 
-            resources.ApplyResources(label_UltimatePerformancePowerPlan, "label_UltimatePerformancePowerPlan");
             label_UltimatePerformancePowerPlan.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label_UltimatePerformancePowerPlan, "label_UltimatePerformancePowerPlan");
             label_UltimatePerformancePowerPlan.Name = "label_UltimatePerformancePowerPlan";
-            toolTip.SetToolTip(label_UltimatePerformancePowerPlan, resources.GetString("label_UltimatePerformancePowerPlan.ToolTip"));
             // 
             // button_UltimatePerformancePowerPlan_Enable
             // 
             resources.ApplyResources(button_UltimatePerformancePowerPlan_Enable, "button_UltimatePerformancePowerPlan_Enable");
             button_UltimatePerformancePowerPlan_Enable.Name = "button_UltimatePerformancePowerPlan_Enable";
-            toolTip.SetToolTip(button_UltimatePerformancePowerPlan_Enable, resources.GetString("button_UltimatePerformancePowerPlan_Enable.ToolTip"));
             button_UltimatePerformancePowerPlan_Enable.UseVisualStyleBackColor = true;
             button_UltimatePerformancePowerPlan_Enable.Click += button_UltimatePerformancePowerPlan_Enable_Click;
             // 
             // tabPage8
             // 
-            resources.ApplyResources(tabPage8, "tabPage8");
             tabPage8.Controls.Add(button_Password_UnlockUser);
             tabPage8.Controls.Add(checkBox_Password_UserEnabled);
             tabPage8.Controls.Add(label29);
@@ -1558,215 +1872,186 @@
             tabPage8.Controls.Add(comboBox_UserName);
             tabPage8.Controls.Add(label17);
             tabPage8.Controls.Add(label18);
+            resources.ApplyResources(tabPage8, "tabPage8");
             tabPage8.Name = "tabPage8";
-            toolTip.SetToolTip(tabPage8, resources.GetString("tabPage8.ToolTip"));
             tabPage8.UseVisualStyleBackColor = true;
             // 
             // button_Password_UnlockUser
             // 
             resources.ApplyResources(button_Password_UnlockUser, "button_Password_UnlockUser");
             button_Password_UnlockUser.Name = "button_Password_UnlockUser";
-            toolTip.SetToolTip(button_Password_UnlockUser, resources.GetString("button_Password_UnlockUser.ToolTip"));
             button_Password_UnlockUser.UseVisualStyleBackColor = true;
             button_Password_UnlockUser.Click += button_Password_UnlockUser_Click;
             // 
             // checkBox_Password_UserEnabled
             // 
-            resources.ApplyResources(checkBox_Password_UserEnabled, "checkBox_Password_UserEnabled");
             checkBox_Password_UserEnabled.BackColor = Color.Gainsboro;
+            resources.ApplyResources(checkBox_Password_UserEnabled, "checkBox_Password_UserEnabled");
             checkBox_Password_UserEnabled.Name = "checkBox_Password_UserEnabled";
-            toolTip.SetToolTip(checkBox_Password_UserEnabled, resources.GetString("checkBox_Password_UserEnabled.ToolTip"));
             checkBox_Password_UserEnabled.UseVisualStyleBackColor = false;
             checkBox_Password_UserEnabled.CheckedChanged += checkBox_Password_UserEnabled_CheckedChanged;
             // 
             // label29
             // 
-            resources.ApplyResources(label29, "label29");
             label29.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label29, "label29");
             label29.Name = "label29";
-            toolTip.SetToolTip(label29, resources.GetString("label29.ToolTip"));
             // 
             // label30
             // 
-            resources.ApplyResources(label30, "label30");
             label30.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label30, "label30");
             label30.Name = "label30";
-            toolTip.SetToolTip(label30, resources.GetString("label30.ToolTip"));
             // 
             // label_Password_LockoutDuration
             // 
-            resources.ApplyResources(label_Password_LockoutDuration, "label_Password_LockoutDuration");
             label_Password_LockoutDuration.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_LockoutDuration, "label_Password_LockoutDuration");
             label_Password_LockoutDuration.Name = "label_Password_LockoutDuration";
-            toolTip.SetToolTip(label_Password_LockoutDuration, resources.GetString("label_Password_LockoutDuration.ToolTip"));
             // 
             // label_Password_LockoutThreshold
             // 
-            resources.ApplyResources(label_Password_LockoutThreshold, "label_Password_LockoutThreshold");
             label_Password_LockoutThreshold.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_LockoutThreshold, "label_Password_LockoutThreshold");
             label_Password_LockoutThreshold.Name = "label_Password_LockoutThreshold";
-            toolTip.SetToolTip(label_Password_LockoutThreshold, resources.GetString("label_Password_LockoutThreshold.ToolTip"));
             // 
             // label_Password_PasswordHistoryLength
             // 
-            resources.ApplyResources(label_Password_PasswordHistoryLength, "label_Password_PasswordHistoryLength");
             label_Password_PasswordHistoryLength.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_PasswordHistoryLength, "label_Password_PasswordHistoryLength");
             label_Password_PasswordHistoryLength.Name = "label_Password_PasswordHistoryLength";
-            toolTip.SetToolTip(label_Password_PasswordHistoryLength, resources.GetString("label_Password_PasswordHistoryLength.ToolTip"));
             // 
             // label_Password_MinPasswordAge
             // 
-            resources.ApplyResources(label_Password_MinPasswordAge, "label_Password_MinPasswordAge");
             label_Password_MinPasswordAge.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_MinPasswordAge, "label_Password_MinPasswordAge");
             label_Password_MinPasswordAge.Name = "label_Password_MinPasswordAge";
-            toolTip.SetToolTip(label_Password_MinPasswordAge, resources.GetString("label_Password_MinPasswordAge.ToolTip"));
             // 
             // label_Password_MaxPasswordAge
             // 
-            resources.ApplyResources(label_Password_MaxPasswordAge, "label_Password_MaxPasswordAge");
             label_Password_MaxPasswordAge.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_MaxPasswordAge, "label_Password_MaxPasswordAge");
             label_Password_MaxPasswordAge.Name = "label_Password_MaxPasswordAge";
-            toolTip.SetToolTip(label_Password_MaxPasswordAge, resources.GetString("label_Password_MaxPasswordAge.ToolTip"));
             // 
             // label28
             // 
-            resources.ApplyResources(label28, "label28");
             label28.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label28, "label28");
             label28.Name = "label28";
-            toolTip.SetToolTip(label28, resources.GetString("label28.ToolTip"));
             // 
             // label_Password_BadLogonCount
             // 
-            resources.ApplyResources(label_Password_BadLogonCount, "label_Password_BadLogonCount");
             label_Password_BadLogonCount.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_BadLogonCount, "label_Password_BadLogonCount");
             label_Password_BadLogonCount.Name = "label_Password_BadLogonCount";
-            toolTip.SetToolTip(label_Password_BadLogonCount, resources.GetString("label_Password_BadLogonCount.ToolTip"));
             // 
             // label_Password_BadPasswordCount
             // 
-            resources.ApplyResources(label_Password_BadPasswordCount, "label_Password_BadPasswordCount");
             label_Password_BadPasswordCount.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_BadPasswordCount, "label_Password_BadPasswordCount");
             label_Password_BadPasswordCount.Name = "label_Password_BadPasswordCount";
-            toolTip.SetToolTip(label_Password_BadPasswordCount, resources.GetString("label_Password_BadPasswordCount.ToolTip"));
             // 
             // label_Password_AccountLocked
             // 
-            resources.ApplyResources(label_Password_AccountLocked, "label_Password_AccountLocked");
             label_Password_AccountLocked.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_AccountLocked, "label_Password_AccountLocked");
             label_Password_AccountLocked.Name = "label_Password_AccountLocked";
-            toolTip.SetToolTip(label_Password_AccountLocked, resources.GetString("label_Password_AccountLocked.ToolTip"));
             // 
             // label_Password_AccountEnabled
             // 
-            resources.ApplyResources(label_Password_AccountEnabled, "label_Password_AccountEnabled");
             label_Password_AccountEnabled.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_AccountEnabled, "label_Password_AccountEnabled");
             label_Password_AccountEnabled.Name = "label_Password_AccountEnabled";
-            toolTip.SetToolTip(label_Password_AccountEnabled, resources.GetString("label_Password_AccountEnabled.ToolTip"));
             // 
             // label25
             // 
-            resources.ApplyResources(label25, "label25");
             label25.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label25, "label25");
             label25.Name = "label25";
-            toolTip.SetToolTip(label25, resources.GetString("label25.ToolTip"));
             // 
             // label_Password_PasswordRequired
             // 
-            resources.ApplyResources(label_Password_PasswordRequired, "label_Password_PasswordRequired");
             label_Password_PasswordRequired.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_PasswordRequired, "label_Password_PasswordRequired");
             label_Password_PasswordRequired.Name = "label_Password_PasswordRequired";
-            toolTip.SetToolTip(label_Password_PasswordRequired, resources.GetString("label_Password_PasswordRequired.ToolTip"));
             // 
             // label_Password_PasswordExpired
             // 
-            resources.ApplyResources(label_Password_PasswordExpired, "label_Password_PasswordExpired");
             label_Password_PasswordExpired.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_PasswordExpired, "label_Password_PasswordExpired");
             label_Password_PasswordExpired.Name = "label_Password_PasswordExpired";
-            toolTip.SetToolTip(label_Password_PasswordExpired, resources.GetString("label_Password_PasswordExpired.ToolTip"));
             // 
             // label_Password_UserCannotChangePassword
             // 
-            resources.ApplyResources(label_Password_UserCannotChangePassword, "label_Password_UserCannotChangePassword");
             label_Password_UserCannotChangePassword.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_UserCannotChangePassword, "label_Password_UserCannotChangePassword");
             label_Password_UserCannotChangePassword.Name = "label_Password_UserCannotChangePassword";
-            toolTip.SetToolTip(label_Password_UserCannotChangePassword, resources.GetString("label_Password_UserCannotChangePassword.ToolTip"));
             // 
             // label_Password_PasswordNeverExpires
             // 
-            resources.ApplyResources(label_Password_PasswordNeverExpires, "label_Password_PasswordNeverExpires");
             label_Password_PasswordNeverExpires.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_PasswordNeverExpires, "label_Password_PasswordNeverExpires");
             label_Password_PasswordNeverExpires.Name = "label_Password_PasswordNeverExpires";
-            toolTip.SetToolTip(label_Password_PasswordNeverExpires, resources.GetString("label_Password_PasswordNeverExpires.ToolTip"));
             // 
             // label22
             // 
-            resources.ApplyResources(label22, "label22");
             label22.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label22, "label22");
             label22.Name = "label22";
-            toolTip.SetToolTip(label22, resources.GetString("label22.ToolTip"));
             // 
             // label_Password_Description
             // 
-            resources.ApplyResources(label_Password_Description, "label_Password_Description");
             label_Password_Description.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_Description, "label_Password_Description");
             label_Password_Description.Name = "label_Password_Description";
-            toolTip.SetToolTip(label_Password_Description, resources.GetString("label_Password_Description.ToolTip"));
             // 
             // label_Password_FullName
             // 
-            resources.ApplyResources(label_Password_FullName, "label_Password_FullName");
             label_Password_FullName.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_FullName, "label_Password_FullName");
             label_Password_FullName.Name = "label_Password_FullName";
-            toolTip.SetToolTip(label_Password_FullName, resources.GetString("label_Password_FullName.ToolTip"));
             // 
             // label_Password_UserName
             // 
-            resources.ApplyResources(label_Password_UserName, "label_Password_UserName");
             label_Password_UserName.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_UserName, "label_Password_UserName");
             label_Password_UserName.Name = "label_Password_UserName";
-            toolTip.SetToolTip(label_Password_UserName, resources.GetString("label_Password_UserName.ToolTip"));
             // 
             // label24
             // 
-            resources.ApplyResources(label24, "label24");
             label24.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label24, "label24");
             label24.Name = "label24";
-            toolTip.SetToolTip(label24, resources.GetString("label24.ToolTip"));
             // 
             // label_Password_AccountExpirationDate
             // 
-            resources.ApplyResources(label_Password_AccountExpirationDate, "label_Password_AccountExpirationDate");
             label_Password_AccountExpirationDate.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_AccountExpirationDate, "label_Password_AccountExpirationDate");
             label_Password_AccountExpirationDate.Name = "label_Password_AccountExpirationDate";
-            toolTip.SetToolTip(label_Password_AccountExpirationDate, resources.GetString("label_Password_AccountExpirationDate.ToolTip"));
             // 
             // label_Password_LastBadLoginAttempt
             // 
-            resources.ApplyResources(label_Password_LastBadLoginAttempt, "label_Password_LastBadLoginAttempt");
             label_Password_LastBadLoginAttempt.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_LastBadLoginAttempt, "label_Password_LastBadLoginAttempt");
             label_Password_LastBadLoginAttempt.Name = "label_Password_LastBadLoginAttempt";
-            toolTip.SetToolTip(label_Password_LastBadLoginAttempt, resources.GetString("label_Password_LastBadLoginAttempt.ToolTip"));
             // 
             // label_Password_LastLogin
             // 
-            resources.ApplyResources(label_Password_LastLogin, "label_Password_LastLogin");
             label_Password_LastLogin.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_LastLogin, "label_Password_LastLogin");
             label_Password_LastLogin.Name = "label_Password_LastLogin";
-            toolTip.SetToolTip(label_Password_LastLogin, resources.GetString("label_Password_LastLogin.ToolTip"));
             // 
             // label_Password_PasswordExpires
             // 
-            resources.ApplyResources(label_Password_PasswordExpires, "label_Password_PasswordExpires");
             label_Password_PasswordExpires.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_PasswordExpires, "label_Password_PasswordExpires");
             label_Password_PasswordExpires.Name = "label_Password_PasswordExpires";
-            toolTip.SetToolTip(label_Password_PasswordExpires, resources.GetString("label_Password_PasswordExpires.ToolTip"));
             // 
             // checkBox_PasswordNeverExpires
             // 
-            resources.ApplyResources(checkBox_PasswordNeverExpires, "checkBox_PasswordNeverExpires");
             checkBox_PasswordNeverExpires.BackColor = Color.Gainsboro;
+            resources.ApplyResources(checkBox_PasswordNeverExpires, "checkBox_PasswordNeverExpires");
             checkBox_PasswordNeverExpires.Name = "checkBox_PasswordNeverExpires";
-            toolTip.SetToolTip(checkBox_PasswordNeverExpires, resources.GetString("checkBox_PasswordNeverExpires.ToolTip"));
             checkBox_PasswordNeverExpires.UseVisualStyleBackColor = false;
             checkBox_PasswordNeverExpires.CheckedChanged += checkBox_PasswordNeverExpires_CheckedChanged;
             // 
@@ -1774,7 +2059,6 @@
             // 
             resources.ApplyResources(button_ExpirePasswordNow, "button_ExpirePasswordNow");
             button_ExpirePasswordNow.Name = "button_ExpirePasswordNow";
-            toolTip.SetToolTip(button_ExpirePasswordNow, resources.GetString("button_ExpirePasswordNow.ToolTip"));
             button_ExpirePasswordNow.UseVisualStyleBackColor = true;
             button_ExpirePasswordNow.Click += button_ExpirePasswordNow_Click;
             // 
@@ -1782,13 +2066,11 @@
             // 
             resources.ApplyResources(textBox_PassWord, "textBox_PassWord");
             textBox_PassWord.Name = "textBox_PassWord";
-            toolTip.SetToolTip(textBox_PassWord, resources.GetString("textBox_PassWord.ToolTip"));
             // 
             // button_GetPasswordInfo
             // 
             resources.ApplyResources(button_GetPasswordInfo, "button_GetPasswordInfo");
             button_GetPasswordInfo.Name = "button_GetPasswordInfo";
-            toolTip.SetToolTip(button_GetPasswordInfo, resources.GetString("button_GetPasswordInfo.ToolTip"));
             button_GetPasswordInfo.UseVisualStyleBackColor = true;
             button_GetPasswordInfo.Click += button_GetPasswordInfo_Click;
             // 
@@ -1796,65 +2078,311 @@
             // 
             resources.ApplyResources(button_ClearPassWord, "button_ClearPassWord");
             button_ClearPassWord.Name = "button_ClearPassWord";
-            toolTip.SetToolTip(button_ClearPassWord, resources.GetString("button_ClearPassWord.ToolTip"));
             button_ClearPassWord.UseVisualStyleBackColor = true;
             button_ClearPassWord.Click += button_ClearPassWord_Click;
             // 
             // label_Password_LastPasswordSet
             // 
-            resources.ApplyResources(label_Password_LastPasswordSet, "label_Password_LastPasswordSet");
             label_Password_LastPasswordSet.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label_Password_LastPasswordSet, "label_Password_LastPasswordSet");
             label_Password_LastPasswordSet.Name = "label_Password_LastPasswordSet";
-            toolTip.SetToolTip(label_Password_LastPasswordSet, resources.GetString("label_Password_LastPasswordSet.ToolTip"));
             // 
             // label23
             // 
-            resources.ApplyResources(label23, "label23");
             label23.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label23, "label23");
             label23.Name = "label23";
-            toolTip.SetToolTip(label23, resources.GetString("label23.ToolTip"));
             // 
             // button_SetPassWord
             // 
             resources.ApplyResources(button_SetPassWord, "button_SetPassWord");
             button_SetPassWord.Name = "button_SetPassWord";
-            toolTip.SetToolTip(button_SetPassWord, resources.GetString("button_SetPassWord.ToolTip"));
             button_SetPassWord.UseVisualStyleBackColor = true;
             button_SetPassWord.Click += button_SetPassWord_Click;
             // 
             // comboBox_UserName
             // 
-            resources.ApplyResources(comboBox_UserName, "comboBox_UserName");
             comboBox_UserName.FormattingEnabled = true;
+            resources.ApplyResources(comboBox_UserName, "comboBox_UserName");
             comboBox_UserName.Name = "comboBox_UserName";
-            toolTip.SetToolTip(comboBox_UserName, resources.GetString("comboBox_UserName.ToolTip"));
             // 
             // label17
             // 
             resources.ApplyResources(label17, "label17");
             label17.Name = "label17";
-            toolTip.SetToolTip(label17, resources.GetString("label17.ToolTip"));
             // 
             // label18
             // 
-            resources.ApplyResources(label18, "label18");
             label18.BackColor = Color.FromArgb(224, 224, 224);
+            resources.ApplyResources(label18, "label18");
             label18.Name = "label18";
-            toolTip.SetToolTip(label18, resources.GetString("label18.ToolTip"));
             // 
             // tabControl
             // 
-            resources.ApplyResources(tabControl, "tabControl");
             tabControl.Controls.Add(tabPage_Explorer);
             tabControl.Controls.Add(tabPageCMD);
             tabControl.Controls.Add(tabPage2);
             tabControl.Controls.Add(tabPage1);
             tabControl.Controls.Add(tabPage3);
             tabControl.Controls.Add(tabPage6);
+            resources.ApplyResources(tabControl, "tabControl");
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            toolTip.SetToolTip(tabControl, resources.GetString("tabControl.ToolTip"));
             tabControl.SelectedIndexChanged += tabControl_SelectedIndexChanged;
+            // 
+            // comboBox_PathName
+            // 
+            comboBox_PathName.FormattingEnabled = true;
+            comboBox_PathName.Items.AddRange(new object[] { resources.GetString("comboBox_PathName.Items"), resources.GetString("comboBox_PathName.Items1"), resources.GetString("comboBox_PathName.Items2"), resources.GetString("comboBox_PathName.Items3"), resources.GetString("comboBox_PathName.Items4") });
+            resources.ApplyResources(comboBox_PathName, "comboBox_PathName");
+            comboBox_PathName.Name = "comboBox_PathName";
+            // 
+            // label_PathName
+            // 
+            resources.ApplyResources(label_PathName, "label_PathName");
+            label_PathName.Name = "label_PathName";
+            // 
+            // button_PathName
+            // 
+            resources.ApplyResources(button_PathName, "button_PathName");
+            button_PathName.Name = "button_PathName";
+            button_PathName.UseVisualStyleBackColor = true;
+            button_PathName.Click += button_PathName_Click;
+            // 
+            // label_SystemRoot
+            // 
+            resources.ApplyResources(label_SystemRoot, "label_SystemRoot");
+            label_SystemRoot.Name = "label_SystemRoot";
+            toolTip.SetToolTip(label_SystemRoot, resources.GetString("label_SystemRoot.ToolTip"));
+            // 
+            // label_InstallationType
+            // 
+            resources.ApplyResources(label_InstallationType, "label_InstallationType");
+            label_InstallationType.Name = "label_InstallationType";
+            toolTip.SetToolTip(label_InstallationType, resources.GetString("label_InstallationType.ToolTip"));
+            // 
+            // comboBox_SystemRoot
+            // 
+            comboBox_SystemRoot.FormattingEnabled = true;
+            comboBox_SystemRoot.Items.AddRange(new object[] { resources.GetString("comboBox_SystemRoot.Items") });
+            resources.ApplyResources(comboBox_SystemRoot, "comboBox_SystemRoot");
+            comboBox_SystemRoot.Name = "comboBox_SystemRoot";
+            // 
+            // comboBox_InstallationType
+            // 
+            comboBox_InstallationType.FormattingEnabled = true;
+            comboBox_InstallationType.Items.AddRange(new object[] { resources.GetString("comboBox_InstallationType.Items") });
+            resources.ApplyResources(comboBox_InstallationType, "comboBox_InstallationType");
+            comboBox_InstallationType.Name = "comboBox_InstallationType";
+            // 
+            // button_SystemRoot
+            // 
+            resources.ApplyResources(button_SystemRoot, "button_SystemRoot");
+            button_SystemRoot.Name = "button_SystemRoot";
+            button_SystemRoot.UseVisualStyleBackColor = true;
+            button_SystemRoot.Click += button_SystemRoot_Click;
+            // 
+            // button_InstallationType
+            // 
+            resources.ApplyResources(button_InstallationType, "button_InstallationType");
+            button_InstallationType.Name = "button_InstallationType";
+            button_InstallationType.UseVisualStyleBackColor = true;
+            button_InstallationType.Click += button_InstallationType_Click;
+            // 
+            // comboBox_CurrentType
+            // 
+            comboBox_CurrentType.FormattingEnabled = true;
+            comboBox_CurrentType.Items.AddRange(new object[] { resources.GetString("comboBox_CurrentType.Items"), resources.GetString("comboBox_CurrentType.Items1"), resources.GetString("comboBox_CurrentType.Items2"), resources.GetString("comboBox_CurrentType.Items3"), resources.GetString("comboBox_CurrentType.Items4") });
+            resources.ApplyResources(comboBox_CurrentType, "comboBox_CurrentType");
+            comboBox_CurrentType.Name = "comboBox_CurrentType";
+            // 
+            // label_CurrentType
+            // 
+            resources.ApplyResources(label_CurrentType, "label_CurrentType");
+            label_CurrentType.Name = "label_CurrentType";
+            // 
+            // button_CurrentType
+            // 
+            resources.ApplyResources(button_CurrentType, "button_CurrentType");
+            button_CurrentType.Name = "button_CurrentType";
+            button_CurrentType.UseVisualStyleBackColor = true;
+            button_CurrentType.Click += button_CurrentType_Click;
+            // 
+            // comboBox_DisplayVersion
+            // 
+            comboBox_DisplayVersion.FormattingEnabled = true;
+            comboBox_DisplayVersion.Items.AddRange(new object[] { resources.GetString("comboBox_DisplayVersion.Items"), resources.GetString("comboBox_DisplayVersion.Items1"), resources.GetString("comboBox_DisplayVersion.Items2"), resources.GetString("comboBox_DisplayVersion.Items3"), resources.GetString("comboBox_DisplayVersion.Items4") });
+            resources.ApplyResources(comboBox_DisplayVersion, "comboBox_DisplayVersion");
+            comboBox_DisplayVersion.Name = "comboBox_DisplayVersion";
+            // 
+            // label_DisplayVersion
+            // 
+            resources.ApplyResources(label_DisplayVersion, "label_DisplayVersion");
+            label_DisplayVersion.Name = "label_DisplayVersion";
+            // 
+            // button_DisplayVersion
+            // 
+            resources.ApplyResources(button_DisplayVersion, "button_DisplayVersion");
+            button_DisplayVersion.Name = "button_DisplayVersion";
+            button_DisplayVersion.UseVisualStyleBackColor = true;
+            button_DisplayVersion.Click += button_DisplayVersion_Click;
+            // 
+            // label_CurrentMinorVersionNumber
+            // 
+            resources.ApplyResources(label_CurrentMinorVersionNumber, "label_CurrentMinorVersionNumber");
+            label_CurrentMinorVersionNumber.Name = "label_CurrentMinorVersionNumber";
+            toolTip.SetToolTip(label_CurrentMinorVersionNumber, resources.GetString("label_CurrentMinorVersionNumber.ToolTip"));
+            // 
+            // label_CurrentMajorVersionNumber
+            // 
+            resources.ApplyResources(label_CurrentMajorVersionNumber, "label_CurrentMajorVersionNumber");
+            label_CurrentMajorVersionNumber.Name = "label_CurrentMajorVersionNumber";
+            toolTip.SetToolTip(label_CurrentMajorVersionNumber, resources.GetString("label_CurrentMajorVersionNumber.ToolTip"));
+            // 
+            // comboBox_CurrentMinorVersionNumber
+            // 
+            comboBox_CurrentMinorVersionNumber.FormattingEnabled = true;
+            comboBox_CurrentMinorVersionNumber.Items.AddRange(new object[] { resources.GetString("comboBox_CurrentMinorVersionNumber.Items") });
+            resources.ApplyResources(comboBox_CurrentMinorVersionNumber, "comboBox_CurrentMinorVersionNumber");
+            comboBox_CurrentMinorVersionNumber.Name = "comboBox_CurrentMinorVersionNumber";
+            // 
+            // comboBox_CurrentMajorVersionNumber
+            // 
+            comboBox_CurrentMajorVersionNumber.FormattingEnabled = true;
+            comboBox_CurrentMajorVersionNumber.Items.AddRange(new object[] { resources.GetString("comboBox_CurrentMajorVersionNumber.Items") });
+            resources.ApplyResources(comboBox_CurrentMajorVersionNumber, "comboBox_CurrentMajorVersionNumber");
+            comboBox_CurrentMajorVersionNumber.Name = "comboBox_CurrentMajorVersionNumber";
+            // 
+            // button_CurrentMinorVersionNumber
+            // 
+            resources.ApplyResources(button_CurrentMinorVersionNumber, "button_CurrentMinorVersionNumber");
+            button_CurrentMinorVersionNumber.Name = "button_CurrentMinorVersionNumber";
+            button_CurrentMinorVersionNumber.UseVisualStyleBackColor = true;
+            button_CurrentMinorVersionNumber.Click += button_CurrentMinorVersionNumber_Click;
+            // 
+            // button_CurrentMajorVersionNumber
+            // 
+            resources.ApplyResources(button_CurrentMajorVersionNumber, "button_CurrentMajorVersionNumber");
+            button_CurrentMajorVersionNumber.Name = "button_CurrentMajorVersionNumber";
+            button_CurrentMajorVersionNumber.UseVisualStyleBackColor = true;
+            button_CurrentMajorVersionNumber.Click += button_CurrentMajorVersionNumber_Click;
+            // 
+            // comboBox_CurrentVersion
+            // 
+            comboBox_CurrentVersion.FormattingEnabled = true;
+            comboBox_CurrentVersion.Items.AddRange(new object[] { resources.GetString("comboBox_CurrentVersion.Items"), resources.GetString("comboBox_CurrentVersion.Items1"), resources.GetString("comboBox_CurrentVersion.Items2"), resources.GetString("comboBox_CurrentVersion.Items3"), resources.GetString("comboBox_CurrentVersion.Items4") });
+            resources.ApplyResources(comboBox_CurrentVersion, "comboBox_CurrentVersion");
+            comboBox_CurrentVersion.Name = "comboBox_CurrentVersion";
+            // 
+            // label_CurrentVersion
+            // 
+            resources.ApplyResources(label_CurrentVersion, "label_CurrentVersion");
+            label_CurrentVersion.Name = "label_CurrentVersion";
+            // 
+            // button_CurrentVersion
+            // 
+            resources.ApplyResources(button_CurrentVersion, "button_CurrentVersion");
+            button_CurrentVersion.Name = "button_CurrentVersion";
+            button_CurrentVersion.UseVisualStyleBackColor = true;
+            button_CurrentVersion.Click += button_CurrentVersion_Click;
+            // 
+            // comboBox_BuildLab
+            // 
+            comboBox_BuildLab.FormattingEnabled = true;
+            comboBox_BuildLab.Items.AddRange(new object[] { resources.GetString("comboBox_BuildLab.Items"), resources.GetString("comboBox_BuildLab.Items1"), resources.GetString("comboBox_BuildLab.Items2"), resources.GetString("comboBox_BuildLab.Items3"), resources.GetString("comboBox_BuildLab.Items4") });
+            resources.ApplyResources(comboBox_BuildLab, "comboBox_BuildLab");
+            comboBox_BuildLab.Name = "comboBox_BuildLab";
+            // 
+            // label_BuildLab
+            // 
+            resources.ApplyResources(label_BuildLab, "label_BuildLab");
+            label_BuildLab.Name = "label_BuildLab";
+            // 
+            // button_BuildLab
+            // 
+            resources.ApplyResources(button_BuildLab, "button_BuildLab");
+            button_BuildLab.Name = "button_BuildLab";
+            button_BuildLab.UseVisualStyleBackColor = true;
+            button_BuildLab.Click += button_BuildLab_Click;
+            // 
+            // label_ReleaseId
+            // 
+            resources.ApplyResources(label_ReleaseId, "label_ReleaseId");
+            label_ReleaseId.Name = "label_ReleaseId";
+            toolTip.SetToolTip(label_ReleaseId, resources.GetString("label_ReleaseId.ToolTip"));
+            // 
+            // comboBox_ReleaseId
+            // 
+            comboBox_ReleaseId.FormattingEnabled = true;
+            comboBox_ReleaseId.Items.AddRange(new object[] { resources.GetString("comboBox_ReleaseId.Items") });
+            resources.ApplyResources(comboBox_ReleaseId, "comboBox_ReleaseId");
+            comboBox_ReleaseId.Name = "comboBox_ReleaseId";
+            // 
+            // button_ReleaseId
+            // 
+            resources.ApplyResources(button_ReleaseId, "button_ReleaseId");
+            button_ReleaseId.Name = "button_ReleaseId";
+            button_ReleaseId.UseVisualStyleBackColor = true;
+            button_ReleaseId.Click += button_ReleaseId_Click;
+            // 
+            // label_UBR
+            // 
+            resources.ApplyResources(label_UBR, "label_UBR");
+            label_UBR.Name = "label_UBR";
+            toolTip.SetToolTip(label_UBR, resources.GetString("label_UBR.ToolTip"));
+            // 
+            // comboBox_UBR
+            // 
+            comboBox_UBR.FormattingEnabled = true;
+            comboBox_UBR.Items.AddRange(new object[] { resources.GetString("comboBox_UBR.Items") });
+            resources.ApplyResources(comboBox_UBR, "comboBox_UBR");
+            comboBox_UBR.Name = "comboBox_UBR";
+            // 
+            // button_UBR
+            // 
+            resources.ApplyResources(button_UBR, "button_UBR");
+            button_UBR.Name = "button_UBR";
+            button_UBR.UseVisualStyleBackColor = true;
+            button_UBR.Click += this.button_UBR_Click;
+            // 
+            // label_ProductId
+            // 
+            resources.ApplyResources(label_ProductId, "label_ProductId");
+            label_ProductId.Name = "label_ProductId";
+            toolTip.SetToolTip(label_ProductId, resources.GetString("label_ProductId.ToolTip"));
+            // 
+            // comboBox_ProductId
+            // 
+            comboBox_ProductId.FormattingEnabled = true;
+            comboBox_ProductId.Items.AddRange(new object[] { resources.GetString("comboBox_ProductId.Items") });
+            resources.ApplyResources(comboBox_ProductId, "comboBox_ProductId");
+            comboBox_ProductId.Name = "comboBox_ProductId";
+            // 
+            // button_ProductId
+            // 
+            resources.ApplyResources(button_ProductId, "button_ProductId");
+            button_ProductId.Name = "button_ProductId";
+            button_ProductId.UseVisualStyleBackColor = true;
+            button_ProductId.Click += button_ProductId_Click;
+            // 
+            // comboBox_WinREVersion
+            // 
+            comboBox_WinREVersion.FormattingEnabled = true;
+            comboBox_WinREVersion.Items.AddRange(new object[] { resources.GetString("comboBox_WinREVersion.Items"), resources.GetString("comboBox_WinREVersion.Items1"), resources.GetString("comboBox_WinREVersion.Items2"), resources.GetString("comboBox_WinREVersion.Items3"), resources.GetString("comboBox_WinREVersion.Items4") });
+            resources.ApplyResources(comboBox_WinREVersion, "comboBox_WinREVersion");
+            comboBox_WinREVersion.Name = "comboBox_WinREVersion";
+            // 
+            // label_WinREVersion
+            // 
+            resources.ApplyResources(label_WinREVersion, "label_WinREVersion");
+            label_WinREVersion.Name = "label_WinREVersion";
+            // 
+            // button_WinREVersion
+            // 
+            resources.ApplyResources(button_WinREVersion, "button_WinREVersion");
+            button_WinREVersion.Name = "button_WinREVersion";
+            button_WinREVersion.UseVisualStyleBackColor = true;
+            button_WinREVersion.Click += button_WinREVersion_Click;
             // 
             // AdvancedModificationSystemTools
             // 
@@ -1862,7 +2390,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tabControl);
             Name = "AdvancedModificationSystemTools";
-            toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             Load += AdvancedModificationSystemTools_Load;
             tabPage6.ResumeLayout(false);
             tabControl2.ResumeLayout(false);
@@ -1874,7 +2401,7 @@
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             groupBox_WindowsSystemIdentification.ResumeLayout(false);
             groupBox_WindowsSystemIdentification.PerformLayout();
@@ -1975,9 +2502,6 @@
         private Label label8;
         private CheckBox checkBox_WinDefender_DisableAntiSpyware;
         private TabPage tabPage1;
-        private ComboBox comboBox_WindowsEditionID;
-        private Button button_WindowsEditionID_Set;
-        private Label label_WindowsEditionID;
         private TabPage tabPage2;
         private GroupBox groupBox_HardwarePseudoRenaming;
         private Button button_GpuName_SetDeviceDesc;
@@ -2090,5 +2614,93 @@
         private Button button_registeredOwner;
         private Label label_registeredOrganization;
         private Label label_registeredOwner;
+        private GroupBox groupBox2;
+        private ComboBox comboBox2;
+        private Label label2;
+        private Button button2;
+        private ComboBox comboBox3;
+        private Label label3;
+        private Button button3;
+        private ComboBox comboBox1;
+        private Label label1;
+        private Button button1;
+        private ComboBox comboBox4;
+        private Label label5;
+        private Button button4;
+        private ComboBox comboBox5;
+        private Label label6;
+        private Button button5;
+        private ComboBox comboBox6;
+        private Label label19;
+        private Button button6;
+        private ComboBox comboBox7;
+        private Label label20;
+        private Button button7;
+        private ComboBox comboBox_WindowsEditionID;
+        private Label label_WindowsEditionID;
+        private Button button_WindowsEditionID_Set;
+        private ComboBox comboBox_ProductName;
+        private Label label_ProductName;
+        private Button button_ProductName;
+        private Label label_SoftwareType;
+        private Label label_CompositionEditionID;
+        private ComboBox comboBox_SoftwareType;
+        private ComboBox comboBox_CompositionEditionID;
+        private Button button_SoftwareType;
+        private Button button_CompositionEditionID;
+        private ComboBox comboBox_BuildGUID;
+        private Label label_BuildGUID;
+        private Button button_BuildGUID;
+        private Label label_BuildBranch;
+        private Label label_BaseBuildRevisionNumber;
+        private ComboBox comboBox_BuildBranch;
+        private ComboBox comboBox_BaseBuildRevisionNumber;
+        private Button button_BuildBranch;
+        private Button button_BaseBuildRevisionNumber;
+        private ComboBox comboBox_UBR;
+        private Label label_UBR;
+        private Button button_UBR;
+        private Label label_ProductId;
+        private ComboBox comboBox_ProductId;
+        private Button button_ProductId;
+        private ComboBox comboBox_WinREVersion;
+        private Label label_WinREVersion;
+        private Button button_WinREVersion;
+        private Label label_CurrentBuild;
+        private Label label_BuildLabEx;
+        private ComboBox comboBox_CurrentBuild;
+        private ComboBox comboBox_BuildLabEx;
+        private Button button_CurrentBuild;
+        private Button button_BuildLabEx;
+        private ComboBox comboBox_PathName;
+        private Label label_PathName;
+        private Button button_PathName;
+        private Label label_SystemRoot;
+        private Label label_InstallationType;
+        private ComboBox comboBox_SystemRoot;
+        private ComboBox comboBox_InstallationType;
+        private Button button_SystemRoot;
+        private Button button_InstallationType;
+        private ComboBox comboBox_CurrentType;
+        private Label label_CurrentType;
+        private Button button_CurrentType;
+        private ComboBox comboBox_DisplayVersion;
+        private Label label_DisplayVersion;
+        private Button button_DisplayVersion;
+        private Label label_CurrentMinorVersionNumber;
+        private Label label_CurrentMajorVersionNumber;
+        private ComboBox comboBox_CurrentMinorVersionNumber;
+        private ComboBox comboBox_CurrentMajorVersionNumber;
+        private Button button_CurrentMinorVersionNumber;
+        private Button button_CurrentMajorVersionNumber;
+        private ComboBox comboBox_CurrentVersion;
+        private Label label_CurrentVersion;
+        private Button button_CurrentVersion;
+        private ComboBox comboBox_BuildLab;
+        private Label label_BuildLab;
+        private Button button_BuildLab;
+        private Label label_ReleaseId;
+        private ComboBox comboBox_ReleaseId;
+        private Button button_ReleaseId;
     }
 }
