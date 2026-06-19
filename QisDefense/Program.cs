@@ -51,6 +51,7 @@ namespace QisDefense
 
         private const uint GENERIC_READ = 0x80000000;
         private const uint GENERIC_WRITE = 0x40000000;
+        private const uint GENERIC_EXECUTE = 0x20000000;
         private const uint FILE_SHARE_READ = 0x00000001;
         private const uint FILE_SHARE_WRITE = 0x00000002;
         private const uint OPEN_EXISTING = 3;
@@ -99,7 +100,7 @@ namespace QisDefense
                 // 检查目标文件是否存在
                 if (!File.Exists(_protectedFilePath))
                 {
-                    MessageBox.Show($"目标文件不存在：\n{_protectedFilePath}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"绝对依赖 齐的工具包3 未找到：\n{_protectedFilePath}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -167,7 +168,7 @@ namespace QisDefense
             try
             {
                 // 1. 锁定文件（独占句柄，禁止删除共享）
-                if (!LockFile())
+                if (!StartLockFiles())
                 {
                     return false;
                 }
@@ -187,18 +188,90 @@ namespace QisDefense
             }
         }
 
-        private static bool LockFile()
+        private static bool StartLockFiles()
         {
             try
             {
-                _fileHandle = CreateFile(
-                    _protectedFilePath,
-                    GENERIC_READ | GENERIC_WRITE,
-                    FILE_SHARE_READ | FILE_SHARE_WRITE, // 不包含 FILE_SHARE_DELETE
-                    IntPtr.Zero,
-                    OPEN_EXISTING,
-                    0,
-                    IntPtr.Zero);
+                // 齐的工具包主程序
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+
+                LockFile(_protectedFilePath);
+                LockFile(Path.Combine(baseDir, "Microsoft.Bcl.Cryptography.dll"));
+                LockFile(Path.Combine(baseDir, "Microsoft.Win32.TaskScheduler.dll"));
+                LockFile(Path.Combine(baseDir, "Newtonsoft.Json.dll"));
+                LockFile(Path.Combine(baseDir, "NSudoAPI.dll"));
+                LockFile(Path.Combine(baseDir, "QisToolkit3.deps.json"));
+                LockFile(Path.Combine(baseDir, "QisToolkit3.dll"));
+                LockFile(Path.Combine(baseDir, "QisToolkit3.exe"));
+                LockFile(Path.Combine(baseDir, "QisToolkit3.pdb"));
+                LockFile(Path.Combine(baseDir, "QisToolkit3.runtimeconfig.json"));
+                LockFile(Path.Combine(baseDir, "System.CodeDom.dll"));
+                LockFile(Path.Combine(baseDir, "System.Configuration.ConfigurationManager.dll"));
+                LockFile(Path.Combine(baseDir, "System.Diagnostics.EventLog.dll"));
+                LockFile(Path.Combine(baseDir, "System.DirectoryServices.AccountManagement.dll"));
+                LockFile(Path.Combine(baseDir, "System.DirectoryServices.dll"));
+                LockFile(Path.Combine(baseDir, "System.DirectoryServices.Protocols.dll"));
+                LockFile(Path.Combine(baseDir, "System.Formats.Asn1.dll"));
+                LockFile(Path.Combine(baseDir, "System.Management.dll"));
+                LockFile(Path.Combine(baseDir, "System.Security.Cryptography.ProtectedData.dll"));
+                LockFile(Path.Combine(baseDir, "Uninstall_QisToolkit3.exe"));
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"启动锁定文件异常：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private static bool LockFile(string filePath, int mode = 0)
+        {
+            try
+            {
+                switch (mode)
+                {
+                    // 可读取 可执行
+                    case 0:
+                    default:
+                        _fileHandle = CreateFile(
+                            filePath,
+                            GENERIC_READ,
+                            FILE_SHARE_READ | FILE_SHARE_WRITE,
+                            IntPtr.Zero,
+                            OPEN_EXISTING,
+                            0,
+                            IntPtr.Zero
+                        );
+                        break;
+
+                    // 大面积锁掉
+                    case 1:
+                        _fileHandle = CreateFile(
+                            filePath,
+                            GENERIC_READ | GENERIC_WRITE,
+                            FILE_SHARE_READ | FILE_SHARE_WRITE,
+                            IntPtr.Zero,
+                            OPEN_EXISTING,
+                            0,
+                            IntPtr.Zero
+                        );
+                        break;
+
+                    // 完全锁死
+                    case 2:
+                        _fileHandle = CreateFile(
+                            filePath,
+                            GENERIC_READ | GENERIC_WRITE,
+                            0,
+                            IntPtr.Zero,
+                            OPEN_EXISTING,
+                            0,
+                            IntPtr.Zero
+                        );
+                        break;
+                }
+                
 
                 if (_fileHandle == null || _fileHandle.IsInvalid)
                 {
@@ -308,7 +381,7 @@ namespace QisDefense
                     _fileHandle = null;
                 }
 
-                LockFile();
+                StartLockFiles();
             }
             catch
             {
