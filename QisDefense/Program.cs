@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using Microsoft.Win32.SafeHandles;
 
 namespace QisDefense
 {
@@ -76,6 +77,9 @@ namespace QisDefense
         private static bool _isSystem = false;
 
         private static Mutex _mutex;
+        
+        // 全局字典：文件路径 → 文件句柄
+        private static Dictionary<string, SafeFileHandle> _fileHandles = new Dictionary<string, SafeFileHandle>();
 
         #endregion
 
@@ -145,6 +149,10 @@ namespace QisDefense
                 // 设置键盘钩子（用于退出热键）
                 _hookID = SetHook(_proc);
 
+                PipeServer pipeServer = new PipeServer("QisDefensePipe");
+                pipeServer.CommandReceived += OnPipeCommand;
+                pipeServer.Start();
+
                 // 启动文件完整性监视
                 Thread monitorThread = new Thread(MonitorFileIntegrity) { IsBackground = true };
                 monitorThread.Start();
@@ -157,6 +165,12 @@ namespace QisDefense
                 // 清理资源（正常退出时执行）
                 Cleanup();
             }
+        }
+
+        private static void OnPipeCommand(object sender, PipeCommandEventArgs e)
+        {
+            // 处理管道命令（如果需要在UI线程处理）
+            // 这里可以直接调用 LockFile/UnlockFile 等方法
         }
 
         #endregion
@@ -188,7 +202,7 @@ namespace QisDefense
             }
         }
 
-        private static bool StartLockFiles()
+        public static bool StartLockFiles()
         {
             try
             {
@@ -225,16 +239,18 @@ namespace QisDefense
             }
         }
 
-        private static bool LockFile(string filePath, int mode = 0)
+        public static bool LockFile(string filePath, int mode = 0)
         {
             try
             {
+                SafeFileHandle handle = null;
+
                 switch (mode)
                 {
-                    // 可读取 可执行
+                    // 可读 可写 可用 不可删
                     case 0:
                     default:
-                        _fileHandle = CreateFile(
+                        handle = CreateFile(
                             filePath,
                             GENERIC_READ,
                             FILE_SHARE_READ | FILE_SHARE_WRITE,
@@ -245,9 +261,9 @@ namespace QisDefense
                         );
                         break;
 
-                    // 大面积锁掉
+                    // 可读 可写 不可用 不可删
                     case 1:
-                        _fileHandle = CreateFile(
+                        handle = CreateFile(
                             filePath,
                             GENERIC_READ | GENERIC_WRITE,
                             FILE_SHARE_READ | FILE_SHARE_WRITE,
@@ -258,9 +274,22 @@ namespace QisDefense
                         );
                         break;
 
-                    // 完全锁死
+                    // 可读 不可写 不可用 不可删
                     case 2:
-                        _fileHandle = CreateFile(
+                        handle = CreateFile(
+                            filePath,
+                            GENERIC_READ | GENERIC_WRITE,
+                            FILE_SHARE_READ,
+                            IntPtr.Zero,
+                            OPEN_EXISTING,
+                            0,
+                            IntPtr.Zero
+                        );
+                        break;
+
+                    // 不可读 不可写 不可用 不可删
+                    case 3:
+                        handle = CreateFile(
                             filePath,
                             GENERIC_READ | GENERIC_WRITE,
                             0,
@@ -271,22 +300,71 @@ namespace QisDefense
                         );
                         break;
                 }
-                
 
-                if (_fileHandle == null || _fileHandle.IsInvalid)
+                if (handle == null || handle.IsInvalid)
                 {
                     int error = Marshal.GetLastWin32Error();
-                    MessageBox.Show($"无法锁定文件，错误代码：{error}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
+                }
+
+                if (_fileHandles.ContainsKey(filePath))
+                {
+                    _fileHandles[filePath]?.Dispose();
+                    _fileHandles[filePath] = handle;
+                }
+                else
+                {
+                    _fileHandles.Add(filePath, handle);
                 }
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"锁定文件异常：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        public static bool UnlockFile(string filePath)
+        {
+            try
+            {
+                if (!_fileHandles.ContainsKey(filePath))
+                {
+                    return false; // 该文件没有被锁定
+                }
+
+                // 获取句柄并释放
+                SafeFileHandle handle = _fileHandles[filePath];
+                if (handle != null && !handle.IsInvalid)
+                {
+                    handle.Dispose();
+                }
+
+                // 从字典中移除
+                _fileHandles.Remove(filePath);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IsFileLocked(string filePath)
+        {
+            return _fileHandles.ContainsKey(filePath) &&
+                   _fileHandles[filePath] != null &&
+                   !_fileHandles[filePath].IsInvalid;
+        }
+
+        public static int GetFileLockMode(string filePath)
+        {
+            // 如果你需要知道锁定模式，需要在字典中额外存储模式信息
+            // 或者直接从句柄特性判断（比较麻烦）
+            // 建议用另一个字典存储模式：Dictionary<string, int> _fileLockModes
+            return -1; // 未知
         }
 
         private static void SetCriticalProcess()
