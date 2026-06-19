@@ -7364,7 +7364,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>783, 61</value>
   </data>
   <data name="button_SetMatchFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 100</value>
+    <value>151, 100</value>
   </data>
   <data name="button_SetMatchFilters.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -7927,7 +7927,7 @@ cookies.txt 位于 ./yt-dlp/cookies.txt
     <value>783, 8</value>
   </data>
   <data name="button_DoAnalysis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 49</value>
+    <value>151, 49</value>
   </data>
   <data name="button_DoAnalysis.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
