@@ -2,6 +2,7 @@ using QisToolkit3.Console;
 using QisToolkit3.Forms;
 using QisToolkit3.Forms.SoftwareFunctionForms;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -53,10 +54,10 @@ namespace QisToolkit3
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (tmp == DialogResult.Yes)
-                    Qi.RunNSudo(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "QisToolkit3.exe"));
-
-                else
-                    return; // 退出程序
+                {
+                    RestartAsAdmin();
+                }
+                return;
             }
             
 
@@ -131,6 +132,19 @@ namespace QisToolkit3
             {
                 RunCommandLineMode(hideWindow);
             }
+        }
+
+        public static void RestartAsAdmin(string arguments = "")
+        {
+            var process = new ProcessStartInfo
+            {
+                FileName = Process.GetCurrentProcess().MainModule.FileName,
+                Arguments = arguments,
+                UseShellExecute = true,
+                Verb = "runas"  // 触发 UAC 提权
+            };
+            Process.Start(process);
+            Environment.Exit(0);
         }
 
         /// <summary>

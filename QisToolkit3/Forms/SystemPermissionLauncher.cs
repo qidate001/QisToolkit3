@@ -38,7 +38,7 @@ namespace QisToolkit3.Forms
         private void Run(string name, string arguments = "")
         {
             if (comboBox_RunMode.SelectedIndex == 0)
-                RunNSudo($"{name} {arguments}");
+                RunNSudo($"{name}");
             else if (comboBox_RunMode.SelectedIndex == 1)
             {
                 using (var process = new Process())
@@ -54,7 +54,7 @@ namespace QisToolkit3.Forms
             }
             else
             {
-                UnRunNSudo($"{name} {arguments}");
+                UnRunNSudo($"{name}");
             }
         }
 

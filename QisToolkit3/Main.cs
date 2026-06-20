@@ -58,8 +58,6 @@ namespace QisToolkit3
                 Log.Info($"小白模式已开启，部分功能已被隐藏。");
                 buttonTextGeneration.Visible = false;
             }
-
-
         }
 
         private void SetDarkMode()

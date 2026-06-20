@@ -1,5 +1,6 @@
 using M2.NSudo;
 using Microsoft.Win32;
+using QisToolkit3;
 using System;
 using System.Diagnostics;
 using System.DirectoryServices;
@@ -11,6 +12,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.ServiceProcess;
 using static Qi;
 using static System.Net.WebRequestMethods;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -105,78 +107,35 @@ public class Qi
     }
 
     // 运行 MinSudo
-    public static void RunMinSudo(string exefile, string arguments = "-S -TI -P -NoL", bool CMDReLoad = false)
+    public static void RunMinSudo(
+        string commandLine,
+        MinSudoLevel level = MinSudoLevel.TrustedInstaller,
+        bool privileged = true,
+        string workingDirectory = @"C:\"
+    )
     {
-        string sudoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "x64", "MinSudo.exe");
-        
-        if (CMDReLoad)
-            ExecuteInCmd($"{sudoPath} {arguments} {exefile}");
-
-        else
+        // 如果是 TrustedInstaller，先确保服务运行
+        if (level == MinSudoLevel.TrustedInstaller)
         {
-            string log = string.Empty;
-
-            try
-            {
-                // 构建完整命令参数
-                string sudoArgs = $"{arguments} {exefile}";
-
-                Log.Info($"[MinSudo] 命令参数构建：{sudoArgs}");
-
-                // 配置进程启动信息
-                var startInfo = new ProcessStartInfo
-                {
-                    FileName = sudoPath,
-                    Arguments = sudoArgs,
-                    UseShellExecute = false, // 重定向输出需要设为 false
-                    CreateNoWindow = true,   // 不创建新窗口
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-
-                // 启动进程
-                using (var process = new Process { StartInfo = startInfo })
-                {
-                    // 捕获输出事件
-                    process.OutputDataReceived += (sender, e) =>
-                    {
-                        if (!string.IsNullOrEmpty(e.Data))
-                            Log.Info($"[MinSudo] {e.Data}");
-                    };
-
-                    process.ErrorDataReceived += (sender, e) =>
-                    {
-                        if (!string.IsNullOrEmpty(e.Data))
-                            Log.Err($"[MinSudo] {e.Data}");
-                    };
-
-                    process.Start();
-
-                    // 开始异步读取输出
-                    process.BeginOutputReadLine();
-                    process.BeginErrorReadLine();
-
-                    // 等待进程退出（可选）
-                    // process.WaitForExit();
-
-                    // 获取退出代码（如果需要）
-                    // int exitCode = process.ExitCode;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Log.Err($"[MinSudo] 执行 MinSudo 时出错: {ex.Message}");
-
-                MessageBox.Show($"执行 MinSudo 时出错: {ex.Message}", "错误",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            EnsureTrustedInstallerRunning();
         }
-            
 
-        //if (log != string.Empty)
-        //    MessageBox.Show(log);
-        // 
+        uint exitCode;
+        string exitMessage;
+
+        bool ok = MinSudo.RunElevated(
+            commandLine,
+            level,
+            privileged,
+            workingDirectory,
+            out exitCode,
+            out exitMessage
+        );
+
+        
+        Log.Info($"[MinSudo] OK：{ok}");
+        Log.Info($"[MinSudo] 退出代码：{exitCode}");
+        Log.Info($"[MinSudo] 返回信息：{exitMessage}");
     }
 
     public static NSudoInstance RunNSudo
@@ -246,6 +205,20 @@ public class Qi
             nSUDO_PROCESS_PRIORITY_CLASS_TYPE,
             nSUDO_SHOW_WINDOW_MODE_TYPE
         );
+    }
+
+    public static void EnsureTrustedInstallerRunning()
+    {
+        using (var service = new ServiceController("TrustedInstaller"))
+        {
+            if (service.Status != ServiceControllerStatus.Running)
+            {
+                Log.Info("[MinSudo] TrustedInstaller 服务未运行，正在启动...");
+                service.Start();
+                service.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
+                Log.Info("[MinSudo] TrustedInstaller 服务已启动");
+            }
+        }
     }
 
     public static List<string> GetLocalUsers()
