@@ -18,6 +18,7 @@ using static System.Net.WebRequestMethods;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Threading.Tasks;
 
 public class Qi
 {
@@ -43,7 +44,7 @@ public class Qi
         public static string Version = "2.4.0.0";
 
         public static string MainLogFile = $"Main_20000101_000000.log";
-        public static bool IsRunMinSudo = IsWindows11();
+        public static bool IsRunMinSudo = true;
 
         public static void SaveDatas()
         {
@@ -107,7 +108,7 @@ public class Qi
     }
 
     // 运行 MinSudo
-    public static void RunMinSudo(
+    public static async Task RunMinSudo(
         string commandLine,
         MinSudoLevel level = MinSudoLevel.TrustedInstaller,
         bool privileged = true,
@@ -138,7 +139,7 @@ public class Qi
         Log.Info($"[MinSudo] 返回信息：{exitMessage}");
     }
 
-    public static NSudoInstance RunNSudo
+    public static async Task<NSudoInstance> RunNSudo
     (
         string command,
         NSUDO_USER_MODE_TYPE nSUDO_USER_MODE_TYPE = NSUDO_USER_MODE_TYPE.TRUSTED_INSTALLER,
@@ -150,7 +151,7 @@ public class Qi
     {
         if (QisToolkit3_Datas.IsRunMinSudo)
         {
-            RunMinSudo(command);
+            await RunMinSudo(command);
             return null;
         }
 
@@ -181,7 +182,7 @@ public class Qi
         }
     }
 
-    public static NSudoInstance UnRunNSudo
+    public static async Task<NSudoInstance> UnRunNSudo
     (
         string command,
         NSUDO_USER_MODE_TYPE nSUDO_USER_MODE_TYPE = NSUDO_USER_MODE_TYPE.CURRENT_USER,
@@ -193,11 +194,11 @@ public class Qi
     {
         if (QisToolkit3_Datas.IsRunMinSudo)
         {
-            RunMinSudo(command);
+            await RunMinSudo(command);
             return null;
         }
 
-        return RunNSudo(
+        return await RunNSudo(
             command,
             nSUDO_USER_MODE_TYPE,
             nSUDO_PRIVILEGES_MODE_TYPE,

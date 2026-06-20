@@ -74,7 +74,6 @@
             // 
             // tabControlOptions
             // 
-            resources.ApplyResources(tabControlOptions, "tabControlOptions");
             tabControlOptions.Controls.Add(tabPageHead);
             tabControlOptions.Controls.Add(tabPageFilesOperation);
             tabControlOptions.Controls.Add(tabPage1);
@@ -83,12 +82,12 @@
             tabControlOptions.Controls.Add(tabPage4);
             tabControlOptions.Controls.Add(tabPage5);
             tabControlOptions.Controls.Add(tabPage3);
+            resources.ApplyResources(tabControlOptions, "tabControlOptions");
             tabControlOptions.Name = "tabControlOptions";
             tabControlOptions.SelectedIndex = 0;
             // 
             // tabPageHead
             // 
-            resources.ApplyResources(tabPageHead, "tabPageHead");
             tabPageHead.Controls.Add(checkBox_MinSudo);
             tabPageHead.Controls.Add(button_CommandMode);
             tabPageHead.Controls.Add(button_SystemCommandMode);
@@ -100,12 +99,15 @@
             tabPageHead.Controls.Add(buttonOut);
             tabPageHead.Controls.Add(buttonIn);
             tabPageHead.Controls.Add(button_System);
+            resources.ApplyResources(tabPageHead, "tabPageHead");
             tabPageHead.Name = "tabPageHead";
             tabPageHead.UseVisualStyleBackColor = true;
             // 
             // checkBox_MinSudo
             // 
             resources.ApplyResources(checkBox_MinSudo, "checkBox_MinSudo");
+            checkBox_MinSudo.Checked = true;
+            checkBox_MinSudo.CheckState = CheckState.Checked;
             checkBox_MinSudo.Name = "checkBox_MinSudo";
             checkBox_MinSudo.UseVisualStyleBackColor = true;
             checkBox_MinSudo.CheckedChanged += checkBox_MinSudo_CheckedChanged;
@@ -188,8 +190,8 @@
             // 
             // tabPageFilesOperation
             // 
-            resources.ApplyResources(tabPageFilesOperation, "tabPageFilesOperation");
             tabPageFilesOperation.Controls.Add(checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow);
+            resources.ApplyResources(tabPageFilesOperation, "tabPageFilesOperation");
             tabPageFilesOperation.Name = "tabPageFilesOperation";
             tabPageFilesOperation.UseVisualStyleBackColor = true;
             // 
@@ -215,9 +217,9 @@
             // 
             // tabPageToolsOperation
             // 
-            resources.ApplyResources(tabPageToolsOperation, "tabPageToolsOperation");
             tabPageToolsOperation.Controls.Add(checkBoxToolsProcessingTools_TopMost);
             tabPageToolsOperation.Controls.Add(checkBoxToolsOperation_UseChineseName);
+            resources.ApplyResources(tabPageToolsOperation, "tabPageToolsOperation");
             tabPageToolsOperation.Name = "tabPageToolsOperation";
             tabPageToolsOperation.UseVisualStyleBackColor = true;
             // 
@@ -282,44 +284,44 @@
             // 
             // button_Gmail
             // 
-            resources.ApplyResources(button_Gmail, "button_Gmail");
             button_Gmail.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_Gmail, "button_Gmail");
             button_Gmail.Name = "button_Gmail";
             button_Gmail.UseVisualStyleBackColor = true;
             button_Gmail.Click += button_Gmail_Click;
             // 
             // button_QQEmail
             // 
-            resources.ApplyResources(button_QQEmail, "button_QQEmail");
             button_QQEmail.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_QQEmail, "button_QQEmail");
             button_QQEmail.Name = "button_QQEmail";
             button_QQEmail.UseVisualStyleBackColor = true;
             button_QQEmail.Click += button_QQEmail_Click;
             // 
             // label5
             // 
-            resources.ApplyResources(label5, "label5");
             label5.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
             // 
             // button_DownloadForGitHub
             // 
-            resources.ApplyResources(button_DownloadForGitHub, "button_DownloadForGitHub");
             button_DownloadForGitHub.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_DownloadForGitHub, "button_DownloadForGitHub");
             button_DownloadForGitHub.Name = "button_DownloadForGitHub";
             button_DownloadForGitHub.UseVisualStyleBackColor = true;
             button_DownloadForGitHub.Click += button_DownloadForGitHub_Click;
             // 
             // label3
             // 
-            resources.ApplyResources(label3, "label3");
             label3.BackColor = Color.Gainsboro;
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
             // 
             // button_GitHub
             // 
-            resources.ApplyResources(button_GitHub, "button_GitHub");
             button_GitHub.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_GitHub, "button_GitHub");
             button_GitHub.Name = "button_GitHub";
             button_GitHub.UseVisualStyleBackColor = true;
             button_GitHub.Click += button_GitHub_Click;
@@ -336,24 +338,24 @@
             // 
             // button_DownloadForQQ
             // 
-            resources.ApplyResources(button_DownloadForQQ, "button_DownloadForQQ");
             button_DownloadForQQ.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_DownloadForQQ, "button_DownloadForQQ");
             button_DownloadForQQ.Name = "button_DownloadForQQ";
             button_DownloadForQQ.UseVisualStyleBackColor = true;
             button_DownloadForQQ.Click += button_DownloadForQQ_Click;
             // 
             // button_DownloadForLan
             // 
-            resources.ApplyResources(button_DownloadForLan, "button_DownloadForLan");
             button_DownloadForLan.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_DownloadForLan, "button_DownloadForLan");
             button_DownloadForLan.Name = "button_DownloadForLan";
             button_DownloadForLan.UseVisualStyleBackColor = true;
             button_DownloadForLan.Click += button_DownloadForLan_Click;
             // 
             // button_DownloadForBaidu
             // 
-            resources.ApplyResources(button_DownloadForBaidu, "button_DownloadForBaidu");
             button_DownloadForBaidu.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_DownloadForBaidu, "button_DownloadForBaidu");
             button_DownloadForBaidu.Name = "button_DownloadForBaidu";
             button_DownloadForBaidu.UseVisualStyleBackColor = true;
             button_DownloadForBaidu.Click += button_DownloadForBaidu_Click;

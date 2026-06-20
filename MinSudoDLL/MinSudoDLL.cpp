@@ -20,7 +20,7 @@ struct HandleDeleter {
 using UniqueHandle = std::unique_ptr<void, HandleDeleter>;
 
 struct ServiceHandleDeleter {
-    void operator()(SC_HANDLE h) const {3
+    void operator()(SC_HANDLE h) const {
         if (h) CloseServiceHandle(h);
     }
 };
