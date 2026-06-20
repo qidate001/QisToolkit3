@@ -1148,15 +1148,9 @@
     <value>16</value>
   </data>
   <data name="labelQisDefense.Text" xml:space="preserve">
-    <value>齐之防御是一个电脑后台运行的实时的防护程序，但值得注意的是，本产品并非杀毒软件，更不可替代杀毒软件！
+    <value>齐之防御是一个电脑后台运行的实时的工具程序，但值得注意的是，本产品并非杀毒软件，更不可替代杀毒软件！
 
-本产品主用系统异常修复与流氓软件防护，暂不包含病毒相关防护措施。
-
-当您开启齐之防御后，齐之防御将会开机自启动，后台静默运行，不会占用多少资源
-
-*部分系统异常会在每次开机时进行检查，完整检查则需要手动运行！
-
-*我们还配备了对其他第三方软件错误的检测功能，但齐之防御本身不自带修复能力，修复这个操作主要由齐的工具包3完成</value>
+运行时按 Ctrl+Alt+Esc 退出</value>
   </data>
   <data name="&gt;&gt;labelQisDefense.Name" xml:space="preserve">
     <value>labelQisDefense</value>
@@ -1189,7 +1183,7 @@
     <value>15</value>
   </data>
   <data name="buttonQisDefense.Text" xml:space="preserve">
-    <value>齐之防御 总开关 OFF</value>
+    <value>齐之防御 OFF</value>
   </data>
   <data name="&gt;&gt;buttonQisDefense.Name" xml:space="preserve">
     <value>buttonQisDefense</value>
@@ -1204,13 +1198,13 @@
     <value>1</value>
   </data>
   <data name="tabPageQisDefense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
+    <value>4, 33</value>
   </data>
   <data name="tabPageQisDefense.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageQisDefense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 641</value>
+    <value>789, 637</value>
   </data>
   <data name="tabPageQisDefense.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

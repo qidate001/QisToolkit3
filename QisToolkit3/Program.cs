@@ -73,7 +73,7 @@ namespace QisToolkit3
             Qi.QisToolkit3_Datas.LoadDatas();
 
             Log.Info("=== 加载数据 ===");
-            Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.IsRunMinSudo}");
+            Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.UseMinSudoDLL}");
 
             bool UseSPLArg = false;
             for (int i = 0; i < args.Length - 1; i++)

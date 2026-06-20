@@ -41,6 +41,7 @@
             tabPage = new TabPage();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            buttonTaskManager = new Button();
             buttonAdvancedRenamer = new Button();
             button1 = new Button();
             button_ScanRogueSoftwareTool = new Button();
@@ -145,7 +146,6 @@
             buttonYtDlp = new Button();
             buttonIDM = new Button();
             toolTip = new ToolTip(components);
-            buttonTaskManager = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -277,6 +277,14 @@
             resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonTaskManager
+            // 
+            buttonTaskManager.BackColor = Color.Gainsboro;
+            resources.ApplyResources(buttonTaskManager, "buttonTaskManager");
+            buttonTaskManager.Name = "buttonTaskManager";
+            buttonTaskManager.UseVisualStyleBackColor = false;
+            buttonTaskManager.Click += buttonTaskManager_Click;
             // 
             // buttonAdvancedRenamer
             // 
@@ -1080,14 +1088,6 @@
             toolTip.SetToolTip(buttonIDM, resources.GetString("buttonIDM.ToolTip"));
             buttonIDM.UseVisualStyleBackColor = true;
             buttonIDM.Click += buttonIDM_Click;
-            // 
-            // buttonTaskManager
-            // 
-            buttonTaskManager.BackColor = Color.Gainsboro;
-            resources.ApplyResources(buttonTaskManager, "buttonTaskManager");
-            buttonTaskManager.Name = "buttonTaskManager";
-            buttonTaskManager.UseVisualStyleBackColor = false;
-            buttonTaskManager.Click += buttonTaskManager_Click;
             // 
             // Tools
             // 

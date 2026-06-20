@@ -72,7 +72,7 @@ namespace QisToolkit3.Forms
             checkBoxToolsProcessingTools_TopMost.Checked = ToolsProcessingTools_TopMost;
 
             // System 权限备用方案启动
-            checkBox_MinSudo.Checked = IsRunMinSudo;
+            checkBox_MinSudo.Checked = UseMinSudoDLL;
 
             #endregion
 
@@ -248,7 +248,7 @@ namespace QisToolkit3.Forms
 
         private void checkBox_MinSudo_CheckedChanged(object sender, EventArgs e)
         {
-            IsRunMinSudo = checkBox_MinSudo.Checked;
+            UseMinSudoDLL = checkBox_MinSudo.Checked;
         }
 
         private void button_GitHub_Click(object sender, EventArgs e)

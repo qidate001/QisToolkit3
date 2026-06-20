@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static Qi;
 using static Qi.QisToolkit3_Datas;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -306,7 +307,7 @@ namespace QisToolkit3.Forms
 
         private void Tools_Load(object sender, EventArgs e)
         {
-            SetbuttonQisDefense();
+            //SetbuttonQisDefense();
         }
 
         private void SetbuttonQisDefense()
@@ -317,7 +318,7 @@ namespace QisToolkit3.Forms
                 return;
             }
 
-            if (IsQisDefenseOn())
+            if (PipeClient.IsServiceRunning())
             {
                 buttonQisDefense.ForeColor = Color.Green;
                 buttonQisDefense.Text = "齐之防御 总开关 ON";
@@ -389,41 +390,26 @@ namespace QisToolkit3.Forms
 
         private void buttonGeek_Click(object sender, EventArgs e) => RunNSudo(@"ElseTool\geek.exe");
 
-        private void buttonQisDefense_Click(object sender, EventArgs e)
+        private async void buttonQisDefense_Click(object sender, EventArgs e)
         {
             try
             {
                 // 关闭齐之防御
-                if (IsQisDefenseOn())
+                if (PipeClient.IsServiceRunning())
                 {
-                    using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
-                    {
-                        try
-                        {
-                            key.DeleteValue("00_QisDefense");
-                        }
-                        catch { }
-                    }
-                    SetbuttonQisDefense();
-                    MessageBox.Show("齐之防御已禁用。\n部分功能可能需重启才可退出。", "齐的工具包3 & 齐之防御");
+                    MessageBox.Show("齐之防御已启用。\n关闭请按Ctrl+Alt+Esc！", "齐的工具包3 & 齐之防御");
                 }
 
                 // 开启齐之防御
                 else
                 {
-                    string nsudoPath = $"\"{actualDirectory}\\NSudoL.exe\"";
                     string qisDefensePath = @$"{actualDirectory}\QisDefense.exe";
-                    string arguments = $"-U:T -P:E -Wait \"{qisDefensePath}\"";
 
-                    using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
-                    {
-                        key.SetValue("00_QisDefense", $"\"{qisDefensePath}\" SysReStart");
-                    }
-
-                    RunNSudo(qisDefensePath);
-                    SetbuttonQisDefense();
+                    await Task.Run(() => RunNSudo(qisDefensePath));
                     MessageBox.Show("齐之防御已准备就绪。", "齐的工具包3 & 齐之防御");
                 }
+
+                SetbuttonQisDefense();
             }
             catch (Exception ex)
             {
@@ -507,6 +493,11 @@ namespace QisToolkit3.Forms
         private void buttonTaskManager_Click(object sender, EventArgs e)
         {
             new TaskManager().Show();
+        }
+
+        private void tabPageQisDefense_Click(object sender, EventArgs e)
+        {
+            SetbuttonQisDefense();
         }
     }
 }

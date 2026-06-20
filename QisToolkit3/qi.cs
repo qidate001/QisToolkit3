@@ -44,7 +44,7 @@ public class Qi
         public static string Version = "2.4.0.0";
 
         public static string MainLogFile = $"Main_20000101_000000.log";
-        public static bool IsRunMinSudo = true;
+        public static bool UseMinSudoDLL = true;
 
         public static void SaveDatas()
         {
@@ -56,7 +56,7 @@ public class Qi
             writer.WriteLine(FilesOperation_AutomaticallyPopUpTheOpenFileWindow);
             writer.WriteLine(ToolsOperation_UseChineseName);
             writer.WriteLine(ToolsProcessingTools_TopMost); 
-            writer.WriteLine(IsRunMinSudo); 
+            writer.WriteLine(UseMinSudoDLL); 
         }
 
         public static void LoadDatas()
@@ -73,7 +73,7 @@ public class Qi
                     if ((line = reader.ReadLine()) != null) FilesOperation_AutomaticallyPopUpTheOpenFileWindow = StrToBool(line);
                     if ((line = reader.ReadLine()) != null) ToolsOperation_UseChineseName = StrToBool(line);
                     if ((line = reader.ReadLine()) != null) ToolsProcessingTools_TopMost = StrToBool(line);
-                    if ((line = reader.ReadLine()) != null) IsRunMinSudo = StrToBool(line);
+                    if ((line = reader.ReadLine()) != null) UseMinSudoDLL = StrToBool(line);
                 }
                 Log.Info($"加载数据完成。");
             }
@@ -141,6 +141,33 @@ public class Qi
         Log.Info($"[MinSudo] 返回信息：{exitMessage}");
     }
 
+    // 运行 MinSudo
+    public static string ExecuteInMinSudo(
+        string commandLine,
+        string args = "-S -TI -P -NoL"
+    )
+    {
+        using (var process = new Process())
+        {
+            process.StartInfo.FileName = Path.Combine(QisToolkit3_Datas.actualDirectory, "x64", "MinSudo.exe");
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.Arguments = $"{args} {commandLine}";
+            process.Start();
+
+            string output = process.StandardOutput.ReadToEnd();
+
+            process.WaitForExit();
+            process.Close();
+
+            Log.Info(output);
+            return output;
+        }
+    }
+
     public static async Task<NSudoInstance> RunNSudo
     (
         string command,
@@ -151,9 +178,14 @@ public class Qi
         NSUDO_SHOW_WINDOW_MODE_TYPE nSUDO_SHOW_WINDOW_MODE_TYPE = NSUDO_SHOW_WINDOW_MODE_TYPE.SHOW
     )
     {
-        if (QisToolkit3_Datas.IsRunMinSudo)
+        if (QisToolkit3_Datas.UseMinSudoDLL)
         {
             await RunMinSudo(command);
+            return null;
+        }
+        else
+        {
+            ExecuteInMinSudo(command);
             return null;
         }
 
@@ -194,9 +226,14 @@ public class Qi
         NSUDO_SHOW_WINDOW_MODE_TYPE nSUDO_SHOW_WINDOW_MODE_TYPE = NSUDO_SHOW_WINDOW_MODE_TYPE.SHOW
     )
     {
-        if (QisToolkit3_Datas.IsRunMinSudo)
+        if (QisToolkit3_Datas.UseMinSudoDLL)
         {
             await RunMinSudo(command, MinSudoLevel.Standard, false);
+            return null;
+        }
+        else
+        {
+            ExecuteInMinSudo(command, "-NoL");
             return null;
         }
 
