@@ -376,701 +376,40 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="buttonTaskManager.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="buttonTaskManager.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>tabPage</value>
+  <data name="buttonTaskManager.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="buttonTaskManager.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 563</value>
   </data>
-  <data name="tabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+  <data name="buttonTaskManager.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
-  <data name="tabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="buttonTaskManager.Size" type="System.Drawing.Size, System.Drawing">
+    <value>783, 70</value>
   </data>
-  <data name="tabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 680</value>
+  <data name="buttonTaskManager.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
-  <data name="tabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="buttonTaskManager.Text" xml:space="preserve">
+    <value>任务管理器</value>
   </data>
-  <data name="tabPage.Text" xml:space="preserve">
-    <value>原创工具</value>
+  <data name="&gt;&gt;buttonTaskManager.Name" xml:space="preserve">
+    <value>buttonTaskManager</value>
   </data>
-  <data name="&gt;&gt;tabPage.Name" xml:space="preserve">
-    <value>tabPage</value>
-  </data>
-  <data name="&gt;&gt;tabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Name" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Parent" xml:space="preserve">
-    <value>tabPageSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPageSystemTool.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="tabPageSystemTool.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageSystemTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 680</value>
-  </data>
-  <data name="tabPageSystemTool.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPageSystemTool.Text" xml:space="preserve">
-    <value>系统工具</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemTool.Name" xml:space="preserve">
-    <value>tabPageSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemTool.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemTool.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button_SoftwareFunctionPage.Name" xml:space="preserve">
-    <value>button_SoftwareFunctionPage</value>
-  </data>
-  <data name="&gt;&gt;button_SoftwareFunctionPage.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonTaskManager.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button_SoftwareFunctionPage.Parent" xml:space="preserve">
-    <value>tabPageProgramConfigurationTool</value>
-  </data>
-  <data name="&gt;&gt;button_SoftwareFunctionPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPageProgramConfigurationTool.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="tabPageProgramConfigurationTool.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageProgramConfigurationTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 680</value>
-  </data>
-  <data name="tabPageProgramConfigurationTool.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPageProgramConfigurationTool.Text" xml:space="preserve">
-    <value>软件工具</value>
-  </data>
-  <data name="&gt;&gt;tabPageProgramConfigurationTool.Name" xml:space="preserve">
-    <value>tabPageProgramConfigurationTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageProgramConfigurationTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageProgramConfigurationTool.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPageProgramConfigurationTool.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 296</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>Unlock-Music</value>
-  </data>
-  <data name="button3.ToolTip" xml:space="preserve">
-    <value>一个运行在本地的网页工具
-用于移除已购音乐的加密保护
-https://unlock-music.lmb520.cn/</value>
-  </data>
-  <data name="button3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button_PaywallBuster.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="button_PaywallBuster.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 217</value>
-  </data>
-  <data name="button_PaywallBuster.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="button_PaywallBuster.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="button_PaywallBuster.Text" xml:space="preserve">
-    <value>Paywall Buster</value>
-  </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>14, 12</value>
-  </metadata>
-  <data name="button_PaywallBuster.ToolTip" xml:space="preserve">
-    <value>一个运行在本地的网页工具
-用于移除网页付费墙
-https://paywallbuster.me/</value>
-  </data>
-  <data name="&gt;&gt;button_PaywallBuster.Name" xml:space="preserve">
-    <value>button_PaywallBuster</value>
-  </data>
-  <data name="&gt;&gt;button_PaywallBuster.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_PaywallBuster.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;button_PaywallBuster.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonUnlockMusic.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="buttonUnlockMusic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 138</value>
-  </data>
-  <data name="buttonUnlockMusic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="buttonUnlockMusic.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="buttonUnlockMusic.Text" xml:space="preserve">
-    <value>Unlock-Music</value>
-  </data>
-  <data name="buttonUnlockMusic.ToolTip" xml:space="preserve">
-    <value>一个运行在本地的网页工具
-用于移除已购音乐的加密保护
-https://unlock-music.lmb520.cn/</value>
-  </data>
-  <data name="&gt;&gt;buttonUnlockMusic.Name" xml:space="preserve">
-    <value>buttonUnlockMusic</value>
-  </data>
-  <data name="&gt;&gt;buttonUnlockMusic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonUnlockMusic.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;buttonUnlockMusic.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 375</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>650, 152</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.Text" xml:space="preserve">
-    <value>齐的工具包3 衍生
-迫害系统娱乐程序</value>
-  </data>
-  <data name="button_QisToolkit3_PersecutionSystem.ToolTip" xml:space="preserve">
-    <value>打开yt-dlp工具辅助面板</value>
-  </data>
-  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Name" xml:space="preserve">
-    <value>button_QisToolkit3_PersecutionSystem</value>
-  </data>
-  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 575</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>797, 102</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>按钮黑着代表功能不可用，例如基础版就不附带IDM激活工具、yt-dlp工具、FFmpeg工具、Geek工具。若您想要用这些第三方工具，可以手动下载并放到对应位置，或索性重新下载完整版。
-部分工具完整版也不会自带，需要先前往扩展管理下载后才可用，如Mas激活工具
-（扩展管理位于 软件设置→首选项→扩展管理）</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="buttonMAS.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonMAS.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="buttonMAS.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="buttonMAS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 6</value>
-  </data>
-  <data name="buttonMAS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 126</value>
-  </data>
-  <data name="buttonMAS.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="buttonMAS.Text" xml:space="preserve">
-    <value>MAS 激活工具</value>
-  </data>
-  <data name="buttonMAS.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="buttonMAS.ToolTip" xml:space="preserve">
-    <value>启动第三方工具 IDM激活工具
-在齐的工具包内启动比直接启动更快</value>
-  </data>
-  <data name="&gt;&gt;buttonMAS.Name" xml:space="preserve">
-    <value>buttonMAS</value>
-  </data>
-  <data name="&gt;&gt;buttonMAS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMAS.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;buttonMAS.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="button_FFmpeg.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="button_FFmpeg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 217</value>
-  </data>
-  <data name="button_FFmpeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="button_FFmpeg.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="button_FFmpeg.Text" xml:space="preserve">
-    <value>FFmpeg 工具</value>
-  </data>
-  <data name="button_FFmpeg.ToolTip" xml:space="preserve">
-    <value>使用系统级权限运行Geek
-专治权限不够的顽固软件</value>
-  </data>
-  <data name="&gt;&gt;button_FFmpeg.Name" xml:space="preserve">
-    <value>button_FFmpeg</value>
-  </data>
-  <data name="&gt;&gt;button_FFmpeg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_FFmpeg.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;button_FFmpeg.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="buttonGeek.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="buttonGeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 296</value>
-  </data>
-  <data name="buttonGeek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="buttonGeek.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="buttonGeek.Text" xml:space="preserve">
-    <value>Geek 工具</value>
-  </data>
-  <data name="buttonGeek.ToolTip" xml:space="preserve">
-    <value>使用系统级权限运行Geek
-专治权限不够的顽固软件</value>
-  </data>
-  <data name="&gt;&gt;buttonGeek.Name" xml:space="preserve">
-    <value>buttonGeek</value>
-  </data>
-  <data name="&gt;&gt;buttonGeek.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonGeek.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;buttonGeek.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="buttonYtDlp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 22pt</value>
-  </data>
-  <data name="buttonYtDlp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 138</value>
-  </data>
-  <data name="buttonYtDlp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 73</value>
-  </data>
-  <data name="buttonYtDlp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonYtDlp.Text" xml:space="preserve">
-    <value>yt-dlp 工具</value>
-  </data>
-  <data name="buttonYtDlp.ToolTip" xml:space="preserve">
-    <value>打开yt-dlp工具辅助面板</value>
-  </data>
-  <data name="&gt;&gt;buttonYtDlp.Name" xml:space="preserve">
-    <value>buttonYtDlp</value>
-  </data>
-  <data name="&gt;&gt;buttonYtDlp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonYtDlp.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;buttonYtDlp.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="buttonIDM.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="buttonIDM.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="buttonIDM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="buttonIDM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 126</value>
-  </data>
-  <data name="buttonIDM.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonIDM.Text" xml:space="preserve">
-    <value>IDM 激活工具</value>
-  </data>
-  <data name="buttonIDM.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="buttonIDM.ToolTip" xml:space="preserve">
-    <value>启动第三方工具 IDM激活工具
-在齐的工具包内启动比直接启动更快</value>
-  </data>
-  <data name="&gt;&gt;buttonIDM.Name" xml:space="preserve">
-    <value>buttonIDM</value>
-  </data>
-  <data name="&gt;&gt;buttonIDM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonIDM.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;buttonIDM.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 680</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>第三方工具 与 特殊工具</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 10.8pt</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 717</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+  <data name="&gt;&gt;buttonTaskManager.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabPageQisDefense.Name" xml:space="preserve">
-    <value>tabPageQisDefense</value>
-  </data>
-  <data name="&gt;&gt;tabPageQisDefense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageQisDefense.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageQisDefense.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>797, 674</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>tabPage</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedRenamer.Name" xml:space="preserve">
-    <value>buttonAdvancedRenamer</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedRenamer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedRenamer.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedRenamer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button_ScanRogueSoftwareTool.Name" xml:space="preserve">
-    <value>button_ScanRogueSoftwareTool</value>
-  </data>
-  <data name="&gt;&gt;button_ScanRogueSoftwareTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_ScanRogueSoftwareTool.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;button_ScanRogueSoftwareTool.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemErrorCheck.Name" xml:space="preserve">
-    <value>buttonSystemErrorCheck</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemErrorCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemErrorCheck.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemErrorCheck.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonWhatToEatToday.Name" xml:space="preserve">
-    <value>buttonWhatToEatToday</value>
-  </data>
-  <data name="&gt;&gt;buttonWhatToEatToday.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonWhatToEatToday.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonWhatToEatToday.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonTextProcessingTools.Name" xml:space="preserve">
-    <value>buttonTextProcessingTools</value>
-  </data>
-  <data name="&gt;&gt;buttonTextProcessingTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonTextProcessingTools.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonTextProcessingTools.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;buttonDCQAA.Name" xml:space="preserve">
-    <value>buttonDCQAA</value>
-  </data>
-  <data name="&gt;&gt;buttonDCQAA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonDCQAA.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonDCQAA.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonCommonFunctionalTools.Name" xml:space="preserve">
-    <value>buttonCommonFunctionalTools</value>
-  </data>
-  <data name="&gt;&gt;buttonCommonFunctionalTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCommonFunctionalTools.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;buttonCommonFunctionalTools.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 637</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>基础工具</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonTaskManager.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="buttonAdvancedRenamer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1104,7 +443,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonAdvancedRenamer.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1140,7 +479,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_ScanRogueSoftwareTool.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1173,7 +512,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;button_ScanRogueSoftwareTool.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonSystemErrorCheck.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1206,7 +545,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonSystemErrorCheck.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="buttonWhatToEatToday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1242,7 +581,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonWhatToEatToday.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="buttonTextProcessingTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1275,7 +614,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonTextProcessingTools.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="buttonDCQAA.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1311,7 +650,7 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonDCQAA.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="buttonCommonFunctionalTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1344,145 +683,37 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;buttonCommonFunctionalTools.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>基础工具</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="tabPage3.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemServiceTools.Name" xml:space="preserve">
-    <value>buttonSystemServiceTools</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemServiceTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemServiceTools.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonSystemServiceTools.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;button_SPL.Name" xml:space="preserve">
-    <value>button_SPL</value>
-  </data>
-  <data name="&gt;&gt;button_SPL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_SPL.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;button_SPL.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;buttonShellFolderSetPathTool.Name" xml:space="preserve">
-    <value>buttonShellFolderSetPathTool</value>
-  </data>
-  <data name="&gt;&gt;buttonShellFolderSetPathTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonShellFolderSetPathTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonShellFolderSetPathTool.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonMediumAutoStartTool.Name" xml:space="preserve">
-    <value>buttonMediumAutoStartTool</value>
-  </data>
-  <data name="&gt;&gt;buttonMediumAutoStartTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMediumAutoStartTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonMediumAutoStartTool.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonUninstallRegistryKeysTool.Name" xml:space="preserve">
-    <value>buttonUninstallRegistryKeysTool</value>
-  </data>
-  <data name="&gt;&gt;buttonUninstallRegistryKeysTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonUninstallRegistryKeysTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonUninstallRegistryKeysTool.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonMyComputerNameSpaceTool.Name" xml:space="preserve">
-    <value>buttonMyComputerNameSpaceTool</value>
-  </data>
-  <data name="&gt;&gt;buttonMyComputerNameSpaceTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMyComputerNameSpaceTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonMyComputerNameSpaceTool.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;button_SendMessageToWindowsTool.Name" xml:space="preserve">
-    <value>button_SendMessageToWindowsTool</value>
-  </data>
-  <data name="&gt;&gt;button_SendMessageToWindowsTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_SendMessageToWindowsTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;button_SendMessageToWindowsTool.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonImageHijackingTool.Name" xml:space="preserve">
-    <value>buttonImageHijackingTool</value>
-  </data>
-  <data name="&gt;&gt;buttonImageHijackingTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageHijackingTool.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonImageHijackingTool.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedModificationSystemTools.Name" xml:space="preserve">
-    <value>buttonAdvancedModificationSystemTools</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedModificationSystemTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedModificationSystemTools.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;buttonAdvancedModificationSystemTools.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 641</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>高级工具</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="buttonSystemServiceTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1781,56 +1012,32 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;buttonAdvancedModificationSystemTools.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;button_JokeAPIForm.Name" xml:space="preserve">
-    <value>button_JokeAPIForm</value>
-  </data>
-  <data name="&gt;&gt;button_JokeAPIForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_JokeAPIForm.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;button_JokeAPIForm.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;button_HitokotoTool.Name" xml:space="preserve">
-    <value>button_HitokotoTool</value>
-  </data>
-  <data name="&gt;&gt;button_HitokotoTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_HitokotoTool.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;button_HitokotoTool.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="tabPage5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>789, 641</value>
   </data>
-  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>娱乐工具</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>高级工具</value>
   </data>
-  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
-    <value>tabPage5</value>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="button_JokeAPIForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1898,56 +1105,32 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;button_HitokotoTool.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;labelQisDefense.Name" xml:space="preserve">
-    <value>labelQisDefense</value>
-  </data>
-  <data name="&gt;&gt;labelQisDefense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelQisDefense.Parent" xml:space="preserve">
-    <value>tabPageQisDefense</value>
-  </data>
-  <data name="&gt;&gt;labelQisDefense.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonQisDefense.Name" xml:space="preserve">
-    <value>buttonQisDefense</value>
-  </data>
-  <data name="&gt;&gt;buttonQisDefense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonQisDefense.Parent" xml:space="preserve">
-    <value>tabPageQisDefense</value>
-  </data>
-  <data name="&gt;&gt;buttonQisDefense.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPageQisDefense.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="tabPageQisDefense.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPageQisDefense.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
     <value>789, 641</value>
   </data>
-  <data name="tabPageQisDefense.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="tabPageQisDefense.Text" xml:space="preserve">
-    <value>齐之防御</value>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>娱乐工具</value>
   </data>
-  <data name="&gt;&gt;tabPageQisDefense.Name" xml:space="preserve">
-    <value>tabPageQisDefense</value>
+  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
+    <value>tabPage5</value>
   </data>
-  <data name="&gt;&gt;tabPageQisDefense.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageQisDefense.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPageQisDefense.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="labelQisDefense.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2020,199 +1203,82 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;buttonQisDefense.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.Name" xml:space="preserve">
-    <value>tabPageSystemSet</value>
+  <data name="tabPageQisDefense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemSet.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemSet.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemModification.Name" xml:space="preserve">
-    <value>tabPageSystemModification</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemModification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemModification.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemModification.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Name" xml:space="preserve">
-    <value>tabPageSystemFunctionInformation</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Name" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabPageCmdCommands.Name" xml:space="preserve">
-    <value>tabPageCmdCommands</value>
-  </data>
-  <data name="&gt;&gt;tabPageCmdCommands.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageCmdCommands.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabPageCmdCommands.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabControlSystemTool.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControlSystemTool.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tabControlSystemTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>797, 674</value>
-  </data>
-  <data name="tabControlSystemTool.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Name" xml:space="preserve">
-    <value>tabControlSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.Parent" xml:space="preserve">
-    <value>tabPageSystemTool</value>
-  </data>
-  <data name="&gt;&gt;tabControlSystemTool.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox_UserName.Name" xml:space="preserve">
-    <value>textBox_UserName</value>
-  </data>
-  <data name="&gt;&gt;textBox_UserName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_UserName.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;textBox_UserName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_clear.Name" xml:space="preserve">
-    <value>button_WindowsUser_Password_clear</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_clear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_clear.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_clear.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_set.Name" xml:space="preserve">
-    <value>button_WindowsUser_Password_set</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_set.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_set.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;button_WindowsUser_Password_set.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;textBox_WindowsUser_Password.Name" xml:space="preserve">
-    <value>textBox_WindowsUser_Password</value>
-  </data>
-  <data name="&gt;&gt;textBox_WindowsUser_Password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_WindowsUser_Password.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;textBox_WindowsUser_Password.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelWindowsUser_Password.Name" xml:space="preserve">
-    <value>labelWindowsUser_Password</value>
-  </data>
-  <data name="&gt;&gt;labelWindowsUser_Password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWindowsUser_Password.Parent" xml:space="preserve">
-    <value>tabPageSystemSet</value>
-  </data>
-  <data name="&gt;&gt;labelWindowsUser_Password.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabPageSystemSet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="tabPageSystemSet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageQisDefense.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPageSystemSet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 637</value>
+  <data name="tabPageQisDefense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 641</value>
   </data>
-  <data name="tabPageSystemSet.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tabPageQisDefense.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="tabPageSystemSet.Text" xml:space="preserve">
-    <value>系统设置</value>
+  <data name="tabPageQisDefense.Text" xml:space="preserve">
+    <value>齐之防御</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.Name" xml:space="preserve">
-    <value>tabPageSystemSet</value>
+  <data name="&gt;&gt;tabPageQisDefense.Name" xml:space="preserve">
+    <value>tabPageQisDefense</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageQisDefense.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.Parent" xml:space="preserve">
-    <value>tabControlSystemTool</value>
+  <data name="&gt;&gt;tabPageQisDefense.Parent" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemSet.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPageQisDefense.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>797, 674</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>tabPage</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 680</value>
+  </data>
+  <data name="tabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage.Text" xml:space="preserve">
+    <value>原创工具</value>
+  </data>
+  <data name="&gt;&gt;tabPage.Name" xml:space="preserve">
+    <value>tabPage</value>
+  </data>
+  <data name="&gt;&gt;tabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
@@ -2284,9 +1350,6 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;textBox_UserName.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>14, 12</value>
-  </metadata>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2305,6 +1368,9 @@ https://unlock-music.lmb520.cn/</value>
   <data name="label2.Text" xml:space="preserve">
     <value>当前用户：</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>14, 12</value>
+  </metadata>
   <data name="label2.ToolTip" xml:space="preserve">
     <value>修改本地用户密码
 此修改功能无需输入旧密码</value>
@@ -2429,494 +1495,35 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;labelWindowsUser_Password.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="tabPageSystemModification.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tabPageSystemSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
   </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Name" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Parent" xml:space="preserve">
-    <value>tabPageSystemModification</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Name" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Parent" xml:space="preserve">
-    <value>tabPageSystemModification</value>
-  </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPageSystemModification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabPageSystemModification.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageSystemSet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPageSystemModification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 641</value>
+  <data name="tabPageSystemSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 637</value>
   </data>
-  <data name="tabPageSystemModification.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tabPageSystemSet.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabPageSystemModification.Text" xml:space="preserve">
-    <value>系统修改</value>
+  <data name="tabPageSystemSet.Text" xml:space="preserve">
+    <value>系统设置</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemModification.Name" xml:space="preserve">
-    <value>tabPageSystemModification</value>
+  <data name="&gt;&gt;tabPageSystemSet.Name" xml:space="preserve">
+    <value>tabPageSystemSet</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemModification.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemSet.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemModification.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemSet.Parent" xml:space="preserve">
     <value>tabControlSystemTool</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemModification.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemSet.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;checkBox_NoSetTaskbar.Name" xml:space="preserve">
-    <value>checkBox_NoSetTaskbar</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetTaskbar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetTaskbar.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetTaskbar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoWindowsUpdate.Name" xml:space="preserve">
-    <value>checkBox_NoWindowsUpdate</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoWindowsUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoWindowsUpdate.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoWindowsUpdate.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetActiveDesktop.Name" xml:space="preserve">
-    <value>checkBox_NoSetActiveDesktop</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetActiveDesktop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetActiveDesktop.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetActiveDesktop.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoPrinterTabs.Name" xml:space="preserve">
-    <value>checkBox_NoPrinterTabs</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoPrinterTabs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoPrinterTabs.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoPrinterTabs.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDeletePrinter.Name" xml:space="preserve">
-    <value>checkBox_NoDeletePrinter</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDeletePrinter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDeletePrinter.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDeletePrinter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowRegPoliciesExplorer.Name" xml:space="preserve">
-    <value>checkBox_ShowRegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowRegPoliciesExplorer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowRegPoliciesExplorer.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowRegPoliciesExplorer.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoAddPrinter.Name" xml:space="preserve">
-    <value>checkBox_NoAddPrinter</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoAddPrinter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoAddPrinter.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoAddPrinter.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoTrayContextMenu.Name" xml:space="preserve">
-    <value>checkBox_NoTrayContextMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoTrayContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoTrayContextMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoTrayContextMenu.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoViewContextMenu.Name" xml:space="preserve">
-    <value>checkBox_NoViewContextMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoViewContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoViewContextMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoViewContextMenu.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoChangeStartMenu.Name" xml:space="preserve">
-    <value>checkBox_NoChangeStartMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoChangeStartMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoChangeStartMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoChangeStartMenu.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoActiveDesktop.Name" xml:space="preserve">
-    <value>checkBox_NoActiveDesktop</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoActiveDesktop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoActiveDesktop.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoActiveDesktop.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFileMenu.Name" xml:space="preserve">
-    <value>checkBox_NoFileMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFileMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFileMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFileMenu.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSaveSettings.Name" xml:space="preserve">
-    <value>checkBox_NoSaveSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSaveSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSaveSettings.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSaveSettings.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoNetHood.Name" xml:space="preserve">
-    <value>checkBox_NoNetHood</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoNetHood.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoNetHood.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoNetHood.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoInternetIcon.Name" xml:space="preserve">
-    <value>checkBox_NoInternetIcon</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoInternetIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoInternetIcon.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoInternetIcon.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsHistory.Name" xml:space="preserve">
-    <value>checkBox_NoRecentDocsHistory</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsHistory.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsHistory.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ClearRecentDocsonExit.Name" xml:space="preserve">
-    <value>checkBox_ClearRecentDocsonExit</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ClearRecentDocsonExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ClearRecentDocsonExit.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ClearRecentDocsonExit.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoStartBanner.Name" xml:space="preserve">
-    <value>checkBox_NoStartBanner</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoStartBanner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoStartBanner.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoStartBanner.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;checkBox_EditLevel.Name" xml:space="preserve">
-    <value>checkBox_EditLevel</value>
-  </data>
-  <data name="&gt;&gt;checkBox_EditLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_EditLevel.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_EditLevel.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsMenu.Name" xml:space="preserve">
-    <value>checkBox_NoRecentDocsMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRecentDocsMenu.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFavoritesMenu.Name" xml:space="preserve">
-    <value>checkBox_NoFavoritesMenu</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFavoritesMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFavoritesMenu.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoFavoritesMenu.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetFolders.Name" xml:space="preserve">
-    <value>checkBox_NoSetFolders</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetFolders.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoSetFolders.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Nofind.Name" xml:space="preserve">
-    <value>checkBox_Nofind</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Nofind.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Nofind.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Nofind.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;checkBox8.Name" xml:space="preserve">
-    <value>checkBox8</value>
-  </data>
-  <data name="&gt;&gt;checkBox8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox8.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox8.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRun.Name" xml:space="preserve">
-    <value>checkBox_NoRun</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRun.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoRun.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NofolderOptions.Name" xml:space="preserve">
-    <value>checkBox_NofolderOptions</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NofolderOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NofolderOptions.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NofolderOptions.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoLogOff.Name" xml:space="preserve">
-    <value>checkBox_NoLogOff</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoLogOff.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoLogOff.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoLogOff.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDriveTypeAutoRun.Name" xml:space="preserve">
-    <value>checkBox_NoDriveTypeAutoRun</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDriveTypeAutoRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDriveTypeAutoRun.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDriveTypeAutoRun.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDesktop.Name" xml:space="preserve">
-    <value>checkBox_NoDesktop</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDesktop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDesktop.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoDesktop.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoControlPanel.Name" xml:space="preserve">
-    <value>checkBox_NoControlPanel</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoControlPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoControlPanel.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoControlPanel.ZOrder" xml:space="preserve">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;button_RegPoliciesExplorer_Set.Name" xml:space="preserve">
-    <value>button_RegPoliciesExplorer_Set</value>
-  </data>
-  <data name="&gt;&gt;button_RegPoliciesExplorer_Set.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_RegPoliciesExplorer_Set.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;button_RegPoliciesExplorer_Set.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoClose.Name" xml:space="preserve">
-    <value>checkBox_NoClose</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoClose.Parent" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_NoClose.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
-  <data name="groupBox_RegPoliciesExplorer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox_RegPoliciesExplorer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 88</value>
-  </data>
-  <data name="groupBox_RegPoliciesExplorer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>762, 885</value>
-  </data>
-  <data name="groupBox_RegPoliciesExplorer.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="groupBox_RegPoliciesExplorer.Text" xml:space="preserve">
-    <value>系统开发者预留功能</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Name" xml:space="preserve">
-    <value>groupBox_RegPoliciesExplorer</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Parent" xml:space="preserve">
-    <value>tabPageSystemModification</value>
-  </data>
-  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tabPageSystemModification.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 13pt, style=Bold</value>
@@ -3953,92 +2560,32 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;checkBox_NoClose.ZOrder" xml:space="preserve">
     <value>33</value>
   </data>
-  <data name="&gt;&gt;checkBox_ShowHardwarePseudoRenaming.Name" xml:space="preserve">
-    <value>checkBox_ShowHardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowHardwarePseudoRenaming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowHardwarePseudoRenaming.Parent" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ShowHardwarePseudoRenaming.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCpuName.Name" xml:space="preserve">
-    <value>comboBoxCpuName</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCpuName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCpuName.Parent" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCpuName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;labelCpuName.Name" xml:space="preserve">
-    <value>labelCpuName</value>
-  </data>
-  <data name="&gt;&gt;labelCpuName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelCpuName.Parent" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;labelCpuName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCpuName.Name" xml:space="preserve">
-    <value>buttonGetCpuName</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCpuName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCpuName.Parent" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;buttonGetCpuName.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonSetCpuName.Name" xml:space="preserve">
-    <value>buttonSetCpuName</value>
-  </data>
-  <data name="&gt;&gt;buttonSetCpuName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSetCpuName.Parent" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
-  </data>
-  <data name="&gt;&gt;buttonSetCpuName.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="groupBox_HardwarePseudoRenaming.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="groupBox_RegPoliciesExplorer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="groupBox_HardwarePseudoRenaming.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="groupBox_RegPoliciesExplorer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 88</value>
   </data>
-  <data name="groupBox_HardwarePseudoRenaming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>762, 85</value>
+  <data name="groupBox_RegPoliciesExplorer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>762, 885</value>
   </data>
-  <data name="groupBox_HardwarePseudoRenaming.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="groupBox_RegPoliciesExplorer.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="groupBox_HardwarePseudoRenaming.Text" xml:space="preserve">
-    <value>硬件伪改名</value>
+  <data name="groupBox_RegPoliciesExplorer.Text" xml:space="preserve">
+    <value>系统开发者预留功能</value>
   </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Name" xml:space="preserve">
-    <value>groupBox_HardwarePseudoRenaming</value>
+  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Name" xml:space="preserve">
+    <value>groupBox_RegPoliciesExplorer</value>
   </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.Parent" xml:space="preserve">
     <value>tabPageSystemModification</value>
   </data>
-  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;groupBox_RegPoliciesExplorer.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="checkBox_ShowHardwarePseudoRenaming.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4187,71 +2734,59 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;buttonSetCpuName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;textBoxProcessOwner.Name" xml:space="preserve">
-    <value>textBoxProcessOwner</value>
+  <data name="groupBox_HardwarePseudoRenaming.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;textBoxProcessOwner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox_HardwarePseudoRenaming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;textBoxProcessOwner.Parent" xml:space="preserve">
-    <value>tabPageSystemFunctionInformation</value>
+  <data name="groupBox_HardwarePseudoRenaming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>762, 85</value>
   </data>
-  <data name="&gt;&gt;textBoxProcessOwner.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="groupBox_HardwarePseudoRenaming.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;labelProcessOwner.Name" xml:space="preserve">
-    <value>labelProcessOwner</value>
+  <data name="groupBox_HardwarePseudoRenaming.Text" xml:space="preserve">
+    <value>硬件伪改名</value>
   </data>
-  <data name="&gt;&gt;labelProcessOwner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Name" xml:space="preserve">
+    <value>groupBox_HardwarePseudoRenaming</value>
   </data>
-  <data name="&gt;&gt;labelProcessOwner.Parent" xml:space="preserve">
-    <value>tabPageSystemFunctionInformation</value>
+  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelProcessOwner.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.Parent" xml:space="preserve">
+    <value>tabPageSystemModification</value>
+  </data>
+  <data name="&gt;&gt;groupBox_HardwarePseudoRenaming.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;button_slmgr_dli.Name" xml:space="preserve">
-    <value>button_slmgr_dli</value>
-  </data>
-  <data name="&gt;&gt;button_slmgr_dli.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_slmgr_dli.Parent" xml:space="preserve">
-    <value>tabPageSystemFunctionInformation</value>
-  </data>
-  <data name="&gt;&gt;button_slmgr_dli.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPageSystemFunctionInformation.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPageSystemModification.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="tabPageSystemFunctionInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="tabPageSystemModification.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPageSystemFunctionInformation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabPageSystemFunctionInformation.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageSystemModification.Size" type="System.Drawing.Size, System.Drawing">
     <value>789, 641</value>
   </data>
-  <data name="tabPageSystemFunctionInformation.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tabPageSystemModification.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabPageSystemFunctionInformation.Text" xml:space="preserve">
-    <value>系统信息</value>
+  <data name="tabPageSystemModification.Text" xml:space="preserve">
+    <value>系统修改</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Name" xml:space="preserve">
-    <value>tabPageSystemFunctionInformation</value>
+  <data name="&gt;&gt;tabPageSystemModification.Name" xml:space="preserve">
+    <value>tabPageSystemModification</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemModification.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemModification.Parent" xml:space="preserve">
     <value>tabControlSystemTool</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemFunctionInformation.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabPageSystemModification.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="textBoxProcessOwner.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 60</value>
@@ -4331,134 +2866,38 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;button_slmgr_dli.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;checkBox_CMDReLoad.Name" xml:space="preserve">
-    <value>checkBox_CMDReLoad</value>
-  </data>
-  <data name="&gt;&gt;checkBox_CMDReLoad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_CMDReLoad.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;checkBox_CMDReLoad.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonStartRegedit.Name" xml:space="preserve">
-    <value>buttonStartRegedit</value>
-  </data>
-  <data name="&gt;&gt;buttonStartRegedit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartRegedit.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartRegedit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;buttonStartExplorer.Name" xml:space="preserve">
-    <value>buttonStartExplorer</value>
-  </data>
-  <data name="&gt;&gt;buttonStartExplorer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartExplorer.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartExplorer.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonStartTaskManager.Name" xml:space="preserve">
-    <value>buttonStartTaskManager</value>
-  </data>
-  <data name="&gt;&gt;buttonStartTaskManager.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartTaskManager.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartTaskManager.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonStartConsoleHostProcess.Name" xml:space="preserve">
-    <value>buttonStartConsoleHostProcess</value>
-  </data>
-  <data name="&gt;&gt;buttonStartConsoleHostProcess.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartConsoleHostProcess.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartConsoleHostProcess.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonStartWindowsPowerShell.Name" xml:space="preserve">
-    <value>buttonStartWindowsPowerShell</value>
-  </data>
-  <data name="&gt;&gt;buttonStartWindowsPowerShell.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartWindowsPowerShell.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartWindowsPowerShell.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;buttonStartCmd.Name" xml:space="preserve">
-    <value>buttonStartCmd</value>
-  </data>
-  <data name="&gt;&gt;buttonStartCmd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonStartCmd.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;buttonStartCmd.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tabPageSystemProgramOnSystem.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPageSystemFunctionInformation.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageSystemFunctionInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPageSystemFunctionInformation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPageSystemFunctionInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>789, 641</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="tabPageSystemFunctionInformation.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="tabPageSystemProgramOnSystem.Text" xml:space="preserve">
-    <value>系统程序（用系统级权限运行）</value>
+  <data name="tabPageSystemFunctionInformation.Text" xml:space="preserve">
+    <value>系统信息</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Name" xml:space="preserve">
-    <value>tabPageSystemProgramOnSystem</value>
+  <data name="&gt;&gt;tabPageSystemFunctionInformation.Name" xml:space="preserve">
+    <value>tabPageSystemFunctionInformation</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemFunctionInformation.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPageSystemFunctionInformation.Parent" xml:space="preserve">
     <value>tabControlSystemTool</value>
   </data>
-  <data name="&gt;&gt;tabPageSystemProgramOnSystem.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;tabPageSystemFunctionInformation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="checkBox_CMDReLoad.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4732,6 +3171,36 @@ https://unlock-music.lmb520.cn/</value>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="tabPageSystemProgramOnSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 641</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageSystemProgramOnSystem.Text" xml:space="preserve">
+    <value>系统程序（用系统级权限运行）</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Name" xml:space="preserve">
+    <value>tabPageSystemProgramOnSystem</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemProgramOnSystem.Parent" xml:space="preserve">
+    <value>tabControlSystemTool</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemProgramOnSystem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tabPageCmdCommands.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
@@ -4761,6 +3230,57 @@ https://unlock-music.lmb520.cn/</value>
   </data>
   <data name="&gt;&gt;tabPageCmdCommands.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="tabControlSystemTool.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControlSystemTool.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControlSystemTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>797, 674</value>
+  </data>
+  <data name="tabControlSystemTool.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabControlSystemTool.Name" xml:space="preserve">
+    <value>tabControlSystemTool</value>
+  </data>
+  <data name="&gt;&gt;tabControlSystemTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlSystemTool.Parent" xml:space="preserve">
+    <value>tabPageSystemTool</value>
+  </data>
+  <data name="&gt;&gt;tabControlSystemTool.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageSystemTool.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageSystemTool.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageSystemTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 680</value>
+  </data>
+  <data name="tabPageSystemTool.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageSystemTool.Text" xml:space="preserve">
+    <value>系统工具</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemTool.Name" xml:space="preserve">
+    <value>tabPageSystemTool</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemTool.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageSystemTool.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="button_SoftwareFunctionPage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -4793,6 +3313,415 @@ https://unlock-music.lmb520.cn/</value>
     <value>tabPageProgramConfigurationTool</value>
   </data>
   <data name="&gt;&gt;button_SoftwareFunctionPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 680</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPageProgramConfigurationTool.Text" xml:space="preserve">
+    <value>软件工具</value>
+  </data>
+  <data name="&gt;&gt;tabPageProgramConfigurationTool.Name" xml:space="preserve">
+    <value>tabPageProgramConfigurationTool</value>
+  </data>
+  <data name="&gt;&gt;tabPageProgramConfigurationTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageProgramConfigurationTool.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageProgramConfigurationTool.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 296</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Unlock-Music</value>
+  </data>
+  <data name="button3.ToolTip" xml:space="preserve">
+    <value>一个运行在本地的网页工具
+用于移除已购音乐的加密保护
+https://unlock-music.lmb520.cn/</value>
+  </data>
+  <data name="button3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_PaywallBuster.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="button_PaywallBuster.Location" type="System.Drawing.Point, System.Drawing">
+    <value>337, 217</value>
+  </data>
+  <data name="button_PaywallBuster.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="button_PaywallBuster.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button_PaywallBuster.Text" xml:space="preserve">
+    <value>Paywall Buster</value>
+  </data>
+  <data name="button_PaywallBuster.ToolTip" xml:space="preserve">
+    <value>一个运行在本地的网页工具
+用于移除网页付费墙
+https://paywallbuster.me/</value>
+  </data>
+  <data name="&gt;&gt;button_PaywallBuster.Name" xml:space="preserve">
+    <value>button_PaywallBuster</value>
+  </data>
+  <data name="&gt;&gt;button_PaywallBuster.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_PaywallBuster.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button_PaywallBuster.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonUnlockMusic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="buttonUnlockMusic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 138</value>
+  </data>
+  <data name="buttonUnlockMusic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="buttonUnlockMusic.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonUnlockMusic.Text" xml:space="preserve">
+    <value>Unlock-Music</value>
+  </data>
+  <data name="buttonUnlockMusic.ToolTip" xml:space="preserve">
+    <value>一个运行在本地的网页工具
+用于移除已购音乐的加密保护
+https://unlock-music.lmb520.cn/</value>
+  </data>
+  <data name="&gt;&gt;buttonUnlockMusic.Name" xml:space="preserve">
+    <value>buttonUnlockMusic</value>
+  </data>
+  <data name="&gt;&gt;buttonUnlockMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonUnlockMusic.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;buttonUnlockMusic.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 375</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>650, 152</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.Text" xml:space="preserve">
+    <value>齐的工具包3 衍生
+迫害系统娱乐程序</value>
+  </data>
+  <data name="button_QisToolkit3_PersecutionSystem.ToolTip" xml:space="preserve">
+    <value>打开yt-dlp工具辅助面板</value>
+  </data>
+  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Name" xml:space="preserve">
+    <value>button_QisToolkit3_PersecutionSystem</value>
+  </data>
+  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button_QisToolkit3_PersecutionSystem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 575</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>797, 102</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>按钮黑着代表功能不可用，例如基础版就不附带IDM激活工具、yt-dlp工具、FFmpeg工具、Geek工具。若您想要用这些第三方工具，可以手动下载并放到对应位置，或索性重新下载完整版。
+部分工具完整版也不会自带，需要先前往扩展管理下载后才可用，如Mas激活工具
+（扩展管理位于 软件设置→首选项→扩展管理）</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonMAS.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonMAS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="buttonMAS.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="buttonMAS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 6</value>
+  </data>
+  <data name="buttonMAS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 126</value>
+  </data>
+  <data name="buttonMAS.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonMAS.Text" xml:space="preserve">
+    <value>MAS 激活工具</value>
+  </data>
+  <data name="buttonMAS.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="buttonMAS.ToolTip" xml:space="preserve">
+    <value>启动第三方工具 IDM激活工具
+在齐的工具包内启动比直接启动更快</value>
+  </data>
+  <data name="&gt;&gt;buttonMAS.Name" xml:space="preserve">
+    <value>buttonMAS</value>
+  </data>
+  <data name="&gt;&gt;buttonMAS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMAS.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;buttonMAS.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_FFmpeg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="button_FFmpeg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 217</value>
+  </data>
+  <data name="button_FFmpeg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="button_FFmpeg.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_FFmpeg.Text" xml:space="preserve">
+    <value>FFmpeg 工具</value>
+  </data>
+  <data name="button_FFmpeg.ToolTip" xml:space="preserve">
+    <value>使用系统级权限运行Geek
+专治权限不够的顽固软件</value>
+  </data>
+  <data name="&gt;&gt;button_FFmpeg.Name" xml:space="preserve">
+    <value>button_FFmpeg</value>
+  </data>
+  <data name="&gt;&gt;button_FFmpeg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_FFmpeg.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button_FFmpeg.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonGeek.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="buttonGeek.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 296</value>
+  </data>
+  <data name="buttonGeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="buttonGeek.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonGeek.Text" xml:space="preserve">
+    <value>Geek 工具</value>
+  </data>
+  <data name="buttonGeek.ToolTip" xml:space="preserve">
+    <value>使用系统级权限运行Geek
+专治权限不够的顽固软件</value>
+  </data>
+  <data name="&gt;&gt;buttonGeek.Name" xml:space="preserve">
+    <value>buttonGeek</value>
+  </data>
+  <data name="&gt;&gt;buttonGeek.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGeek.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;buttonGeek.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonYtDlp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 22pt</value>
+  </data>
+  <data name="buttonYtDlp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 138</value>
+  </data>
+  <data name="buttonYtDlp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 73</value>
+  </data>
+  <data name="buttonYtDlp.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonYtDlp.Text" xml:space="preserve">
+    <value>yt-dlp 工具</value>
+  </data>
+  <data name="buttonYtDlp.ToolTip" xml:space="preserve">
+    <value>打开yt-dlp工具辅助面板</value>
+  </data>
+  <data name="&gt;&gt;buttonYtDlp.Name" xml:space="preserve">
+    <value>buttonYtDlp</value>
+  </data>
+  <data name="&gt;&gt;buttonYtDlp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonYtDlp.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;buttonYtDlp.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonIDM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="buttonIDM.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="buttonIDM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="buttonIDM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 126</value>
+  </data>
+  <data name="buttonIDM.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonIDM.Text" xml:space="preserve">
+    <value>IDM 激活工具</value>
+  </data>
+  <data name="buttonIDM.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="buttonIDM.ToolTip" xml:space="preserve">
+    <value>启动第三方工具 IDM激活工具
+在齐的工具包内启动比直接启动更快</value>
+  </data>
+  <data name="&gt;&gt;buttonIDM.Name" xml:space="preserve">
+    <value>buttonIDM</value>
+  </data>
+  <data name="&gt;&gt;buttonIDM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonIDM.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;buttonIDM.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 680</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>第三方工具 与 特殊工具</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.8pt</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>811, 717</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -145,6 +145,7 @@
             buttonYtDlp = new Button();
             buttonIDM = new Button();
             toolTip = new ToolTip(components);
+            buttonTaskManager = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -264,6 +265,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(buttonTaskManager);
             tabPage2.Controls.Add(buttonAdvancedRenamer);
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(button_ScanRogueSoftwareTool);
@@ -1079,6 +1081,14 @@
             buttonIDM.UseVisualStyleBackColor = true;
             buttonIDM.Click += buttonIDM_Click;
             // 
+            // buttonTaskManager
+            // 
+            buttonTaskManager.BackColor = Color.Gainsboro;
+            resources.ApplyResources(buttonTaskManager, "buttonTaskManager");
+            buttonTaskManager.Name = "buttonTaskManager";
+            buttonTaskManager.UseVisualStyleBackColor = false;
+            buttonTaskManager.Click += buttonTaskManager_Click;
+            // 
             // Tools
             // 
             resources.ApplyResources(this, "$this");
@@ -1236,5 +1246,6 @@
         private Button buttonCommonFunctionalTools;
         private Button buttonShellFolderSetPathTool;
         private Label label6;
+        private Button buttonTaskManager;
     }
 }

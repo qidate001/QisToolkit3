@@ -82,16 +82,6 @@ namespace QisToolkit3.Forms
 
         }
 
-        private void buttonAddItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool AddListItem(string name, string data)
-        {
-            return true;
-        }
-
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool enabled = listBox.SelectedItem != null;

@@ -503,5 +503,10 @@ namespace QisToolkit3.Forms
         {
             OpenBrowser("https://paywallbuster.me/");
         }
+
+        private void buttonTaskManager_Click(object sender, EventArgs e)
+        {
+            new TaskManager().Show();
+        }
     }
 }
