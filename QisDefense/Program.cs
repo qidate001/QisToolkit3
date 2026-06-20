@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32.SafeHandles;
+﻿using Microsoft.Win32;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -116,27 +117,28 @@ namespace QisDefense
                 // 如果不是系统权限，尝试提升
                 if (!_isSystem)
                 {
-                    DialogResult result = MessageBox.Show(
-                        "当前不是 SYSTEM 权限，无法提供完整保护！\n\n" +
-                        "是否使用齐的工具包3自动提权？",
-                        "权限不足",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
+                    TryElevatePrivilege();
+                    //DialogResult result = MessageBox.Show(
+                    //    "当前不是 SYSTEM 权限，无法提供完整保护！\n\n" +
+                    //    "是否使用齐的工具包3自动提权？",
+                    //    "权限不足",
+                    //    MessageBoxButtons.YesNo,
+                    //    MessageBoxIcon.Question);
 
-                    if (result == DialogResult.Yes)
-                    {
-                        TryElevatePrivilege();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            "未获得 SYSTEM 权限，防护功能将受限。\n" +
-                            "文件仍会被锁定，但进程被杀不会蓝屏。",
-                            "警告",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                    }
+                    //if (result == DialogResult.Yes)
+                    //{
+                    //    TryElevatePrivilege();
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(
+                    //        "未获得 SYSTEM 权限，防护功能将受限。\n" +
+                    //        "文件仍会被锁定，但进程被杀不会蓝屏。",
+                    //        "警告",
+                    //        MessageBoxButtons.OK,
+                    //        MessageBoxIcon.Warning);
+                    //}
                 }
 
                 // 初始化保护
@@ -145,6 +147,9 @@ namespace QisDefense
                     MessageBox.Show("初始化防护失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                SystemEvents.SessionEnding += OnSessionEnding;
+                SystemEvents.SessionEnded += OnSessionEnded;
 
                 // 设置键盘钩子（用于退出热键）
                 _hookID = SetHook(_proc);
@@ -171,6 +176,25 @@ namespace QisDefense
         {
             // 处理管道命令（如果需要在UI线程处理）
             // 这里可以直接调用 LockFile/UnlockFile 等方法
+        }
+
+        // 关机/注销即将发生时触发
+        private static void OnSessionEnding(object sender, SessionEndingEventArgs e)
+        {
+            // 立即取消关键进程标记，防止蓝屏
+            UnsetCriticalProcess();
+
+            // 快速清理资源
+            Cleanup();
+
+            // 让系统继续关机流程
+        }
+
+        // 关机/注销完成时触发（保险）
+        private static void OnSessionEnded(object sender, SessionEndedEventArgs e)
+        {
+            UnsetCriticalProcess();
+            Cleanup();
         }
 
         #endregion
@@ -498,8 +522,36 @@ namespace QisDefense
             }
         }
 
-        private static void TryElevatePrivilege()
+        private static bool TryElevatePrivilege()
         {
+            string regPath = @"HKEY_CURRENT_USER\Software\QisDefense";
+            string valueName = "ElevateAttemptCount";
+            string resetTimeName = "ElevateAttemptReset";
+
+            // 读取尝试次数
+            int attemptCount = (int)(Registry.GetValue(regPath, valueName, 0) ?? 0);
+            string lastReset = (string)Registry.GetValue(regPath, resetTimeName, "");
+
+            // 检查是否需要重置（每天重置一次）
+            if (DateTime.Now.ToString("yyyy-MM-dd") != lastReset)
+            {
+                attemptCount = 0;
+                Registry.SetValue(regPath, resetTimeName, DateTime.Now.ToString("yyyy-MM-dd"));
+            }
+
+            // 超过3次直接放弃
+            if (attemptCount >= 3)
+            {
+                MessageBox.Show(
+                    $"自动提权已失败 {attemptCount} 次，请手动以 SYSTEM 权限运行。",
+                    "提示",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return false;
+            }
+
+            // 尝试提权
             try
             {
                 string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QisToolkit3.exe");
@@ -507,22 +559,32 @@ namespace QisDefense
 
                 if (!File.Exists(exePath))
                 {
-                    MessageBox.Show(
-                        "未找到齐的工具包3，无法提权。\n\n" +
-                        $"请确保 {exePath} 存在。",
-                        "错误",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("未找到齐的工具包3，无法提权。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
 
-                // 使用齐的工具包以 SYSTEM 权限启动当前程序
                 Process.Start("QisToolkit3.exe", $"-SPL \"{currentExe}\" \"{_protectedFilePath}\"");
+
+                // ✅ 提权成功，重置计数
+                Registry.SetValue(regPath, valueName, 0);
+                Registry.SetValue(regPath, resetTimeName, DateTime.Now.ToString("yyyy-MM-dd"));
+
                 Environment.Exit(0);
+                return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"提权失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // ❌ 提权失败，增加计数
+                attemptCount++;
+                Registry.SetValue(regPath, valueName, attemptCount);
+
+                MessageBox.Show(
+                    $"自动提权失败（第 {attemptCount} 次）",
+                    "错误",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
             }
         }
 
