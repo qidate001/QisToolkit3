@@ -114,9 +114,10 @@ namespace Uninstall_QisToolkit3
                             "System.Security.Cryptography.ProtectedData.dll",
 
                             // 文档
-                            "《问身 问己 问心》游戏介绍.docx",
+                            "《问身 问己 问心》游戏介绍.docx", "YtDlp 介绍.docx",
                             "使用手册.txt", "启动参数说明.txt", "打不开请看此文档.txt",
-                            "文本规则介绍.txt", "更新日志.txt", "更新日志（内部）.txt"
+                            "文本规则介绍.txt", "更新日志.txt", "更新日志（内部）.txt",
+                            "文本规则介绍.md"
                         };
 
                         // 删除文件夹

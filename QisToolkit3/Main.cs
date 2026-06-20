@@ -1,3 +1,4 @@
+using QisToolkit3.Console;
 using QisToolkit3.Forms;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,8 @@ namespace QisToolkit3
                 Log.Info($"小白模式已开启，部分功能已被隐藏。");
                 buttonTextGeneration.Visible = false;
             }
+
+
         }
 
         private void SetDarkMode()

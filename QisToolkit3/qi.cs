@@ -232,6 +232,12 @@ public class Qi
         NSUDO_SHOW_WINDOW_MODE_TYPE nSUDO_SHOW_WINDOW_MODE_TYPE = NSUDO_SHOW_WINDOW_MODE_TYPE.SHOW
     )
     {
+        if (QisToolkit3_Datas.IsRunMinSudo)
+        {
+            RunMinSudo(command);
+            return null;
+        }
+
         return RunNSudo(
             command,
             nSUDO_USER_MODE_TYPE,

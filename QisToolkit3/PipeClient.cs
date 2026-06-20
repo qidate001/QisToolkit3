@@ -11,8 +11,7 @@ namespace QisToolkit3
     {
         private static readonly string _pipeName = "QisDefensePipe";
         private static readonly int _timeoutMs = 5000;
-
-        // 改成静态方法
+        
         public static string SendCommand(string command, int timeoutMs = 5000)
         {
             try
@@ -36,7 +35,6 @@ namespace QisToolkit3
             }
         }
 
-        // 静态便捷方法
         public static bool LockFile(string filePath, int mode)
         {
             string response = SendCommand($"LOCK|{filePath}|{mode}");
