@@ -112,7 +112,7 @@ public class Qi
         string commandLine,
         MinSudoLevel level = MinSudoLevel.TrustedInstaller,
         bool privileged = true,
-        string workingDirectory = @"C:\"
+        string workingDirectory = "_"
     )
     {
         // 如果是 TrustedInstaller，先确保服务运行
@@ -120,6 +120,8 @@ public class Qi
         {
             EnsureTrustedInstallerRunning();
         }
+
+        if (workingDirectory == "_") workingDirectory = QisToolkit3_Datas.actualDirectory;
 
         uint exitCode;
         string exitMessage;
@@ -194,7 +196,7 @@ public class Qi
     {
         if (QisToolkit3_Datas.IsRunMinSudo)
         {
-            await RunMinSudo(command);
+            await RunMinSudo(command, MinSudoLevel.Standard, false);
             return null;
         }
 

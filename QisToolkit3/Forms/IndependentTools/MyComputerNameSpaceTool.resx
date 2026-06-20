@@ -117,409 +117,406 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 20</value>
-  </data>
-  <data name="&gt;&gt;buttonAddItem.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 9pt</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comboBoxData.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 60</value>
-  </data>
-  <data name="&gt;&gt;comboBoxData.Name" xml:space="preserve">
-    <value>comboBoxData</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button_TryRepairFolder.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="&gt;&gt;listBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxName.Items3" xml:space="preserve">
-    <value>{3DFDF296-DBEC-4FB4-81D1-6A3438BCF4DE}</value>
-  </data>
-  <data name="buttonDeleteItem.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="listBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 807</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;button_ReLoad.Name" xml:space="preserve">
-    <value>button_ReLoad</value>
-  </data>
-  <data name="comboBoxName.Items2" xml:space="preserve">
-    <value>{24AD3AD4-A569-4530-98E1-AB02F9417AA8}</value>
-  </data>
-  <data name="button_TryRepairFolder.Text" xml:space="preserve">
-    <value>尝试修复此电脑Shell文件夹快速访问</value>
-  </data>
-  <data name="comboBoxData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 35</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="comboBoxType.Items" xml:space="preserve">
-    <value>CurrentUser</value>
-  </data>
-  <data name="&gt;&gt;buttonDeleteItem.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MyComputerNameSpaceTool</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button_ReLoad.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="comboBoxType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 24pt</value>
-  </data>
-  <data name="buttonAddItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 24pt</value>
-  </data>
-  <data name="button_ReLoad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="buttonDeleteItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button_TryRepairFolder.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;button_ReLoad.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxName.Name" xml:space="preserve">
-    <value>comboBoxName</value>
-  </data>
-  <data name="&gt;&gt;button_TryRepairFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button_TryRepairFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 47</value>
-  </data>
-  <data name="comboBoxName.Items5" xml:space="preserve">
-    <value>{D3162B92-9365-467A-956B-92703ACA08AF}</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1081, 807</value>
-  </data>
-  <data name="&gt;&gt;listBox.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="buttonDeleteItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 24pt</value>
-  </data>
-  <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="listBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="listBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
-  <data name="&gt;&gt;button_TryRepairFolder.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+  <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;comboBoxType.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+  <data name="listBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 807</value>
+  </data>
+  <data name="listBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;listBox.Name" xml:space="preserve">
     <value>listBox</value>
   </data>
-  <data name="&gt;&gt;comboBoxType.Name" xml:space="preserve">
-    <value>comboBoxType</value>
+  <data name="&gt;&gt;listBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonDeleteItem.Text" xml:space="preserve">
-    <value>删除选择项</value>
+  <data name="&gt;&gt;listBox.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
   </data>
-  <data name="button_TryRepairFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 653</value>
+  <data name="&gt;&gt;listBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonAddItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;comboBoxType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_TryRepairFolder.Name" xml:space="preserve">
-    <value>button_TryRepairFolder</value>
-  </data>
-  <data name="comboBoxData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="listBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="comboBoxName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="comboBoxName.Items1" xml:space="preserve">
-    <value>{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
     <value>splitContainer1</value>
   </data>
-  <data name="buttonDeleteItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_TryRepairFolder.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="button_TryRepairFolder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="button_TryRepairFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 653</value>
+  </data>
+  <data name="button_TryRepairFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 47</value>
+  </data>
+  <data name="button_TryRepairFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="button_TryRepairFolder.Text" xml:space="preserve">
+    <value>尝试修复此电脑Shell文件夹快速访问</value>
+  </data>
+  <data name="&gt;&gt;button_TryRepairFolder.Name" xml:space="preserve">
+    <value>button_TryRepairFolder</value>
+  </data>
+  <data name="&gt;&gt;button_TryRepairFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_TryRepairFolder.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;button_TryRepairFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBoxType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="comboBoxType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24pt</value>
+  </data>
+  <data name="comboBoxType.Items" xml:space="preserve">
+    <value>CurrentUser</value>
+  </data>
+  <data name="comboBoxType.Items1" xml:space="preserve">
+    <value>LocalMachine</value>
+  </data>
+  <data name="comboBoxType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 700</value>
+  </data>
+  <data name="comboBoxType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 60</value>
+  </data>
+  <data name="comboBoxType.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;comboBoxType.Name" xml:space="preserve">
+    <value>comboBoxType</value>
+  </data>
+  <data name="&gt;&gt;comboBoxType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxType.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_ReLoad.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="button_ReLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="button_ReLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 760</value>
+  </data>
+  <data name="button_ReLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 47</value>
+  </data>
+  <data name="button_ReLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="button_ReLoad.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="&gt;&gt;button_ReLoad.Name" xml:space="preserve">
+    <value>button_ReLoad</value>
+  </data>
+  <data name="&gt;&gt;button_ReLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ReLoad.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;button_ReLoad.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 250</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 20</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>在上方输入对应值↑↑↑  例：百度网盘</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="comboBoxData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="comboBoxData.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="comboBoxData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 215</value>
+  </data>
+  <data name="comboBoxData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 35</value>
+  </data>
+  <data name="comboBoxData.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;comboBoxData.Name" xml:space="preserve">
+    <value>comboBoxData</value>
+  </data>
+  <data name="&gt;&gt;comboBoxData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxData.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="&gt;&gt;button_TryRepairFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonAddItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 80</value>
-  </data>
-  <data name="comboBoxName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="&gt;&gt;comboBoxName.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="comboBoxName.Items6" xml:space="preserve">
-    <value>{F86FA3AB-70D2-4FC7-9C99-FCBF05467F3A}</value>
-  </data>
-  <data name="buttonDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 80</value>
-  </data>
-  <data name="listBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="comboBoxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 160</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxData.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="comboBoxName.Items4" xml:space="preserve">
-    <value>{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}</value>
-  </data>
-  <data name="comboBoxName.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;listBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="comboBoxData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 215</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>此电脑命名空间工具</value>
-  </data>
-  <data name="button_ReLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 760</value>
-  </data>
-  <data name="comboBoxType.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxData.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 195</value>
-  </data>
-  <data name="&gt;&gt;buttonDeleteItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="comboBoxType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 700</value>
-  </data>
-  <data name="&gt;&gt;buttonDeleteItem.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="button_TryRepairFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="comboBoxName.Items" xml:space="preserve">
-    <value>{088E3905-0323-4B02-9826-5D99428E115F}</value>
-  </data>
-  <data name="&gt;&gt;comboBoxType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="buttonAddItem.Text" xml:space="preserve">
-    <value>添加至列表</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 250</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button_ReLoad.Text" xml:space="preserve">
-    <value>刷新</value>
-  </data>
-  <data name="buttonDeleteItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;buttonDeleteItem.Name" xml:space="preserve">
-    <value>buttonDeleteItem</value>
-  </data>
-  <data name="listBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="button_ReLoad.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonAddItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="&gt;&gt;comboBoxName.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="button_ReLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 47</value>
-  </data>
-  <data name="buttonAddItem.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonAddItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="comboBoxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>578, 35</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>在上方输入GUID↑↑↑  格式：{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}</value>
-  </data>
-  <data name="&gt;&gt;buttonAddItem.Name" xml:space="preserve">
-    <value>buttonAddItem</value>
-  </data>
-  <data name="&gt;&gt;button_ReLoad.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="comboBoxType.Items1" xml:space="preserve">
-    <value>LocalMachine</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>499</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 20</value>
   </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1081, 807</value>
-  </data>
-  <data name="comboBoxData.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="&gt;&gt;buttonAddItem.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="label2.Text" xml:space="preserve">
+    <value>在上方输入GUID↑↑↑  格式：{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="comboBoxType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBoxName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="comboBoxName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="comboBoxName.Items" xml:space="preserve">
+    <value>{088E3905-0323-4B02-9826-5D99428E115F}</value>
+  </data>
+  <data name="comboBoxName.Items1" xml:space="preserve">
+    <value>{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}</value>
+  </data>
+  <data name="comboBoxName.Items2" xml:space="preserve">
+    <value>{24AD3AD4-A569-4530-98E1-AB02F9417AA8}</value>
+  </data>
+  <data name="comboBoxName.Items3" xml:space="preserve">
+    <value>{3DFDF296-DBEC-4FB4-81D1-6A3438BCF4DE}</value>
+  </data>
+  <data name="comboBoxName.Items4" xml:space="preserve">
+    <value>{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}</value>
+  </data>
+  <data name="comboBoxName.Items5" xml:space="preserve">
+    <value>{D3162B92-9365-467A-956B-92703ACA08AF}</value>
+  </data>
+  <data name="comboBoxName.Items6" xml:space="preserve">
+    <value>{F86FA3AB-70D2-4FC7-9C99-FCBF05467F3A}</value>
+  </data>
+  <data name="comboBoxName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 160</value>
+  </data>
+  <data name="comboBoxName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 35</value>
+  </data>
+  <data name="comboBoxName.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;comboBoxName.Name" xml:space="preserve">
+    <value>comboBoxName</value>
+  </data>
+  <data name="&gt;&gt;comboBoxName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxName.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonAddItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="buttonAddItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>在上方输入对应值↑↑↑  例：百度网盘</value>
+  <data name="buttonAddItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 24pt</value>
   </data>
-  <data name="&gt;&gt;button_ReLoad.Type" xml:space="preserve">
+  <data name="buttonAddItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="buttonAddItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 80</value>
+  </data>
+  <data name="buttonAddItem.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonAddItem.Text" xml:space="preserve">
+    <value>添加至列表</value>
+  </data>
+  <data name="&gt;&gt;buttonAddItem.Name" xml:space="preserve">
+    <value>buttonAddItem</value>
+  </data>
+  <data name="&gt;&gt;buttonAddItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>en</value>
-  </metadata>
+  <data name="&gt;&gt;buttonAddItem.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonAddItem.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonDeleteItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonDeleteItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonDeleteItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 24pt</value>
+  </data>
+  <data name="buttonDeleteItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 80</value>
+  </data>
+  <data name="buttonDeleteItem.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonDeleteItem.Text" xml:space="preserve">
+    <value>删除选择项</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteItem.Name" xml:space="preserve">
+    <value>buttonDeleteItem</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteItem.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteItem.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1081, 807</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>499</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1081, 807</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>此电脑命名空间工具</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MyComputerNameSpaceTool</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

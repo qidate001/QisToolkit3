@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Qi;
 
 namespace QisToolkit3
 {
@@ -51,6 +53,32 @@ namespace QisToolkit3
             }
         }
 
+        /// <summary>
+        /// 检查齐之防御服务是否运行并提示启动
+        /// </summary>
+        public static bool CheckServiceRunning()
+        {
+            if (!IsServiceRunning())
+            {
+                DialogResult result = MessageBox.Show(
+                    "齐之防御未运行，无法执行操作。\n是否启动服务？",
+                    "服务未运行",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start(Path.Combine(QisToolkit3_Datas.actualDirectory, "QisDefense.exe"));
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static bool LockFile(string filePath, int mode)
         {
             string response = SendCommand($"LOCK|{filePath}|{mode}");
@@ -84,6 +112,18 @@ namespace QisToolkit3
         public static bool IsCriticalProcess(int processId)
         {
             string response = SendCommand($"CHECK_CRITICAL|{processId}");
+            return response.StartsWith("OK|true");
+        }
+
+        public static bool KillProcess(int processId)
+        {
+            string response = SendCommand($"KILL_PROCESS|{processId}");
+            return response.StartsWith("OK|true");
+        }
+
+        public static bool JobKillProcess(int processId)
+        {
+            string response = SendCommand($"JOB_KILL_PROCESS|{processId}");
             return response.StartsWith("OK|true");
         }
     }

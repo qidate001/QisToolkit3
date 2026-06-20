@@ -462,6 +462,8 @@ namespace QisToolkit3
                     return new WeChatFunction();
                 case "CommonFunctionalTools":
                     return new CommonFunctionalTools();
+                case "TaskManager":
+                    return new TaskManager();
                 case "SystemPermissionLauncher":
                 case "spl":
                     return new SystemPermissionLauncher();

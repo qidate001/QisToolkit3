@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace QisDefense
 {
@@ -102,6 +103,63 @@ namespace QisDefense
             catch
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 检查进程是否为关键进程
+        /// </summary>
+        public static bool KillProcess(int processId)
+        {
+            try
+            {
+                using (var process = Process.GetProcessById(processId))
+                {
+                    process.Kill();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 把整个进程树（含保护进程）拉进 Job 然后全杀
+        /// </summary>
+        public static bool KillProcessTree(int rootPid)
+        {
+            try
+            {
+                using (var killer = new JobKiller())
+                {
+                    // 先加父进程
+                    killer.AddProcess(rootPid);
+
+                    // 递归加所有子进程（用上面任意一种实现）
+                    foreach (int childPid in ProcessTreeHelper.FindChildProcessIds(rootPid))
+                    {
+                        AddProcessTree(childPid, killer);
+                    }
+
+                } // using 结束 -> 全部清理
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static void AddProcessTree(int pid, JobKiller killer)
+        {
+            killer.AddProcess(pid);
+
+            // 查找子进程（TrustedInstaller 能看到所有进程）
+            foreach (var child in ProcessTreeHelper.FindChildProcessIds(pid))
+            {
+                AddProcessTree(child, killer);
             }
         }
     }

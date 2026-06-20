@@ -158,6 +158,24 @@ namespace QisDefense
                         }
                         return "ERROR|参数错误: CHECK_CRITICAL|进程ID";
 
+                    // 杀死进程
+                    case "KILL_PROCESS":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pid4))
+                        {
+                            bool result = ProcessHelper.KillProcess(pid4);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: KILL_PROCESS|进程ID";
+
+                    // 杀死进程数（JobKiller）
+                    case "JOB_KILL_PROCESS":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pid5))
+                        {
+                            bool result = ProcessHelper.KillProcessTree(pid5);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: JOB_KILL_PROCESS|进程ID";
+
                     default:
                         return $"ERROR|未知命令: {command}";
                 }

@@ -53,12 +53,10 @@
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(splitContainer1.Panel1, "splitContainer1.Panel1");
             splitContainer1.Panel1.Controls.Add(listBox);
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(splitContainer1.Panel2, "splitContainer1.Panel2");
             splitContainer1.Panel2.Controls.Add(button_TryRepairFolder);
             splitContainer1.Panel2.Controls.Add(comboBoxType);
             splitContainer1.Panel2.Controls.Add(button_ReLoad);
@@ -75,14 +73,14 @@
             listBox.FormattingEnabled = true;
             listBox.Name = "listBox";
             listBox.SelectionMode = SelectionMode.MultiExtended;
-            listBox.SelectedIndexChanged += listBox_SelectedIndexChanged;
+            listBox.SelectedIndexChanged += this.listBox_SelectedIndexChanged;
             // 
             // button_TryRepairFolder
             // 
             resources.ApplyResources(button_TryRepairFolder, "button_TryRepairFolder");
             button_TryRepairFolder.Name = "button_TryRepairFolder";
             button_TryRepairFolder.UseVisualStyleBackColor = true;
-            button_TryRepairFolder.Click += button_TryRepairFolder_Click;
+            button_TryRepairFolder.Click += this.button_TryRepairFolder_Click;
             // 
             // comboBoxType
             // 
@@ -91,14 +89,14 @@
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { resources.GetString("comboBoxType.Items"), resources.GetString("comboBoxType.Items1") });
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
+            comboBoxType.SelectedIndexChanged += this.comboBoxType_SelectedIndexChanged;
             // 
             // button_ReLoad
             // 
             resources.ApplyResources(button_ReLoad, "button_ReLoad");
             button_ReLoad.Name = "button_ReLoad";
             button_ReLoad.UseVisualStyleBackColor = true;
-            button_ReLoad.Click += MyComputerNameSpaceTool_Load;
+            button_ReLoad.Click += this.MyComputerNameSpaceTool_Load;
             // 
             // label1
             // 
@@ -122,22 +120,22 @@
             comboBoxName.FormattingEnabled = true;
             comboBoxName.Items.AddRange(new object[] { resources.GetString("comboBoxName.Items"), resources.GetString("comboBoxName.Items1"), resources.GetString("comboBoxName.Items2"), resources.GetString("comboBoxName.Items3"), resources.GetString("comboBoxName.Items4"), resources.GetString("comboBoxName.Items5"), resources.GetString("comboBoxName.Items6") });
             comboBoxName.Name = "comboBoxName";
-            comboBoxName.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
-            comboBoxName.TextChanged += comboBoxName_SelectedIndexChanged;
+            comboBoxName.SelectedIndexChanged += this.comboBoxType_SelectedIndexChanged;
+            comboBoxName.TextChanged += this.comboBoxName_SelectedIndexChanged;
             // 
             // buttonAddItem
             // 
             resources.ApplyResources(buttonAddItem, "buttonAddItem");
             buttonAddItem.Name = "buttonAddItem";
             buttonAddItem.UseVisualStyleBackColor = true;
-            buttonAddItem.Click += buttonAddItem_Click;
+            buttonAddItem.Click += this.buttonAddItem_Click;
             // 
             // buttonDeleteItem
             // 
             resources.ApplyResources(buttonDeleteItem, "buttonDeleteItem");
             buttonDeleteItem.Name = "buttonDeleteItem";
             buttonDeleteItem.UseVisualStyleBackColor = true;
-            buttonDeleteItem.Click += buttonDeleteItem_Click;
+            buttonDeleteItem.Click += this.buttonDeleteItem_Click;
             // 
             // MyComputerNameSpaceTool
             // 
@@ -145,7 +143,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(splitContainer1);
             Name = "MyComputerNameSpaceTool";
-            Load += MyComputerNameSpaceTool_Load;
+            Load += this.MyComputerNameSpaceTool_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
