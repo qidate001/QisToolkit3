@@ -35,10 +35,13 @@ namespace QisToolkit3.Forms
             comboBox_RunMode.SelectedIndex = 0;
         }
 
-        private void Run(string name, string arguments = "")
+        private async void Run(string name, string arguments = "")
         {
             if (comboBox_RunMode.SelectedIndex == 0)
-                RunNSudo($"{name}");
+            {
+                // 在后台线程执行 RunNSudo
+                await Task.Run(() => RunNSudo($"{name}"));
+            }
             else if (comboBox_RunMode.SelectedIndex == 1)
             {
                 using (var process = new Process())
@@ -47,14 +50,16 @@ namespace QisToolkit3.Forms
                     {
                         FileName = name,
                         Arguments = arguments,
+                        UseShellExecute = true, // 让系统处理，类似双击文件
                     };
 
                     process.Start();
+                    // 如果需要等待进程结束，用 await process.WaitForExitAsync();
                 }
             }
             else
             {
-                UnRunNSudo($"{name}");
+                await Task.Run(() => UnRunNSudo($"{name}"));
             }
         }
 
