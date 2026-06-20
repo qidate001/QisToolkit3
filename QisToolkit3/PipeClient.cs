@@ -68,5 +68,23 @@ namespace QisToolkit3
             string response = SendCommand($"STATUS|{filePath}");
             return response.StartsWith("LOCKED|true");
         }
+
+        public static bool AddCriticalProcess(int processId)
+        {
+            string response = SendCommand($"ADD_CRITICAL|{processId}");
+            return response.StartsWith("OK|");
+        }
+
+        public static bool RemoveCriticalProcess(int processId)
+        {
+            string response = SendCommand($"REMOVE_CRITICAL|{processId}");
+            return response.StartsWith("OK|");
+        }
+
+        public static bool IsCriticalProcess(int processId)
+        {
+            string response = SendCommand($"CHECK_CRITICAL|{processId}");
+            return response.StartsWith("OK|true");
+        }
     }
 }

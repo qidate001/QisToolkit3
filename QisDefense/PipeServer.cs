@@ -131,6 +131,33 @@ namespace QisDefense
                     case "PING":
                         return "PONG|OK";
 
+                    // 给进程添加关键标记
+                    case "ADD_CRITICAL":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pid))
+                        {
+                            bool result = ProcessHelper.AddCriticalProcess(pid);
+                            return result ? "OK|已添加关键标记" : "ERROR|添加失败";
+                        }
+                        return "ERROR|参数错误: ADD_CRITICAL|进程ID";
+
+                    // 移除进程的关键标记
+                    case "REMOVE_CRITICAL":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pid2))
+                        {
+                            bool result = ProcessHelper.RemoveCriticalProcess(pid2);
+                            return result ? "OK|已移除关键标记" : "ERROR|移除失败";
+                        }
+                        return "ERROR|参数错误: REMOVE_CRITICAL|进程ID";
+
+                    // 检查进程是否为关键进程
+                    case "CHECK_CRITICAL":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pid3))
+                        {
+                            bool result = ProcessHelper.IsCriticalProcess(pid3);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: CHECK_CRITICAL|进程ID";
+
                     default:
                         return $"ERROR|未知命令: {command}";
                 }

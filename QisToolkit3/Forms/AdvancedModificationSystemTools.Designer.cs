@@ -130,28 +130,6 @@
             label8 = new Label();
             checkBox_WinDefender_DisableAntiSpyware = new CheckBox();
             tabPage1 = new TabPage();
-            groupBox2 = new GroupBox();
-            comboBox4 = new ComboBox();
-            label5 = new Label();
-            button4 = new Button();
-            comboBox5 = new ComboBox();
-            label6 = new Label();
-            button5 = new Button();
-            comboBox6 = new ComboBox();
-            label19 = new Label();
-            button6 = new Button();
-            comboBox7 = new ComboBox();
-            label20 = new Label();
-            button7 = new Button();
-            comboBox2 = new ComboBox();
-            label2 = new Label();
-            button2 = new Button();
-            comboBox3 = new ComboBox();
-            label3 = new Label();
-            button3 = new Button();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            button1 = new Button();
             tabPage2 = new TabPage();
             groupBox_WindowsSystemIdentification = new GroupBox();
             comboBox_ProductId = new ComboBox();
@@ -317,8 +295,6 @@
             tabControl1.SuspendLayout();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
-            tabPage1.SuspendLayout();
-            groupBox2.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox_WindowsSystemIdentification.SuspendLayout();
             groupBox_HardwarePseudoRenaming.SuspendLayout();
@@ -1026,163 +1002,9 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(groupBox2);
             resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(comboBox4);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(comboBox5);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(comboBox6);
-            groupBox2.Controls.Add(label19);
-            groupBox2.Controls.Add(button6);
-            groupBox2.Controls.Add(comboBox7);
-            groupBox2.Controls.Add(label20);
-            groupBox2.Controls.Add(button7);
-            groupBox2.Controls.Add(comboBox2);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(comboBox3);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(comboBox1);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Controls.Add(button1);
-            resources.ApplyResources(groupBox2, "groupBox2");
-            groupBox2.Name = "groupBox2";
-            groupBox2.TabStop = false;
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { resources.GetString("comboBox4.Items"), resources.GetString("comboBox4.Items1"), resources.GetString("comboBox4.Items2"), resources.GetString("comboBox4.Items3"), resources.GetString("comboBox4.Items4") });
-            resources.ApplyResources(comboBox4, "comboBox4");
-            comboBox4.Name = "comboBox4";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
-            // 
-            // button4
-            // 
-            resources.ApplyResources(button4, "button4");
-            button4.Name = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { resources.GetString("comboBox5.Items"), resources.GetString("comboBox5.Items1"), resources.GetString("comboBox5.Items2"), resources.GetString("comboBox5.Items3"), resources.GetString("comboBox5.Items4") });
-            resources.ApplyResources(comboBox5, "comboBox5");
-            comboBox5.Name = "comboBox5";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            // 
-            // button5
-            // 
-            resources.ApplyResources(button5, "button5");
-            button5.Name = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { resources.GetString("comboBox6.Items"), resources.GetString("comboBox6.Items1"), resources.GetString("comboBox6.Items2"), resources.GetString("comboBox6.Items3"), resources.GetString("comboBox6.Items4") });
-            resources.ApplyResources(comboBox6, "comboBox6");
-            comboBox6.Name = "comboBox6";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(label19, "label19");
-            label19.Name = "label19";
-            // 
-            // button6
-            // 
-            resources.ApplyResources(button6, "button6");
-            button6.Name = "button6";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Items.AddRange(new object[] { resources.GetString("comboBox7.Items"), resources.GetString("comboBox7.Items1"), resources.GetString("comboBox7.Items2"), resources.GetString("comboBox7.Items3"), resources.GetString("comboBox7.Items4") });
-            resources.ApplyResources(comboBox7, "comboBox7");
-            comboBox7.Name = "comboBox7";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(label20, "label20");
-            label20.Name = "label20";
-            // 
-            // button7
-            // 
-            resources.ApplyResources(button7, "button7");
-            button7.Name = "button7";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { resources.GetString("comboBox2.Items"), resources.GetString("comboBox2.Items1"), resources.GetString("comboBox2.Items2"), resources.GetString("comboBox2.Items3"), resources.GetString("comboBox2.Items4") });
-            resources.ApplyResources(comboBox2, "comboBox2");
-            comboBox2.Name = "comboBox2";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
-            // 
-            // button2
-            // 
-            resources.ApplyResources(button2, "button2");
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { resources.GetString("comboBox3.Items"), resources.GetString("comboBox3.Items1"), resources.GetString("comboBox3.Items2"), resources.GetString("comboBox3.Items3"), resources.GetString("comboBox3.Items4") });
-            resources.ApplyResources(comboBox3, "comboBox3");
-            comboBox3.Name = "comboBox3";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
-            // 
-            // button3
-            // 
-            resources.ApplyResources(button3, "button3");
-            button3.Name = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { resources.GetString("comboBox1.Items"), resources.GetString("comboBox1.Items1"), resources.GetString("comboBox1.Items2"), resources.GetString("comboBox1.Items3"), resources.GetString("comboBox1.Items4") });
-            resources.ApplyResources(comboBox1, "comboBox1");
-            comboBox1.Name = "comboBox1";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(button1, "button1");
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -2400,8 +2222,6 @@
             tabPage4.PerformLayout();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
-            tabPage1.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             groupBox_WindowsSystemIdentification.ResumeLayout(false);
             groupBox_WindowsSystemIdentification.PerformLayout();
@@ -2614,28 +2434,6 @@
         private Button button_registeredOwner;
         private Label label_registeredOrganization;
         private Label label_registeredOwner;
-        private GroupBox groupBox2;
-        private ComboBox comboBox2;
-        private Label label2;
-        private Button button2;
-        private ComboBox comboBox3;
-        private Label label3;
-        private Button button3;
-        private ComboBox comboBox1;
-        private Label label1;
-        private Button button1;
-        private ComboBox comboBox4;
-        private Label label5;
-        private Button button4;
-        private ComboBox comboBox5;
-        private Label label6;
-        private Button button5;
-        private ComboBox comboBox6;
-        private Label label19;
-        private Button button6;
-        private ComboBox comboBox7;
-        private Label label20;
-        private Button button7;
         private ComboBox comboBox_WindowsEditionID;
         private Label label_WindowsEditionID;
         private Button button_WindowsEditionID_Set;
