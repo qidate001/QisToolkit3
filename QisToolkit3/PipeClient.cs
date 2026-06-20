@@ -35,6 +35,22 @@ namespace QisToolkit3
             }
         }
 
+        /// <summary>
+        /// 检查齐之防御服务是否运行（通过命名管道探测）
+        /// </summary>
+        public static bool IsServiceRunning()
+        {
+            try
+            {
+                string response = SendCommand("PING", 1000);
+                return response.StartsWith("PONG|");
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public static bool LockFile(string filePath, int mode)
         {
             string response = SendCommand($"LOCK|{filePath}|{mode}");

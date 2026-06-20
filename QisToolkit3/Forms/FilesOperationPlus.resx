@@ -168,6 +168,202 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button_UnLockFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="button_UnLockFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_UnLockFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 31</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_UnLockFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button_UnLockFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 39</value>
+  </data>
+  <data name="button_UnLockFile.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="button_UnLockFile.Text" xml:space="preserve">
+    <value>解锁</value>
+  </data>
+  <data name="&gt;&gt;button_UnLockFile.Name" xml:space="preserve">
+    <value>button_UnLockFile</value>
+  </data>
+  <data name="&gt;&gt;button_UnLockFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_UnLockFile.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;button_UnLockFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButton_LockFile_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_LockFile_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 186</value>
+  </data>
+  <data name="radioButton_LockFile_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 31</value>
+  </data>
+  <data name="radioButton_LockFile_3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="radioButton_LockFile_3.Text" xml:space="preserve">
+    <value>不可读 不可写 不可用 不可删</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_3.Name" xml:space="preserve">
+    <value>radioButton_LockFile_3</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_3.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButton_LockFile_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_LockFile_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 149</value>
+  </data>
+  <data name="radioButton_LockFile_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>414, 31</value>
+  </data>
+  <data name="radioButton_LockFile_2.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="radioButton_LockFile_2.Text" xml:space="preserve">
+    <value>可读 不可写 不可用 不可删</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_2.Name" xml:space="preserve">
+    <value>radioButton_LockFile_2</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_2.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButton_LockFile_1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_LockFile_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 112</value>
+  </data>
+  <data name="radioButton_LockFile_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>414, 31</value>
+  </data>
+  <data name="radioButton_LockFile_1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="radioButton_LockFile_1.Text" xml:space="preserve">
+    <value>可读 可写 不可用 不可删</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_1.Name" xml:space="preserve">
+    <value>radioButton_LockFile_1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_1.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radioButton_LockFile_0.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 75</value>
+  </data>
+  <data name="radioButton_LockFile_0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 31</value>
+  </data>
+  <data name="radioButton_LockFile_0.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="radioButton_LockFile_0.Text" xml:space="preserve">
+    <value>可读 可写 可用 不可删</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_0.Name" xml:space="preserve">
+    <value>radioButton_LockFile_0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_0.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;radioButton_LockFile_0.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button_LockFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="button_LockFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_LockFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 31</value>
+  </data>
+  <data name="button_LockFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button_LockFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 39</value>
+  </data>
+  <data name="button_LockFile.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="button_LockFile.Text" xml:space="preserve">
+    <value>锁定</value>
+  </data>
+  <data name="&gt;&gt;button_LockFile.Name" xml:space="preserve">
+    <value>button_LockFile</value>
+  </data>
+  <data name="&gt;&gt;button_LockFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_LockFile.Parent" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;button_LockFile.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox_LockFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>550, 328</value>
+  </data>
+  <data name="groupBox_LockFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 236</value>
+  </data>
+  <data name="groupBox_LockFile.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="groupBox_LockFile.Text" xml:space="preserve">
+    <value>锁定文件</value>
+  </data>
+  <data name="&gt;&gt;groupBox_LockFile.Name" xml:space="preserve">
+    <value>groupBox_LockFile</value>
+  </data>
+  <data name="&gt;&gt;groupBox_LockFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_LockFile.Parent" xml:space="preserve">
+    <value>tabPage_Main</value>
+  </data>
+  <data name="&gt;&gt;groupBox_LockFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label_FileHead.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -193,15 +389,14 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label_FileHead.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button_CopyFileList.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="button_CopyFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>550, 328</value>
+    <value>550, 192</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button_CopyFileList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -224,7 +419,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;button_CopyFileList.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -254,13 +449,16 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 14pt</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>704, 159</value>
@@ -284,7 +482,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -314,7 +512,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="checkBox_AllPrint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -341,7 +539,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBox_AllPrint.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="button_DeleteFile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -374,7 +572,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;button_DeleteFile.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -404,7 +602,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="checkBoxOffline.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +646,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxOffline.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="checkBoxNotContentIndexed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -488,7 +686,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxNotContentIndexed.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="checkBoxReadOnly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -528,7 +726,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxReadOnly.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="checkBoxSystem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -570,7 +768,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxSystem.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="textBox_ManualPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 50</value>
@@ -594,7 +792,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;textBox_ManualPath.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="button_ManualPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
@@ -624,7 +822,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;button_ManualPath.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -654,7 +852,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="button_UseOpenDialog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -684,7 +882,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;button_UseOpenDialog.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="checkBoxHidden.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -725,7 +923,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxHidden.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="checkBoxArchive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -765,7 +963,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;checkBoxArchive.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -795,7 +993,7 @@
     <value>tabPage_Main</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="tabPage_Main.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 36</value>

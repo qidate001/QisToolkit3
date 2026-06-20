@@ -34,6 +34,12 @@
             listBox = new ListBox();
             tabControl_Main = new TabControl();
             tabPage_Main = new TabPage();
+            groupBox_LockFile = new GroupBox();
+            radioButton_LockFile_3 = new RadioButton();
+            radioButton_LockFile_2 = new RadioButton();
+            radioButton_LockFile_1 = new RadioButton();
+            radioButton_LockFile_0 = new RadioButton();
+            button_LockFile = new Button();
             label_FileHead = new Label();
             button_CopyFileList = new Button();
             label7 = new Label();
@@ -133,12 +139,14 @@
             ToolStripMenuItem_Manual = new ToolStripMenuItem();
             ToolStripMenuItem_ReSet = new ToolStripMenuItem();
             toolTip = new ToolTip(components);
+            button_UnLockFile = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tabControl_Main.SuspendLayout();
             tabPage_Main.SuspendLayout();
+            groupBox_LockFile.SuspendLayout();
             tabPage_Rename.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
@@ -212,6 +220,7 @@
             // 
             // tabPage_Main
             // 
+            tabPage_Main.Controls.Add(groupBox_LockFile);
             tabPage_Main.Controls.Add(label_FileHead);
             tabPage_Main.Controls.Add(button_CopyFileList);
             tabPage_Main.Controls.Add(label7);
@@ -234,6 +243,52 @@
             resources.ApplyResources(tabPage_Main, "tabPage_Main");
             tabPage_Main.Name = "tabPage_Main";
             tabPage_Main.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_LockFile
+            // 
+            groupBox_LockFile.Controls.Add(button_UnLockFile);
+            groupBox_LockFile.Controls.Add(radioButton_LockFile_3);
+            groupBox_LockFile.Controls.Add(radioButton_LockFile_2);
+            groupBox_LockFile.Controls.Add(radioButton_LockFile_1);
+            groupBox_LockFile.Controls.Add(radioButton_LockFile_0);
+            groupBox_LockFile.Controls.Add(button_LockFile);
+            resources.ApplyResources(groupBox_LockFile, "groupBox_LockFile");
+            groupBox_LockFile.Name = "groupBox_LockFile";
+            groupBox_LockFile.TabStop = false;
+            // 
+            // radioButton_LockFile_3
+            // 
+            radioButton_LockFile_3.Checked = true;
+            resources.ApplyResources(radioButton_LockFile_3, "radioButton_LockFile_3");
+            radioButton_LockFile_3.Name = "radioButton_LockFile_3";
+            radioButton_LockFile_3.TabStop = true;
+            radioButton_LockFile_3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_LockFile_2
+            // 
+            resources.ApplyResources(radioButton_LockFile_2, "radioButton_LockFile_2");
+            radioButton_LockFile_2.Name = "radioButton_LockFile_2";
+            radioButton_LockFile_2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_LockFile_1
+            // 
+            resources.ApplyResources(radioButton_LockFile_1, "radioButton_LockFile_1");
+            radioButton_LockFile_1.Name = "radioButton_LockFile_1";
+            radioButton_LockFile_1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_LockFile_0
+            // 
+            resources.ApplyResources(radioButton_LockFile_0, "radioButton_LockFile_0");
+            radioButton_LockFile_0.Name = "radioButton_LockFile_0";
+            radioButton_LockFile_0.UseVisualStyleBackColor = true;
+            // 
+            // button_LockFile
+            // 
+            resources.ApplyResources(button_LockFile, "button_LockFile");
+            button_LockFile.ForeColor = Color.Black;
+            button_LockFile.Name = "button_LockFile";
+            button_LockFile.UseVisualStyleBackColor = true;
+            button_LockFile.Click += button_LockFile_Click;
             // 
             // label_FileHead
             // 
@@ -953,6 +1008,14 @@
             ToolStripMenuItem_ReSet.Name = "ToolStripMenuItem_ReSet";
             resources.ApplyResources(ToolStripMenuItem_ReSet, "ToolStripMenuItem_ReSet");
             // 
+            // button_UnLockFile
+            // 
+            resources.ApplyResources(button_UnLockFile, "button_UnLockFile");
+            button_UnLockFile.ForeColor = Color.Black;
+            button_UnLockFile.Name = "button_UnLockFile";
+            button_UnLockFile.UseVisualStyleBackColor = true;
+            button_UnLockFile.Click += button_UnLockFile_Click;
+            // 
             // FilesOperationPlus
             // 
             resources.ApplyResources(this, "$this");
@@ -968,6 +1031,7 @@
             tabControl_Main.ResumeLayout(false);
             tabPage_Main.ResumeLayout(false);
             tabPage_Main.PerformLayout();
+            groupBox_LockFile.ResumeLayout(false);
             tabPage_Rename.ResumeLayout(false);
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
@@ -1078,7 +1142,6 @@
         private CheckBox checkBox_NewDir;
         private Button button_CopyFileList;
         private Label label7;
-        private Label label6;
         private TabPage tabPage_Comparison;
         private SplitContainer splitContainer4;
         private ListBox listBox_Comparison;
@@ -1113,5 +1176,13 @@
         private Button button_JsonLanguage_Run;
         private RichTextBox richTextBox_JsonLanguage;
         private Button button_JsonLanguage_Open;
+        private Label label6;
+        private GroupBox groupBox_LockFile;
+        private RadioButton radioButton_LockFile_3;
+        private RadioButton radioButton_LockFile_2;
+        private RadioButton radioButton_LockFile_1;
+        private RadioButton radioButton_LockFile_0;
+        private Button button_LockFile;
+        private Button button_UnLockFile;
     }
 }

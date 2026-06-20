@@ -632,7 +632,7 @@ FolderType=Videos";
                             break;
                         }
                     }
-                        
+
                 }
                 listBox.Items.Clear();
                 MessageBox.Show("删除执行完成", "提示");
@@ -684,7 +684,7 @@ FolderType=Videos";
                                 }
                             }
                         }
-                        
+
                     }
                     else
                     {
@@ -1445,6 +1445,70 @@ FolderType=Videos";
         private void button_ClearLog_Click(object sender, EventArgs e)
         {
             richTextBox_JsonLanguage.Clear();
+        }
+
+        private void button_LockFile_Click(object sender, EventArgs e)
+        {
+            if (!PipeClient.IsServiceRunning())
+            {
+                DialogResult result = MessageBox.Show(
+                    "齐之防御未运行，无法执行文件锁定操作。\n是否启动服务？",
+                    "服务未运行",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start(Path.Combine(QisToolkit3_Datas.actualDirectory, "QisDefense.exe"));
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            foreach (string path in GetselectedFiles())
+            {
+                int mode = 3;
+                if (radioButton_LockFile_0.Checked) mode = 0;
+                else if (radioButton_LockFile_1.Checked) mode = 1;
+                else if (radioButton_LockFile_2.Checked) mode = 2;
+                else if (radioButton_LockFile_3.Checked) mode = 3;
+                bool ok = PipeClient.LockFile(path, mode);
+
+                if (ok) Log.Info($"[高级文件操作工具] 成功让齐之防御以{mode}模式锁定文件{path}");
+            }
+            MessageBox.Show("锁定成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button_UnLockFile_Click(object sender, EventArgs e)
+        {
+
+            if (!PipeClient.IsServiceRunning())
+            {
+                DialogResult result = MessageBox.Show(
+                    "齐之防御未运行，无法执行文件锁定操作。\n是否启动服务？",
+                    "服务未运行",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start(Path.Combine(QisToolkit3_Datas.actualDirectory, "QisDefense.exe"));
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            foreach (string path in GetselectedFiles())
+            {
+                bool ok = PipeClient.UnlockFile(path);
+
+                if (ok) Log.Info($"[高级文件操作工具] 成功让齐之防御解锁文件{path}");
+            }
+            MessageBox.Show("锁定成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -128,6 +128,9 @@ namespace QisDefense
                         _isRunning = false;
                         return "OK|服务端即将退出";
 
+                    case "PING":
+                        return "PONG|OK";
+
                     default:
                         return $"ERROR|未知命令: {command}";
                 }
