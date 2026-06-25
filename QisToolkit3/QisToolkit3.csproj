@@ -90,4 +90,11 @@
     <Folder Include="Class\" />
   </ItemGroup>
 
+  <Target Name="CopyEasyHookNative" AfterTargets="Build">
+	<ItemGroup>
+      <EasyHookNative Include="C:\Users\Administrator\.nuget\packages\easyhook\2.7.7097\content\net40\EasyHook32.dll" />
+	  <EasyHookNative Include="C:\Users\Administrator\.nuget\packages\easyhook\2.7.7097\content\net40\EasyHook64.dll" />
+	</ItemGroup>
+	<Copy SourceFiles="@(EasyHookNative)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

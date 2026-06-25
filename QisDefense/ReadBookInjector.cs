@@ -21,6 +21,7 @@ namespace QisDefense
             // 获取 DLL 路径（假设放在注入器同目录下）
             _dllPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ReadBookProxy.dll");
 
+            MessageBox.Show(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ReadBookProxy.dll"));
             if (!File.Exists(_dllPath))
             {
                 throw new FileNotFoundException($"找不到 ReadBookProxy.dll，路径: {_dllPath}");
@@ -44,14 +45,21 @@ namespace QisDefense
                 MessageBox.Show($"正在注入到进程: {process.ProcessName} (PID: {processId})");
 
                 // EasyHook 注入（RemoteHooking.Inject 是同步方法，会阻塞直到注入完成）
+                //RemoteHooking.Inject(
+                //    processId,                    // 目标进程 ID
+                //    _dllPath,                     // 要注入的托管 DLL 路径
+                //    _dllPath,                     // 参数（注入后传递给 DLL 的配置文件，这里传相同路径即可）
+                //                                  // 注意：这里的参数会传递给 DLL 中 IEntryPoint 的构造函数
+                //                                  // 如果需要传递额外参数，可以在这里添加，例如：
+                //                                  // "UTF-8", "GBK"              // 可以传递多个参数
+                //    IntPtr.Zero                   // 如果不需要额外参数，传 IntPtr.Zero
+                //);
+
                 RemoteHooking.Inject(
                     processId,                    // 目标进程 ID
                     _dllPath,                     // 要注入的托管 DLL 路径
-                    _dllPath,                     // 参数（注入后传递给 DLL 的配置文件，这里传相同路径即可）
-                                                  // 注意：这里的参数会传递给 DLL 中 IEntryPoint 的构造函数
-                                                  // 如果需要传递额外参数，可以在这里添加，例如：
-                                                  // "UTF-8", "GBK"              // 可以传递多个参数
-                    IntPtr.Zero                   // 如果不需要额外参数，传 IntPtr.Zero
+                    _dllPath,                     // 参数（传递给 DLL 构造函数的第一个参数）
+                    "UTF-8 to GBK Hook"          // 第二个参数（传递给 Run 方法的 channelName）
                 );
 
                 MessageBox.Show($"✅ 注入成功！PID: {processId}");
