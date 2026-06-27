@@ -114,6 +114,21 @@
             openFileDialog = new OpenFileDialog();
             saveFileDialog = new SaveFileDialog();
             toolTip = new ToolTip(components);
+            groupBox5 = new GroupBox();
+            comboBox2 = new ComboBox();
+            trackBar1 = new TrackBar();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            comboBox3 = new ComboBox();
+            trackBar2 = new TrackBar();
+            comboBox4 = new ComboBox();
+            comboBox5 = new ComboBox();
+            comboBox6 = new ComboBox();
+            checkBox4 = new CheckBox();
+            comboBox7 = new ComboBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            checkBox7 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -133,6 +148,9 @@
             tabPage5.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -504,6 +522,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(groupBox5);
             tabPage3.Controls.Add(groupBox3);
             tabPage3.Location = new Point(4, 36);
             tabPage3.Name = "tabPage3";
@@ -1135,6 +1154,188 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(comboBox2);
+            groupBox5.Controls.Add(trackBar1);
+            groupBox5.Controls.Add(checkBox2);
+            groupBox5.Controls.Add(checkBox3);
+            groupBox5.Controls.Add(comboBox3);
+            groupBox5.Controls.Add(trackBar2);
+            groupBox5.Controls.Add(comboBox4);
+            groupBox5.Controls.Add(comboBox5);
+            groupBox5.Controls.Add(comboBox6);
+            groupBox5.Controls.Add(checkBox4);
+            groupBox5.Controls.Add(comboBox7);
+            groupBox5.Controls.Add(checkBox5);
+            groupBox5.Controls.Add(checkBox6);
+            groupBox5.Controls.Add(checkBox7);
+            groupBox5.Font = new Font("Microsoft YaHei UI", 12F);
+            groupBox5.Location = new Point(6, 299);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(644, 287);
+            groupBox5.TabIndex = 58;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "比特流过滤器";
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.Enabled = false;
+            comboBox2.Font = new Font("微软雅黑", 16.2F);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "急速", "快速", "中速", "慢速", "极慢" });
+            comboBox2.Location = new Point(529, 221);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(105, 43);
+            comboBox2.TabIndex = 40;
+            // 
+            // trackBar1
+            // 
+            trackBar1.Enabled = false;
+            trackBar1.Location = new Point(216, 219);
+            trackBar1.Maximum = 4;
+            trackBar1.Name = "trackBar1";
+            trackBar1.Size = new Size(307, 56);
+            trackBar1.TabIndex = 39;
+            trackBar1.Value = 1;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox2.Location = new Point(16, 219);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(205, 40);
+            checkBox2.TabIndex = 38;
+            checkBox2.Text = "编码速度预设";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox3.Location = new Point(16, 173);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(205, 40);
+            checkBox3.TabIndex = 27;
+            checkBox3.Text = "恒定速率因子";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Enabled = false;
+            comboBox3.Font = new Font("微软雅黑", 16.2F);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "180", "120", "60", "30", "15" });
+            comboBox3.Location = new Point(425, 29);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(209, 43);
+            comboBox3.TabIndex = 35;
+            comboBox3.Text = "60";
+            // 
+            // trackBar2
+            // 
+            trackBar2.Enabled = false;
+            trackBar2.Location = new Point(216, 173);
+            trackBar2.Maximum = 51;
+            trackBar2.Name = "trackBar2";
+            trackBar2.Size = new Size(307, 56);
+            trackBar2.TabIndex = 29;
+            trackBar2.Value = 23;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Enabled = false;
+            comboBox4.Font = new Font("微软雅黑", 16.2F);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "H.264", "H.265", "VP9", "AV1" });
+            comboBox4.Location = new Point(187, 31);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(143, 43);
+            comboBox4.TabIndex = 31;
+            comboBox4.Text = "H.265";
+            // 
+            // comboBox5
+            // 
+            comboBox5.Enabled = false;
+            comboBox5.Font = new Font("微软雅黑", 16.2F);
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { "极佳", "优秀", "良好", "一般", "较差" });
+            comboBox5.Location = new Point(529, 172);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(105, 43);
+            comboBox5.TabIndex = 28;
+            comboBox5.Text = "23";
+            // 
+            // comboBox6
+            // 
+            comboBox6.Enabled = false;
+            comboBox6.Font = new Font("微软雅黑", 16.2F);
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Items.AddRange(new object[] { "1M", "500K" });
+            comboBox6.Location = new Point(187, 79);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(143, 43);
+            comboBox6.TabIndex = 33;
+            comboBox6.Text = "1M";
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox4.Location = new Point(15, 32);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(177, 40);
+            checkBox4.TabIndex = 30;
+            checkBox4.Text = "视频编码器";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox7
+            // 
+            comboBox7.Enabled = false;
+            comboBox7.Font = new Font("微软雅黑", 16.2F);
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { "1280x720" });
+            comboBox7.Location = new Point(131, 125);
+            comboBox7.Name = "comboBox7";
+            comboBox7.Size = new Size(199, 43);
+            comboBox7.TabIndex = 37;
+            comboBox7.Text = "1280x720";
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox5.Location = new Point(15, 126);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(121, 40);
+            checkBox5.TabIndex = 36;
+            checkBox5.Text = "分辨率";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox6.Location = new Point(336, 31);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(93, 40);
+            checkBox6.TabIndex = 34;
+            checkBox6.Text = "帧率";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Font = new Font("Microsoft YaHei UI", 16.2F);
+            checkBox7.Location = new Point(15, 80);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(177, 40);
+            checkBox7.TabIndex = 32;
+            checkBox7.Text = "视频比特率";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
             // FFmpegTool
             // 
             AllowDrop = true;
@@ -1173,6 +1374,10 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackBar2).EndInit();
             ResumeLayout(false);
         }
 
@@ -1261,5 +1466,20 @@
         private DataGridViewTextBoxColumn ColumnFullPath;
         private DataGridViewTextBoxColumn ColumnFileNameWithExt;
         private Button button_OpenDownloadPath;
+        private GroupBox groupBox5;
+        private ComboBox comboBox2;
+        private TrackBar trackBar1;
+        private CheckBox checkBox2;
+        private CheckBox checkBox3;
+        private ComboBox comboBox3;
+        private TrackBar trackBar2;
+        private ComboBox comboBox4;
+        private ComboBox comboBox5;
+        private ComboBox comboBox6;
+        private CheckBox checkBox4;
+        private ComboBox comboBox7;
+        private CheckBox checkBox5;
+        private CheckBox checkBox6;
+        private CheckBox checkBox7;
     }
 }

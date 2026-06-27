@@ -162,7 +162,7 @@ namespace QisDefense
                 Thread monitorThread = new Thread(MonitorFileIntegrity) { IsBackground = true };
                 monitorThread.Start();
 
-                new ReadBookInjector().StartMonitoring();
+                //new ReadBookInjector().StartMonitoring();
 
                 // 无界面消息循环
                 Application.EnableVisualStyles();
