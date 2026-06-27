@@ -6964,7 +6964,7 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="richTextBox_StringRuleEngine.Text" xml:space="preserve">
     <value>(→（;
 )→）;
-&lt;[零壹贰叁肆伍陆柒捌玖佰仟〇一二三四五六七八九十百千万亿兆京]&gt;↓CN2
+&lt;[零壹贰叁肆伍陆柒捌玖佰仟〇一二三四五六七八九十百千万亿兆京]&gt;↓CN2+Suffix-Text=&lt;[集期话章节回]&gt;
 </value>
   </data>
   <data name="&gt;&gt;richTextBox_StringRuleEngine.Name" xml:space="preserve">

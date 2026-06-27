@@ -10,14 +10,11 @@ namespace QisToolkit3
         // ---------- 公共入口 ----------
         public string ProcessText(string input, string ruleString)
         {
-            //Log.Info($"[RuleEngine] 输入：{input}");
-            //Log.Info($"[RuleEngine] 规则：{ruleString}");
             if (string.IsNullOrEmpty(ruleString)) return input;
             var rules = ParseRules(ruleString);
             string current = input;
             foreach (var rule in rules)
                 current = ApplyRule(current, rule);
-            //Log.Info($"[RuleEngine] 输出：{current}");
             return current;
         }
 
@@ -38,9 +35,9 @@ namespace QisToolkit3
 
         private class Condition
         {
-            public enum CondType { PrefixText, LineHead }
+            public enum CondType { PrefixText, LineHead, SuffixText } // 新增 SuffixText
             public CondType Type { get; set; }
-            public string Text { get; set; }           // 前缀文本或正则
+            public string Text { get; set; }           // 前缀/后缀文本或正则
             public bool IsRegex { get; set; }
         }
 
@@ -80,13 +77,31 @@ namespace QisToolkit3
                         }
                         conditions.Add(new Condition { Type = Condition.CondType.PrefixText, Text = value, IsRegex = isRegex });
                     }
+                    // ----- 新增后缀文本条件解析 -----
+                    else if (cond.StartsWith("S=", StringComparison.OrdinalIgnoreCase) ||
+                             cond.StartsWith("Suffix-Text=", StringComparison.OrdinalIgnoreCase))
+                    {
+                        string value;
+                        if (cond.StartsWith("S=", StringComparison.OrdinalIgnoreCase))
+                            value = cond.Substring(2).Trim();
+                        else
+                            value = cond.Substring("Suffix-Text=".Length).Trim();
+
+                        bool isRegex = false;
+                        if (value.StartsWith("<") && value.EndsWith(">"))
+                        {
+                            isRegex = true;
+                            value = value.Substring(1, value.Length - 2);
+                        }
+                        conditions.Add(new Condition { Type = Condition.CondType.SuffixText, Text = value, IsRegex = isRegex });
+                    }
                     else
                         throw new ArgumentException($"未知条件: {cond}");
                 }
 
                 var rule = new Rule { Conditions = conditions };
 
-                // 按优先级识别基础规则
+                // 按优先级识别基础规则（不变）
                 if (basePart.Contains("→→"))
                 {
                     var parts = basePart.Split(new[] { "→→" }, StringSplitOptions.None);
@@ -117,7 +132,6 @@ namespace QisToolkit3
                     if (string.IsNullOrEmpty(left)) throw new ArgumentException("↑CN2 缺少左操作数");
                     rule.Op = Rule.OperationType.ToChineseNumOral;
                     ParseLeftPattern(left, rule);
-                    // 自动扩展正则量词，使口语转换作用于整个数字串
                     AutoExtendRegexForOral(rule);
                 }
                 else if (basePart.Contains("↑CN"))
@@ -134,7 +148,6 @@ namespace QisToolkit3
                     string left = basePart.Substring(0, idx).Trim();
                     if (string.IsNullOrEmpty(left))
                     {
-                        // 无左操作数 → 匹配整个文本
                         rule.Op = Rule.OperationType.FromChineseNumOral;
                         rule.LeftPattern = ".*";
                         rule.IsRegex = true;
@@ -197,25 +210,19 @@ namespace QisToolkit3
             rule.RightOperand = right;
         }
 
-        /// <summary> 对口语数字转换的正则自动添加 + 量词（若缺失）以匹配连续数字串 </summary>
         private void AutoExtendRegexForOral(Rule rule)
         {
             if (!rule.IsRegex) return;
             string pattern = rule.LeftPattern;
-            // 检查是否为简单的数字匹配模式且不含量词
-            // 匹配常见数字字符类：\d, [0-9], [0-9a-fA-F] 等，但我们只关心纯数字
-            // 简单判断：模式为 \d 或 [0-9] 或 [0-9] 带范围，且末尾不是量词
             if (pattern == @"\d" || pattern == "[0-9]" || pattern == "[0-9]")
             {
                 rule.LeftPattern = pattern + "+";
                 return;
             }
-            // 更通用的检测：如果模式不包含 *, +, ?, {，则添加 +
             if (!Regex.IsMatch(pattern, @"[\*\+\?\{\}]"))
             {
                 rule.LeftPattern = pattern + "+";
             }
-            // 否则保持原样（用户已明确量词）
         }
 
         // ---------- 规则应用 ----------
@@ -292,7 +299,6 @@ namespace QisToolkit3
             var matches = regex.Matches(input);
             var sb = new StringBuilder(input);
 
-            // 从后往前替换，避免索引偏移
             for (int i = matches.Count - 1; i >= 0; i--)
             {
                 var match = matches[i];
@@ -332,13 +338,29 @@ namespace QisToolkit3
                             return false;
                     }
                 }
+                // ----- 新增后缀文本条件检查 -----
+                else if (cond.Type == Condition.CondType.SuffixText)
+                {
+                    string suffix = input.Substring(match.Index + match.Length);
+                    if (cond.IsRegex)
+                    {
+                        var regex = new Regex(cond.Text, RegexOptions.Compiled);
+                        var suffixMatch = regex.Match(suffix);
+                        // 要求匹配从后缀开头开始（即紧接匹配之后）
+                        if (!suffixMatch.Success || suffixMatch.Index != 0)
+                            return false;
+                    }
+                    else
+                    {
+                        if (!suffix.StartsWith(cond.Text, StringComparison.Ordinal))
+                            return false;
+                    }
+                }
             }
             return true;
         }
 
-        // ==================== 中文数字转换（完整实现） ====================
-
-        /// <summary> 逐字转中文数字（0-9 → 零~九）</summary>
+        // ==================== 中文数字转换（完整实现，保持不变） ====================
         private static string ToChineseNum(string s)
         {
             if (string.IsNullOrEmpty(s)) return s;
@@ -349,7 +371,6 @@ namespace QisToolkit3
             return sb.ToString();
         }
 
-        /// <summary> 口语中文数字（将数字串转为中文口语读法）</summary>
         private static string ToChineseNumOral(string s)
         {
             if (string.IsNullOrEmpty(s)) return s;
@@ -405,14 +426,12 @@ namespace QisToolkit3
 
             var sb = new StringBuilder();
 
-            // 千位
             if (qian > 0)
             {
                 sb.Append(qian == 2 ? "两" : digits[qian]);
                 sb.Append(smallUnits[3]);
             }
 
-            // 百位
             if (bai > 0)
             {
                 sb.Append(digits[bai]);
@@ -423,7 +442,6 @@ namespace QisToolkit3
                 sb.Append('零');
             }
 
-            // 十位
             if (shi > 0)
             {
                 bool isFirst = isHighest && qian == 0 && bai == 0 && shi == 1 && ge == 0;
@@ -442,38 +460,32 @@ namespace QisToolkit3
                 sb.Append('零');
             }
 
-            // 个位
             if (ge > 0)
                 sb.Append(digits[ge]);
 
             return sb.ToString();
         }
 
-        /// <summary> 逆向口语中文数字（将中文口语读法转为阿拉伯数字字符串）</summary>
-        /// <summary>
-        /// 逆向口语中文数字：将中文数字串转为阿拉伯数字字符串
-        /// 支持：零一二三四五六七八九十百千万亿兆京，以及“两”
-        /// </summary>
         private static string FromChineseNumOral(string s)
         {
             if (string.IsNullOrEmpty(s)) return s;
 
             var digitMap = new Dictionary<char, long>
-    {
-        {'零', 0}, {'一', 1}, {'二', 2}, {'两', 2}, {'三', 3}, {'四', 4},
-        {'五', 5}, {'六', 6}, {'七', 7}, {'八', 8}, {'九', 9}
-    };
+            {
+                {'零', 0}, {'一', 1}, {'二', 2}, {'两', 2}, {'三', 3}, {'四', 4},
+                {'五', 5}, {'六', 6}, {'七', 7}, {'八', 8}, {'九', 9}
+            };
 
             var unitMap = new Dictionary<char, long>
-    {
-        {'十', 10}, {'百', 100}, {'千', 1000},
-        {'万', 10000}, {'亿', 100000000},
-        {'兆', 1000000000000}, {'京', 10000000000000000}
-    };
+            {
+                {'十', 10}, {'百', 100}, {'千', 1000},
+                {'万', 10000}, {'亿', 100000000},
+                {'兆', 1000000000000}, {'京', 10000000000000000}
+            };
 
-            long result = 0;      // 最终结果
-            long section = 0;     // 当前小节值（万以下）
-            long temp = 0;        // 当前暂存的数字（用于与单位结合）
+            long result = 0;
+            long section = 0;
+            long temp = 0;
 
             for (int i = 0; i < s.Length; i++)
             {
@@ -484,24 +496,22 @@ namespace QisToolkit3
                 }
                 else if (unitMap.TryGetValue(c, out long unit))
                 {
-                    if (unit < 10000) // 小单位（十、百、千）
+                    if (unit < 10000)
                     {
-                        if (temp == 0) temp = 1; // 处理“十”单独出现等
+                        if (temp == 0) temp = 1;
                         section += temp * unit;
                         temp = 0;
                     }
-                    else // 大单位（万、亿、兆、京）
+                    else
                     {
-                        if (temp == 0 && section == 0) section = 1; // 如“万”单独出现
+                        if (temp == 0 && section == 0) section = 1;
                         result += (section + temp) * unit;
                         section = 0;
                         temp = 0;
                     }
                 }
-                // 遇到 '零' 忽略，其他字符也忽略
             }
 
-            // 处理剩余未结算部分
             result += section + temp;
             return result.ToString();
         }

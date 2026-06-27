@@ -142,10 +142,10 @@ public class Qi
     }
 
     // 运行 MinSudo
-    public static string ExecuteInMinSudo(
-        string commandLine,
-        string args = "-S -TI -P -NoL"
-    )
+    public static async Task<string> ExecuteInMinSudo(
+    string commandLine,
+    string args = "-S -TI -P -NoL"
+)
     {
         using (var process = new Process())
         {
@@ -156,13 +156,31 @@ public class Qi
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.Arguments = $"{args} {commandLine}";
+
+            var outputBuilder = new StringBuilder();
+            var errorBuilder = new StringBuilder();
+
+            process.OutputDataReceived += (sender, e) => { if (e.Data != null) outputBuilder.AppendLine(e.Data); };
+            process.ErrorDataReceived += (sender, e) => { if (e.Data != null) errorBuilder.AppendLine(e.Data); };
+
             process.Start();
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
 
-            string output = process.StandardOutput.ReadToEnd();
+            // 如果需要密码
+            // if (needPassword) { await process.StandardInput.WriteLineAsync("YourPassword"); }
+            if (process.StartInfo.RedirectStandardInput)
+                process.StandardInput.Close();
 
-            process.WaitForExit();
+            // 异步等待退出，不阻塞 UI
+            await Task.Run(() => process.WaitForExit());
+
             process.Close();
 
+            string output = outputBuilder.ToString();
+            string error = errorBuilder.ToString();
+            if (!string.IsNullOrEmpty(error))
+                Log.Warn(error);
             Log.Info(output);
             return output;
         }
