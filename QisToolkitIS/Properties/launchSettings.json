@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "QisToolkitIS (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "QisToolkitIS (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
