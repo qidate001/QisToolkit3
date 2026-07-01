@@ -81,8 +81,8 @@ namespace QisToolkit3.Forms
                 if (debugMode)
                 {
                     label_DeBug2.Text = $"加载完成: {questionBank.TotalGroupCount}组, " +
-                                       $"{questionBank.TotalQuestionCount}题, " +
-                                       $"耗时{loadTimer.ElapsedMilliseconds}ms";
+                                        $"{questionBank.TotalQuestionCount}题, " +
+                                        $"耗时{loadTimer.ElapsedMilliseconds}ms";
                 }
 
                 // 启用按钮并开始
