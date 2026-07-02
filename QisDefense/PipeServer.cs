@@ -176,6 +176,16 @@ namespace QisDefense
                         }
                         return "ERROR|参数错误: JOB_KILL_PROCESS|进程ID";
 
+                    // 杀死进程数（JobKiller）
+                    case "DELETE_FILE":
+                        if (parts.Length >= 2)
+                        {
+                            string filePath = parts[1];
+                            bool result = Program.DeleteFile(filePath);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: DELETE_FILE|文件路径";
+
                     default:
                         return $"ERROR|未知命令: {command}";
                 }

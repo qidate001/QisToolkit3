@@ -415,6 +415,19 @@ namespace QisDefense
             }
         }
 
+        public static bool DeleteFile(string filepath)
+        {
+            try
+            {
+                System.IO.File.Delete(filepath);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// 取消关键进程标记（退出前必须调用，否则杀进程会蓝屏）
         /// </summary>
