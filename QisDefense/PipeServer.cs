@@ -176,7 +176,7 @@ namespace QisDefense
                         }
                         return "ERROR|参数错误: JOB_KILL_PROCESS|进程ID";
 
-                    // 杀死进程数（JobKiller）
+                    // 删除文件
                     case "DELETE_FILE":
                         if (parts.Length >= 2)
                         {

@@ -126,5 +126,11 @@ namespace QisToolkit3
             string response = SendCommand($"JOB_KILL_PROCESS|{processId}");
             return response.StartsWith("OK|true");
         }
+
+        public static bool DeleteFile(string filePath)
+        {
+            string response = SendCommand($"DELETE_FILE|{filePath}");
+            return response.StartsWith("OK|true");
+        }
     }
 }
