@@ -1486,7 +1486,7 @@ namespace QisToolkit3.Forms
 
         private void button_Update_Click(object sender, EventArgs e)
         {
-            ExecuteCommand(@$"{actualDirectory}\yt-dlp\yt-dlp.exe -U");
+            ExecuteCommand("-U");
         }
 
         private void YtDlpTool_DragEnter(object sender, DragEventArgs e)
