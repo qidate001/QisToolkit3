@@ -71,7 +71,7 @@ namespace QisToolkit3.Forms
         // 其他
         private static string MessageLog = "你出生了......";
         private static string NowDoing = "Main", World = "Main";
-        private static bool DeBugMode = false, DeBug_2Gold = false;
+        private static bool DeBugMode = true, DeBug_2Gold = false;
         private static bool[] TC = 
         { 
             false, false, false, false, false, false,
