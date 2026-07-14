@@ -268,11 +268,9 @@ namespace QisToolkit3.Forms
             //MessageBox.Show("提取码: qinb", "提取码");
         }
 
-        private void button_DownloadForLan_Click(object sender, EventArgs e)
+        private void button_button_QisWeb_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://wwjs.lanzoub.com/b004hviqmf") { UseShellExecute = true });
-            Clipboard.SetText("851o");
-            //MessageBox.Show("密码: 851o", "密码");
+            Process.Start(new ProcessStartInfo("https://qidate001.github.io/QiWeb/") { UseShellExecute = true });
         }
 
         private void button_DownloadForQQ_Click(object sender, EventArgs e)

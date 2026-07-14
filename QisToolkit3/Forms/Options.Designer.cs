@@ -63,7 +63,7 @@
             label2 = new Label();
             label1 = new Label();
             button_DownloadForQQ = new Button();
-            button_DownloadForLan = new Button();
+            button_QisWeb = new Button();
             button_DownloadForBaidu = new Button();
             tabControlOptions.SuspendLayout();
             tabPageHead.SuspendLayout();
@@ -267,7 +267,7 @@
             tabPage3.Controls.Add(label2);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(button_DownloadForQQ);
-            tabPage3.Controls.Add(button_DownloadForLan);
+            tabPage3.Controls.Add(button_QisWeb);
             tabPage3.Controls.Add(button_DownloadForBaidu);
             tabPage3.Name = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -344,13 +344,13 @@
             button_DownloadForQQ.UseVisualStyleBackColor = true;
             button_DownloadForQQ.Click += button_DownloadForQQ_Click;
             // 
-            // button_DownloadForLan
+            // button_QisWeb
             // 
-            button_DownloadForLan.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button_DownloadForLan, "button_DownloadForLan");
-            button_DownloadForLan.Name = "button_DownloadForLan";
-            button_DownloadForLan.UseVisualStyleBackColor = true;
-            button_DownloadForLan.Click += button_DownloadForLan_Click;
+            button_QisWeb.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_QisWeb, "button_QisWeb");
+            button_QisWeb.Name = "button_QisWeb";
+            button_QisWeb.UseVisualStyleBackColor = true;
+            button_QisWeb.Click += button_button_QisWeb_Click;
             // 
             // button_DownloadForBaidu
             // 
@@ -408,7 +408,7 @@
         private Label label2;
         private Label label1;
         private Button button_DownloadForQQ;
-        private Button button_DownloadForLan;
+        private Button button_QisWeb;
         private Button button_DownloadForBaidu;
         private Button button_DownloadForGitHub;
         private Label label3;

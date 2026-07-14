@@ -1126,34 +1126,34 @@
   <data name="&gt;&gt;button_DownloadForQQ.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="button_DownloadForLan.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="button_QisWeb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 24pt</value>
   </data>
-  <data name="button_DownloadForLan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="button_QisWeb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button_DownloadForLan.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button_QisWeb.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 161</value>
   </data>
-  <data name="button_DownloadForLan.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button_QisWeb.Size" type="System.Drawing.Size, System.Drawing">
     <value>380, 85</value>
   </data>
-  <data name="button_DownloadForLan.TabIndex" type="System.Int32, mscorlib">
+  <data name="button_QisWeb.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="button_DownloadForLan.Text" xml:space="preserve">
-    <value>蓝奏云</value>
+  <data name="button_QisWeb.Text" xml:space="preserve">
+    <value>官方网站</value>
   </data>
-  <data name="&gt;&gt;button_DownloadForLan.Name" xml:space="preserve">
-    <value>button_DownloadForLan</value>
+  <data name="&gt;&gt;button_QisWeb.Name" xml:space="preserve">
+    <value>button_QisWeb</value>
   </data>
-  <data name="&gt;&gt;button_DownloadForLan.Type" xml:space="preserve">
+  <data name="&gt;&gt;button_QisWeb.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button_DownloadForLan.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button_QisWeb.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;button_DownloadForLan.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button_QisWeb.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="button_DownloadForBaidu.Font" type="System.Drawing.Font, System.Drawing">
