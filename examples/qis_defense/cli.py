@@ -22,17 +22,17 @@ class QiCLI(cmd.Cmd):
     
     intro = """
 ╔══════════════════════════════════════════════════════════════╗
-║                  齐之防御 命令行管理工具                      ║
+║                  齐之防御 命令行管理工具                     ║
 ║                                                              ║
-║  输入 help 查看命令列表，help <命令> 查看详细帮助           ║
-║  输入 quit 或 Ctrl+C 退出                                   ║
+║  输入 help 查看命令列表，help <命令> 查看详细帮助            ║
+║  输入 quit 或 Ctrl+C 退出                                    ║
 ╚══════════════════════════════════════════════════════════════╝
 """
     prompt = "Qi> "
     
     def __init__(self):
         super().__init__()
-        self.client = QiPipeClient(timeout_ms=5000, auto_connect=False)
+        self.client = QiPipeClient(timeout_ms=5000)
         self.connected = False
         self._check_service()
     
