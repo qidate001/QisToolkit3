@@ -49,3 +49,6 @@ desktop.ini
 .vs/
 _Resharper*/
 *.DotSettings
+
+# examples缓存
+examples/**/__pycache__/
