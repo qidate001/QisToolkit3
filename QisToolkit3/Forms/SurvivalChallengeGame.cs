@@ -2189,7 +2189,7 @@ namespace QisToolkit3.Forms
                     else if (Item_QualityScrap > 20)
                     {
                         // 走后门
-                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
                             XSecSetMessage(
                                 $"你从后门走进回收站，把满满一袋优质废料放在老炉面前。\n" +
@@ -2264,7 +2264,7 @@ namespace QisToolkit3.Forms
                     else if (Item_Scrap > 200 && Item_QualityScrap <= 20)
                     {
                         // 走后门
-                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
                             XSecSetMessage(
                                 $"你走进回收站，把两大袋普通废料和一袋优质废料倒在地。\n" +
@@ -2307,7 +2307,7 @@ namespace QisToolkit3.Forms
                     else if (Item_Scrap <= 200 && Item_QualityScrap > 20)
                     {
                         // 走后门
-                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
                             XSecSetMessage(
                                 $"你从后门走进回收站，把一袋普通废料和一袋优质废料放在老炉面前。\n" +
@@ -2354,7 +2354,7 @@ namespace QisToolkit3.Forms
                     else if (Item_Scrap > 200 && Item_QualityScrap > 20)
                     {
                         // 走后门
-                        if (LTEOTC_KnowOuterCity_BlackMarket)
+                        if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
                             XSecSetMessage(
                                 $"你从后门走进回收站，把三袋子废料倒在地上。\n" +
