@@ -1720,7 +1720,7 @@ namespace QisToolkit3.Forms
                     Log.Info($"  MatchFilters: {item.MatchFilters}");
                     Log.Info($"  Playlist: {item.Playlist}");
 
-                    UsePlayListItems = 
+                    UsePlayListItems =
                         !string.IsNullOrWhiteSpace(item.Playlist) &&
                         item.Playlist.ToLower() != "false" &&
                         item.Playlist.ToLower() != "no";
@@ -2420,6 +2420,25 @@ Name: 《遗忘世间》
         private void button_YtDlpRunDir_Click(object sender, EventArgs e)
         {
             Qi.ExplorerStart(YtDlpWorkDirPath);
+        }
+
+        private async void button_RunRuleEngine_ClickAsync(object sender, EventArgs e)
+        {
+            // 规则引擎重命名
+            if (checkBox_StringRuleEngine.Checked && !string.IsNullOrWhiteSpace(richTextBox_StringRuleEngine.Text))
+            {
+                string downloadPath = checkBox_Path_Home.Checked ?
+                    comboBox_Path_Home.Text :
+                    (checkBox_SetPaths.Checked ? textBox_Paths.Text : DefaultDownloadPath);
+
+                // 确保路径是绝对路径
+                if (!Path.IsPathRooted(downloadPath))
+                {
+                    downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpPath), downloadPath));
+                }
+
+                await RenameFilesWithRuleEngine(downloadPath);
+            }
         }
     }
 }

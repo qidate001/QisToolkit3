@@ -222,6 +222,7 @@
             checkBox_DanmakuFactory_XML_To_ASS = new CheckBox();
             checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile = new CheckBox();
             tabPage9 = new TabPage();
+            button_RunRuleEngine = new Button();
             comboBox_StringRuleEngine = new ComboBox();
             checkBox_StringRuleEngine = new CheckBox();
             richTextBox_StringRuleEngine = new RichTextBox();
@@ -1826,12 +1827,20 @@
             // 
             // tabPage9
             // 
+            tabPage9.Controls.Add(button_RunRuleEngine);
             tabPage9.Controls.Add(comboBox_StringRuleEngine);
             tabPage9.Controls.Add(checkBox_StringRuleEngine);
             tabPage9.Controls.Add(richTextBox_StringRuleEngine);
             resources.ApplyResources(tabPage9, "tabPage9");
             tabPage9.Name = "tabPage9";
             tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // button_RunRuleEngine
+            // 
+            resources.ApplyResources(button_RunRuleEngine, "button_RunRuleEngine");
+            button_RunRuleEngine.Name = "button_RunRuleEngine";
+            button_RunRuleEngine.UseVisualStyleBackColor = true;
+            button_RunRuleEngine.Click += button_RunRuleEngine_ClickAsync;
             // 
             // comboBox_StringRuleEngine
             // 
@@ -2438,5 +2447,6 @@
         private RichTextBox richTextBox_StringRuleEngine;
         private CheckBox checkBox_StringRuleEngine;
         private ComboBox comboBox_StringRuleEngine;
+        private Button button_RunRuleEngine;
     }
 }
