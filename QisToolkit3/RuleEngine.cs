@@ -46,13 +46,21 @@ namespace QisToolkit3
         {
             var rules = new List<Rule>();
             var ruleParts = ruleString.Split(';', StringSplitOptions.RemoveEmptyEntries);
+
+            Log.Info($"原始规则字符串: '{ruleString}'");
+            Log.Info($"分割后共 {ruleParts.Length} 个规则");
+
             foreach (var part in ruleParts)
             {
-                var trimmed = part.Trim();
+                //var trimmed = part.Trim();
+                var trimmed = part.TrimStart();
                 if (string.IsNullOrEmpty(trimmed)) continue;
 
                 var plusParts = trimmed.Split('+');
-                string basePart = plusParts[0].Trim();
+                //string basePart = plusParts[0].Trim();
+                string basePart = plusParts[0];
+
+                Log.Info($"正在解析: '{trimmed}'");
                 var conditions = new List<Condition>();
 
                 for (int i = 1; i < plusParts.Length; i++)
@@ -77,7 +85,8 @@ namespace QisToolkit3
                         }
                         conditions.Add(new Condition { Type = Condition.CondType.PrefixText, Text = value, IsRegex = isRegex });
                     }
-                    // ----- 新增后缀文本条件解析 -----
+
+                    // ----- 后缀文本条件解析 -----
                     else if (cond.StartsWith("S=", StringComparison.OrdinalIgnoreCase) ||
                              cond.StartsWith("Suffix-Text=", StringComparison.OrdinalIgnoreCase))
                     {
@@ -100,21 +109,23 @@ namespace QisToolkit3
                 }
 
                 var rule = new Rule { Conditions = conditions };
-
-                // 按优先级识别基础规则（不变）
+                
+                // 按优先级识别基础规则
                 if (basePart.Contains("→→"))
                 {
                     var parts = basePart.Split(new[] { "→→" }, StringSplitOptions.None);
                     if (parts.Length != 2) throw new ArgumentException("向右插入格式错误");
                     rule.Op = Rule.OperationType.InsertRight;
-                    ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    //ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    ParseLeftRight(parts[0].Trim(), parts[1], rule);
                 }
                 else if (basePart.Contains("←←"))
                 {
                     var parts = basePart.Split(new[] { "←←" }, StringSplitOptions.None);
                     if (parts.Length != 2) throw new ArgumentException("向左插入格式错误");
                     rule.Op = Rule.OperationType.InsertLeft;
-                    ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    //ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    ParseLeftRight(parts[0].Trim(), parts[1], rule);
                 }
                 else if (basePart.Contains("→←"))
                 {
@@ -180,7 +191,8 @@ namespace QisToolkit3
                     var parts = basePart.Split(new[] { "→" }, StringSplitOptions.None);
                     if (parts.Length != 2) throw new ArgumentException("替换格式错误");
                     rule.Op = Rule.OperationType.Replace;
-                    ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    //ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
+                    ParseLeftRight(parts[0].Trim(), parts[1], rule);
                 }
                 else
                     throw new ArgumentException($"无法识别的基础规则: {basePart}");
