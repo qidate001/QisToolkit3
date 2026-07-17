@@ -528,128 +528,128 @@ namespace QisToolkit3.Forms
                 case "系统缓存":
                     logs += KillProc("OfficeClickToRun");
                     logs += KillProc("OfficeClickToRun");
-                    logs += DeleteDirectoryNd(@"C:\Windows\Temp");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\WDI", "{");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\SleepStudy");
-                    logs += DeleteFile(@"C:\Windows\SoftwareDistribution\ReportingEvents.log");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "Temp"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "WDI"), "{");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "SleepStudy"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "SoftwareDistribution", "ReportingEvents.log"));
                     break;
                 case "系统日志":
-                    logs += DeleteDirectoryNd(@"C:\Windows\Logs");
-                    logs += DeleteDirectoryNd(@"C:\Windows\security\logs");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\LogFiles");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\WDI\LogFiles");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Microsoft\Network\Downloader");
-                    logs += DeleteDirectoryNd(@"C:\Windows\Panther\Rollback\MachineIndependent\Transformers\CBS\boot_volume\WinLH\WinSxS\Catalogs");
-                    logs += DeleteFile(@"C:\Windows\System32\catroot2\dberr.txt");
-                    logs += DeleteFile(@"C:\Windows\Panther\UnattendGC\diagerr.xml");
-                    logs += DeleteFile(@"C:\Windows\Panther\UnattendGC\diagwrn.xml");
-                    logs += DeleteFile(@"C:\Windows\Panther\DDACLSys.log");
-                    logs += DeleteFile(@"C:\Windows\INF\setupapi.setup.log");
-                    logs += DeleteFile(@"C:\Windows\debug\WIA\wiatrace.log");
-                    logs += DeleteFile(@"C:\Windows\debug\mrt.log");
-                    logs += DeleteFile(@"C:\Windows\debug\NetSetup.LOG");
-                    logs += DeleteFile(@"C:\Windows\INF\setupapi.dev.log");
-                    logs += DeleteFile(@"C:\Windows\INF\setupapi.offline.log");
-                    logs += DeleteFile(@"C:\Windows\INF\setupapi.upgrade.log");
-                    logs += DeleteFile(@"C:\Windows\Panther\Rollback\EFI\Microsoft\Boot\BCD.LOG");
-                    logs += DeleteFile(@"C:\Windows\Panther\Rollback\WinPE\setupapi\setupapi.offline.log");
-                    logs += DeleteFile(@"C:\Windows\Performance\WinSAT\winsat.log");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "Logs"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "security", "logs"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "LogFiles"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "WDI", "LogFiles"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "Network", "Downloader"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "Panther", "Rollback", "MachineIndependent", "Transformers", "CBS", "boot_volume", "WinLH", "WinSxS", "Catalogs"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "System32", "catroot2", "dberr.txt"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Panther", "UnattendGC", "diagerr.xml"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Panther", "UnattendGC", "diagwrn.xml"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Panther", "DDACLSys.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "INF", "setupapi.setup.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "debug", "WIA", "wiatrace.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "debug", "mrt.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "debug", "NetSetup.LOG"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "INF", "setupapi.dev.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "INF", "setupapi.offline.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "INF", "setupapi.upgrade.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Panther", "Rollback", "EFI", "Microsoft", "Boot", "BCD.LOG"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Panther", "Rollback", "WinPE", "setupapi", "setupapi.offline.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "Performance", "WinSAT", "winsat.log"));
                     break;
                 case "系统USO日志":
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\USOShared\Logs\System");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\USOShared\Logs\User");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "USOShared", "Logs", "System"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "USOShared", "Logs", "User"));
                     break;
                 case "系统错误报告":
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Microsoft\Windows\WER\ReportArchive");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Microsoft\Windows\WER\ReportQueue");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Microsoft\Windows\WER\Temp");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "ReportArchive"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "ReportQueue"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "Temp"));
                     break;
                 case "本地程序缓存":
                     logs += KillProc("steamwebhelper");
                     logs += KillProc("msedge");
                     logs += KillProc("IDMan");
                     logs += KillProc("KuGou");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Temp");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Temp"));
                     break;
                 case "低优先级程序缓存":
-                    logs = DeleteDirectoryNd(LocalLowDir + @"\Temp");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalLowDir, "Temp"));
                     break;
                 case "诊断报告":
-                    logs = DeleteDirectoryNd(LocalDir + @"\ElevatedDiagnostics");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "ElevatedDiagnostics"));
                     break;
                 case "最近启动":
-                    logs = DeleteDirectoryNd(@"C:\Users\" + userName + @"\Recent");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Users", userName, "Recent"));
                     break;
                 case "通用互联网临时文件":
-                    logs = DeleteDirectoryNd(@"C:\Users\" + userName + @"\‌Cookies");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Users", userName, "Cookies"));
                     break;
                 case "驱动程序安装日志":
-                    logs = DeleteFile(@"C:\Windows\DIFx.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "DIFx.log"));
                     break;
                 case "缩率图缓存":
-                    logs = DeleteDirectoryNd(LocalDir + @"\Microsoft\Windows\Explorer");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Windows", "Explorer"));
                     break;
                 case "缓存的证书文件":
-                    logs = DeleteDirectoryNd(LocalLowDir + @"\Microsoft\CryptnetUrlCache\Content");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData");
-                    logs += DeleteDirectoryNd(@"C:\Windows\SysWOW64\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content");
-                    logs += DeleteDirectoryNd(@"C:\Windows\SysWOW64\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalLowDir, "Microsoft", "CryptnetUrlCache", "Content"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData"));
                     break;
                 case "DX 接口日志":
-                    logs = DeleteFile(@"C:\Windows\DirectX.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "DirectX.log"));
                     break;
                 case "ISA 日志文件":
-                    logs = DeleteFile(@"C:\Windows\PFRO.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "PFRO.log"));
                     break;
                 case "DTC 安装日志":
-                    logs = DeleteFile(@"C:\Windows\DtcInstall.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "DtcInstall.log"));
                     break;
                 case "系统安装错误日志":
-                    logs = DeleteFile(@"C:\Windows\setuperr.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "setuperr.log"));
                     break;
                 case "系统更新日志":
-                    logs = DeleteFile(@"C:\Windows\WindowsUpdate.log");
+                    logs = DeleteFile(Path.Combine(@"C:\Windows", "WindowsUpdate.log"));
                     break;
                 case "系统更新信息":
-                    logs = DeleteDirectoryNd(@"C:\Windows\SoftwareDistribution\DataStore\Logs");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "SoftwareDistribution", "DataStore", "Logs"));
                     break;
                 case "系统更新下载":
-                    logs = DeleteDirectoryNd(@"C:\Windows\SoftwareDistribution\Download");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "SoftwareDistribution", "Download"));
                     break;
                 case "彩色日志":
-                    logs = DeleteDirectoryNd(RoamingDir + @"\PLogs");
+                    logs = DeleteDirectoryNd(Path.Combine(RoamingDir, "PLogs"));
                     break;
                 case "CRL缓存":
-                    logs = DeleteDirectoryNd(@"C:\Users\Administrator\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content");
-                    logs += DeleteDirectoryNd(@"C:\Users\Administrator\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Users", "Administrator", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Users", "Administrator", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData"));
                     break;
                 case "Delivery Optimization日志":
-                    logs = DeleteDirectoryNd(@"C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Logs");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "ServiceProfiles", "NetworkService", "AppData", "Local", "Microsoft", "Windows", "DeliveryOptimization", "Logs"));
                     break;
                 case "MS搜索缓存":
-                    logs = DeleteDirectoryNd(@"C:\ProgramData\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "Search", "Data", "Applications", "Windows", "GatherLogs", "SystemIndex"));
                     break;
                 case "SubSystems":
-                    logs = DeleteDirectoryNd(@"C:\Windows\System32\sru");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "sru"));
                     break;
                 case "3D着色器":
-                    logs = DeleteDirectoryNd(LocalDir + @"\D3DSCache");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "D3DSCache"));
                     break;
                 case ".NET 全局程序集缓存":
-                    logs = DeleteDirectoryNd(@"C:\Windows\assembly");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "assembly"));
                     break;
                 case "预读文件缓存":
-                    logs = DeleteDirectoryNd(@"C:\Windows\Prefetch");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\Windows", "Prefetch"));
                     break;
                 case "最近打开的文件":
-                    logs = DeleteDirectoryNd(RoamingDir + @"\Microsoft\Windows\Recent");
+                    logs = DeleteDirectoryNd(Path.Combine(RoamingDir, "Microsoft", "Windows", "Recent"));
                     break;
                 #endregion
 
                 #region 游戏垃圾
                 case "i18nupdatemod":
-                    logs = DeleteDirectoryNd(LocalDir + @"\.i18nupdatemod");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, ".i18nupdatemod"));
                     break;
                 #endregion
 
@@ -658,126 +658,126 @@ namespace QisToolkit3.Forms
                     logs = KillProc("qit");
                     logs += KillProc("QisToolkit");
                     logs += KillProc("QisToolkitIS");
-                    logs += DeleteDirectoryNd(@"C:\QiAppDatas\Temps");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\QiAppDatas", "Temps"));
                     break;
                 case "IE 网页缓存":
-                    logs = DeleteDirectoryNd(LocalDir + @"\Microsoft\Windows\WebCache");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Internet Explorer\CacheStorage");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Windows\INetCache");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Windows", "WebCache"));
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Internet Explorer", "CacheStorage"));
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Windows", "INetCache"));
                     break;
                 case "Edge 日志":
                     logs = KillProc("msedge");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Edge\User Data\Default", "LOG");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Edge\User Data\Default", "LOG.old");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default"), "LOG");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default"), "LOG.old");
                     break;
                 case "Edge 缓存":
                     logs = KillProc("msedge");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Edge\User Data\Default\Code Cache");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Edge\User Data\Default\Cache\Cache_Data");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Code Cache"));
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Cache", "Cache_Data"));
                     break;
                 case "Edge 视频解码统计信息":
                     logs = KillProc("msedge");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Edge\User Data\Default\VideoDecodeStats");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "VideoDecodeStats"));
                     break;
                 case "Edge 更新缓存":
                     logs = KillProc("msedge");
-                    logs += DeleteDirectoryNd(@"C:\Program Files (x86)\Microsoft\EdgeUpdate\Download");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Program Files (x86)", "Microsoft", "EdgeUpdate", "Download"));
                     break;
                 case "夸克浏览器 缓存":
-                    logs += DeleteDirectoryNd(LocalDir + @"\Quark\User Data\Default\Cache\Cache_Data");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Quark", "User Data", "Default", "Cache", "Cache_Data"));
                     break;
                 case "Obsidian 更新":
-                    logs = DeleteDirectoryNd(LocalDir + @"\obsidian-updater");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "obsidian-updater"));
                     break;
                 case "SMAPI 错误报告":
-                    logs = DeleteFile(RoamingDir + @"\StardewValley\ErrorLogs\SMAPI-latest.txt");
+                    logs = DeleteFile(Path.Combine(RoamingDir, "StardewValley", "ErrorLogs", "SMAPI-latest.txt"));
                     break;
                 case "Adobe CR日志":
-                    logs = DeleteDirectoryNd(LocalLowDir + @"\Adobe\CRLogs");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalLowDir, "Adobe", "CRLogs"));
                     break;
                 case "腾讯程序日志":
-                    logs = DeleteDirectoryNd(RoamingDir + @"\Tencent\Logs");
+                    logs = DeleteDirectoryNd(Path.Combine(RoamingDir, "Tencent", "Logs"));
                     break;
                 case "腾讯程序日志2":
-                    logs = DeleteDirectoryNd(RoamingDir + @"\Tencent\pallas\teniodl\Logs");
+                    logs = DeleteDirectoryNd(Path.Combine(RoamingDir, "Tencent", "pallas", "teniodl", "Logs"));
                     break;
                 case "酷狗歌曲缓存":
                     logs = KillProc("KuGou");
-                    logs += DeleteDirectoryNd(@"C:\KuGou\Temp");
-                    logs += DeleteDirectoryNd(@"D:\KuGou\Temp");
-                    logs += DeleteDirectoryNd(@"E:\KuGou\Temp");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\KuGou", "Temp"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"D:\KuGou", "Temp"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"E:\KuGou", "Temp"));
                     break;
                 case "酷狗安装日志":
                     logs = KillProc("KuGou");
-                    logs += DeleteFile(RoamingDir + @"\KuGou8\Patch\install.log");
+                    logs += DeleteFile(Path.Combine(RoamingDir, "KuGou8", "Patch", "install.log"));
                     break;
                 case "酷狗日志":
                     logs = KillProc("KuGou");
-                    logs += DeleteDirectoryNd(RoamingDir + @"\KuGou8\log");
+                    logs += DeleteDirectoryNd(Path.Combine(RoamingDir, "KuGou8", "log"));
                     break;
                 case "酷狗其他垃圾":
                     logs = KillProc("KuGou");
-                    logs += DeleteFile(RoamingDir + @"\KuGou8\kugou.ini.bak");
+                    logs += DeleteFile(Path.Combine(RoamingDir, "KuGou8", "kugou.ini.bak"));
                     break;
                 case "IDM下载数据":
                     logs = KillProc("IDMan");
-                    logs += DeleteDirectoryNd(RoamingDir + @"\IDM\DwnlData");
+                    logs += DeleteDirectoryNd(Path.Combine(RoamingDir, "IDM", "DwnlData"));
                     break;
                 case "Unlocker日志":
                     logs = KillProc("IObitUnlocker");
-                    logs += DeleteFile(@"C:\Windows\unlocker.log");
+                    logs += DeleteFile(Path.Combine(@"C:\Windows", "unlocker.log"));
                     break;
                 case "暴雪战网":
                     logs = KillProc("IObitUnlocker");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Battle.net\Agent\Logs");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Battle.net\Setup\fenris_2\Logs");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Battle.net\Logs");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\Blizzard Entertainment\Battle.net\Cache");
-                    logs += DeleteDirectoryNd(LocalDir + @"\Battle.net\Cache");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Battle.net", "Agent", "Logs"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Battle.net", "Setup", "fenris_2", "Logs"));
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Battle.net", "Logs"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Blizzard Entertainment", "Battle.net", "Cache"));
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Battle.net", "Cache"));
                     break;
                 case "Office16":
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Office\16.0\WebServiceCache\AllUsers");
-                    logs += DeleteDirectoryNd(RoamingDir + @"\Microsoft\Office\Recent");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Office", "16.0", "WebServiceCache", "AllUsers"));
+                    logs += DeleteDirectoryNd(Path.Combine(RoamingDir, "Microsoft", "Office", "Recent"));
                     break;
                 case "MS Office":
-                    logs += DeleteDirectoryNd(LocalDir + @"\Microsoft\Office\OTele");
-                    logs += DeleteDirectoryNd(@"C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Office\OTele");
-                    logs += DeleteDirectoryNd(@"C:\Windows\SysWOW64\config\systemprofile\AppData\Local\Microsoft\Office\OTele");
+                    logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Microsoft", "Office", "OTele"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "Local", "Microsoft", "Office", "OTele"));
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "Local", "Microsoft", "Office", "OTele"));
                     break;
                 #endregion
 
                 #region 主要面向开发者的软件垃圾
                 case "Unistore缓存":
-                    logs = DeleteDirectoryNd(LocalDir + @"\Comms\Unistore\data\temp");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "Comms", "Unistore", "data", "temp"));
                     break;
                 case "Xamarin日志":
-                    logs = DeleteDirectoryNd(LocalDir + @"\Xamarin\Logs");
+                    logs = DeleteDirectoryNd(Path.Combine(LocalDir, "Xamarin", "Logs"));
                     break;
                 case "MCreator日志":
                     logs = KillProc("javaw");
                     logs += KillProc("mcreator");
-                    logs += DeleteDirectoryNd(@"C:\Users\" + userName + @"\.mcreator\logs");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Users", userName, ".mcreator", "logs"));
                     break;
                 case "MCreator构建缓存":
                     logs = KillProc("javaw");
                     logs += KillProc("mcreator");
-                    logs += DeleteDirectoryNd(@"C:\Users\" + userName + @"\.mcreator\gradle\.tmp");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\Users", userName, ".mcreator", "gradle", ".tmp"));
                     break;
                 case "NVIDIA计算缓存":
-                    logs = DeleteDirectoryNd(RoamingDir + @"\NVIDIA\ComputeCache");
+                    logs = DeleteDirectoryNd(Path.Combine(RoamingDir, "NVIDIA", "ComputeCache"));
                     break;
                 case "FrameViewSDK":
                     logs = KillProc("NVIDIA Overlay");
-                    logs += DeleteDirectoryNd(@"C:\ProgramData\NVIDIA Corporation\FrameViewSDK");
+                    logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "NVIDIA Corporation", "FrameViewSDK"));
                     break;
                 case "NVDisplay日志":
-                    logs = DeleteFile(@"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log");
-                    logs += DeleteFile(@"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log");
-                    logs += DeleteFile(@"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log.log_backup1");
-                    logs += DeleteFile(@"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log.log_backup1");
+                    logs = DeleteFile(Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer1.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer2.log"));
+                    logs += DeleteFile(Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer1.log.log_backup1"));
+                    logs += DeleteFile(Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer2.log.log_backup1"));
                     break;
                 case "MS Visual Studio 安装包":
-                    logs = DeleteDirectoryNd(@"C:\ProgramData\Microsoft\VisualStudio\Packages");
+                    logs = DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Microsoft", "VisualStudio", "Packages"));
                     break;
                     #endregion
             }
