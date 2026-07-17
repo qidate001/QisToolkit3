@@ -86,161 +86,193 @@ namespace QisToolkit3.Forms
         private void ScanGarbage(IProgress<string> progress)
         {
             #region 系统垃圾
-            ScanGarbageForDirs([@"C:\Windows\Temp", @"C:\Windows\System32\SleepStudy\ScreenOn", @"C:\Windows\System32\WDI"], "系统缓存");
-            ScanGarbageForDirs([@"C:\Windows\Logs", @"C:\Windows\security\logs", @"C:\ProgramData\Microsoft\Network\Downloader",
-                                @"C:\Windows\System32\LogFiles", @"C:\Windows\System32\WDI\LogFiles",
-                                @"C:\Windows\Panther\Rollback\MachineIndependent\Transformers\CBS\boot_volume\WinLH\WinSxS\Catalogs"], "系统日志");
-            ScanGarbageForDirs([@"C:\ProgramData\USOShared\Logs\System", @"C:\ProgramData\USOShared\Logs\User"], "系统USO日志");
-            ScanGarbageForDirs([@"C:\ProgramData\Microsoft\Windows\WER\ReportArchive", @"C:\ProgramData\Microsoft\Windows\WER\ReportQueue", @"C:\ProgramData\Microsoft\Windows\WER\Temp"], "系统错误报告");
-            ScanGarbageForDir(LocalDir + @"\Temp", "本地程序缓存");
-            ScanGarbageForDir(LocalLowDir + @"\Temp", "低优先级程序缓存");
-            ScanGarbageForDir(LocalDir + @"\ElevatedDiagnostics", "诊断报告");
-            ScanGarbageForDir(@"C:\Users\" + userName + @"\Recent", "最近启动");
-            ScanGarbageForDir(@"C:\Users\" + userName + @"\‌Cookies", "通用互联网临时文件");
-            ScanGarbageForDir(LocalDir + @"\Microsoft\Windows\Explorer", "缩率图缓存", false);
-            ScanGarbageForFile(@"C:\Windows\DIFx.log", "驱动程序安装日志");
             ScanGarbageForDirs([
-                LocalLowDir + @"\Microsoft\CryptnetUrlCache\Content",
-                @"C:\Windows\System32\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content",
-                @"C:\Windows\System32\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData",
-                @"C:\Windows\SysWOW64\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content",
-                @"C:\Windows\SysWOW64\config\systemprofile\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData"
+                Path.Combine(@"C:\Windows", "Temp"),
+                Path.Combine(@"C:\Windows", "System32", "SleepStudy", "ScreenOn"),
+                Path.Combine(@"C:\Windows", "System32", "WDI")
+            ], "系统缓存");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\Windows", "Logs"),
+                Path.Combine(@"C:\Windows", "security", "logs"),
+                Path.Combine(@"C:\ProgramData", "Microsoft", "Network", "Downloader"),
+                Path.Combine(@"C:\Windows", "System32", "LogFiles"),
+                Path.Combine(@"C:\Windows", "System32", "WDI", "LogFiles"),
+                Path.Combine(@"C:\Windows", "Panther", "Rollback", "MachineIndependent", "Transformers", "CBS", "boot_volume", "WinLH", "WinSxS", "Catalogs")
+            ], "系统日志");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\ProgramData", "USOShared", "Logs", "System"),
+                Path.Combine(@"C:\ProgramData", "USOShared", "Logs", "User")
+            ], "系统USO日志");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "ReportArchive"),
+                Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "ReportQueue"),
+                Path.Combine(@"C:\ProgramData", "Microsoft", "Windows", "WER", "Temp")
+            ], "系统错误报告");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Temp"), "本地程序缓存");
+            ScanGarbageForDir(Path.Combine(LocalLowDir, "Temp"), "低优先级程序缓存");
+            ScanGarbageForDir(Path.Combine(LocalDir, "ElevatedDiagnostics"), "诊断报告");
+            ScanGarbageForDir(Path.Combine(@"C:\Users", userName, "Recent"), "最近启动");
+            ScanGarbageForDir(Path.Combine(@"C:\Users", userName, "Cookies"), "通用互联网临时文件");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Microsoft", "Windows", "Explorer"), "缩率图缓存", false);
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "DIFx.log"), "驱动程序安装日志");
+            ScanGarbageForDirs([
+                Path.Combine(LocalLowDir, "Microsoft", "CryptnetUrlCache", "Content"),
+                Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"),
+                Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData"),
+                Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"),
+                Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData")
             ], "缓存的证书文件");
-            ScanGarbageForFile(@"C:\Windows\DirectX.log", "DX 接口日志");
-            ScanGarbageForFile(@"C:\Windows\PFRO.log", "ISA 日志文件");
-            ScanGarbageForFile(@"C:\Windows\DtcInstall.log", "DTC 安装日志");
-            ScanGarbageForFile(@"C:\Windows\setuperr.log", "系统安装错误日志");
-            ScanGarbageForFile(@"C:\Windows\WindowsUpdate.log", "系统更新日志");
-            ScanGarbageForDir(@"C:\Windows\SoftwareDistribution\DataStore\Logs", "系统更新信息");
-            ScanGarbageForDir(@"C:\Windows\SoftwareDistribution\Download", "系统更新下载");
-            ScanGarbageForDir(RoamingDir + @"\PLogs", "彩色日志");
-            ScanGarbageForDirs([@"C:\Users\Administrator\AppData\LocalLow\Microsoft\CryptnetUrlCache\Content", @"C:\Users\Administrator\AppData\LocalLow\Microsoft\CryptnetUrlCache\MetaData"], "CRL缓存");
-            ScanGarbageForDir(@"C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Logs", "Delivery Optimization日志");
-            ScanGarbageForDir(@"C:\ProgramData\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex", "MS搜索缓存");
-            ScanGarbageForDir(@"C:\Windows\System32\sru", "SubSystems");
-            ScanGarbageForDir(LocalDir + @"\D3DSCache", "3D着色器");
-            ScanGarbageForDir(@"C:\Windows\assembly", ".NET 全局程序集缓存");
-            ScanGarbageForDir(@"C:\Windows\Prefetch", "预读文件缓存", false);
-            ScanGarbageForDir(RoamingDir + @"\Microsoft\Windows\Recent", "最近打开的文件");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "DirectX.log"), "DX 接口日志");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "PFRO.log"), "ISA 日志文件");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "DtcInstall.log"), "DTC 安装日志");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "setuperr.log"), "系统安装错误日志");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "WindowsUpdate.log"), "系统更新日志");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "SoftwareDistribution", "DataStore", "Logs"), "系统更新信息");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "SoftwareDistribution", "Download"), "系统更新下载");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "PLogs"), "彩色日志");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\Users", "Administrator", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "Content"),
+                Path.Combine(@"C:\Users", "Administrator", "AppData", "LocalLow", "Microsoft", "CryptnetUrlCache", "MetaData")
+            ], "CRL缓存");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "ServiceProfiles", "NetworkService", "AppData", "Local", "Microsoft", "Windows", "DeliveryOptimization", "Logs"), "Delivery Optimization日志");
+            ScanGarbageForDir(Path.Combine(@"C:\ProgramData", "Microsoft", "Search", "Data", "Applications", "Windows", "GatherLogs", "SystemIndex"), "MS搜索缓存");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "System32", "sru"), "SubSystems");
+            ScanGarbageForDir(Path.Combine(LocalDir, "D3DSCache"), "3D着色器");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "assembly"), ".NET 全局程序集缓存");
+            ScanGarbageForDir(Path.Combine(@"C:\Windows", "Prefetch"), "预读文件缓存", false);
+            ScanGarbageForDir(Path.Combine(RoamingDir, "Microsoft", "Windows", "Recent"), "最近打开的文件");
             #endregion
 
             #region 游戏垃圾
-            ScanGarbageForDir(LocalDir + @"\.i18nupdatemod", "i18nupdatemod");
+            ScanGarbageForDir(Path.Combine(LocalDir, ".i18nupdatemod"), "i18nupdatemod");
             #endregion
 
             #region 主要面向用户的软件垃圾
-            ScanGarbageForDir(@"C:\QiAppDatas\Temps", "齐系列程序缓存");
-            ScanGarbageForDirs([LocalDir + @"\Microsoft\Windows\WebCache", LocalDir + @"\Microsoft\Internet Explorer\CacheStorage"], "IE 网页缓存");
-            ScanGarbageForDir(LocalDir + @"\Microsoft\Edge\User Data\Default\VideoDecodeStats", "Edge 视频解码统计信息");
-            ScanGarbageForFiles([
-                LocalDir + @"\Microsoft\Edge\User Data\Default\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Asset Store\assets.db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Asset Store\assets.db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\AutofillStrikeDatabase\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\AutofillStrikeDatabase\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\BudgetDatabase\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\BudgetDatabase\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\ClientCertificates\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\ClientCertificates\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\commerce_subscription_db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\commerce_subscription_db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\discounts_db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\discounts_db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Download Service\EntryDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Download Service\EntryDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgeCoupons\coupons_data.db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgeCoupons\coupons_data.db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgePushStorageWithConnectTokenAndKey\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgePushStorageWithConnectTokenAndKey\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgePushStorageWithWinRt\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EdgePushStorageWithWinRt\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EntityExtraction\EntityExtractionAssetStore.db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\EntityExtraction\EntityExtractionAssetStore.db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Extension State\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Extension State\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Feature Engagement Tracker\AvailabilityDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Feature Engagement Tracker\AvailabilityDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Feature Engagement Tracker\EventDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Feature Engagement Tracker\EventDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\File System\Origins\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\File System\Origins\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Local Storage\leveldb\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Local Storage\leveldb\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\optimization_guide_hint_cache_store\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\optimization_guide_hint_cache_store\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\parcel_tracking_db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\parcel_tracking_db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\PersistentOriginTrials\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\PersistentOriginTrials\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Platform Notifications\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Platform Notifications\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\PriceComparison\PriceComparisonAssetStore.db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\PriceComparison\PriceComparisonAssetStore.db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SegmentInfoDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SegmentInfoDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SignalDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SignalDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SignalStorageConfigDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Segmentation Platform\SignalStorageConfigDB\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Service Worker\Database\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Service Worker\Database\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Session Storage\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Session Storage\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\shared_proto_db\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\shared_proto_db\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\shared_proto_db\metadata\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\shared_proto_db\metadata\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Site Characteristics Database\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Site Characteristics Database\LOG.old",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Sync Data\LevelDB\LOG",
-                LocalDir + @"\Microsoft\Edge\User Data\Default\Sync Data\LevelDB\LOG.old"
-            ], "Edge 日志");
-            ScanGarbageForDirs([LocalDir + @"\Microsoft\Edge\User Data\Default\Code Cache", LocalDir + @"\Microsoft\Edge\User Data\Default\Cache\Cache_Data"], "Edge 缓存");
-            ScanGarbageForDir(@"C:\Program Files(x86)\Microsoft\EdgeUpdate\Download", "Edge 更新缓存");
-            ScanGarbageForDirs([@"C:\KuGou\Temp", @"D:\KuGou\Temp", @"E:\KuGou\Temp", @"F:\KuGou\Temp"], "酷狗歌曲缓存");
-            ScanGarbageForDir(RoamingDir + @"\KuGou8\log", "酷狗日志");
-            ScanGarbageForDir(LocalDir + @"\Quark\User Data\Default\Cache\Cache_Data", "夸克浏览器 缓存");
-            ScanGarbageForFile(RoamingDir + @"\KuGou8\Patch\install.log", "酷狗安装日志");
-            ScanGarbageForFile(RoamingDir + @"\KuGou8\kugou.ini.bak", "酷狗其他垃圾");
-            ScanGarbageForDir(LocalDir + @"\obsidian-updater", "Obsidian 更新");
-            ScanGarbageForFile(RoamingDir + @"\StardewValley\ErrorLogs\SMAPI-latest.txt", "SMAPI 错误报告");
-            ScanGarbageForDir(LocalLowDir + @"\Adobe\CRLogs", "Adobe CR日志");
-            ScanGarbageForDir(RoamingDir + @"\Tencent\Logs", "腾讯程序日志");
-            ScanGarbageForDir(RoamingDir + @"\Tencent\pallas\teniodl\Logs", "腾讯程序日志2");
-            ScanGarbageForDir(RoamingDir + @"\IDM\DwnlData", "IDM下载数据");
-            ScanGarbageForFile(@"C:\Windows\unlocker.log", "Unlocker日志");
+            ScanGarbageForDir(Path.Combine(@"C:\QiAppDatas", "Temps"), "齐系列程序缓存");
             ScanGarbageForDirs([
-                @"C:\ProgramData\Battle.net\Agent\Logs", @"C:\ProgramData\Battle.net\Setup\fenris_2\Logs",
-                LocalDir + @"\Battle.net\Logs", @"C:\ProgramData\Blizzard Entertainment\Battle.net\Cache",
-                LocalDir + @"\Battle.net\Cache"
+                Path.Combine(LocalDir, "Microsoft", "Windows", "WebCache"),
+                Path.Combine(LocalDir, "Microsoft", "Internet Explorer", "CacheStorage")
+            ], "IE 网页缓存");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "VideoDecodeStats"), "Edge 视频解码统计信息");
+            ScanGarbageForFiles([
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Asset Store", "assets.db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Asset Store", "assets.db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "AutofillStrikeDatabase", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "AutofillStrikeDatabase", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "BudgetDatabase", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "BudgetDatabase", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "ClientCertificates", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "ClientCertificates", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "commerce_subscription_db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "commerce_subscription_db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "discounts_db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "discounts_db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Download Service", "EntryDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Download Service", "EntryDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgeCoupons", "coupons_data.db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgeCoupons", "coupons_data.db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgePushStorageWithConnectTokenAndKey", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgePushStorageWithConnectTokenAndKey", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgePushStorageWithWinRt", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EdgePushStorageWithWinRt", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EntityExtraction", "EntityExtractionAssetStore.db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "EntityExtraction", "EntityExtractionAssetStore.db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Extension State", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Extension State", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Feature Engagement Tracker", "AvailabilityDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Feature Engagement Tracker", "AvailabilityDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Feature Engagement Tracker", "EventDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Feature Engagement Tracker", "EventDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "File System", "Origins", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "File System", "Origins", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Local Storage", "leveldb", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Local Storage", "leveldb", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "optimization_guide_hint_cache_store", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "optimization_guide_hint_cache_store", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "parcel_tracking_db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "parcel_tracking_db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "PersistentOriginTrials", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "PersistentOriginTrials", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Platform Notifications", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Platform Notifications", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "PriceComparison", "PriceComparisonAssetStore.db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "PriceComparison", "PriceComparisonAssetStore.db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SegmentInfoDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SegmentInfoDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SignalDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SignalDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SignalStorageConfigDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Segmentation Platform", "SignalStorageConfigDB", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Service Worker", "Database", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Service Worker", "Database", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Session Storage", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Session Storage", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "shared_proto_db", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "shared_proto_db", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "shared_proto_db", "metadata", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "shared_proto_db", "metadata", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Site Characteristics Database", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Site Characteristics Database", "LOG.old"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Sync Data", "LevelDB", "LOG"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Sync Data", "LevelDB", "LOG.old")
+            ], "Edge 日志");
+            ScanGarbageForDirs([
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Code Cache"),
+                Path.Combine(LocalDir, "Microsoft", "Edge", "User Data", "Default", "Cache", "Cache_Data")
+            ], "Edge 缓存");
+            ScanGarbageForDir(Path.Combine(@"C:\Program Files (x86)", "Microsoft", "EdgeUpdate", "Download"), "Edge 更新缓存");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\KuGou", "Temp"),
+                Path.Combine(@"D:\KuGou", "Temp"),
+                Path.Combine(@"E:\KuGou", "Temp"),
+                Path.Combine(@"F:\KuGou", "Temp")
+            ], "酷狗歌曲缓存");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "KuGou8", "log"), "酷狗日志");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Quark", "User Data", "Default", "Cache", "Cache_Data"), "夸克浏览器 缓存");
+            ScanGarbageForFile(Path.Combine(RoamingDir, "KuGou8", "Patch", "install.log"), "酷狗安装日志");
+            ScanGarbageForFile(Path.Combine(RoamingDir, "KuGou8", "kugou.ini.bak"), "酷狗其他垃圾");
+            ScanGarbageForDir(Path.Combine(LocalDir, "obsidian-updater"), "Obsidian 更新");
+            ScanGarbageForFile(Path.Combine(RoamingDir, "StardewValley", "ErrorLogs", "SMAPI-latest.txt"), "SMAPI 错误报告");
+            ScanGarbageForDir(Path.Combine(LocalLowDir, "Adobe", "CRLogs"), "Adobe CR日志");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "Tencent", "Logs"), "腾讯程序日志");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "Tencent", "pallas", "teniodl", "Logs"), "腾讯程序日志2");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "IDM", "DwnlData"), "IDM下载数据");
+            ScanGarbageForFile(Path.Combine(@"C:\Windows", "unlocker.log"), "Unlocker日志");
+            ScanGarbageForDirs([
+                Path.Combine(@"C:\ProgramData", "Battle.net", "Agent", "Logs"),
+                Path.Combine(@"C:\ProgramData", "Battle.net", "Setup", "fenris_2", "Logs"),
+                Path.Combine(LocalDir, "Battle.net", "Logs"),
+                Path.Combine(@"C:\ProgramData", "Blizzard Entertainment", "Battle.net", "Cache"),
+                Path.Combine(LocalDir, "Battle.net", "Cache")
             ], "暴雪战网");
             ScanGarbageForDirs([
-                LocalDir + @"\Microsoft\Office\16.0\WebServiceCache\AllUsers",
-                RoamingDir + @"\Microsoft\Office\Recent"
+                Path.Combine(LocalDir, "Microsoft", "Office", "16.0", "WebServiceCache", "AllUsers"),
+                Path.Combine(RoamingDir, "Microsoft", "Office", "Recent")
             ], "Office16");
             ScanGarbageForDirs([
-                LocalDir + @"\Microsoft\Office\OTele",
-                @"C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Office\OTele",
-                @"C:\Windows\SysWOW64\config\systemprofile\AppData\Local\Microsoft\Office\OTele"
+                Path.Combine(LocalDir, "Microsoft", "Office", "OTele"),
+                Path.Combine(@"C:\Windows", "System32", "config", "systemprofile", "AppData", "Local", "Microsoft", "Office", "OTele"),
+                Path.Combine(@"C:\Windows", "SysWOW64", "config", "systemprofile", "AppData", "Local", "Microsoft", "Office", "OTele")
             ], "MS Office");
             #endregion
 
             #region 主要面向高级用户的软件垃圾
-            ScanGarbageForDir(LocalDir + @"\Comms\Unistore\data\temp", "Unistore缓存");
-            ScanGarbageForDir(LocalDir + @"\Xamarin\Logs", "Xamarin日志");
-            ScanGarbageForDir(@"C:\Users\" + userName + @"\.mcreator\logs", "MCreator日志");
-            ScanGarbageForDir(@"C:\Users\" + userName + @"\.mcreator\gradle\.tmp", "MCreator构建缓存");
-            ScanGarbageForDir(RoamingDir + @"\NVIDIA\ComputeCache", "NVIDIA计算缓存");
-            ScanGarbageForDir(@"C:\ProgramData\NVIDIA Corporation\FrameViewSDK", "FrameViewSDK");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Comms", "Unistore", "data", "temp"), "Unistore缓存");
+            ScanGarbageForDir(Path.Combine(LocalDir, "Xamarin", "Logs"), "Xamarin日志");
+            ScanGarbageForDir(Path.Combine(@"C:\Users", userName, ".mcreator", "logs"), "MCreator日志");
+            ScanGarbageForDir(Path.Combine(@"C:\Users", userName, ".mcreator", "gradle", ".tmp"), "MCreator构建缓存");
+            ScanGarbageForDir(Path.Combine(RoamingDir, "NVIDIA", "ComputeCache"), "NVIDIA计算缓存");
+            ScanGarbageForDir(Path.Combine(@"C:\ProgramData", "NVIDIA Corporation", "FrameViewSDK"), "FrameViewSDK");
             ScanGarbageForFiles([
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log",
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log.log_backup1",
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log",
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log.log_backup1"
+                Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer1.log"),
+                Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer1.log.log_backup1"),
+                Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer2.log"),
+                Path.Combine(@"C:\ProgramData", "NVIDIA", "DisplaySessionContainer2.log.log_backup1")
             ], "NVDisplay日志");
-            ScanGarbageForDir(@"C:\ProgramData\Microsoft\VisualStudio\Packages", "MS Visual Studio 安装包");
-            
+            ScanGarbageForDir(Path.Combine(@"C:\ProgramData", "Microsoft", "VisualStudio", "Packages"), "MS Visual Studio 安装包");
+
             #endregion
 
             void ScanGarbageForDir(string path, string name, bool Checked = true)
