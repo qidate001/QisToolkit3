@@ -728,7 +728,6 @@ namespace QisToolkit3.Forms
                     logs += DeleteFile(Path.Combine(@"C:\Windows", "unlocker.log"));
                     break;
                 case "暴雪战网":
-                    logs = KillProc("IObitUnlocker");
                     logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Battle.net", "Agent", "Logs"));
                     logs += DeleteDirectoryNd(Path.Combine(@"C:\ProgramData", "Battle.net", "Setup", "fenris_2", "Logs"));
                     logs += DeleteDirectoryNd(Path.Combine(LocalDir, "Battle.net", "Logs"));
