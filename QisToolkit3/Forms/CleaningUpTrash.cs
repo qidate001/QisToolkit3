@@ -235,11 +235,12 @@ namespace QisToolkit3.Forms
             ScanGarbageForDir(@"C:\ProgramData\NVIDIA Corporation\FrameViewSDK", "FrameViewSDK");
             ScanGarbageForFiles([
                 @"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log",
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log.log_backup1",
-                @"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log",
+                @"C:\ProgramData\NVIDIA\DisplaySessionContainer1.log.log_backup1",
+                @"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log",
                 @"C:\ProgramData\NVIDIA\DisplaySessionContainer2.log.log_backup1"
             ], "NVDisplay日志");
             ScanGarbageForDir(@"C:\ProgramData\Microsoft\VisualStudio\Packages", "MS Visual Studio 安装包");
+            
             #endregion
 
             void ScanGarbageForDir(string path, string name, bool Checked = true)
