@@ -1383,34 +1383,38 @@ namespace QisToolkit3.Forms
             if (checkBox_ChineseTip.Checked)
             {
                 text = text.Replace("Destination", "目标");
+                text = text.Replace("Danmaku Pool: ", "弹幕池：");
+                text = text.Replace("Read timed out", "读取超时");
                 text = text.Replace("Language Formats", "语言格式");
                 text = text.Replace("Extracting URL", "正在提取URL");
                 text = text.Replace("Writting file", "正在写入文件");
                 text = text.Replace("Downloading item", "正在下载项目");
                 text = text.Replace("Available formats for", "可用格式");
+                text = text.Replace("HTTPSConnectionPool", "HTTPS连接池");
                 text = text.Replace("Available subtitles for", "可用语言");
                 text = text.Replace("Downloading webpage", "正在下载网页");
                 text = text.Replace("Merging formats into", "将格式合并到");
+                text = text.Replace("Adding thumbnail to", "正在添加缩略图");
                 text = text.Replace("has already been downloaded", "已下载");
                 text = text.Replace("EXT RESOLUTION FPS", "外部分辨率 帧率");
                 text = text.Replace("File Loading Complete", "文件加载完成");
                 text = text.Replace("Deleting original file", "删除原始文件");
                 text = text.Replace("Downloading wbi sign", "正在下载WIB标志");
                 text = text.Replace("Available thumbnails for ", "可用缩略图 ");
-                text = text.Replace("Danmaku Pool: ", "弹幕池：");
-                text = text.Replace("has already been recorded in the archive", "已经记录在档案（黑名单）中");
                 text = text.Replace("Downloading playlist", "正在下载播放列表");
                 text = text.Replace("Downloading playlist:", "正在下载播放列表：");
                 text = text.Replace("Finished downloading playlist: ", "完成列表下载");
                 text = text.Replace("Extracting videos in anthology", "正在选集中提取视频");
                 text = text.Replace("Downloading video formats for cid", "正在下载cid视频格式");
                 text = text.Replace("for how to manually pass cookies", "了解如何手动传递Cookie");
+                text = text.Replace("has already been recorded in the archive", "已经记录在档案（黑名单）中");
                 text = text.Replace("add --no-playlist to download just the video", "添加参数--no-playlist，将不再下载播放列表，只下载视频");
                 text = text.Replace("are missing; you have to become a premium member to download them. Use --cookies-from-browser or --cookies for the authentication. See", "未寻获；你必须成为高级会员下载它们。使用浏览器中的Cookie或用于身份验证的Cookie。见");
 
                 text = text.Replace("VBR ACODEC", "可变比特率音频编解码器");
                 text = text.Replace("Extracting chapters", "提取章节");
                 text = text.Replace("Loading files", "加载文件列表");
+                text = text.Replace("video thumbnail", "视频缩略图");
                 text = text.Replace("EmbedThumbnail", "嵌入缩略图");
                 text = text.Replace("Loading file", "加载文件");
                 text = text.Replace("Downloading", "正在下载");
@@ -1419,6 +1423,7 @@ namespace QisToolkit3.Forms
                 text = text.Replace("Playlist ", "播放列表");
                 text = text.Replace("TBR PROTO", "TBR 协议");
                 text = text.Replace("TimeShift", "时间偏移");
+                text = text.Replace("Got error", "出现错误");
                 text = text.Replace("VCODEC", "视频解码器");
                 text = text.Replace("video only", "仅视频");
                 text = text.Replace("audio only", "仅音频");
@@ -1429,9 +1434,11 @@ namespace QisToolkit3.Forms
                 text = text.Replace("ABR", "可用比特率");
                 text = text.Replace("download", "下载");
                 text = text.Replace("Template", "模板");
+                text = text.Replace("Retrying", "重试");
                 text = text.Replace("Sorting", "排序");
                 text = text.Replace("Unknown", "未知");
                 text = text.Replace("unknown", "未知");
+                text = text.Replace("Writing", "写入");
                 text = text.Replace("Format", "格式");
                 text = text.Replace("format", "格式");
                 text = text.Replace("Merger", "合并");
@@ -1441,6 +1448,8 @@ namespace QisToolkit3.Forms
                 text = text.Replace("ERROR", "错误");
                 text = text.Replace("info", "信息");
                 text = text.Replace("Done", "完成");
+                text = text.Replace("host", "主机");
+                text = text.Replace("port", "端口");
                 text = text.Replace("of", "总计");
 
                 text = text.Replace("Unable to obtain version", "无法获取版本");
