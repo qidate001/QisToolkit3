@@ -24,17 +24,18 @@ namespace QisToolkit3.Forms
         private Process process;
         private RichTextBox outputBox;
         private IdNameMapper _idNameMapper;
-        private string DefaultDownloadPath = Path.Combine(actualDirectory, @$"yt-dlp\Downloads");
-        private string YtDlpPath = Path.Combine(actualDirectory, @"yt-dlp\yt-dlp.exe");
-        private string YtDlpWorkDirPath = Path.Combine(actualDirectory, @"yt-dlp");
-        private string DanmakuFactoryPath = Path.Combine(actualDirectory, @"yt-dlp\DanmakuFactory.exe");
-        private string CookiesFilePath = Path.Combine(actualDirectory, @"yt-dlp\cookies.txt");
-        private string AutoDownloadFilePath = Path.Combine(actualDirectory, @"yt-dlp\AutoDownload.txt");
-        private string AutoDownloadNameFilePath = Path.Combine(actualDirectory, @"yt-dlp\AutoDownloadName.txt");
-        private string HeadersFilePath = Path.Combine(actualDirectory, @"yt-dlp\Headers.txt");
-        private string DefaultConfigFilePath = Path.Combine(actualDirectory, @"yt-dlp\DefaultConfig.xml");
-        private string AutoDownloadConfigFilePath = Path.Combine(actualDirectory, @"yt-dlp\AutoDownloadConfig.txt");
-        public static string MatchFiltersPath = Path.Combine(actualDirectory, @"yt-dlp\MatchFilters.txt");
+        private static string YtDlpPath = Path.Combine(actualDirectory, "yt-dlp");
+        private static string DefaultDownloadPath = Path.Combine(YtDlpPath, "Downloads");
+        private static string YtDlpExePath = Path.Combine(YtDlpPath, "yt-dlp.exe");
+        private static string DanmakuFactoryPath = Path.Combine(YtDlpPath, "DanmakuFactory.exe");
+        private static string CookiesFilePath = Path.Combine(YtDlpPath, "cookies.txt");
+        private static string AutoDownloadFilePath = Path.Combine(YtDlpPath, "AutoDownload.txt");
+        private static string AutoDownloadNameFilePath = Path.Combine(YtDlpPath, "AutoDownloadName.txt");
+        private static string HeadersFilePath = Path.Combine(YtDlpPath, "Headers.txt");
+        private static string DefaultConfigFilePath = Path.Combine(YtDlpPath, "DefaultConfig.xml");
+        private static string AutoDownloadConfigFilePath = Path.Combine(YtDlpPath, "AutoDownloadConfig.txt");
+        public static string MatchFiltersPath = Path.Combine(YtDlpPath, "MatchFilters.txt");
+        public static string YtDlpWorkDirPath = YtDlpPath;
 
 
         public YtDlpTool()
@@ -247,7 +248,7 @@ namespace QisToolkit3.Forms
                     // 确保路径是绝对路径
                     if (!Path.IsPathRooted(downloadPath))
                     {
-                        downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpPath), downloadPath));
+                        downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpExePath), downloadPath));
                     }
 
                     await RenameFilesWithRuleEngine(downloadPath);
@@ -271,7 +272,7 @@ namespace QisToolkit3.Forms
         /// </summary>
         private string[] GetAllVideoFiles()
         {
-            string ytDlpDir = Path.GetDirectoryName(YtDlpPath);
+            string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
             var allVideos = new List<string>();
 
             // 获取 home 路径
@@ -309,7 +310,7 @@ namespace QisToolkit3.Forms
         /// </summary>
         private string GetHomePath()
         {
-            string ytDlpDir = Path.GetDirectoryName(YtDlpPath);
+            string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
 
             // 优先使用 Home 路径
             if (checkBox_Path_Home.Checked && !string.IsNullOrEmpty(comboBox_Path_Home.Text))
@@ -383,7 +384,7 @@ namespace QisToolkit3.Forms
         //}
         private string[] GetXmlFiles()
         {
-            string ytDlpDir = Path.GetDirectoryName(YtDlpPath);
+            string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
             var allXmlFiles = new List<string>();
 
             // 获取 home 路径
@@ -442,7 +443,7 @@ namespace QisToolkit3.Forms
         private string GetInfoJsonPath(string videoPath)
         {
             string videoName = Path.GetFileNameWithoutExtension(videoPath);
-            string ytDlpDir = Path.GetDirectoryName(YtDlpPath);
+            string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
 
             // 获取 home 路径（基础目录）
             string homePath = "";
@@ -501,7 +502,7 @@ namespace QisToolkit3.Forms
         {
             ProcessingUserData();
 
-            string command = $"\"{YtDlpPath}\" {MakeCommand()}";
+            string command = $"\"{YtDlpExePath}\" {MakeCommand()}";
             Clipboard.SetText(command);
             Log.Info($"[YtDlp工具] 复制命令 {command}");
             MessageBox.Show($"已复制命令\n\n{command}");
@@ -1261,7 +1262,7 @@ namespace QisToolkit3.Forms
 
             ProcessStartInfo psi = new ProcessStartInfo
             {
-                FileName = YtDlpPath,
+                FileName = YtDlpExePath,
                 WorkingDirectory = YtDlpWorkDirPath,
                 RedirectStandardInput = true,
                 RedirectStandardOutput = true,
@@ -2443,7 +2444,7 @@ Name: 《遗忘世间》
                 // 确保路径是绝对路径
                 if (!Path.IsPathRooted(downloadPath))
                 {
-                    downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpPath), downloadPath));
+                    downloadPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(YtDlpExePath), downloadPath));
                 }
 
                 await RenameFilesWithRuleEngine(downloadPath);
