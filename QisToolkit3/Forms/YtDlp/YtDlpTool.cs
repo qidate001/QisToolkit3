@@ -306,6 +306,44 @@ namespace QisToolkit3.Forms
         }
 
         /// <summary>
+        /// 获取所有下载文件
+        /// </summary>
+        private string[] GetAllDownloadFiles()
+        {
+            string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
+            var allVideos = new List<string>();
+
+            // 获取 home 路径
+            string homePath = GetHomePath();
+
+            // 搜索所有可能的目录
+            string[] searchPaths = new[] { homePath };
+
+            // 如果有 Video 路径，也加入
+            if (checkBox_Path_Video.Checked && !string.IsNullOrEmpty(comboBox_Path_Video.Text))
+            {
+                string videoPath = comboBox_Path_Video.Text;
+                if (!Path.IsPathRooted(videoPath))
+                {
+                    videoPath = Path.GetFullPath(Path.Combine(ytDlpDir, videoPath));
+                }
+                searchPaths = searchPaths.Append(videoPath).ToArray();
+            }
+
+            foreach (var path in searchPaths.Distinct())
+            {
+                if (Directory.Exists(path))
+                {
+                    var files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
+                    allVideos.AddRange(files);
+                    AppendText($"在 {path} 找到 {files.Length} 个文件", "QisToolkit");
+                }
+            }
+
+            return allVideos.Distinct().ToArray();
+        }
+
+        /// <summary>
         /// 获取 Home 路径（基础下载目录）
         /// </summary>
         private string GetHomePath()
@@ -508,7 +546,6 @@ namespace QisToolkit3.Forms
             MessageBox.Show($"已复制命令\n\n{command}");
         }
 
-        // 在 YtDlpTool 类中添加一个新方法
         private async Task RenameFilesWithRuleEngine(string directoryPath)
         {
             if (!checkBox_StringRuleEngine.Checked ||
@@ -521,7 +558,7 @@ namespace QisToolkit3.Forms
             var rules = richTextBox_StringRuleEngine.Text;
 
             // 获取所有视频文件
-            var videoFiles = GetAllVideoFiles();
+            var videoFiles = GetAllDownloadFiles();
             int renamedCount = 0;
 
             foreach (var videoPath in videoFiles)
