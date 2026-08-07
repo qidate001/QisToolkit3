@@ -557,7 +557,7 @@ namespace QisToolkit3.Forms
             var ruleEngine = new RuleEngine();
             var rules = richTextBox_StringRuleEngine.Text;
 
-            // 获取所有视频文件
+            // 获取所有文件
             var videoFiles = GetAllDownloadFiles();
             int renamedCount = 0;
 
