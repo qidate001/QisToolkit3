@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -119,63 +120,58 @@ namespace QisToolkit3.Forms
             {
                 Log.Info("[CFT] [FixIconCache] 开始清理图标缓存");
 
-                // 1. 关闭资源管理器
+                // 1. 关闭资源管理器（只执行一次，不循环）
                 Log.Info("[CFT] [FixIconCache] 正在关闭资源管理器进程...");
+                var explorerProcs = Process.GetProcessesByName("explorer");
                 int killedCount = 0;
-                for (int i = 0; i < 5; ++i)
-                    foreach (var proc in Process.GetProcessesByName("explorer"))
+
+                foreach (var proc in explorerProcs)
+                {
+                    try
                     {
                         proc.Kill();
-                        proc.WaitForExit(5000);
+                        proc.WaitForExit(3000);
                         killedCount++;
                         Log.Info($"[CFT] [FixIconCache] 已终止资源管理器进程 (PID: {proc.Id})");
                     }
+                    catch (Exception ex)
+                    {
+                        Log.Err($"[CFT] [FixIconCache] 终止资源管理器进程失败 (PID: {proc.Id})，错误：{ex.Message}");
+                    }
+                    finally
+                    {
+                        proc.Dispose();
+                    }
+                }
                 Log.Info($"[CFT] [FixIconCache] 共终止 {killedCount} 个资源管理器进程");
 
-                // 2. 删除 Win10/Win11 通用的旧位置
+                // 等待文件解锁
+                if (killedCount > 0)
+                {
+                    Log.Info("[CFT] [FixIconCache] 等待文件系统解锁...");
+                    Thread.Sleep(1500);
+                }
+
+                // 2. 删除 Win10/Win11 通用的旧位置缓存
                 string oldPath = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     @"Microsoft\Windows\Explorer");
 
                 Log.Info($"[CFT] [FixIconCache] 开始清理旧缓存路径：{oldPath}");
 
+                int totalDeletedFiles = 0;
+                long totalDeletedSize = 0;
+
                 if (Directory.Exists(oldPath))
                 {
-                    // 删除 iconcache_*.db 文件
-                    var iconFiles = Directory.GetFiles(oldPath, "iconcache_*.db");
-                    foreach (var file in iconFiles)
-                    {
-                        try
-                        {
-                            var fileInfo = new FileInfo(file);
-                            long fileSize = fileInfo.Length;
-                            System.IO.File.Delete(file);
-                            Log.Info($"[CFT] [FixIconCache] 成功删除图标缓存文件，大小：{fileSize} 字节 ({file})");
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{file}，错误：{ex.Message}");
-                        }
-                    }
+                    // 删除所有图标缓存文件
+                    totalDeletedFiles += DeleteCacheFilesByPattern(oldPath, "iconcache_*.db", ref totalDeletedSize);
+                    totalDeletedFiles += DeleteCacheFilesByPattern(oldPath, "thumbcache_*.db", ref totalDeletedSize);
 
-                    // 删除 thumbcache_*.db 文件
-                    var thumbFiles = Directory.GetFiles(oldPath, "thumbcache_*.db");
-                    foreach (var file in thumbFiles)
-                    {
-                        try
-                        {
-                            var fileInfo = new FileInfo(file);
-                            long fileSize = fileInfo.Length;
-                            System.IO.File.Delete(file);
-                            Log.Info($"[CFT] [FixIconCache] 成功删除缩略图缓存文件，大小：{fileSize} 字节 ({file})");
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{file}，错误：{ex.Message}");
-                        }
-                    }
+                    // 额外清理：删除其他可能的缓存文件
+                    totalDeletedFiles += DeleteCacheFilesByPattern(oldPath, "*.db", ref totalDeletedSize);
 
-                    Log.Info($"[CFT] [FixIconCache] 旧缓存路径清理完成，共删除 {iconFiles.Length + thumbFiles.Length} 个文件");
+                    Log.Info($"[CFT] [FixIconCache] 旧缓存路径清理完成，共删除 {totalDeletedFiles} 个文件，释放约 {FormatFileSize(totalDeletedSize)}");
                 }
                 else
                 {
@@ -194,21 +190,30 @@ namespace QisToolkit3.Forms
                     string iconCacheDb = Path.Combine(newPath, "IconCache.db");
                     if (System.IO.File.Exists(iconCacheDb))
                     {
-                        try
+                        long fileSize = DeleteFileWithRetry(iconCacheDb);
+                        if (fileSize >= 0)
                         {
-                            var fileInfo = new FileInfo(iconCacheDb);
-                            long fileSize = fileInfo.Length;
-                            System.IO.File.Delete(iconCacheDb);
-                            Log.Info($"[CFT] [FixIconCache] 成功删除 Win11 图标缓存文件，大小：{fileSize} 字节 ({iconCacheDb})");
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Err($"[CFT] [FixIconCache] 删除文件失败：{iconCacheDb}，错误：{ex.Message}");
+                            totalDeletedFiles++;
+                            totalDeletedSize += fileSize;
+                            Log.Info($"[CFT] [FixIconCache] 成功删除 Win11 图标缓存文件，大小：{FormatFileSize(fileSize)} ({iconCacheDb})");
                         }
                     }
                     else
                     {
                         Log.Info($"[CFT] [FixIconCache] Win11 图标缓存文件不存在：{iconCacheDb}");
+                    }
+
+                    // 清理 Win11 缩略图缓存（如果有）
+                    string thumbCacheDb = Path.Combine(newPath, "ThumbCache.db");
+                    if (System.IO.File.Exists(thumbCacheDb))
+                    {
+                        long fileSize = DeleteFileWithRetry(thumbCacheDb);
+                        if (fileSize >= 0)
+                        {
+                            totalDeletedFiles++;
+                            totalDeletedSize += fileSize;
+                            Log.Info($"[CFT] [FixIconCache] 成功删除 Win11 缩略图缓存文件，大小：{FormatFileSize(fileSize)} ({thumbCacheDb})");
+                        }
                     }
                 }
                 else
@@ -216,8 +221,9 @@ namespace QisToolkit3.Forms
                     Log.Info($"[CFT] [FixIconCache] 新缓存路径不存在，跳过：{newPath}");
                 }
 
-                // 清除注册表图标缓存
+                // 4. 清除注册表图标缓存
                 Log.Info("[CFT] [FixIconCache] 开始清除注册表图标缓存");
+                int registryDeletedCount = 0;
                 try
                 {
                     using (RegistryKey key = Registry.CurrentUser.OpenSubKey(
@@ -226,14 +232,29 @@ namespace QisToolkit3.Forms
                         if (key != null)
                         {
                             var valueNames = key.GetValueNames();
-                            int deletedCount = 0;
                             foreach (string valueName in valueNames)
                             {
-                                key.DeleteValue(valueName);
-                                deletedCount++;
-                                Log.Info($"[CFT] [FixIconCache] 已删除注册表项：{valueName}");
+                                try
+                                {
+                                    key.DeleteValue(valueName);
+                                    registryDeletedCount++;
+                                    Log.Info($"[CFT] [FixIconCache] 已删除注册表项：{valueName}");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Log.Err($"[CFT] [FixIconCache] 删除注册表项失败：{valueName}，错误：{ex.Message}");
+                                }
                             }
-                            Log.Info($"[CFT] [FixIconCache] 注册表清理完成，共删除 {deletedCount} 个注册表值");
+
+                            // 确保图标缓存键存在（即使没有值也要创建）
+                            if (registryDeletedCount == 0)
+                            {
+                                Log.Info("[CFT] [FixIconCache] 注册表键存在但没有可删除的值");
+                            }
+                            else
+                            {
+                                Log.Info($"[CFT] [FixIconCache] 注册表清理完成，共删除 {registryDeletedCount} 个注册表值");
+                            }
                         }
                         else
                         {
@@ -246,30 +267,182 @@ namespace QisToolkit3.Forms
                     Log.Err($"[CFT] [FixIconCache] 清理注册表时出错：{ex.Message}");
                 }
 
-                // 重启资源管理器
+                // 5. 清理任务栏图标缓存（Win11）
+                try
+                {
+                    string taskbarCachePath = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        @"Microsoft\Windows\Recent\AutomaticDestinations");
+
+                    if (Directory.Exists(taskbarCachePath))
+                    {
+                        Log.Info($"[CFT] [FixIconCache] 开始清理任务栏缓存：{taskbarCachePath}");
+                        int taskbarDeleted = DeleteCacheFilesByPattern(taskbarCachePath, "*.automaticDestinations-ms", ref totalDeletedSize);
+                        if (taskbarDeleted > 0)
+                        {
+                            totalDeletedFiles += taskbarDeleted;
+                            Log.Info($"[CFT] [FixIconCache] 任务栏缓存清理完成，删除 {taskbarDeleted} 个文件");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[CFT] [FixIconCache] 清理任务栏缓存时出错：{ex.Message}");
+                }
+
+                // 6. 重启资源管理器
                 Log.Info("[CFT] [FixIconCache] 正在重新启动资源管理器...");
-                Process.Start("explorer.exe");
-                Log.Info("[CFT] [FixIconCache] 资源管理器已启动");
+                try
+                {
+                    Process.Start("explorer.exe");
+                    Log.Info("[CFT] [FixIconCache] 资源管理器已启动");
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[CFT] [FixIconCache] 启动资源管理器失败：{ex.Message}");
+                }
 
-                // 刷新图标缓存
-                //Log.Info("[CFT] [FixIconCache] 发送系统刷新通知");
-                //try
-                //{
-                //    // 刷新环境变量和图标
-                //    NativeMethods.SendNotifyMessage(0xFFFF, 0x001A, IntPtr.Zero, "Environment");
-                //    Log.Info("[CFT] [FixIconCache] 系统刷新通知已发送");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Log.Err($"[CFT] [FixIconCache] 发送刷新通知失败：{ex.Message}");
-                //}
+                // 7. 发送系统刷新通知（取消注释并修正）
+                Log.Info("[CFT] [FixIconCache] 发送系统刷新通知");
+                try
+                {
+                    // 使用正确的刷新消息
+                    NativeMethods.SendNotifyMessage(0xFFFF, 0x001A, IntPtr.Zero, "Environment");
+                    // 或者使用 SHChangeNotify
+                    // NativeMethods.SHChangeNotify(0x08000000, 0x0000, IntPtr.Zero, IntPtr.Zero);
+                    Log.Info("[CFT] [FixIconCache] 系统刷新通知已发送");
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[CFT] [FixIconCache] 发送刷新通知失败：{ex.Message}");
+                }
 
-                Log.Info("[CFT] [FixIconCache] 图标缓存清理完成");
+                // 8. 显示清理结果
+                string summary = $"图标缓存清理完成！共删除 {totalDeletedFiles} 个文件，释放约 {FormatFileSize(totalDeletedSize)}";
+                if (registryDeletedCount > 0)
+                {
+                    summary += $"，清理 {registryDeletedCount} 个注册表项";
+                }
+
+                Log.Info($"[CFT] [FixIconCache] {summary}");
+
+                // 可选：显示消息框通知用户
+                // MessageBox.Show(summary, "清理完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                Log.Err($"[CFT] [FixIconCache] 清理图标缓存时出现错误：{ex.Message}");
+                Log.Err($"[CFT] [FixIconCache] 清理图标缓存时出现严重错误：{ex.Message}");
+                Log.Err($"[CFT] [FixIconCache] 堆栈跟踪：{ex.StackTrace}");
             }
+        }
+
+        /// <summary>
+        /// 按模式删除缓存文件并统计大小
+        /// </summary>
+        private int DeleteCacheFilesByPattern(string directory, string pattern, ref long totalSize)
+        {
+            int deletedCount = 0;
+            try
+            {
+                var files = Directory.GetFiles(directory, pattern);
+                foreach (var file in files)
+                {
+                    long fileSize = DeleteFileWithRetry(file);
+                    if (fileSize >= 0)
+                    {
+                        deletedCount++;
+                        totalSize += fileSize;
+                        Log.Info($"[CFT] [FixIconCache] 已删除缓存文件：{Path.GetFileName(file)}，大小：{FormatFileSize(fileSize)}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Err($"[CFT] [FixIconCache] 扫描目录 {directory} 时出错：{ex.Message}");
+            }
+            return deletedCount;
+        }
+
+        /// <summary>
+        /// 带重试机制的文件删除，返回文件大小（失败返回 -1）
+        /// </summary>
+        private long DeleteFileWithRetry(string filePath, int maxRetries = 3)
+        {
+            long fileSize = -1;
+
+            for (int i = 0; i < maxRetries; i++)
+            {
+                try
+                {
+                    if (!System.IO.File.Exists(filePath))
+                    {
+                        return -1;
+                    }
+
+                    // 获取文件大小
+                    var fileInfo = new FileInfo(filePath);
+                    fileSize = fileInfo.Length;
+
+                    // 删除文件
+                    System.IO.File.Delete(filePath);
+
+                    // 验证是否删除成功
+                    if (!System.IO.File.Exists(filePath))
+                    {
+                        return fileSize;
+                    }
+                    else
+                    {
+                        Log.Warn($"[CFT] [FixIconCache] 文件删除后仍然存在，重试中... ({i + 1}/{maxRetries})");
+                    }
+                }
+                catch (IOException) when (i < maxRetries - 1)
+                {
+                    Log.Warn($"[CFT] [FixIconCache] 文件被占用，等待后重试... ({i + 1}/{maxRetries})：{Path.GetFileName(filePath)}");
+                    Thread.Sleep(1000 * (i + 1)); // 递增等待时间
+                }
+                catch (UnauthorizedAccessException) when (i < maxRetries - 1)
+                {
+                    Log.Warn($"[CFT] [FixIconCache] 权限不足，等待后重试... ({i + 1}/{maxRetries})：{Path.GetFileName(filePath)}");
+                    Thread.Sleep(500);
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[CFT] [FixIconCache] 删除文件失败：{Path.GetFileName(filePath)}，错误：{ex.Message}");
+                    break;
+                }
+            }
+
+            return -1; // 删除失败
+        }
+
+        /// <summary>
+        /// 格式化文件大小显示
+        /// </summary>
+        private string FormatFileSize(long bytes)
+        {
+            if (bytes < 0) return "0 B";
+
+            string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+            double len = bytes;
+            int order = 0;
+            while (len >= 1024 && order < sizes.Length - 1)
+            {
+                order++;
+                len = len / 1024;
+            }
+            return $"{len:0.##} {sizes[order]}";
+        }
+
+        // NativeMethods 类
+        internal static class NativeMethods
+        {
+            [DllImport("user32.dll", CharSet = CharSet.Auto)]
+            public static extern IntPtr SendNotifyMessage(IntPtr hWnd, uint Msg, IntPtr wParam, string lParam);
+
+            // 可选：使用 SHChangeNotify 更可靠
+            [DllImport("shell32.dll", CharSet = CharSet.Auto)]
+            public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
         }
 
         private void button_ipconfig_flushdns_Click(object sender, EventArgs e)
