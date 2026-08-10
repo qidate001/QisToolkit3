@@ -270,7 +270,7 @@ namespace QisToolkit3.Forms
 
         private void button_button_QisWeb_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://qidate001.github.io/QiWeb/") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://www.qidate001.com/qistoolkit3/") { UseShellExecute = true });
         }
 
         private void button_DownloadForQQ_Click(object sender, EventArgs e)
