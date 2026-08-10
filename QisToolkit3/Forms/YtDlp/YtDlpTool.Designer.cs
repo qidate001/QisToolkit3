@@ -2028,6 +2028,8 @@
             // checkBox_ChineseTip
             // 
             resources.ApplyResources(checkBox_ChineseTip, "checkBox_ChineseTip");
+            checkBox_ChineseTip.Checked = true;
+            checkBox_ChineseTip.CheckState = CheckState.Checked;
             checkBox_ChineseTip.Name = "checkBox_ChineseTip";
             checkBox_ChineseTip.UseVisualStyleBackColor = true;
             // 
