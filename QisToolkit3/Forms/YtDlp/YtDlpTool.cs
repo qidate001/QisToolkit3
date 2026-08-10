@@ -174,14 +174,14 @@ namespace QisToolkit3.Forms
             button_DoAnalysis.Enabled = true;
         }
 
-        private async Task DoDownload()
+        private async Task DoDownload(string customMatchFiltersData = null)
         {
             ProcessingUserData();
 
             Log.Info($"[YtDlp工具] 开始执行下载 {comboBox_URL.Text}");
             if (Inspect())
             {
-                await ExecuteCommand(MakeCommand());
+                await ExecuteCommand(MakeCommand(customMatchFiltersData));
 
                 // 生成信息页
                 if (checkBox_GenerateInfoPage.Checked)
@@ -692,7 +692,7 @@ namespace QisToolkit3.Forms
             }
         }
 
-        private string MakeCommand()
+        private string MakeCommand(string customMatchFiltersData = null)
         {
             //string command = YtDlpPath;
             string command = string.Empty;
@@ -1105,9 +1105,25 @@ namespace QisToolkit3.Forms
             if (checkBox_Quiet.Checked)
                 command += $" -q";
 
-            if (checkBox_MatchFilters.Checked)
+            if (checkBox_MatchFilters.Checked || !string.IsNullOrEmpty(customMatchFiltersData))
             {
-                foreach (string rule in _matchFiltersRules)
+                List<string> rulesToUse;
+                if (!string.IsNullOrEmpty(customMatchFiltersData))
+                {
+                    // 自定义规则（分号分隔多条）
+                    rulesToUse = customMatchFiltersData
+                        .Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(r => r.Trim())
+                        .Where(r => !string.IsNullOrEmpty(r))
+                        .ToList();
+                }
+                else
+                {
+                    // 使用全局规则
+                    rulesToUse = _matchFiltersRules;
+                }
+
+                foreach (string rule in rulesToUse)
                 {
                     if (!string.IsNullOrEmpty(rule))
                         command += $" --match-filters \"{rule}\"";
@@ -1816,8 +1832,28 @@ namespace QisToolkit3.Forms
                         item.Playlist.ToLower() != "false" &&
                         item.Playlist.ToLower() != "no";
 
-                    // 设置 参数
+                    // 设置启用状态
                     checkBox_MatchFilters.Checked = item.MatchFilters;
+
+                    // 确定是否传递自定义规则数据
+                    string customMatchFiltersData = null;
+                    if (item.MatchFilters && item.HasCustomMatchFilters)
+                    {
+                        customMatchFiltersData = item.MatchFiltersData;
+                    }
+
+                    // 执行下载，传递自定义规则（如果有）
+                    try
+                    {
+                        await DoDownload(customMatchFiltersData);
+                        successCount++;
+                        Log.Info($"[YtDlpTool] 完成: {item.Url}");
+                    }
+                    catch (Exception ex)
+                    {
+                        failCount++;
+                        Log.Err($"[YtDlpTool] 下载失败: {item.Url}, 错误: {ex.Message}");
+                    }
 
                     checkBox_playlist_items.Checked = UsePlayListItems;
 
@@ -1908,8 +1944,11 @@ namespace QisToolkit3.Forms
             public string Url { get; set; } = string.Empty;
             public string Name { get; set; } = string.Empty;
             public bool MatchFilters { get; set; } = false;
+            public string MatchFiltersData { get; set; } = string.Empty;
             public string Playlist { get; set; } = string.Empty;
+
             public bool HasCustomName => !string.IsNullOrEmpty(Name);
+            public bool HasCustomMatchFilters => !string.IsNullOrEmpty(MatchFiltersData);
             public bool HasPlaylistSetting => !string.IsNullOrEmpty(Playlist);
 
             /// <summary>
@@ -2059,6 +2098,9 @@ namespace QisToolkit3.Forms
                         case "playlist":
                             currentItem.Playlist = value;
                             break;
+                        case "matchfiltersdata":
+                            currentItem.MatchFiltersData = value;
+                            break;
                     }
                 }
             }
@@ -2095,7 +2137,10 @@ namespace QisToolkit3.Forms
 # 2. 可选参数：
 #    Name: 自定义名称（不指定则自动从 URL 解析）
 #    MatchFilters: true/false（是否启用匹配过滤器，默认 false）
-#    Playlist: 下载播放列表指定索引项（默认 false）
+#    MatchFiltersData: 指定规则数据（需要先启用匹配过滤器）
+#       - 逻辑与: 使用 '&' 符连接
+#       - 逻辑或: 使用 ';' 符分隔
+#    Playlist: 下载指定播放列表（默认不设置）
 #       - false: 不指定下载播放列表索引，下载完整列表。
 #       - 数字: 指定索引，如 ""5"" 只下载第5个
 #       - 范围: 如 ""1-10"" 下载第1到第10个
