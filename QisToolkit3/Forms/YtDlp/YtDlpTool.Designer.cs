@@ -2145,6 +2145,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(splitContainer1);
             Name = "YtDlpTool";
+            FormClosing += YtDlpTool_FormClosing;
             Load += YtDlpTool_Load;
             DragDrop += YtDlpTool_DragDrop;
             DragEnter += YtDlpTool_DragEnter;

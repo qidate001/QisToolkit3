@@ -24,6 +24,13 @@ namespace QisToolkit3.Forms
         private Process process;
         private RichTextBox outputBox;
         private IdNameMapper _idNameMapper;
+        private List<string> _matchFiltersRules = new List<string>();
+        public static event Action MatchFiltersSaved;
+        //private FileSystemWatcher _matchFiltersWatcher;
+        //private System.Windows.Forms.Timer _reloadDebounceTimer;  // 用于防抖
+        //private bool _isReloading = false;  // 防止并发重载
+
+        // 文件路径
         private static string YtDlpPath = Path.Combine(actualDirectory, "yt-dlp");
         private static string DefaultDownloadPath = Path.Combine(YtDlpPath, "Downloads");
         private static string YtDlpExePath = Path.Combine(YtDlpPath, "yt-dlp.exe");
@@ -99,6 +106,22 @@ namespace QisToolkit3.Forms
 
             if (string.IsNullOrWhiteSpace(textBox_Paths.Text))
                 textBox_Paths.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
+
+            LoadMatchFilters();
+
+            MatchFiltersSaved += () =>
+            {
+                if (this.InvokeRequired)
+                    this.Invoke(new Action(LoadMatchFilters));
+                else
+                    LoadMatchFilters();
+                Log.Info("[YtDlp工具] 收到规则已保存通知，已重新加载");
+            };
+        }
+
+        public static void NotifyMatchFiltersSaved()
+        {
+            MatchFiltersSaved?.Invoke();
         }
 
         // 解析
@@ -1084,19 +1107,10 @@ namespace QisToolkit3.Forms
 
             if (checkBox_MatchFilters.Checked)
             {
-                try
+                foreach (string rule in _matchFiltersRules)
                 {
-                    using (StreamReader sr = new StreamReader(MatchFiltersPath))
-                    {
-                        string line;
-                        while ((line = sr.ReadLine()) != null)
-                            if (!string.IsNullOrWhiteSpace(line))
-                                command += $" --match-filters {line}";
-                    }
-                }
-                catch
-                {
-
+                    if (!string.IsNullOrEmpty(rule))
+                        command += $" --match-filters \"{rule}\"";
                 }
             }
 
@@ -1192,6 +1206,36 @@ namespace QisToolkit3.Forms
                 Log.Err($"加载映射文件失败: {ex.Message}");
                 // 如果映射文件加载失败，仍然继续运行，只是不使用名称替换
                 _idNameMapper = null;
+            }
+        }
+
+        /// <summary>
+        /// 从 MatchFilters.txt 加载规则到内存
+        /// </summary>
+        public void LoadMatchFilters()
+        {
+            _matchFiltersRules.Clear();
+            if (File.Exists(MatchFiltersPath))
+            {
+                try
+                {
+                    var lines = File.ReadAllLines(MatchFiltersPath);
+                    foreach (var line in lines)
+                    {
+                        string trimmed = line.Trim();
+                        if (!string.IsNullOrEmpty(trimmed) && !trimmed.StartsWith("#"))
+                            _matchFiltersRules.Add(trimmed);
+                    }
+                    Log.Info($"[YtDlp工具] 加载了 {_matchFiltersRules.Count} 条匹配过滤器规则");
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"[YtDlp工具] 加载 MatchFilters.txt 失败: {ex.Message}");
+                }
+            }
+            else
+            {
+                Log.Warn($"[YtDlp工具] MatchFilters.txt 不存在，规则列表为空");
             }
         }
 
@@ -2486,6 +2530,18 @@ Name: 《遗忘世间》
 
                 await RenameFilesWithRuleEngine(downloadPath);
             }
+        }
+
+        private void YtDlpTool_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (_matchFiltersWatcher != null)
+            //{
+            //    _matchFiltersWatcher.EnableRaisingEvents = false;
+            //    _matchFiltersWatcher.Dispose();
+            //    _matchFiltersWatcher = null;
+            //}
+            //_reloadDebounceTimer?.Stop();
+            //_reloadDebounceTimer?.Dispose();
         }
     }
 }

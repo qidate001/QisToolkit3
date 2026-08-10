@@ -110,6 +110,8 @@ namespace QisToolkit3.Forms
             {
                 buttonDeleteItem.Enabled = true;
             }
+
+            comboBox_CommandText.Text = listBox.SelectedItem?.ToString() ?? string.Empty;
         }
 
         private void YtDlpToolMatchFilters_Save()
@@ -123,11 +125,15 @@ namespace QisToolkit3.Forms
                         sw.WriteLine(item.ToString());
                     }
                 }
+
+                // 触发静态事件，通知主窗口重载
+                YtDlpTool.NotifyMatchFiltersSaved();
             }
             catch
             {
 
             }
+
         }
 
         private void YtDlpToolMatchFilters_Load(object sender, EventArgs e)
