@@ -96,47 +96,6 @@ namespace QisToolkit3.Forms
                         failCount++;
                         Log.Err($"[YtDlpTool] 下载失败: {item.Url}, 错误: {ex.Message}");
                     }
-
-                    checkBox_playlist_items.Checked = UsePlayListItems;
-
-                    if (UsePlayListItems)
-                        textBox_playlist_items.Text = item.Playlist;
-
-                    // 设置 URL
-                    comboBox_URL.Text = item.Url;
-
-                    // 获取目标目录名称
-                    string directoryName = item.GetDefaultName();
-
-                    // 清理名称中的非法字符
-                    directoryName = IdNameMapper.SanitizeFileName(directoryName);
-
-                    // 构建下载路径
-                    string downloadPath = Path.Combine(actualDirectory, @"yt-dlp\Downloads", directoryName);
-
-                    Log.Info($"下载目录: {downloadPath}");
-
-                    // 设置路径
-                    if (checkBox_Path_Home.Checked)
-                        comboBox_Path_Home.Text = downloadPath;
-                    else
-                        textBox_Paths.Text = downloadPath;
-
-                    // 确保目录存在
-                    Directory.CreateDirectory(downloadPath);
-
-                    // 执行下载
-                    try
-                    {
-                        await DoDownload();
-                        successCount++;
-                        Log.Info($"[YtDlp工具] 完成: {item.Url}");
-                    }
-                    catch (Exception ex)
-                    {
-                        failCount++;
-                        Log.Err($"[YtDlp工具] 下载失败: {item.Url}, 错误: {ex.Message}");
-                    }
                 }
 
                 // 显示完成信息
