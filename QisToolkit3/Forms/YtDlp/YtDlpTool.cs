@@ -119,11 +119,6 @@ namespace QisToolkit3.Forms
             };
         }
 
-        public static void NotifyMatchFiltersSaved()
-        {
-            MatchFiltersSaved?.Invoke();
-        }
-
         // 解析
         private void button_DoAnalysis_Click(object sender, EventArgs e)
         {
@@ -641,35 +636,7 @@ namespace QisToolkit3.Forms
             }
         }
 
-        /// <summary>
-        /// 从 MatchFilters.txt 加载规则到内存
-        /// </summary>
-        public void LoadMatchFilters()
-        {
-            _matchFiltersRules.Clear();
-            if (File.Exists(MatchFiltersPath))
-            {
-                try
-                {
-                    var lines = File.ReadAllLines(MatchFiltersPath);
-                    foreach (var line in lines)
-                    {
-                        string trimmed = line.Trim();
-                        if (!string.IsNullOrEmpty(trimmed) && !trimmed.StartsWith("#"))
-                            _matchFiltersRules.Add(trimmed);
-                    }
-                    Log.Info($"[YtDlp工具] 加载了 {_matchFiltersRules.Count} 条匹配过滤器规则");
-                }
-                catch (Exception ex)
-                {
-                    Log.Err($"[YtDlp工具] 加载 MatchFilters.txt 失败: {ex.Message}");
-                }
-            }
-            else
-            {
-                Log.Warn($"[YtDlp工具] MatchFilters.txt 不存在，规则列表为空");
-            }
-        }
+        
 
         // 处理用户数据
         private void ProcessingUserData()

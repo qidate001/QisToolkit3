@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Qi;
+using static Qi.QisToolkit3_Datas;
 
 namespace QisToolkit3.Forms
 {
@@ -37,7 +39,7 @@ namespace QisToolkit3.Forms
                         {
                             string infoDir = Path.GetDirectoryName(infoJsonPath);
 
-                            var generator = new VideoInfoPageGenerator(infoDir, (msg) =>
+                            var generator = new YtDlp.VideoInfoPageGenerator(infoDir, (msg) =>
                             {
                                 AppendText(msg, "InfoPage");
                             });
