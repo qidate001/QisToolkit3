@@ -280,48 +280,6 @@ namespace QisToolkit3.Forms
         /// <summary>
         /// 获取弹幕文件列表
         /// </summary>
-        //private string[] GetXmlFiles()
-        //{
-        //    string ytDlpDir = Path.GetDirectoryName(YtDlpPath);
-        //    var allXmlFiles = new List<string>();
-
-        //    // 1. 查找 SubTitle 路径（弹幕文件在这里）
-        //    if (checkBox_Path_SubTitle.Checked && !string.IsNullOrEmpty(comboBox_Path_SubTitle.Text))
-        //    {
-        //        string subPath = comboBox_Path_SubTitle.Text;
-        //        if (!Path.IsPathRooted(subPath))
-        //        {
-        //            subPath = Path.GetFullPath(Path.Combine(ytDlpDir, subPath));
-        //        }
-
-        //        if (Directory.Exists(subPath))
-        //        {
-        //            allXmlFiles.AddRange(Directory.GetFiles(subPath, "*.danmaku.xml", SearchOption.AllDirectories));
-        //            Log.Info($"从 SubTitle 路径找到 {Directory.GetFiles(subPath, "*.danmaku.xml", SearchOption.AllDirectories).Length} 个弹幕文件");
-        //        }
-        //    }
-
-        //    // 2. 查找 Home 路径
-        //    if (checkBox_Path_Home.Checked && !string.IsNullOrEmpty(comboBox_Path_Home.Text))
-        //    {
-        //        string homePath = comboBox_Path_Home.Text;
-        //        if (!Path.IsPathRooted(homePath))
-        //        {
-        //            homePath = Path.GetFullPath(Path.Combine(ytDlpDir, homePath));
-        //        }
-
-        //        if (Directory.Exists(homePath))
-        //        {
-        //            allXmlFiles.AddRange(Directory.GetFiles(homePath, "*.danmaku.xml", SearchOption.AllDirectories));
-        //            Log.Info($"从 Home 路径找到 {Directory.GetFiles(homePath, "*.danmaku.xml", SearchOption.AllDirectories).Length} 个弹幕文件");
-        //        }
-        //    }
-
-        //    // 3. 去重
-        //    var result = allXmlFiles.Distinct().ToArray();
-        //    Log.Info($"总共找到 {result.Length} 个弹幕文件");
-        //    return result;
-        //}
         private string[] GetXmlFiles()
         {
             string ytDlpDir = Path.GetDirectoryName(YtDlpExePath);
