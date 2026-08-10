@@ -226,7 +226,7 @@
             comboBox_StringRuleEngine = new ComboBox();
             checkBox_StringRuleEngine = new CheckBox();
             richTextBox_StringRuleEngine = new RichTextBox();
-            button1 = new Button();
+            button_IdNameMapper_Load = new Button();
             checkBox_IdNameMapper = new CheckBox();
             groupBox2 = new GroupBox();
             button_YtDlpRunDir = new Button();
@@ -311,7 +311,7 @@
             // 
             splitContainer1.Panel1.Controls.Add(textBox_Paths);
             splitContainer1.Panel1.Controls.Add(tabControl1);
-            splitContainer1.Panel1.Controls.Add(button1);
+            splitContainer1.Panel1.Controls.Add(button_IdNameMapper_Load);
             splitContainer1.Panel1.Controls.Add(checkBox_IdNameMapper);
             splitContainer1.Panel1.Controls.Add(groupBox2);
             splitContainer1.Panel1.Controls.Add(button_SetMatchFilters);
@@ -1840,7 +1840,7 @@
             resources.ApplyResources(button_RunRuleEngine, "button_RunRuleEngine");
             button_RunRuleEngine.Name = "button_RunRuleEngine";
             button_RunRuleEngine.UseVisualStyleBackColor = true;
-            button_RunRuleEngine.Click += button_RunRuleEngine_ClickAsync;
+            button_RunRuleEngine.Click += button_RunRuleEngine_Click;
             // 
             // comboBox_StringRuleEngine
             // 
@@ -1863,12 +1863,12 @@
             resources.ApplyResources(richTextBox_StringRuleEngine, "richTextBox_StringRuleEngine");
             richTextBox_StringRuleEngine.Name = "richTextBox_StringRuleEngine";
             // 
-            // button1
+            // button_IdNameMapper_Load
             // 
-            resources.ApplyResources(button1, "button1");
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            resources.ApplyResources(button_IdNameMapper_Load, "button_IdNameMapper_Load");
+            button_IdNameMapper_Load.Name = "button_IdNameMapper_Load";
+            button_IdNameMapper_Load.UseVisualStyleBackColor = true;
+            button_IdNameMapper_Load.Click += button_IdNameMapper_Load_Click;
             // 
             // checkBox_IdNameMapper
             // 
@@ -2250,7 +2250,7 @@
         private Button button_OpenCookiesFile;
         private Button button_OpenArchiveFile;
         private CheckBox checkBox_IdNameMapper;
-        private Button button1;
+        private Button button_IdNameMapper_Load;
         private Button button_Option_Save;
         private TabControl tabControl1;
         private TabPage tabPage1;
