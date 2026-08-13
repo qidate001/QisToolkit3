@@ -257,13 +257,10 @@ namespace QisToolkit3.Forms
 # 师傅你变了
 https://space.bilibili.com/3494379457087582/lists/4459703
 Name: 《师傅你变了》
-MatchFilters: false
 
-# 甜橙盛夏
-https://space.bilibili.com/697987209/lists/8033161
-Name: 《甜橙盛夏》
-MatchFilters: false
-Playlist: false
+# 花间允诺
+https://space.bilibili.com/697987209/lists/8731871
+Name: 《花间允诺》
 
 # 姜糖恋语
 https://space.bilibili.com/1411920158/lists/6668649
@@ -281,9 +278,13 @@ Name: 《师兄绝非反派》
 https://space.bilibili.com/3690975687870895/lists/7035241
 Name: 《熙玥救赎》
 
+# 同桌小希
+https://space.bilibili.com/3546914949695626/lists/8683776
+Name: 《同桌小希》
+
 # 我竟是伟大存在
-https://space.bilibili.com/32160535/lists/5578590
-Name: 《我竟是伟大存在》
+# https://space.bilibili.com/32160535/lists/5578590
+# Name: 《我竟是伟大存在》
 
 # 不当人的选手
 https://space.bilibili.com/589953538/lists/7712111
@@ -308,6 +309,12 @@ Name: 《摆烂也能无敌第二季》
 # 遗忘世间
 https://space.bilibili.com/71130413/lists/5525218
 Name: 《遗忘世间》
+
+# 戏神道
+https://www.bilibili.com/video/BV1J1316bEZo
+Name: 《戏神道》
+MatchFilters: true
+MatchFiltersData: duration>=60
 ";
             File.WriteAllText(configPath, defaultContent, Encoding.UTF8);
         }

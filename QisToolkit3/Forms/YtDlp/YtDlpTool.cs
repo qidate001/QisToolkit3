@@ -44,12 +44,15 @@ namespace QisToolkit3.Forms
         private static readonly Dictionary<string, string> ChineseTranslationMap = new(StringComparer.OrdinalIgnoreCase)
         {
             { "has already been recorded in the archive", "已经记录在档案（黑名单）中" },
-            { "add --no-playlist to download just the video", "添加参数--no-playlist，将不再下载播放列表，只下载视频" },
+            { "add --no-playlist to download just the video", "勾选参数【不下载播放列表】，将不再下载播放列表，只下载视频" },
             { "are missing; you have to become a premium member to download them. Use --cookies-from-browser or --cookies for the authentication. See", "未寻获；你必须成为高级会员下载它们。使用浏览器中的Cookie或用于身份验证的Cookie。见" },
+            { "This video may be deleted or geo-restricted. You might want to try a VPN or a proxy server", "此视频可能已被删除或受地域限制。您不妨尝试使用 VPN 或代理服务器。" },
             { "for how to manually pass cookies", "了解如何手动传递Cookie" },
             { "Finished downloading playlist: ", "完成列表下载" },
             { "Downloading video formats for cid", "正在下载cid视频格式" },
             { "Extracting videos in anthology", "正在选集中提取视频" },
+            { "has no automatic captions", "没有自动字幕" },
+            { "has no subtitles", "没有手动字幕" },
             { "Available thumbnails for ", "可用缩略图 " },
             { "Available subtitles for", "可用语言" },
             { "Available formats for", "可用格式" },
