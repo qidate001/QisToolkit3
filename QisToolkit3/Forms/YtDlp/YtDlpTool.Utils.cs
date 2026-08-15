@@ -113,6 +113,17 @@ namespace QisToolkit3.Forms
         {
             string containsText = string.Empty;
 
+            // 清理所有 textBox 和 comboBox 的路径文本：去除前后空格和末尾反斜杠
+            textBox_Paths.Text = textBox_Paths.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Home.Text = comboBox_Path_Home.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Temp.Text = comboBox_Path_Temp.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Video.Text = comboBox_Path_Video.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Audio.Text = comboBox_Path_Audio.Text.Trim().TrimEnd('\\');
+            comboBox_Path_SubTitle.Text = comboBox_Path_SubTitle.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Description.Text = comboBox_Path_Description.Text.Trim().TrimEnd('\\');
+            comboBox_Path_Thumbnail.Text = comboBox_Path_Thumbnail.Text.Trim().TrimEnd('\\');
+            comboBox_Path_InfoJson.Text = comboBox_Path_InfoJson.Text.Trim().TrimEnd('\\');
+
             if (checkBox_ReadOnClipboard.Checked)
             {
                 containsText = GetContainsText();
