@@ -84,6 +84,8 @@ namespace QisToolkit3.Forms
                         customMatchFiltersData = item.MatchFiltersData;
                     }
 
+                    comboBox_URL.Text = item.Url;
+
                     // 执行下载，传递自定义规则（如果有）
                     try
                     {
