@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace QisToolkit3
+namespace QisToolkit3.Forms.YtDlp
 {
     internal class BilibiliUrlParser
     {

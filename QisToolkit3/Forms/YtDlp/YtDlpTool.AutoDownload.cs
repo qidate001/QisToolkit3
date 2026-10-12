@@ -84,7 +84,7 @@ namespace QisToolkit3.Forms
                         customMatchFiltersData = item.MatchFiltersData;
                     }
 
-                    string SavePath = Path.Combine(item.Url, item.HasCustomName ? item.Name : "Auto");
+                    string SavePath = Path.Combine(originalSettings.Paths, item.HasCustomName ? item.Name : "Auto");
 
                     Directory.CreateDirectory(SavePath);
 

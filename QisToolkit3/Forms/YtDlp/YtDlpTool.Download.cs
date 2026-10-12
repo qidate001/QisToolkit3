@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QisToolkit3.Forms.YtDlp;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -142,24 +143,20 @@ namespace QisToolkit3.Forms
                 // 增强 Archive
                 if (checkBox_ArchivePlus.Checked)
                 {
-                    var result = BilibiliUrlParser.ParseBilibiliUrl(comboBox_URL.Text, actualDirectory);
-                    if (result.IsValid)
+                    // 依次尝试 B 站、YouTube 解析；返回 null 表示无法识别
+                    string archivePath = TryResolveEnhancedArchivePath(comboBox_URL.Text, actualDirectory);
+
+                    if (!string.IsNullOrEmpty(archivePath))
                     {
-                        // 创建目录
-                        result.EnsureArchiveDirectoryExists();
-
-                        command += $" --download-archive \"{result.FullArchivePath}\"";
+                        command += $" --download-archive \"{archivePath}\"";
                     }
-
-                    // 回退到普通 archive
                     else
                     {
+                        // 回退到普通 archive
                         Log.Warn("[YtDlp工具] 增强 Archive 模块无效，已回退 普通 Archive 模式");
-
                         command += $" --download-archive \"{actualDirectory}\\yt-dlp\\archive.txt\"";
                     }
                 }
-
                 // 普通 Archive
                 else
                 {
@@ -595,6 +592,40 @@ namespace QisToolkit3.Forms
 
             Log.Info($"[YtDlp工具] 命令创建：{command}");
             return command;
+        }
+
+        /// <summary>
+        /// 尝试解析增强 Archive 的完整路径
+        /// 支持：BiliBili（用户主页 / 视频合集 / 单个视频）、YouTube（频道 / 播放列表 / 单个视频）
+        /// </summary>
+        /// <param name="url">用户输入的 URL</param>
+        /// <param name="baseDirectory">基础目录</param>
+        /// <returns>解析成功返回 FullArchivePath；失败返回 null</returns>
+        private string TryResolveEnhancedArchivePath(string url, string baseDirectory)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+                return null;
+
+            // 1. BiliBili
+            var bili = BilibiliUrlParser.ParseBilibiliUrl(url, baseDirectory);
+            if (bili.IsValid)
+            {
+                bili.EnsureArchiveDirectoryExists();
+                Log.Info($"[YtDlp工具] 增强 Archive：识别为 BiliBili {bili.GetTypeDescription()}，存档 => {bili.FullArchivePath}");
+                return bili.FullArchivePath;
+            }
+
+            // 2. YouTube
+            var yt = YouTubeUrlParser.ParseYouTubeUrl(url, baseDirectory);
+            if (yt.IsValid)
+            {
+                yt.EnsureArchiveDirectoryExists();
+                Log.Info($"[YtDlp工具] 增强 Archive：识别为 YouTube {yt.GetTypeDescription()}，存档 => {yt.FullArchivePath}");
+                return yt.FullArchivePath;
+            }
+
+            // 3. 都不认识
+            return null;
         }
 
         private async Task ExecuteCommand(string command)
