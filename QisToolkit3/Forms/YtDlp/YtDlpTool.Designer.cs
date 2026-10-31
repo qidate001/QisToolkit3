@@ -226,6 +226,15 @@
             comboBox_StringRuleEngine = new ComboBox();
             checkBox_StringRuleEngine = new CheckBox();
             richTextBox_StringRuleEngine = new RichTextBox();
+            tabPage10 = new TabPage();
+            button_ArchiveEnhanced_Save = new Button();
+            button_ArchiveEnhanced_Reverse = new Button();
+            button_ArchiveEnhanced_Resolve = new Button();
+            button_ArchiveEnhanced_Load = new Button();
+            richTextBox_ArchiveEnhanced = new RichTextBox();
+            comboBox_ArchiveEnhanced_PlayList = new ComboBox();
+            comboBox_ArchiveEnhanced_Users = new ComboBox();
+            comboBox_ArchiveEnhanced_Root = new ComboBox();
             button_IdNameMapper_Load = new Button();
             checkBox_IdNameMapper = new CheckBox();
             groupBox2 = new GroupBox();
@@ -264,6 +273,7 @@
             button_DoDownload = new Button();
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -299,6 +309,7 @@
             groupBox21.SuspendLayout();
             groupBox20.SuspendLayout();
             tabPage9.SuspendLayout();
+            tabPage10.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -359,6 +370,7 @@
             tabControl1.Controls.Add(tabPage7);
             tabControl1.Controls.Add(tabPage8);
             tabControl1.Controls.Add(tabPage9);
+            tabControl1.Controls.Add(tabPage10);
             resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -1863,6 +1875,80 @@
             resources.ApplyResources(richTextBox_StringRuleEngine, "richTextBox_StringRuleEngine");
             richTextBox_StringRuleEngine.Name = "richTextBox_StringRuleEngine";
             // 
+            // tabPage10
+            // 
+            tabPage10.Controls.Add(button_ArchiveEnhanced_Save);
+            tabPage10.Controls.Add(button_ArchiveEnhanced_Reverse);
+            tabPage10.Controls.Add(button_ArchiveEnhanced_Resolve);
+            tabPage10.Controls.Add(button_ArchiveEnhanced_Load);
+            tabPage10.Controls.Add(richTextBox_ArchiveEnhanced);
+            tabPage10.Controls.Add(comboBox_ArchiveEnhanced_PlayList);
+            tabPage10.Controls.Add(comboBox_ArchiveEnhanced_Users);
+            tabPage10.Controls.Add(comboBox_ArchiveEnhanced_Root);
+            resources.ApplyResources(tabPage10, "tabPage10");
+            tabPage10.Name = "tabPage10";
+            tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // button_ArchiveEnhanced_Save
+            // 
+            resources.ApplyResources(button_ArchiveEnhanced_Save, "button_ArchiveEnhanced_Save");
+            button_ArchiveEnhanced_Save.Name = "button_ArchiveEnhanced_Save";
+            button_ArchiveEnhanced_Save.UseVisualStyleBackColor = true;
+            button_ArchiveEnhanced_Save.Click += button_ArchiveEnhanced_Save_Click;
+            // 
+            // button_ArchiveEnhanced_Reverse
+            // 
+            resources.ApplyResources(button_ArchiveEnhanced_Reverse, "button_ArchiveEnhanced_Reverse");
+            button_ArchiveEnhanced_Reverse.Name = "button_ArchiveEnhanced_Reverse";
+            button_ArchiveEnhanced_Reverse.UseVisualStyleBackColor = true;
+            button_ArchiveEnhanced_Reverse.Click += button_ArchiveEnhanced_Reverse_Click;
+            // 
+            // button_ArchiveEnhanced_Resolve
+            // 
+            resources.ApplyResources(button_ArchiveEnhanced_Resolve, "button_ArchiveEnhanced_Resolve");
+            button_ArchiveEnhanced_Resolve.Name = "button_ArchiveEnhanced_Resolve";
+            button_ArchiveEnhanced_Resolve.UseVisualStyleBackColor = true;
+            button_ArchiveEnhanced_Resolve.Click += button_ArchiveEnhanced_Resolve_Click;
+            // 
+            // button_ArchiveEnhanced_Load
+            // 
+            resources.ApplyResources(button_ArchiveEnhanced_Load, "button_ArchiveEnhanced_Load");
+            button_ArchiveEnhanced_Load.Name = "button_ArchiveEnhanced_Load";
+            button_ArchiveEnhanced_Load.UseVisualStyleBackColor = true;
+            button_ArchiveEnhanced_Load.Click += button_ArchiveEnhanced_Load_Click;
+            // 
+            // richTextBox_ArchivePlus
+            // 
+            resources.ApplyResources(richTextBox_ArchiveEnhanced, "richTextBox_ArchivePlus");
+            richTextBox_ArchiveEnhanced.Name = "richTextBox_ArchivePlus";
+            // 
+            // comboBox_ArchiveEnhanced_PlayList
+            // 
+            comboBox_ArchiveEnhanced_PlayList.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBox_ArchiveEnhanced_PlayList, "comboBox_ArchiveEnhanced_PlayList");
+            comboBox_ArchiveEnhanced_PlayList.FormattingEnabled = true;
+            comboBox_ArchiveEnhanced_PlayList.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_PlayList.Items"), resources.GetString("comboBox_ArchiveEnhanced_PlayList.Items1") });
+            comboBox_ArchiveEnhanced_PlayList.Name = "comboBox_ArchiveEnhanced_PlayList";
+            comboBox_ArchiveEnhanced_PlayList.SelectedIndexChanged += comboBox_ArchiveEnhanced_PlayList_SelectedIndexChanged;
+            // 
+            // comboBox_ArchiveEnhanced_Users
+            // 
+            comboBox_ArchiveEnhanced_Users.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBox_ArchiveEnhanced_Users, "comboBox_ArchiveEnhanced_Users");
+            comboBox_ArchiveEnhanced_Users.FormattingEnabled = true;
+            comboBox_ArchiveEnhanced_Users.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_Users.Items"), resources.GetString("comboBox_ArchiveEnhanced_Users.Items1") });
+            comboBox_ArchiveEnhanced_Users.Name = "comboBox_ArchiveEnhanced_Users";
+            comboBox_ArchiveEnhanced_Users.SelectedIndexChanged += comboBox_ArchiveEnhanced_Users_SelectedIndexChanged;
+            // 
+            // comboBox_ArchiveEnhanced_Root
+            // 
+            comboBox_ArchiveEnhanced_Root.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(comboBox_ArchiveEnhanced_Root, "comboBox_ArchiveEnhanced_Root");
+            comboBox_ArchiveEnhanced_Root.FormattingEnabled = true;
+            comboBox_ArchiveEnhanced_Root.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_Root.Items"), resources.GetString("comboBox_ArchiveEnhanced_Root.Items1") });
+            comboBox_ArchiveEnhanced_Root.Name = "comboBox_ArchiveEnhanced_Root";
+            comboBox_ArchiveEnhanced_Root.SelectedIndexChanged += comboBox_ArchiveEnhanced_Root_SelectedIndexChanged;
+            // 
             // button_IdNameMapper_Load
             // 
             resources.ApplyResources(button_IdNameMapper_Load, "button_IdNameMapper_Load");
@@ -2211,6 +2297,7 @@
             groupBox20.PerformLayout();
             tabPage9.ResumeLayout(false);
             tabPage9.PerformLayout();
+            tabPage10.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -2451,5 +2538,17 @@
         private CheckBox checkBox_StringRuleEngine;
         private ComboBox comboBox_StringRuleEngine;
         private Button button_RunRuleEngine;
+        private TabPage tabPage10;
+        private ComboBox comboBox_ArchiveEnhanced_PlayList;
+        private ComboBox comboBox_ArchiveEnhanced_Users;
+        private ComboBox comboBox_ArchiveEnhanced_Root;
+        private RichTextBox richTextBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button button_ArchiveEnhanced_Load;
+        private Button button_ArchiveEnhanced_Resolve;
+        private Button button_ArchiveEnhanced_Reverse;
+        private RichTextBox richTextBox_ArchiveEnhanced;
+        private Button button3;
+        private Button button_ArchiveEnhanced_Save;
     }
 }

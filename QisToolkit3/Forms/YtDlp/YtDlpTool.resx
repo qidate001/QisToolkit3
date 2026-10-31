@@ -7037,6 +7037,264 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="&gt;&gt;tabPage9.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="button_ArchiveEnhanced_Save.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Save.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Save.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 336</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 55</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Save.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Save.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Save.Name" xml:space="preserve">
+    <value>button_ArchiveEnhanced_Save</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Save.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Save.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Save.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 275</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 55</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.Text" xml:space="preserve">
+    <value>逆推</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Reverse.Name" xml:space="preserve">
+    <value>button_ArchiveEnhanced_Reverse</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Reverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Reverse.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Reverse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 214</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 55</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.Text" xml:space="preserve">
+    <value>定位</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Resolve.Name" xml:space="preserve">
+    <value>button_ArchiveEnhanced_Resolve</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Resolve.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Resolve.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Resolve.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 153</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 55</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Load.Text" xml:space="preserve">
+    <value>加载</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Load.Name" xml:space="preserve">
+    <value>button_ArchiveEnhanced_Load</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Load.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Load.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Load.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="richTextBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="richTextBox_ArchivePlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 406</value>
+  </data>
+  <data name="richTextBox_ArchivePlus.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="richTextBox_ArchivePlus.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox_ArchivePlus.Name" xml:space="preserve">
+    <value>richTextBox_ArchivePlus</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_ArchivePlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_ArchivePlus.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_ArchivePlus.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.Items" xml:space="preserve">
+    <value>保护模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.Items1" xml:space="preserve">
+    <value>强制模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 104</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 43</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_PlayList.Name" xml:space="preserve">
+    <value>comboBox_ArchiveEnhanced_PlayList</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_PlayList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_PlayList.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_PlayList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.Items" xml:space="preserve">
+    <value>保护模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.Items1" xml:space="preserve">
+    <value>强制模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 55</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 43</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Users.Name" xml:space="preserve">
+    <value>comboBox_ArchiveEnhanced_Users</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Users.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Users.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Users.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.Items" xml:space="preserve">
+    <value>保护模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.Items1" xml:space="preserve">
+    <value>强制模式</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 6</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 43</value>
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Root.Name" xml:space="preserve">
+    <value>comboBox_ArchiveEnhanced_Root</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Root.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Root.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ArchiveEnhanced_Root.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tabPage10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage10.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>927, 418</value>
+  </data>
+  <data name="tabPage10.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tabPage10.Text" xml:space="preserve">
+    <value>Archive增强</value>
+  </data>
+  <data name="&gt;&gt;tabPage10.Name" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;tabPage10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage10.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage10.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 162</value>
   </data>
@@ -8158,6 +8416,9 @@ cookies.txt 位于 ./yt-dlp/cookies.txt
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>130, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -8184,6 +8445,12 @@ cookies.txt 位于 ./yt-dlp/cookies.txt
   </data>
   <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System.ComponentModel.EventBasedAsync, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>YtDlpTool</value>

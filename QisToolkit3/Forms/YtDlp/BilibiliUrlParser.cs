@@ -21,6 +21,18 @@ namespace QisToolkit3.Forms.YtDlp
         }
 
         /// <summary>
+        /// 反向解析结果
+        /// </summary>
+        public class ReverseResult
+        {
+            public bool IsValid { get; set; }
+            public string Platform { get; set; } = "BiliBili";
+            public BilibiliUrlType UrlType { get; set; } = BilibiliUrlType.Unknown;
+            public string Url { get; set; }
+            public string Description { get; set; }   // 反推成功时的类型说明，或失败原因
+        }
+
+        /// <summary>
         /// 解析结果，包含完整的路径信息
         /// </summary>
         public class ParseResult
@@ -198,6 +210,109 @@ namespace QisToolkit3.Forms.YtDlp
                 return result;
             }
 
+            return result;
+        }
+
+        /// <summary>
+        /// 从 Archive 文件路径反推 BiliBili URL
+        /// 支持层级：
+        ///   Archive/BiliBili/archive.txt         -> 单视频累积，无法反推
+        ///   Archive/BiliBili/{UserId}.txt        -> 用户主页
+        ///   Archive/BiliBili/{UserId}/{ListId}.txt -> 视频合集
+        /// </summary>
+        /// <param name="archiveRootPath">Archive 根目录（不含 BiliBili）</param>
+        /// <param name="fullArchivePath">具体归档文件完整路径</param>
+        public static ReverseResult ReverseFromArchivePath(string archiveRootPath, string fullArchivePath)
+        {
+            var result = new ReverseResult();
+
+            if (string.IsNullOrEmpty(archiveRootPath) || string.IsNullOrEmpty(fullArchivePath))
+            {
+                result.Description = "路径为空";
+                return result;
+            }
+
+            if (!File.Exists(fullArchivePath))
+            {
+                result.Description = "文件不存在";
+                return result;
+            }
+
+            string rootFull = Path.GetFullPath(archiveRootPath)
+                                  .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            string fileFull = Path.GetFullPath(fullArchivePath);
+
+            if (!fileFull.StartsWith(rootFull + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Description = "文件不在 Archive 目录下";
+                return result;
+            }
+
+            string relative = fileFull.Substring(rootFull.Length + 1);
+            string[] parts = relative.Split(
+                new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            // 第一段必须是 BiliBili
+            if (parts.Length < 2 || !parts[0].Equals("BiliBili", StringComparison.OrdinalIgnoreCase))
+            {
+                result.Description = "不是 BiliBili 归档";
+                return result;
+            }
+
+            // 两段：BiliBili\{fileName}.txt
+            if (parts.Length == 2)
+            {
+                string fileName = parts[1];
+
+                // 单视频累积存档
+                if (fileName.Equals("archive.txt", StringComparison.OrdinalIgnoreCase))
+                {
+                    result.Description = "archive.txt 是单视频累积存档（可能包含多个 BV），无法反推出唯一 URL";
+                    return result;
+                }
+
+                string userId = Path.GetFileNameWithoutExtension(fileName);
+                if (string.IsNullOrEmpty(userId) || !userId.All(char.IsDigit))
+                {
+                    result.Description = $"文件名 {fileName} 不符合 BiliBili 用户 ID 规则（应为纯数字）";
+                    return result;
+                }
+
+                result.Url = $"https://space.bilibili.com/{userId}";
+                result.UrlType = BilibiliUrlType.UserSpace;
+                result.IsValid = true;
+                result.Description = "用户主页";
+                return result;
+            }
+
+            // 三段：BiliBili\{UserId}\{ListId}.txt
+            if (parts.Length == 3)
+            {
+                string userId = parts[1];
+                string fileName = parts[2];
+                string listId = Path.GetFileNameWithoutExtension(fileName);
+
+                if (string.IsNullOrEmpty(userId) || !userId.All(char.IsDigit))
+                {
+                    result.Description = "用户目录名不符合规则（应为纯数字）";
+                    return result;
+                }
+
+                if (string.IsNullOrEmpty(listId) || !listId.All(char.IsDigit))
+                {
+                    result.Description = $"文件名 {fileName} 不符合 BiliBili 视频合集 ID 规则（应为纯数字）";
+                    return result;
+                }
+
+                result.Url = $"https://space.bilibili.com/{userId}/lists/{listId}";
+                result.UrlType = BilibiliUrlType.VideoList;
+                result.IsValid = true;
+                result.Description = "视频合集";
+                return result;
+            }
+
+            result.Description = $"路径层级不支持反推（{relative}）";
             return result;
         }
 

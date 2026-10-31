@@ -116,7 +116,6 @@ namespace QisToolkit3
                     var parts = basePart.Split(new[] { "→→" }, StringSplitOptions.None);
                     if (parts.Length != 2) throw new ArgumentException("向右插入格式错误");
                     rule.Op = Rule.OperationType.InsertRight;
-                    //ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
                     ParseLeftRight(parts[0].Trim(), parts[1], rule);
                 }
                 else if (basePart.Contains("←←"))
@@ -124,7 +123,6 @@ namespace QisToolkit3
                     var parts = basePart.Split(new[] { "←←" }, StringSplitOptions.None);
                     if (parts.Length != 2) throw new ArgumentException("向左插入格式错误");
                     rule.Op = Rule.OperationType.InsertLeft;
-                    //ParseLeftRight(parts[0].Trim(), parts[1].Trim(), rule);
                     ParseLeftRight(parts[0].Trim(), parts[1], rule);
                 }
                 else if (basePart.Contains("→←"))
@@ -350,7 +348,7 @@ namespace QisToolkit3
                             return false;
                     }
                 }
-                // ----- 新增后缀文本条件检查 -----
+                // ----- 后缀文本条件检查 -----
                 else if (cond.Type == Condition.CondType.SuffixText)
                 {
                     string suffix = input.Substring(match.Index + match.Length);

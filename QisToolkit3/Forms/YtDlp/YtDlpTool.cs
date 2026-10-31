@@ -29,6 +29,7 @@ namespace QisToolkit3.Forms
 
         // 文件路径
         private static string YtDlpPath = Path.Combine(actualDirectory, "yt-dlp");
+        private static string YtDlpPathArchivePlusPath = Path.Combine(YtDlpPath, "Archive");
         private static string DefaultDownloadPath = Path.Combine(YtDlpPath, "Downloads");
         private static string YtDlpExePath = Path.Combine(YtDlpPath, "yt-dlp.exe");
         private static string DanmakuFactoryPath = Path.Combine(YtDlpPath, "DanmakuFactory.exe");
@@ -193,6 +194,5 @@ namespace QisToolkit3.Forms
                 Log.Info("[YtDlp工具] 收到规则已保存通知，已重新加载");
             };
         }
-
     }
 }

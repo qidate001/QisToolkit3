@@ -22,6 +22,18 @@ namespace QisToolkit3.Forms.YtDlp
         }
 
         /// <summary>
+        /// 反向解析结果
+        /// </summary>
+        public class ReverseResult
+        {
+            public bool IsValid { get; set; }
+            public string Platform { get; set; } = "YouTube";
+            public YouTubeUrlType UrlType { get; set; } = YouTubeUrlType.Unknown;
+            public string Url { get; set; }
+            public string Description { get; set; }   // 反推成功时的类型说明，或失败原因
+        }
+
+        /// <summary>
         /// 解析结果，包含完整的路径信息
         /// </summary>
         public class ParseResult
@@ -240,6 +252,103 @@ namespace QisToolkit3.Forms.YtDlp
                 return result;
             }
 
+            return result;
+        }
+
+        /// <summary>
+        /// 从 Archive 文件路径反推 YouTube URL
+        /// 支持层级：
+        ///   Archive/YouTube/archive.txt       -> 单视频累积，无法反推
+        ///   Archive/YouTube/{UC..}.txt        -> 频道 /channel/UC...
+        ///   Archive/YouTube/{PL..}.txt        -> 播放列表 /playlist?list=...
+        ///   Archive/YouTube/{handle}.txt      -> 频道 /@handle
+        /// </summary>
+        /// <param name="archiveRootPath">Archive 根目录（不含 YouTube）</param>
+        /// <param name="fullArchivePath">具体归档文件完整路径</param>
+        public static ReverseResult ReverseFromArchivePath(string archiveRootPath, string fullArchivePath)
+        {
+            var result = new ReverseResult();
+
+            if (string.IsNullOrEmpty(archiveRootPath) || string.IsNullOrEmpty(fullArchivePath))
+            {
+                result.Description = "路径为空";
+                return result;
+            }
+
+            if (!File.Exists(fullArchivePath))
+            {
+                result.Description = "文件不存在";
+                return result;
+            }
+
+            string rootFull = Path.GetFullPath(archiveRootPath)
+                                  .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            string fileFull = Path.GetFullPath(fullArchivePath);
+
+            if (!fileFull.StartsWith(rootFull + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Description = "文件不在 Archive 目录下";
+                return result;
+            }
+
+            string relative = fileFull.Substring(rootFull.Length + 1);
+            string[] parts = relative.Split(
+                new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length != 2 || !parts[0].Equals("YouTube", StringComparison.OrdinalIgnoreCase))
+            {
+                result.Description = $"不是 YouTube 归档或层级不支持（{relative}）";
+                return result;
+            }
+
+            string fileName = parts[1];
+            if (fileName.Equals("archive.txt", StringComparison.OrdinalIgnoreCase))
+            {
+                result.Description = "archive.txt 是单视频累积存档（可能包含多个视频），无法反推出唯一 URL";
+                return result;
+            }
+
+            string id = Path.GetFileNameWithoutExtension(fileName);
+            if (string.IsNullOrEmpty(id))
+            {
+                result.Description = "文件名为空";
+                return result;
+            }
+
+            // 1) 频道 ID: UC + 22位 共 24 位
+            if (id.StartsWith("UC", StringComparison.Ordinal)
+                && Regex.IsMatch(id, "^" + ChannelIdPattern + "$", RegexOptions.IgnoreCase))
+            {
+                result.Url = $"https://www.youtube.com/channel/{id}";
+                result.UrlType = YouTubeUrlType.Channel;
+                result.IsValid = true;
+                result.Description = "频道 (/channel/)";
+                return result;
+            }
+
+            // 2) 播放列表 ID：常见的 PL / UU / OL / LL / FL / RD / WL / TL 前缀，长度较长
+            //    阈值 12 表示前缀后至少 10 位（youtube 播放列表 id 普遍 ≥ 18 位）
+            if (Regex.IsMatch(id, "^(PL|UU|OL|LL|FL|RD|WL|TL)[A-Za-z0-9_\\-]{10,}$"))
+            {
+                result.Url = $"https://www.youtube.com/playlist?list={id}";
+                result.UrlType = YouTubeUrlType.Playlist;
+                result.IsValid = true;
+                result.Description = "播放列表";
+                return result;
+            }
+
+            // 3) 其余按 @handle 频道处理（包含 /@xxx 与旧版 /c /user 兜底）
+            if (!Regex.IsMatch(id, "^[A-Za-z0-9_\\-\\.]+$"))
+            {
+                result.Description = $"文件名 {fileName} 不是合法 YouTube ID / handle";
+                return result;
+            }
+
+            result.Url = $"https://www.youtube.com/@{id}";
+            result.UrlType = YouTubeUrlType.Channel;
+            result.IsValid = true;
+            result.Description = "频道 (/@handle)";
             return result;
         }
 

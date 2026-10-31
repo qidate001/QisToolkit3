@@ -406,6 +406,420 @@ namespace QisToolkit3.Forms
 
 
 
+        private void button_ArchiveEnhanced_Load_Click(object sender, EventArgs e)
+        {
+            comboBox_ArchiveEnhanced_Root.Items.Clear();
+            comboBox_ArchiveEnhanced_Users.Items.Clear();
+            comboBox_ArchiveEnhanced_PlayList.Items.Clear();
+
+            if (!Directory.Exists(YtDlpPathArchivePlusPath))
+            {
+                MessageBox.Show("ArchivePlus目录不存在：" + YtDlpPathArchivePlusPath);
+                return;
+            }
+
+            LoadArchiveEnhancedRoots();
+        }
+
+        private void button_ArchiveEnhanced_Save_Click(object sender, EventArgs e)
+        {
+            string fullPath = GetSelectedArchiveFilePath();
+            if (string.IsNullOrEmpty(fullPath))
+            {
+                MessageBox.Show("请先选择一个归档文件。");
+                return;
+            }
+
+            if (!File.Exists(fullPath))
+            {
+                MessageBox.Show("文件不存在：" + fullPath);
+                return;
+            }
+
+            try
+            {
+                string text = richTextBox_ArchiveEnhanced.Text ?? string.Empty;
+
+                // 统一换行符为 \r\n
+                text = text.Replace("\r\n", "\n")
+                           .Replace("\r", "\n")
+                           .Replace("\n", "\r\n");
+
+                // 可选：保存前备份
+                // File.Copy(fullPath, fullPath + ".bak", true);
+
+                // UTF-8 无 BOM 写入
+                File.WriteAllText(fullPath, text, new UTF8Encoding(false));
+
+                MessageBox.Show("保存成功。");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败：" + ex.Message);
+            }
+        }
+
+        private void button_ArchiveEnhanced_Resolve_Click(object sender, EventArgs e)
+        {
+            string url = comboBox_URL.Text?.Trim();
+            if (string.IsNullOrEmpty(url))
+            {
+                MessageBox.Show("请先输入或选择 URL。");
+                return;
+            }
+
+            string archivePath = TryResolveEnhancedArchivePath(url, actualDirectory);
+            if (string.IsNullOrEmpty(archivePath) || !File.Exists(archivePath))
+            {
+                MessageBox.Show("未找到对应的归档文件。\nURL: " + url);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(YtDlpPathArchivePlusPath))
+                YtDlpPathArchivePlusPath = Path.Combine(actualDirectory, "yt-dlp", "Archive");
+
+            if (!Directory.Exists(YtDlpPathArchivePlusPath))
+            {
+                MessageBox.Show("归档目录不存在：" + YtDlpPathArchivePlusPath);
+                return;
+            }
+
+            if (comboBox_ArchiveEnhanced_Root.Items.Count == 0)
+                LoadArchiveEnhancedRoots();
+
+            string rootFull = Path.GetFullPath(YtDlpPathArchivePlusPath)
+                                  .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            string fileFull = Path.GetFullPath(archivePath);
+
+            if (!fileFull.StartsWith(rootFull + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("文件不在 Archive 目录下：\n" + archivePath);
+                return;
+            }
+
+            string relative = fileFull.Substring(rootFull.Length + 1);
+            string[] parts = relative.Split(
+                new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            // 支持两种层级：
+            //   Root/xxx.txt          -> parts.Length == 2
+            //   Root/User/yyy.txt     -> parts.Length == 3
+            if (parts.Length < 2)
+            {
+                MessageBox.Show("归档文件层级不符合预期：\n" + relative);
+                return;
+            }
+
+            string rootName = parts[0];
+            string userName = parts[1];
+            string playListName = parts.Length >= 3 ? parts[2] : null;
+
+            if (!SelectComboBoxItem(comboBox_ArchiveEnhanced_Root, rootName))
+            {
+                MessageBox.Show("未在 Archive 中找到根目录：" + rootName);
+                return;
+            }
+
+            if (!SelectComboBoxItem(comboBox_ArchiveEnhanced_Users, userName))
+            {
+                MessageBox.Show("未在 " + rootName + " 中找到用户项：" + userName);
+                return;
+            }
+
+            // 用户级文件：PlayList 为空，内容已由 Users 的 SelectedIndexChanged 加载
+            if (playListName == null)
+                return;
+
+            if (!SelectComboBoxItem(comboBox_ArchiveEnhanced_PlayList, playListName))
+            {
+                MessageBox.Show("未在 " + rootName + "\\" + userName + " 中找到 PlayList 文件：" + playListName);
+                return;
+            }
+        }
+
+        private void button_ArchiveEnhanced_Reverse_Click(object sender, EventArgs e)
+        {
+            string fullPath = GetSelectedArchiveFilePath();
+            if (string.IsNullOrEmpty(fullPath))
+            {
+                MessageBox.Show("请先在三层下拉框中选好一个归档文件。");
+                return;
+            }
+
+            if (!File.Exists(fullPath))
+            {
+                MessageBox.Show("文件不存在：\n" + fullPath);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(YtDlpPathArchivePlusPath))
+                YtDlpPathArchivePlusPath = Path.Combine(actualDirectory, "yt-dlp", "Archive");
+
+            string rootName = comboBox_ArchiveEnhanced_Root.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(rootName))
+            {
+                MessageBox.Show("请先选择一个 Archive 根目录。");
+                return;
+            }
+
+            try
+            {
+                if (rootName.Equals("BiliBili", StringComparison.OrdinalIgnoreCase))
+                {
+                    var r = BilibiliUrlParser.ReverseFromArchivePath(YtDlpPathArchivePlusPath, fullPath);
+                    if (r.IsValid)
+                    {
+                        comboBox_URL.Text = r.Url;
+                        Log.Info($"[YtDlp工具] 反向解析 BiliBili {r.Description} => {r.Url}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("无法反推出 URL：\n" + r.Description);
+                    }
+                }
+                else if (rootName.Equals("YouTube", StringComparison.OrdinalIgnoreCase))
+                {
+                    var r = YouTubeUrlParser.ReverseFromArchivePath(YtDlpPathArchivePlusPath, fullPath);
+                    if (r.IsValid)
+                    {
+                        comboBox_URL.Text = r.Url;
+                        Log.Info($"[YtDlp工具] 反向解析 YouTube {r.Description} => {r.Url}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("无法反推出 URL：\n" + r.Description);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("未知的 Archive 根目录：" + rootName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("反推失败：" + ex.Message);
+            }
+        }
+
+        private static bool SelectComboBoxItem(ComboBox cb, string value)
+        {
+            if (cb == null || string.IsNullOrEmpty(value))
+                return false;
+
+            for (int i = 0; i < cb.Items.Count; i++)
+            {
+                if (string.Equals(cb.Items[i]?.ToString(), value, StringComparison.OrdinalIgnoreCase))
+                {
+                    cb.SelectedIndex = i;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void LoadArchiveEnhancedRoots()
+        {
+            comboBox_ArchiveEnhanced_Root.Items.Clear();
+            comboBox_ArchiveEnhanced_Users.Items.Clear();
+            comboBox_ArchiveEnhanced_PlayList.Items.Clear();
+
+            if (!Directory.Exists(YtDlpPathArchivePlusPath))
+                return;
+
+            string[] dirs = Directory.GetDirectories(YtDlpPathArchivePlusPath);
+            Array.Sort(dirs, StringComparer.OrdinalIgnoreCase);
+
+            foreach (string dir in dirs)
+            {
+                string name = Path.GetFileName(dir);
+                if (!string.IsNullOrEmpty(name))
+                    comboBox_ArchiveEnhanced_Root.Items.Add(name);
+            }
+
+            if (comboBox_ArchiveEnhanced_Root.Items.Count > 0)
+                comboBox_ArchiveEnhanced_Root.SelectedIndex = 0;
+        }
+
+        private void comboBox_ArchiveEnhanced_Root_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_ArchiveEnhanced_Users.Items.Clear();
+            comboBox_ArchiveEnhanced_PlayList.Items.Clear();
+
+            if (string.IsNullOrEmpty(YtDlpPathArchivePlusPath) ||
+                comboBox_ArchiveEnhanced_Root.SelectedItem == null)
+                return;
+
+            string rootName = comboBox_ArchiveEnhanced_Root.SelectedItem.ToString();
+            string rootPath = Path.Combine(YtDlpPathArchivePlusPath, rootName);
+
+            if (!Directory.Exists(rootPath))
+                return;
+
+            // 1) 子目录（用户目录）
+            var dirNames = new List<string>();
+            foreach (string dir in Directory.GetDirectories(rootPath))
+            {
+                string name = Path.GetFileName(dir);
+                if (!string.IsNullOrEmpty(name))
+                    dirNames.Add(name);
+            }
+            dirNames.Sort(StringComparer.OrdinalIgnoreCase);
+
+            // 2) root 级直接存在的 txt 文件（archive.txt、8299159.txt 等）
+            var fileNames = new List<string>();
+            foreach (string file in Directory.GetFiles(rootPath, "*.txt", SearchOption.TopDirectoryOnly))
+            {
+                string name = Path.GetFileName(file);
+                if (!string.IsNullOrEmpty(name))
+                    fileNames.Add(name);
+            }
+            fileNames.Sort(StringComparer.OrdinalIgnoreCase);
+
+            // 目录在前，文件在后
+            foreach (string name in dirNames)
+                comboBox_ArchiveEnhanced_Users.Items.Add(name);
+            foreach (string name in fileNames)
+                comboBox_ArchiveEnhanced_Users.Items.Add(name);
+
+            if (comboBox_ArchiveEnhanced_Users.Items.Count > 0)
+                comboBox_ArchiveEnhanced_Users.SelectedIndex = 0;
+        }
+
+        private void comboBox_ArchiveEnhanced_Users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_ArchiveEnhanced_PlayList.Items.Clear();
+
+            if (string.IsNullOrEmpty(YtDlpPathArchivePlusPath) ||
+                comboBox_ArchiveEnhanced_Root.SelectedItem == null ||
+                comboBox_ArchiveEnhanced_Users.SelectedItem == null)
+            {
+                richTextBox_ArchiveEnhanced.Clear();
+                return;
+            }
+
+            string rootName = comboBox_ArchiveEnhanced_Root.SelectedItem.ToString();
+            string userName = comboBox_ArchiveEnhanced_Users.SelectedItem.ToString();
+
+            string rootPath = Path.Combine(YtDlpPathArchivePlusPath, rootName);
+            string userPath = Path.Combine(rootPath, userName);
+
+            // 情况 A：Users 选中的是 root 级 txt 文件
+            if (File.Exists(userPath))
+            {
+                try
+                {
+                    richTextBox_ArchiveEnhanced.Text = ReadTextFileAutoEncoding(userPath);
+                }
+                catch (Exception ex)
+                {
+                    richTextBox_ArchiveEnhanced.Text = "读取失败：" + ex.Message;
+                }
+                return;
+            }
+
+            // 情况 B：Users 选中的是用户目录
+            if (!Directory.Exists(userPath))
+                return;
+
+            string[] files = Directory.GetFiles(userPath, "*.txt", SearchOption.TopDirectoryOnly);
+            Array.Sort(files, StringComparer.OrdinalIgnoreCase);
+
+            foreach (string file in files)
+            {
+                string name = Path.GetFileName(file);
+                if (!string.IsNullOrEmpty(name))
+                    comboBox_ArchiveEnhanced_PlayList.Items.Add(name);
+            }
+
+            if (comboBox_ArchiveEnhanced_PlayList.Items.Count > 0)
+                comboBox_ArchiveEnhanced_PlayList.SelectedIndex = 0;
+            else
+                richTextBox_ArchiveEnhanced.Clear();
+        }
+
+        private void comboBox_ArchiveEnhanced_PlayList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            richTextBox_ArchiveEnhanced.Clear();
+
+            if (comboBox_ArchiveEnhanced_PlayList.SelectedItem == null)
+                return;
+
+            string fullPath = GetSelectedArchiveFilePath();
+            if (string.IsNullOrEmpty(fullPath) || !File.Exists(fullPath))
+                return;
+
+            try
+            {
+                richTextBox_ArchiveEnhanced.Text = ReadTextFileAutoEncoding(fullPath);
+            }
+            catch (Exception ex)
+            {
+                richTextBox_ArchiveEnhanced.Text = "读取失败：" + ex.Message;
+                Log.Err("[Archive] ", ex);
+            }
+        }
+
+        // - Users 是文件  -> 返回该文件路径
+        // - Users 是目录 + PlayList 有选中 -> 返回目录下 PlayList 路径
+        // - 其它 -> null
+        private string GetSelectedArchiveFilePath()
+        {
+            if (string.IsNullOrEmpty(YtDlpPathArchivePlusPath) ||
+                comboBox_ArchiveEnhanced_Root.SelectedItem == null ||
+                comboBox_ArchiveEnhanced_Users.SelectedItem == null)
+                return null;
+
+            string rootName = comboBox_ArchiveEnhanced_Root.SelectedItem.ToString();
+            string userName = comboBox_ArchiveEnhanced_Users.SelectedItem.ToString();
+
+            string rootPath = Path.Combine(YtDlpPathArchivePlusPath, rootName);
+            string userPath = Path.Combine(rootPath, userName);
+
+            // 用户级文件（archive.txt / 8299159.txt 等）
+            if (File.Exists(userPath))
+                return userPath;
+
+            // 目录：需要 PlayList 有选中项
+            if (comboBox_ArchiveEnhanced_PlayList.SelectedItem == null)
+                return null;
+
+            string playListName = comboBox_ArchiveEnhanced_PlayList.SelectedItem.ToString();
+            return Path.Combine(userPath, playListName);
+        }
+
+        private static string ReadTextFileAutoEncoding(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+
+            // 1) 带 BOM
+            if (bytes.Length >= 3 && bytes[0] == 0xEF && bytes[1] == 0xBB && bytes[2] == 0xBF)
+                return Encoding.UTF8.GetString(bytes, 3, bytes.Length - 3);
+
+            if (bytes.Length >= 2 && bytes[0] == 0xFF && bytes[1] == 0xFE)
+                return Encoding.Unicode.GetString(bytes, 2, bytes.Length - 2);
+
+            if (bytes.Length >= 2 && bytes[0] == 0xFE && bytes[1] == 0xFF)
+                return Encoding.BigEndianUnicode.GetString(bytes, 2, bytes.Length - 2);
+
+            // 2) 无 BOM：先严格按 UTF-8 解码，失败再回退 GBK
+            try
+            {
+                var utf8Strict = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false,
+                                                  throwOnInvalidBytes: true);
+                return utf8Strict.GetString(bytes);
+            }
+            catch (DecoderFallbackException)
+            {
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                return Encoding.GetEncoding("GBK").GetString(bytes);
+            }
+        }
+
+
+
+
+
         private void YtDlpTool_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))

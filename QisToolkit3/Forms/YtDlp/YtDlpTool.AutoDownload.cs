@@ -289,7 +289,7 @@ Name: 《熙玥救赎》
 https://space.bilibili.com/3546914949695626/lists/8683776
 Name: 《同桌小希》
 
-# 我竟是伟大存在
+# 我竟是伟大存在（已注释，如需下载请取消注释）
 # https://space.bilibili.com/32160535/lists/5578590
 # Name: 《我竟是伟大存在》
 
@@ -318,10 +318,15 @@ https://space.bilibili.com/71130413/lists/5525218
 Name: 《遗忘世间》
 
 # 戏神道
-https://www.bilibili.com/video/BV1J1316bEZo
+https://space.bilibili.com/529452132/lists/3764097
 Name: 《戏神道》
 MatchFilters: true
 MatchFiltersData: duration>=60
+
+# 灵种奇谈
+https://space.bilibili.com/529452132/lists/3764097
+Name: 《灵种奇谈》
+Playlist: 1:-12:1
 ";
             File.WriteAllText(configPath, defaultContent, Encoding.UTF8);
         }
