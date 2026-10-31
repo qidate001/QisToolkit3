@@ -227,6 +227,7 @@
             checkBox_StringRuleEngine = new CheckBox();
             richTextBox_StringRuleEngine = new RichTextBox();
             tabPage10 = new TabPage();
+            button_ArchiveEnhanced_Delete = new Button();
             button_ArchiveEnhanced_Save = new Button();
             button_ArchiveEnhanced_Reverse = new Button();
             button_ArchiveEnhanced_Resolve = new Button();
@@ -1877,6 +1878,7 @@
             // 
             // tabPage10
             // 
+            tabPage10.Controls.Add(button_ArchiveEnhanced_Delete);
             tabPage10.Controls.Add(button_ArchiveEnhanced_Save);
             tabPage10.Controls.Add(button_ArchiveEnhanced_Reverse);
             tabPage10.Controls.Add(button_ArchiveEnhanced_Resolve);
@@ -1888,6 +1890,14 @@
             resources.ApplyResources(tabPage10, "tabPage10");
             tabPage10.Name = "tabPage10";
             tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // button_ArchiveEnhanced_Delete
+            // 
+            resources.ApplyResources(button_ArchiveEnhanced_Delete, "button_ArchiveEnhanced_Delete");
+            button_ArchiveEnhanced_Delete.ForeColor = Color.Red;
+            button_ArchiveEnhanced_Delete.Name = "button_ArchiveEnhanced_Delete";
+            button_ArchiveEnhanced_Delete.UseVisualStyleBackColor = true;
+            button_ArchiveEnhanced_Delete.Click += button_ArchiveEnhanced_Delete_Click;
             // 
             // button_ArchiveEnhanced_Save
             // 
@@ -1917,17 +1927,16 @@
             button_ArchiveEnhanced_Load.UseVisualStyleBackColor = true;
             button_ArchiveEnhanced_Load.Click += button_ArchiveEnhanced_Load_Click;
             // 
-            // richTextBox_ArchivePlus
+            // richTextBox_ArchiveEnhanced
             // 
-            resources.ApplyResources(richTextBox_ArchiveEnhanced, "richTextBox_ArchivePlus");
-            richTextBox_ArchiveEnhanced.Name = "richTextBox_ArchivePlus";
+            resources.ApplyResources(richTextBox_ArchiveEnhanced, "richTextBox_ArchiveEnhanced");
+            richTextBox_ArchiveEnhanced.Name = "richTextBox_ArchiveEnhanced";
             // 
             // comboBox_ArchiveEnhanced_PlayList
             // 
             comboBox_ArchiveEnhanced_PlayList.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(comboBox_ArchiveEnhanced_PlayList, "comboBox_ArchiveEnhanced_PlayList");
             comboBox_ArchiveEnhanced_PlayList.FormattingEnabled = true;
-            comboBox_ArchiveEnhanced_PlayList.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_PlayList.Items"), resources.GetString("comboBox_ArchiveEnhanced_PlayList.Items1") });
             comboBox_ArchiveEnhanced_PlayList.Name = "comboBox_ArchiveEnhanced_PlayList";
             comboBox_ArchiveEnhanced_PlayList.SelectedIndexChanged += comboBox_ArchiveEnhanced_PlayList_SelectedIndexChanged;
             // 
@@ -1936,7 +1945,6 @@
             comboBox_ArchiveEnhanced_Users.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(comboBox_ArchiveEnhanced_Users, "comboBox_ArchiveEnhanced_Users");
             comboBox_ArchiveEnhanced_Users.FormattingEnabled = true;
-            comboBox_ArchiveEnhanced_Users.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_Users.Items"), resources.GetString("comboBox_ArchiveEnhanced_Users.Items1") });
             comboBox_ArchiveEnhanced_Users.Name = "comboBox_ArchiveEnhanced_Users";
             comboBox_ArchiveEnhanced_Users.SelectedIndexChanged += comboBox_ArchiveEnhanced_Users_SelectedIndexChanged;
             // 
@@ -2550,5 +2558,6 @@
         private RichTextBox richTextBox_ArchiveEnhanced;
         private Button button3;
         private Button button_ArchiveEnhanced_Save;
+        private Button button_ArchiveEnhanced_Delete;
     }
 }

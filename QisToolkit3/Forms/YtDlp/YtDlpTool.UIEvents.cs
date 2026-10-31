@@ -602,6 +602,57 @@ namespace QisToolkit3.Forms
             }
         }
 
+        private void button_ArchiveEnhanced_Delete_Click(object sender, EventArgs e)
+        {
+            string fullPath = GetSelectedArchiveFilePath();
+            if (string.IsNullOrEmpty(fullPath) || !File.Exists(fullPath))
+            {
+                MessageBox.Show("请先选择一个存在的归档文件。");
+                return;
+            }
+
+            if (MessageBox.Show("确定删除以下归档文件吗？\n\n" + fullPath,
+                    "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                return;
+
+            try
+            {
+                string currentRoot = comboBox_ArchiveEnhanced_Root.SelectedItem?.ToString();
+
+                // 1) 删除文件本身
+                File.Delete(fullPath);
+
+                // 2) 如果是「用户目录」下的文件，且该用户目录删完后为空，则删除用户目录
+                string parentDir = Path.GetDirectoryName(fullPath);
+                if (!string.IsNullOrEmpty(currentRoot)
+                    && !string.IsNullOrEmpty(parentDir)
+                    && Directory.Exists(parentDir))
+                {
+                    string rootPath = Path.Combine(YtDlpPathArchivePlusPath, currentRoot);
+
+                    // 父目录必须比 Root 更深（即它是用户目录，不是 Root 目录）
+                    bool isUserDir = parentDir.Length > rootPath.Length
+                                  && parentDir.StartsWith(
+                                        rootPath + Path.DirectorySeparatorChar,
+                                        StringComparison.OrdinalIgnoreCase);
+
+                    if (isUserDir && Directory.GetFileSystemEntries(parentDir).Length == 0)
+                    {
+                        Directory.Delete(parentDir, false);
+                        Log.Info($"[YtDlp工具] 用户目录已空，删除：{parentDir}");
+                    }
+                }
+
+                // 3) 清空显示 + 刷新下拉框（尽量保持 Root 选中位置）
+                richTextBox_ArchiveEnhanced.Clear();
+                ReloadArchiveEnhancedCombos(currentRoot);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("删除失败：" + ex.Message);
+            }
+        }
+
         private static bool SelectComboBoxItem(ComboBox cb, string value)
         {
             if (cb == null || string.IsNullOrEmpty(value))
@@ -814,6 +865,26 @@ namespace QisToolkit3.Forms
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 return Encoding.GetEncoding("GBK").GetString(bytes);
             }
+        }
+
+        /// <summary>
+        /// 重新加载 ArchiveEnhanced 三层下拉框，尽量保持原来选中的 Root
+        /// </summary>
+        private void ReloadArchiveEnhancedCombos(string preferRoot)
+        {
+            LoadArchiveEnhancedRoots();   // 内部会选中第一个 Root 并触发 Users / PlayList 联动
+
+            if (!string.IsNullOrEmpty(preferRoot)
+                && SelectComboBoxItem(comboBox_ArchiveEnhanced_Root, preferRoot))
+            {
+                // SelectComboBoxItem 已经切换 Root，触发 Users / PlayList 刷新
+                return;
+            }
+
+            if (comboBox_ArchiveEnhanced_Root.Items.Count > 0)
+                comboBox_ArchiveEnhanced_Root.SelectedIndex = 0;
+            else
+                richTextBox_ArchiveEnhanced.Clear();
         }
 
 

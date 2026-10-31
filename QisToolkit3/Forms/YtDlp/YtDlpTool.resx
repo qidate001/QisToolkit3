@@ -7037,6 +7037,36 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="&gt;&gt;tabPage9.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="button_ArchiveEnhanced_Delete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 336</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 55</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Delete.Name" xml:space="preserve">
+    <value>button_ArchiveEnhanced_Delete</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Delete.Parent" xml:space="preserve">
+    <value>tabPage10</value>
+  </data>
+  <data name="&gt;&gt;button_ArchiveEnhanced_Delete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button_ArchiveEnhanced_Save.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
   </data>
@@ -7044,7 +7074,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>NoControl</value>
   </data>
   <data name="button_ArchiveEnhanced_Save.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 336</value>
+    <value>584, 275</value>
   </data>
   <data name="button_ArchiveEnhanced_Save.Size" type="System.Drawing.Size, System.Drawing">
     <value>337, 55</value>
@@ -7065,7 +7095,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;button_ArchiveEnhanced_Save.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button_ArchiveEnhanced_Reverse.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7074,10 +7104,10 @@ vorbis		好	中等	一般	开源软件</value>
     <value>NoControl</value>
   </data>
   <data name="button_ArchiveEnhanced_Reverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 275</value>
+    <value>752, 214</value>
   </data>
   <data name="button_ArchiveEnhanced_Reverse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 55</value>
+    <value>169, 55</value>
   </data>
   <data name="button_ArchiveEnhanced_Reverse.TabIndex" type="System.Int32, mscorlib">
     <value>81</value>
@@ -7095,7 +7125,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;button_ArchiveEnhanced_Reverse.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_ArchiveEnhanced_Resolve.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7104,7 +7134,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>584, 214</value>
   </data>
   <data name="button_ArchiveEnhanced_Resolve.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 55</value>
+    <value>162, 55</value>
   </data>
   <data name="button_ArchiveEnhanced_Resolve.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -7122,7 +7152,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;button_ArchiveEnhanced_Resolve.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button_ArchiveEnhanced_Load.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7152,40 +7182,34 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;button_ArchiveEnhanced_Load.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="richTextBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="richTextBox_ArchiveEnhanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
-  <data name="richTextBox_ArchivePlus.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="richTextBox_ArchiveEnhanced.Size" type="System.Drawing.Size, System.Drawing">
     <value>572, 406</value>
   </data>
-  <data name="richTextBox_ArchivePlus.TabIndex" type="System.Int32, mscorlib">
+  <data name="richTextBox_ArchiveEnhanced.TabIndex" type="System.Int32, mscorlib">
     <value>78</value>
   </data>
-  <data name="richTextBox_ArchivePlus.Text" xml:space="preserve">
+  <data name="richTextBox_ArchiveEnhanced.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;richTextBox_ArchivePlus.Name" xml:space="preserve">
-    <value>richTextBox_ArchivePlus</value>
+  <data name="&gt;&gt;richTextBox_ArchiveEnhanced.Name" xml:space="preserve">
+    <value>richTextBox_ArchiveEnhanced</value>
   </data>
-  <data name="&gt;&gt;richTextBox_ArchivePlus.Type" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox_ArchiveEnhanced.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;richTextBox_ArchivePlus.Parent" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox_ArchiveEnhanced.Parent" xml:space="preserve">
     <value>tabPage10</value>
   </data>
-  <data name="&gt;&gt;richTextBox_ArchivePlus.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;richTextBox_ArchiveEnhanced.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_PlayList.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="comboBox_ArchiveEnhanced_PlayList.Items" xml:space="preserve">
-    <value>保护模式</value>
-  </data>
-  <data name="comboBox_ArchiveEnhanced_PlayList.Items1" xml:space="preserve">
-    <value>强制模式</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_PlayList.Location" type="System.Drawing.Point, System.Drawing">
     <value>584, 104</value>
@@ -7206,16 +7230,10 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;comboBox_ArchiveEnhanced_PlayList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Users.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="comboBox_ArchiveEnhanced_Users.Items" xml:space="preserve">
-    <value>保护模式</value>
-  </data>
-  <data name="comboBox_ArchiveEnhanced_Users.Items1" xml:space="preserve">
-    <value>强制模式</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Users.Location" type="System.Drawing.Point, System.Drawing">
     <value>584, 55</value>
@@ -7236,16 +7254,16 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;comboBox_ArchiveEnhanced_Users.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Root.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Root.Items" xml:space="preserve">
-    <value>保护模式</value>
+    <value>BiliBili</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Root.Items1" xml:space="preserve">
-    <value>强制模式</value>
+    <value>YouTube</value>
   </data>
   <data name="comboBox_ArchiveEnhanced_Root.Location" type="System.Drawing.Point, System.Drawing">
     <value>584, 6</value>
@@ -7266,7 +7284,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabPage10</value>
   </data>
   <data name="&gt;&gt;comboBox_ArchiveEnhanced_Root.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tabPage10.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
