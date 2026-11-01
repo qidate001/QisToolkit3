@@ -11,5 +11,6 @@ namespace QisToolkit3.Forms.YtDlp
         public string Url { get; set; }
         public Dictionary<string, string> Overrides { get; set; } = new(StringComparer.OrdinalIgnoreCase);
         public bool AutoDownload { get; set; } = true;
+        public string CookieFilePath { get; set; }
     }
 }

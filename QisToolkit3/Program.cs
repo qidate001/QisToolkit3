@@ -56,15 +56,18 @@ namespace QisToolkit3
 
                 if (tmp == DialogResult.Yes)
                 {
-                    // 把原始参数安全地拼回去（含空格的参数用引号包起来）
                     string originalArgs = string.Join(" ", args.Select(a =>
                         a.Contains(' ') ? $"\"{a}\"" : a));
                     RestartAsAdmin(originalArgs);
                 }
                 return;
             }
-            
 
+            // 单实例检查（如果不是第一个实例，把参数发给老实例后直接退出）
+            if (!SingleInstanceManager.IsFirstInstance(args))
+            {
+                Environment.Exit(0); // 已发送给老实例，直接退出
+            }
 
             Log.Info("=== 启动信息 ===");
             Log.Info($"EXE文件: {Qi.QisToolkit3_Datas.exePath}");
@@ -82,24 +85,55 @@ namespace QisToolkit3
             // 注册编码
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            // 视觉样式初始化（提前到协议处理之前）
+            // 视觉样式初始化
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ApplicationConfiguration.Initialize();
 
-            // ===== 协议处理 =====
-            if (TryHandleProtocol(args, out var pendingInvocation))
+            // ?? 注册管道回调（收到其他实例传来的协议时）
+            SingleInstanceManager.OnArgumentsReceived += (newArgs) =>
             {
-                if (pendingInvocation != null)
+                var mainForm = Application.OpenForms.Count > 0 ? Application.OpenForms[0] : null;
+                if (mainForm != null)
                 {
-                    // 走 WinForm 自动下载路径
+                    mainForm.Invoke(new Action(() =>
+                    {
+                        // 注意：这里必须用 newArgs，而不是主程序的 args
+                        if (TryHandleProtocol(newArgs, out var pendingInvocation, out bool isStartProtocol))
+                        {
+                            if (isStartProtocol)
+                            {
+                                // 已经存在老程序了，不能再用 Application.Run，用 Show() 即可
+                                var form = new YtDlpTool();
+                                form.Show();
+                            }
+                            else if (pendingInvocation != null)
+                            {
+                                var form = new YtDlpTool();
+                                form.ApplyPendingInvocation(pendingInvocation);
+                                form.Show();
+                            }
+                        }
+                    }));
+                }
+            };
+
+            // ===== 协议处理（首次启动时） =====
+            // ?? 修复：补上 out bool isStartProtocol
+            if (TryHandleProtocol(args, out var pendingInvocation, out bool isStartProtocol))
+            {
+                if (isStartProtocol)
+                {
+                    Application.Run(new YtDlpTool());
+                    return;
+                }
+                else if (pendingInvocation != null)
+                {
                     var form = new YtDlpTool();
                     form.ApplyPendingInvocation(pendingInvocation);
                     Application.Run(form);
+                    return;
                 }
-                // 无论是否启动了窗体，协议模式处理完就退出
-                BufferedLogger.Shutdown();
-                return;
             }
 
             // ===== -SPL / 命令行 / 窗体流程 =====
@@ -138,17 +172,11 @@ namespace QisToolkit3
             {
                 if (hideWindow)
                 {
-                    // 隐藏窗口模式：不显示主窗体
-                    // 静默运行，不调用 Application.Run
-                    // 可以选择在这里执行其他后台任务，或者直接退出
-                    // 由于没有窗口需要显示，直接返回
                     BufferedLogger.Shutdown();
                     return;
                 }
                 Application.Run(startupForm);
             }
-
-            // 命令行模式
             else
             {
                 RunCommandLineMode(hideWindow);
@@ -156,11 +184,12 @@ namespace QisToolkit3
         }
 
         /// <summary>
-        /// 处理 ytdlp 协议调用
+        /// 处理 ytdlp 或 start 协议调用
         /// </summary>
-        static bool TryHandleProtocol(string[] args, out YtDlpInvocation pendingInvocation)
+        static bool TryHandleProtocol(string[] args, out YtDlpInvocation pendingInvocation, out bool isStartProtocol)
         {
             pendingInvocation = null;
+            isStartProtocol = false;
 
             string protocolArg = args.FirstOrDefault(a =>
                 a.StartsWith("qistoolkit3://", StringComparison.OrdinalIgnoreCase));
@@ -173,18 +202,18 @@ namespace QisToolkit3
             {
                 var uri = new Uri(protocolArg);
                 string action = uri.Host;
-                var query = ParseQueryString(uri.Query);
-
-                Log.Info($"[Protocol] action = {action}");
 
                 if (action.Equals("ytdlp", StringComparison.OrdinalIgnoreCase))
                 {
+                    var query = ParseQueryString(uri.Query);
                     var inv = BuildYtDlpInvocation(query);
                     if (inv != null) pendingInvocation = inv;
                 }
-                else
+                else if (action.Equals("start", StringComparison.OrdinalIgnoreCase))
                 {
-                    Log.Warn($"[Protocol] 未知 action，已忽略: {action}");
+                    // 插件仅唤起，不下载
+                    isStartProtocol = true;
+                    Log.Info("[Protocol] 收到 start 协议，仅启动程序等待 HTTP 数据");
                 }
             }
             catch (Exception ex)
@@ -315,11 +344,7 @@ namespace QisToolkit3
         /// </summary>
         static void RunCommandOnlyMode(string[] args, bool hideWindow)
         {
-            // 获取参数（跳过第一个命令模式参数）
-            int cmdIndex = Array.FindIndex(
-                args,
-                x => IsCommandOnlyMode(x)
-            );
+            int cmdIndex = Array.FindIndex(args, x => IsCommandOnlyMode(x));
 
             string commandArg = "";
 
@@ -335,10 +360,8 @@ namespace QisToolkit3
                 return;
             }
 
-            // 分配控制台（用于显示输出）
             AllocConsole();
 
-            // 如果需要隐藏窗口，隐藏控制台
             if (hideWindow)
             {
                 IntPtr consoleWindow = GetConsoleWindow();
@@ -530,99 +553,53 @@ namespace QisToolkit3
         {
             switch (formName)
             {
-                case "Main":
-                    return new Main();
-                case "DCQAA":
-                    return new DCQAA();
-                case "AdvancedModificationSystemTools":
-                    return new AdvancedModificationSystemTools();
-                case "Calculator":
-                    return new Calculator();
-                case "CleaningUpTrash":
-                    return new CleaningUpTrash();
-                case "CmdInQisToolkit3":
-                    return new CmdInQisToolkit3();
-                case "ExtendedFeatures":
-                    return new ExtendedFeatures();
-                case "FFmpegTool":
-                    return new FFmpegTool();
-                case "FileList":
-                    return new FileList();
-                case "FilesOperation":
-                    return new FilesOperation();
-                case "FilesOperationPlus":
-                    return new FilesOperationPlus();
-                case "GameTools":
-                    return new GameTools();
-                case "ImageHijackingTool":
-                    return new ImageHijackingTool();
-                case "MediumAutoStartTool":
-                    return new MediumAutoStartTool();
-                case "MinecraftProjectE":
-                    return new MinecraftProjectE();
-                case "MinecraftTools":
-                    return new MinecraftTools();
-                case "MyComputerNameSpaceTool":
-                    return new MyComputerNameSpaceTool();
-                case "Options":
-                    return new Options();
-                case "ScanRogueSoftwareTool":
-                    return new ScanRogueSoftwareTool();
-                case "SendMessageToWindowsTool":
-                    return new SendMessageToWindowsTool();
-                case "SoftwareDownload":
-                    return new SoftwareDownload();
-                case "SoftwareFunctionPage":
-                    return new SoftwareFunctionPage();
-                case "SoftwareLogParser":
-                    return new SoftwareLogParser();
-                case "StrangeFoods":
-                    return new StrangeFoods();
-                case "StrangeQuestionAndAnswer":
-                    return new StrangeQuestionAndAnswer();
-                case "StrangeQuestionAndAnswerMain":
-                    return new StrangeQuestionAndAnswerMain();
-                case "SurvivalChallengeGame":
-                    return new SurvivalChallengeGame();
-                case "SystemErrorCheck":
-                    return new SystemErrorCheck();
-                case "SystemServiceTools":
-                    return new SystemServiceTools();
-                case "TextGeneration":
-                    return new TextGeneration();
-                case "TextGenerationPlus":
-                    return new TextGenerationPlus();
-                case "TextProcessingTools":
-                    return new TextProcessingTools();
-                case "TextProcessorForm":
-                    return new TextProcessorForm();
-                case "Tools":
-                    return new Tools();
-                case "UnicodeTool":
-                    return new UnicodeTool();
-                case "UninstallRegistryKeysTool":
-                    return new UninstallRegistryKeysTool();
-                case "WhatToEatToday":
-                    return new WhatToEatToday();
-                case "WindowNesterTool":
-                    return new WindowNesterTool();
-                case "YtDlpTool":
-                    return new YtDlpTool();
-                case "PCLFunction":
-                    return new PCLFunction();
-                case "QQFunction":
-                    return new QQFunction();
-                case "WeChatFunction":
-                    return new WeChatFunction();
-                case "CommonFunctionalTools":
-                    return new CommonFunctionalTools();
-                case "TaskManager":
-                    return new TaskManager();
+                case "Main": return new Main();
+                case "DCQAA": return new DCQAA();
+                case "AdvancedModificationSystemTools": return new AdvancedModificationSystemTools();
+                case "Calculator": return new Calculator();
+                case "CleaningUpTrash": return new CleaningUpTrash();
+                case "CmdInQisToolkit3": return new CmdInQisToolkit3();
+                case "ExtendedFeatures": return new ExtendedFeatures();
+                case "FFmpegTool": return new FFmpegTool();
+                case "FileList": return new FileList();
+                case "FilesOperation": return new FilesOperation();
+                case "FilesOperationPlus": return new FilesOperationPlus();
+                case "GameTools": return new GameTools();
+                case "ImageHijackingTool": return new ImageHijackingTool();
+                case "MediumAutoStartTool": return new MediumAutoStartTool();
+                case "MinecraftProjectE": return new MinecraftProjectE();
+                case "MinecraftTools": return new MinecraftTools();
+                case "MyComputerNameSpaceTool": return new MyComputerNameSpaceTool();
+                case "Options": return new Options();
+                case "ScanRogueSoftwareTool": return new ScanRogueSoftwareTool();
+                case "SendMessageToWindowsTool": return new SendMessageToWindowsTool();
+                case "SoftwareDownload": return new SoftwareDownload();
+                case "SoftwareFunctionPage": return new SoftwareFunctionPage();
+                case "SoftwareLogParser": return new SoftwareLogParser();
+                case "StrangeFoods": return new StrangeFoods();
+                case "StrangeQuestionAndAnswer": return new StrangeQuestionAndAnswer();
+                case "StrangeQuestionAndAnswerMain": return new StrangeQuestionAndAnswerMain();
+                case "SurvivalChallengeGame": return new SurvivalChallengeGame();
+                case "SystemErrorCheck": return new SystemErrorCheck();
+                case "SystemServiceTools": return new SystemServiceTools();
+                case "TextGeneration": return new TextGeneration();
+                case "TextGenerationPlus": return new TextGenerationPlus();
+                case "TextProcessingTools": return new TextProcessingTools();
+                case "TextProcessorForm": return new TextProcessorForm();
+                case "Tools": return new Tools();
+                case "UnicodeTool": return new UnicodeTool();
+                case "UninstallRegistryKeysTool": return new UninstallRegistryKeysTool();
+                case "WhatToEatToday": return new WhatToEatToday();
+                case "WindowNesterTool": return new WindowNesterTool();
+                case "YtDlpTool": return new YtDlpTool();
+                case "PCLFunction": return new PCLFunction();
+                case "QQFunction": return new QQFunction();
+                case "WeChatFunction": return new WeChatFunction();
+                case "CommonFunctionalTools": return new CommonFunctionalTools();
+                case "TaskManager": return new TaskManager();
                 case "SystemPermissionLauncher":
-                case "spl":
-                    return new SystemPermissionLauncher();
+                case "spl": return new SystemPermissionLauncher();
                 default:
-                    // 如果找不到对应的窗体，显示错误信息并返回主窗体
                     MessageBox.Show($"未找到名为 {formName} 的窗体，将启动主窗体。",
                                     "参数错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return new Main();
@@ -639,7 +616,6 @@ namespace QisToolkit3
         {
             AllocConsole();
 
-            // 如果需要隐藏窗口，隐藏控制台
             if (hideWindow)
             {
                 IntPtr consoleWindow = GetConsoleWindow();

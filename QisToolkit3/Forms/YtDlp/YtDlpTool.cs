@@ -200,7 +200,14 @@ namespace QisToolkit3.Forms
 
             finally
             {
+                LocalApiServer.Start(); // 启动 HTTP 服务
                 _ready.TrySetResult(true); // 无论成功失败都解锁
+
+                // 如果 HTTP 请求在 Load 期间抵达
+                if (_isHttpTriggered && _pendingInvocation != null)
+                {
+                    ApplyInvocationAndDownload();
+                }
             }
         }
     }

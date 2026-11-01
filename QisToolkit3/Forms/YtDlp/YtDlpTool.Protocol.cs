@@ -12,6 +12,7 @@ namespace QisToolkit3.Forms
     {
         private readonly TaskCompletionSource<bool> _ready = new();
         private YtDlpInvocation _pendingInvocation;
+        private bool _isHttpTriggered = false;
 
         /// <summary>
         /// 由 Program 在 Application.Run 之前调用，注入协议参数
@@ -28,7 +29,7 @@ namespace QisToolkit3.Forms
         {
             base.OnShown(e);
 
-            if (_pendingInvocation?.AutoDownload == true)
+            if (_pendingInvocation?.AutoDownload == true && !_isHttpTriggered)
             {
                 _ = RunPendingDownloadAsync();
             }
@@ -38,9 +39,8 @@ namespace QisToolkit3.Forms
         {
             try
             {
-                // 等 Load 里所有 async 初始化完成
                 await _ready.Task;
-                await Task.Delay(300); // 让 UI 稍稳定
+                await Task.Delay(300);
 
                 Log.Info("[YtDlp工具] 协议触发：开始自动下载");
 
@@ -50,17 +50,51 @@ namespace QisToolkit3.Forms
 
                 await DoDownload();
             }
+
             catch (Exception ex)
             {
                 Log.Err("[YtDlp工具] 协议触发下载失败: " + ex.Message);
                 MessageBox.Show("自动下载失败：\n" + ex.Message, "错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             finally
             {
                 button_DoDownload.Enabled = true;
                 button_AutoDownload.Enabled = true;
                 button_DoAnalysis.Enabled = true;
+
+                // 下载完成后清理临时 Cookie 文件
+                if (!string.IsNullOrEmpty(_pendingInvocation?.CookieFilePath) && File.Exists(_pendingInvocation.CookieFilePath))
+                {
+                    try { File.Delete(_pendingInvocation.CookieFilePath); } catch { }
+                }
+            }
+        }
+
+        public void TriggerHttpDownload(YtDlpInvocation invocation)
+        {
+            _pendingInvocation = invocation;
+            _isHttpTriggered = true;
+
+            // 如果 Load 已经完成（窗口已经完全就绪），直接触发
+            if (_ready.Task.IsCompleted)
+            {
+                ApplyInvocationAndDownload();
+            }
+        }
+
+        private async void ApplyInvocationAndDownload()
+        {
+            if (_pendingInvocation == null) return;
+
+            comboBox_URL.Text = _pendingInvocation.Url;
+            ApplyControlOverrides(_pendingInvocation.Overrides);
+
+            // 防止重复点击下载
+            if (button_DoDownload.Enabled)
+            {
+                await RunPendingDownloadAsync();
             }
         }
 

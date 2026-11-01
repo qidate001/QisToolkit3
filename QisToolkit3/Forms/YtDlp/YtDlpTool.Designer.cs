@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YtDlpTool));
             splitContainer1 = new SplitContainer();
+            comboBox_UseAutoCookies = new ComboBox();
+            checkBox_UseAutoCookies = new CheckBox();
             textBox_Paths = new TextBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -213,6 +215,9 @@
             tabPage7 = new TabPage();
             richTextBox_exec = new RichTextBox();
             tabPage8 = new TabPage();
+            groupBox23 = new GroupBox();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
             groupBox21 = new GroupBox();
             checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
             checkBox_GenerateInfoPage_DeleteDescriptionFile = new CheckBox();
@@ -275,8 +280,6 @@
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            checkBox_UseAutoCookies = new CheckBox();
-            comboBox_UseAutoCookies = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -309,6 +312,7 @@
             groupBox15.SuspendLayout();
             tabPage7.SuspendLayout();
             tabPage8.SuspendLayout();
+            groupBox23.SuspendLayout();
             groupBox21.SuspendLayout();
             groupBox20.SuspendLayout();
             tabPage9.SuspendLayout();
@@ -359,6 +363,20 @@
             // 
             splitContainer1.Panel2.Controls.Add(richTextBox);
             // 
+            // comboBox_UseAutoCookies
+            // 
+            resources.ApplyResources(comboBox_UseAutoCookies, "comboBox_UseAutoCookies");
+            comboBox_UseAutoCookies.FormattingEnabled = true;
+            comboBox_UseAutoCookies.Items.AddRange(new object[] { resources.GetString("comboBox_UseAutoCookies.Items"), resources.GetString("comboBox_UseAutoCookies.Items1"), resources.GetString("comboBox_UseAutoCookies.Items2") });
+            comboBox_UseAutoCookies.Name = "comboBox_UseAutoCookies";
+            // 
+            // checkBox_UseAutoCookies
+            // 
+            resources.ApplyResources(checkBox_UseAutoCookies, "checkBox_UseAutoCookies");
+            checkBox_UseAutoCookies.Name = "checkBox_UseAutoCookies";
+            toolTip.SetToolTip(checkBox_UseAutoCookies, resources.GetString("checkBox_UseAutoCookies.ToolTip"));
+            checkBox_UseAutoCookies.UseVisualStyleBackColor = true;
+            // 
             // textBox_Paths
             // 
             resources.ApplyResources(textBox_Paths, "textBox_Paths");
@@ -373,9 +391,9 @@
             tabControl1.Controls.Add(tabPage5);
             tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage7);
-            tabControl1.Controls.Add(tabPage8);
             tabControl1.Controls.Add(tabPage9);
             tabControl1.Controls.Add(tabPage10);
+            tabControl1.Controls.Add(tabPage8);
             resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -1782,11 +1800,34 @@
             // 
             // tabPage8
             // 
+            tabPage8.Controls.Add(groupBox23);
             tabPage8.Controls.Add(groupBox21);
             tabPage8.Controls.Add(groupBox20);
             resources.ApplyResources(tabPage8, "tabPage8");
             tabPage8.Name = "tabPage8";
             tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox23
+            // 
+            groupBox23.Controls.Add(checkBox1);
+            groupBox23.Controls.Add(checkBox2);
+            resources.ApplyResources(groupBox23, "groupBox23");
+            groupBox23.Name = "groupBox23";
+            groupBox23.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(checkBox1, "checkBox1");
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Name = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            resources.ApplyResources(checkBox2, "checkBox2");
+            checkBox2.Name = "checkBox2";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox21
             // 
@@ -2105,6 +2146,8 @@
             // checkBox_UseCookies
             // 
             resources.ApplyResources(checkBox_UseCookies, "checkBox_UseCookies");
+            checkBox_UseCookies.Checked = true;
+            checkBox_UseCookies.CheckState = CheckState.Checked;
             checkBox_UseCookies.Name = "checkBox_UseCookies";
             toolTip.SetToolTip(checkBox_UseCookies, resources.GetString("checkBox_UseCookies.ToolTip"));
             checkBox_UseCookies.UseVisualStyleBackColor = true;
@@ -2238,22 +2281,6 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
-            // checkBox_UseAutoCookies
-            // 
-            resources.ApplyResources(checkBox_UseAutoCookies, "checkBox_UseAutoCookies");
-            checkBox_UseAutoCookies.Checked = true;
-            checkBox_UseAutoCookies.CheckState = CheckState.Checked;
-            checkBox_UseAutoCookies.Name = "checkBox_UseAutoCookies";
-            toolTip.SetToolTip(checkBox_UseAutoCookies, resources.GetString("checkBox_UseAutoCookies.ToolTip"));
-            checkBox_UseAutoCookies.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_UseAutoCookies
-            // 
-            resources.ApplyResources(comboBox_UseAutoCookies, "comboBox_UseAutoCookies");
-            comboBox_UseAutoCookies.FormattingEnabled = true;
-            comboBox_UseAutoCookies.Items.AddRange(new object[] { resources.GetString("comboBox_UseAutoCookies.Items"), resources.GetString("comboBox_UseAutoCookies.Items1"), resources.GetString("comboBox_UseAutoCookies.Items2") });
-            comboBox_UseAutoCookies.Name = "comboBox_UseAutoCookies";
-            // 
             // YtDlpTool
             // 
             AllowDrop = true;
@@ -2319,6 +2346,8 @@
             groupBox15.PerformLayout();
             tabPage7.ResumeLayout(false);
             tabPage8.ResumeLayout(false);
+            groupBox23.ResumeLayout(false);
+            groupBox23.PerformLayout();
             groupBox21.ResumeLayout(false);
             groupBox21.PerformLayout();
             groupBox20.ResumeLayout(false);
@@ -2581,5 +2610,8 @@
         private Button button_ArchiveEnhanced_Delete;
         private CheckBox checkBox_UseAutoCookies;
         private ComboBox comboBox_UseAutoCookies;
+        private GroupBox groupBox23;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
     }
 }

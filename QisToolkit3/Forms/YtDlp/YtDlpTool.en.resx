@@ -118,20 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="comboBox_UseAutoCookies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 884</value>
+  </data>
+  <data name="comboBox_UseAutoCookies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 43</value>
+  </data>
+  <data name="comboBox_UseAutoCookies.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_UseAutoCookies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 885</value>
+  </data>
+  <data name="checkBox_UseAutoCookies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 40</value>
+  </data>
+  <data name="checkBox_UseAutoCookies.Text" xml:space="preserve">
+    <value>auto cookies</value>
+  </data>
   <data name="textBox_Paths.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 61</value>
   </data>
   <data name="textBox_Paths.Size" type="System.Drawing.Size, System.Drawing">
     <value>606, 43</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>757, 839</value>
+  <data name="textBox_Paths.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 40</value>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Reload</value>
+  <data name="button_IdNameMapper_Load.Text" xml:space="preserve">
+    <value>reload</value>
+  </data>
+  <data name="button_IdNameMapper_Load.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_IdNameMapper.Location" type="System.Drawing.Point, System.Drawing">
     <value>560, 839</value>
@@ -142,17 +163,29 @@
   <data name="checkBox_IdNameMapper.Text" xml:space="preserve">
     <value>IDNameMap</value>
   </data>
+  <data name="checkBox_IdNameMapper.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Quick actions</value>
   </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_SetMatchFilters.Text" xml:space="preserve">
     <value>Edit adv. filters</value>
+  </data>
+  <data name="button_SetMatchFilters.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
     <value>612, 118</value>
   </data>
   <data name="textBox_playlist_items.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 43</value>
+  </data>
+  <data name="textBox_playlist_items.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_playlist_items.Location" type="System.Drawing.Point, System.Drawing">
     <value>237, 119</value>
@@ -184,8 +217,14 @@ Negative indices count from the end. Examples:
   <data name="button_AutoDownload.Text" xml:space="preserve">
     <value>Auto download</value>
   </data>
+  <data name="button_AutoDownload.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Help_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
     <value>522, 845</value>
+  </data>
+  <data name="button_Help_ArchivePlus.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_ArchivePlus.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 839</value>
@@ -196,23 +235,32 @@ Negative indices count from the end. Examples:
   <data name="checkBox_ArchivePlus.Text" xml:space="preserve">
     <value>Archive Plus</value>
   </data>
+  <data name="checkBox_ArchivePlus.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_UseArchive.Size" type="System.Drawing.Size, System.Drawing">
     <value>319, 40</value>
   </data>
   <data name="checkBox_UseArchive.Text" xml:space="preserve">
     <value>Auto blacklist archive</value>
   </data>
+  <data name="checkBox_UseArchive.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_UseCookies.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 885</value>
   </data>
   <data name="checkBox_UseCookies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 40</value>
+    <value>179, 40</value>
   </data>
   <data name="checkBox_UseCookies.Text" xml:space="preserve">
-    <value>Use cookies from cookies.txt as cookies</value>
+    <value>cookies.txt</value>
   </data>
   <data name="button_Update.Text" xml:space="preserve">
     <value>Check yt-dlp update</value>
+  </data>
+  <data name="button_Update.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBoxNoPlaylest.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 40</value>
@@ -230,6 +278,9 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="checkBox_ChineseTip.Text" xml:space="preserve">
     <value>Chinese</value>
   </data>
+  <data name="checkBox_ChineseTip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_ReadOnClipboard.Location" type="System.Drawing.Point, System.Drawing">
     <value>510, 931</value>
   </data>
@@ -239,11 +290,17 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="checkBox_ReadOnClipboard.Text" xml:space="preserve">
     <value>Paste URL</value>
   </data>
+  <data name="checkBox_ReadOnClipboard.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_ClearURLData.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 40</value>
   </data>
   <data name="checkBox_ClearURLData.Text" xml:space="preserve">
     <value>Strip URL data tracking</value>
+  </data>
+  <data name="checkBox_ClearURLData.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_URL.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 12</value>
@@ -251,14 +308,23 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="comboBox_URL.Size" type="System.Drawing.Size, System.Drawing">
     <value>611, 43</value>
   </data>
+  <data name="comboBox_URL.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_OpenF.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 40</value>
   </data>
   <data name="checkBox_OpenF.Text" xml:space="preserve">
     <value>Open dir</value>
   </data>
+  <data name="checkBox_OpenF.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Stop.Text" xml:space="preserve">
     <value>Stop</value>
+  </data>
+  <data name="button_Stop.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 100</value>
@@ -269,8 +335,14 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="label2.Text" xml:space="preserve">
     <value>(Relative paths not supported)</value>
   </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Text.Text" xml:space="preserve">
     <value>Tip</value>
+  </data>
+  <data name="button_Text.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_SetPaths.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 40</value>
@@ -278,8 +350,17 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="checkBox_SetPaths.Text" xml:space="preserve">
     <value>Save path</value>
   </data>
+  <data name="checkBox_SetPaths.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_DoAnalysis.Text" xml:space="preserve">
     <value>Parse</value>
+  </data>
+  <data name="button_DoAnalysis.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button__DoCopyCommand.Location" type="System.Drawing.Point, System.Drawing">
     <value>685, 976</value>
@@ -290,11 +371,17 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="button__DoCopyCommand.Text" xml:space="preserve">
     <value>Copy command</value>
   </data>
+  <data name="button__DoCopyCommand.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 36</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Video URL</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_DoDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>411, 55</value>
@@ -302,8 +389,26 @@ For example, a YouTube video link is often also inside a playlist. This option a
   <data name="button_DoDownload.Text" xml:space="preserve">
     <value>Run download command</value>
   </data>
+  <data name="button_DoDownload.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Basic para</value>
+  </data>
+  <data name="tabPage1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Quiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 372</value>
@@ -316,6 +421,9 @@ For example, a YouTube video link is often also inside a playlist. This option a
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Network &amp;&amp; Retry Options</value>
+  </data>
+  <data name="groupBox3.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_KeepFragments.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 321</value>
@@ -334,6 +442,9 @@ For example, a YouTube video link is often also inside a playlist. This option a
   </data>
   <data name="comboBox_RetrySleep.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 43</value>
+  </data>
+  <data name="comboBox_RetrySleep.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Fragments_SU_AO.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 40</value>
@@ -397,6 +508,9 @@ Or more precisely: BASE^(N-1), clamped between START and END
   <data name="comboBox_PlayListMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 43</value>
   </data>
+  <data name="comboBox_PlayListMode.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_PlayListMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 40</value>
   </data>
@@ -426,11 +540,17 @@ Recommended to keep default (dynamic), unless you have special needs.</value>
   <data name="comboBox_BufferSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 43</value>
   </data>
+  <data name="comboBox_BufferSize.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_BufferSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 40</value>
   </data>
   <data name="checkBox_BufferSize.Text" xml:space="preserve">
     <value>Buffers</value>
+  </data>
+  <data name="comboBox_FragmentRetries.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_FragmentRetries.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 40</value>
@@ -445,6 +565,9 @@ Supported formats:
 · DASH (Dynamic Adaptive Streaming)
 · hlsnative (native HLS)
 · ISM (Smooth Streaming)</value>
+  </data>
+  <data name="comboBox_FileAccessRetries.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_FileAccessRetries.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 40</value>
@@ -461,6 +584,9 @@ Trigger conditions:
 · File is locked/in use
 · Path does not exist</value>
   </data>
+  <data name="comboBox_Retries.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Retries.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 40</value>
   </data>
@@ -475,6 +601,9 @@ Trigger conditions:
 · Server returns 5xx error
 · Timeout with no response</value>
   </data>
+  <data name="comboBox_ThrottledRate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_ThrottledRate.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 40</value>
   </data>
@@ -485,6 +614,9 @@ Trigger conditions:
     <value>Detect download speed. If below this value, it is considered "throttled".
 When the download speed stays below this threshold for a period, it will retry to obtain a new connection.
 Units: K (KB), M (MB), G (GB).</value>
+  </data>
+  <data name="comboBox_LimitRate.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_LimitRate.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 40</value>
@@ -502,6 +634,9 @@ Default is 0 (unlimited)</value>
   </data>
   <data name="comboBox_ConcurrentFragments.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 43</value>
+  </data>
+  <data name="comboBox_ConcurrentFragments.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_ConcurrentFragments.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 40</value>
@@ -531,6 +666,9 @@ Recommended value: 5-10</value>
   <data name="checkBox_Verbose.Text" xml:space="preserve">
     <value>Debug mode</value>
   </data>
+  <data name="checkBox_Verbose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_MatchFilters.Location" type="System.Drawing.Point, System.Drawing">
     <value>418, 373</value>
   </data>
@@ -543,11 +681,17 @@ Recommended value: 5-10</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Basic download filters &amp;&amp; limits</value>
   </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="comboBox_AgeLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 262</value>
   </data>
   <data name="comboBox_AgeLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 43</value>
+  </data>
+  <data name="comboBox_AgeLimit.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_AgeLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 40</value>
@@ -559,12 +703,18 @@ Recommended value: 5-10</value>
     <value>Only download videos suitable for a specific age.
 For example, 18 will skip 18+ restricted content.</value>
   </data>
+  <data name="comboBox_MaxDownloads.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_MaxDownloads.Text" xml:space="preserve">
     <value>Max count</value>
   </data>
   <data name="checkBox_MaxDownloads.ToolTip" xml:space="preserve">
     <value>Stop after downloading the specified number of files.
 Useful for scenarios where you only want the first N videos.</value>
+  </data>
+  <data name="comboBox_DateAfter.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_DateAfter.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 40</value>
@@ -575,6 +725,12 @@ Useful for scenarios where you only want the first N videos.</value>
   <data name="checkBox_DateAfter.ToolTip" xml:space="preserve">
     <value>Only download videos uploaded on or after the specified date.
 Example: today-1month downloads videos uploaded within the last month</value>
+  </data>
+  <data name="comboBox_DateBefore.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Date.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Date.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 40</value>
@@ -599,6 +755,12 @@ Examples:
     <value>Only download videos uploaded on or before the specified date.
 Example: 20240101 downloads videos uploaded on or before January 1, 2024</value>
   </data>
+  <data name="comboBox_MinFileSize.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_MaxFileSize.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_MaxFileSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 40</value>
   </data>
@@ -619,29 +781,248 @@ SIZE can use K (KB), M (MB), G (GB).</value>
     <value>Only download files larger than the specified size.
 SIZE can use K (KB), M (MB), G (GB).</value>
   </data>
+  <data name="tabPage2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Path_InfoJson.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Path_InfoJson.Text" xml:space="preserve">
     <value>InfoJson</value>
+  </data>
+  <data name="comboBox_Path_Thumbnail.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Path_Thumbnail.Text" xml:space="preserve">
     <value>Thumb</value>
   </data>
+  <data name="comboBox_Path_Description.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Path_Description.Text" xml:space="preserve">
     <value>Descrip</value>
+  </data>
+  <data name="comboBox_Path_SubTitle.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Path_SubTitle.Text" xml:space="preserve">
     <value>SubTitle</value>
   </data>
+  <data name="comboBox_Path_Audio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Path_Audio.Text" xml:space="preserve">
     <value>Audio</value>
+  </data>
+  <data name="comboBox_Path_Video.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Path_Video.Text" xml:space="preserve">
     <value>Video</value>
   </data>
+  <data name="comboBox_Path_Temp.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Path_Temp.Text" xml:space="preserve">
     <value>Temp</value>
   </data>
+  <data name="comboBox_Path_Home.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Path_Home.Text" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="comboBox_OverWritesMode.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBox_AddHeaders.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_AddHeaders_Save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_AddHeaders_Load.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_AddHeaders.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_SleepSubtitles.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_MaxSleepInterval.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_SleepInterval.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_SleepRequests.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Encoding.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox22.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_DownloadSections_End.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_DownloadSections_Start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox19.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox10.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_SubLangs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_SubLangs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_SubFormat.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Format.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_FormatSort.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox14.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ClientCertificate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ClientCertificate_PassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ClientCertificate_Key.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox13.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_AP_MSO.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_AP_MSO.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_AP_PassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_AP_UserName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_AP_PassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_AP_UserName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox12.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_netrc_Location.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_netrc_Location.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_VideoPassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_2FA.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_PassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_UserName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_PassWord.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_UserName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_UsingUP.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Convert_Thumbnails.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_Convert_Subs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox17.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_PostProcessorArgs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox16.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_RecodeVideo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_RemuxVideo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox15.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_AudioQuality.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_AudioFormat.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage7.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="richTextBox_exec.Text" xml:space="preserve">
     <value># Exec 在下载完成后自动调用程序
@@ -657,34 +1038,155 @@ SIZE can use K (KB), M (MB), G (GB).</value>
 # del "%(Qi.YtDlpTool:Paths)\%(title)s [%(id)s].danmaku.xml"
 </value>
   </data>
+  <data name="richTextBox_exec.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox23.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox21.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_GenerateInfoPage.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox20.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_RunRuleEngine.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_StringRuleEngine.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_StringRuleEngine.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBox_StringRuleEngine.Text" xml:space="preserve">
+    <value>(→（;
+)→）;
+&lt;\s{1,}&gt;→ ;
+&lt;[零壹贰叁肆伍陆柒捌玖佰仟〇一二三四五六七八九十百千万亿兆京]&gt;↓CN2+Suffix-Text=&lt;[集期话章节回]&gt;
+</value>
+  </data>
+  <data name="richTextBox_StringRuleEngine.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage10.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ArchiveEnhanced_Delete.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ArchiveEnhanced_Save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ArchiveEnhanced_Reverse.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ArchiveEnhanced_Resolve.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ArchiveEnhanced_Load.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBox_ArchiveEnhanced.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_ArchiveEnhanced_PlayList.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Users.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_ArchiveEnhanced_Root.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_YtDlpRunDir.Text" xml:space="preserve">
+    <value>Open YtDlp run directory</value>
+  </data>
+  <data name="button_YtDlpRunDir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Option_ReSet.Text" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="button_Option_ReSet.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_Option_Load.Text" xml:space="preserve">
     <value>Reload</value>
   </data>
+  <data name="button_Option_Load.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Option_Save.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="button_OpenAutoDownloadNameFile.Text" xml:space="preserve">
-    <value>Open ID-name map</value>
+  <data name="button_Option_Save.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_AutoDownloadFile.Text" xml:space="preserve">
     <value>Open auto-download list file</value>
   </data>
+  <data name="button_AutoDownloadFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_OpenAutoDownloadPath.Text" xml:space="preserve">
     <value>default save path</value>
+  </data>
+  <data name="button_OpenAutoDownloadPath.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_OpenDownloadPath.Text" xml:space="preserve">
     <value>current save path</value>
   </data>
+  <data name="button_OpenDownloadPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_OpenCookiesFile.Text" xml:space="preserve">
     <value>Open Cookies file</value>
+  </data>
+  <data name="button_OpenCookiesFile.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_OpenArchiveFile.Text" xml:space="preserve">
     <value>Open Archive file</value>
   </data>
+  <data name="button_OpenArchiveFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Yt-Dlp Tool</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -6701,267 +6701,6 @@ vorbis		好	中等	一般	开源软件</value>
   <data name="&gt;&gt;tabPage7.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 170</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 40</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Text" xml:space="preserve">
-    <value>嵌入视频播放器而非封面（暂仅B站）</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name" xml:space="preserve">
-    <value>checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Parent" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 124</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 40</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Text" xml:space="preserve">
-    <value>转换后删除Description原文件</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Name" xml:space="preserve">
-    <value>checkBox_GenerateInfoPage_DeleteDescriptionFile</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Parent" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 32</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 40</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage.Text" xml:space="preserve">
-    <value>下载完成后自动生成信息页</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage.Name" xml:space="preserve">
-    <value>checkBox_GenerateInfoPage</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage.Parent" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 78</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 40</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Text" xml:space="preserve">
-    <value>转换后删除Json原文件</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Name" xml:space="preserve">
-    <value>checkBox_GenerateInfoPage_DeleteJsonFile</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Parent" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="groupBox21.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="groupBox21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 140</value>
-  </data>
-  <data name="groupBox21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 223</value>
-  </data>
-  <data name="groupBox21.TabIndex" type="System.Int32, mscorlib">
-    <value>82</value>
-  </data>
-  <data name="groupBox21.Text" xml:space="preserve">
-    <value>元数据功能：自动生成HTML</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Name" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
-    <value>tabPage8</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 32</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 40</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS.Text" xml:space="preserve">
-    <value>下载完成后将字幕XML转换成ASS</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Name" xml:space="preserve">
-    <value>checkBox_DanmakuFactory_XML_To_ASS</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Parent" xml:space="preserve">
-    <value>groupBox20</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 16.2pt</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 78</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 40</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Text" xml:space="preserve">
-    <value>转换后删除XML原文件</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name" xml:space="preserve">
-    <value>checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Parent" xml:space="preserve">
-    <value>groupBox20</value>
-  </data>
-  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="groupBox20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 6</value>
-  </data>
-  <data name="groupBox20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 128</value>
-  </data>
-  <data name="groupBox20.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
-  </data>
-  <data name="groupBox20.Text" xml:space="preserve">
-    <value>字幕功能：XML转ASS</value>
-  </data>
-  <data name="&gt;&gt;groupBox20.Name" xml:space="preserve">
-    <value>groupBox20</value>
-  </data>
-  <data name="&gt;&gt;groupBox20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox20.Parent" xml:space="preserve">
-    <value>tabPage8</value>
-  </data>
-  <data name="&gt;&gt;groupBox20.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPage8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabPage8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>927, 418</value>
-  </data>
-  <data name="tabPage8.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tabPage8.Text" xml:space="preserve">
-    <value>附加功能</value>
-  </data>
-  <data name="&gt;&gt;tabPage8.Name" xml:space="preserve">
-    <value>tabPage8</value>
-  </data>
-  <data name="&gt;&gt;tabPage8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage8.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage8.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="button_RunRuleEngine.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
   </data>
@@ -7111,7 +6850,7 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPage9.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="button_ArchiveEnhanced_Delete.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16.2pt</value>
@@ -7387,6 +7126,360 @@ vorbis		好	中等	一般	开源软件</value>
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPage10.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 40</value>
+  </data>
+  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>自动关闭运行的浏览器</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 78</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 40</value>
+  </data>
+  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>转换后删除XML原文件</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
+    <value>checkBox2</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox23.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="groupBox23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 6</value>
+  </data>
+  <data name="groupBox23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 357</value>
+  </data>
+  <data name="groupBox23.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="groupBox23.Text" xml:space="preserve">
+    <value>自动获取 Cookies</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Name" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Parent" xml:space="preserve">
+    <value>tabPage8</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 170</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 40</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Text" xml:space="preserve">
+    <value>嵌入视频播放器而非封面（暂仅B站）</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name" xml:space="preserve">
+    <value>checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 124</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 40</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteDescriptionFile.Text" xml:space="preserve">
+    <value>转换后删除Description原文件</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Name" xml:space="preserve">
+    <value>checkBox_GenerateInfoPage_DeleteDescriptionFile</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteDescriptionFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 40</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage.Text" xml:space="preserve">
+    <value>下载完成后自动生成信息页</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage.Name" xml:space="preserve">
+    <value>checkBox_GenerateInfoPage</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 78</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 40</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="checkBox_GenerateInfoPage_DeleteJsonFile.Text" xml:space="preserve">
+    <value>转换后删除Json原文件</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Name" xml:space="preserve">
+    <value>checkBox_GenerateInfoPage_DeleteJsonFile</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;checkBox_GenerateInfoPage_DeleteJsonFile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="groupBox21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 140</value>
+  </data>
+  <data name="groupBox21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 223</value>
+  </data>
+  <data name="groupBox21.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="groupBox21.Text" xml:space="preserve">
+    <value>元数据功能：自动生成HTML</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Name" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
+    <value>tabPage8</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 40</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS.Text" xml:space="preserve">
+    <value>下载完成后将字幕XML转换成ASS</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Name" xml:space="preserve">
+    <value>checkBox_DanmakuFactory_XML_To_ASS</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.Parent" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 16.2pt</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 78</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 40</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Text" xml:space="preserve">
+    <value>转换后删除XML原文件</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name" xml:space="preserve">
+    <value>checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Parent" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="groupBox20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 6</value>
+  </data>
+  <data name="groupBox20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 128</value>
+  </data>
+  <data name="groupBox20.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="groupBox20.Text" xml:space="preserve">
+    <value>字幕功能：XML转ASS</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Name" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Parent" xml:space="preserve">
+    <value>tabPage8</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPage8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>927, 418</value>
+  </data>
+  <data name="tabPage8.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tabPage8.Text" xml:space="preserve">
+    <value>附加功能</value>
+  </data>
+  <data name="&gt;&gt;tabPage8.Name" xml:space="preserve">
+    <value>tabPage8</value>
+  </data>
+  <data name="&gt;&gt;tabPage8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage8.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage8.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
