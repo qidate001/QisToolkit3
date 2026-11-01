@@ -809,6 +809,7 @@ namespace QisToolkit3.Forms
 
         #endregion
 
+
         #region 通用功能前往
 
         // 前往美食街页
@@ -870,10 +871,8 @@ namespace QisToolkit3.Forms
 
                 if (Item_DarkBlocker)
                     SetButtonTexts("前往████", "前往████", "前往████", "前往████", "前往████");
-                else if (true)
-                    SetButtonTexts("前往海滩", "待定", "待定", "待定", "待定");
                 else
-                    SetButtonTexts("前往倒悬之海", "待定", "待定", "待定", "待定");
+                    SetButtonTexts("前往海滩", "待定", "待定", "待定", "待定");
                 SetButtonEnableds(false, false, false, false, false);
             }
         }
@@ -925,10 +924,7 @@ namespace QisToolkit3.Forms
             if (Mode == 0)
             {
                 NowDoing = "MysteryShop_0";
-                if (Item_DarkBlocker)
-                    SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
-                else
-                    SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
+                SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
                 SetButtonEnableds(!Item_DarkBlocker && San >= 100, San >= 200, San >= 200, San >= 50 && Gold >= 1000 && !Item_SunWaterDrop, San >= 50 && Gold >= 1000 && !Item_MoonWaterDrop);
             }
             else if (Mode == 1)
@@ -2037,8 +2033,6 @@ namespace QisToolkit3.Forms
                     LTEOTC_KnowOuterCity_Home
                 );
                 NextBackEnable(false);
-
-                //SetMessage(SecMorning ? "又是新的一天！今天准备......" : "下午准备......");
             }
         }
 
@@ -2483,6 +2477,7 @@ namespace QisToolkit3.Forms
 
             string eventText = "";
             int healthCost = 0;
+            int lostCost = 0;
             int extraBottledWater = 0;
             int extraScrap = 0;
 
@@ -2499,19 +2494,15 @@ namespace QisToolkit3.Forms
                             "你正低头翻找，突然被人从后面推了一把。\n" +
                             "三个外环区的拾荒者站在你面前，手里拿着铁管。\n" +
                             "领头的那个吐了口唾沫：“这片是老子的。”\n" +
-                            "你冲上去跟对方扭打在一起。\n" +
-                            "你抄起一块废铁板砸了过去。\n" +
-                            "对方骂骂咧咧地退了。但你挨了一顿打。\n" +
-                            $"【生命 -{healthCost}】\n";
+                            "你杀了对方。\n";
                         break;
 
                     case 2: // 翻到好东西
                         extraScrap = random.Next(30, 80);
                         extraBottledWater = random.Next(1, 3);
                         eventText =
-                            "你一脚踢开一块铁皮，下面露出一个半埋的箱子。\n" +
-                            "撬开一看——两瓶没开封的水，还有一捆废料。\n" +
-                            //"岩凑过来：“发财了！”\n" +
+                            "你发现了个半埋的箱子。\n" +
+                            "撬开来看，里面有两瓶没开封的水，还有一捆废料。\n" +
                             "你把水塞进怀里。\n" +
                             $"【额外获得 废料 +{extraScrap}，矿泉水 ×{extraBottledWater}】\n";
                         break;
@@ -2520,30 +2511,19 @@ namespace QisToolkit3.Forms
                         healthCost = random.Next(15, 35);
                         eventText =
                             "你听见头顶传来一阵细碎的响声。\n" +
-                            "抬头一看——垃圾山顶部正在往下滑。\n" +
-                            "你来不及跑，被废铁和碎石埋了半截身子。\n" +
-                            //"岩发了疯一样把你往外扒。\n" +
-                            "你被拖出来的时候，浑身是血。\n" +
-                            $"【生命 -{healthCost}】\n";
+                            "垃圾山顶部正在往下滑。\n" +
+                            "你被废铁和碎石埋了半截身子，差点死了。\n";
                         break;
 
                     case 4: // 遇到一个快死的拾荒者
                         eventText =
                             "你听到一堆废铁后面传来微弱的呻吟声。\n" +
                             "绕过去一看，一个人蜷缩在那里。\n" +
-                            "他身上的衣服破得不成样子，手上满是黑纹——比你深得多。\n" +
-                            "他看到你，嘴唇动了动，但又什么都没有说。\n" +
-                            //"他：“……塔……塔底下……不是……不要下去……”\n" +
-                            "他抓住你的手腕，力气大得吓人。\n" +
-                            "然后他的手松开了。\n" +
-                            "他死了。\n" +
-                            "他的眼睛还睁着，盯着智慧之塔的方向。\n" +
+                            "你看到他了之后，他死了。\n" +
                             (Lost < 50 ? "你站了很久。\n" : "你冷漠的走了。") +
-                            (Lost < 50 ? "你走的时候，把身上半块面包放在了他身边。\n" : "") +
-                            (Lost < 50 ? "【迷失值 +5】\n" : "【迷失值 +9】\n") +
                             (Lost < 50 ? "【你忘不掉他眼睛里的东西】\n" : "");
 
-                        Lost += Lost < 50 ? 5 : 9;
+                        lostCost = Lost < 50 ? 5 : 9;
                         break;
                 }
             }
@@ -2551,7 +2531,6 @@ namespace QisToolkit3.Forms
             // 处理收益
             Item_Scrap += scrap + extraScrap;
             Item_QualityScrap += qualityScrap;
-            Health -= healthCost;
             Item_BottledWater += extraBottledWater;
 
             // 构建消息
@@ -2559,13 +2538,11 @@ namespace QisToolkit3.Forms
                 ? $"你翻找了一番，找到了 {scrap} 份普通废料和 {qualityScrap} 份优质废料。"
                 : $"你翻找了一番，找到了 {scrap} 份普通废料。";
 
-            //string extraMsg = "";
-            //if (extraBottledWater > 0) extraMsg += $"\n【获得矿泉水 ×{extraBottledWater}】";
-
-            SetMessage(
+            XSecSetMessage(
                 "你前往了垃圾山，在上面寻找一些值钱的东西......\n" +
                 (eventRoll <= 20 ? "\n" + eventText + "\n" : "") +
-                scrapMsg
+                scrapMsg,
+                0, 0, 0, 0, 0, 0, -healthCost, 0, lostCost
             );
 
             // 生命值下限保护
@@ -2582,13 +2559,13 @@ namespace QisToolkit3.Forms
             Lost -= lostReduce;
             Lost = Math.Clamp(Lost, 0, 100);
 
-            string lostMessage = lostReduce == 1 ? "你翻来覆去，几乎没怎么睡着。" :
+            string lostMessage = lostReduce == 1 ? "你感到浮躁不安。" :
                                  lostReduce <= 3 ? "你迷迷糊糊睡了一夜，醒来时脑子还算清醒。" :
-                                 "你睡得很沉，没有做梦。或者说，梦了但什么都没记住。";
+                                                   "你休息了一晚，精神不错。";
 
-            AddMessage(
+            SetMessage(
                 "你推开住处的门。\n" + 
-                "你闭上眼睛。\n" +
+                "你开始了冥想。\n" +
                 lostMessage + "\n" +
                 $"【迷失值 -{lostReduce}】\n"
             );
@@ -2703,18 +2680,13 @@ namespace QisToolkit3.Forms
             // 根据概率随机选择事件类型
             float randValue = (float)random.NextDouble();
 
-            if (randValue < goodProb)
-            {
+            if (randValue < goodProb) 
                 return GetGoodEvent(random);
-            }
-            else if (randValue < goodProb + badProb)
-            {
+
+            else if (randValue < goodProb + badProb) 
                 return GetBadEvent(random);
-            }
-            else
-            {
-                return GetNeutralEvent(random);
-            }
+
+            else return GetNeutralEvent(random);
         }
 
         // 执行事件
@@ -2893,7 +2865,6 @@ namespace QisToolkit3.Forms
                         {
                             int extraGold = random.Next(500, 1001);
                             gold += extraGold;
-                            //foundItems.Add($"{extraGold}块钱（特殊全满奖励）");
                         }
                     }
 
@@ -2908,17 +2879,19 @@ namespace QisToolkit3.Forms
                                 Item_WinterClothing = 1;
                                 foundItems.Add("御寒服");
                             }
+
                             else if (Item_SummerClothing == 0)
                             {
                                 Item_SummerClothing = 1;
                                 foundItems.Add("御焰服");
                             }
+
                             else
                             {
                                 gold += random.Next(100, 301);
-                                //foundItems.Add($"{extraGoldForClothes}块钱（衣物全满奖励）");
                             }
                         }
+
                         else
                         {
                             // 优先给御焰服
@@ -2927,15 +2900,16 @@ namespace QisToolkit3.Forms
                                 Item_SummerClothing = 1;
                                 foundItems.Add("御焰服");
                             }
+
                             else if (Item_WinterClothing == 0)
                             {
                                 Item_WinterClothing = 1;
                                 foundItems.Add("御寒服");
                             }
+
                             else
                             {
                                 gold += random.Next(100, 301);
-                                //foundItems.Add($"{extraGoldForClothes}块钱（衣物全满奖励）");
                             }
                         }
                     }
@@ -3147,7 +3121,7 @@ namespace QisToolkit3.Forms
             // 调试模式
             if (DeBugMode)
             {
-                Gold = 999999999; //San = 999999999;
+                Gold = 999999999; // San = 999999999;
                 Days = 11;
             }
 
@@ -3266,64 +3240,55 @@ namespace QisToolkit3.Forms
         #region 基础函数
 
         // 信息文本核心
-        private string MessageMain(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private string MessageMain(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            string Str = SetMessageTextTemporarilyStored + message;
+            var sb = new StringBuilder(SetMessageTextTemporarilyStored);
+            sb.Append(message);
 
-            if (hunger != 0 || thirsty != 0 || san != 0 || mood != 0 || gold != 0 || workExperience != 0 || health != 0)
+            // 存在数值改变
+            bool hasChanges = hunger != 0 || thirsty != 0 || san != 0 || mood != 0 ||
+                              gold != 0 || workExperience != 0 || health != 0 ||
+                              pollution != 0 || lost != 0;
+
+            if (hasChanges)
             {
-                Str += '\n';
+                sb.Append('\n');
 
-                if (hunger > 0)
-                    Str += "饥饿值 + " + hunger + ' ';
-                else if (hunger < 0)
-                    Str += "饥饿值 - " + Math.Abs(hunger) + ' ';
+                AppendChange(sb, "饥饿值", hunger);
+                AppendChange(sb, "口渴值", thirsty);
+                AppendChange(sb, "理智", san, "%");
+                AppendChange(sb, "心情", mood, "%");
+                AppendChange(sb, "健康", health, "%");
+                AppendChange(sb, "金币", gold, "G");
+                AppendChange(sb, "工作经验", workExperience, "%");
+                AppendChange(sb, "污染", pollution, "%");
+                AppendChange(sb, "迷失", lost, "%");
 
-                if (thirsty > 0)
-                    Str += "口渴值 + " + thirsty + ' ';
-                else if (thirsty < 0)
-                    Str += "口渴值 - " + Math.Abs(thirsty) + ' ';
-
-                if (san > 0)
-                    Str += "理智 + " + san + "% ";
-                else if (san < 0)
-                    Str += "理智 - " + Math.Abs(san) + "% ";
-
-                if (mood > 0)
-                    Str += "心情 + " + mood + "% ";
-                else if (mood < 0)
-                    Str += "心情 - " + Math.Abs(mood) + "% ";
-
-                if (health > 0)
-                    Str += "健康 + " + health + "% ";
-                else if (health < 0)
-                    Str += "健康 - " + Math.Abs(health) + "% ";
-
-                if (gold > 0)
-                    Str += "金币 + " + gold + "G ";
-                else if (gold < 0)
-                    Str += "金币 - " + Math.Abs(gold) + "G ";
-
-                if (workExperience > 0)
-                    Str += "工作经验 + " + workExperience + "%";
-                else if (workExperience < 0)
-                    Str += "工作经验 - " + Math.Abs(workExperience) + "%";
-
-                if (pollution > 0)
-                    Str += "污染 + " + pollution + "%";
-                else if (pollution < 0)
-                    Str += "污染 - " + Math.Abs(pollution) + "%";
+                // 去掉最后一个多余空格
+                if (sb.Length > 0 && sb[sb.Length - 1] == ' ')
+                    sb.Length--;
             }
 
-
             SetMessageTextTemporarilyStored = string.Empty;
-            return Str;
+            return sb.ToString();
+        }
+
+        private static void AppendChange(StringBuilder sb, string label, int value, string suffix = "")
+        {
+            if (value == 0)
+                return;
+
+            sb.Append(label)
+              .Append(value > 0 ? " + " : " - ")
+              .Append(Math.Abs(value))
+              .Append(suffix)
+              .Append(' ');
         }
 
         // 添加信息
-        private void AddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void AddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
 
             // 停止之前的打字机效果
             StopTypeWriterEffect();
@@ -3346,9 +3311,9 @@ namespace QisToolkit3.Forms
         }
 
         // 设置信息
-        private void SetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void SetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
 
             // 停止之前的打字机效果
             StopTypeWriterEffect();
@@ -3433,58 +3398,58 @@ namespace QisToolkit3.Forms
         }
 
         // 设置信息 & 属性加减生效
-        private void XSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void XSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
-            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
-            MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
+            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
+            MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
         // 添加信息 & 属性加减生效
-        private void XAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void XAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
-            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
-            MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
+            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
+            MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
         // 时空碎块 设置信息 & 属性加减生效
-        private void XSecSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void XSecSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
-            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
-            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
+            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
+            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
         // 时空碎块 添加信息 & 属性加减生效
-        private void XSecAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void XSecAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
-            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution);
-            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution);
+            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
+            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
+            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
         // 自动跳转 设置信息 & 属性加减生效
-        private void AutoXSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void AutoXSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             if (World == "Main")
-                XSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+                XSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
 
             else
-                XSecSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+                XSecSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
         }
 
         // 自动跳转 添加信息 & 属性加减生效
-        private void AutoXAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0)
+        private void AutoXAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             if (World == "Main")
-                XAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+                XAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
 
             else
-                XSecAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution);
+                XSecAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
         }
 
-        private void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution)
+        private void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost = 0)
         {
             Hunger += hunger;
             Thirsty += thirsty;
@@ -3493,6 +3458,7 @@ namespace QisToolkit3.Forms
             Gold += gold;
             Pollution += pollution;
             WorkExperience += workExperience;
+            Lost += lost;
 
             // 工作经验上限
             if (WorkExperience > 150 && comboBoxTarotCard.Text != "月亮") WorkExperience = 150;
@@ -3502,7 +3468,7 @@ namespace QisToolkit3.Forms
             Health += health; if (Health > MaxHealth) Health = MaxHealth;
         }
 
-        private void MessageSetSecData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution)
+        private void MessageSetSecData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost)
         {
             SecHunger += hunger;
             SecThirsty += thirsty;
@@ -3511,6 +3477,7 @@ namespace QisToolkit3.Forms
             SecGold += gold;
             Pollution += pollution;
             WorkExperience += workExperience;
+            Lost += lost;
 
             // 工作经验上限
             if (WorkExperience > 150 && comboBoxTarotCard.Text != "月亮") WorkExperience = 150;
@@ -3521,7 +3488,7 @@ namespace QisToolkit3.Forms
         }
 
         // 数据加成
-        private void MessageMakeData(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution)
+        private void MessageMakeData(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution, ref int lost)
         {
             // San 获取公式
             san *= (100 - pollution) / 100;
@@ -3537,12 +3504,13 @@ namespace QisToolkit3.Forms
                 workExperience *= 2;
                 health *= 2;
                 pollution *= 2;
+                lost *= 2;
             }
 
             if (DeBug_2Gold)
                 gold *= 2;
 
-            MessageTarotCard(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution);
+            MessageTarotCard(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
         }
 
         // 判断事件类型的方法
@@ -3592,7 +3560,7 @@ namespace QisToolkit3.Forms
         }
 
         // 数据塔罗牌加成
-        private void MessageTarotCard(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution)
+        private void MessageTarotCard(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution, ref int lost)
         {
             if (comboBoxTarotCard.Text != string.Empty)
             {
@@ -3625,10 +3593,7 @@ namespace QisToolkit3.Forms
         {
             if (DeBugMode)
             {
-                if (OutMessages)
-                    MessageLog += $"{message} ({Days}.{Morning})\n";
-                else
-                    MessageLog += message + '\n';
+                Log.Info($"[SurvivalChallengeGame] {message}");
             }
         }
 
@@ -3684,17 +3649,18 @@ namespace QisToolkit3.Forms
             buttonOption2.Enabled = bt2;
             buttonOption3.Enabled = bt3;
             buttonOption4.Enabled = bt4;
+
             SetButtonEnabledsColor(bt0, bt1, bt2, bt3, bt4);
         }
 
         // 设置按钮启用颜色
         private void SetButtonEnabledsColor(bool bt0, bool bt1, bool bt2, bool bt3, bool bt4)
         {
-            if (bt0) buttonOption0.BackColor = Color.White; else buttonOption0.BackColor = Color.Gainsboro;
-            if (bt1) buttonOption1.BackColor = Color.White; else buttonOption1.BackColor = Color.Gainsboro;
-            if (bt2) buttonOption2.BackColor = Color.White; else buttonOption2.BackColor = Color.Gainsboro;
-            if (bt3) buttonOption3.BackColor = Color.White; else buttonOption3.BackColor = Color.Gainsboro;
-            if (bt4) buttonOption4.BackColor = Color.White; else buttonOption4.BackColor = Color.Gainsboro;
+            buttonOption0.BackColor = bt0 ? Color.White : Color.Gainsboro;
+            buttonOption1.BackColor = bt1 ? Color.White : Color.Gainsboro;
+            buttonOption2.BackColor = bt2 ? Color.White : Color.Gainsboro;
+            buttonOption3.BackColor = bt3 ? Color.White : Color.Gainsboro;
+            buttonOption4.BackColor = bt4 ? Color.White : Color.Gainsboro;
         }
 
         // 塔罗牌保存
@@ -3753,15 +3719,15 @@ namespace QisToolkit3.Forms
             try
             {
                 // 导出日志
-                Directory.CreateDirectory(@"C:\QiAppDatas\Logs\QisToolkit3\");
-                File.WriteAllText(@"C:\QiAppDatas\Logs\QisToolkit3\问身 问己 问心.log", MessageLog);
+                Directory.CreateDirectory(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs", "问身问己问心.log"));
+                File.WriteAllText(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs", "问身问己问心.log"), MessageLog);
 
                 // 开发者模式自动打开日志文件
                 if (DeBugMode)
                 {
                     Process.Start(new ProcessStartInfo
                     {
-                        FileName = @"C:\QiAppDatas\Logs\QisToolkit3\问身 问己 问心.log",
+                        FileName = Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs", "问身问己问心.log"),
                         UseShellExecute = true  // 显式启用 ShellExecute
                     });
                 }
@@ -4017,25 +3983,6 @@ namespace QisToolkit3.Forms
                 " · 污染干扰器：抵挡污染入侵的必备道具，由【理智精华】合成。\n" +
                 " · 理智精华由理智提纯而来。\n";
 
-            //SetMessage(
-            //    "你走向了那漆黑且望不尽头的隧道，勇敢的走了进去！\n" +
-            //    "你每走出一步，你的脚步就变重一分……\n" +
-            //    "不知道走了多久，你的眼前出现了出口！那出口亮的你睁不开眼！\n" +
-            //    "那是隧道仿佛是另一个世界！那是一座繁华的城市，灯光无数！\n" +
-            //    "但奇怪的是，这个城市仿佛毫无生机！或者说，一切都事物都静止着！\n" +
-            //    "当你看到这座城市时，你的脑海中出现了无数声音，在催促你进入城市！\n" +
-            //    "你走向了这座城市，下一刻，你感觉到意识在不断远离自己的身体！\n" +
-            //    "你的意识越来越模糊…… 直至彻底昏厥。\n" +
-            //    "你再次醒来，你发现你身处一个山洞之中。\n" +
-            //    ""
-            //);
-
-            //SetMessage(
-            //    "test test test test test test test test test test test test test test test test test test test test " +
-            //    "test test test test test test test test test test test test test test test test test test test test " +
-            //    "test test test test test test test test test test test test test test test test test test test test " +
-            //    "test test test test test test test test test test test test test test test test test test test test " +
-            //    "test test test test test test test test test test test test test test test test test test test test ");
             if (DeBugMode)
             {
                 L_ForestGrass = true;
@@ -4086,7 +4033,6 @@ namespace QisToolkit3.Forms
 
             Clipboard.SetText(text);
             GameOver();
-            //MessageBox.Show(MessageLog);
         }
     }
 }
