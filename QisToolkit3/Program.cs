@@ -55,7 +55,10 @@ namespace QisToolkit3
 
                 if (tmp == DialogResult.Yes)
                 {
-                    RestartAsAdmin();
+                    // 把原始参数安全地拼回去（含空格的参数用引号包起来）
+                    string originalArgs = string.Join(" ", args.Select(a =>
+                        a.Contains(' ') ? $"\"{a}\"" : a));
+                    RestartAsAdmin(originalArgs);
                 }
                 return;
             }
@@ -74,6 +77,15 @@ namespace QisToolkit3
 
             Log.Info("=== 加载数据 ===");
             Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.UseMinSudoDLL}");
+
+            // ===== 协议调用（qistoolkit3://）=====
+            // 放在 GUI / 命令行模式之前，处理完直接退出
+            if (TryHandleProtocol(args))
+            {
+                Log.Info("[Protocol] 协议处理完毕，退出");
+                BufferedLogger.Shutdown();
+                return;
+            }
 
             bool UseSPLArg = false;
             for (int i = 0; i < args.Length - 1; i++)
@@ -132,6 +144,112 @@ namespace QisToolkit3
             {
                 RunCommandLineMode(hideWindow);
             }
+        }
+
+        /// <summary>
+        /// 尝试处理 qistoolkit3:// 协议调用。
+        /// </summary>
+        /// <returns>true = 已处理，调用方应直接退出主流程</returns>
+        static bool TryHandleProtocol(string[] args)
+        {
+            // 浏览器传入的是完整 URL，如 qistoolkit3://ytdlp?url=...
+            string protocolArg = args.FirstOrDefault(a =>
+                a.StartsWith("qistoolkit3://", StringComparison.OrdinalIgnoreCase));
+
+            if (protocolArg == null)
+                return false;
+
+            Log.Info("[Protocol] 收到协议调用: " + protocolArg);
+
+            try
+            {
+                var uri = new Uri(protocolArg);
+
+                // qistoolkit3://ytdlp?url=xxx
+                //   Scheme = qistoolkit3, Host = ytdlp, Query = ?url=xxx
+                string action = uri.Host; // 即 "ytdlp"
+                var query = ParseQueryString(uri.Query);
+
+                Log.Info($"[Protocol] action = {action}");
+
+                switch (action.ToLowerInvariant())
+                {
+                    case "ytdlp":
+                        HandleProtocolYtDlp(query);
+                        break;
+
+                    default:
+                        Log.Warn($"[Protocol] 未知 action，已忽略: {action}");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Err("[Protocol] 解析失败: " + ex.Message);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 处理 ytdlp 协议调用：白名单校验 + 日志，不做实际动作（TODO）。
+        /// </summary>
+        static void HandleProtocolYtDlp(Dictionary<string, string> query)
+        {
+            if (!query.TryGetValue("url", out string videoUrl) || string.IsNullOrWhiteSpace(videoUrl))
+            {
+                Log.Warn("[Protocol] ytdlp: 缺少 url 参数");
+                return;
+            }
+
+            Log.Info($"[Protocol] ytdlp.url = {videoUrl}");
+
+            // ---- 安全校验：必须是绝对 URI ----
+            if (!Uri.TryCreate(videoUrl, UriKind.Absolute, out Uri videoUri))
+            {
+                Log.Warn("[Protocol] ytdlp: url 格式非法，已丢弃");
+                return;
+            }
+
+            // ---- 安全校验：域名白名单 ----
+            string[] allowedHosts = { "bilibili.com", "youtube.com", "youtu.be" };
+            bool hostAllowed = allowedHosts.Any(h =>
+                videoUri.Host.Equals(h, StringComparison.OrdinalIgnoreCase) ||
+                videoUri.Host.EndsWith("." + h, StringComparison.OrdinalIgnoreCase));
+
+            if (!hostAllowed)
+            {
+                Log.Warn($"[Protocol] ytdlp: 域名不在白名单，已丢弃: {videoUri.Host}");
+                return;
+            }
+
+            Log.Info($"[Protocol] ytdlp: 校验通过，主机 = {videoUri.Host}");
+
+            // TODO: 后续接入实际功能，例如：
+            //   var form = new YtDlpTool();
+            //   form.SetVideoUrl(videoUrl);
+            //   Application.Run(form);
+            // 或调用静默下载逻辑（-H 模式下）
+        }
+
+        /// <summary>
+        /// 手动解析 query string，避免依赖 System.Web。
+        /// </summary>
+        static Dictionary<string, string> ParseQueryString(string query)
+        {
+            var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            if (string.IsNullOrEmpty(query)) return result;
+
+            query = query.TrimStart('?');
+            foreach (var pair in query.Split('&'))
+            {
+                if (string.IsNullOrEmpty(pair)) continue;
+                int eq = pair.IndexOf('=');
+                string key = eq >= 0 ? pair.Substring(0, eq) : pair;
+                string value = eq >= 0 ? pair.Substring(eq + 1) : "";
+                result[Uri.UnescapeDataString(key)] = Uri.UnescapeDataString(value);
+            }
+            return result;
         }
 
         public static void RestartAsAdmin(string arguments = "")
