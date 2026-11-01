@@ -45,6 +45,7 @@ public class Qi
 
         public static string MainLogFile = $"Main_20000101_000000.log";
         public static bool UseMinSudoDLL = true;
+        public static int LocalApiServerPort = 18888;
 
         public static void SaveDatas()
         {
@@ -55,8 +56,9 @@ public class Qi
             writer.WriteLine(ComputerNoviceMode);
             writer.WriteLine(FilesOperation_AutomaticallyPopUpTheOpenFileWindow);
             writer.WriteLine(ToolsOperation_UseChineseName);
-            writer.WriteLine(ToolsProcessingTools_TopMost); 
-            writer.WriteLine(UseMinSudoDLL); 
+            writer.WriteLine(ToolsProcessingTools_TopMost);
+            writer.WriteLine(UseMinSudoDLL);
+            writer.WriteLine(LocalApiServerPort);
         }
 
         public static void LoadDatas()
@@ -74,6 +76,7 @@ public class Qi
                     if ((line = reader.ReadLine()) != null) ToolsOperation_UseChineseName = StrToBool(line);
                     if ((line = reader.ReadLine()) != null) ToolsProcessingTools_TopMost = StrToBool(line);
                     if ((line = reader.ReadLine()) != null) UseMinSudoDLL = StrToBool(line);
+                    if ((line = reader.ReadLine()) != null) LocalApiServerPort = StrToInt(line);
                 }
                 Log.Info($"加载数据完成。");
             }

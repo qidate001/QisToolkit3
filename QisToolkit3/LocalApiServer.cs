@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QisToolkit3.Forms;
 using QisToolkit3.Forms.YtDlp;
+using static Qi.QisToolkit3_Datas;
 
 namespace QisToolkit3
 {
     public static class LocalApiServer
     {
-        private const int Port = 18888;
         private const string AuthToken = "QisToolkit3_WP_2025";
         private static HttpListener _listener;
         private static bool _isRunning = false;
@@ -30,11 +30,11 @@ namespace QisToolkit3
             Task.Run(async () =>
             {
                 _listener = new HttpListener();
-                _listener.Prefixes.Add($"http://127.0.0.1:{Port}/");
+                _listener.Prefixes.Add($"http://127.0.0.1:{LocalApiServerPort}/");
                 try
                 {
                     _listener.Start();
-                    Log.Info($"[LocalAPI] HTTP 服务已启动，监听端口: {Port}");
+                    Log.Info($"[LocalAPI] HTTP 服务已启动，监听端口: {LocalApiServerPort}");
 
                     while (_isRunning)
                     {
@@ -121,7 +121,7 @@ namespace QisToolkit3
                         CookieFilePath = cookiePath
                     };
 
-                    // 🆕 修改核心：寻找已经打开的 YtDlpTool 窗口
+                    // 寻找已经打开的 YtDlpTool 窗口
                     YtDlpTool targetForm = Application.OpenForms.OfType<YtDlpTool>().FirstOrDefault();
 
                     if (targetForm != null)

@@ -67,7 +67,7 @@ namespace QisToolkit3.Forms
                 // 下载完成后清理临时 Cookie 文件
                 if (!string.IsNullOrEmpty(_pendingInvocation?.CookieFilePath) && File.Exists(_pendingInvocation.CookieFilePath))
                 {
-                    try { File.Delete(_pendingInvocation.CookieFilePath); } catch { }
+                    TryDeleteFile(_pendingInvocation.CookieFilePath);
                 }
             }
         }

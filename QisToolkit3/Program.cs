@@ -64,10 +64,10 @@ namespace QisToolkit3
             }
 
             // 单实例检查（如果不是第一个实例，把参数发给老实例后直接退出）
-            if (!SingleInstanceManager.IsFirstInstance(args))
-            {
-                Environment.Exit(0); // 已发送给老实例，直接退出
-            }
+            //if (!SingleInstanceManager.IsFirstInstance(args))
+            //{
+            //    Environment.Exit(0); // 已发送给老实例，直接退出
+            //}
 
             Log.Info("=== 启动信息 ===");
             Log.Info($"EXE文件: {Qi.QisToolkit3_Datas.exePath}");

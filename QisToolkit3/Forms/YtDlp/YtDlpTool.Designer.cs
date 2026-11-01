@@ -214,18 +214,6 @@
             checkBox_AudioFormat = new CheckBox();
             tabPage7 = new TabPage();
             richTextBox_exec = new RichTextBox();
-            tabPage8 = new TabPage();
-            groupBox23 = new GroupBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            groupBox21 = new GroupBox();
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
-            checkBox_GenerateInfoPage_DeleteDescriptionFile = new CheckBox();
-            checkBox_GenerateInfoPage = new CheckBox();
-            checkBox_GenerateInfoPage_DeleteJsonFile = new CheckBox();
-            groupBox20 = new GroupBox();
-            checkBox_DanmakuFactory_XML_To_ASS = new CheckBox();
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile = new CheckBox();
             tabPage9 = new TabPage();
             button_RunRuleEngine = new Button();
             comboBox_StringRuleEngine = new ComboBox();
@@ -241,6 +229,16 @@
             comboBox_ArchiveEnhanced_PlayList = new ComboBox();
             comboBox_ArchiveEnhanced_Users = new ComboBox();
             comboBox_ArchiveEnhanced_Root = new ComboBox();
+            tabPage8 = new TabPage();
+            groupBox23 = new GroupBox();
+            groupBox21 = new GroupBox();
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer = new CheckBox();
+            checkBox_GenerateInfoPage_DeleteDescriptionFile = new CheckBox();
+            checkBox_GenerateInfoPage = new CheckBox();
+            checkBox_GenerateInfoPage_DeleteJsonFile = new CheckBox();
+            groupBox20 = new GroupBox();
+            checkBox_DanmakuFactory_XML_To_ASS = new CheckBox();
+            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile = new CheckBox();
             button_IdNameMapper_Load = new Button();
             checkBox_IdNameMapper = new CheckBox();
             groupBox2 = new GroupBox();
@@ -311,12 +309,11 @@
             groupBox16.SuspendLayout();
             groupBox15.SuspendLayout();
             tabPage7.SuspendLayout();
-            tabPage8.SuspendLayout();
-            groupBox23.SuspendLayout();
-            groupBox21.SuspendLayout();
-            groupBox20.SuspendLayout();
             tabPage9.SuspendLayout();
             tabPage10.SuspendLayout();
+            tabPage8.SuspendLayout();
+            groupBox21.SuspendLayout();
+            groupBox20.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -1798,91 +1795,6 @@
             resources.ApplyResources(richTextBox_exec, "richTextBox_exec");
             richTextBox_exec.Name = "richTextBox_exec";
             // 
-            // tabPage8
-            // 
-            tabPage8.Controls.Add(groupBox23);
-            tabPage8.Controls.Add(groupBox21);
-            tabPage8.Controls.Add(groupBox20);
-            resources.ApplyResources(tabPage8, "tabPage8");
-            tabPage8.Name = "tabPage8";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // groupBox23
-            // 
-            groupBox23.Controls.Add(checkBox1);
-            groupBox23.Controls.Add(checkBox2);
-            resources.ApplyResources(groupBox23, "groupBox23");
-            groupBox23.Name = "groupBox23";
-            groupBox23.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(checkBox1, "checkBox1");
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Name = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            resources.ApplyResources(checkBox2, "checkBox2");
-            checkBox2.Name = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox21
-            // 
-            groupBox21.Controls.Add(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer);
-            groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteDescriptionFile);
-            groupBox21.Controls.Add(checkBox_GenerateInfoPage);
-            groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteJsonFile);
-            resources.ApplyResources(groupBox21, "groupBox21");
-            groupBox21.Name = "groupBox21";
-            groupBox21.TabStop = false;
-            // 
-            // checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer
-            // 
-            resources.ApplyResources(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer, "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer");
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name = "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer";
-            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_GenerateInfoPage_DeleteDescriptionFile
-            // 
-            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteDescriptionFile, "checkBox_GenerateInfoPage_DeleteDescriptionFile");
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.Name = "checkBox_GenerateInfoPage_DeleteDescriptionFile";
-            checkBox_GenerateInfoPage_DeleteDescriptionFile.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_GenerateInfoPage
-            // 
-            resources.ApplyResources(checkBox_GenerateInfoPage, "checkBox_GenerateInfoPage");
-            checkBox_GenerateInfoPage.Name = "checkBox_GenerateInfoPage";
-            checkBox_GenerateInfoPage.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_GenerateInfoPage_DeleteJsonFile
-            // 
-            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteJsonFile, "checkBox_GenerateInfoPage_DeleteJsonFile");
-            checkBox_GenerateInfoPage_DeleteJsonFile.Name = "checkBox_GenerateInfoPage_DeleteJsonFile";
-            checkBox_GenerateInfoPage_DeleteJsonFile.UseVisualStyleBackColor = true;
-            // 
-            // groupBox20
-            // 
-            groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS);
-            groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile);
-            resources.ApplyResources(groupBox20, "groupBox20");
-            groupBox20.Name = "groupBox20";
-            groupBox20.TabStop = false;
-            // 
-            // checkBox_DanmakuFactory_XML_To_ASS
-            // 
-            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS, "checkBox_DanmakuFactory_XML_To_ASS");
-            checkBox_DanmakuFactory_XML_To_ASS.Name = "checkBox_DanmakuFactory_XML_To_ASS";
-            checkBox_DanmakuFactory_XML_To_ASS.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile
-            // 
-            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile, "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile");
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name = "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile";
-            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.UseVisualStyleBackColor = true;
-            // 
             // tabPage9
             // 
             tabPage9.Controls.Add(button_RunRuleEngine);
@@ -2001,6 +1913,75 @@
             comboBox_ArchiveEnhanced_Root.Items.AddRange(new object[] { resources.GetString("comboBox_ArchiveEnhanced_Root.Items"), resources.GetString("comboBox_ArchiveEnhanced_Root.Items1") });
             comboBox_ArchiveEnhanced_Root.Name = "comboBox_ArchiveEnhanced_Root";
             comboBox_ArchiveEnhanced_Root.SelectedIndexChanged += comboBox_ArchiveEnhanced_Root_SelectedIndexChanged;
+            // 
+            // tabPage8
+            // 
+            tabPage8.Controls.Add(groupBox23);
+            tabPage8.Controls.Add(groupBox21);
+            tabPage8.Controls.Add(groupBox20);
+            resources.ApplyResources(tabPage8, "tabPage8");
+            tabPage8.Name = "tabPage8";
+            tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox23
+            // 
+            resources.ApplyResources(groupBox23, "groupBox23");
+            groupBox23.Name = "groupBox23";
+            groupBox23.TabStop = false;
+            // 
+            // groupBox21
+            // 
+            groupBox21.Controls.Add(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer);
+            groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteDescriptionFile);
+            groupBox21.Controls.Add(checkBox_GenerateInfoPage);
+            groupBox21.Controls.Add(checkBox_GenerateInfoPage_DeleteJsonFile);
+            resources.ApplyResources(groupBox21, "groupBox21");
+            groupBox21.Name = "groupBox21";
+            groupBox21.TabStop = false;
+            // 
+            // checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer
+            // 
+            resources.ApplyResources(checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer, "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer");
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.Name = "checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer";
+            checkBox_GenerateInfoPage_EmbedBilibiliVideoPlayer.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_GenerateInfoPage_DeleteDescriptionFile
+            // 
+            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteDescriptionFile, "checkBox_GenerateInfoPage_DeleteDescriptionFile");
+            checkBox_GenerateInfoPage_DeleteDescriptionFile.Name = "checkBox_GenerateInfoPage_DeleteDescriptionFile";
+            checkBox_GenerateInfoPage_DeleteDescriptionFile.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_GenerateInfoPage
+            // 
+            resources.ApplyResources(checkBox_GenerateInfoPage, "checkBox_GenerateInfoPage");
+            checkBox_GenerateInfoPage.Name = "checkBox_GenerateInfoPage";
+            checkBox_GenerateInfoPage.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_GenerateInfoPage_DeleteJsonFile
+            // 
+            resources.ApplyResources(checkBox_GenerateInfoPage_DeleteJsonFile, "checkBox_GenerateInfoPage_DeleteJsonFile");
+            checkBox_GenerateInfoPage_DeleteJsonFile.Name = "checkBox_GenerateInfoPage_DeleteJsonFile";
+            checkBox_GenerateInfoPage_DeleteJsonFile.UseVisualStyleBackColor = true;
+            // 
+            // groupBox20
+            // 
+            groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS);
+            groupBox20.Controls.Add(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile);
+            resources.ApplyResources(groupBox20, "groupBox20");
+            groupBox20.Name = "groupBox20";
+            groupBox20.TabStop = false;
+            // 
+            // checkBox_DanmakuFactory_XML_To_ASS
+            // 
+            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS, "checkBox_DanmakuFactory_XML_To_ASS");
+            checkBox_DanmakuFactory_XML_To_ASS.Name = "checkBox_DanmakuFactory_XML_To_ASS";
+            checkBox_DanmakuFactory_XML_To_ASS.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile
+            // 
+            resources.ApplyResources(checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile, "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile");
+            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.Name = "checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile";
+            checkBox_DanmakuFactory_XML_To_ASS_DeleteXMLFile.UseVisualStyleBackColor = true;
             // 
             // button_IdNameMapper_Load
             // 
@@ -2345,16 +2326,14 @@
             groupBox15.ResumeLayout(false);
             groupBox15.PerformLayout();
             tabPage7.ResumeLayout(false);
+            tabPage9.ResumeLayout(false);
+            tabPage9.PerformLayout();
+            tabPage10.ResumeLayout(false);
             tabPage8.ResumeLayout(false);
-            groupBox23.ResumeLayout(false);
-            groupBox23.PerformLayout();
             groupBox21.ResumeLayout(false);
             groupBox21.PerformLayout();
             groupBox20.ResumeLayout(false);
             groupBox20.PerformLayout();
-            tabPage9.ResumeLayout(false);
-            tabPage9.PerformLayout();
-            tabPage10.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -2611,7 +2590,5 @@
         private CheckBox checkBox_UseAutoCookies;
         private ComboBox comboBox_UseAutoCookies;
         private GroupBox groupBox23;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
     }
 }
