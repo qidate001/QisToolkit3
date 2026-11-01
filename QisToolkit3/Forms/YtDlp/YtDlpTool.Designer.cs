@@ -275,6 +275,8 @@
             richTextBox = new RichTextBox();
             toolTip = new ToolTip(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            checkBox_UseAutoCookies = new CheckBox();
+            comboBox_UseAutoCookies = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -321,6 +323,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(comboBox_UseAutoCookies);
+            splitContainer1.Panel1.Controls.Add(checkBox_UseAutoCookies);
             splitContainer1.Panel1.Controls.Add(textBox_Paths);
             splitContainer1.Panel1.Controls.Add(tabControl1);
             splitContainer1.Panel1.Controls.Add(button_IdNameMapper_Load);
@@ -2234,6 +2238,22 @@
             toolTip.IsBalloon = true;
             toolTip.ReshowDelay = 40;
             // 
+            // checkBox_UseAutoCookies
+            // 
+            resources.ApplyResources(checkBox_UseAutoCookies, "checkBox_UseAutoCookies");
+            checkBox_UseAutoCookies.Checked = true;
+            checkBox_UseAutoCookies.CheckState = CheckState.Checked;
+            checkBox_UseAutoCookies.Name = "checkBox_UseAutoCookies";
+            toolTip.SetToolTip(checkBox_UseAutoCookies, resources.GetString("checkBox_UseAutoCookies.ToolTip"));
+            checkBox_UseAutoCookies.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_UseAutoCookies
+            // 
+            resources.ApplyResources(comboBox_UseAutoCookies, "comboBox_UseAutoCookies");
+            comboBox_UseAutoCookies.FormattingEnabled = true;
+            comboBox_UseAutoCookies.Items.AddRange(new object[] { resources.GetString("comboBox_UseAutoCookies.Items"), resources.GetString("comboBox_UseAutoCookies.Items1"), resources.GetString("comboBox_UseAutoCookies.Items2") });
+            comboBox_UseAutoCookies.Name = "comboBox_UseAutoCookies";
+            // 
             // YtDlpTool
             // 
             AllowDrop = true;
@@ -2559,5 +2579,7 @@
         private Button button3;
         private Button button_ArchiveEnhanced_Save;
         private Button button_ArchiveEnhanced_Delete;
+        private CheckBox checkBox_UseAutoCookies;
+        private ComboBox comboBox_UseAutoCookies;
     }
 }

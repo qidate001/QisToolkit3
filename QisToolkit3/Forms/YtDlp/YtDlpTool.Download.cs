@@ -134,7 +134,10 @@ namespace QisToolkit3.Forms
             string command = string.Empty;
 
             // 使用 Cookies
-            if (checkBox_UseCookies.Checked)
+            if (checkBox_UseAutoCookies.Checked)
+                command += $" --cookies-from-browser {comboBox_UseAutoCookies.Text.Trim().ToLower()}";
+
+            else if (checkBox_UseCookies.Checked)
                 command += $" --cookies \"{CookiesFilePath}\"";
 
             // 使用 Archive

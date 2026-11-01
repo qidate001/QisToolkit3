@@ -1,6 +1,7 @@
 using QisToolkit3.Console;
 using QisToolkit3.Forms;
 using QisToolkit3.Forms.SoftwareFunctionForms;
+using QisToolkit3.Forms.YtDlp;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -71,22 +72,37 @@ namespace QisToolkit3
             Log.Info($"进程PID: {Qi.QisToolkit3_Datas.processId} 用户名: {Qi.QisToolkit3_Datas.owner}");
             Log.Info($"系统级权限判断: {Qi.QisToolkit3_Datas.isSystem}");
             Log.Info($"隐藏模式: {hideWindow}");
-            
+
             // 加载
             Qi.QisToolkit3_Datas.LoadDatas();
 
             Log.Info("=== 加载数据 ===");
             Log.Info($"使用MinSudo: {Qi.QisToolkit3_Datas.UseMinSudoDLL}");
 
-            // ===== 协议调用（qistoolkit3://）=====
-            // 放在 GUI / 命令行模式之前，处理完直接退出
-            if (TryHandleProtocol(args))
+            // 注册编码
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+            // 视觉样式初始化（提前到协议处理之前）
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
+
+            // ===== 协议处理 =====
+            if (TryHandleProtocol(args, out var pendingInvocation))
             {
-                Log.Info("[Protocol] 协议处理完毕，退出");
+                if (pendingInvocation != null)
+                {
+                    // 走 WinForm 自动下载路径
+                    var form = new YtDlpTool();
+                    form.ApplyPendingInvocation(pendingInvocation);
+                    Application.Run(form);
+                }
+                // 无论是否启动了窗体，协议模式处理完就退出
                 BufferedLogger.Shutdown();
                 return;
             }
 
+            // ===== -SPL / 命令行 / 窗体流程 =====
             bool UseSPLArg = false;
             for (int i = 0; i < args.Length - 1; i++)
             {
@@ -100,13 +116,6 @@ namespace QisToolkit3
             }
 
             if (UseSPLArg) return;
-
-            // 注册编码提供程序
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            ApplicationConfiguration.Initialize();
 
             // 检查是否是 -C 系列参数（命令执行模式）
             int cmdIndex = Array.FindIndex(
@@ -147,40 +156,35 @@ namespace QisToolkit3
         }
 
         /// <summary>
-        /// 尝试处理 qistoolkit3:// 协议调用。
+        /// 处理 ytdlp 协议调用
         /// </summary>
-        /// <returns>true = 已处理，调用方应直接退出主流程</returns>
-        static bool TryHandleProtocol(string[] args)
+        static bool TryHandleProtocol(string[] args, out YtDlpInvocation pendingInvocation)
         {
-            // 浏览器传入的是完整 URL，如 qistoolkit3://ytdlp?url=...
+            pendingInvocation = null;
+
             string protocolArg = args.FirstOrDefault(a =>
                 a.StartsWith("qistoolkit3://", StringComparison.OrdinalIgnoreCase));
 
-            if (protocolArg == null)
-                return false;
+            if (protocolArg == null) return false;
 
             Log.Info("[Protocol] 收到协议调用: " + protocolArg);
 
             try
             {
                 var uri = new Uri(protocolArg);
-
-                // qistoolkit3://ytdlp?url=xxx
-                //   Scheme = qistoolkit3, Host = ytdlp, Query = ?url=xxx
-                string action = uri.Host; // 即 "ytdlp"
+                string action = uri.Host;
                 var query = ParseQueryString(uri.Query);
 
                 Log.Info($"[Protocol] action = {action}");
 
-                switch (action.ToLowerInvariant())
+                if (action.Equals("ytdlp", StringComparison.OrdinalIgnoreCase))
                 {
-                    case "ytdlp":
-                        HandleProtocolYtDlp(query);
-                        break;
-
-                    default:
-                        Log.Warn($"[Protocol] 未知 action，已忽略: {action}");
-                        break;
+                    var inv = BuildYtDlpInvocation(query);
+                    if (inv != null) pendingInvocation = inv;
+                }
+                else
+                {
+                    Log.Warn($"[Protocol] 未知 action，已忽略: {action}");
                 }
             }
             catch (Exception ex)
@@ -192,26 +196,24 @@ namespace QisToolkit3
         }
 
         /// <summary>
-        /// 处理 ytdlp 协议调用：白名单校验 + 日志，不做实际动作（TODO）。
+        /// 从 query 构建 YtDlpInvocation；校验失败返回 null
         /// </summary>
-        static void HandleProtocolYtDlp(Dictionary<string, string> query)
+        static YtDlpInvocation BuildYtDlpInvocation(Dictionary<string, string> query)
         {
+            // 1) url
             if (!query.TryGetValue("url", out string videoUrl) || string.IsNullOrWhiteSpace(videoUrl))
             {
                 Log.Warn("[Protocol] ytdlp: 缺少 url 参数");
-                return;
+                return null;
             }
 
-            Log.Info($"[Protocol] ytdlp.url = {videoUrl}");
-
-            // ---- 安全校验：必须是绝对 URI ----
             if (!Uri.TryCreate(videoUrl, UriKind.Absolute, out Uri videoUri))
             {
-                Log.Warn("[Protocol] ytdlp: url 格式非法，已丢弃");
-                return;
+                Log.Warn("[Protocol] ytdlp: url 格式非法");
+                return null;
             }
 
-            // ---- 安全校验：域名白名单 ----
+            // 2) 域名白名单
             string[] allowedHosts = { "bilibili.com", "youtube.com", "youtu.be" };
             bool hostAllowed = allowedHosts.Any(h =>
                 videoUri.Host.Equals(h, StringComparison.OrdinalIgnoreCase) ||
@@ -220,16 +222,50 @@ namespace QisToolkit3
             if (!hostAllowed)
             {
                 Log.Warn($"[Protocol] ytdlp: 域名不在白名单，已丢弃: {videoUri.Host}");
-                return;
+                return null;
             }
 
-            Log.Info($"[Protocol] ytdlp: 校验通过，主机 = {videoUri.Host}");
+            var inv = new YtDlpInvocation { Url = videoUrl };
 
-            // TODO: 后续接入实际功能，例如：
-            //   var form = new YtDlpTool();
-            //   form.SetVideoUrl(videoUrl);
-            //   Application.Run(form);
-            // 或调用静默下载逻辑（-H 模式下）
+            // 3) 短名映射
+            var shortMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["path"] = "textBox_Paths",
+                ["format"] = "comboBox_Format",
+                ["formatSort"] = "comboBox_FormatSort",
+                ["playlistItems"] = "textBox_playlist_items",
+                ["cookies"] = "checkBox_UseCookies",
+                ["archive"] = "checkBox_UseArchive",
+                ["archivePlus"] = "checkBox_ArchivePlus",
+                ["writeSubs"] = "checkBox_WriteSubs",
+                ["writeAutoSubs"] = "checkBox_WriteAutoSubs",
+                ["subLangs"] = "comboBox_SubLangs",
+                ["embedThumb"] = "checkBox_Embed_Thumbnail",
+                ["embedMeta"] = "checkBox_Embed_Metadata",
+            };
+
+            foreach (var kv in query)
+            {
+                if (kv.Key.Equals("url", StringComparison.OrdinalIgnoreCase)) continue;
+
+                if (kv.Key.StartsWith("ctrl:", StringComparison.OrdinalIgnoreCase))
+                {
+                    string ctrlName = kv.Key.Substring(5);
+                    if (!string.IsNullOrEmpty(ctrlName))
+                        inv.Overrides[ctrlName] = kv.Value;
+                }
+                else if (shortMap.TryGetValue(kv.Key, out var fullName))
+                {
+                    inv.Overrides[fullName] = kv.Value;
+                }
+                else
+                {
+                    Log.Warn($"[Protocol] ytdlp: 未知参数已忽略: {kv.Key}");
+                }
+            }
+
+            Log.Info($"[Protocol] ytdlp: url = {videoUrl}, 覆盖 {inv.Overrides.Count} 个控件");
+            return inv;
         }
 
         /// <summary>

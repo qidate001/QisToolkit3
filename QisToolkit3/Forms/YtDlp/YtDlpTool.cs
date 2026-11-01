@@ -151,48 +151,57 @@ namespace QisToolkit3.Forms
 
         private async void YtDlpTool_Load(object sender, EventArgs e)
         {
-            // 下载存放路径
-            //textBox_Paths.Text = DefaultDownloadPath;
-            //comboBox_Path_Home.Text = DefaultDownloadPath;
-            //comboBox_Path_Temp.Text = DefaultDownloadPath;
-            //comboBox_Path_Video.Text = DefaultDownloadPath;
-            //comboBox_Path_Audio.Text = DefaultDownloadPath;
-            //comboBox_Path_SubTitle.Text = DefaultDownloadPath;
-            //comboBox_Path_Description.Text = DefaultDownloadPath;
-            //comboBox_Path_Thumbnail.Text = DefaultDownloadPath;
-            //comboBox_Path_InfoJson.Text = DefaultDownloadPath;
-
-            // .netrc 文件
-            textBox_netrc_Location.Text = Path.Combine(actualDirectory, @$"yt-dlp") + '\\';
-
-            button_AutoDownload.Enabled = File.Exists(comboBox_URL.Text) || File.Exists(AutoDownloadFilePath);
-            checkBox_IdNameMapper.Checked = File.Exists(AutoDownloadNameFilePath);
-
-            int IsCookies = IsCookieFile(CookiesFilePath);
-            checkBox_UseCookies.Checked = IsCookies == 1 || IsCookies == 2;
-
-            comboBox_PlayListMode.SelectedIndex = 0;
-            comboBox_OverWritesMode.SelectedIndex = 1;
-
-            if (File.Exists(DefaultConfigFilePath))
-                YtDlpConfigManager.ImportConfig(this, DefaultConfigFilePath);
-
-            // 加载自动下载名称映射
-            await LoadIdNameMapper(AutoDownloadNameFilePath);
-
-            if (string.IsNullOrWhiteSpace(textBox_Paths.Text))
-                textBox_Paths.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
-
-            LoadMatchFilters();
-
-            MatchFiltersSaved += () =>
+            try
             {
-                if (this.InvokeRequired)
-                    this.Invoke(new Action(LoadMatchFilters));
-                else
-                    LoadMatchFilters();
-                Log.Info("[YtDlp工具] 收到规则已保存通知，已重新加载");
-            };
+                // .netrc 文件
+                textBox_netrc_Location.Text = Path.Combine(actualDirectory, @$"yt-dlp") + '\\';
+
+                button_AutoDownload.Enabled = File.Exists(comboBox_URL.Text) || File.Exists(AutoDownloadFilePath);
+                checkBox_IdNameMapper.Checked = File.Exists(AutoDownloadNameFilePath);
+
+                int IsCookies = IsCookieFile(CookiesFilePath);
+                checkBox_UseCookies.Checked = IsCookies == 1 || IsCookies == 2;
+
+                comboBox_PlayListMode.SelectedIndex = 0;
+                comboBox_OverWritesMode.SelectedIndex = 1;
+
+                if (File.Exists(DefaultConfigFilePath))
+                    YtDlpConfigManager.ImportConfig(this, DefaultConfigFilePath);
+
+                // 加载自动下载名称映射
+                await LoadIdNameMapper(AutoDownloadNameFilePath);
+
+                if (string.IsNullOrWhiteSpace(textBox_Paths.Text))
+                    textBox_Paths.Text = Path.Combine(actualDirectory, "yt-dlp", "Downloads");
+
+                LoadMatchFilters();
+
+                MatchFiltersSaved += () =>
+                {
+                    if (this.InvokeRequired)
+                        this.Invoke(new Action(LoadMatchFilters));
+                    else
+                        LoadMatchFilters();
+                    Log.Info("[YtDlp工具] 收到规则已保存通知，已重新加载");
+                };
+
+                // 协议参数应用（放在最后，覆盖默认配置）
+                if (_pendingInvocation != null)
+                {
+                    comboBox_URL.Text = _pendingInvocation.Url;
+                    ApplyControlOverrides(_pendingInvocation.Overrides);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Log.Err("[YtDlp工具] Load 初始化失败: " + ex.Message);
+            }
+
+            finally
+            {
+                _ready.TrySetResult(true); // 无论成功失败都解锁
+            }
         }
     }
 }
