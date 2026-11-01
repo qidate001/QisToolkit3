@@ -39,8 +39,8 @@
             button_ExtendedFeatures = new Button();
             checkBox_DarkMode = new CheckBox();
             checkBox_ComputerNoviceMode = new CheckBox();
-            buttonOut = new Button();
-            buttonIn = new Button();
+            buttonUninstall = new Button();
+            buttonInstall = new Button();
             button_System = new Button();
             tabPageFilesOperation = new TabPage();
             checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow = new CheckBox();
@@ -96,8 +96,8 @@
             tabPageHead.Controls.Add(button_ExtendedFeatures);
             tabPageHead.Controls.Add(checkBox_DarkMode);
             tabPageHead.Controls.Add(checkBox_ComputerNoviceMode);
-            tabPageHead.Controls.Add(buttonOut);
-            tabPageHead.Controls.Add(buttonIn);
+            tabPageHead.Controls.Add(buttonUninstall);
+            tabPageHead.Controls.Add(buttonInstall);
             tabPageHead.Controls.Add(button_System);
             resources.ApplyResources(tabPageHead, "tabPageHead");
             tabPageHead.Name = "tabPageHead";
@@ -164,21 +164,21 @@
             checkBox_ComputerNoviceMode.UseVisualStyleBackColor = true;
             checkBox_ComputerNoviceMode.CheckedChanged += checkBox_ComputerNoviceMode_CheckedChanged;
             // 
-            // buttonOut
+            // buttonUninstall
             // 
-            resources.ApplyResources(buttonOut, "buttonOut");
-            buttonOut.FlatAppearance.BorderColor = Color.Silver;
-            buttonOut.Name = "buttonOut";
-            buttonOut.UseVisualStyleBackColor = true;
-            buttonOut.Click += buttonOff_Click;
+            resources.ApplyResources(buttonUninstall, "buttonUninstall");
+            buttonUninstall.FlatAppearance.BorderColor = Color.Silver;
+            buttonUninstall.Name = "buttonUninstall";
+            buttonUninstall.UseVisualStyleBackColor = true;
+            buttonUninstall.Click += buttonUninstall_Click;
             // 
-            // buttonIn
+            // buttonInstall
             // 
-            resources.ApplyResources(buttonIn, "buttonIn");
-            buttonIn.FlatAppearance.BorderColor = Color.Silver;
-            buttonIn.Name = "buttonIn";
-            buttonIn.UseVisualStyleBackColor = true;
-            buttonIn.Click += buttonOn_Click;
+            resources.ApplyResources(buttonInstall, "buttonInstall");
+            buttonInstall.FlatAppearance.BorderColor = Color.Silver;
+            buttonInstall.Name = "buttonInstall";
+            buttonInstall.UseVisualStyleBackColor = true;
+            buttonInstall.Click += buttonInstall_Click;
             // 
             // button_System
             // 
@@ -393,8 +393,8 @@
         private CheckBox checkBoxToolsProcessingTools_TopMost;
         private TabPage tabPageHead;
         private Button button_System;
-        private Button buttonIn;
-        private Button buttonOut;
+        private Button buttonInstall;
+        private Button buttonUninstall;
         private CheckBox checkBox_ComputerNoviceMode;
         private TabPage tabPage3;
         private Button button_ExtendedFeatures;

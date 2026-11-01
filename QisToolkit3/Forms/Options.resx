@@ -117,15 +117,304 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tabPageHead.Name" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPageFilesOperation.Name" xml:space="preserve">
+    <value>tabPageFilesOperation</value>
+  </data>
+  <data name="&gt;&gt;tabPageFilesOperation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageFilesOperation.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPageFilesOperation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Name" xml:space="preserve">
+    <value>tabPageToolsOperation</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControlOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabControlOptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="tabControlOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControlOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabControlOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 618</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControlOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControlOptions.Name" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabControlOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControlOptions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MinSudo.Name" xml:space="preserve">
+    <value>checkBox_MinSudo</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MinSudo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MinSudo.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MinSudo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_CommandMode.Name" xml:space="preserve">
+    <value>button_CommandMode</value>
+  </data>
+  <data name="&gt;&gt;button_CommandMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_CommandMode.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;button_CommandMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_SystemCommandMode.Name" xml:space="preserve">
+    <value>button_SystemCommandMode</value>
+  </data>
+  <data name="&gt;&gt;button_SystemCommandMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SystemCommandMode.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;button_SystemCommandMode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
+    <value>comboBoxLanguage</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;button_ExtendedFeatures.Name" xml:space="preserve">
+    <value>button_ExtendedFeatures</value>
+  </data>
+  <data name="&gt;&gt;button_ExtendedFeatures.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ExtendedFeatures.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;button_ExtendedFeatures.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DarkMode.Name" xml:space="preserve">
+    <value>checkBox_DarkMode</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DarkMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DarkMode.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;checkBox_DarkMode.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ComputerNoviceMode.Name" xml:space="preserve">
+    <value>checkBox_ComputerNoviceMode</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ComputerNoviceMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ComputerNoviceMode.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ComputerNoviceMode.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;buttonUninstall.Name" xml:space="preserve">
+    <value>buttonUninstall</value>
+  </data>
+  <data name="&gt;&gt;buttonUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonUninstall.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;buttonUninstall.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;buttonInstall.Name" xml:space="preserve">
+    <value>buttonInstall</value>
+  </data>
+  <data name="&gt;&gt;buttonInstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonInstall.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;buttonInstall.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;button_System.Name" xml:space="preserve">
+    <value>button_System</value>
+  </data>
+  <data name="&gt;&gt;button_System.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_System.Parent" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;button_System.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="tabPageHead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="tabPageHead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageHead.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageHead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>782, 578</value>
+  </data>
+  <data name="tabPageHead.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabPageHead.Text" xml:space="preserve">
+    <value>首选项</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.Name" xml:space="preserve">
+    <value>tabPageHead</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPageHead.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="checkBox_MinSudo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBox_MinSudo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBox_MinSudo.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 16pt, style=Bold</value>
   </data>
@@ -375,64 +664,64 @@
   <data name="&gt;&gt;checkBox_ComputerNoviceMode.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="buttonOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="buttonUninstall.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="buttonOut.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="buttonUninstall.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 48pt, style=Bold</value>
   </data>
-  <data name="buttonOut.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="buttonUninstall.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 124</value>
   </data>
-  <data name="buttonOut.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonUninstall.Size" type="System.Drawing.Size, System.Drawing">
     <value>778, 122</value>
   </data>
-  <data name="buttonOut.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="buttonOut.Text" xml:space="preserve">
+  <data name="buttonUninstall.Text" xml:space="preserve">
     <value>移除环境变量</value>
   </data>
-  <data name="&gt;&gt;buttonOut.Name" xml:space="preserve">
-    <value>buttonOut</value>
+  <data name="&gt;&gt;buttonUninstall.Name" xml:space="preserve">
+    <value>buttonUninstall</value>
   </data>
-  <data name="&gt;&gt;buttonOut.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonUninstall.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonOut.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonUninstall.Parent" xml:space="preserve">
     <value>tabPageHead</value>
   </data>
-  <data name="&gt;&gt;buttonOut.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonUninstall.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="buttonIn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="buttonInstall.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="buttonIn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="buttonInstall.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 48pt, style=Bold</value>
   </data>
-  <data name="buttonIn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="buttonInstall.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
-  <data name="buttonIn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonInstall.Size" type="System.Drawing.Size, System.Drawing">
     <value>778, 122</value>
   </data>
-  <data name="buttonIn.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonInstall.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="buttonIn.Text" xml:space="preserve">
+  <data name="buttonInstall.Text" xml:space="preserve">
     <value>添加环境变量</value>
   </data>
-  <data name="&gt;&gt;buttonIn.Name" xml:space="preserve">
-    <value>buttonIn</value>
+  <data name="&gt;&gt;buttonInstall.Name" xml:space="preserve">
+    <value>buttonInstall</value>
   </data>
-  <data name="&gt;&gt;buttonIn.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonInstall.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonIn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonInstall.Parent" xml:space="preserve">
     <value>tabPageHead</value>
   </data>
-  <data name="&gt;&gt;buttonIn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonInstall.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="button_System.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -461,58 +750,6 @@
   </data>
   <data name="&gt;&gt;button_System.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="tabPageHead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabPageHead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabPageHead.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabPageHead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>782, 578</value>
-  </data>
-  <data name="tabPageHead.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tabPageHead.Text" xml:space="preserve">
-    <value>首选项</value>
-  </data>
-  <data name="&gt;&gt;tabPageHead.Name" xml:space="preserve">
-    <value>tabPageHead</value>
-  </data>
-  <data name="&gt;&gt;tabPageHead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageHead.Parent" xml:space="preserve">
-    <value>tabControlOptions</value>
-  </data>
-  <data name="&gt;&gt;tabPageHead.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 5</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 31</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Text" xml:space="preserve">
-    <value>打开文件操作栏自动跳出“打开文件”窗口</value>
   </data>
   <data name="&gt;&gt;checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Name" xml:space="preserve">
     <value>checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow</value>
@@ -558,6 +795,39 @@
   </data>
   <data name="&gt;&gt;tabPageFilesOperation.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 5</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 31</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Text" xml:space="preserve">
+    <value>打开文件操作栏自动跳出“打开文件”窗口</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Name" xml:space="preserve">
+    <value>checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.Parent" xml:space="preserve">
+    <value>tabPageFilesOperation</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 36</value>
@@ -618,6 +888,60 @@
   </data>
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsProcessingTools_TopMost.Name" xml:space="preserve">
+    <value>checkBoxToolsProcessingTools_TopMost</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsProcessingTools_TopMost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsProcessingTools_TopMost.Parent" xml:space="preserve">
+    <value>tabPageToolsOperation</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsProcessingTools_TopMost.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsOperation_UseChineseName.Name" xml:space="preserve">
+    <value>checkBoxToolsOperation_UseChineseName</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsOperation_UseChineseName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsOperation_UseChineseName.Parent" xml:space="preserve">
+    <value>tabPageToolsOperation</value>
+  </data>
+  <data name="&gt;&gt;checkBoxToolsOperation_UseChineseName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageToolsOperation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="tabPageToolsOperation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageToolsOperation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabPageToolsOperation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>782, 578</value>
+  </data>
+  <data name="tabPageToolsOperation.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageToolsOperation.Text" xml:space="preserve">
+    <value>万能工具</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Name" xml:space="preserve">
+    <value>tabPageToolsOperation</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPageToolsOperation.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="checkBoxToolsProcessingTools_TopMost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -685,36 +1009,6 @@
   <data name="&gt;&gt;checkBoxToolsOperation_UseChineseName.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabPageToolsOperation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="tabPageToolsOperation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabPageToolsOperation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabPageToolsOperation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>782, 578</value>
-  </data>
-  <data name="tabPageToolsOperation.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabPageToolsOperation.Text" xml:space="preserve">
-    <value>万能工具</value>
-  </data>
-  <data name="&gt;&gt;tabPageToolsOperation.Name" xml:space="preserve">
-    <value>tabPageToolsOperation</value>
-  </data>
-  <data name="&gt;&gt;tabPageToolsOperation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageToolsOperation.Parent" xml:space="preserve">
-    <value>tabControlOptions</value>
-  </data>
-  <data name="&gt;&gt;tabPageToolsOperation.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 36</value>
   </data>
@@ -777,6 +1071,189 @@
   </data>
   <data name="tabPage3.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_Gmail.Name" xml:space="preserve">
+    <value>button_Gmail</value>
+  </data>
+  <data name="&gt;&gt;button_Gmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Gmail.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_Gmail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_QQEmail.Name" xml:space="preserve">
+    <value>button_QQEmail</value>
+  </data>
+  <data name="&gt;&gt;button_QQEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_QQEmail.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_QQEmail.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForGitHub.Name" xml:space="preserve">
+    <value>button_DownloadForGitHub</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForGitHub.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForGitHub.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;button_GitHub.Name" xml:space="preserve">
+    <value>button_GitHub</value>
+  </data>
+  <data name="&gt;&gt;button_GitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_GitHub.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_GitHub.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForQQ.Name" xml:space="preserve">
+    <value>button_DownloadForQQ</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForQQ.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForQQ.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForQQ.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;button_QisWeb.Name" xml:space="preserve">
+    <value>button_QisWeb</value>
+  </data>
+  <data name="&gt;&gt;button_QisWeb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_QisWeb.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_QisWeb.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForBaidu.Name" xml:space="preserve">
+    <value>button_DownloadForBaidu</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForBaidu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForBaidu.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;button_DownloadForBaidu.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>782, 578</value>
+  </data>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>齐的工具包3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControlOptions</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1185,63 +1662,6 @@
   </data>
   <data name="&gt;&gt;button_DownloadForBaidu.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>782, 578</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>齐的工具包3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControlOptions</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tabControlOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControlOptions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="tabControlOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabControlOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tabControlOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 618</value>
-  </data>
-  <data name="tabControlOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControlOptions.Name" xml:space="preserve">
-    <value>tabControlOptions</value>
-  </data>
-  <data name="&gt;&gt;tabControlOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlOptions.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControlOptions.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

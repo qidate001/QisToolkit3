@@ -30,8 +30,8 @@ namespace QisToolkit3.Forms
             if (ComputerNoviceMode)
             {
                 button_System.Visible = false;
-                buttonIn.Text = "安装";
-                buttonOut.Text = "卸载";
+                buttonInstall.Text = "安装";
+                buttonUninstall.Text = "卸载";
             }
         }
 
@@ -44,11 +44,11 @@ namespace QisToolkit3.Forms
             {
                 this.BackColor = BackColor;
                 tabPageHead.BackColor = BackColor;
-                buttonIn.BackColor = BtnBackColor;
-                buttonIn.FlatStyle = FlatStyle.Flat;
+                buttonInstall.BackColor = BtnBackColor;
+                buttonInstall.FlatStyle = FlatStyle.Flat;
 
-                buttonOut.BackColor = BtnBackColor;
-                buttonOut.FlatStyle = FlatStyle.Flat;
+                buttonUninstall.BackColor = BtnBackColor;
+                buttonUninstall.FlatStyle = FlatStyle.Flat;
 
                 tabControlOptions.ForeColor = Color.FromArgb(177, 177, 177);
                 //panelTitleBar.BackColor = Color.FromArgb(51, 51, 73);
@@ -82,8 +82,8 @@ namespace QisToolkit3.Forms
         private void ReSetSystemEnvironmentBtn()
         {
             bool ev = EnvironmentVariableHelper.IsPathInSystemEnvironment(actualDirectory);
-            buttonIn.Enabled = !ev;
-            buttonOut.Enabled = ev;
+            buttonInstall.Enabled = !ev;
+            buttonUninstall.Enabled = ev;
         }
 
         private void checkBoxFilesOperation_AutomaticallyPopUpTheOpenFileWindow_CheckedChanged(object sender, EventArgs e) =>
@@ -114,7 +114,7 @@ namespace QisToolkit3.Forms
             shortcut.Save();
         }
 
-        private void buttonOn_Click(object sender, EventArgs e)
+        private void buttonInstall_Click(object sender, EventArgs e)
         {
             try
             {
@@ -122,9 +122,7 @@ namespace QisToolkit3.Forms
                 string DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string commonPrograms = Environment.GetFolderPath(Environment.SpecialFolder.CommonPrograms);
 
-
-
-
+                // 创建桌面快捷方式
                 WshShell shell = new WshShell();
                 OutIWshShortcut(shell, FileName, DesktopPath, "齐的工具包3");
                 OutIWshShortcut(shell, FileName, DesktopPath, "齐的工具包：命令行", "-command");
@@ -137,7 +135,7 @@ namespace QisToolkit3.Forms
                 OutIWshShortcut(shell, FileName, actualDirectory, "qt");
                 OutIWshShortcut(shell, FileName, actualDirectory, "q", "-command");
 
-
+                // 软件信息
                 RegistryKey registry = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\QisToolkit3", true);
                 registry.SetValue("DisplayName", "齐的工具包3");
                 registry.SetValue("DisplayIcon", actualDirectory + @"\QisToolkit3.exe");
@@ -145,49 +143,97 @@ namespace QisToolkit3.Forms
                 registry.SetValue("UninstallString", actualDirectory + @"\Uninstall_QisToolkit3.exe");
                 registry.SetValue("Version", QisToolkit3_Datas.Version);
 
-
-
-                //if (System.IO.File.Exists(@"C:\Windows\System32\EShutdown.exe"))
-                //    System.IO.File.Delete(@"C:\Windows\System32\EShutdown.exe");
-                //System.IO.File.Copy($@"{actualDirectory}\EShutdown.exe", @"C:\Windows\System32\EShutdown.exe");
-
                 EnvironmentVariableHelper.AddPathsToSystemEnvironment(actualDirectory);
 
-                MessageBox.Show("操作已完成！\n\n已向桌面释放快捷方式！\n已向系统环境变量释放路径\n你现在可以通过在命令提示符中输入 “QisToolkit3” 来启动齐的工具包3", "提示");
+                // ===== 注册自定义协议 qistoolkit3:// =====
+                const string protocolName = "qistoolkit3";
+                try
+                {
+                    // 1) 协议主键
+                    using (RegistryKey protocolKey = Registry.ClassesRoot.CreateSubKey(protocolName, true))
+                    {
+                        if (protocolKey != null)
+                        {
+                            protocolKey.SetValue("", $"URL:{protocolName} Protocol");
+                            protocolKey.SetValue("URL Protocol", "");
+
+                            // 2) 命令键：指向 QisToolkit3.exe，并接收浏览器传入的完整 URL
+                            using (RegistryKey commandKey = protocolKey.CreateSubKey(@"shell\open\command", true))
+                            {
+                                if (commandKey != null)
+                                {
+                                    // 注意：这里用引号包裹 exe 路径，并保留 "%1" 作为完整 URL
+                                    commandKey.SetValue("", $"\"{FileName}\" \"%1\"");
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("协议注册失败（可继续使用其他功能）：\n" + ex.Message, "警告");
+                    Log.Err("[软件设置] 协议注册失败！", ex);
+                }
+
+                MessageBox.Show(
+                    "操作已完成！\n\n" +
+                    "已向桌面释放快捷方式！\n" +
+                    "已向系统环境变量释放路径\n" +
+                    "已向系统注册自定义协议 qistoolkit3://\n" +
+                    "你现在可以通过在命令提示符中输入 “QisToolkit3” 来启动齐的工具包3",
+                    "提示"
+                );
+
                 ReSetSystemEnvironmentBtn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("代码执行时出现错误！\n报错信息：" + ex.Message, "ERROR");
+                Log.Err("[软件设置] 代码执行时出现错误！", ex);
             }
         }
 
-        private void buttonOff_Click(object sender, EventArgs e)
+        private void buttonUninstall_Click(object sender, EventArgs e)
         {
             try
             {
                 string DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string commonPrograms = Environment.GetFolderPath(Environment.SpecialFolder.CommonPrograms);
-                TryDeleteFile(DesktopPath + @"\齐的工具包3.lnk");
-                TryDeleteFile(DesktopPath + @"\齐的工具包：命令行.lnk");
-                TryDeleteFile(DesktopPath + @"\齐的工具包：Yt-Dlp.lnk");
-                TryDeleteFile(DesktopPath + @"\齐的工具包：SLP.lnk");
-                TryDeleteFile(commonPrograms + @"\齐的工具包3.lnk");
-                TryDeleteFile(commonPrograms + @"\齐的工具包：命令行.lnk");
-                TryDeleteFile(commonPrograms + @"\齐的工具包：Yt-Dlp.lnk");
-                TryDeleteFile(commonPrograms + @"\齐的工具包：SLP.lnk");
-                TryDeleteFile(actualDirectory + @"\q.lnk");
-                TryDeleteFile(actualDirectory + @"\qt.lnk");
+
+                // 删除桌面快捷方式
+                TryDeleteFile(Path.Combine(DesktopPath, "齐的工具包3.lnk"));
+                TryDeleteFile(Path.Combine(DesktopPath, "齐的工具包：命令行.lnk"));
+                TryDeleteFile(Path.Combine(DesktopPath, "齐的工具包：Yt-Dlp.lnk"));
+                TryDeleteFile(Path.Combine(DesktopPath, "齐的工具包：SLP.lnk"));
+                TryDeleteFile(Path.Combine(commonPrograms, "齐的工具包3.lnk"));
+                TryDeleteFile(Path.Combine(commonPrograms, "齐的工具包：命令行.lnk"));
+                TryDeleteFile(Path.Combine(commonPrograms, "齐的工具包：Yt-Dlp.lnk"));
+                TryDeleteFile(Path.Combine(commonPrograms, "齐的工具包：SLP.lnk"));
+                TryDeleteFile(Path.Combine(actualDirectory, "q.lnk"));
+                TryDeleteFile(Path.Combine(actualDirectory, "qt.lnk"));
 
                 HkImTryDeleteTree(Registry.LocalMachine.CreateSubKey(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", true), "QisToolkit3");
                 EnvironmentVariableHelper.RemovePathFromSystemEnvironment(actualDirectory);
+
+                // ===== 删除自定义协议 qistoolkit:// =====
+                try
+                {
+                    Registry.ClassesRoot.DeleteSubKeyTree("qistoolkit3", false);
+                }
+                catch (Exception ex)
+                {
+                    // 键不存在时忽略；其他异常记录日志
+                    Log.Err("[软件设置] 删除协议注册表失败", ex);
+                }
 
                 MessageBox.Show("操作已完成！\n\n所有释放的注册表、文件、环境变量等均已删除", "提示");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("代码执行时出现错误！\n报错信息：" + ex.Message, "错误");
+                Log.Err("[软件设置] 代码执行时出现错误！", ex);
             }
+
             ReSetSystemEnvironmentBtn();
         }
 
