@@ -1,4 +1,4 @@
-﻿namespace QisToolkit3.Forms
+﻿namespace QisToolkit3.Forms.SCG
 {
     partial class SurvivalChallengeGame
     {

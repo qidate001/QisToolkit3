@@ -2,6 +2,7 @@ using QisToolkit3.Console;
 using QisToolkit3.Forms;
 using QisToolkit3.Forms.SoftwareFunctionForms;
 using QisToolkit3.Forms.YtDlp;
+using QisToolkit3.Forms.SCG;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -90,7 +91,7 @@ namespace QisToolkit3
             Application.SetCompatibleTextRenderingDefault(false);
             ApplicationConfiguration.Initialize();
 
-            // ?? 注册管道回调（收到其他实例传来的协议时）
+            // 注册管道回调（收到其他实例传来的协议时）
             SingleInstanceManager.OnArgumentsReceived += (newArgs) =>
             {
                 var mainForm = Application.OpenForms.Count > 0 ? Application.OpenForms[0] : null;

@@ -18,101 +18,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Formats.Asn1.AsnWriter;
 using static System.Net.Mime.MediaTypeNames;
+using static QisToolkit3.Forms.SCG.GameState;
 
-namespace QisToolkit3.Forms
+namespace QisToolkit3.Forms.SCG
 {
     public partial class SurvivalChallengeGame : Form
     {
-        private static readonly Random random = new Random();
-        private static string SetMessageTextTemporarilyStored = string.Empty;
-
-        // 主界
-        private static int Days = 1, Gold = 50, San = 80, Mood = 55, Health = 100, Hunger = 60, Thirsty = 60, BaseLuck = 0, Luck = 0;
-        private static int WorkExperience = 0, Temperature = 25, Friend = 1, Pollution = 0, Lost = 0;
-        private static int Natural_San = 5, Natural_Mood = 10, Natural_Health = 1, Natural_Hunger = 10, Natural_Thirsty = 10;
-        private static int MaxHunger = 100, MaxThirsty = 100, MaxHealth = 100;
-        private static int BasicSalary = 50, AddWorkExperienceMax = 8, MadBuff = 0, TaotieBuff = 0;
-        private static int ExtremeColdComes = random.Next(20, 30), EndOfExtremeCold = ExtremeColdComes + random.Next(10, 25);
-        private static int ExtremeHotComes = EndOfExtremeCold + random.Next(10, 20), EndOfExtremeHot = ExtremeHotComes + random.Next(10, 25);
-        private static int Food_Dumpling = 50, Food_RouJiaMo = 40, Food_RoastedCorn = 10, Food_Lemonade = 10, Food_Coffee = 30;
-        private static int Food_Popsicle = 5, Food_PurificationPackage = 1000, Food_HungerJelly = 25, Food_ThirstJelly = 25, Food_GluttonousFeast = 1000;
-        private static int PrincipalLine = 0, KnowledgeCd = 0; bool Morning = true, TC_Wall = true, TC_Set = false; // TC 是塔罗牌
-        private static bool L_ForestGrass = false, R_ForestGrass = false;  // 左右草丛解锁状态
-        private static bool[] HAC_AskBody = { false, false, false };
-        private static bool[] HAC_AskSelf = { false, false, false };
-        private static bool[] HAC_AskSoul = { false, false, false };
-
-        // 道具
-        private static bool Item_DarkBlocker = false;        // 黑暗屏蔽器
-        private static bool Item_SunWaterDrop = false;       // 太阳水滴
-        private static bool Item_MoonWaterDrop = false;      // 月亮水滴
-        private static bool Item_PollutionJammer = false;    // 污染干扰器
-        private static bool Item_FirstAidKit = false;        // 急救包
-        private static bool Item_Antidote = false;           // 解毒剂
-        private static bool Item_LuckyCharm = false;         // 幸运符
-        private static bool Item_SoothingMedicine = false;   // 舒缓药
-
-        private static int Item_God = 0;                     // 神赐道具
-        private static int Item_WinterClothing = 0;          // 御寒服
-        private static int Item_SummerClothing = 0;          // 御焰服
-        private static int Item_EssenceReason = 0;           // 理智精华
-        private static int Item_CompressedBiscuit = 0;       // 压缩饼干
-        private static int Item_BottledWater = 0;            // 矿泉水
-        private static int Item_BottledBeverage = 0;         // 瓶装饮料
-        private static int Item_Scrap = 0;                   // 废料
-        private static int Item_QualityScrap = 0;            // 优质废料
-
-        // 状态
-        private static int G_AvoidingDeath = 0;              // 避死状态（死亡神赐道具技能）
-        private static int G_MustGoodRandomEvent = 0;        // 随机事件必然是好事件
-        private static int G_AbsoluteRationality = 0;        // 绝对理性
-        private static int G_DoubleTheValue = 0;             // 双倍数值
-
-        // 其他
-        private static string MessageLog = "你出生了......";
-        private static string NowDoing = "Main", World = "Main";
-        private static bool DeBugMode = false, DeBug_2Gold = false;
-        private static bool[] TC = 
-        { 
-            false, false, false, false, false, false,
-            false, false, false, false, false, false,
-            false, false, false, false, false, false,
-            false, false, false, false
-        };
-
-        // 通用主线状态
-        private static bool KnowVoid = false;
-
-        // 时空碎块
-        private static int ResetCount = 10, SecDays = 1, SecGold = 50, SecSan = 80, SecMood = 55, SecHealth = 100, SecHunger = 60, SecThirsty = 60;
-        private static int SecPollution = 0, SecMaxHunger = 100, SecMaxThirsty = 100, SecMaxHealth = 100, SecTemperature = 25;
-        private static bool SecMorning = true;
-
-        // 时空碎块：大陆终焉
-        private static bool LTEOTC_KnowYanName = false; // 知道 岩 的名字
-        private static bool LTEOTC_KnowPrologue_0_1 = false, LTEOTC_KnowPrologue_KnowHowToLeave = false;
-        private static bool LTEOTC_KnowOuterCity_RecyclingYard = true; // 知道垃圾回收站在哪
-        private static bool LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade = true; // 知道垃圾回收站后门
-        private static bool LTEOTC_KnowOuterCity_UndergroundClinic = false; // 知道黑市在哪
-        private static bool LTEOTC_KnowOuterCity_GarbageMountain = false; // 知道垃圾山在哪
-        private static bool LTEOTC_KnowOuterCity_BlackMarket = false; // 知道黑市在哪
-        private static bool LTEOTC_KnowOuterCity_Home = true; // 知道住的地方在哪
-        private static bool LTEOTC_FirstLeave = true; // 首次离开序章
-        private static bool LTEOTC_UnlockTheGarbageMountainPlot = true; // 解锁垃圾山剧情（首次前往回收站）
-        private static string YanName = "未知";
-        private static int YanSuspicion = -60;
-
-        public int DisplayLuckValue => LuckValue + 100; // 显示用的幸运值，范围0到200
-
-        // 幸运值属性
-        public int LuckValue
-        {
-            get => Luck;
-            set => Luck = Math.Clamp(value, -100, 100);
-        }
-
-
-
         public SurvivalChallengeGame()
         {
             InitializeComponent();
@@ -135,35 +46,38 @@ namespace QisToolkit3.Forms
 
         private void ShowMessage()
         {
+            labelDays.Text = $"今天是第 {Days} 天 {(Morning ? "上午" : "下午")}";
             labelSan.Text = $"理智：{San}%";
             labelMood.Text = $"心情：{Mood}%";
             labelLuck.Text = $"气运：{DisplayLuckValue}%";
             labelLost.Text = $"迷失：{Lost}%";
-            labelPollution.Text = KnowVoid ? $"归虚值：{Pollution}%" : $"污染值：{Pollution}%";
+            labelGold.Text = $"金币：{Gold}G";
+            labelHealth.Text = $"健康：{Health}%";
+            labelTemperature.Text = $"室外温度：{Temperature}℃";
+            labelHunger.Text = $"饥饿值：{Hunger} / {MaxHunger}";
+            labelThirsty.Text = $"口渴值：{Thirsty} / {MaxThirsty}";
+
+            labelWorkExperience.Text = World == "Main"
+                ? $"工作经验：{WorkExperience}%"
+                : $"时空回溯：{ResetCount}次";
+
+            labelPollution.Text = KnowVoid 
+                ? $"归虚值：{Pollution}%" 
+                : $"污染值：{Pollution}%";
+
             labelSan.ForeColor = San <= 30 ? Color.Red : Color.Black;
             labelMood.ForeColor = Mood <= 30 ? Color.Red : Color.Black;
             labelLost.ForeColor = Lost >= 60 ? Color.Red : Color.Black;
+            labelHunger.ForeColor = Hunger <= 30 ? Color.Red : Color.Black;
+            labelHealth.ForeColor = Health <= 30 ? Color.Red : Color.Black;
+            labelThirsty.ForeColor = Thirsty <= 30 ? Color.Red : Color.Black;
             labelPollution.ForeColor = Pollution >= 60 ? Color.Red : Color.Black;
 
-
+            // 仅主世界部分
             if (World == "Main")
             {
-                labelDays.Text = $"今天是第 {Days} 天 {(Morning ? "上午" : "下午")}";
-                labelGold.Text = $"金币：{Gold}G";
-                labelHealth.Text = $"健康：{Health}%";
-                labelHunger.Text = $"饥饿值：{Hunger} / {MaxHunger}";
-                labelThirsty.Text = $"口渴值：{Thirsty} / {MaxThirsty}";
-                labelWorkExperience.Text = $"工作经验：{WorkExperience}%";
-                labelTemperature.Text = $"室外温度：{Temperature}℃";
-
-                labelHunger.ForeColor = Hunger <= 30 ? Color.Red : Color.Black;
-                labelHealth.ForeColor = Health <= 30 ? Color.Red : Color.Black;
-                labelThirsty.ForeColor = Thirsty <= 30 ? Color.Red : Color.Black;
-
-
-
                 bool showAsk = HAC_AskBody.Contains(true) || HAC_AskSelf.Contains(true) || HAC_AskSoul.Contains(true);
-
+                
                 // 问心崖挑战进度显示
                 if (showAsk)
                 {
@@ -175,21 +89,6 @@ namespace QisToolkit3.Forms
                     labelHAC_AskSelf.Visible = true;
                     labelHAC_AskSoul.Visible = true;
                 }
-            }
-
-            else if (World == "L_TheEndOfTheContinent")
-            {
-                labelDays.Text = $"今天是第 {SecDays} 天 {(SecMorning ? "上午" : "下午")}";
-                labelGold.Text = $"金币：{SecGold}G";
-                labelHealth.Text = $"健康：{SecHealth}%";
-                labelHunger.Text = $"饥饿值：{SecHunger} / {SecMaxHunger}";
-                labelThirsty.Text = $"口渴值：{SecThirsty} / {SecMaxThirsty}";
-                labelWorkExperience.Text = $"时空回溯：{ResetCount}次";
-                labelTemperature.Text = $"室外温度：{Temperature}℃";
-
-                labelHunger.ForeColor = SecHunger <= 30 ? Color.Red : Color.Black;
-                labelHealth.ForeColor = SecHealth <= 30 ? Color.Red : Color.Black;
-                labelThirsty.ForeColor = SecThirsty <= 30 ? Color.Red : Color.Black;
             }
 
 
@@ -262,126 +161,109 @@ namespace QisToolkit3.Forms
 
         // 主函数
         private void Main()
-        {
-            if (NowDoing == "Main" || NowDoing == "LTEOTC_OuterCityMain")
+        { 
+             // 上下午转换
+            Morning = !Morning;
+
+            // 主界
+            if (World == "Main")
             {
-                // 主界
-                if (World == "Main")
+                // 每天执行
+                if (Morning)
                 {
-                    //AddLog("执行了主函数");
-                    Morning = !Morning; // 上下午转换
+                    DailyRandomEvents(); // 每日随机事件
+                    Hunger -= Natural_Hunger;
+                    Thirsty -= Natural_Thirsty;
+                    --KnowledgeCd;
+                    --MadBuff;
+                    ++Days;
 
-                    // 每天执行
-                    if (Morning)
+
+
+                    // 癫狂药水结束
+                    if (MadBuff - 1 == 0)
+                        San = 1;
+
+                    // 饕餮药水结束
+                    if (TaotieBuff - 1 == 0)
                     {
-                        DailyRandomEvents(); // 每日随机事件
-                        Hunger -= Natural_Hunger;
-                        Thirsty -= Natural_Thirsty;
-                        --KnowledgeCd;
-                        --MadBuff;
-                        ++Days;
+                        MaxHunger = 100; Hunger = MaxHunger;
+                        MaxThirsty = 100; Thirsty = MaxThirsty;
+                    }
 
+                    // 绝对理智
+                    if (G_AbsoluteRationality > 0)
+                    {
+                        //Mood = -99999;
+                        San = 99999;
+                    }
 
+                    // 绝对理智结束
+                    if (G_AbsoluteRationality - 1 == 0)
+                    {
+                        San = 30;
+                        // Mood = 10;
+                    }
 
-                        // 癫狂药水结束
-                        if (MadBuff - 1 == 0)
-                            San = 1;
+                    // 绝对理智每日减少
+                    if (G_AbsoluteRationality > 0)
+                        --G_AbsoluteRationality;
 
-                        // 饕餮药水结束
-                        if (TaotieBuff - 1 == 0)
-                        {
-                            MaxHunger = 100; Hunger = MaxHunger;
-                            MaxThirsty = 100; Thirsty = MaxThirsty;
-                        }
+                    // 饕餮BUFF每日减少
+                    if (TaotieBuff > 0)
+                        --TaotieBuff;
 
-                        // 绝对理智
-                        if (G_AbsoluteRationality > 0)
-                        {
-                            //Mood = -99999;
-                            San = 99999;
-                        }
+                    // 避死BUFF每日减少
+                    if (G_AvoidingDeath > 0)
+                        --G_AvoidingDeath;
 
-                        // 绝对理智结束
-                        if (G_AbsoluteRationality - 1 == 0)
-                        {
-                            San = 30;
-                            // Mood = 10;
-                        }
+                    // 随机事件必定好运BUFF每日减少
+                    if (G_MustGoodRandomEvent > 0) --G_MustGoodRandomEvent;
 
-                        // 绝对理智每日减少
-                        if (G_AbsoluteRationality > 0)
-                            --G_AbsoluteRationality;
+                    // 数值翻倍BUFF每日减少
+                    if (G_DoubleTheValue > 0) --G_DoubleTheValue;
 
-                        // 饕餮BUFF每日减少
-                        if (TaotieBuff > 0)
-                            --TaotieBuff;
+                    // 塔罗牌：月亮 - 排解恐惧
+                    if (comboBoxTarotCard.Text != "月亮") Mood -= Natural_Mood;
 
-                        // 避死BUFF每日减少
-                        if (G_AvoidingDeath > 0)
-                            --G_AvoidingDeath;
+                    // 塔罗牌：愚者 - 自负顽固
+                    if (comboBoxTarotCard.Text == "愚者") San -= Natural_San * 2;
 
-                        // 随机事件必定好运BUFF每日减少
-                        if (G_MustGoodRandomEvent > 0) --G_MustGoodRandomEvent;
+                    // 塔罗牌：月亮 - 排解恐惧
+                    else if (comboBoxTarotCard.Text != "月亮") San -= Natural_San;
 
-                        // 数值翻倍BUFF每日减少
-                        if (G_DoubleTheValue > 0) --G_DoubleTheValue;
+                    // 新手期结束
+                    if (Days >= 10)
+                    {
+                        ProcessPollution();  // 污染
 
-                        // 塔罗牌：月亮 - 排解恐惧
-                        if (comboBoxTarotCard.Text != "月亮") Mood -= Natural_Mood;
+                        Health -= Natural_Health + Pollution / 5;
+                        Gold -= (Days - 10) * 2;
 
                         // 塔罗牌：愚者 - 自负顽固
-                        if (comboBoxTarotCard.Text == "愚者") San -= Natural_San * 2;
+                        if (comboBoxTarotCard.Text == "愚者") Gold -= (Days - 10) * 2;
 
-                        // 塔罗牌：月亮 - 排解恐惧
-                        else if (comboBoxTarotCard.Text != "月亮") San -= Natural_San;
-
-                        // 新手期结束
-                        if (Days >= 10)
-                        {
-                            ProcessPollution();  // 污染
-
-                            Health -= Natural_Health + Pollution / 5;
-                            Gold -= (Days - 10) * 2;
-
-                            // 塔罗牌：愚者 - 自负顽固
-                            if (comboBoxTarotCard.Text == "愚者") Gold -= (Days - 10) * 2;
-
-                            // 高低温处理
-                            ProcessLowTemperature();
-                            ProcessHighTemperature();
-                        }
-                    }
-
-
-                    // 命运之骰
-                    ProcessGodItem2();
-
-
-
-                    ReSetButtonEnableds();
-                    NextBackEnable(false);
-                    SetButtonOptionFont();
-                }
-
-                // 时空碎块
-                else
-                {
-                    SecMorning = !SecMorning; // 上下午转换
-
-                    // 每天执行
-                    if (SecMorning)
-                    {
-                        ++SecDays;
-                    }
-
-
-
-                    // 时空碎块：大陆终焉
-                    if (World == "L_TheEndOfTheContinent")
-                    {
-
+                        // 高低温处理
+                        ProcessLowTemperature();
+                        ProcessHighTemperature();
                     }
                 }
+
+
+                // 命运之骰
+                ProcessGodItem2();
+
+
+
+                ReSetButtonEnableds();
+                NextBackEnable(false);
+                SetButtonOptionFont();
+            }
+
+            // 时空碎块
+            else
+            {
+                if (Morning) ++Days;   
             }
 
 
@@ -1780,7 +1662,7 @@ namespace QisToolkit3.Forms
                     // 通道
                     if (L_ForestGrass)
                     {
-                        World = "L_TheEndOfTheContinent";
+                        SetWorld("L_TheEndOfTheContinent");
 
                         YanName = LTEOTC_KnowYanName ? "岩" : "未知";
                         SetMessage(
@@ -1798,7 +1680,6 @@ namespace QisToolkit3.Forms
                             $"{YanName}：“那群外城的条子真的逼烦，让我们进外城能咋的？”\n" +
                             ""
                         );
-                        SetWorld(World);
                         To_LTEOTC_Prologue_0();
                     }
 
@@ -2098,7 +1979,7 @@ namespace QisToolkit3.Forms
                     // 普通废料 < 50
                     if (Item_Scrap < 50)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把一袋子废料倒在老炉面前。\n" +
                             $"老炉低头看了一眼，用脚踢了踢。\n" +
                             $"老炉：“就这点？才{Item_Scrap.ToString()}个？也太少了吧！”\n" +
@@ -2114,7 +1995,7 @@ namespace QisToolkit3.Forms
                     // 普通废料 50-200
                     else if (Item_Scrap <= 200)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把一袋子废料倒在老炉面前。\n" +
                             $"老炉蹲下来翻了翻。\n" +
                             $"老炉：“哟，今天收获不错嘛，有{Item_Scrap.ToString()}个呐！”\n" +
@@ -2130,7 +2011,7 @@ namespace QisToolkit3.Forms
                     // 普通废料 > 200
                     else if (Item_Scrap > 200)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把两大袋子废料倒在老炉面前。\n" +
                             $"老炉惊了一下，随即蹲下来仔细翻看。\n" +
                             $"老炉：“哟，这么多？攒了几天呐？”\n" +
@@ -2151,7 +2032,7 @@ namespace QisToolkit3.Forms
                     // 优质废料 < 5
                     if (Item_QualityScrap < 5)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，小心翼翼地从怀里掏出几块优质废料放在桌上。\n" +
                             $"老炉眼睛一亮，拿起一块对着光看了看。\n" +
                             $"老炉：“嗯……品相不错。就是太少了。”\n" +
@@ -2165,7 +2046,7 @@ namespace QisToolkit3.Forms
                     // 优质废料 5-20
                     else if (Item_QualityScrap <= 20)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把一袋优质废料倒在老炉桌上。\n" +
                             $"老炉拿起一块，用手指敲了敲，又放到鼻子前闻了一下。\n" +
                             $"老炉：“好东西。这是从哪翻的？”\n" +
@@ -2185,7 +2066,7 @@ namespace QisToolkit3.Forms
                         // 走后门
                         if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你从后门走进回收站，把满满一袋优质废料放在老炉面前。\n" +
                                 $"老炉愣了一下，然后一块一块地翻看。\n" +
                                 $"他看了很久，沉默了一会儿。\n" +
@@ -2199,7 +2080,7 @@ namespace QisToolkit3.Forms
                         // 走正门
                         else
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你走进回收站，把满满一袋优质废料放在老炉面前。\n" +
                                 $"老炉愣了一下，然后一块一块地翻看。\n" +
                                 $"他看了很久。\n" +
@@ -2223,7 +2104,7 @@ namespace QisToolkit3.Forms
                     // 普通 < 50，优质 < 5
                     if (Item_Scrap < 50 && Item_QualityScrap < 5)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把两袋子废料倒在老炉面前。\n" +
                             $"一袋是普通废料，另一袋是挑出来的优质品。\n" +
                             $"老炉先翻了翻那袋普通货：“嗯，量不多。”\n" +
@@ -2238,7 +2119,7 @@ namespace QisToolkit3.Forms
                     // 普通 50-200，优质 5-20
                     else if (Item_Scrap <= 200 && Item_QualityScrap <= 20)
                     {
-                        XSecSetMessage(
+                        SetMessage(
                             $"你走进回收站，把两袋子废料倒在老炉面前。\n" +
                             $"老炉先翻了翻普通货：“嗯，量还行。”\n" +
                             $"又翻了翻优质货：“啧，这个不错。”\n" +
@@ -2260,7 +2141,7 @@ namespace QisToolkit3.Forms
                         // 走后门
                         if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你走进回收站，把两大袋普通废料和一袋优质废料倒在地。\n" +
                                 $"老炉看着那堆东西，吹了声口哨。\n" +
                                 $"老炉：“你这是把垃圾山搬空了吧？”\n" +
@@ -2278,7 +2159,7 @@ namespace QisToolkit3.Forms
                         // 走正门
                         else
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你走进回收站，把两大袋普通废料和一袋优质废料倒在地。\n" +
                                 $"老炉看着那堆东西，吹了声口哨。\n" +
                                 $"老炉：“你这是把垃圾山搬空了吧？”\n" +
@@ -2303,7 +2184,7 @@ namespace QisToolkit3.Forms
                         // 走后门
                         if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你从后门走进回收站，把一袋普通废料和一袋优质废料放在老炉面前。\n" +
                                 $"老炉：“……这么多？”\n" +
                                 $"他拿起一块，又拿起一块，越看眉头皱得越紧。\n" +
@@ -2322,7 +2203,7 @@ namespace QisToolkit3.Forms
                         // 走正门
                         else
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你走进回收站，把一袋普通废料和一袋优质废料放在老炉面前。\n" +
                                 $"老炉先看了普通货，点了点头。\n" +
                                 $"然后他打开那袋优质废料。\n" +
@@ -2350,7 +2231,7 @@ namespace QisToolkit3.Forms
                         // 走后门
                         if (LTEOTC_KnowOuterCity_RecyclingYard_BackdoorTrade)
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你从后门走进回收站，把三袋子废料倒在地上。\n" +
                                 $"老炉站起来，走到棚子门口往外看了一眼，然后把帘子拉了下来。\n" +
                                 $"老炉看着那堆东西，沉默了。\n" +
@@ -2370,7 +2251,7 @@ namespace QisToolkit3.Forms
                         // 走正门
                         else
                         {
-                            XSecSetMessage(
+                            SetMessage(
                                 $"你走进回收站，把三袋子废料倒在地上。\n" +
                                 $"老炉看着那堆东西，沉默了。\n" +
                                 $"他蹲下去，一块一块地翻。\n" +
@@ -2538,15 +2419,12 @@ namespace QisToolkit3.Forms
                 ? $"你翻找了一番，找到了 {scrap} 份普通废料和 {qualityScrap} 份优质废料。"
                 : $"你翻找了一番，找到了 {scrap} 份普通废料。";
 
-            XSecSetMessage(
+            SetMessage(
                 "你前往了垃圾山，在上面寻找一些值钱的东西......\n" +
                 (eventRoll <= 20 ? "\n" + eventText + "\n" : "") +
                 scrapMsg,
                 0, 0, 0, 0, 0, 0, -healthCost, 0, lostCost
             );
-
-            // 生命值下限保护
-            if (SecHealth < 1) SecHealth = 1;
 
             // 回收站首次前往事件禁用
             LTEOTC_UnlockTheGarbageMountainPlot = false;
@@ -2579,32 +2457,32 @@ namespace QisToolkit3.Forms
 
         private void SetWorld(string _World = "Main")
         {
-            NowDoing = "Main";
             if (_World == "Main")
             {
-
+                // 回到主世界：把副本全部弹掉
+                while (Worlds.Count > 1) Worlds.Pop();
             }
-
-            else if (_World == "L_TheEndOfTheContinent")
+            else if (World != _World)
             {
-                // Label隐藏
-                //labelWorkExperience.Visible = false;
-                //labelTemperature.Visible = false;
-                //labelHAC_AskBody.Visible = false;
-                //labelHAC_AskSelf.Visible = false;
-                //labelHAC_AskSoul.Visible = false;
-
-                // 初始化（玩家）
-                SecGold = 3;
-                SecHealth = 10; SecMaxHealth = 50;
-                SecHunger = 30; SecMaxHunger = 50;
-                SecThirsty = 30; SecMaxThirsty = 50;
+                // 进入副本：主世界数据原封不动留在栈底
+                Worlds.Push(new WorldState
+                {
+                    Id = _World,
+                    NowDoing = "Main",
+                    Days = 1,
+                    Gold = 3,
+                    Health = 10,
+                    MaxHealth = 50,
+                    Hunger = 30,
+                    MaxHunger = 50,
+                    Thirsty = 30,
+                    MaxThirsty = 50,
+                    Temperature = 25,
+                    Morning = true,
+                });
                 Lost += 3;
-                
-                // 初始化（NPC）
                 YanSuspicion = -60;
             }
-
             ShowMessage();
         }
 
@@ -3088,31 +2966,20 @@ namespace QisToolkit3.Forms
         private void ReSet()
         {
             buttonReSet.Visible = false;
-            Days = 1; Gold = 50; San = 80; Mood = 55; Health = 100; Hunger = 60; MaxHealth = 100; Pollution = 0; BaseLuck = 0; Luck = 0;
-            MaxHunger = 100; Thirsty = 60; MaxThirsty = 100; WorkExperience = 0; Temperature = 25; Friend = 1; Lost = 0;
-            Natural_San = 5; Natural_Mood = 10; Natural_Health = 1; Natural_Hunger = 10; Natural_Thirsty = 10;
-            BasicSalary = 50; AddWorkExperienceMax = 8; MadBuff = 0; TaotieBuff = 0;
+
+            // 重建状态
+            Worlds.Clear();
+            Global = new GlobalState();
+            Worlds.Push(new WorldState());   // 主世界默认值
+
+            // 配置重新随机
             ExtremeColdComes = random.Next(15, 30); EndOfExtremeCold = ExtremeColdComes + random.Next(15, 30);
             ExtremeHotComes = EndOfExtremeCold + random.Next(20, 30); EndOfExtremeHot = ExtremeHotComes + random.Next(15, 30);
-            Food_Dumpling = 50; Food_RouJiaMo = 40; Food_RoastedCorn = 10; Food_Lemonade = 10; Food_Coffee = 30;
-            Food_Popsicle = 5; Food_PurificationPackage = 1000; Food_HungerJelly = 25; Food_ThirstJelly = 25; Food_GluttonousFeast = 1000;
-            NowDoing = "Main"; World = "Main"; PrincipalLine = 0; KnowledgeCd = 0; Morning = true; TC_Wall = true; TC_Set = false;
-            G_AvoidingDeath = 0; G_MustGoodRandomEvent = 0; G_AbsoluteRationality = 0; G_DoubleTheValue = 0;
-            Item_WinterClothing = 0; Item_God = 0; Item_SummerClothing = 0; Item_EssenceReason = 0;
-            Item_CompressedBiscuit = 0; Item_BottledWater = 0; Item_BottledBeverage = 0;
-            Item_FirstAidKit = false; Item_Antidote = false; Item_LuckyCharm = false; Item_SoothingMedicine = false;
-            Item_DarkBlocker = false; Item_SunWaterDrop = false; Item_MoonWaterDrop = false; Item_PollutionJammer = false;
-            L_ForestGrass = false; R_ForestGrass = false;
 
-
-
-            ResetCount = 10; SecDays = 1; SecGold = 50; SecSan = 80; SecMood = 55; SecHealth = 100; SecHunger = 60; SecThirsty = 60;
-            SecPollution = 0; SecMaxHunger = 100; SecMaxThirsty = 100; SecMaxHealth = 100; SecTemperature = 25;
-            SecMorning = true;
-
-            Array.Fill(HAC_AskBody, false); Array.Fill(HAC_AskSelf, false); Array.Fill(HAC_AskSoul, false);
-            buttonHome.Enabled = true; checkBoxMessageLog.Checked = false;
-            comboBoxTarotCard.Enabled = true; trackBarDifficulty.Enabled = true;
+            buttonHome.Enabled = true; 
+            checkBoxMessageLog.Checked = false;
+            comboBoxTarotCard.Enabled = true; 
+            trackBarDifficulty.Enabled = true;
             labelMessage.Text = "你重生了，重生在事故发生前……"; MessageLog = "你出生了......";
 
             // 难度数值更新
@@ -3413,42 +3280,6 @@ namespace QisToolkit3.Forms
             MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
-        // 时空碎块 设置信息 & 属性加减生效
-        private void XSecSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
-        {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
-            SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
-            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
-        }
-
-        // 时空碎块 添加信息 & 属性加减生效
-        private void XSecAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
-        {
-            MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
-            AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
-            MessageSetSecData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
-        }
-
-        // 自动跳转 设置信息 & 属性加减生效
-        private void AutoXSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
-        {
-            if (World == "Main")
-                XSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
-
-            else
-                XSecSetMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
-        }
-
-        // 自动跳转 添加信息 & 属性加减生效
-        private void AutoXAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
-        {
-            if (World == "Main")
-                XAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
-
-            else
-                XSecAddMessage(message, hunger, thirsty, san, mood, gold, workExperience, pollution, lost);
-        }
-
         private void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost = 0)
         {
             Hunger += hunger;
@@ -3466,25 +3297,6 @@ namespace QisToolkit3.Forms
 
             // 生命值
             Health += health; if (Health > MaxHealth) Health = MaxHealth;
-        }
-
-        private void MessageSetSecData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost)
-        {
-            SecHunger += hunger;
-            SecThirsty += thirsty;
-            San += san;
-            Mood += mood;
-            SecGold += gold;
-            Pollution += pollution;
-            WorkExperience += workExperience;
-            Lost += lost;
-
-            // 工作经验上限
-            if (WorkExperience > 150 && comboBoxTarotCard.Text != "月亮") WorkExperience = 150;
-            else if (WorkExperience > 100 && comboBoxTarotCard.Text == "月亮") WorkExperience = 100;
-
-            // 生命值
-            SecHealth += health; if (SecHealth > SecMaxHealth) SecHealth = SecMaxHealth;
         }
 
         // 数据加成
@@ -3868,7 +3680,7 @@ namespace QisToolkit3.Forms
                 return;
 
             Item_CompressedBiscuit -= 1;
-            AutoXAddMessage("你吃了一块压缩饼干。", 60, -10, -1, -5, 0, 0, -3);
+            AddMessage("你吃了一块压缩饼干。", 60, -10, -1, -5, 0, 0, -3);
             ShowMessage(); DeathJudgment();
         }
 
@@ -3879,7 +3691,7 @@ namespace QisToolkit3.Forms
                 return;
 
             Item_BottledBeverage -= 1;
-            AutoXAddMessage("你喝一瓶饮料。", 10, 35, -5, 40, 0, 0, -10);
+            AddMessage("你喝一瓶饮料。", 10, 35, -5, 40, 0, 0, -10);
             ShowMessage(); DeathJudgment();
         }
 
@@ -3890,7 +3702,7 @@ namespace QisToolkit3.Forms
                 return;
 
             Item_BottledWater -= 1;
-            AutoXAddMessage("你喝一瓶饮料。", -5, 50, -1, 2, 0, 0, -1);
+            AddMessage("你喝一瓶饮料。", -5, 50, -1, 2, 0, 0, -1);
             ShowMessage(); DeathJudgment();
         }
 

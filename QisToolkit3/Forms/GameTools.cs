@@ -19,7 +19,7 @@ namespace QisToolkit3.Forms
 
         private void buttonMinecraftProjectE_Click(object sender, EventArgs e) => new MinecraftProjectE().Show();
 
-        private void button1_Click(object sender, EventArgs e) => new SurvivalChallengeGame().Show();
+        private void button1_Click(object sender, EventArgs e) => new SCG.SurvivalChallengeGame().Show();
 
         private void button1_Click_1(object sender, EventArgs e) => new StrangeFoods().Show();
 
