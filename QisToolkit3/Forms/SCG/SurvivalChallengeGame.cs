@@ -57,7 +57,7 @@ namespace QisToolkit3.Forms.SCG
             labelHunger.Text = $"饥饿值：{Hunger} / {MaxHunger}";
             labelThirsty.Text = $"口渴值：{Thirsty} / {MaxThirsty}";
 
-            labelWorkExperience.Text = World == "Main"
+            labelWorkExperience.Text = World == WorldId.Main
                 ? $"工作经验：{WorkExperience}%"
                 : $"时空回溯：{ResetCount}次";
 
@@ -74,7 +74,7 @@ namespace QisToolkit3.Forms.SCG
             labelPollution.ForeColor = Pollution >= 60 ? Color.Red : Color.Black;
 
             // 仅主世界部分
-            if (World == "Main")
+            if (World == WorldId.Main)
             {
                 bool showAsk = HAC_AskBody.Contains(true) || HAC_AskSelf.Contains(true) || HAC_AskSoul.Contains(true);
                 
@@ -166,7 +166,7 @@ namespace QisToolkit3.Forms.SCG
             Morning = !Morning;
 
             // 主界
-            if (World == "Main")
+            if (World == WorldId.Main)
             {
                 // 每天执行
                 if (Morning)
@@ -342,11 +342,11 @@ namespace QisToolkit3.Forms.SCG
             switch (World)
             {
                 // 主界
-                case "Main":
+                case WorldId.Main:
                     switch (NowDoing)
                     {
                         // 主页
-                        case "Main":
+                        case SceneId.Main:
                             switch (Id)
                             {
                                 // 去挣钱
@@ -379,22 +379,22 @@ namespace QisToolkit3.Forms.SCG
                             break;
 
                         // 买吃食
-                        case "Foods_0":
+                        case SceneId.Foods_0:
                             GF_Foods_0(Id);
                             break;
 
                         // 买吃食 2
-                        case "Foods_1":
+                        case SceneId.Foods_1:
                             GF_Foods_1(Id);
                             break;
 
                         // 去挣钱
-                        case "EarnMoney":
+                        case SceneId.EarnMoney:
                             GF_EarnMoney(Id);
                             break;
 
                         // 向世界 1（去冒险）
-                        case "TheWorld_0":
+                        case SceneId.TheWorld_0:
                             switch (Id)
                             {
                                 case 0:
@@ -423,71 +423,71 @@ namespace QisToolkit3.Forms.SCG
                             break;
 
                         // 神秘商店 1
-                        case "MysteryShop_0":
+                        case SceneId.MysteryShop_0:
                             NextBackEnable();
                             GF_MysteryShop_0(Id);
                             break;
 
                         // 神秘商店 2
-                        case "MysteryShop_1":
+                        case SceneId.MysteryShop_1:
                             NextBackEnable();
                             GF_MysteryShop_1(Id);
                             break;
 
                         // 知识区
-                        case "KnowledgeArea":
+                        case SceneId.KnowledgeArea:
                             GF_KnowledgeArea(Id);
                             break;
 
                         // 超市
-                        case "Supermarket_0":
+                        case SceneId.Supermarket_0:
                             GF_Supermarket_0(Id);
                             break;
 
                         // 超市
-                        case "Supermarket_1":
+                        case SceneId.Supermarket_1:
                             GF_Supermarket_1(Id);
                             break;
 
                         // 参拜神像
-                        case "WorshipOfGods":
+                        case SceneId.WorshipOfGods:
                             PL_WorshipOfGods(Id);
                             break;
 
                         // 神秘森林岔路口
-                        case "MysteriousForestIntersection":
+                        case SceneId.MysteriousForestIntersection:
                             PL_MysteriousForestIntersection(Id);
                             break;
 
                         // 工作房室
-                        case "WorkRoom":
+                        case SceneId.WorkRoom:
                             PL_WorkRoom(Id);
                             break;
 
                         // 森林深处
-                        case "DeepForest":
+                        case SceneId.DeepForest:
                             PL_DeepForest(Id);
                             break;
                     }
                     break;
 
                 // 时空碎块：大陆终焉
-                case "L_TheEndOfTheContinent":
+                case WorldId.L_TheEndOfTheContinent:
 
                     switch (NowDoing)
                     {
                         // 序章 0
-                        case "LTEOTC_Prologue_0_0":
+                        case SceneId.LTEOTC_Prologue_0_0:
                             PL_LTEOTC_Prologue_0(Id);
                             break;
 
                         // 序章 0-1
-                        case "LTEOTC_Prologue_0_1":
+                        case SceneId.LTEOTC_Prologue_0_1:
                             PL_LTEOTC_Prologue_0_1(Id);
                             break;
 
                         // 外城选项
-                        case "LTEOTC_OuterCityMain":
+                        case SceneId.LTEOTC_OuterCityMain:
                             PL_LTEOTC_OuterCity_Choice(Id);
                             break;
                     }
@@ -699,14 +699,14 @@ namespace QisToolkit3.Forms.SCG
         {
             if (Mode == 0)
             {
-                NowDoing = "Foods_0";
+                NowDoing = SceneId.Foods_0;
                 XSetMessage("你前往了美食街，……");
                 SetButtonTexts("购买 饺子", "购买 肉夹馍", "购买 烤玉米", "购买 柠檬水", "购买 咖啡");
                 SetButtonEnableds(Gold >= Food_Dumpling, Gold >= Food_RouJiaMo, Gold >= Food_RoastedCorn, Gold >= Food_Lemonade, Gold >= Food_Coffee);
             }
             else if (Mode == 1)
             {
-                NowDoing = "Foods_1";
+                NowDoing = SceneId.Foods_1;
                 XSetMessage("你前往了美食街，……");
                 SetButtonTexts("购买 冰淇淋", "购买 净化套餐", "购买 口渴果冻", "购买 饥饿果冻", "购买 饕餮盛宴");
                 SetButtonEnableds(Gold >= Food_Popsicle, Gold >= Food_PurificationPackage, Gold >= Food_ThirstJelly, Gold >= Food_HungerJelly, Gold >= Food_GluttonousFeast);
@@ -716,7 +716,7 @@ namespace QisToolkit3.Forms.SCG
         // 前往知识区页
         private void To_KnowledgeArea()
         {
-            NowDoing = "KnowledgeArea";
+            NowDoing = SceneId.KnowledgeArea;
             XSetMessage("你看向了“知识区”，你打算前往……");
             SetButtonTexts("权杖：图书馆", "面具：艺术馆", "书本：历史馆", "骰子：占卜馆", "镰刀：消逝馆");
             SetButtonEnableds(
@@ -733,7 +733,7 @@ namespace QisToolkit3.Forms.SCG
         {
             if (Mode == 0)
             {
-                NowDoing = "TheWorld_0";
+                NowDoing = SceneId.TheWorld_0;
                 SetMessage("你走出小镇，走向了……");
 
                 SetButtonTexts("前往医院", "前往超市", "前往问心崖", "前往神秘商店", Item_DarkBlocker ? "前往神秘森林" : "前往████");
@@ -747,7 +747,7 @@ namespace QisToolkit3.Forms.SCG
             }
             else if (Mode == 1)
             {
-                NowDoing = "TheWorld_1";
+                NowDoing = SceneId.TheWorld_1;
                 SetMessage("你走出小镇，走向了……");
 
 
@@ -764,7 +764,7 @@ namespace QisToolkit3.Forms.SCG
         {
             if (Mode == 0)
             {
-                NowDoing = "Supermarket_0";
+                NowDoing = SceneId.Supermarket_0;
                 SetMessage("你前往了超市，你准备买……");
                 SetButtonTexts("御寒服", "御焰服", "压缩饼干", "瓶装饮料", "矿泉水");
                 SetButtonEnableds(
@@ -777,7 +777,7 @@ namespace QisToolkit3.Forms.SCG
             }
             else if (Mode == 1)
             {
-                NowDoing = "Supermarket_1";
+                NowDoing = SceneId.Supermarket_1;
                 SetMessage("你走出小镇，走向了……");
                 SetButtonTexts("急救包", "解毒剂", "幸运符", "舒缓药", "暂无");
                 SetButtonEnableds(
@@ -793,7 +793,7 @@ namespace QisToolkit3.Forms.SCG
         // 前往挣钱页
         private void To_EarnMoney()
         {
-            NowDoing = "EarnMoney";
+            NowDoing = SceneId.EarnMoney;
             XSetMessage("你想要去挣大钱，……");
             SetButtonTexts("打零工", "跑外卖", "做代购", "去上班", "做开发");
             SetButtonEnableds(true, WorkExperience >= 15, WorkExperience >= 40, WorkExperience >= 80, WorkExperience >= 120);
@@ -805,13 +805,13 @@ namespace QisToolkit3.Forms.SCG
             XSetMessage("你走出小镇，走向了那片屹立在迷雾之中的神秘商店，你在迷雾之中穿行\n不知道过去了多久，你抵达了那神秘商店");
             if (Mode == 0)
             {
-                NowDoing = "MysteryShop_0";
+                NowDoing = SceneId.MysteryShop_0;
                 SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
                 SetButtonEnableds(!Item_DarkBlocker && San >= 100, San >= 200, San >= 200, San >= 50 && Gold >= 1000 && !Item_SunWaterDrop, San >= 50 && Gold >= 1000 && !Item_MoonWaterDrop);
             }
             else if (Mode == 1)
             {
-                NowDoing = "MysteryShop_1";
+                NowDoing = SceneId.MysteryShop_1;
                 SetButtonTexts("情绪项目", "呆滞项目", "强健项目", "诡异项目", "提纯项目");
                 SetButtonEnableds(San >= 100, Mood >= 100, San >= 100, Health >= 50, San >= 100 & Item_God > 0);
             }
@@ -853,7 +853,7 @@ namespace QisToolkit3.Forms.SCG
                     XSetMessage("你前往了美食街，购买了一个咖啡", 2, 30, 10, -2, -Food_Coffee);
                     break;
             }
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -894,7 +894,8 @@ namespace QisToolkit3.Forms.SCG
                     XSetMessage("你前往了美食街，购买了一整套饕餮盛宴", 500, 500, -10, 20, -Food_GluttonousFeast);
                     break;
             }
-            NowDoing = "Main";
+
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -939,7 +940,7 @@ namespace QisToolkit3.Forms.SCG
                     break;
             }
 
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -969,7 +970,8 @@ namespace QisToolkit3.Forms.SCG
                     Item_MoonWaterDrop = true;
                     break;
             }
-            NowDoing = "Main";
+
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -996,7 +998,8 @@ namespace QisToolkit3.Forms.SCG
                     ++Item_EssenceReason;
                     break;
             }
-            NowDoing = "Main";
+
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1184,7 +1187,7 @@ namespace QisToolkit3.Forms.SCG
             else
                 KnowledgeCd = 2;
 
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1214,7 +1217,8 @@ namespace QisToolkit3.Forms.SCG
                     XSetMessage("你买下了一瓶矿泉水。", 0, 0, 0, 0, -500);
                     break;
             }
-            NowDoing = "Main";
+
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1240,7 +1244,8 @@ namespace QisToolkit3.Forms.SCG
                     XSetMessage("你买下了一个舒缓药！它或许可以在关键时刻救你一命！", 0, 0, 0, 0, -1000);
                     break;
             }
-            NowDoing = "Main";
+
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1312,7 +1317,7 @@ namespace QisToolkit3.Forms.SCG
 
             SetMessage("你走出小镇，去了医院治疗。", 0, 0, 0, 0, -(count * 10), 0, count);
 
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1324,7 +1329,7 @@ namespace QisToolkit3.Forms.SCG
         // 首次进入神秘森林（参拜神像）
         private void To_WorshipOfGods()
         {
-            NowDoing = "WorshipOfGods";
+            NowDoing = SceneId.WorshipOfGods;
             if (Item_DarkBlocker)
             {
                 XSetMessage("你走出小镇，走向了神秘森林，刚入神秘森林浅处，你就看到了五尊神像。\n在五尊神像地板上写着：“供奉你最诚挚的信仰致辞，换取神明的兴趣。”\n通过再三思考，你决定供奉的神像是……");
@@ -1341,7 +1346,7 @@ namespace QisToolkit3.Forms.SCG
         // 神秘森林岔路口
         private void To_MysteriousForestIntersection()
         {
-            NowDoing = "MysteriousForestIntersection";
+            NowDoing = SceneId.MysteriousForestIntersection;
             if (Item_DarkBlocker)
             {
                 SetMessage("你走出小镇，走向了神秘森林，刚入踏入神秘森林，你就看到了五条路。\n正北，西北，东北，正西，正东。每一条路上都有写有字。");
@@ -1363,7 +1368,7 @@ namespace QisToolkit3.Forms.SCG
         // 工作房室
         private void To_WorkRoom()
         {
-            NowDoing = "WorkRoom";
+            NowDoing = SceneId.WorkRoom;
             if (Item_DarkBlocker)
             {
                 SetMessage("你走进了工作房室，入眼就是无数研究工作台，与无数的祭坛、尸体等……\n你打算制作/研究……");
@@ -1386,8 +1391,7 @@ namespace QisToolkit3.Forms.SCG
         // 森林深处
         private void To_DeepForest()
         {
-            NowDoing = "DeepForest";
-
+            NowDoing = SceneId.DeepForest;
 
             if (Item_DarkBlocker)
             {
@@ -1487,7 +1491,7 @@ namespace QisToolkit3.Forms.SCG
             }
 
             Item_God = Id + 1;
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1518,7 +1522,7 @@ namespace QisToolkit3.Forms.SCG
                         else
                             SetMessage("你看向了████，里面似乎冰火两重天，你不敢进入……");
 
-                        NowDoing = "Main";
+                        NowDoing = SceneId.Main;
                         SetButtonTexts();
                     }
                     break;
@@ -1539,7 +1543,7 @@ namespace QisToolkit3.Forms.SCG
                     comboBoxTarotCard.Enabled = temp == 22;
                     TC_Set = temp == 22;
                     TC_Wall = !(temp == 22);
-                    NowDoing = "Main";
+                    NowDoing = SceneId.Main;
                     SetButtonTexts();
                     break;
             }
@@ -1568,7 +1572,7 @@ namespace QisToolkit3.Forms.SCG
                     Item_EssenceReason -= 2; Item_PollutionJammer = true;
                     break;
             }
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1648,7 +1652,7 @@ namespace QisToolkit3.Forms.SCG
                 }
             }
 
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             SetButtonTexts();
         }
 
@@ -1662,7 +1666,7 @@ namespace QisToolkit3.Forms.SCG
                     // 通道
                     if (L_ForestGrass)
                     {
-                        SetWorld("L_TheEndOfTheContinent");
+                        SetWorld(WorldId.L_TheEndOfTheContinent);
 
                         YanName = LTEOTC_KnowYanName ? "岩" : "未知";
                         SetMessage(
@@ -1720,7 +1724,7 @@ namespace QisToolkit3.Forms.SCG
                     // 通道
                     if (R_ForestGrass)
                     {
-                        NowDoing = "R_TheEndOfTheContinent";
+                        //NowDoing = SceneId.R_TheEndOfTheContinent;
                         SetMessage(
                             "你走向了那漆黑且望不尽头的隧道，勇敢的走了进去！\n" +
                             "你每走出一步，你的脚步就变重一分……\n" +
@@ -1767,7 +1771,7 @@ namespace QisToolkit3.Forms.SCG
         {
             if (Mode == 0)
             {
-                NowDoing = "LTEOTC_Prologue_0_0";
+                NowDoing = SceneId.LTEOTC_Prologue_0_0;
                 SetButtonTexts(
                     "你是谁？",
                     "这是在哪？",
@@ -1782,7 +1786,7 @@ namespace QisToolkit3.Forms.SCG
 
             else if (Mode == 1)
             {
-                NowDoing = "LTEOTC_Prologue_0_1";
+                NowDoing = SceneId.LTEOTC_Prologue_0_1;
                 SetButtonTexts(
                     LTEOTC_KnowPrologue_0_1 ? "你受伤了吗？" : "",
                     LTEOTC_KnowPrologue_0_1 ? "接下来怎么办？" : "",
@@ -1897,7 +1901,7 @@ namespace QisToolkit3.Forms.SCG
         {
             if (Mode == 0)
             {
-                NowDoing = "LTEOTC_OuterCityMain";
+                NowDoing = SceneId.LTEOTC_OuterCityMain;
                 SetButtonTexts(
                     "前往回收站",
                     "前往地下诊所",
@@ -2455,9 +2459,9 @@ namespace QisToolkit3.Forms.SCG
 
 
 
-        private void SetWorld(string _World = "Main")
+        private void SetWorld(WorldId _World = WorldId.Main)
         {
-            if (_World == "Main")
+            if (_World == WorldId.Main)
             {
                 // 回到主世界：把副本全部弹掉
                 while (Worlds.Count > 1) Worlds.Pop();
@@ -2468,7 +2472,7 @@ namespace QisToolkit3.Forms.SCG
                 Worlds.Push(new WorldState
                 {
                     Id = _World,
-                    NowDoing = "Main",
+                    NowDoing = SceneId.Main,
                     Days = 1,
                     Gold = 3,
                     Health = 10,
@@ -2953,6 +2957,14 @@ namespace QisToolkit3.Forms.SCG
                 else
                 {
                     AddMessage($"{DeathText}");
+
+                    // 非主事件死亡触发回溯
+                    if (World != WorldId.Main)
+                    {
+                        SetWorld(World);
+                        return true;
+                    }
+                    
                     GameOver();
                     return false;
                 }
@@ -3037,28 +3049,28 @@ namespace QisToolkit3.Forms.SCG
         {
             switch (World)
             {
-                case "Main":
+                case WorldId.Main:
                     switch (NowDoing)
                     {
-                        case "Foods_0":
+                        case SceneId.Foods_0:
                             To_Foods(1);
                             break;
-                        case "MysteryShop_0":
+                        case SceneId.MysteryShop_0:
                             To_MysteryShop(1);
                             break;
-                        case "Supermarket_0":
+                        case SceneId.Supermarket_0:
                             To_Supermarket(1);
                             break;
-                        case "TheWorld_0":
+                        case SceneId.TheWorld_0:
                             To_TheWorld(1);
                             break;
                     }
                     break;
 
-                case "L_TheEndOfTheContinent":
+                case WorldId.L_TheEndOfTheContinent:
                     switch (NowDoing)
                     {
-                        case "LTEOTC_Prologue_0_0":
+                        case SceneId.LTEOTC_Prologue_0_0:
                             To_LTEOTC_Prologue_0(1);
                             break;
                     }
@@ -3073,28 +3085,28 @@ namespace QisToolkit3.Forms.SCG
         {
             switch (World)
             {
-                case "Main":
+                case WorldId.Main:
                     switch (NowDoing)
                     {
-                        case "Foods_1":
+                        case SceneId.Foods_1:
                             To_Foods(0);
                             break;
-                        case "MysteryShop_1":
+                        case SceneId.MysteryShop_1:
                             To_MysteryShop(0);
                             break;
-                        case "Supermarket_1":
+                        case SceneId.Supermarket_1:
                             To_Supermarket(0);
                             break;
-                        case "TheWorld_1":
+                        case SceneId.TheWorld_1:
                             To_TheWorld(0);
                             break;
                     }
                     break;
 
-                case "L_TheEndOfTheContinent":
+                case WorldId.L_TheEndOfTheContinent:
                     switch (NowDoing)
                     {
-                        case "LTEOTC_Prologue_0_1":
+                        case SceneId.LTEOTC_Prologue_0_1:
                             To_LTEOTC_Prologue_0(0);
                             break;
                     }
@@ -3741,7 +3753,7 @@ namespace QisToolkit3.Forms.SCG
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            NowDoing = "Main";
+            NowDoing = SceneId.Main;
             XSetMessage("你回了家……");
             SetButtonTexts();
             ReSetButtonEnableds();
@@ -3805,7 +3817,7 @@ namespace QisToolkit3.Forms.SCG
 
         private void button_OpenGameDoc_Click(object sender, EventArgs e)
         {
-            string filePath = $@"{Qi.QisToolkit3_Datas.actualDirectory}\《问身 问己 问心》游戏介绍.docx";
+            string filePath = Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "《问身 问己 问心》游戏介绍.docx");
 
             if (File.Exists(filePath))
                 Process.Start(new ProcessStartInfo
@@ -3845,7 +3857,7 @@ namespace QisToolkit3.Forms.SCG
                 $"信息：{labelMessage.Text}";
 
             Clipboard.SetText(text);
-            GameOver();
+            //GameOver();
         }
     }
 }

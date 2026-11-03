@@ -32,7 +32,7 @@ namespace QisToolkit3.Forms.SCG
         public bool[] HAC_AskSoul = new bool[3];
         public bool L_ForestGrass = false, R_ForestGrass = false;
 
-        // 时空碎块：大陆终焉剧情标记（后续可迁到 WorldState.Flags，本轮先归 global）
+        // 时空碎块：大陆终焉剧情标记
         public bool LTEOTC_KnowYanName = false;
         public bool LTEOTC_KnowPrologue_0_1 = false;
         public bool LTEOTC_KnowPrologue_KnowHowToLeave = false;
@@ -51,8 +51,8 @@ namespace QisToolkit3.Forms.SCG
     // ============ 每个世界 / 副本私有 ============
     public class WorldState
     {
-        public string Id = "Main";
-        public string NowDoing = "Main";
+        public WorldId Id = WorldId.Main;
+        public SceneId NowDoing = SceneId.Main;
         public int Days = 1, Gold = 50, Health = 100;
         public int Hunger = 60, Thirsty = 60;
         public int MaxHealth = 100, MaxHunger = 100, MaxThirsty = 100;
@@ -107,8 +107,8 @@ namespace QisToolkit3.Forms.SCG
         public static int Temperature { get => Current.Temperature; set => Current.Temperature = value; }
         public static int Friend { get => Current.Friend; set => Current.Friend = value; }
         public static bool Morning { get => Current.Morning; set => Current.Morning = value; }
-        public static string NowDoing { get => Current.NowDoing; set => Current.NowDoing = value; }
-        public static string World { get => Current.Id; set => Current.Id = value; }
+        public static WorldId World { get => Current.Id; set => Current.Id = value; }
+        public static SceneId NowDoing { get => Current.NowDoing; set => Current.NowDoing = value; }
 
         // ============ 属性包装器：全局共享（指向 Global） ============
         public static int San { get => Global.San; set => Global.San = value; }
@@ -175,5 +175,33 @@ namespace QisToolkit3.Forms.SCG
             get => Luck;
             set => Luck = Math.Clamp(value, -100, 100);
         }
+    }
+
+    public enum WorldId
+    {
+        Main,
+        L_TheEndOfTheContinent,
+    }
+
+    public enum SceneId
+    {
+        Main,
+
+        // 主世界页
+        Foods_0, Foods_1,
+        EarnMoney,
+        TheWorld_0, TheWorld_1,
+        MysteryShop_0, MysteryShop_1,
+        KnowledgeArea,
+        Supermarket_0, Supermarket_1,
+        WorshipOfGods,
+        MysteriousForestIntersection,
+        WorkRoom,
+        DeepForest,
+
+        // 时空碎块：大陆终焉
+        LTEOTC_Prologue_0_0,
+        LTEOTC_Prologue_0_1,
+        LTEOTC_OuterCityMain,
     }
 }
