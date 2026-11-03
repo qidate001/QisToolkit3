@@ -3531,7 +3531,7 @@ namespace QisToolkit3.Forms.SCG
             try
             {
                 // 导出日志
-                Directory.CreateDirectory(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs", "问身问己问心.log"));
+                Directory.CreateDirectory(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs"));
                 File.WriteAllText(Path.Combine(Qi.QisToolkit3_Datas.actualDirectory, "Logs", "问身问己问心.log"), MessageLog);
 
                 // 开发者模式自动打开日志文件
@@ -3548,6 +3548,7 @@ namespace QisToolkit3.Forms.SCG
             {
                 MessageBox.Show($"导出日志出现错误，请联系开发人员。\n报错信息：{ex.Message}\n\n完整报错：\n{ex}", "ERROR",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Err("[SCG] 导出日志出现错误！", ex);
             }
         }
 

@@ -62,6 +62,11 @@ namespace QisToolkit3.Forms.SCG
 
     public static class GameState
     {
+        static GameState()
+        {
+            Worlds.Push(new WorldState()); 
+        }
+
         // ---- 基础工具 ----
         public static readonly Random random = new Random();
         public static string SetMessageTextTemporarilyStored = string.Empty;
@@ -72,16 +77,21 @@ namespace QisToolkit3.Forms.SCG
         public static readonly Stack<WorldState> Worlds = new Stack<WorldState>();
         public static WorldState Current => Worlds.Peek();
 
-        // ---- 配置 / 常数（不随世界变） ----
+        // ---- 配置 / 常数 ----
         public static int Natural_San = 5, Natural_Mood = 10, Natural_Health = 1,
                           Natural_Hunger = 10, Natural_Thirsty = 10;
+
         public static int BasicSalary = 50, AddWorkExperienceMax = 8;
+
         public static int ExtremeColdComes = random.Next(20, 30),
                           EndOfExtremeCold = ExtremeColdComes + random.Next(10, 25);
+
         public static int ExtremeHotComes = EndOfExtremeCold + random.Next(10, 20),
                           EndOfExtremeHot = ExtremeHotComes + random.Next(10, 25);
+
         public static int Food_Dumpling = 50, Food_RouJiaMo = 40, Food_RoastedCorn = 10,
                           Food_Lemonade = 10, Food_Coffee = 30;
+
         public static int Food_Popsicle = 5, Food_PurificationPackage = 1000,
                           Food_HungerJelly = 25, Food_ThirstJelly = 25, Food_GluttonousFeast = 1000;
 
