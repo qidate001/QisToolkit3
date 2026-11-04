@@ -54,7 +54,7 @@ namespace QisToolkit3.Forms.SCG.Scenes
                             $"{YanName}：“你醒了？”\n{YanName}：“伤好点了没？”\n" +
                             $"{YanName}：“那群外城的条子真的逼烦，让我们进外城能咋的？”\n" +
                             "");
-                        Form.To_LTEOTC_Prologue_0();
+                        Form.EnterScene(SceneId.LTEOTC_Prologue_0);
                     }
                     else
                     {

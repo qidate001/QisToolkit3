@@ -200,8 +200,7 @@ namespace QisToolkit3.Forms.SCG
         DeepForest,
 
         // 时空碎块：大陆终焉
-        LTEOTC_Prologue_0_0,
-        LTEOTC_Prologue_0_1,
+        LTEOTC_Prologue_0,
         LTEOTC_OuterCityMain,
     }
 }
