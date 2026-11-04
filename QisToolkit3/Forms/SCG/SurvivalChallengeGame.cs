@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.Devices;
 using Newtonsoft.Json.Linq;
+using QisToolkit3.Forms.SCG.Scenes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static QisToolkit3.Forms.SCG.GameState;
 using static System.Formats.Asn1.AsnWriter;
 using static System.Net.Mime.MediaTypeNames;
-using static QisToolkit3.Forms.SCG.GameState;
 
 namespace QisToolkit3.Forms.SCG
 {
@@ -27,6 +28,10 @@ namespace QisToolkit3.Forms.SCG
         public SurvivalChallengeGame()
         {
             InitializeComponent();
+
+            // 注册场景
+            SceneRegistry.Register(new EarnMoneyScene(this));
+
             ShowMessage();
             TC_Read();
             TC_Show();
@@ -161,8 +166,11 @@ namespace QisToolkit3.Forms.SCG
 
         // 主函数
         private void Main()
-        { 
-             // 上下午转换
+        {
+            if (!(NowDoing == SceneId.Main || NowDoing == SceneId.LTEOTC_OuterCityMain))
+                return;
+
+            // 上下午转换
             Morning = !Morning;
 
             // 主界
@@ -255,6 +263,7 @@ namespace QisToolkit3.Forms.SCG
 
 
 
+                SetButtonTexts();
                 ReSetButtonEnableds();
                 NextBackEnable(false);
                 SetButtonOptionFont();
@@ -339,6 +348,14 @@ namespace QisToolkit3.Forms.SCG
         private void OperationAssignment(int Id)
         {
             AddLog($"选项操作跳转 ({World} | {NowDoing} | {Id})");
+
+            if (SceneRegistry.TryGet(NowDoing, out var scene))
+            {
+                scene.HandleOption(Id);
+                Main();   // 若场景切回 Main，Main() 会自动过半天 + 刷新按钮
+                return;
+            }
+
             switch (World)
             {
                 // 主界
@@ -351,7 +368,7 @@ namespace QisToolkit3.Forms.SCG
                             {
                                 // 去挣钱
                                 case 0:
-                                    To_EarnMoney();
+                                    EnterScene(SceneId.EarnMoney);
                                     break;
 
                                 // 买吃食
@@ -389,9 +406,9 @@ namespace QisToolkit3.Forms.SCG
                             break;
 
                         // 去挣钱
-                        case SceneId.EarnMoney:
-                            GF_EarnMoney(Id);
-                            break;
+                        //case SceneId.EarnMoney:
+                        //    GF_EarnMoney(Id);
+                        //    break;
 
                         // 向世界 1（去冒险）
                         case SceneId.TheWorld_0:
@@ -790,15 +807,6 @@ namespace QisToolkit3.Forms.SCG
             }
         }
 
-        // 前往挣钱页
-        private void To_EarnMoney()
-        {
-            NowDoing = SceneId.EarnMoney;
-            XSetMessage("你想要去挣大钱，……");
-            SetButtonTexts("打零工", "跑外卖", "做代购", "去上班", "做开发");
-            SetButtonEnableds(true, WorkExperience >= 15, WorkExperience >= 40, WorkExperience >= 80, WorkExperience >= 120);
-        }
-
         // 前往神秘商店页
         private void To_MysteryShop(int Mode = 0)
         {
@@ -892,51 +900,6 @@ namespace QisToolkit3.Forms.SCG
                 // 购买 饕餮盛宴
                 case 4:
                     XSetMessage("你前往了美食街，购买了一整套饕餮盛宴", 500, 500, -10, 20, -Food_GluttonousFeast);
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 去挣钱（ID 2）
-        private void GF_EarnMoney(int Id)
-        {
-            Random random = new Random();
-            int Tmp = random.Next(0, AddWorkExperienceMax); if (WorkExperience + Tmp > 150) Tmp = 150 - WorkExperience;
-            switch (Id)
-            {
-                case 0:
-                    int Temp = random.Next(30, 70);
-                    int MoodTmp = random.Next(2, 5);
-                    if (Morning) XSetMessage("你去打了一上午临工。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    else XSetMessage("你去打了一下午临工。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    break;
-
-                case 1:
-                    Temp = random.Next(40, 80);
-                    MoodTmp = random.Next(3, 6);
-                    if (Morning) XSetMessage("你去送了一上午外卖。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    else XSetMessage("你去送了一下午外卖。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    break;
-
-                case 2:
-                    Temp = random.Next(50, 100);
-                    MoodTmp = random.Next(5, 10);
-                    if (Morning) XSetMessage("你去做了一上午代购。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    else XSetMessage("你去做了一下午代购。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    break;
-
-                case 3:
-                    if (Morning) XSetMessage("你去上班上了一上午。", 0, 0, 0, -25, 250 + 250 * WorkExperience / 100, Tmp);
-                    else XSetMessage("你去上班上了一下午。", 0, 0, 0, -25, 250 + 250 * WorkExperience / 100, Tmp);
-                    break;
-
-                case 4:
-                    Temp = random.Next(-250, 1000);
-                    MoodTmp = random.Next(-25, 25);
-                    if (Morning) XSetMessage("你去做了一上午开发。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
-                    else XSetMessage("你去做了一下午开发。", 0, 0, 0, -MoodTmp, Temp + Temp * WorkExperience / 100, Tmp);
                     break;
             }
 
@@ -2490,6 +2453,13 @@ namespace QisToolkit3.Forms.SCG
             ShowMessage();
         }
 
+        public void EnterScene(SceneId id)
+        {
+            NowDoing = id;
+            if (SceneRegistry.TryGet(id, out var scene))
+                scene.Enter();
+        }
+
 
         // 每日随机事件
         private void DailyRandomEvents()
@@ -3047,6 +3017,12 @@ namespace QisToolkit3.Forms.SCG
         // 下一页
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            if (SceneRegistry.TryGet(NowDoing, out var scene))
+            {
+                scene.OnNext();
+                return;
+            }
+
             switch (World)
             {
                 case WorldId.Main:
@@ -3083,6 +3059,12 @@ namespace QisToolkit3.Forms.SCG
         // 上一页
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            if (SceneRegistry.TryGet(NowDoing, out var scene))
+            {
+                scene.OnBack();
+                return;
+            }
+
             switch (World)
             {
                 case WorldId.Main:
@@ -3277,7 +3259,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 设置信息 & 属性加减生效
-        private void XSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
+        public void XSetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
             SetMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
@@ -3285,14 +3267,14 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 添加信息 & 属性加减生效
-        private void XAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
+        public void XAddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             MessageMakeData(ref hunger, ref thirsty, ref san, ref mood, ref gold, ref workExperience, ref health, ref pollution, ref lost);
             AddMessage(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
             MessageSetData(hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
         }
 
-        private void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost = 0)
+        public void MessageSetData(int hunger, int thirsty, int san, int mood, int gold, int workExperience, int health, int pollution, int lost = 0)
         {
             Hunger += hunger;
             Thirsty += thirsty;
@@ -3312,7 +3294,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 数据加成
-        private void MessageMakeData(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution, ref int lost)
+        public void MessageMakeData(ref int hunger, ref int thirsty, ref int san, ref int mood, ref int gold, ref int workExperience, ref int health, ref int pollution, ref int lost)
         {
             // San 获取公式
             san *= (100 - pollution) / 100;
@@ -3338,13 +3320,13 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 判断事件类型的方法
-        private bool IsGoodEvent(int eventType)
+        public bool IsGoodEvent(int eventType)
         {
             int[] goodEvents = { 3, 7, 9, 11, 15, 22, 25, 26, 28, 32 };
             return goodEvents.Contains(eventType);
         }
 
-        private bool IsBadEvent(int eventType)
+        public bool IsBadEvent(int eventType)
         {
             int[] badEvents = { 1, 2, 4, 5, 8, 10, 12, 27, 30, 31 };
             return badEvents.Contains(eventType);
@@ -3363,7 +3345,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 获取好事件
-        private int GetGoodEvent(Random random)
+        public int GetGoodEvent(Random random)
         {
             int[] goodEvents = { 3, 7, 9, 11, 15, 22, 25, 26, 28, 32, 34, 35 };
             return goodEvents[random.Next(goodEvents.Length)];
@@ -3439,14 +3421,14 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 上下页按钮启用
-        private void NextBackEnable(bool enab = true)
+        public void NextBackEnable(bool enab = true)
         {
             buttonNext.Enabled = enab;
             buttonBack.Enabled = enab;
         }
 
         // 按钮字体大小编辑启用
-        private void SetButtonOptionFont(Single FontSize0 = 33F, Single FontSize1 = 33F, Single FontSize2 = 33F, Single FontSize3 = 33F, Single FontSize4 = 33F)
+        public void SetButtonOptionFont(Single FontSize0 = 33F, Single FontSize1 = 33F, Single FontSize2 = 33F, Single FontSize3 = 33F, Single FontSize4 = 33F)
         {
             buttonOption0.Font = new System.Drawing.Font("Microsoft Sans Serif", FontSize0, FontStyle.Bold);
             buttonOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", FontSize1, FontStyle.Bold);
@@ -3456,7 +3438,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 设置按钮文本
-        private void SetButtonTexts(string bt0 = "去挣钱", string bt1 = "美食街", string bt2 = "知识区", string bt3 = "出去玩", string bt4 = "去冒险")
+        public void SetButtonTexts(string bt0 = "去挣钱", string bt1 = "美食街", string bt2 = "知识区", string bt3 = "出去玩", string bt4 = "去冒险")
         {
             buttonOption0.Text = bt0;
             buttonOption1.Text = bt1;
@@ -3466,7 +3448,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 设置按钮启用
-        private void SetButtonEnableds(bool bt0 = true, bool bt1 = true, bool bt2 = true, bool bt3 = true, bool bt4 = true)
+        public void SetButtonEnableds(bool bt0 = true, bool bt1 = true, bool bt2 = true, bool bt3 = true, bool bt4 = true)
         {
             buttonOption0.Enabled = bt0;
             buttonOption1.Enabled = bt1;
@@ -3478,7 +3460,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 设置按钮启用颜色
-        private void SetButtonEnabledsColor(bool bt0, bool bt1, bool bt2, bool bt3, bool bt4)
+        public void SetButtonEnabledsColor(bool bt0, bool bt1, bool bt2, bool bt3, bool bt4)
         {
             buttonOption0.BackColor = bt0 ? Color.White : Color.Gainsboro;
             buttonOption1.BackColor = bt1 ? Color.White : Color.Gainsboro;
@@ -3560,7 +3542,7 @@ namespace QisToolkit3.Forms.SCG
             {
                 MessageBox.Show($"导出日志出现错误，请联系开发人员。\n报错信息：{ex.Message}\n\n完整报错：\n{ex}", "ERROR",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Log.Err("[SCG] 导出日志出现错误！", ex);
+                Log.Err("[SurvivalChallengeGame] 导出日志出现错误！", ex);
             }
         }
 
