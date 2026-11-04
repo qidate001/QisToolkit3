@@ -70,7 +70,7 @@ namespace QisToolkit3.Forms.SCG
         // ---- 基础工具 ----
         public static readonly Random random = new Random();
         public static string SetMessageTextTemporarilyStored = string.Empty;
-        public static bool DeBugMode = false, DeBug_2Gold = false;
+        public static bool DeBugMode = true, DeBug_2Gold = false;
 
         // ---- 状态容器 ----
         public static GlobalState Global = new GlobalState();
@@ -188,12 +188,12 @@ namespace QisToolkit3.Forms.SCG
         Main,
 
         // 主世界页
-        Foods_0, Foods_1,
+        Foods,
         EarnMoney,
-        TheWorld_0, TheWorld_1,
-        MysteryShop_0, MysteryShop_1,
+        TheWorld,
+        MysteryShop, MysteryShop_1,
         KnowledgeArea,
-        Supermarket_0, Supermarket_1,
+        Supermarket,
         WorshipOfGods,
         MysteriousForestIntersection,
         WorkRoom,

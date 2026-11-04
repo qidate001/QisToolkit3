@@ -32,9 +32,10 @@ namespace QisToolkit3.Forms.SCG
             // 注册场景
             SceneRegistry.Register(new MainMenuScene(this));
             SceneRegistry.Register(new EarnMoneyScene(this));
-
-            FoodStreetScene food = new FoodStreetScene(this);
-            SceneRegistry.Register(food, SceneId.Foods_1);   // 同一实例注册两个 id
+            SceneRegistry.Register(new KnowledgeAreaScene(this));
+            SceneRegistry.Register(new FoodsScene(this));
+            SceneRegistry.Register(new TheWorldScene(this));
+            SceneRegistry.Register(new SupermarketScene(this));
 
             ShowMessage();
             TC_Read();
@@ -52,6 +53,8 @@ namespace QisToolkit3.Forms.SCG
 
         public void ReSetButtonEnableds() =>
             SetButtonEnableds(true, Gold >= 5, KnowledgeCd <= 0, Gold >= 50, Days >= 10);
+        public int DifficultyValue => trackBarDifficulty.Value;
+        public string CurrentTarot => comboBoxTarotCard.Text;
 
         private void ShowMessage()
         {
@@ -367,37 +370,8 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        // 向世界 1（去冒险）
-                        case SceneId.TheWorld_0:
-                            switch (Id)
-                            {
-                                case 0:
-                                    GF_Hospital();
-                                    break;
-
-                                case 1:
-                                    NextBackEnable();
-                                    To_Supermarket();
-                                    break;
-
-                                case 2:
-                                    PL_HeartAskingCliff();
-                                    break;
-
-                                case 3:
-                                    NextBackEnable();
-                                    To_MysteryShop();
-                                    break;
-
-                                case 4:
-                                    if (Item_God == 0) To_WorshipOfGods();
-                                    else To_MysteriousForestIntersection();
-                                    break;
-                            }
-                            break;
-
                         // 神秘商店 1
-                        case SceneId.MysteryShop_0:
+                        case SceneId.MysteryShop:
                             NextBackEnable();
                             GF_MysteryShop_0(Id);
                             break;
@@ -406,21 +380,6 @@ namespace QisToolkit3.Forms.SCG
                         case SceneId.MysteryShop_1:
                             NextBackEnable();
                             GF_MysteryShop_1(Id);
-                            break;
-
-                        // 知识区
-                        case SceneId.KnowledgeArea:
-                            GF_KnowledgeArea(Id);
-                            break;
-
-                        // 超市
-                        case SceneId.Supermarket_0:
-                            GF_Supermarket_0(Id);
-                            break;
-
-                        // 超市
-                        case SceneId.Supermarket_1:
-                            GF_Supermarket_1(Id);
                             break;
 
                         // 参拜神像
@@ -668,90 +627,13 @@ namespace QisToolkit3.Forms.SCG
 
         #region 通用功能前往
 
-        // 前往知识区页
-        public void To_KnowledgeArea()
-        {
-            NowDoing = SceneId.KnowledgeArea;
-            XSetMessage("你看向了“知识区”，你打算前往……");
-            SetButtonTexts("权杖：图书馆", "面具：艺术馆", "书本：历史馆", "骰子：占卜馆", "镰刀：消逝馆");
-            SetButtonEnableds(
-                Item_God == 0 || Item_God == 4,
-                Item_God == 0 || Item_God == 1 || Item_God == 2,
-                Item_God == 0 || Item_God == 5,
-                Item_God == 0 || Item_God == 2 || Item_God == 1,
-                Item_God == 0 || Item_God == 3
-            );
-        }
-
-        // 前往区冒险页（向世界页）
-        public void To_TheWorld(int Mode = 0)
-        {
-            if (Mode == 0)
-            {
-                NowDoing = SceneId.TheWorld_0;
-                SetMessage("你走出小镇，走向了……");
-
-                SetButtonTexts("前往医院", "前往超市", "前往问心崖", "前往神秘商店", Item_DarkBlocker ? "前往神秘森林" : "前往████");
-                SetButtonEnableds(Gold >= 100, Gold >= 500, true, San >= 50, San <= 50 && Days < 50 && Item_God == 0 || Item_God > 0);
-                /*
-                 * 无神赐物品神秘森林进入条件：
-                 * 理智 <= 50
-                 * 天数 < 50
-                 * 无神赐道具
-                 */
-            }
-            else if (Mode == 1)
-            {
-                NowDoing = SceneId.TheWorld_1;
-                SetMessage("你走出小镇，走向了……");
-
-
-                if (Item_DarkBlocker)
-                    SetButtonTexts("前往████", "前往████", "前往████", "前往████", "前往████");
-                else
-                    SetButtonTexts("前往海滩", "待定", "待定", "待定", "待定");
-                SetButtonEnableds(false, false, false, false, false);
-            }
-        }
-
-        // 前往超市页
-        private void To_Supermarket(int Mode = 0)
-        {
-            if (Mode == 0)
-            {
-                NowDoing = SceneId.Supermarket_0;
-                SetMessage("你前往了超市，你准备买……");
-                SetButtonTexts("御寒服", "御焰服", "压缩饼干", "瓶装饮料", "矿泉水");
-                SetButtonEnableds(
-                    Gold >= 500 && Item_WinterClothing == 0,
-                    Gold >= 500 && Item_SummerClothing == 0,
-                    Gold >= 500,
-                    Gold >= 500,
-                    Gold >= 500
-                );
-            }
-            else if (Mode == 1)
-            {
-                NowDoing = SceneId.Supermarket_1;
-                SetMessage("你走出小镇，走向了……");
-                SetButtonTexts("急救包", "解毒剂", "幸运符", "舒缓药", "暂无");
-                SetButtonEnableds(
-                    Gold >= 1000 && !Item_FirstAidKit,
-                    Gold >= 1000 && !Item_Antidote,
-                    Gold >= 1000 && !Item_LuckyCharm,
-                    Gold >= 1000 && !Item_SoothingMedicine,
-                    false
-                );
-            }
-        }
-
         // 前往神秘商店页
-        private void To_MysteryShop(int Mode = 0)
+        public void To_MysteryShop(int Mode = 0)
         {
             XSetMessage("你走出小镇，走向了那片屹立在迷雾之中的神秘商店，你在迷雾之中穿行\n不知道过去了多久，你抵达了那神秘商店");
             if (Mode == 0)
             {
-                NowDoing = SceneId.MysteryShop_0;
+                NowDoing = SceneId.MysteryShop;
                 SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
                 SetButtonEnableds(!Item_DarkBlocker && San >= 100, San >= 200, San >= 200, San >= 50 && Gold >= 1000 && !Item_SunWaterDrop, San >= 50 && Gold >= 1000 && !Item_MoonWaterDrop);
             }
@@ -827,331 +709,13 @@ namespace QisToolkit3.Forms.SCG
             SetButtonTexts();
         }
 
-        // 知识区（ID 5）
-        private void GF_KnowledgeArea(int Id)
-        {
-            int Tmp;
-            switch (Id)
-            {
-
-                // 图书馆（秩序）
-                case 0:
-                    if (Item_God == 0)
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Morning)
-                            XSetMessage("你前往了图书馆，你在里面看了一上午，沉浸在知识的海洋", 0, 0, Tmp);
-                        else
-                            XSetMessage("你前往了图书馆，你在里面看了一下午，沉浸在知识的海洋", 0, 0, Tmp);
-                    }
-                    else if (Item_God == 4)
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Item_DarkBlocker)
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了图书馆，你在里面看了一上午，享受着秩序的光辉", 0, 0, Tmp + 10);
-                            else
-                                XSetMessage("你前往了图书馆，你在里面看了一下午，享受着秩序的光辉", 0, 0, Tmp + 10);
-                        }
-                        else
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了图书馆，你在里面看了一上午，享受着██的光辉", 0, 0, Tmp + 10);
-                            else
-                                XSetMessage("你前往了图书馆，你在里面看了一下午，享受着██的光辉", 0, 0, Tmp + 10);
-                        }
-                    }
-                    else
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Item_DarkBlocker)
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了图书馆，你在里面看了一上午，但同样秩序的存在让你很不舒服", 0, 0, Tmp - 10);
-                            else
-                                XSetMessage("你前往了图书馆，你在里面看了一下午，但同样秩序的存在让你很不舒服", 0, 0, Tmp - 10);
-                        }
-                        else
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了图书馆，你在里面看了一上午，但同样██的存在让你很不舒服", 0, 0, Tmp - 10);
-                            else
-                                XSetMessage("你前往了图书馆，你在里面看了一下午，但同样██的存在让你很不舒服", 0, 0, Tmp - 10);
-                        }
-                    }
-                    break;
-
-                // 艺术馆（欺诈）
-                case 1:
-                    if (Item_God == 0)
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Morning)
-                            XSetMessage("你前往了艺术馆，你在里面看了一上午，沉浸在艺术之美中", 0, 0, Tmp);
-                        else
-                            XSetMessage("你前往了艺术馆，你在里面看了一下午，沉浸在艺术之美中", 0, 0, Tmp);
-                    }
-                    else if (Item_God == 1 || Item_God == 2)
-                    {
-                        Tmp = new Random().Next(1, 50);
-                        if (Item_DarkBlocker)
-                            XSetMessage("你前往了艺术馆，你仿佛进入了那传说中的嬉笑之潮。\n在那更深层的虚空之中，无数的“镜子”呈现出无尽的抽象", 0, 0, Tmp);
-                        else
-                            XSetMessage("你前往了艺术馆，你仿佛进入了那传说中的████。\n在那更深层的██之中，无数的“██”呈现出█████", 0, 0, Tmp);
-                    }
-                    else
-                    {
-                        Tmp = new Random().Next(-15, 15);
-                        if (Item_DarkBlocker)
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了艺术馆，你在里面看了一上午，你仿佛感受到无数双嬉笑的面孔正盯着你", 0, 0, Tmp);
-                            else
-                                XSetMessage("你前往了艺术馆，你在里面看了一下午，你仿佛感受到无数双嬉笑的面孔正盯着你", 0, 0, Tmp);
-                        }
-                        else
-                        {
-                            if (Morning)
-                                XSetMessage("你前往了艺术馆，你在里面看了一上午，你仿佛感受到████████正盯着你", 0, 0, Tmp);
-                            else
-                                XSetMessage("你前往了艺术馆，你在里面看了一下午，你仿佛感受到████████正盯着你", 0, 0, Tmp);
-                        }
-                    }
-                    break;
-
-                // 历史馆（记忆）
-                case 2:
-                    if (Item_God == 0)
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Morning)
-                            XSetMessage("你前往了历史馆，你在里面看了一上午，沉浸在对历史的惊叹之中", 0, 0, Tmp);
-                        else
-                            XSetMessage("你前往了历史馆，你在里面看了一下午，沉浸在对历史的惊叹之中", 0, 0, Tmp);
-                    }
-                    else if (Item_God == 5)
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Item_DarkBlocker)
-                            XSetMessage("你前往了历史馆，你仿佛进入了那传说中的记忆神殿。\n在那被时间长河与嬉笑之潮包围，充满无量知识的神圣大殿", 0, 0, Tmp + 10);
-                        else
-                            XSetMessage("你前往了历史馆，你仿佛进入了那传说中的████。\n在那被████与████包围，充满████的████", 0, 0, Tmp + 10);
-                    }
-                    else
-                    {
-                        Tmp = new Random().Next(15, 35);
-                        if (Morning)
-                            XSetMessage("你前往了历史馆，你在里面看了一上午，你仿佛感受到那些历史活了过来，正盯着你", 0, 0, Tmp - 10);
-                        else
-                            XSetMessage("你前往了历史馆，你在里面看了一下午，你仿佛感受到那些历史活了过来，正盯着你", 0, 0, Tmp - 10);
-                    }
-                    break;
-
-                // 占卜馆（命运）
-                case 3:
-                    if (Item_God != 1 && Item_God != 2)
-                    {
-                        string StrTmp = "暂无预言";
-                        if (Days < 10) StrTmp = (10 - Days) + " 天之后世界将大变。";
-                        else if (Days >= 10 && Days < ExtremeColdComes) StrTmp = "天启之相，伴 " + (ExtremeColdComes - Days) + " 日后极寒降临。";
-                        else if (Days >= EndOfExtremeCold && Days < ExtremeHotComes) StrTmp = "戮地之相，伴 " + (ExtremeHotComes - Days) + " 日后极热降临。";
-
-                        if (Morning)
-                            XSetMessage("你前往了占卜馆，上面写着：“" + StrTmp + "”\n当你回过神之时，上午已经过去了", 0, 0, 1);
-                        else
-                            XSetMessage("你前往了占卜馆，上面写着：“" + StrTmp + "”\n当你回过神之时，下午已经过去了", 0, 0, 1);
-                    }
-                    else if (Item_God == 1 || Item_God == 2)
-                    {
-                        Tmp = new Random().Next(15, 45);
-                        if (Item_DarkBlocker)
-                            XSetMessage("你前往了占卜馆，你仿佛看到了那传说中的命运神轮。\n祂坐在神轮前，执掌着万千生命的命与运", 0, 0, Tmp + 10);
-                        else
-                            XSetMessage("你前往了占卜馆，你仿佛看到了那传说中的████。\n█████前，██着████的█与█", 0, 0, Tmp + 10);
-                    }
-                    else
-                    {
-                        if (Item_DarkBlocker)
-                            XSetMessage("你前往了占卜馆，但很明显祂不想见你，上来就给你了一个闭门羹", 0, 0, -1, -10);
-                        else
-                            XSetMessage("你前往了占卜馆，但很明显█不想见你，上来就给你了一个闭门羹", 0, 0, -1, -10);
-                    }
-                    break;
-
-                // 消逝馆（死亡）
-                case 4:
-                    if (Item_God == 0)
-                    {
-                        if (Morning)
-                            XSetMessage("你前往了消逝馆，你在里面看了一上午，懵了一上午", 0, 0, 5);
-                        else
-                            XSetMessage("你前往了消逝馆，你在里面看了一下午，懵了一下午", 0, 0, 5);
-                    }
-                    else if (Item_God == 3)
-                    {
-                        if (Item_DarkBlocker)
-                            XSetMessage("你前往了消逝馆，你仿佛踏上了那传说中的死亡骨阶。\n在那不可承载一切生命，你仿佛看到自己就是一副骨架，踏上面见祂的骨阶", 0, 0, 15);
-                        else
-                            XSetMessage("你前往了消逝馆，你仿佛踏上了那传说中的████。\n在那不可██████，你仿佛看到自己就是████，踏上面见█的██", 0, 0, 15);
-                    }
-                    else
-                    {
-                        Tmp = new Random().Next(-10, 2);
-                        if (Morning)
-                            XSetMessage("你前往了历史馆，你在里面看了一上午，在那里充斥着浓郁的死亡气息，令你汗毛直竖", 0, 0, Tmp);
-                        else
-                            XSetMessage("你前往了历史馆，你在里面看了一下午，在那里充斥着浓郁的死亡气息，令你汗毛直竖", 0, 0, Tmp);
-                    }
-                    break;
-            }
-
-            if (Item_God == 0)
-                KnowledgeCd = 1;
-            else
-                KnowledgeCd = 2;
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 超市（ID 7）
-        private void GF_Supermarket_0(int Id)
-        {
-            switch (Id)
-            {
-                case 0:
-                    Item_WinterClothing = 1;
-                    XSetMessage("你买下了一个御寒服！你现在可以抵御基础低温了。", 0, 0, 0, 0, -500);
-                    break;
-                case 1:
-                    Item_SummerClothing = 1;
-                    XSetMessage("你买下了一个御焰服！你现在可以抵御基础高温了。", 0, 0, 0, 0, -500);
-                    break;
-                case 2:
-                    Item_CompressedBiscuit += 1;
-                    XSetMessage("你买下了一块压缩饼干。", 0, 0, 0, 0, -500);
-                    break;
-                case 3:
-                    Item_BottledBeverage += 1;
-                    XSetMessage("你买下了一瓶瓶装饮料。", 0, 0, 0, 0, -500);
-                    break;
-                case 4:
-                    Item_BottledWater += 1;
-                    XSetMessage("你买下了一瓶矿泉水。", 0, 0, 0, 0, -500);
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 超市（ID 77）
-        private void GF_Supermarket_1(int Id)
-        {
-            switch (Id)
-            {
-                case 0:
-                    Item_FirstAidKit = true;
-                    XSetMessage("你买下了一个急救包！它或许可以在关键时刻救你一命！", 0, 0, 0, 0, -1000);
-                    break;
-                case 1:
-                    Item_Antidote = true;
-                    XSetMessage("你买下了一个解毒剂！它或许可以在关键时刻救你一命！", 0, 0, 0, 0, -1000);
-                    break;
-                case 2:
-                    Item_LuckyCharm = true;
-                    XSetMessage("你买下了一个幸运符！它或许可以在关键时刻救你一命！", 0, 0, 0, 0, -1000);
-                    break;
-                case 3:
-                    Item_SoothingMedicine = true;
-                    XSetMessage("你买下了一个舒缓药！它或许可以在关键时刻救你一命！", 0, 0, 0, 0, -1000);
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 出去玩（ID 0-3）
-        public void GF_GoOutAndPlay()
-        {
-            Random random_GOAP = new Random();
-            int TmpType = random_GOAP.Next(0, 10); // 用于随机是出去玩类型
-            int TmpGold = random_GOAP.Next(25, 75); // 非简单难度的花费
-            int TmpGetMood = random_GOAP.Next(15, 35); // 加的心情
-            if (Friend > 0 && Gold >= 75 || Friend > 0 && trackBarDifficulty.Value == 0)
-            {
-                if (TmpType <= 7 || comboBoxTarotCard.Text == "皇后" || comboBoxTarotCard.Text == "战车")
-                {
-                    if (trackBarDifficulty.Value != 0)
-                        XSetMessage("你与朋友一起出去玩了！", 0, 0, -1, TmpGetMood, -TmpGold);
-                    else
-                        XSetMessage("你与朋友一起出去玩了！", 0, 0, -1, TmpGetMood);
-                }
-                else if (TmpType == 8)
-                {
-                    if (trackBarDifficulty.Value != 0)
-                        XSetMessage("你与朋友一起出去玩了！", 0, 0, -1, TmpGetMood, -TmpGold);
-                    else
-                        XSetMessage("你与朋友一起出去玩了！中途结交到一个新朋友", 0, 0, -1, TmpGetMood + 20);
-                    ++Friend;
-                }
-                else if (TmpType == 9)
-                {
-                    if (trackBarDifficulty.Value != 0)
-                        XSetMessage("你与朋友一起出去玩了！结果与朋友闹矛盾绝交了！", 0, 0, -5, -30, -TmpGold, -5);
-                    else
-                        XSetMessage("你与朋友一起出去玩了！结果与朋友闹矛盾绝交了！", 0, 0, -5, -30, -15, -5);
-                    --Friend;
-                }
-            }
-            else
-            {
-                if (TmpType <= 7 || comboBoxTarotCard.Text == "皇后" || comboBoxTarotCard.Text == "战车")
-                {
-                    if (trackBarDifficulty.Value != 0)
-                        XSetMessage("你自己出去玩了！", 0, 0, 0, TmpGetMood - 5, -TmpGold);
-                    else
-                        XSetMessage("你自己出去玩了！", 0, 0, 0, TmpGetMood - 5);
-                }
-                else if (TmpType >= 8 && TmpType <= 9)
-                {
-                    if (trackBarDifficulty.Value != 0)
-                        XSetMessage("你与朋友一起出去玩了！中途结交到一个新朋友", 0, 0, 0, TmpGetMood + 25, -TmpGold);
-                    else
-                        XSetMessage("你与朋友一起出去玩了！中途结交到一个新朋友", 0, 0, 0, TmpGetMood + 25);
-                    ++Friend;
-                }
-            }
-        }
-
-        // 医院（ID 3-1）
-        private void GF_Hospital()
-        {
-            int count = 0;
-            while (Health < 100 && Gold > 10)
-            {
-                Health += 1;
-                Gold -= 10;
-
-                ++count;
-            }
-
-
-            SetMessage("你走出小镇，去了医院治疗。", 0, 0, 0, 0, -(count * 10), 0, count);
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
         #endregion
 
 
         #region 主线前往
 
         // 首次进入神秘森林（参拜神像）
-        private void To_WorshipOfGods()
+        public void To_WorshipOfGods()
         {
             NowDoing = SceneId.WorshipOfGods;
             if (Item_DarkBlocker)
@@ -1168,7 +732,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 神秘森林岔路口
-        private void To_MysteriousForestIntersection()
+        public void To_MysteriousForestIntersection()
         {
             NowDoing = SceneId.MysteriousForestIntersection;
             if (Item_DarkBlocker)
@@ -1401,7 +965,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 主线 问心崖
-        private void PL_HeartAskingCliff()
+        public void PL_HeartAskingCliff()
         {
             if (!HAC_AskBody[0] || !HAC_AskBody[1] || !HAC_AskBody[2])
             {
@@ -2889,14 +2453,8 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        case SceneId.MysteryShop_0:
+                        case SceneId.MysteryShop:
                             To_MysteryShop(1);
-                            break;
-                        case SceneId.Supermarket_0:
-                            To_Supermarket(1);
-                            break;
-                        case SceneId.TheWorld_0:
-                            To_TheWorld(1);
                             break;
                     }
                     break;
@@ -2930,12 +2488,6 @@ namespace QisToolkit3.Forms.SCG
                     {
                         case SceneId.MysteryShop_1:
                             To_MysteryShop(0);
-                            break;
-                        case SceneId.Supermarket_1:
-                            To_Supermarket(0);
-                            break;
-                        case SceneId.TheWorld_1:
-                            To_TheWorld(0);
                             break;
                     }
                     break;
@@ -3002,7 +2554,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 添加信息
-        private void AddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
+        public void AddMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
 
@@ -3027,7 +2579,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 设置信息
-        private void SetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
+        public void SetMessage(string message, int hunger = 0, int thirsty = 0, int san = 0, int mood = 0, int gold = 0, int workExperience = 0, int health = 0, int pollution = 0, int lost = 0)
         {
             string Str = MessageMain(message, hunger, thirsty, san, mood, gold, workExperience, health, pollution, lost);
 

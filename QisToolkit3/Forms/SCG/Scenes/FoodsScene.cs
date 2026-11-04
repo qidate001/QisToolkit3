@@ -2,18 +2,17 @@
 
 namespace QisToolkit3.Forms.SCG.Scenes
 {
-    public class FoodStreetScene : SceneBase
+    public class FoodsScene : SceneBase
     {
         private int _page = 0;
 
-        public FoodStreetScene(SurvivalChallengeGame form) : base(form) { }
+        public FoodsScene(SurvivalChallengeGame form) : base(form) { }
 
-        public override SceneId Id => _page == 0 ? SceneId.Foods_0 : SceneId.Foods_1;
+        public override SceneId Id => SceneId.Foods;
 
         public override void Enter()
         {
             _page = 0;
-            NowDoing = Id;
             Form.NextBackEnable(true);
             Render();
         }
@@ -21,14 +20,12 @@ namespace QisToolkit3.Forms.SCG.Scenes
         public override void OnNext()
         {
             _page = 1;
-            NowDoing = Id;
             Render();
         }
 
         public override void OnBack()
         {
             _page = 0;
-            NowDoing = Id;
             Render();
         }
 
