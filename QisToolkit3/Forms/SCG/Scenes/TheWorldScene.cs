@@ -78,8 +78,8 @@ namespace QisToolkit3.Forms.SCG.Scenes
                     Form.EnterScene(SceneId.MysteryShop);
                     break;
                 case 4:
-                    if (Item_God == 0) Form.To_WorshipOfGods();
-                    else Form.To_MysteriousForestIntersection();
+                    if (Item_God == 0) Form.EnterScene(SceneId.WorshipOfGods);
+                    else Form.EnterScene(SceneId.MysteriousForestIntersection);
                     break;
             }
         }

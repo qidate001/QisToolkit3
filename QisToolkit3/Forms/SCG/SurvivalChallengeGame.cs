@@ -37,6 +37,10 @@ namespace QisToolkit3.Forms.SCG
             SceneRegistry.Register(new TheWorldScene(this));
             SceneRegistry.Register(new SupermarketScene(this));
             SceneRegistry.Register(new MysteryShopScene(this));
+            SceneRegistry.Register(new WorshipOfGodsScene(this));
+            SceneRegistry.Register(new WorkRoomScene(this));
+            SceneRegistry.Register(new MysteriousForestIntersectionScene(this));
+            SceneRegistry.Register(new DeepForestScene(this));
 
             ShowMessage();
             TC_Read();
@@ -54,7 +58,11 @@ namespace QisToolkit3.Forms.SCG
 
         public void ReSetButtonEnableds() =>
             SetButtonEnableds(true, Gold >= 5, KnowledgeCd <= 0, Gold >= 50, Days >= 10);
+
+        public void TarotCardEnabled(bool enabled) => comboBoxTarotCard.Enabled = enabled;
+
         public int DifficultyValue => trackBarDifficulty.Value;
+
         public string CurrentTarot => comboBoxTarotCard.Text;
 
         private void ShowMessage()
@@ -367,32 +375,6 @@ namespace QisToolkit3.Forms.SCG
 
             switch (World)
             {
-                // 主界
-                case WorldId.Main:
-                    switch (NowDoing)
-                    {
-                        // 参拜神像
-                        case SceneId.WorshipOfGods:
-                            PL_WorshipOfGods(Id);
-                            break;
-
-                        // 神秘森林岔路口
-                        case SceneId.MysteriousForestIntersection:
-                            PL_MysteriousForestIntersection(Id);
-                            break;
-
-                        // 工作房室
-                        case SceneId.WorkRoom:
-                            PL_WorkRoom(Id);
-                            break;
-
-                        // 森林深处
-                        case SceneId.DeepForest:
-                            PL_DeepForest(Id);
-                            break;
-                    }
-                    break;
-
                 // 时空碎块：大陆终焉
                 case WorldId.L_TheEndOfTheContinent:
 
@@ -614,257 +596,6 @@ namespace QisToolkit3.Forms.SCG
         #endregion
 
 
-        #region 主线前往
-
-        // 首次进入神秘森林（参拜神像）
-        public void To_WorshipOfGods()
-        {
-            NowDoing = SceneId.WorshipOfGods;
-            if (Item_DarkBlocker)
-            {
-                XSetMessage("你走出小镇，走向了神秘森林，刚入神秘森林浅处，你就看到了五尊神像。\n在五尊神像地板上写着：“供奉你最诚挚的信仰致辞，换取神明的兴趣。”\n通过再三思考，你决定供奉的神像是……");
-                SetButtonTexts("欺诈之神", "命运之神", "死亡之神", "秩序之神", "记忆之神");
-            }
-            else
-            {
-                XSetMessage("你走出小镇，走向了████，刚入██████，你就看到了████。\n在██████上写着：“████████████████████”\n通过再三思考，你决定██的██是……");
-                SetButtonTexts("████", "████", "████", "████", "████");
-            }
-            SetButtonEnableds(Item_God == 0 || Item_God == 1, Item_God == 0 || Item_God == 2, Item_God == 0 || Item_God == 3, Item_God == 0 || Item_God == 4, Item_God == 0 || Item_God == 5);
-        }
-
-        // 神秘森林岔路口
-        public void To_MysteriousForestIntersection()
-        {
-            NowDoing = SceneId.MysteriousForestIntersection;
-            if (Item_DarkBlocker)
-            {
-                SetMessage("你走出小镇，走向了神秘森林，刚入踏入神秘森林，你就看到了五条路。\n正北，西北，东北，正西，正东。每一条路上都有写有字。");
-                if (Item_God == 0) SetButtonTexts("正北神像祭坛", "西北时光之地", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-                else if (Item_God == 1) SetButtonTexts("正北神像祭坛", "西北嬉笑之潮", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-                else if (Item_God == 2) SetButtonTexts("正北神像祭坛", "西北命运长廊", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-                else if (Item_God == 3) SetButtonTexts("正北神像祭坛", "西北死亡尸海", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-                else if (Item_God == 4) SetButtonTexts("正北神像祭坛", "西北天锁地牢", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-                else if (Item_God == 5) SetButtonTexts("正北神像祭坛", "西北历史神殿", "东北森林深处", "正西工作房室", "正东塔罗牌墙");
-            }
-            else
-            {
-                SetMessage("你走出小镇，走向了████，刚入踏入████，你就看到了███。\n正北，西北，东北，正西，正东。████上都有███。");
-                SetButtonTexts("正北████", "西北████", "东北████", "正西████", "正东████");
-            }
-            SetButtonEnableds(true, false, Item_WinterClothing >= 2 && Item_SummerClothing >= 2, San > 10, comboBoxTarotCard.Text != string.Empty && TC_Wall);
-        }
-
-        // 工作房室
-        private void To_WorkRoom()
-        {
-            NowDoing = SceneId.WorkRoom;
-            if (Item_DarkBlocker)
-            {
-                SetMessage("你走进了工作房室，入眼就是无数研究工作台，与无数的祭坛、尸体等……\n你打算制作/研究……");
-                SetButtonTexts("太阳·御寒服", "月亮·御焰服", "污染干扰器", "暂无", "暂无");
-            }
-            else
-            {
-                SetMessage("你走进了████，入眼就是无数█████，与无数的██、██等……\n你打算██/██……");
-                SetButtonTexts("██████", "██████", "█████", "暂无", "暂无");
-            }
-            SetButtonEnableds(
-                Item_SunWaterDrop && Item_WinterClothing == 1,
-                Item_MoonWaterDrop && Item_SummerClothing == 1,
-                Item_EssenceReason >= 2 && Gold >= 2000 && !Item_PollutionJammer,
-                false,
-                false
-            );
-        }
-
-        // 森林深处
-        private void To_DeepForest()
-        {
-            NowDoing = SceneId.DeepForest;
-
-            if (Item_DarkBlocker)
-            {
-                SetMessage("你走进了丛林深处，左右两边仿佛仿佛一边是山火，一边是冰川，\n但你凭借着 太阳·御寒服 与 月亮·御焰服 安然走过。\n" +
-                           "深处的尽头是一块石板与两个大理石柱子，石板上面刻着两个字——「高塔」");
-                SetButtonTexts(L_ForestGrass ? "左通道" : "左草丛", "左大理石柱子", "石板", "右大理石柱子", R_ForestGrass ? "右通道" : "右草丛");
-                SetButtonEnableds();
-            }
-            else
-            {
-                SetMessage("你走进了████，████仿佛仿佛██是██，██是██，\n但你凭借着 太阳·御寒服 与 月亮·御焰服 安然走过。\n" +
-                           "██的██是一块██与两个█████，██上面█████——「██」");
-                SetButtonTexts("███", "██████", "██", "██████", "███");
-            }
-
-        }
-
-        #endregion
-
-
-        #region 主线实现
-
-        // 主线 参拜神像（ID 9）
-        private void PL_WorshipOfGods(int Id)
-        {
-            switch (Id)
-            {
-                // 欺诈
-                case 0:
-                    if (Item_DarkBlocker)
-                    {
-                        XSetMessage("你对着代表着欺诈的神像拜了一拜说道：\n“赞美我伟大的欺诈之神，行伟大的欺诈之举”");
-                        XAddMessage("欺诈似乎回应了你，一个只有半截的面具飞了过来！\n获得唯一道具：欺诈之面");
-                    }
-                    else
-                    {
-                        XSetMessage("你对着█████的██████说道：\n“███████████████████”");
-                        XAddMessage("██似乎██了你，██████的███了过来！\n获得唯一道具：████！！");
-                    }
-                    break;
-
-                // 命运
-                case 1:
-                    if (Item_DarkBlocker)
-                    {
-                        XSetMessage("你对着代表着命运的神像拜了一拜说道：\n“赞美我伟大的命运之神，我将重配命运之体”");
-                        XAddMessage("命运似乎回应了你，一个永远壹点朝上的骰子飞了过来！\n获得唯一道具：命运之骰");
-                    }
-                    else
-                    {
-                        XSetMessage("你对着█████的██████说道：\n“███████████████████”");
-                        XAddMessage("██似乎██了你，████████的███了过来！\n获得唯一道具：████！！");
-                    }
-                    break;
-
-                // 死亡
-                case 2:
-                    if (Item_DarkBlocker)
-                    {
-                        XSetMessage("你对着代表着死亡的神像拜了一拜说道：\n“赞美我伟大的死亡之神，万物实向死而生也”");
-                        XAddMessage("死亡似乎回应了你，一个散发着浓郁死亡之气的镰刀飞了过来！\n获得唯一道具：死亡之镰");
-                    }
-                    else
-                    {
-                        XSetMessage("你对着█████的██████说道：\n“███████████████████”");
-                        XAddMessage("██似乎██了你，███████████████的███了过来！\n获得唯一道具：████！！");
-                    }
-                    break;
-
-                // 秩序
-                case 3:
-                    if (Item_DarkBlocker)
-                    {
-                        XSetMessage("你对着代表着秩序的神像拜了一拜说道：\n“赞美我伟大的秩序之神，我等必敬畏秩序也”");
-                        XAddMessage("秩序似乎回应了你，一个散发规则的权杖飞了过来！\n获得唯一道具：秩序之杖");
-                    }
-                    else
-                    {
-                        XSetMessage("你对着█████的██████说道：\n“███████████████████”");
-                        XAddMessage("██似乎██了你，██████的███了过来！\n获得唯一道具：████！！");
-                    }
-                    break;
-
-                // 记忆
-                case 4:
-                    if (Item_DarkBlocker)
-                    {
-                        XSetMessage("你对着代表着时间的神像拜了一拜说道：\n“赞美我伟大的记忆之神，历史与万界为永恒”");
-                        XAddMessage("记忆乎回应了你，一个包含了无数知识的书本飞了过来！\n获得唯一道具：记忆之书");
-                    }
-                    else
-                    {
-                        XSetMessage("你对着█████的██████说道：\n“███████████████████”");
-                        XAddMessage("██似乎██了你，█████████的███了过来！\n获得唯一道具：████！！");
-                    }
-                    break;
-            }
-
-            Item_God = Id + 1;
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 主线 神秘森林岔路口（ID 10）
-        private void PL_MysteriousForestIntersection(int Id)
-        {
-            switch (Id)
-            {
-                // 正北神像祭坛
-                case 0:
-                    To_WorshipOfGods();
-                    break;
-
-                // 西北各自神掌管的领域
-                case 1:
-                    break;
-
-                // 东北森林深处
-                case 2:
-                    if (Item_WinterClothing >= 2 && Item_SummerClothing >= 2)
-                    {
-                        To_DeepForest();
-                    }
-                    else
-                    {
-                        if (Item_DarkBlocker)
-                            SetMessage("你看向了森林深处，里面似乎冰火两重天，你不敢进入……");
-                        else
-                            SetMessage("你看向了████，里面似乎冰火两重天，你不敢进入……");
-
-                        NowDoing = SceneId.Main;
-                        SetButtonTexts();
-                    }
-                    break;
-
-                // 正西工作房室
-                case 3:
-                    To_WorkRoom();
-                    break;
-
-                // 正东塔罗牌墙
-                case 4:
-                    int temp = 0;
-                    foreach (bool item in TC)
-                        if (item == true)
-                            ++temp;
-                    if (temp == 22) SetMessage("你走向了正东方的路，看着那一面贴满塔罗牌的墙，\n突然！整个墙瞬间亮起！所有的牌上飞出一道光钻进了你的身体！\n你现在可以中途改变一次你携带的塔罗牌！仅现在！");
-                    else SetMessage("你走向了正东方的路，看到了一面墙，上面一共有着 " + temp + " 张塔罗牌。");
-                    comboBoxTarotCard.Enabled = temp == 22;
-                    TC_Set = temp == 22;
-                    TC_Wall = !(temp == 22);
-                    NowDoing = SceneId.Main;
-                    SetButtonTexts();
-                    break;
-            }
-        }
-
-        // 主线 工作房室（ID 22）
-        private void PL_WorkRoom(int Id)
-        {
-            switch (Id)
-            {
-                // 太阳·御寒服
-                case 0:
-                    XSetMessage("你通过使用生命能量将 太阳水滴 融入了 御寒服！你得到了 太阳·御寒服！", 0, 0, -5, 5, 0, 0, -15, 50);
-                    Item_WinterClothing = 2; Item_SunWaterDrop = false;
-                    break;
-
-                // 月亮·御焰服
-                case 1:
-                    XSetMessage("你通过使用生命能量将 月亮水滴 融入了 御焰服！你得到了 月亮·御焰服！", 0, 0, -5, 5, 0, 0, -15, 50);
-                    Item_SummerClothing = 2; Item_MoonWaterDrop = false;
-                    break;
-
-                // 污染干扰器
-                case 2:
-                    XSetMessage("你通过使用理智精华进行疯狂的实验！你得到了 污染干扰器！", -3, -3, -25, 25, 2000, 0, -15, 30);
-                    Item_EssenceReason -= 2; Item_PollutionJammer = true;
-                    break;
-            }
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
 
         // 主线 问心崖
         public void PL_HeartAskingCliff()
@@ -946,118 +677,11 @@ namespace QisToolkit3.Forms.SCG
             SetButtonTexts();
         }
 
-        // 森林深处
-        private void PL_DeepForest(int Id)
-        {
-            switch (Id)
-            {
-                // 左草丛
-                case 0:
-                    // 通道
-                    if (L_ForestGrass)
-                    {
-                        SetWorld(WorldId.L_TheEndOfTheContinent);
-
-                        YanName = LTEOTC_KnowYanName ? "岩" : "未知";
-                        SetMessage(
-                            "你走向了那漆黑且望不尽头的隧道，勇敢的走了进去！\n" +
-                            "你每走出一步，你的脚步就变重一分……\n" +
-                            "不知道走了多久，你的眼前出现了一面镜子？\n" +
-                            "你看向了那面镜子，但那镜子中显现出了另一个面孔。\n" +
-                            "对方一副现代科学家打扮，下一刻，那面镜子无限扭曲延展！\n" +
-                            "瞬时间，囊括了你的身体！你只感觉你的灵魂坠入冰窟……\n" +
-                            "虚无之中，你仿佛听到了一句来自灵魂的声音\n\n" +
-                            "当你凝视深渊时，深渊也在凝视着你。Kido……\n\n" +
-                            "【你已进入时空碎块：大陆终焉】\n" +
-                            "你从一个山洞中醒来，左手异常疼痛，眼睛难以睁开。\n" +
-                            $"{YanName}：“你醒了？”\n{YanName}：“伤好点了没？”\n" +
-                            $"{YanName}：“那群外城的条子真的逼烦，让我们进外城能咋的？”\n" +
-                            ""
-                        );
-                        To_LTEOTC_Prologue_0();
-                    }
-
-                    // 去除草丛
-                    else
-                    {
-                        XSetMessage("你触摸了一下左草丛，你感觉自己身体的能量在被快速抽走……", -500);
-                        if (Hunger > 0)
-                        {
-                            AddMessage("当你回过神之时，草丛早已消失。");
-                            L_ForestGrass = true;
-                        }
-
-                        // 死亡判断
-                        else DeathJudgment();
-
-                        To_DeepForest();
-                    }
-                    break;
-
-                // 左大理石柱子
-                case 1:
-                    SetMessage("你触摸了一下左大理石柱子，什么事都没发生……");
-                    break;
-
-                // 石板
-                case 2:
-                    SetMessage("你触摸了一下石板，什么事都没发生……");
-                    break;
-
-                // 右大理石柱子
-                case 3:
-                    SetMessage("你触摸了一下右大理石柱子，什么事都没发生……");
-                    break;
-
-                // 右草丛
-                case 4:
-                    // 通道
-                    if (R_ForestGrass)
-                    {
-                        //NowDoing = SceneId.R_TheEndOfTheContinent;
-                        SetMessage(
-                            "你走向了那漆黑且望不尽头的隧道，勇敢的走了进去！\n" +
-                            "你每走出一步，你的脚步就变重一分……\n" +
-                            "不知道走了多久，你的眼前出现了一面镜子？\n" +
-                            "你看向了那面镜子，但那镜子中显现出了另一个面孔。\n" +
-                            "对方一副现代科学家打扮，下一刻，那面镜子无限扭曲延展！\n" +
-                            "瞬时间，囊括了你的身体！你只感觉你的灵魂坠入冰窟……\n" +
-                            "虚无之中，你仿佛听到了一句来自灵魂的声音\n\n" +
-                            "当你凝视深渊时，深渊也在凝视着你。Kido……\n\n" +
-                            "【你已进入时空碎块：大陆终焉】\n" +
-                            "你从一个山洞中醒来，左手异常疼痛，眼睛难以睁开。\n" +
-                            "未知：“你醒了？”\n未知：“伤好点了没？”\n" +
-                            "未知：“那群外城的条子真的逼烦，让我们进外城能咋的？”\n" +
-                            ""
-                        );
-                    }
-
-                    // 去除草丛
-                    else
-                    {
-                        XSetMessage("你触摸了一下右草丛，你感觉自己身体的水分在被快速抽走……", 0, -500);
-                        if (Thirsty > 0)
-                        {
-                            AddMessage("当你回过神之时，草丛早已消失。");
-                            R_ForestGrass = true;
-                        }
-
-                        // 死亡判断
-                        else DeathJudgment();
-
-                        To_DeepForest();
-                    }
-                    break;
-            }
-        }
-
-        #endregion
-
 
         #region 时空碎块：大陆终焉
 
         // 序章 前往
-        private void To_LTEOTC_Prologue_0(int Mode = 0)
+        public void To_LTEOTC_Prologue_0(int Mode = 0)
         {
             if (Mode == 0)
             {
@@ -1749,7 +1373,7 @@ namespace QisToolkit3.Forms.SCG
 
 
 
-        private void SetWorld(WorldId _World = WorldId.Main)
+        public void SetWorld(WorldId _World = WorldId.Main)
         {
             if (_World == WorldId.Main)
             {
@@ -2120,7 +1744,7 @@ namespace QisToolkit3.Forms.SCG
 
 
         // 死亡判定
-        private bool DeathJudgment()
+        public bool DeathJudgment()
         {
             // 调试模式禁用死亡判定
             if (checkBoxDeBug_NoDied.Checked)
@@ -3084,8 +2708,8 @@ namespace QisToolkit3.Forms.SCG
 
             if (DeBugMode)
             {
-                L_ForestGrass = true;
-                PL_DeepForest(0);
+                L_ForestGrass = true; Item_DarkBlocker = true;
+                EnterScene(SceneId.DeepForest);   // 进入深林，用户点左草丛即可走 LTEOTC
             }
         }
 
