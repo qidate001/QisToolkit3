@@ -13,7 +13,12 @@ namespace QisToolkit3.Forms.SCG.Scenes
     {
         private static readonly Dictionary<SceneId, SceneBase> _map = new();
 
-        public static void Register(SceneBase scene) => _map[scene.Id] = scene;
+        public static void Register(SceneBase scene, params SceneId[] extraIds)
+        {
+            _map[scene.Id] = scene;
+            foreach (var id in extraIds)
+                _map[id] = scene;
+        }
 
         public static bool TryGet(SceneId id, out SceneBase scene) => _map.TryGetValue(id, out scene);
     }

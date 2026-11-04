@@ -30,7 +30,11 @@ namespace QisToolkit3.Forms.SCG
             InitializeComponent();
 
             // 注册场景
+            SceneRegistry.Register(new MainMenuScene(this));
             SceneRegistry.Register(new EarnMoneyScene(this));
+
+            FoodStreetScene food = new FoodStreetScene(this);
+            SceneRegistry.Register(food, SceneId.Foods_1);   // 同一实例注册两个 id
 
             ShowMessage();
             TC_Read();
@@ -46,7 +50,7 @@ namespace QisToolkit3.Forms.SCG
             checkBoxDeBug_NoDied.Visible = DeBugMode;
         }
 
-        private void ReSetButtonEnableds() =>
+        public void ReSetButtonEnableds() =>
             SetButtonEnableds(true, Gold >= 5, KnowledgeCd <= 0, Gold >= 50, Days >= 10);
 
         private void ShowMessage()
@@ -273,6 +277,7 @@ namespace QisToolkit3.Forms.SCG
             else
             {
                 if (Morning) ++Days;   
+
             }
 
 
@@ -362,54 +367,6 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        // 主页
-                        case SceneId.Main:
-                            switch (Id)
-                            {
-                                // 去挣钱
-                                case 0:
-                                    EnterScene(SceneId.EarnMoney);
-                                    break;
-
-                                // 买吃食
-                                case 1:
-                                    NextBackEnable();
-                                    To_Foods();
-                                    break;
-
-                                // 知识区
-                                case 2:
-                                    To_KnowledgeArea();
-                                    break;
-
-                                // 出去玩
-                                case 3:
-                                    GF_GoOutAndPlay();
-                                    break;
-
-                                // 向世界
-                                case 4:
-                                    NextBackEnable();
-                                    To_TheWorld();
-                                    break;
-                            }
-                            break;
-
-                        // 买吃食
-                        case SceneId.Foods_0:
-                            GF_Foods_0(Id);
-                            break;
-
-                        // 买吃食 2
-                        case SceneId.Foods_1:
-                            GF_Foods_1(Id);
-                            break;
-
-                        // 去挣钱
-                        //case SceneId.EarnMoney:
-                        //    GF_EarnMoney(Id);
-                        //    break;
-
                         // 向世界 1（去冒险）
                         case SceneId.TheWorld_0:
                             switch (Id)
@@ -711,27 +668,8 @@ namespace QisToolkit3.Forms.SCG
 
         #region 通用功能前往
 
-        // 前往美食街页
-        private void To_Foods(int Mode = 0)
-        {
-            if (Mode == 0)
-            {
-                NowDoing = SceneId.Foods_0;
-                XSetMessage("你前往了美食街，……");
-                SetButtonTexts("购买 饺子", "购买 肉夹馍", "购买 烤玉米", "购买 柠檬水", "购买 咖啡");
-                SetButtonEnableds(Gold >= Food_Dumpling, Gold >= Food_RouJiaMo, Gold >= Food_RoastedCorn, Gold >= Food_Lemonade, Gold >= Food_Coffee);
-            }
-            else if (Mode == 1)
-            {
-                NowDoing = SceneId.Foods_1;
-                XSetMessage("你前往了美食街，……");
-                SetButtonTexts("购买 冰淇淋", "购买 净化套餐", "购买 口渴果冻", "购买 饥饿果冻", "购买 饕餮盛宴");
-                SetButtonEnableds(Gold >= Food_Popsicle, Gold >= Food_PurificationPackage, Gold >= Food_ThirstJelly, Gold >= Food_HungerJelly, Gold >= Food_GluttonousFeast);
-            }
-        }
-
         // 前往知识区页
-        private void To_KnowledgeArea()
+        public void To_KnowledgeArea()
         {
             NowDoing = SceneId.KnowledgeArea;
             XSetMessage("你看向了“知识区”，你打算前往……");
@@ -746,7 +684,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 前往区冒险页（向世界页）
-        private void To_TheWorld(int Mode = 0)
+        public void To_TheWorld(int Mode = 0)
         {
             if (Mode == 0)
             {
@@ -829,83 +767,6 @@ namespace QisToolkit3.Forms.SCG
 
 
         #region 通用功能实现
-
-        // 买吃食 1（ID 1）
-        private void GF_Foods_0(int Id)
-        {
-            switch (Id)
-            {
-
-                // 购买 饺子
-                case 0:
-                    XSetMessage("你前往了美食街，购买了一盘饺子", 64, 10, 0, 5, -Food_Dumpling);
-                    break;
-
-                // 购买 肉夹馍
-                case 1:
-                    XSetMessage("你前往了美食街，购买了一个肉夹馍", 50, 0, 0, 5, -Food_Dumpling, 0, 7);
-                    break;
-
-                // 购买 烤玉米
-                case 2:
-                    XSetMessage("你前往了美食街，购买了一个烤玉米", 20, 3, 0, 5, -Food_RoastedCorn);
-                    break;
-
-                // 购买 柠檬水
-                case 3:
-                    XSetMessage("你前往了美食街，购买了一个柠檬水", 5, 45, 0, 5, -Food_Lemonade);
-                    break;
-
-                // 购买 咖啡
-                case 4:
-                    XSetMessage("你前往了美食街，购买了一个咖啡", 2, 30, 10, -2, -Food_Coffee);
-                    break;
-            }
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 买吃食 2（ID 11）
-        private void GF_Foods_1(int Id)
-        {
-
-            // 买吃食
-            switch (Id)
-            {
-                // 购买 冰淇淋
-                case 0:
-                    if (Temperature > 30)
-                        XSetMessage("你前往了美食街，购买了一根冰淇淋", 5, 15, 5, 5, -Food_Popsicle, 0, 15);
-                    else if (Temperature < 0)
-                        XSetMessage("你前往了美食街，购买了一根冰淇淋", 5, 15, 5, 5, -Food_Popsicle, 0, -15);
-                    else
-                        XSetMessage("你前往了美食街，购买了一根冰淇淋", 5, 15, 5, 5, -Food_Popsicle);
-                    break;
-
-                // 购买 净化套餐
-                case 1:
-                    XSetMessage("你前往了美食街，购买了净化套餐", 5, 5, 5, -25, -Food_PurificationPackage, -5, -25, -25);
-                    break;
-
-                // 购买 口渴果冻
-                case 2:
-                    XSetMessage("你前往了美食街，购买了一个口渴果冻", 40, -30, 0, 0, -Food_ThirstJelly);
-                    break;
-
-                // 购买 饥饿果冻
-                case 3:
-                    XSetMessage("你前往了美食街，购买了一个饥饿果冻", -30, 40, 0, 0, -Food_Lemonade);
-                    break;
-
-                // 购买 饕餮盛宴
-                case 4:
-                    XSetMessage("你前往了美食街，购买了一整套饕餮盛宴", 500, 500, -10, 20, -Food_GluttonousFeast);
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
 
         // 神秘商店（ID 4）
         private void GF_MysteryShop_0(int Id)
@@ -1213,7 +1074,7 @@ namespace QisToolkit3.Forms.SCG
         }
 
         // 出去玩（ID 0-3）
-        private void GF_GoOutAndPlay()
+        public void GF_GoOutAndPlay()
         {
             Random random_GOAP = new Random();
             int TmpType = random_GOAP.Next(0, 10); // 用于随机是出去玩类型
@@ -3028,9 +2889,6 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        case SceneId.Foods_0:
-                            To_Foods(1);
-                            break;
                         case SceneId.MysteryShop_0:
                             To_MysteryShop(1);
                             break;
@@ -3070,9 +2928,6 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        case SceneId.Foods_1:
-                            To_Foods(0);
-                            break;
                         case SceneId.MysteryShop_1:
                             To_MysteryShop(0);
                             break;
