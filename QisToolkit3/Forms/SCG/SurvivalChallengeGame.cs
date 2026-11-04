@@ -36,6 +36,7 @@ namespace QisToolkit3.Forms.SCG
             SceneRegistry.Register(new FoodsScene(this));
             SceneRegistry.Register(new TheWorldScene(this));
             SceneRegistry.Register(new SupermarketScene(this));
+            SceneRegistry.Register(new MysteryShopScene(this));
 
             ShowMessage();
             TC_Read();
@@ -370,18 +371,6 @@ namespace QisToolkit3.Forms.SCG
                 case WorldId.Main:
                     switch (NowDoing)
                     {
-                        // 神秘商店 1
-                        case SceneId.MysteryShop:
-                            NextBackEnable();
-                            GF_MysteryShop_0(Id);
-                            break;
-
-                        // 神秘商店 2
-                        case SceneId.MysteryShop_1:
-                            NextBackEnable();
-                            GF_MysteryShop_1(Id);
-                            break;
-
                         // 参拜神像
                         case SceneId.WorshipOfGods:
                             PL_WorshipOfGods(Id);
@@ -620,93 +609,6 @@ namespace QisToolkit3.Forms.SCG
                     }
                 }
             }
-        }
-
-        #endregion
-
-
-        #region 通用功能前往
-
-        // 前往神秘商店页
-        public void To_MysteryShop(int Mode = 0)
-        {
-            XSetMessage("你走出小镇，走向了那片屹立在迷雾之中的神秘商店，你在迷雾之中穿行\n不知道过去了多久，你抵达了那神秘商店");
-            if (Mode == 0)
-            {
-                NowDoing = SceneId.MysteryShop;
-                SetButtonTexts("购买黑暗屏蔽器", "购买饕餮药水", "购买癫狂药水", "购买太阳水滴", "购买月亮水滴");
-                SetButtonEnableds(!Item_DarkBlocker && San >= 100, San >= 200, San >= 200, San >= 50 && Gold >= 1000 && !Item_SunWaterDrop, San >= 50 && Gold >= 1000 && !Item_MoonWaterDrop);
-            }
-            else if (Mode == 1)
-            {
-                NowDoing = SceneId.MysteryShop_1;
-                SetButtonTexts("情绪项目", "呆滞项目", "强健项目", "诡异项目", "提纯项目");
-                SetButtonEnableds(San >= 100, Mood >= 100, San >= 100, Health >= 50, San >= 100 & Item_God > 0);
-            }
-        }
-
-        #endregion
-
-
-        #region 通用功能实现
-
-        // 神秘商店（ID 4）
-        private void GF_MysteryShop_0(int Id)
-        {
-            switch (Id)
-            {
-                case 0:
-                    Item_DarkBlocker = true;
-                    XSetMessage("你买下了一个黑暗屏蔽器，你感到一阵头晕目眩", 0, 0, -100);
-                    break;
-                case 1:
-                    XSetMessage("你买下了一瓶饕餮药水，你感到一阵头晕目眩", 0, 0, -200);
-                    MaxHunger = 9999; MaxThirsty = 9999; TaotieBuff = 10;
-                    break;
-                case 2:
-                    XSetMessage("你买下了一瓶癫狂药水，你感到一阵头晕目眩", 0, 0, -200);
-                    MadBuff = 10;
-                    break;
-                case 3:
-                    XSetMessage("你买下了一滴太阳水滴！", 0, 0, -50, 0, -1000);
-                    Item_SunWaterDrop = true;
-                    break;
-                case 4:
-                    XSetMessage("你买下了一滴太阳水滴！", 0, 0, -50, 0, -1000);
-                    Item_MoonWaterDrop = true;
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
-        }
-
-        // 神秘商店（ID 44）
-        private void GF_MysteryShop_1(int Id)
-        {
-            switch (Id)
-            {
-                case 0:
-                    XSetMessage("你选择了情绪项目，你仿佛感受到无数情绪被灌进了脑海", 0, 0, -100, 80);
-                    break;
-                case 1:
-                    XSetMessage("你选择了呆滞项目，你仿佛感受到无数情绪被从脑海抽走", 0, 0, 80, -100);
-                    break;
-                case 2:
-                    XSetMessage("你选择了强健项目，你仿佛感受到你的身体的每个细胞都在嚎叫", 0, 0, -100, 0, 0, 0, 100 - Health);
-                    break;
-                case 3:
-                    XSetMessage("你选择了情绪项目，你仿佛感受到你的身体正在疯狂的崩溃！", 0, 0, 100, 0, 0, 0, -80);
-                    break;
-                case 4:
-                    XSetMessage("你选择了提纯项目，你感受到你的理智在被疯狂抽出！", 0, 0, -100);
-                    XSetMessage("你得到了——理智精华！");
-                    ++Item_EssenceReason;
-                    break;
-            }
-
-            NowDoing = SceneId.Main;
-            SetButtonTexts();
         }
 
         #endregion
@@ -2450,14 +2352,6 @@ namespace QisToolkit3.Forms.SCG
 
             switch (World)
             {
-                case WorldId.Main:
-                    switch (NowDoing)
-                    {
-                        case SceneId.MysteryShop:
-                            To_MysteryShop(1);
-                            break;
-                    }
-                    break;
 
                 case WorldId.L_TheEndOfTheContinent:
                     switch (NowDoing)
@@ -2483,15 +2377,6 @@ namespace QisToolkit3.Forms.SCG
 
             switch (World)
             {
-                case WorldId.Main:
-                    switch (NowDoing)
-                    {
-                        case SceneId.MysteryShop_1:
-                            To_MysteryShop(0);
-                            break;
-                    }
-                    break;
-
                 case WorldId.L_TheEndOfTheContinent:
                     switch (NowDoing)
                     {

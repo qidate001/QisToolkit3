@@ -191,7 +191,7 @@ namespace QisToolkit3.Forms.SCG
         Foods,
         EarnMoney,
         TheWorld,
-        MysteryShop, MysteryShop_1,
+        MysteryShop,
         KnowledgeArea,
         Supermarket,
         WorshipOfGods,

@@ -42,6 +42,7 @@ namespace QisToolkit3.Forms.SCG.Scenes
                 Form.SetMessage("你走出小镇，走向了……");
                 Form.SetButtonTexts("前往医院", "前往超市", "前往问心崖", "前往神秘商店",
                                     Item_DarkBlocker ? "前往神秘森林" : "前往████");
+
                 Form.SetButtonEnableds(
                     Gold >= 100,
                     Gold >= 500,
@@ -74,8 +75,7 @@ namespace QisToolkit3.Forms.SCG.Scenes
                     Form.PL_HeartAskingCliff();
                     break;
                 case 3:
-                    Form.NextBackEnable();
-                    Form.To_MysteryShop();
+                    Form.EnterScene(SceneId.MysteryShop);
                     break;
                 case 4:
                     if (Item_God == 0) Form.To_WorshipOfGods();
