@@ -92,6 +92,7 @@ namespace QisToolkit3.Forms
             button_WM_ENDSESSION.Enabled = enabled;
             button_WM_QUERYENDSESSION.Enabled = enabled;
             button_CTRL_SHUTDOWN_EVENT.Enabled = enabled;
+            button_SuspendProcess.Enabled = enabled;
 
             button_AddCriticalProcess.Enabled = enabled;
             button_RemoveCriticalProcess.Enabled = enabled;
@@ -458,6 +459,42 @@ namespace QisToolkit3.Forms
                     else
                     {
                         Log.Info($"[TaskManager] 向齐之防御请求移除关键进程失败，进程：{itemText}");
+                    }
+                }
+                catch (ArgumentException)
+                {
+                    Log.Warn($"[TaskManager] 进程已不存在：{item}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Err($"执行出现错误，信息：{ex.Message}");
+                    MessageBox.Show($"执行出现错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            MessageBox.Show("操作完成！", "齐之防御", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button_SuspendProcess_Click(object sender, EventArgs e)
+        {
+            if (!PipeClient.CheckServiceRunning()) return;
+
+            foreach (object item in listBox.SelectedItems)
+            {
+                try
+                {
+                    string itemText = item.ToString();
+                    if (!TryGetPidFromSelectedItem(item, out int pid))
+                        continue;
+
+                    bool ok = PipeClient.SuspendProcess(pid);
+
+                    if (ok)
+                    {
+                        Log.Info($"[TaskManager] 向齐之防御请求挂起进程成功，进程：{itemText}");
+                    }
+                    else
+                    {
+                        Log.Info($"[TaskManager] 向齐之防御请求挂起进程失败，进程：{itemText}");
                     }
                 }
                 catch (ArgumentException)

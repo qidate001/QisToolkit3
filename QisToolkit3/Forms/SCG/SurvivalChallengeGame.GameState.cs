@@ -70,7 +70,7 @@ namespace QisToolkit3.Forms.SCG
         // ---- 基础工具 ----
         public static readonly Random random = new Random();
         public static string SetMessageTextTemporarilyStored = string.Empty;
-        public static bool DeBugMode = true, DeBug_2Gold = false;
+        public static bool DeBugMode = false, DeBug_2Gold = false;
 
         // ---- 状态容器 ----
         public static GlobalState Global = new GlobalState();

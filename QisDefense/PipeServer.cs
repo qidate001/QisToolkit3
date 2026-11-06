@@ -167,7 +167,7 @@ namespace QisDefense
                         }
                         return "ERROR|参数错误: KILL_PROCESS|进程ID";
 
-                    // 杀死进程数（JobKiller）
+                    // 杀死进程树（JobKiller）
                     case "JOB_KILL_PROCESS":
                         if (parts.Length >= 2 && int.TryParse(parts[1], out int pid5))
                         {
@@ -175,6 +175,30 @@ namespace QisDefense
                             return $"OK|{(result ? "true" : "false")}";
                         }
                         return "ERROR|参数错误: JOB_KILL_PROCESS|进程ID";
+
+                    // 挂起进程
+                    case "SUSPEND_PROCESS":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pidSuspend))
+                        {
+                            bool result = ProcessHelper.SuspendProcess(pidSuspend);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: SUSPEND_PROCESS|进程ID";
+
+                    // 恢复进程
+                    case "RESUME_PROCESS":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pidResume))
+                        {
+                            bool result = ProcessHelper.ResumeProcess(pidResume);
+                            return $"OK|{(result ? "true" : "false")}";
+                        }
+                        return "ERROR|参数错误: RESUME_PROCESS|进程ID";
+
+                    // 进程内存快照
+                    case "PROCESS_MEMORY":
+                        if (parts.Length >= 2 && int.TryParse(parts[1], out int pidMem))
+                            return ProcessHelper.GetProcessMemoryInfo(pidMem);
+                        return "ERROR|参数错误: PROCESS_MEMORY|进程ID";
 
                     // 删除文件
                     case "DELETE_FILE":

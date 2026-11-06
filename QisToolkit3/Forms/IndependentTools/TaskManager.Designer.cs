@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskManager));
             splitContainer1 = new SplitContainer();
             listBox = new ListBox();
-            button7 = new Button();
+            button_SuspendProcess = new Button();
             button_CTRL_SHUTDOWN_EVENT = new Button();
             button_WM_QUERYENDSESSION = new Button();
             button_JobKill = new Button();
@@ -59,7 +59,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(button7);
+            splitContainer1.Panel2.Controls.Add(button_SuspendProcess);
             splitContainer1.Panel2.Controls.Add(button_CTRL_SHUTDOWN_EVENT);
             splitContainer1.Panel2.Controls.Add(button_WM_QUERYENDSESSION);
             splitContainer1.Panel2.Controls.Add(button_JobKill);
@@ -80,12 +80,13 @@
             listBox.SelectionMode = SelectionMode.MultiExtended;
             listBox.SelectedIndexChanged += listBox_SelectedIndexChanged;
             // 
-            // button7
+            // button_SuspendProcess
             // 
-            resources.ApplyResources(button7, "button7");
-            button7.ForeColor = SystemColors.ControlText;
-            button7.Name = "button7";
-            button7.UseVisualStyleBackColor = true;
+            resources.ApplyResources(button_SuspendProcess, "button_SuspendProcess");
+            button_SuspendProcess.ForeColor = SystemColors.ControlText;
+            button_SuspendProcess.Name = "button_SuspendProcess";
+            button_SuspendProcess.UseVisualStyleBackColor = true;
+            button_SuspendProcess.Click += button_SuspendProcess_Click;
             // 
             // button_CTRL_SHUTDOWN_EVENT
             // 
@@ -190,6 +191,6 @@
         private Button button_WM_ENDSESSION;
         private Button button_WM_QUERYENDSESSION;
         private Button button_CTRL_SHUTDOWN_EVENT;
-        private Button button7;
+        private Button button_SuspendProcess;
     }
 }

@@ -28,6 +28,12 @@ namespace QisDefense
             out int ReturnLength
         );
 
+        [DllImport("ntdll.dll")]
+        private static extern int NtSuspendProcess(IntPtr processHandle);
+
+        [DllImport("ntdll.dll")]
+        private static extern int NtResumeProcess(IntPtr processHandle);
+
         private const int ProcessBreakOnTermination = 0x1D;
 
         /// <summary>
@@ -123,6 +129,54 @@ namespace QisDefense
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 挂起进程
+        /// </summary>
+        public static bool SuspendProcess(int processId)
+        {
+            try
+            {
+                using (var process = Process.GetProcessById(processId))
+                {
+                    return NtSuspendProcess(process.Handle) == 0;
+                }
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// 恢复进程
+        /// </summary>
+        public static bool ResumeProcess(int processId)
+        {
+            try
+            {
+                using (var process = Process.GetProcessById(processId))
+                {
+                    return NtResumeProcess(process.Handle) == 0;
+                }
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// 获取进程内存信息
+        /// </summary>
+        public static string GetProcessMemoryInfo(int processId)
+        {
+            try
+            {
+                using (var process = Process.GetProcessById(processId))
+                {
+                    long workingSet = process.WorkingSet64 / (1024 * 1024);
+                    long privateBytes = process.PrivateMemorySize64 / (1024 * 1024);
+                    long virtualBytes = process.VirtualMemorySize64 / (1024 * 1024);
+                    return $"OK|WorkingSet={workingSet}MB|Private={privateBytes}MB|Virtual={virtualBytes}MB";
+                }
+            }
+            catch (Exception ex) { return $"ERROR|{ex.Message}"; }
         }
 
         /// <summary>

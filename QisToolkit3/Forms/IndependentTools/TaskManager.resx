@@ -168,40 +168,37 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button7.Enabled" type="System.Boolean, mscorlib">
+  <data name="button_SuspendProcess.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="button7.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="button_SuspendProcess.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 24pt</value>
   </data>
-  <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="button_SuspendProcess.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button_SuspendProcess.Location" type="System.Drawing.Point, System.Drawing">
     <value>290, 209</value>
   </data>
-  <data name="button7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button_SuspendProcess.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 80</value>
   </data>
-  <data name="button7.TabIndex" type="System.Int32, mscorlib">
+  <data name="button_SuspendProcess.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="button7.Text" xml:space="preserve">
-    <value>内核注入终止</value>
+  <data name="button_SuspendProcess.Text" xml:space="preserve">
+    <value>挂起进程</value>
   </data>
-  <data name="button7.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;button_SuspendProcess.Name" xml:space="preserve">
+    <value>button_SuspendProcess</value>
   </data>
-  <data name="&gt;&gt;button7.Name" xml:space="preserve">
-    <value>button7</value>
-  </data>
-  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+  <data name="&gt;&gt;button_SuspendProcess.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button_SuspendProcess.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button_SuspendProcess.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="button_CTRL_SHUTDOWN_EVENT.Enabled" type="System.Boolean, mscorlib">

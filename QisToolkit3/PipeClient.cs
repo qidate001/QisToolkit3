@@ -127,6 +127,24 @@ namespace QisToolkit3
             return response.StartsWith("OK|true");
         }
 
+        public static bool SuspendProcess(int processId)
+        {
+            string response = SendCommand($"SUSPEND_PROCESS|{processId}");
+            return response.StartsWith("OK|true");
+        }
+
+        public static bool ResumeProcess(int processId)
+        {
+            string response = SendCommand($"RESUME_PROCESS|{processId}");
+            return response.StartsWith("OK|true");
+        }
+
+        public static bool ProcessMemory(int processId)
+        {
+            string response = SendCommand($"PROCESS_MEMORY|{processId}");
+            return response.StartsWith("OK|");
+        }
+
         public static bool DeleteFile(string filePath)
         {
             string response = SendCommand($"DELETE_FILE|{filePath}");
