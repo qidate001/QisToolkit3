@@ -358,8 +358,6 @@ namespace QisToolkit3.Forms
 
             try
             {
-                const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
                 // 规范化路径（确保以 \ 结尾）
                 textBox_MaxPath_Path.Text = textBox_MaxPath_Path.Text.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar;
 
@@ -376,20 +374,84 @@ namespace QisToolkit3.Forms
                     return;
                 }
 
-                // 生成随机文件名
-                StringBuilder result = new StringBuilder();
-                using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+                string fileName;
+
+                if (checkBox_MaxPath_DisguisedMode.Checked)
                 {
-                    byte[] randomBytes = new byte[remainingLength];
-                    rng.GetBytes(randomBytes);
-                    for (int i = 0; i < remainingLength; i++)
+                    // ---------- 伪装文件名 ----------
+                    string head = textBox_MaxPath_DisguisedFileName_Head.Text;
+                    string tail = textBox_MaxPath_DisguisedFileName_End.Text;
+
+                    if (head.Length == 0 && tail.Length == 0)
                     {
-                        result.Append(validChars[randomBytes[i] % validChars.Length]);
+                        MessageBox.Show("开头和结尾文本不能同时为空！", "错误");
+                        return;
                     }
+
+                    // 非法文件名字符校验（\ / : * ? " < > | 以及控制字符等）
+                    char[] invalidChars = Path.GetInvalidFileNameChars();
+                    if (head.IndexOfAny(invalidChars) >= 0 || tail.IndexOfAny(invalidChars) >= 0)
+                    {
+                        MessageBox.Show("开头/结尾文本中包含 Windows 文件名不允许的字符！", "错误");
+                        return;
+                    }
+
+                    if (head.Length + tail.Length > remainingLength)
+                    {
+                        MessageBox.Show(
+                            $"开头+结尾文本总长度（{head.Length + tail.Length}）已超过可用的文件名长度（{remainingLength}）！",
+                            "错误");
+                        return;
+                    }
+
+                    // Windows 文件名不能以空格或点结尾
+                    if (tail.Length == 0 && head.Length > 0 &&
+                        (head.EndsWith(" ") || head.EndsWith(".")))
+                    {
+                        MessageBox.Show("文件名不能以空格或点结尾，请填写“结尾”文本。", "错误");
+                        return;
+                    }
+                    if (tail.Length > 0 && (tail.EndsWith(" ") || tail.EndsWith(".")))
+                    {
+                        MessageBox.Show("“结尾”文本不能以空格或点结尾。", "错误");
+                        return;
+                    }
+
+                    // 中间填充字符：
+                    //   '\u200B' = 零宽空格（肉眼不可见，推荐）
+                    // 注意：如果结尾文本为空，必须使用零宽字符，否则 Windows 会自动去掉尾部空格。
+                    char fillChar = '\u200B';
+
+                    if (radioButton_MaxPath_DisguisedMode_Space.Checked)
+                        fillChar = ' ';
+
+                    int fillCount = remainingLength - head.Length - tail.Length;
+                    StringBuilder sb = new StringBuilder(remainingLength);
+                    sb.Append(head);
+                    sb.Append(fillChar, fillCount);
+                    sb.Append(tail);
+                    fileName = sb.ToString();
+                }
+                else
+                {
+                    // ---------- 随机文件名 ----------
+                    const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                    StringBuilder result = new StringBuilder(remainingLength);
+                    using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+                    {
+                        byte[] randomBytes = new byte[remainingLength];
+                        rng.GetBytes(randomBytes);
+                        for (int i = 0; i < remainingLength; i++)
+                        {
+                            result.Append(validChars[randomBytes[i] % validChars.Length]);
+                        }
+                    }
+                    fileName = result.ToString();
                 }
 
                 // 创建文件
-                string fullPath = Path.Combine(textBox_MaxPath_Path.Text, result.ToString());
+                string fullPath = Path.Combine(textBox_MaxPath_Path.Text, fileName);
                 File.Create(fullPath).Close();
                 MessageBox.Show("创建成功！", "提示");
             }
@@ -707,6 +769,7 @@ FolderType=Videos";
         private void checkBox_MaxPath_Create_FakeMode_CheckedChanged(object sender, EventArgs e)
         {
             textBox_MaxPath_Path.Enabled = !checkBox_MaxPath_Create_FakeMode.Checked;
+
             if (checkBox_MaxPath_Create_FakeMode.Checked)
                 textBox_MaxPath_Path.Text = @"C:\";
         }
@@ -1509,6 +1572,14 @@ FolderType=Videos";
                 if (ok) Log.Info($"[高级文件操作工具] 成功让齐之防御解锁文件{path}");
             }
             MessageBox.Show("锁定成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void checkBox_MaxPath_DisguisedMode_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox_MaxPath_DisguisedFileName_Head.Enabled = checkBox_MaxPath_DisguisedMode.Checked;
+            textBox_MaxPath_DisguisedFileName_End.Enabled = checkBox_MaxPath_DisguisedMode.Checked;
+            radioButton_MaxPath_DisguisedMode_ZeroWidth.Enabled = checkBox_MaxPath_DisguisedMode.Checked;
+            radioButton_MaxPath_DisguisedMode_Space.Enabled = checkBox_MaxPath_DisguisedMode.Checked;
         }
     }
 }

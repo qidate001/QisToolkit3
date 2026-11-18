@@ -17,8 +17,6 @@ namespace QisToolkit3.Forms
     public partial class TaskManager : Form
     {
         private Process[] processes;
-        private string[] names;
-        private RegistryKey registry = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace");
 
         // 添加 Win32 API 声明
         [DllImport("user32.dll")]

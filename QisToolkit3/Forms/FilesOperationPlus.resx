@@ -1274,6 +1274,186 @@
   <data name="&gt;&gt;tabPage_Create_Basic.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 229</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 31</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_Space.Text" xml:space="preserve">
+    <value>空格字符伪装法</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_Space.Name" xml:space="preserve">
+    <value>radioButton_MaxPath_DisguisedMode_Space</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_Space.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_Space.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_Space.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 189</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 31</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="radioButton_MaxPath_DisguisedMode_ZeroWidth.Text" xml:space="preserve">
+    <value>零宽字符伪装法</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_ZeroWidth.Name" xml:space="preserve">
+    <value>radioButton_MaxPath_DisguisedMode_ZeroWidth</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_ZeroWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_ZeroWidth.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MaxPath_DisguisedMode_ZeroWidth.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 115</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 31</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="checkBox_MaxPath_DisguisedMode.Text" xml:space="preserve">
+    <value>伪装式极限长度文件生成（伪装成正常文件）</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MaxPath_DisguisedMode.Name" xml:space="preserve">
+    <value>checkBox_MaxPath_DisguisedMode</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MaxPath_DisguisedMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MaxPath_DisguisedMode.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;checkBox_MaxPath_DisguisedMode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 152</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 25</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>伪装式</value>
+  </data>
+  <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_End.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_End.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_End.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 228</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_End.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 33</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_End.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_End.Name" xml:space="preserve">
+    <value>textBox_MaxPath_DisguisedFileName_End</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_End.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_End.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_End.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 189</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 33</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="textBox_MaxPath_DisguisedFileName_Head.Text" xml:space="preserve">
+    <value>作业</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_Head.Name" xml:space="preserve">
+    <value>textBox_MaxPath_DisguisedFileName_Head</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_Head.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_Head.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;textBox_MaxPath_DisguisedFileName_Head.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="button_C_MaxPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
@@ -1302,7 +1482,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;button_C_MaxPath.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="checkBox_MaxPath_Create_FakeMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1332,7 +1512,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;checkBox_MaxPath_Create_FakeMode.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="textBox_MaxPath_Path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1341,10 +1521,10 @@
     <value>False</value>
   </data>
   <data name="textBox_MaxPath_Path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 76</value>
+    <value>12, 76</value>
   </data>
   <data name="textBox_MaxPath_Path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 33</value>
+    <value>207, 33</value>
   </data>
   <data name="textBox_MaxPath_Path.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -1362,7 +1542,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;textBox_MaxPath_Path.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -1596,13 +1776,13 @@
     <value>1</value>
   </data>
   <data name="tabPage_Create_Special.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
+    <value>4, 36</value>
   </data>
   <data name="tabPage_Create_Special.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_Create_Special.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1097, 623</value>
+    <value>1097, 616</value>
   </data>
   <data name="tabPage_Create_Special.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

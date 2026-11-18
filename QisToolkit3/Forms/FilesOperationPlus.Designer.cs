@@ -35,6 +35,7 @@
             tabControl_Main = new TabControl();
             tabPage_Main = new TabPage();
             groupBox_LockFile = new GroupBox();
+            button_UnLockFile = new Button();
             radioButton_LockFile_3 = new RadioButton();
             radioButton_LockFile_2 = new RadioButton();
             radioButton_LockFile_1 = new RadioButton();
@@ -70,6 +71,12 @@
             tabPage_Create_Basic = new TabPage();
             tabPage_Create_Special = new TabPage();
             groupBox2 = new GroupBox();
+            radioButton_MaxPath_DisguisedMode_Space = new RadioButton();
+            radioButton_MaxPath_DisguisedMode_ZeroWidth = new RadioButton();
+            checkBox_MaxPath_DisguisedMode = new CheckBox();
+            label12 = new Label();
+            textBox_MaxPath_DisguisedFileName_End = new TextBox();
+            textBox_MaxPath_DisguisedFileName_Head = new TextBox();
             button_C_MaxPath = new Button();
             checkBox_MaxPath_Create_FakeMode = new CheckBox();
             textBox_MaxPath_Path = new TextBox();
@@ -139,7 +146,6 @@
             ToolStripMenuItem_Manual = new ToolStripMenuItem();
             ToolStripMenuItem_ReSet = new ToolStripMenuItem();
             toolTip = new ToolTip(components);
-            button_UnLockFile = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -255,6 +261,14 @@
             resources.ApplyResources(groupBox_LockFile, "groupBox_LockFile");
             groupBox_LockFile.Name = "groupBox_LockFile";
             groupBox_LockFile.TabStop = false;
+            // 
+            // button_UnLockFile
+            // 
+            resources.ApplyResources(button_UnLockFile, "button_UnLockFile");
+            button_UnLockFile.ForeColor = Color.Black;
+            button_UnLockFile.Name = "button_UnLockFile";
+            button_UnLockFile.UseVisualStyleBackColor = true;
+            button_UnLockFile.Click += button_UnLockFile_Click;
             // 
             // radioButton_LockFile_3
             // 
@@ -508,12 +522,55 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(radioButton_MaxPath_DisguisedMode_Space);
+            groupBox2.Controls.Add(radioButton_MaxPath_DisguisedMode_ZeroWidth);
+            groupBox2.Controls.Add(checkBox_MaxPath_DisguisedMode);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(textBox_MaxPath_DisguisedFileName_End);
+            groupBox2.Controls.Add(textBox_MaxPath_DisguisedFileName_Head);
             groupBox2.Controls.Add(button_C_MaxPath);
             groupBox2.Controls.Add(checkBox_MaxPath_Create_FakeMode);
             groupBox2.Controls.Add(textBox_MaxPath_Path);
             resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
+            // 
+            // radioButton_MaxPath_DisguisedMode_Space
+            // 
+            resources.ApplyResources(radioButton_MaxPath_DisguisedMode_Space, "radioButton_MaxPath_DisguisedMode_Space");
+            radioButton_MaxPath_DisguisedMode_Space.Name = "radioButton_MaxPath_DisguisedMode_Space";
+            radioButton_MaxPath_DisguisedMode_Space.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_MaxPath_DisguisedMode_ZeroWidth
+            // 
+            resources.ApplyResources(radioButton_MaxPath_DisguisedMode_ZeroWidth, "radioButton_MaxPath_DisguisedMode_ZeroWidth");
+            radioButton_MaxPath_DisguisedMode_ZeroWidth.Checked = true;
+            radioButton_MaxPath_DisguisedMode_ZeroWidth.Name = "radioButton_MaxPath_DisguisedMode_ZeroWidth";
+            radioButton_MaxPath_DisguisedMode_ZeroWidth.TabStop = true;
+            radioButton_MaxPath_DisguisedMode_ZeroWidth.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_MaxPath_DisguisedMode
+            // 
+            resources.ApplyResources(checkBox_MaxPath_DisguisedMode, "checkBox_MaxPath_DisguisedMode");
+            checkBox_MaxPath_DisguisedMode.Name = "checkBox_MaxPath_DisguisedMode";
+            checkBox_MaxPath_DisguisedMode.UseVisualStyleBackColor = true;
+            checkBox_MaxPath_DisguisedMode.CheckedChanged += checkBox_MaxPath_DisguisedMode_CheckedChanged;
+            // 
+            // label12
+            // 
+            label12.BackColor = SystemColors.ControlLight;
+            resources.ApplyResources(label12, "label12");
+            label12.Name = "label12";
+            // 
+            // textBox_MaxPath_DisguisedFileName_End
+            // 
+            resources.ApplyResources(textBox_MaxPath_DisguisedFileName_End, "textBox_MaxPath_DisguisedFileName_End");
+            textBox_MaxPath_DisguisedFileName_End.Name = "textBox_MaxPath_DisguisedFileName_End";
+            // 
+            // textBox_MaxPath_DisguisedFileName_Head
+            // 
+            resources.ApplyResources(textBox_MaxPath_DisguisedFileName_Head, "textBox_MaxPath_DisguisedFileName_Head");
+            textBox_MaxPath_DisguisedFileName_Head.Name = "textBox_MaxPath_DisguisedFileName_Head";
             // 
             // button_C_MaxPath
             // 
@@ -1008,14 +1065,6 @@
             ToolStripMenuItem_ReSet.Name = "ToolStripMenuItem_ReSet";
             resources.ApplyResources(ToolStripMenuItem_ReSet, "ToolStripMenuItem_ReSet");
             // 
-            // button_UnLockFile
-            // 
-            resources.ApplyResources(button_UnLockFile, "button_UnLockFile");
-            button_UnLockFile.ForeColor = Color.Black;
-            button_UnLockFile.Name = "button_UnLockFile";
-            button_UnLockFile.UseVisualStyleBackColor = true;
-            button_UnLockFile.Click += button_UnLockFile_Click;
-            // 
             // FilesOperationPlus
             // 
             resources.ApplyResources(this, "$this");
@@ -1184,5 +1233,11 @@
         private RadioButton radioButton_LockFile_0;
         private Button button_LockFile;
         private Button button_UnLockFile;
+        private TextBox textBox_MaxPath_DisguisedFileName_Head;
+        private TextBox textBox_MaxPath_DisguisedFileName_End;
+        private CheckBox checkBox_MaxPath_DisguisedMode;
+        private Label label12;
+        private RadioButton radioButton_MaxPath_DisguisedMode_Space;
+        private RadioButton radioButton_MaxPath_DisguisedMode_ZeroWidth;
     }
 }
